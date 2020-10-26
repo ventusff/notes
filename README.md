@@ -166,38 +166,41 @@ too old
   - 比如有可能把2个物体理解为同一个primitive，甚至...；
   - 因此，使用多个loss来鼓励一个解耦、可解释的3D表征；同时从训练集分布中生成图片。
 - **loss**
-  
+
   - _**adversarial loss**_：标准的real/fake loss + condition
-    - 
-      > condition on: 是完全的composite image还是background image
+
+    - > condition on: 是完全的composite image还是background image
       >
       > 实验证明，这个condition有助于从背景中解耦物体  
+
     - 因此在训练时，收集两组数据集：带有物体的和没有物体的
-    
+
   - _**compactness loss**_ ：紧凑性loss
-    - 
-      > To bias solutions towards compact representations and to encourage the 3D primitives to tightly encase the objects, we minimize the projected shape of each object.
+
+    - > To bias solutions towards compact representations and to encourage the 3D primitives to tightly encase the objects, we minimize the projected shape of each object.
       >
       > 为了让solutions 倾向于完整的表征，鼓励3D primitives能够紧贴合物体，我们最小化每个物体的投影shape
+
     - 惩罚每个物体`alpha map`的 `L1-范数`
-    - 
-      > ![img](media/63491889.png)
+
+    - > ![img](media/63491889.png)
       >
       > $\tau=0.1$ 是一个防止收缩到一个固定最小值以下的截短阈值， $A_i$ 依赖于模型参数和 latent code z（so 这个loss可以对模型参数有作用）
-  
+
   - **(==self supervised==) geometry consistency loss**
-    - 
-      > 为了得到在不同的 `camera viewpoints` 和 `3D物体pose `中都**consistent**的solutions，遵循 _**[33]RGBD-GAN**_ 来鼓励生成模型来遵守多视几何约束。
-    - 
-      >  比如，对于pose(外参)的改变应该改变物体的pose但是不应该alter它的颜色或者identity.
-    - 
-      > 这样formulate这个约束：
+
+    - > 为了得到在不同的 `camera viewpoints` 和 `3D物体pose `中都**consistent**的solutions，遵循 _**[33]RGBD-GAN**_ 来鼓励生成模型来遵守多视几何约束。
+
+    - > 比如，对于pose(外参)的改变应该改变物体的pose但是不应该alter它的颜色或者identity.
+
+    - > 这样formulate这个约束：
       >
       > ![img](media/63872134.png)
       >
       > $X_i'$ $D_i'$ 是 latent code z的2D generator 输出
       >
       > $\tilde{X}_i'$ $\tilde{D}_i'$ 是 同一个latent code对每个primitive的pose加入随机噪声 并且 [**Warp**ing the result back to the original viewpoint] (即**重投影**回加噪声之前的viewpoint)  后的2D generator输出
+
     - 相当于是一个自监督的重投影误差loss
 
 </details>
