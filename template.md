@@ -1,9 +1,9 @@
 ---
 
-**`"Learning Reward Functions for Optimal Highway Merging"`**
-**[** `Year` **]** **[[:memo:](https://arxiv.org/) (paper)]** **[[:octocat:](https://github.com/) (code)]** **[[🎞️](https://www.youtube.com/) (video)]** **[** :mortar_board: `University X` **]** **[** :office: `company Y` **]**
-**[**  John Doe  **]**
-**[** _`related`, `concepts`_  **]**
+**`"Learning Reward Functions for Optimal Highway Merging"`**  
+**[** `Year` **]** **[[:memo:](https://arxiv.org/) (paper)]** **[[:octocat:](https://github.com/) (code)]** **[[🎞️](https://www.youtube.com/) (video)]** **[** :mortar_board: `University X` **]** **[** :office: `company Y` **]**  
+**[**  John Doe  **]**  
+**[** _`related`, `concepts`_  **]**  
 
 <details>
   <summary>Click to expand</summary>
