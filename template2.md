@@ -1,9 +1,9 @@
 ---
 
 **`"CR-GAN: Learning Complete Representations for Multi-view Generation"`**  
-**[** `IJCAI 2018` **]** **[[paper]](https://www.ijcai.org/Proceedings/2018/0131.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `University X` **]** **[** :office: `company Y` **]**  
-**[**  John Doe  **]**  
-**[** _`complete latent space`, `GAN`_ **]**  
+**[** `2018` **]** **[[paper]](https://www.ijcai.org)** **[[code]](https://www.github.com)** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
+**[**  `JohnDoe`  **]**  
+**[** _`completelatentspace`, `GAN`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
