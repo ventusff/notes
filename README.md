@@ -221,6 +221,7 @@ too old
 
 <details>
   <summary>Click to expand</summary>
+
 | ![img](media/58379603.png) |
 | -------------------------- |
 | motivation                 |
