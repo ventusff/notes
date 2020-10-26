@@ -166,12 +166,14 @@ too old
   - 比如有可能把2个物体理解为同一个primitive，甚至...；
   - 因此，使用多个loss来鼓励一个解耦、可解释的3D表征；同时从训练集分布中生成图片。
 - **loss**
+  
   - _**adversarial loss**_：标准的real/fake loss + condition
     - 
       > condition on: 是完全的composite image还是background image
       >
       > 实验证明，这个condition有助于从背景中解耦物体  
-  - 因此在训练时，收集两组数据集：带有物体的和没有物体的
+    - 因此在训练时，收集两组数据集：带有物体的和没有物体的
+    
   - _**compactness loss**_ ：紧凑性loss
     - 
       > To bias solutions towards compact representations and to encourage the 3D primitives to tightly encase the objects, we minimize the projected shape of each object.
