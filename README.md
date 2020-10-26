@@ -185,7 +185,7 @@ too old
 
     - > ![img](media/63491889.png)
       >
-      > $\tau=0.1$ 是一个防止收缩到一个固定最小值以下的截短阈值， $A_i$ 依赖于模型参数和 latent code z（so 这个loss可以对模型参数有作用）
+      > $`\tau=0.1`$ 是一个防止收缩到一个固定最小值以下的截短阈值， $`A_i`$ 依赖于模型参数和 latent code z（so 这个loss可以对模型参数有作用）
 
   - **(==self supervised==) geometry consistency loss**
 
@@ -197,9 +197,9 @@ too old
       >
       > ![img](media/63872134.png)
       >
-      > $X_i'$ $D_i'$ 是 latent code z的2D generator 输出
+      > $`X_i'`$ $`D_i'`$ 是 latent code z的2D generator 输出
       >
-      > $\tilde{X}_i'$ $\tilde{D}_i'$ 是 同一个latent code对每个primitive的pose加入随机噪声 并且 [**Warp**ing the result back to the original viewpoint] (即**重投影**回加噪声之前的viewpoint)  后的2D generator输出
+      > $`\tilde{X}_i'`$ $`\tilde{D}_i'`$ 是 同一个latent code对每个primitive的pose加入随机噪声 并且 [**Warp**ing the result back to the original viewpoint] (即**重投影**回加噪声之前的viewpoint)  后的2D generator输出
 
     - 相当于是一个自监督的重投影误差loss
 
@@ -231,7 +231,7 @@ too old
 - 使用连续表征neural radiance filed
   
   
-  - 从location x, view direction d映射到color c 和 体素密度$\sigma$
+  - 从location x, view direction d映射到color c 和 体素密度$`\sigma`$
   
 - 数据集使用unposed RGB images
 
