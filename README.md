@@ -61,7 +61,7 @@
 ---
 
 **`< multi-view BiGAN > "Multi-view Generative Adversarial Networks"`**  
-**[** `2016` **]** **[[paper]]([[paper\]](https://arxiv.org/pdf/1611.02019.pdf))** **[** :mortar_board: `UPMC` **]** 
+**[** `2016` **]** **[[paper]](https://arxiv.org/pdf/1611.02019.pdf)** **[** :mortar_board: `UPMC` **]** 
 **[**  `Mickaël Chen`, `Ludovic Denoyer`  **]**  
 **[** _`BiGAN`_ **]**  
 
@@ -81,7 +81,7 @@ too old
 ---
 
 **`"Conditional Single-view Shape Generation for Multi-view Stereo Reconstruction"`**  
-**[** `2019` **]** **[[paper]]([[paper\] ](https://arxiv.org/pdf/1904.06699.pdf))** **[[code]]([[code\]](https://github.com/weiyithu/OptimizeMVS))** **[** :mortar_board: `Tsinghua University` **]**  
+**[** `2019` **]** **[[paper]](https://arxiv.org/pdf/1904.06699.pdf)** **[[code]](https://github.com/weiyithu/OptimizeMVS)** **[** :mortar_board: `Tsinghua University` **]**  
 **[**  `Yi Wei`, `Shaohui Liu`, `Jiwen Lu`  **]**  
 **[** _`multi view geometry constraint`, `image based shape generation`_ **]**  
 
@@ -96,8 +96,8 @@ too old
 ---
 
 **`"Multi-view Relighting using a Geometry-Aware Network"`**  
-**[** `2019` **]** **[[paper]]([[paper\]](https://repo-sam.inria.fr/fungraph/deep-relighting/Multi-view-Relighting.pdf))** **[** :mortar_board: `University X` **]** **[** :office: `company Y` **]**  
-**[**  `John Doe`  **]**  
+**[** `ACM T-Graphics 2019` **]** **[[paper]](https://repo-sam.inria.fr/fungraph/deep-relighting/Multi-view-Relighting.pdf)** **[** :mortar_board: `Université Côte d'Azur and Inria`,`UCB` **]** **[** :office: `Adobe` **]**  
+**[**  `Julien Philip, MICHAËL GHARBI,TINGHUI ZHOU, ALEXEI A. EFROS, GEORGE DRETTAKIS `  **]**  
 **[** _`multi view video relighting`_ **]**  
 
 <details>
@@ -114,9 +114,9 @@ too old
 ---
 
 **`"Geometry-Consistent Generative Adversarial Networks for One-Sided Unsupervised Domain Mapping"`**  
-**[** `CVPR2019` **]** **[[paper]]([[paper\]](https://openaccess.thecvf.com/content_CVPR_2019/papers/Fu_Geometry-Consistent_Generative_Adversarial_Networks_for_One-Sided_Unsupervised_Domain_Mapping_CVPR_2019_paper.pdf))**  **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
-**[**  `JohnDoe`  **]**  
-**[** _`multi view geometry constraint`_ **]**  
+**[** `CVPR2019` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2019/papers/Fu_Geometry-Consistent_Generative_Adversarial_Networks_for_One-Sided_Unsupervised_Domain_Mapping_CVPR_2019_paper.pdf)**  **[** :mortar_board: `University of Sydney`, `University of Pittsburgh`, `CMU`,`Universite Paris-Est` **]**   
+**[**  `Huan Fu, Mingming Gong, Chaohui Wang, Kayhan Batmanghelich, Kun Zhang, Dacheng Tao`  **]**  
+**[** _`  `_ **]**  
 
 <details>
   <summary>Click to expand</summary>
@@ -128,7 +128,7 @@ too old
 ---
 
 **`"RGBD-GAN: Unsupervised 3D Representation Learning From Natural Image Datasets via RGBD Image Synthesis"`**  
-**[** `ICLR2020` **]** **[[paper]]([ [paper\]](https://arxiv.org/abs/1909.12573))**  **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
+**[** `ICLR2020` **]** **[[paper]](https://arxiv.org/abs/1909.12573)**  **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
 **[**  `JohnDoe`  **]**  
 **[** _`multi view geometry constraint`, `GAN`_ **]**  
 
@@ -144,15 +144,17 @@ too old
 ---
 
 **`"Towards Unsupervised Learning of Generative Models for 3D Controllable Image Synthesis"`**  
-**[** `CVPR2020` **]** **[[paper]](https://arxiv.org/pdf/1912.05237.pdf)** **[[code]]([[code\]](https://github.com/autonomousvision/controllable_image_synthesis))** **[** :mortar_board: `University of Tubingen ` **]** **[** :office: `MPI-IS`,`Amazon` **]**  
+**[** `CVPR2020` **]** **[[paper]](https://arxiv.org/pdf/1912.05237.pdf)** **[[code]](https://github.com/autonomousvision/controllable_image_synthesis)** **[** :mortar_board: `University of Tubingen ` **]** **[** :office: `MPI-IS`,`Amazon` **]**  
 **[**  `Yiyi Liao`, `Andreas Geiger`  **]**  
 **[** _`HoloGAN->baseline`,`RGBD-GAN based`, `multi object multi view`,  `Controllable Image Synthesis`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
+
 | ![img](media/59007435.png)                                   |
 | ------------------------------------------------------------ |
 | 首先 从一个高斯采样的latent code 映射到一系列3D primitives（一些原初3D物体表征）<br> 再渲染物体 再渲染背景 |
+
 
 
 - | Input   | unlabeled image                                              |
@@ -221,8 +223,7 @@ too old
   <summary>Click to expand</summary>
 | ![img](media/58379603.png) |
 | -------------------------- |
-|                            |
-
+| motivation                 |
 
 - _**Motivation**_
   
