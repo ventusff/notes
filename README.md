@@ -1,5 +1,7 @@
 
 
+
+
 # multi-view GAN(image generation)
 
 - keywords
@@ -113,8 +115,8 @@ too old
 
 ---
 
-**`"Geometry-Consistent Generative Adversarial Networks for One-Sided Unsupervised Domain Mapping"`**  
-**[** `CVPR2019` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2019/papers/Fu_Geometry-Consistent_Generative_Adversarial_Networks_for_One-Sided_Unsupervised_Domain_Mapping_CVPR_2019_paper.pdf)**  **[** :mortar_board: `University of Sydney`, `University of Pittsburgh`, `CMU`,`Universite Paris-Est` **]**   
+**`< GcGAN > "Geometry-Consistent Generative Adversarial Networks for One-Sided Unsupervised Domain Mapping"`**  
+**[** `CVPR2019` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2019/papers/Fu_Geometry-Consistent_Generative_Adversarial_Networks_for_One-Sided_Unsupervised_Domain_Mapping_CVPR_2019_paper.pdf)** **[[code]](https://github.com/hufu6371/GcGAN)** **[** :mortar_board: `University of Sydney`, `University of Pittsburgh`, `CMU`,`Universite Paris-Est` **]**   
 **[**  `Huan Fu, Mingming Gong, Chaohui Wang, Kayhan Batmanghelich, Kun Zhang, Dacheng Tao`  **]**  
 **[** _`  `_ **]**  
 
@@ -128,9 +130,9 @@ too old
 ---
 
 **`"RGBD-GAN: Unsupervised 3D Representation Learning From Natural Image Datasets via RGBD Image Synthesis"`**  
-**[** `ICLR2020` **]** **[[paper]](https://arxiv.org/abs/1909.12573)**  **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
-**[**  `JohnDoe`  **]**  
-**[** _`multi view geometry constraint`, `GAN`_ **]**  
+**[** `ICLR2020` **]** **[[paper]](https://arxiv.org/abs/1909.12573)**  **[** :mortar_board: `The University of Tokyo` **]** **[** :office: `RIKEN` **]**  
+**[**  `Atsuhiro Noguchi, Tatsuya Harada`  **]**  
+**[** _`multi view geometry constraint`, `natural dataset`, `3D representation`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
@@ -145,7 +147,8 @@ too old
 
 **`"Towards Unsupervised Learning of Generative Models for 3D Controllable Image Synthesis"`**  
 **[** `CVPR2020` **]** **[[paper]](https://arxiv.org/pdf/1912.05237.pdf)** **[[code]](https://github.com/autonomousvision/controllable_image_synthesis)** **[** :mortar_board: `University of Tubingen ` **]** **[** :office: `MPI-IS`,`Amazon` **]**  
-**[**  `Yiyi Liao`, `Andreas Geiger`  **]**  
+**[**  `Yiyi Liao`,`Katja Schwarz`,`Lars Mescheder`, `Andreas Geiger`  **]**  
+**[** [autonomous_vision lab](https://github.com/autonomousvision) **]**  
 **[** _`HoloGAN->baseline`,`RGBD-GAN based`, `multi object multi view`,  `Controllable Image Synthesis`_ **]**  
 
 <details>
@@ -157,11 +160,11 @@ too old
 
 
 
-- | Input   | unlabeled image                                              |
-  | ------- | :----------------------------------------------------------- |
-  | output  | multi view images                                            |
-  | dataset | ![img](media/59114641.png) <br>**随机背景、随机物体、随机view point** <br>3D primitives: no label <br/> instance segmentation: no label <br/> pose annotations: no label |
-  
+| Input   | unlabeled image                                              |
+| ------- | :----------------------------------------------------------- |
+| output  | multi view images                                            |
+| dataset | ![img](media/59114641.png) <br>**随机背景、随机物体、随机view point** <br>3D primitives: no label <br/> instance segmentation: no label <br/> pose annotations: no label |
+
 - 训练这样的模型是有挑战的：
   - 比如有可能把2个物体理解为同一个primitive，甚至...；
   - 因此，使用多个loss来鼓励一个解耦、可解释的3D表征；同时从训练集分布中生成图片。
@@ -208,9 +211,10 @@ too old
 ---
 
 **`"GRAF: Generative Radiance Fields for 3D-Aware Image Synthesis"`**  
-**[** `2020` **]** **[[paper]](https://arxiv.org/pdf/2007.02442.pdf)**  **[** :mortar_board: `University of Tubingen ` **]** **[** :office: `MPI-IS`**]**  
+**[** `NeurIPS2020` **]** **[[paper](https://arxiv.org/pdf/2007.02442.pdf), [supp](http://www.cvlibs.net/publications/Schwarz2020NEURIPS_supplementary.pdf)]** **[[code]](https://github.com/autonomousvision/graf)** **[** :mortar_board: `University of Tubingen ` **]** **[** :office: `MPI-IS`**]**  
+**[** [autonomous_vision lab](https://github.com/autonomousvision) **]**
 **[**  `Katja Schwarz, Yiyi Liao, Michael Niemeyer, Andreas Geiger`  **]**  
-**[** _`neural radiance field`, `continuous representation`_, `camera viewpoint/object pose controllable image synthesis` **]**  
+**[** _`neural radiance field`, `continuous representation`_, `camera viewpoint/object pose controllable image synthesis`,`HoloGAN->baseline` **]**  
 
 <details>
   <summary>Click to expand</summary>
@@ -240,13 +244,37 @@ too old
 ---
 
 **`"Inverse Graphics GAN: Learning to Generate 3D Shapes from Unstructured 2D Data"`**  
-**[** `2020` **]** **[[paper]](https://arxiv.org/pdf/2002.12674.pdf)**  **[** :mortar_board: `University of Cambridge` **]**  
+**[** `2020` **]** **[[paper](https://arxiv.org/pdf/2002.12674.pdf), [supp](https://lunz-s.github.io/iggan/iggan_supplemental.pdf)]**  **[** :mortar_board: `University of Cambridge` **]**  
 **[**  `Sebastian Lunz, Yingzhen Li, Andrew Fitzgibbon, Nate Kushman`  **]**  
-**[** _`Inverse Graphics`, `GAN`_ **]**  
+**[** _`Inverse Graphics`, `GAN`, `3D shape generation`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
 
-- TODO
+
+| ![image-20201026194450596](media/image-20201026194450596.png) |
+| ------------------------------------------------------------ |
+|                                                              |
+
+
+- 从非结构化的2D数据生成voxels类3D shape
+- 效果：![image-20201026193704383](media/image-20201026193704383.png)
+
+</details>
+
+---
+
+**`< 3D multi object GAN >"Fully Convolutional Refined Auto-Encoding Generative Adversarial Networks for 3D Multi Object Scenes"`**  
+**[** `blog 2018` **]**  **[[code]](https://github.com/yunishi3/3D-FCR-alphaGAN)** **[[blog]](https://becominghuman.ai/3d-multi-object-gan-7b7cee4abf80) ** **[** :mortar_board: `Stanford AI Lab` **]**   
+**[**  `Yu Nishimura`  **]**  
+**[** _`3DGAN`, `3D shape generation`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **dataset**
+
+  - ground truth **voxel** data of SUNCG dataset.
+- ![image-20201026195610963](media/image-20201026195610963.png)
 
 </details>
