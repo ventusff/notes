@@ -265,7 +265,7 @@ too old
 ---
 
 **`< 3D multi object GAN >"Fully Convolutional Refined Auto-Encoding Generative Adversarial Networks for 3D Multi Object Scenes"`**  
-**[** `blog 2018` **]**  **[[code]](https://github.com/yunishi3/3D-FCR-alphaGAN)** **[[blog]](https://becominghuman.ai/3d-multi-object-gan-7b7cee4abf80) ** **[** :mortar_board: `Stanford AI Lab` **]**   
+**[** `blog 2018` **]**  **[[code]](https://github.com/yunishi3/3D-FCR-alphaGAN)** **[[blog]](https://becominghuman.ai/3d-multi-object-gan-7b7cee4abf80)** **[** :mortar_board: `Stanford AI Lab` **]**   
 **[**  `Yu Nishimura`  **]**  
 **[** _`3DGAN`, `3D shape generation`_ **]**  
 
