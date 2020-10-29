@@ -38,16 +38,31 @@
 - **主要贡献**
   - 3D-SLN model 可以从一个scene graph生成**diverse and accurate** scene layouts 
   - 3D scene layouts 可以用 2.5D+语义信息 finetune
-  - 对于layout synthesis和image synthesis很有用
-- **数据集/数据特征**
+  - 应用展示：scene graph based layout synthesis + exemplar based image synthesis
+- **数据集/数据特征/数据定义**
 
   - 物体3D model 是直接从SUNCG数据集中 retrive的；选择类别内最相似的bbox
-  - layout的数据结构：
+  - scene graph定义：==与我们类似==
+
+    - scene graph `y`由一组triplets构成，$`(o_i, p, o_j)`$
+    - $`o_i`$代表第i-th物体的type + attributes, $`p`$代表空间关系
+  - 本文中layout的数据结构/物理含义：
+
+    - each element $`y_i`$ in layout $`y`$ 定义是一个 7-tuple，代表物体的bbox和竖直轴旋转：$$`y_i=(min_{X_i}, min_{Y_i}, min_{Z_i}, max_{X_i}, max_{Y_i}, max_{Z_i}, \omega_i )`$$
+- **主要组件**
+
+  - conditional (on scene graph) layout synthesizer
+
+    - 产生的而是3D scene layout；<br>每个物体都有3D bbox + 竖直轴旋转
+    - 把传统2D scene graph数据增强为3D scene graph，把每个物体关系编码到三维空间
+  - 集成了一个differentiable renderer来只用scene的2D投影来refine 最终的layout
+
+    - 给定一张semantics map和depth map，可微分渲染器来**optimize over** the synthesized layout去**拟合**给定的输入，通过**<u>analysis-by-synthesis</u>** fashion
 - **layout generator的网络架构**
 
 | ![image-20201028170249809](media/image-20201028170249809.png) |
 | ------------------------------------------------------------ |
-| 测试时，scene graph + 从一个learned distribution 采样latent code => generate scene layout <br>训练时，input scene graph + GT layout 先通过encoder提取出其layout latent  (学出一个distribution)，然后用提取出的layout latent + input scene graph 生成predicted layout |
+| <u>**测试**</u>时，scene graph + 从一个learned distribution 采样latent code => generate scene layout <br><u>**训练**</u>时，input scene graph + GT layout 先通过encoder提取出其layout latent  (学出一个distribution)，然后用提取出的layout latent + input scene graph 生成predicted layout |
 
 
 
@@ -72,15 +87,18 @@
 - **思考**
 
   - 我们的idea基本就是true-3D multi-view version of the paper
+
+    - 我们的idea就是在已经知道scene graph的情况下，加入layout latent code.
+
+      - 后面着重考虑scene graph的提取，以及考虑在不同视角下得到的不同2D scene graph描述怎么转化为3D（A->to the left of B）
   - 更多的注重用生成模型做表征提取
   - 物体不是来自于一个3D model dataset，而是来自于构建好的三维表征
 
     - 思考：事实上我们的重点并不在这里，理论上物体也可以来自于3D model dataset，强调的只是从一对关系+自由度中产生不同的pair-wise relationships
-  - 它的scene layout把物体的一些特征和关系特征揉在一起，我们是分开的
+  - ~~它的scene layout把物体的一些特征和关系特征揉在一起，我们是分开的~~<br>它的scene graph定义和我们非常相似
 
-    - 它的问题就是，因为其实没有把物体解耦出来/没有表征物体。<br>因此假设图给定了，我们只是想移动一下物体，如果用它的框架来做，在移动过程中物体的形状、外观也会改变（因为并没有解耦；）
     - 或者说，因为它是直接从3d model 数据集中retrive出来的model，其实学到的并不是机器人所处的当前场景
-    - 思考/启发：像某些论文(如*Towards Unsupervised Learning of Generative Models for 3D Controllable Image Synthesis*)一样，其实我们也可以做一步从一个大的latent code先map出若干个物体的过程
+    - ==思考==：像某些论文(如*Towards Unsupervised Learning of Generative Models for 3D Controllable Image Synthesis*)一样，其实我们可以做一步从一个大的latent code先map出若干个物体的过程
 
       - -> 这个过程也许可以反过来用于<u>graph embedding learning 图表示学习/图表示浓缩</u>
 
