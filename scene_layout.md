@@ -55,12 +55,14 @@
 - **主要组件**
 
   - conditional (on scene graph) layout synthesizer
-
+    
     - 产生的而是3D scene layout；<br>每个物体都有3D bbox + 竖直轴旋转
     - 把传统2D scene graph数据增强为3D scene graph，把每个物体关系编码到三维空间
+    - <u>**虽然是一个encoder-decoder结构，但是generate过程其实就用不到encoder了，decoder才是关键**</u>
   - 集成了一个differentiable renderer来只用scene的2D投影来refine 最终的layout
 
     - 给定一张semantics map和depth map，可微分渲染器来**optimize over** the synthesized layout去**拟合**给定的输入，通过**<u>analysis-by-synthesis</u>** fashion
+    - 其实就是一个auto-decoder结构，通过整个可微分通路，把sample出的layout latent反向传播最优化更新（文中称之为"refinement"/"fine tune"/"generate a layout toward a target layout"）
 - **layout generator的网络架构**
 
 | ![image-20201028170249809](media/image-20201028170249809.png) |
@@ -90,24 +92,28 @@ graph LR
 	obj_vecs2 --> GCN
 	pred_vecs --> GCN
 	GCN --> new_obj_vecs
-	new_obj_vecs -.box_mean_var.-> bbox_latent
-	new_obj_vecs -.angle_mean_var.-> angle_latent
+	new_obj_vecs -- box_mean_var --> bbox_latent
+	new_obj_vecs -- angle_mean_var --> angle_latent
 	end
 	subgraph ground truth layout
 	bbox_gt["min_x<br>min_y<br>min_z<br>max_x<br>max_y<br>max_z"]
 	angles_gt["angle"]
 	end
-	obj_type -.torch.Embedding.-> obj_vecs
-	obj_attr -.torch.Embedding.-> obj_vecs
-	relationships -.torch.Embedding.-> pred_vecs
-	angles_gt -.torch.Embedding.-> angle_vecs
-	bbox_gt -.nn.Linear.-> boxes_vecs
+	obj_type -- nn.Embedding --> obj_vecs
+	obj_attr -- nn.Embedding --> obj_vecs
+	relationships -- nn.Embedding --> pred_vecs
+	angles_gt -- nn.Embedding --> angle_vecs
+	bbox_gt -- nn.Linear --> boxes_vecs
 	z["z [mean, var]"]
 	bbox_latent --> z
 	angle_latent --> z
 ```
 
- - **decoder**（注意：也可以先GCN然后再拼接z到GCN之后的object vectors）
+ - **decoder**
+    - 注意：sample到的z拼接到obj_vecs有两种可选方式
+       - 可以先把z拼接到GCN之前的object vectors，然后GCN
+       - 也可以先GCN然后再把z拼接到GCN之后的object vectors
+
 
 ```mermaid
 graph LR
@@ -132,25 +138,22 @@ graph LR
 	obj_vecs --> GCN
 	GCN --> new_obj_vecs
 	end
-    z -.sample.-> obj_vecs
-    obj_type -.torch.Embedding.-> obj_vecs
-    obj_attr -.torch.Embedding.-> obj_vecs
-    relationships -.torch.Embedding.-> edge_emb
+    z -."sample <br><br>(可能的拼接位置1)".-> obj_vecs
+    z -."sample <br><br>(可能的拼接位置2)".-> new_obj_vecs
+    obj_type -- nn.Embedding --> obj_vecs
+    obj_attr -- nn.Embedding --> obj_vecs
+    relationships -- nn.Embedding --> edge_emb
     layout["layout <br>[min_x<br>min_y<br>min_z<br>max_x<br>max_y<br>max_z<br>angle]"]
-	new_obj_vecs -.box_net.-> layout
-	new_obj_vecs -.angle_net.-> layout
+	new_obj_vecs -- box_net --> layout
+	new_obj_vecs -- angle_net --> layout
 ```
 
 
-- **对encoder/decoder结构的思考**
-  - 它为***物体的位置、角度赋予随机变量***，然后在graph condition下回归出每个物体的layout
-- 但是事实上，应该是先有了约束，再在约束下***为边关系赋予随机变量***（隐关节自由度）
-  
 - **refinement (finetune) 过程**
 
 | ![image-20201028170332920](media/image-20201028170332920.png) |
 | ------------------------------------------------------------ |
-|                                                              |
+| 类似auto-decoder结构；<br>通过整个可微分通路，把sample出的layout latent反向传播最优化更新（文中称之为"refinement"/"fine tune"/"generate a layout toward a target layout"） |
 
 
 - **效果**
@@ -164,21 +167,5 @@ graph LR
   - diverse layout generation
 
     - ![image-20201028170542200](media/image-20201028170542200.png)
-- **思考**
-
-  - 我们的idea基本就是true-3D multi-view version of the paper
-
-    - 我们的idea就是在已经知道scene graph的情况下，加入layout latent code.
-
-      - 后面着重考虑scene graph的提取，以及考虑在不同视角下得到的不同2D scene graph描述怎么转化为3D（A->to the left of B）
-  - 更多的注重用生成模型做表征提取
-  - 物体不是来自于一个3D model dataset，而是来自于构建好的三维表征
-
-    - 思考：事实上我们的重点并不在这里，理论上物体也可以来自于3D model dataset，强调的只是从一对关系+自由度中产生不同的pair-wise relationships
-  - ~~它的scene layout把物体的一些特征和关系特征揉在一起，我们是分开的~~<br>它的scene graph定义和我们非常相似
-- 或者说，因为它是直接从3d model 数据集中retrive出来的model，其实学到的并不是机器人所处的当前场景
-    - ==思考==：像某些论文(如*Towards Unsupervised Learning of Generative Models for 3D Controllable Image Synthesis*)一样，其实我们可以做一步从一个大的latent code先map出若干个物体的过程
-    
-  - -> 这个过程也许可以反过来用于<u>graph embedding learning 图表示学习/图表示浓缩</u>
 
 </details>
