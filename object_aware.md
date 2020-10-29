@@ -200,7 +200,7 @@ Authors: Youngjoong Kwon , Stefano Petrangeli , Dahun Kim , Haoliang Wang , Eunb
 ---
 
 **`< 3D object aware video generation> "Unsupervised object-centric video generation and decomposition in 3D"`**  
-**[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2007.06705.pdf)** **[[code]](https://github.com/pmh47/o3v)** **[[web]](https://www.pmh47.net/o3v/)** **[** :office: `IST Austria` **]**  
+**[** `NeurIPS2020` **]** **[[paper]](https://arxiv.org/pdf/2007.06705.pdf)** **[[code]](https://github.com/pmh47/o3v)** **[[web]](https://www.pmh47.net/o3v/)** **[** :office: `IST Austria` **]**  
 **[**  `Paul Henderson,Christoph H. Lampert `  **]**  
 **[** _`encoder-decoder`, `object-centric generative models`, `inspired by classical image segmentation`,`object tracking`_ **]**  
 
