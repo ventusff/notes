@@ -132,7 +132,7 @@ graph LR
 	obj_vecs --> GCN
 	GCN --> new_obj_vecs
 	end
-    z --> obj_vecs
+    z -.sample.-> obj_vecs
     obj_type -.torch.Embedding.-> obj_vecs
     obj_attr -.torch.Embedding.-> obj_vecs
     relationships -.torch.Embedding.-> edge_emb
