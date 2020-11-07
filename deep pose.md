@@ -9,9 +9,9 @@
 | [ICCV2017] SSD-6D: Making rgb-based 3d detection and 6d pose estimation great again | extended the ideas of the 2D object detector [20] by 6D pose estimation based on a discrete viewpoint classification rather than direct regression of rotations.<br>用离散的viewpoint分类而不是直接回归rotations  <br>The method is rather slow and poses predicted this way are quite inaccurate since they are only a rough discrete approximation of the real poses.<br>这种方法非常慢卡而且预测出的pose很不精确，since他们只是rough discrete approximation. <br>**The refinement is a must in order to produce presentable results.** |
 | [ICCV2017] BB8: A scalable, accurate, robust to partial occlusion method for predicting the 3d poses of challenging objects without using depth. | uses a three-stage approach. <br>头两个阶段coarse-to-fine的进行segmentation<br />然后把结果喂到第3个网络去输出projections of the object's bounding box points<br />==已知了2D-3D相关性==，可以用PnP算法来估计6D pose<br />主要是因为多阶段导致运算速度比较低 |
 | [CVPR2018] YOLO6D: Real-time seamless single shot 6d object pose prediction. | build on BB8 and YOLO<br />高效而精确地检测物体和估计pose，不需要refinement.<br />像在BB8中的情况一样，这里的核心feature是 perform the regression of **reprojected bounding box corners in the image.**<br />这种参数化的优势：相对地紧凑性，以及没有带来<像直接回归旋转时会遇到的>的pose ambiguity(模棱两可) |
-| Pix2Pose: Pixel-Wise Coordinate Regression of Objects for 6D Pose Estimation | 2D-3D correspondence                                         |
-|                                                              |                                                              |
-|                                                              |                                                              |
+| Pix2Pose: Pixel-Wise Coordinate Regression of Objects for 6D Pose Estimation | 2D-3D correspondence + PnP + RANSAC                          |
+| [CVPR2020] Single-Stage 6D Object Pose Estimation            | 2D-3D correspondence + PnP + RANSAC                          |
+| [CVPR2020] HybridPose: 6D Object Pose Estimation under Hybrid Representations | 大杂烩                                                       |
 |                                                              |                                                              |
 |                                                              |                                                              |
 
@@ -22,7 +22,7 @@
 **`"DPOD: 6D Pose Object Detector and Refiner"`**  
 **[** `ICCV2019` **]** **[[paper]](https://arxiv.org/pdf/1902.11020v3.pdf)** **[[code]](https://github.com/yshah43/DPOD)** **[** :mortar_board: `TUM` **]** **[** :office: `Siemens Corporate Technology` **]**  
 **[**  `Sergey Zakharov,Ivan Shugurov,Slobodan Ilic  `  **]**  
-**[** _`6D pose esimation`_ **]**  
+**[** _`6D pose esimation [2020 SOTA]`_ **]**  
 
 [思考：虽然我们的生成模型用不上这里的一些计算设定方式，但是在图定位的时候这个会很有用]
 
@@ -63,6 +63,9 @@
     - 思考：我们如果同时预测$cos(\theta)$和$sin(\theta)$，是不是就可以避免这个问题？
 
       - 预测的输出要满足$cos(\theta)^2+sin(\theta)^2=1$，这样可以吗？
+        - 搜索了一圈以后的回答：
+          似乎存在一个explicitly normalized 操作
+          现在这些回归四元数q的方法都可以做到这一点
       - 只预测$cos(\theta)$ 不够，不够一圈；那么预测$tan(\theta)$可以吗？可能不如预测cos,sin的语义更强，毕竟旋转矩阵操作的时候本身就是由sin,cos构成的
 - **correspondence mapping** ==(2D-3D correspondence)==
 - 有一个三维模型数据集
@@ -98,6 +101,10 @@
   - neural network regression 3d transformation
   - 3d pose regression
   - deep 3d pose regression
+  - ***3D Pose Regression Using Convolutional Neural Networks*** 被引
+    - 发现这个就是一般的四元数计算推导；有些论文并没有引用它
+  - (deep) pose regression quaternion
+  - pose estimation quaternion
 
 ---
 
@@ -136,23 +143,28 @@
     - 这可以被表达为 $`R=\exp(\theta[v]_\times)`$
 
       - $`\exp`$是矩阵指数
-      - $`[v]_\times`$是$`v`$的skew-symmetric 操作符，i.e., $`[v]_\times=\left( \begin{smallmatrix} 0 & -v_3 & v_2 \\ v_3 & 0 & -v_1 \\ -v_2 & v_1 & 0 \end{smallmatrix} \right)`$  for $`v=[v_1,v_2,v_3]^T`$ 
-    - 因此，每一个旋转矩阵$`R`$有一个相应的aixs-angle vector  $`y=\theta v`$, vice-versa
-
-      - 限制 $`\theta \in [0,\pi)`$，定义$`R=I_3 \iff y=\boldsymbol{0}_3`$ ，保证旋转矩阵R和表征y的单一映射
+      - $`[v]_\times`$是$`v`$的skew-symmetric操作符，i.e., $`[v]_\times=\left( \begin{smallmatrix} 0 & -v_3 & v_2 \\ v_3 & 0 & -v_1 \\ -v_2 & v_1 & 0 \end{smallmatrix} \right)`$  for $`v=[v_1,v_2,v_3]^T`$ 
+        - skew-symmetric 斜对称矩阵，$`A=-A^T`$  i.e.  $`a_{ij}=-a_{ji}`$ 
+- 因此，每一个旋转矩阵$`R`$有一个相应的aixs-angle vector  $`y=\theta v`$, vice-versa
+  
+    - 限制 $`\theta \in [0,\pi)`$，定义$`R=I_3 \iff y=\boldsymbol{0}_3`$ ，保证旋转矩阵R和表征y的单一映射
+    
     - 矩阵指数可以被简化为$`R=I_3+\sin\theta[v]_\times+(1-\cos\theta)[v]_\times`$，用Rodrigues' rotation formula
-    - 于是，$`d(R_1, R_2)=\frac {\lVert \log(R_1R_2^T) \rVert_F} {\sqrt{2}}`$可以被简化为：
-
-      - $`d_A(R_1,R_2)=\cos^{-1}[\frac {tr(R_1^TR^2)-1} {2}]`$ 
-    - 注意到 $`\lVert \log\left( \exp(\theta_1[v_1]_\times)\exp(\theta_2[v_2]_\times)^T \right)\rVert_F /\sqrt{2}`$ 看上去很像 $`\lVert \theta_1 v_1 - \theta_2 v_2 \rVert_2`$ ，但是他们不一样，因为$`\exp(\theta_1[v_1]_\times)\exp(\theta_2[v_2]_\times)^T \neq \exp\left( \theta_1[v_1]_{\times}-\theta_2[v_2]_{\times} \right)`$ in general. 这个等式只在 matrices $`[v_1]_{\times}`$和$`[v_2]_{\times}`$ commute时才成立。i.e. $`v_1=\pm v_2`$ 
-  - **quaternion** 四元数定义 另一个3D旋转矩阵常用的表征
-
+- 于是，$`d(R_1, R_2)=\frac {\lVert \log(R_1R_2^T) \rVert_F} {\sqrt{2}}`$可以被简化为：
+  
+    - $`d_A(R_1,R_2)=\cos^{-1}[\frac {tr(R_1^TR^2)-1} {2}]`$ 
+    
+    - 注意到 $`\lVert \log\left( \exp(\theta_1[v_1]_\times)\exp(\theta_2[v_2]_\times)^T \right)\rVert_F /\sqrt{2}`$ 看上去很像 $`\lVert \theta_1 v_1 - \theta_2 v_2 \rVert_2`$ ，但是他们不一样，因为$`\exp(\theta_1[v_1]_\times)\exp(\theta_2[v_2]_\times)^T \neq  \exp\left( \theta_1[v_1]_{\times}-\theta_2[v_2]_{\times} \right)`$ in general. 这个等式只在 matrices $`[v_1]_{\times}`$和$`[v_2]_{\times}`$ commute时才成立。i.e. $`v_1=\pm v_2`$ 
+- **quaternion** 四元数定义 另一个3D旋转矩阵常用的表征
+  
     - 给定一个轴角向量$`y=\theta v`$，相应的四元数$`q=(c,s)`$由$`(\cos \frac {\theta} {2}, \sin \frac {\theta} {2} v)^T`$
     - 在构造时，四元数是unit-norm的（单位正交），$`\lVert q \rVert_2=1`$
-    - 使用四元数代数，我们有：$`(c_1,s_1)\cdot (c_2, s_2)=\left( c_1 c_2-\langle s_1,s_2 \rangle, c_1s_2+c_2s_1+s_1\times s_2 \right)`$ 以及 $`(c,s)^{-1}=(c,-s)`$对于单位正交$`q=(c,s)`$.
-    - 现在，用四元数来表达$`d(R_1, R_2)=\frac {\lVert \log(R_1R_2^T) \rVert_F} {\sqrt{2}}`$：
-
+    - 使用四元数代数，我们有：$`(c_1,s_1)\cdot (c_2, s_2)=\left( c_1 c_2-\langle s_1,s_2 \rangle, c_1s_2+c_2s_1+s_1\times s_2 \right)`$ 以及 $`(c,s)^{-1}=(c,-s)`$对于单位正交$`q=(c,s)`$. 
+      - 这里是四元数乘法的定义，以及单位正交四元数的性质(共轭为逆运算)
+  - 现在，用四元数来表达$`d(R_1, R_2)=\frac {\lVert \log(R_1R_2^T) \rVert_F} {\sqrt{2}}`$：
+  
       - $`d(q_1,q_2)=2\cos^{-1}(\lvert c \rvert) \quad where \quad (c,s)=q_1^{-1}\cdot q_2`$ ，再简化一些得到：<br>$`d_Q(q_1,q_2)=2\cos^{-1} \left( \lvert \langle q_1, q_2 \rangle \rvert \right)`$
+        - 加绝对值是为了handle double cover问题
 - **网络结构**
 
   - 对于轴角表示：
@@ -170,6 +182,9 @@
       - [ ] what ?
     - 用$`\mathcal{L}=d_Q(R,\hat{R})=2\cos^{-1} \left( \lvert \langle q_1, q_2 \rangle \rvert \right)`$ 来最优化
 
+</details>
+
+
 ---
 
 **`< not deep > "Regression of 3D Rigid Transformations on Real-Valued Vectors in
@@ -183,8 +198,6 @@ Closed Form"`**
 
 - **主要贡献**
   - 
-
-</details>
 
 </details>
 
@@ -228,6 +241,77 @@ Closed Form"`**
   - 其实只有骨骼向量和关节点3D位置的L2-loss. 没有涉及到rigid body transformation
 
 </details>
+
+## topic 5: pose estimation / regression + ambiguity 如何消除ambiguity
+
+- **keyword**
+  - 3d pose regression ambiguity
+  - ***Explaining the Ambiguity of Object Detection and 6D Pose From Visual Data*** 被引
+
+---
+
+**`"Explaining the Ambiguity of Object Detection and 6D Pose From Visual Data"`**  
+**[** `ICCV2019` **]** **[[paper]](https://openaccess.thecvf.com/content_ICCV_2019/papers/Manhardt_Explaining_the_Ambiguity_of_Object_Detection_and_6D_Pose_From_ICCV_2019_paper.pdf)**  **[** :mortar_board: `TUM,Oxford,Stanford` **]** **[** :office: `Huawei,Google` **]**  
+**[**  ` Fabian Manhardt,`  **]**  
+**[** _`Ambiguity`, `efgh`_ **]**  
+
+[]
+
+<details>
+  <summary>Click to expand</summary>
+
+
+| ![image-20201102121246748](media/image-20201102121246748.png) |
+| ------------------------------------------------------------ |
+|                                                              |
+
+- Motivation
+  - 3D object detection and pose estimation from a single image are two inherently ambiguous problems.
+  - 很经常的，不同viewpoints下的物体由于对称性、遮挡和重复的材质出现相似的外观
+  - 检测和pose估计中都带有的ambiguity意味着物体实例可以被几个不同的pose甚至结构不同的类别完美描述
+  - 这个工作中，我们显式地处理这些ambiguity
+  - 对于每个物体实例，我们预测多个6D pose 输出来估计 由对称性和重复材质产生的具体的pose分布<br>当视觉外观可以uniquely identifies 只有一个有效的pose时，这个分布collapses to 单个输出
+  - 优势：不仅是对pose ambiguity更好的解释，同时也在pose估计上实现了更好的精确度
+
+
+- **ambiguity in object detection and pose estimation的正式建模表述**
+- 描述刚体transformations: $`SE(3)`$, 它是 $`SO(3)`$和$`\mathbb{R}^3`$的semi-direct product
+  
+  - 对于$`\mathbb{R}^3`$，我们使用欧几里得3-vectors
+    - 对于$`SO(3)`$，用 the algebra of $`\mathbb{H}_1`$ of unit quaternions 来model $`SO(3)`$中的空间旋转
+    - a quaternion is given by
+      $`\boldsymbol{q}=q_1 \boldsymbol{1}+q_2 \boldsymbol{i}+q_3 \boldsymbol{j} + q_4 \boldsymbol{k}=(q_1,q_2,q_3,q_4)`$, with $`(q_1,q_2,q_3,q_4) \in \mathbb{R}^3`$ and $`i^2=j^2=k^2=ijk=-1`$
+    - we regress the quaternions above the $`q_1=0`$ hyperplane 并且因此忽略掉souther hemisphere，这样任何3D rotation可以被单个的quaternion表达
+  - 在有ambiguity的情况下，a direct naive regression of the rotation as a quaternion将带来很糟糕的结果，因为网络将会学习到一个closest to all results in the symmetry group的rotation。
+      这个学出的预测可以被看做(conditional) mean rotation
+    - 正式表述：在一个典型的有监督学习的设定下，we associate images $`I_i`$ with poses $`p_i`$ in a dataset $`(I_i, p_i)`$ ；为了描述对称性，我们定义对于一张给定的image $`I_i`$, the set $`\mathcal{S}(I_i)`$ of poses 都有这一张相同的image
+        $`\mathcal{S}(I_i)=\{P_J \vert I_j=I_i \}`$
+        注意对于非离散的对称性，$`\mathcal{S}`$中将含有无数个poses
+    - 直接从$`I`$回归一个pose $`p'`$的 naive model $`f(I,\theta)`$，最小化loss $`\mathcal{L}(p,p')`$来最优化
+      $`\theta^*={\underset {\theta}{\operatorname {arg\,min} }} \sum_{i=1}^N \mathcal{L}(f_{\theta}(I_i), p_i)`$
+        然而，从$`I`$到$`p`$的映射is not well defined 并且不能被model为一个function
+    - 于是，$`f`$事实上学到的是和$`\mathcal{S}(I_i)`$中所有点都equally close的一个rotation.
+    - [ ] multiple pose hypothesis
+- **网络结构**
+
+    - SSD-300带一个InceptionV4的backbone，每次检测时额外提供6D pose：每个anchor box提供$`C+M \cdot P`$个输出：$`C`$代表类别个数，$`M`$代表symmetry hypotheses的个数，$`P`$代表来描述6D pose的参数个数
+        $`P=5`$，4(explicitly normalized四元数)+1(物体到camera的距离)
+        剩下的两个自由度通过把2D检测框的中心用深度back-project可以获得
+    - **loss**
+
+        - class: cross-entropy $`\mathcal{L}_{class}`$
+        - anchor box: L1-norm $`\mathcal{L}_{fit}`$
+        - quaternion: $`\mathcal{L}_{rotation}(q,q')=\arccos \left( 2 \langle q,q' \rangle^2-1 \right)`$
+          - $` \iff 2\cos^{-1} \left( \lvert \langle q_1, q_2 \rangle \rvert \right)`$，等价的，只是用二倍角公式变一下而已
+          - $`let\,\cos\beta=\langle q,q'\rangle`$
+            $`2\beta=2\beta \; \Rightarrow \cos^{-1}(\cos 2\beta)=2\cos^{-1}(\cos\beta)`$
+            $`\Rightarrow \cos^{-1}(2\cos^2 \beta-1)=2\cos^{-1}\beta`$
+            $`\Rightarrow \cos^{-1}(2\langle q,q' \rangle^2-1)=2\cos^{-1}(\lvert \langle q,q' \rangle \rvert)`$
+        - depth: smooth L1-norm  $`\mathcal{L}_{depth}`$
+
+</details>
+
+
 
 
 

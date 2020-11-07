@@ -128,7 +128,7 @@ main preliminary: GQN
 ---
 
 **`"Learning 3D Object-Oriented World Models from Unlabeled Videos"`**  
-**[** `ICML2020` **]** **[[paper]](http://e2crawfo.github.io/pdfs/icml_ool_2020.pdf)**  **[** :mortar_board: `McGill University` **]**  
+**[** `ICMLW2020` **]** **[[paper]](http://e2crawfo.github.io/pdfs/icml_ool_2020.pdf)**  **[** :mortar_board: `McGill University` **]**  
 **[**  `Eric Crawford,Joelle Pineau `  **]**  
 **[** _`SRN-based`, `3D objects moving through a 3D world`, `probabilistic`, `encoder/detector focused`_ **]**  
 
