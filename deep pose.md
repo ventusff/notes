@@ -1,7 +1,7 @@
 [toc]
 # deep learning perform [regression on 6D pose] / [transformation]
 
-## topic 1: object 6D pose estimation from images
+## topic: object 6D pose estimation from images
 
 | paper                                                        | method                                                       |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -95,7 +95,7 @@
 </details>
 
 
-## topic 2: regression 3d transformation / regression 6d pose
+## topic: regression 3d transformation / regression 6d pose
 
 - **keyword**
   - neural network regression 3d transformation
@@ -201,7 +201,7 @@ Closed Form"`**
 
 </details>
 
-## topic 3: regression 3d transformation GCN
+## topic: regression 3d transformation GCN
 
 - **keyword**
   - regression transformation tree GCN
@@ -210,7 +210,7 @@ Closed Form"`**
   - encoder-decoder for 3d transformations
   - neural representations with implicit transformations
 
-## topic 4: human pose estimation
+## topic: human pose estimation
 
 - 考虑人的各个关节的pose就是由关系约束的，这里可能有一些带关系约束的pose估计
 - ==考虑==：有没有用关系/GCN + 生成模型/neural representations去解决human pose estimation的
@@ -242,7 +242,7 @@ Closed Form"`**
 
 </details>
 
-## topic 5: pose estimation / regression + ambiguity 如何消除ambiguity
+## topic: pose estimation / regression + ambiguity 如何消除ambiguity
 
 - **keyword**
   - 3d pose regression ambiguity
