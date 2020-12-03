@@ -1,4 +1,6 @@
-关键词：nerf 引用中 带 encoder
+[toc] 
+
+## 关键词：NeRF引用中 带 encoder
 
 ---
 
@@ -6,7 +8,7 @@
 3D SCENE REPRESENTATION AND RENDERING"`**  
 **[** `ICLR2021` **]** **[[paper]](https://arxiv.org/pdf/2010.04595.pdf)** **[[code]](https://github.com/alextrevithick/GRF)** **[** :mortar_board: `Oxford` **]** **[** :office: `company` **]**  
 **[**  `Bo Yang`  **]**  
-**[** _`abcd`_ **]**  
+**[** _`encoder-decoder`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
@@ -39,25 +41,6 @@
 
 </details>
 
----
+## 关键词：NeRF引用中带encoder-decoder或auto-encoder
 
-**`"Inferring Semantic Information with 3D Neural Scene Representations"`**  
-**[** `3DV 2020` **]** **[[web]](https://www.computationalimaging.org/publications/semantic-srn/)** **[[paper]](https://arxiv.org/pdf/2003.12673.pdf)**  **[** :mortar_board: `Stanford` **]**  
-**[**  `Amit Kohli,Vincent Sitzmann, Gordon Wetzstein `  **]**  
-**[** _`multi-modal features， semi-supervision`_ **]**  
-
-<details>
-  <summary>Click to expand</summary>
-
-- **Motivation**
-  - 证明像SRN这样的隐式神经表征也可以包含多模态的信息：外观，形状，语义，*etc.*
-- **OverView**
-
-  - 1. [训练] 正常的类别物体SRN预训练
-    2. [训练] 固定SRN的参数和RGB neural renderer，在<u>已经固定</u>的SRN feature上利用少量的监督数据(如文中只用了30张语义标注好的RGB图片) 训练一个额外的语义分类器
-    3. [测试] 单张RGB图片 ==**<u>and/or</u>**== 单张标注好的语义图片，提取code
-       1. 注意这里的and/or：训练的时候RGB和语义监督信号都有，测试的时候只需要二者之一就足够，不一定全都要
-    4. [测试] 利用第3步提取好的code在更多camera view下render出RGB和语义
-  - ![image-20201203121856589](media/image-20201203121856589.png)
-
-</details>
+## 关键词：DVR引用中 + generative / generic / generalize / category

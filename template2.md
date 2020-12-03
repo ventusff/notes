@@ -8,7 +8,7 @@
 <details>
   <summary>Click to expand</summary>
 
-- **主要贡献**
+- **Motivation**
   - 
 
 </details>
