@@ -35,7 +35,7 @@
 **`"Learning Category-Specific Mesh Reconstruction from Image Collections"`**  
 **[** `ECCV2018` **]** **[[paper]](https://arxiv.org/pdf/1803.07549.pdf)** **[[web]](https://akanazawa.github.io/cmr/)** **[[code]](https://github.com/akanazawa/cmr)** **[** :mortar_board: `UCB` **]**   
 **[**  `Angjoo Kanazawa`, `Shubham Tulsiani`, `Alexei A. Efros`, `Jitendra Malik`  **]**  
-**[** _`abcd`_ **]**  
+**[** _`category-specific canonical shape template`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
@@ -71,7 +71,7 @@
 **`"Learning Shape Templates with Structured Implicit Functions"`**  
 **[** `ICCV2019` **]** **[[paper]](https://arxiv.org/pdf/1904.06447.pdf)**  **[** :mortar_board: `Princeton` **]** **[** :office: `Google` **]**  
 **[**  `Kyle Genova`, `Forrester Cole`, ` Daniel Vlasic`, `Aaron Sarna`,  `William T. Freeman`, `Thomas Funkhouser` **]**  
-**[** _`abcd`_ **]**  
+**[** _`canonical shape template`_ **]**  
 
 learning generalized templates comprised of elements
 
@@ -122,7 +122,7 @@ learning generalized templates comprised of elements
     - 从点云/数据中学出这种`2-manifold`（i.e. `two-dimensional manifolds`，二维流形）的parameterization
     - 属于parametric approaches 分支
     - ==**<u>这里本质上就是一个从二维均匀分布到空间二维流形分布的映射，condition on一个shape code</u>**==
-  - 可以轻松扩展多次，来把一个3D shape表征为几个surface 元素的联合
+  - 很容易扩展多次，来把一个3D shape表征为几个surface 元素的联合
 
 </details>
 
