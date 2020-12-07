@@ -38,21 +38,19 @@
   - `2-manifold`(`two-dimensional manifold`)二维流形的定义：
     - a subset $`\mathcal{S}`$ of $`\mathbb{R}^3`$ is a 2-manifold if
       - for every point $`\boldsymbol{p} \in \mathcal{S}`$
-        there is an open set $`V`$ in $`\mathbb{R}^2`$ and an open set $`W`$ in $`\mathbb{R}^3`$ containing $`\boldsymbol{p}`$ 
-        such that $`U=\mathcal{S} \cap W`$ is homeomorphic to $`V`$
-        对于 $`\mathcal{S}`$中的任意一个点 $`\boldsymbol{p}`$ ，
-        都存在【$`\mathbb{R}^2`$ 中的一个开集$`V`$】(低维欧式空间中的一个开集) 和【$`\mathbb{R}^3`$中的包含点 $`\boldsymbol{p}`$ 一个开集$`W`$ 】
-        使得【$`\mathcal{S}`$和$`W`$ 的交集$`U`$】($`S`$的一个包含点$`p`$的开子集)与$`V`$同胚，这个同胚记为$`\varphi`$
-      - $`\varphi: U \rightarrow V`$
-      - $`(U,\varphi)`$ 叫做包含$`p`$的坐标卡
-      - 人话：
-        $`S`$的一个开子集和低维欧式空间的一个开子集同胚，那么$`S`$就是一个流形；
+        <br>there is an open set $`V`$ in $`\mathbb{R}^2`$ and an open set $`W`$ in $`\mathbb{R}^3`$ containing $`\boldsymbol{p}`$ <br> such that $`U=\mathcal{S} \cap W`$ is homeomorphic to $`V`$
+        <br>对于 $`\mathcal{S}`$中的任意一个点 $`\boldsymbol{p}`$ ，
+        <br>都存在【$`\mathbb{R}^2`$ 中的一个开集$`V`$】(低维欧式空间中的一个开集) 和【$`\mathbb{R}^3`$中的包含点 $`\boldsymbol{p}`$ 一个开集$`W`$ 】<br>
+        使得【$`\mathcal{S}`$和$`W`$ 的交集$`U`$】($`S`$的一个包含点$`p`$的开子集)与$`V`$同胚
+      - 这个同胚记为$`\varphi: U \rightarrow V`$，有序对 $`(U,\varphi)`$ 叫做包含$`p`$的坐标卡
+      - 人话：<br>
+        $`S`$的一个开子集和低维欧式空间的一个开子集同胚，那么$`S`$就是一个流形；<br>
         从$`S`$的一个开子集到低维欧式空间的开子集的同胚叫做`chart`坐标卡
-        坐标卡的逆(从低维欧式空间的开子集 到 $`S`$的一个开子集的同胚)叫做`paramterization`​参数化
+        <br>坐标卡的逆(从低维欧式空间的开子集 到 $`S`$的一个开子集的同胚)叫做`paramterization`参数化
   - `manifold`理解：局部区域线性，与低维欧式空间拓扑同胚
 - `chart`
   - A `chart` for a `topological space` *M* is a `homeomorphism` $`\varphi`$ from an open subset *U* of *M* to an open subset of a Euclidean space.
-    一个拓扑空间的坐标卡，就是这个拓扑空间的一个开子集到一个欧式空间的开子集的同胚
+    <br>一个拓扑空间的坐标卡，就是这个拓扑空间的一个开子集到一个欧式空间的开子集的同胚
   - the cart is traditionally recorded as the ordered pair $`(U,\varphi)`$ 
 - `image`像：
   - 设$`f`$是一个从定义域$`X`$到值域$`Y`$的一个函数
@@ -60,10 +58,10 @@
     If *x* is a member of *X*, then the image of *x* under *f*, denoted *f*(*x*), is the value of *f* when applied to *x.*
   - image of a subset
     the image of subset $`A \subseteq X`$ under *f*, denoted $`f[A]`$ is the subset of *Y* which can be defined as:
-    $`f[A] = \{f(x) \vert x \in A\}`$
-    when there is no risk of confusion, $`f[A]`$ is simply written as $`f(A)`$
+    <br>$`f[A] = \{f(x) \vert x \in A\}`$
+    <br>when there is no risk of confusion, $`f[A]`$ is simply written as $`f(A)`$
   - `inverse image / preimage`原像：
-    the preimage or inverse image of set $`B \subseteq Y`$ under *f* , denoted by $`f^{-1}[B]`$, is the subset of *X* defined by
+    <br>the preimage or inverse image of set $`B \subseteq Y`$ under *f* , denoted by $`f^{-1}[B]`$, is the subset of *X* defined by<br>
     $`f^{-1}[B]=\{x\in X \vert f(x) \in B\}`$
 - 图册`atlas`
   - 图册是一族坐标卡
@@ -140,7 +138,7 @@ learning generalized templates comprised of elements
   
   - 给这类从canonical space下的shape template学出物体shape的方法，提供一种更通用于各种类别的shape template 学习方法
   - 由于现实世界的形状和拓扑变化丰富，过去的_<u>这类</u>_方法一般用a library of handmade templates
-  - 本篇使用了一种基于若干个local shape elements的组合来构成shape template；
+  - 本篇使用了一种基于若干个local shape elements的组合来构成shape template；<br>
     每个element是一个隐式的surface representation
     - 每个element可以当做一个高斯椭球形状
     - 这样，不同的elements位置、扁圆、大小组合，就可以组合出==<u>不同形状、不同拓扑</u>==的shape template
@@ -151,7 +149,7 @@ learning generalized templates comprised of elements
   - 假定每一个input shape都可以建模为一个watertight surface，由一个函数的 $`\mathcal{l}`$ level set描述（l-等值面集）；
   - 这个函数可以由N个local elements构成
   - 每个elements是一个 _scaled axis-aligned anisotropic 3D Gaussians_ 
-    由参数$`\theta_i`$描述，$`\theta_i`$包含$`c_i, p_i \in \mathbb{R}^3, r_i \in \mathbb{R}^3`$
+    <br>由参数$`\theta_i`$描述，$`\theta_i`$包含$`c_i, p_i \in \mathbb{R}^3, r_i \in \mathbb{R}^3`$
     ![image-20201208000148898](media/image-20201208000148898.png)
 
 </details>
@@ -170,7 +168,7 @@ learning generalized templates comprised of elements
 - **Motivation**
   
   - represents a surface as a collection of parametric surface elements
-    把一个表面表征为一组parametric surface元素的集合
+    <br>把一个表面表征为一组parametric surface元素的集合
 - **overview**
   
   - ![image-20201208004950236](media/image-20201208004950236.png)
@@ -183,16 +181,16 @@ learning generalized templates comprised of elements
   - 很容易扩展多次，来把一个3D shape表征为几个surface 元素的联合
 - 局部参数化表面的生成 locally parameterized surface generation
 
-  - 把surface看做一个广义的2-manifold（允许self-intersection & disjoint sets），考虑局部的参数化
+  - 把surface看做一个广义的2-manifold（允许self-intersection & disjoint sets），考虑局部的参数化<br>
     consider a `2-manifold` $`\mathcal{S}`$, a point $`\boldsymbol{p} \in \mathcal{S}`$, a `parameterization` $`\varphi`$ of $`\mathcal{S}`$ in a local neighborhood of $`\boldsymbol{p}`$
   - 假定这个局部参数化就是从单位方 $`]0,1[^2`$ 到2-manifold $`\mathcal{S}_{\theta}`$的映射 $`\varphi_{\theta}(x)`$ : $`\mathcal{S}_\theta=\varphi_{\theta}(]0,1[^2)`$
-     让$`\mathcal{S}_{\theta}`$去估计/近似局部2-manifold $`S_{loc}`$
+     <br>让$`\mathcal{S}_{\theta}`$去估计/近似局部2-manifold $`S_{loc}`$
   - i.e.寻找 参数$`\theta`$来最小化目标函数$`\min \limits_{\theta} \mathcal{L}(\mathcal{S}_\theta, \mathcal{S}_{loc})+\lambda\mathcal{R}(\theta)`$
-    上式的$`\mathcal{L}`$是两个2-manifold之间的loss，$`\mathcal{R}`$是参数$`\theta`$的正则化项；
-    实践中，计算的不是两个2-manifold之间的loss，<u>而是这两个2-manifold采样出的点集的chamfer 和 earth-mover距离</u>
+    <br>上式的$`\mathcal{L}`$是两个2-manifold之间的loss，$`\mathcal{R}`$是参数$`\theta`$的正则化项；
+    <br>实践中，计算的不是两个2-manifold之间的loss，<u>而是这两个2-manifold采样出的点集的chamfer 和 earth-mover距离</u>
   - 证明了MLP+ReLU就可以产生2-manifolds
   - 证明了MLP+ReLU产生的2-manifolds can be learned to 很好地近似 target 2-manifolds
-    用了universal representation theorum：
+    <br>用了universal representation theorum：<br>
     Approximation capabilities of multilayer feedforward networks. *Neural Networks*, 1991
 
 </details>
@@ -223,27 +221,26 @@ learning generalized templates comprised of elements
 
 - **引用的directly reconstruct a parametric representation of a shape's surface**
   - class-specific templates  **<u>(canonical template / mean shape in canonical space)</u>**
-    逐个类别手动设计的shape template
+    <br>逐个类别手动设计的shape template
     - [ECCV2018] Learning category-specific mesh reconstruction from image collections. 
-- [ICCV2019] Canonical surface mapping via geometric cycle consistency
-  
+    - [ICCV2019] Canonical surface mapping via geometric cycle consistency
   - general structured templates
-  适用于各种类别的通用shape template学习方法（应对不同的形状、拓扑）
-  - [ICCV2019] Learning shape templates with structured implicit functions.
+    <br>适用于各种类别的通用shape template学习方法（应对不同的形状、拓扑）
+    - [ICCV2019] Learning shape templates with structured implicit functions.
   
   - more generic surface representations
   
     - meshes deform
       - [ECCV2018] Pixel2mesh: Generating 3d mesh models from single rgb images.
-    - [ICCV2019] Pixel2mesh++: Multi-view 3d mesh generation via deformation
+      - [ICCV2019] Pixel2mesh++: Multi-view 3d mesh generation via deformation
       - [CVPR2019] 3DN: 3d deformation network.
-  
+      
     - differentiable mesh renderer + image supervision
       - [CVPR2018] Neural 3d mesh renderer
       - [2019]  Soft rasterizer: A differentiable renderer for image-based 3d reasoning
-    - [2019] Pix2vex: Image-togeometry reconstruction using a smooth differentiable renderer.
+      - [2019] Pix2vex: Image-togeometry reconstruction using a smooth differentiable renderer.
       - [CVPR2019] Learning view priors for single-view 3d reconstruction.
-  
+      
     - ==continuous 2D patches== 本篇类似：使用2D patch来作为UV parameterization
       - [CVPR2018] Atlasnet: A papiermch approach to learning 3d surface generation. 
 
@@ -281,7 +278,7 @@ learning generalized templates comprised of elements
 
 - **Motivation**
   - 其实是一种类别级别的连续函数隐式的shape表征，类似occupancy networks；
-    输入code + one point 坐标，输出在shape 内；外；（类似SDF）
+    <br>输入code + one point 坐标，输出在shape 内；外；（类似SDF）
   - ![image-20201203174748033](media/image-20201203174748033.png)
 
 </details>
