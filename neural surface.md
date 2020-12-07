@@ -42,7 +42,7 @@
         <br>对于 $`\mathcal{S}`$中的任意一个点 $`\boldsymbol{p}`$ ，
         <br>都存在【$`\mathbb{R}^2`$ 中的一个开集$`V`$】(低维欧式空间中的一个开集) 和【$`\mathbb{R}^3`$中的包含点 $`\boldsymbol{p}`$ 一个开集$`W`$ 】<br>
         使得【$`\mathcal{S}`$和$`W`$ 的交集$`U`$】($`S`$的一个包含点$`p`$的开子集)与$`V`$同胚
-      - 这个同胚记为$`\varphi: U \rightarrow V`$，有序对 $`(U,\varphi)`$ 叫做包含$`p`$的坐标卡
+      - 这个同胚记为$`\varphi: U \rightarrow V`$，有序对 $`(U,\varphi)`$ 叫做包含$`p`$的坐标卡
       - 人话：<br>
         $`S`$的一个开子集和低维欧式空间的一个开子集同胚，那么$`S`$就是一个流形；<br>
         从$`S`$的一个开子集到低维欧式空间的开子集的同胚叫做`chart`坐标卡
@@ -113,7 +113,7 @@
   - 相同的顶点连接性，相当于fixed topology，拓扑是固定的
     - 思考甜甜圈和咖啡杯的拓扑是一样的：通过顶点移位变形可以变形过去
     - a fixed and pre-determined mesh connectivity 连接性是固定的
-  - 所谓shape predictor，其实是预测固定个数的vertices的位置改变
+  - 所谓shape predictor，其实是预测固定个数的vertices的位置改变<br>
     ![image-20201207231029039](media/image-20201207231029039.png)
   - 我们可以从uv图的坐标映射到球面坐标，再映射到mean shape上的坐标，再通过shape 变形（顶点移位）映射到当前shape上的顶点坐标
 
@@ -142,15 +142,13 @@ learning generalized templates comprised of elements
     每个element是一个隐式的surface representation
     - 每个element可以当做一个高斯椭球形状
     - 这样，不同的elements位置、扁圆、大小组合，就可以组合出==<u>不同形状、不同拓扑</u>==的shape template
-  - 使用10，25，100个不同的elements训练的效果
-    ![image-20201207235340273](media/image-20201207235340273.png)
+  - 使用10，25，100个不同的elements训练的效果<br>![image-20201207235340273](media/image-20201207235340273.png)
 - 隐式的shape表征：
-
   - 假定每一个input shape都可以建模为一个watertight surface，由一个函数的 $`\mathcal{l}`$ level set描述（l-等值面集）；
   - 这个函数可以由N个local elements构成
   - 每个elements是一个 _scaled axis-aligned anisotropic 3D Gaussians_ 
     <br>由参数$`\theta_i`$描述，$`\theta_i`$包含$`c_i, p_i \in \mathbb{R}^3, r_i \in \mathbb{R}^3`$
-    ![image-20201208000148898](media/image-20201208000148898.png)
+    <br>![image-20201208000148898](media/image-20201208000148898.png)
 
 </details>
 
@@ -166,7 +164,6 @@ learning generalized templates comprised of elements
 
 - ![image-20201208004500075](media/image-20201208004500075.png)
 - **Motivation**
-  
   - represents a surface as a collection of parametric surface elements
     <br>把一个表面表征为一组parametric surface元素的集合
 - **overview**
@@ -174,13 +171,11 @@ learning generalized templates comprised of elements
   - ![image-20201208004950236](media/image-20201208004950236.png)
   - pointcloud基线，是把一个latent shape code输出为一组点
   - 本篇方法，额外输入一个从均匀单位方内采样的2D坐标点，用其来产生surface上的一个single point
-  
     - 从点云/数据中学出这种`2-manifold`（i.e. [two-dimensional manifolds](https://www2.cs.duke.edu/courses/fall06/cps296.1/Lectures/sec-II-1.pdf)，二维流形）的parameterization
     - 属于parametric approaches 分支
     - ==**<u>这里本质上就是一个从二维均匀分布到空间二维流形分布的映射，condition on一个shape code</u>**==
   - 很容易扩展多次，来把一个3D shape表征为几个surface 元素的联合
 - 局部参数化表面的生成 locally parameterized surface generation
-
   - 把surface看做一个广义的2-manifold（允许self-intersection & disjoint sets），考虑局部的参数化<br>
     consider a `2-manifold` $`\mathcal{S}`$, a point $`\boldsymbol{p} \in \mathcal{S}`$, a `parameterization` $`\varphi`$ of $`\mathcal{S}`$ in a local neighborhood of $`\boldsymbol{p}`$
   - 假定这个局部参数化就是从单位方 $`]0,1[^2`$ 到2-manifold $`\mathcal{S}_{\theta}`$的映射 $`\varphi_{\theta}(x)`$ : $`\mathcal{S}_\theta=\varphi_{\theta}(]0,1[^2)`$
@@ -206,7 +201,6 @@ learning generalized templates comprised of elements
   <summary>Click to expand</summary>
 
 - **Result**
-  
   - 评价：可以看到学出来的曲面可以不是闭合的
   - ![image-20201207204146033](media/image-20201207204146033.png)
     ![image-20201207204206853](media/image-20201207204206853.png)
@@ -227,9 +221,7 @@ learning generalized templates comprised of elements
   - general structured templates
     <br>适用于各种类别的通用shape template学习方法（应对不同的形状、拓扑）
     - [ICCV2019] Learning shape templates with structured implicit functions.
-  
   - more generic surface representations
-  
     - meshes deform
       - [ECCV2018] Pixel2mesh: Generating 3d mesh models from single rgb images.
       - [ICCV2019] Pixel2mesh++: Multi-view 3d mesh generation via deformation
@@ -240,7 +232,6 @@ learning generalized templates comprised of elements
       - [2019]  Soft rasterizer: A differentiable renderer for image-based 3d reasoning
       - [2019] Pix2vex: Image-togeometry reconstruction using a smooth differentiable renderer.
       - [CVPR2019] Learning view priors for single-view 3d reconstruction.
-      
     - ==continuous 2D patches== 本篇类似：使用2D patch来作为UV parameterization
       - [CVPR2018] Atlasnet: A papiermch approach to learning 3d surface generation. 
 
@@ -294,10 +285,9 @@ learning generalized templates comprised of elements
   <summary>Click to expand</summary>
 
 - **Motivation**
-  - 用一个隐式函数来表达占用概率，从而可以实现任意分辨率的表达![image-20201203153023230](media/image-20201203153023230.png)
+  - 用一个隐式函数来表达占用概率，从而可以实现任意分辨率的表达<br>![image-20201203153023230](media/image-20201203153023230.png)
 - **主要框架**
-
-  - **多分辨率等值面提取技术** [Multiresolution IsoSurface Extraction (MISE)]![image-20201203153114826](media/image-20201203153114826.png)
+  - **多分辨率等值面提取技术** [Multiresolution IsoSurface Extraction (MISE)]<br>![image-20201203153114826](media/image-20201203153114826.png)
 
 </details>
 
@@ -316,7 +306,6 @@ learning generalized templates comprised of elements
   <summary>Click to expand</summary>
 
 - **Motivation**
-  
   - ![image-20201207222950762](media/image-20201207222950762.png)
   - implicit occupancy field![image-20201207195643392](media/image-20201207195643392.png)
 
