@@ -10,6 +10,8 @@
     - point set generation network (大多是auto-decoder结构，输出固定个数的点)
     - point cloud generation (GAN)
     - ![image-20201203153023230](media/image-20201203153023230.png)
+  - implicit field/feature + semantic information
+  - sitzmann inferring semantic 引文
 
 ## point set generation (fixed length)
 
@@ -147,7 +149,7 @@ GANS:
 
 </details>
 
-## differentiable mesh extraction / differentiable volumetric rendering
+## differentiable mesh extraction / differentiable volumetric rendering / implicit field isosurface (not watertight)
 
 SRN也算此行列；可以微分的ray marching
 
@@ -182,3 +184,10 @@ SRN也算此行列；可以微分的ray marching
   - 
 
 </details>
+
+## iso-surface generation / generative / GAN
+
+
+
+## implicit field/feature semantic information
+
