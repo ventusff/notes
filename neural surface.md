@@ -20,6 +20,64 @@
   - 拓扑不同的形状，只要顶点之间的连接关系保持不变，怎么位移顶点都无法得到
   - 当然，上述的“位移顶点位置”是一个粗糙的描述，具体在形变时是要符合一定规则的，即【<u>光滑同胚/微分同胚</u>】 [bilibili视频：[斯梅尔悖论；球内外翻转](https://www.bilibili.com/video/BV1k54y1R7J5) ]
 
+### 流形`manifold`，卡(坐标卡)`chart`，图册`atlas`
+
+[知乎](https://zhuanlan.zhihu.com/p/41563330)
+
+[wiki](https://en.wikipedia.org/wiki/Atlas_(topology)#Charts)
+
+- 同胚：`homeomorphism`
+  - 同胚是两个拓扑空间`topological space`之间的函数。
+  - a function $`f: X \rightarrow Y`$ between two topological spaces is a homeomorphism if:
+    - $`f`$ is a `bijection`   (i.e. `one-to-one` and `onto`)
+      $`f`$是一个双射，i.e.单射且满射
+    - $`f`$ is a continuous function
+    - the inverse function $`f^{-1}`$ is continuous
+  - e.g. 咖啡杯和甜甜圈这两个拓扑空间同胚
+- 流形`manifold`， 坐标卡`chart`，参数化`parameterization`，
+  - `2-manifold`(`two-dimensional manifold`)二维流形的定义：
+    - a subset $`\mathcal{S}`$ of $`\mathbb{R}^3`$ is a 2-manifold if
+      - for every point $`\boldsymbol{p} \in \mathcal{S}`$
+        there is an open set $`V`$ in $`\mathbb{R}^2`$ and an open set $`W`$ in $`\mathbb{R}^3`$ containing $`\boldsymbol{p}`$ 
+        such that $`U=\mathcal{S} \cap W`$ is homeomorphic to $`V`$
+        对于 $`\mathcal{S}`$中的任意一个点 $`\boldsymbol{p}`$ ，
+        都存在【$`\mathbb{R}^2`$ 中的一个开集$`V`$】(低维欧式空间中的一个开集) 和【$`\mathbb{R}^3`$中的包含点 $`\boldsymbol{p}`$ 一个开集$`W`$ 】
+        使得【$`\mathcal{S}`$和$`W`$ 的交集$`U`$】($`S`$的一个包含点$`p`$的开子集)与$`V`$同胚，这个同胚记为$`\varphi`$
+      - $`\varphi: U \rightarrow V`$
+      - $`(U,\varphi)`$ 叫做包含$`p`$的坐标卡
+      - 人话：
+        $`S`$的一个开子集和低维欧式空间的一个开子集同胚，那么$`S`$就是一个流形；
+        从$`S`$的一个开子集到低维欧式空间的开子集的同胚叫做`chart`坐标卡
+        坐标卡的逆(从低维欧式空间的开子集 到 $`S`$的一个开子集的同胚)叫做`paramterization`​参数化
+  - `manifold`理解：局部区域线性，与低维欧式空间拓扑同胚
+- `chart`
+  - A `chart` for a `topological space` *M* is a `homeomorphism` $`\varphi`$ from an open subset *U* of *M* to an open subset of a Euclidean space.
+    一个拓扑空间的坐标卡，就是这个拓扑空间的一个开子集到一个欧式空间的开子集的同胚
+  - the cart is traditionally recorded as the ordered pair $`(U,\varphi)`$ 
+- `image`像：
+  - 设$`f`$是一个从定义域$`X`$到值域$`Y`$的一个函数
+  - image of an element
+    If *x* is a member of *X*, then the image of *x* under *f*, denoted *f*(*x*), is the value of *f* when applied to *x.*
+  - image of a subset
+    the image of subset $`A \subseteq X`$ under *f*, denoted $`f[A]`$ is the subset of *Y* which can be defined as:
+    $`f[A] = \{f(x) \vert x \in A\}`$
+    when there is no risk of confusion, $`f[A]`$ is simply written as $`f(A)`$
+  - `inverse image / preimage`原像：
+    the preimage or inverse image of set $`B \subseteq Y`$ under *f* , denoted by $`f^{-1}[B]`$, is the subset of *X* defined by
+    $`f^{-1}[B]=\{x\in X \vert f(x) \in B\}`$
+- 图册`atlas`
+  - 图册是一族坐标卡
+  - a index family $`\{(U_\alpha,\varphi_{\alpha}):\alpha \in I \}`$ of charts on *M* which `covers` *M* (that is, $`\cup_{\alpha \in I} U_{\alpha}=M`$)
+  - 流形*M*上的一个图册是：
+    一族*M*上的卡$`\mathcal{A}=\{(U_{\alpha}, \varphi_{\alpha})\}`$ ，使得定义域盖住了整个*M* 
+
+### losses
+
+- chamfer loss
+  - chamfer distance
+  - ![image-20201208012017960](media/image-20201208012017960.png)
+  - ![image-20201208012035153](media/image-20201208012035153.png)
+
 ## implicit form / implicit field 与 parametric form 之间的转换
 
 
@@ -71,7 +129,7 @@
 **`"Learning Shape Templates with Structured Implicit Functions"`**  
 **[** `ICCV2019` **]** **[[paper]](https://arxiv.org/pdf/1904.06447.pdf)**  **[** :mortar_board: `Princeton` **]** **[** :office: `Google` **]**  
 **[**  `Kyle Genova`, `Forrester Cole`, ` Daniel Vlasic`, `Aaron Sarna`,  `William T. Freeman`, `Thomas Funkhouser` **]**  
-**[** _`canonical shape template`_ **]**  
+**[** _`general canonical shape template`_ **]**  
 
 learning generalized templates comprised of elements
 
@@ -103,7 +161,7 @@ learning generalized templates comprised of elements
 **`"AtlasNet: A Papier-Mâché Approach to Learning 3D Surface Generation"`**  
 **[** `CVPR2018` **]** **[[paper]](https://arxiv.org/pdf/1802.05384.pdf)** **[[web]](http://imagine.enpc.fr/~groueixt/atlasnet/)** **[[code]](https://github.com/ThibaultGROUEIX/AtlasNet)** **[[code-easy-to-understand]](https://github.com/ThibaultGROUEIX/AtlasNet/tree/V2.2)** **[** :mortar_board: `University` **]** **[** :office: `Adobe` **]**  
 **[**  `Thibault Groueix`  **]**  
-**[** _`abcd`_ **]**  
+**[** _`continous 2D patches`, `learning 2-manifold parameterization`, `2-manifold generation`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
@@ -119,10 +177,23 @@ learning generalized templates comprised of elements
   - pointcloud基线，是把一个latent shape code输出为一组点
   - 本篇方法，额外输入一个从均匀单位方内采样的2D坐标点，用其来产生surface上的一个single point
   
-    - 从点云/数据中学出这种`2-manifold`（i.e. `two-dimensional manifolds`，二维流形）的parameterization
+    - 从点云/数据中学出这种`2-manifold`（i.e. [two-dimensional manifolds](https://www2.cs.duke.edu/courses/fall06/cps296.1/Lectures/sec-II-1.pdf)，二维流形）的parameterization
     - 属于parametric approaches 分支
     - ==**<u>这里本质上就是一个从二维均匀分布到空间二维流形分布的映射，condition on一个shape code</u>**==
   - 很容易扩展多次，来把一个3D shape表征为几个surface 元素的联合
+- 局部参数化表面的生成 locally parameterized surface generation
+
+  - 把surface看做一个广义的2-manifold（允许self-intersection & disjoint sets），考虑局部的参数化
+    consider a `2-manifold` $`\mathcal{S}`$, a point $`\boldsymbol{p} \in \mathcal{S}`$, a `parameterization` $`\varphi`$ of $`\mathcal{S}`$ in a local neighborhood of $`\boldsymbol{p}`$
+  - 假定这个局部参数化就是从单位方 $`]0,1[^2`$ 到2-manifold $`\mathcal{S}_{\theta}`$的映射 $`\varphi_{\theta}(x)`$ : $`\mathcal{S}_\theta=\varphi_{\theta}(]0,1[^2)`$
+     让$`\mathcal{S}_{\theta}`$去估计/近似局部2-manifold $`S_{loc}`$
+  - i.e.寻找 参数$`\theta`$来最小化目标函数$`\min \limits_{\theta} \mathcal{L}(\mathcal{S}_\theta, \mathcal{S}_{loc})+\lambda\mathcal{R}(\theta)`$
+    上式的$`\mathcal{L}`$是两个2-manifold之间的loss，$`\mathcal{R}`$是参数$`\theta`$的正则化项；
+    实践中，计算的不是两个2-manifold之间的loss，<u>而是这两个2-manifold采样出的点集的chamfer 和 earth-mover距离</u>
+  - 证明了MLP+ReLU就可以产生2-manifolds
+  - 证明了MLP+ReLU产生的2-manifolds can be learned to 很好地近似 target 2-manifolds
+    用了universal representation theorum：
+    Approximation capabilities of multilayer feedforward networks. *Neural Networks*, 1991
 
 </details>
 
