@@ -52,7 +52,22 @@
   <summary>Click to expand</summary>
 
 - **Motivation**
-  - 
+
+</details>
+
+---
+
+**`<DPC> "Unsupervised Learning of Shape and Pose with Differentiable Point Clouds"`**  
+**[** `2018` **]** **[[paper]](https://abc.efg)** **[[code]](https://www.github.com)** **[** :mortar_board: `MPI` **]** **[** :office: `Intel` **]**  
+**[**  `Eldar Insafutdinov`, `Alexey Dosovitskiy`  **]**  
+**[** _`abcd`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - from unlabeled category-specific images to 3D shape + camera pose
+  - 直接用MLP输出点云集
 
 </details>
 
@@ -61,7 +76,7 @@
 ---
 
 **`<tree-GAN> "3D Point Cloud Generative Adversarial Network Based on Tree Structured Graph Convolutions"`**  
-**[** `ICCV2019` **]** **[[paper]](https://openaccess.thecvf.com/content_ICCV_2019/papers/Shu_3D_Point_Cloud_Generative_Adversarial_Network_Based_on_Tree_Structured_ICCV_2019_paper.pdf)** **[[code]](https:// github.com/seowok/TreeGAN)** **[** :mortar_board: `(Korea)Chung-Ang University` **]**   
+**[** `ICCV2019` **]** **[[paper]](https://openaccess.thecvf.com/content_ICCV_2019/papers/Shu_3D_Point_Cloud_Generative_Adversarial_Network_Based_on_Tree_Structured_ICCV_2019_paper.pdf)** **[[supp]](https://openaccess.thecvf.com/content_ICCV_2019/supplemental/Shu_3D_Point_Cloud_ICCV_2019_supplemental.pdf)** **[[code]](https:// github.com/seowok/TreeGAN)** **[** :mortar_board: `(Korea)Chung-Ang University` **]**   
 **[**  `Dong Wook Shu`  **]**  
 **[** _`abcd`_ **]**  
 
@@ -69,7 +84,9 @@
   <summary>Click to expand</summary>
 
 - **Motivation**
-  - 
+  
+  - ![image-20201207194307508](media/image-20201207194307508.png)
+  - tree结构的GCN![image-20201207194208941](media/image-20201207194208941.png)
 
 </details>
 
@@ -114,40 +131,9 @@ GANS:
 
 </details>
 
----
+- occupancy networks: 多分辨率等值面提取技术
 
-**`"Occupancy Networks: Learning 3D Reconstruction in Function Space"`**  
-**[** `CVPR2019` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2019/papers/Mescheder_Occupancy_Networks_Learning_3D_Reconstruction_in_Function_Space_CVPR_2019_paper.pdf)** **[[code]](https://github.com/autonomousvision/occupancy_networks)** **[** :mortar_board: `MPI,University of Tubingen ` **]** **[** :office: `Google AI Berlin` **]**  
-**[**  `Lars Mescheder，Andreas Geiger `  **]**  
-**[** _`continuous function occupancy, multi-resolution isosurface extraction`_ **]**  
 
-<details>
-  <summary>Click to expand</summary>
-
-- **Motivation**
-  - 用一个隐式函数来表达占用概率，从而可以实现任意分辨率的表达![image-20201203153023230](media/image-20201203153023230.png)
-- **主要框架**
-
-  - **多分辨率等值面提取技术** [Multiresolution IsoSurface Extraction (MISE)]![image-20201203153114826](media/image-20201203153114826.png)
-
-</details>
-
----
-
-**`"Learning Implicit Fields for Generative Shape Modeling"`**  
-**[** `CVPR2019` **]** **[[paper]](https://abc.efg)** **[[code]](https://www.github.com)** **[** :mortar_board: `SFU` **]**   
-**[**  `Zhiqin Chen,Hao Zhang `  **]**  
-**[** _`implicit shape representation`_ **]**  
-
-<details>
-  <summary>Click to expand</summary>
-
-- **Motivation**
-  - 其实是一种类别级别的连续函数隐式的shape表征，类似occupancy networks；
-    输入code + one point 坐标，输出在shape 内；外；（类似SDF）
-  - ![image-20201203174748033](media/image-20201203174748033.png)
-
-</details>
 
 ## differentiable mesh extraction / differentiable volumetric rendering / implicit field isosurface (not watertight)
 
@@ -191,3 +177,43 @@ SRN也算此行列；可以微分的ray marching
 
 ## implicit field/feature semantic information
 
+
+
+## general thoughts
+
+### 很有启发性的 [course book](https://people.cs.clemson.edu/~dhouse/courses/405/notes/implicit-parametric.pdf)  
+
+- 一个球面形状的隐式形式和参数化形式：`implicit form` & `parametric form`![image-20201207201258315](media/image-20201207201258315.png)
+- implicit的形式无法直接通过其生成点，但是一般可以通过test来判断点在object内还是object外，对于ray-tracing非常友好
+  - ![image-20201207204020330](media/image-20201207204020330.png)
+- parametric的形式可以直接通过其生成surface上的点，对于OpenGL等方法很有帮助
+  - ![image-20201207204043660](media/image-20201207204043660.png)
+
+### implicit form 与 parametric form 之间的转换
+
+
+
+### learning parametric surface / converting from implicit field
+
+- keyword
+  - neural parametric surface
+
+---
+
+**`"Pix2Surf: Learning Parametric 3D Surface Models of Objects from Images"`**  
+**[** `ECCV2020` **]** **[[paper]](https://arxiv.org/pdf/2008.07760.pdf)** **[[supp]](https://geometry.stanford.edu/projects/pix2surf/pub/pix2surf_supp.pdf)** **[[web]](https://geometry.stanford.edu/projects/pix2surf/)** **[[code]](https://github.com/JiahuiLei/Pix2Surf)** **[** :mortar_board: `Zhejiang University`, `Stanford` **]** **[** :office: `Adobe` **]**  
+**[**  `Jiahui Lei`, `Srinath Sridhar`, `Niloy Mitra`, `Leonidas J. Guibas`  **]**  
+**[** _`parametric 3D shape/parameterization`, `3D reconstruction`, `multi-view`, `single-view`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Result**
+  
+  - 评价：可以看到学出来的曲面可以不是闭合的
+  - ![image-20201207204146033](media/image-20201207204146033.png)
+    ![image-20201207204206853](media/image-20201207204206853.png)
+- **Motivation**
+  - 
+
+</details>

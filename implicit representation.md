@@ -4,10 +4,9 @@
 
 ---
 
-**`"GRF: LEARNING A GENERAL RADIANCE FIELD FOR
-3D SCENE REPRESENTATION AND RENDERING"`**  
+**`"GRF: LEARNING A GENERAL RADIANCE FIELD FOR 3D SCENE REPRESENTATION AND RENDERING"`**  
 **[** `ICLR2021` **]** **[[paper]](https://arxiv.org/pdf/2010.04595.pdf)** **[[code]](https://github.com/alextrevithick/GRF)** **[** :mortar_board: `Oxford` **]** **[** :office: `company` **]**  
-**[**  `Bo Yang`  **]**  
+**[**  `Alex Trevithick`, `Bo Yang`  **]**  
 **[** _`encoder-decoder`_ **]**  
 
 <details>
@@ -51,8 +50,38 @@
 <details>
   <summary>Click to expand</summary>
 
+- **评价**
+
+
+  - 和GRF思路类似；每个点除了空间坐标以外，还额外condition一个feature，这个feature来自于把这个点重投影到input view之后索引出的input view feature space下的feature
+  - 作者评价的与GRF的区别
+
+    - 本篇在view下操作，而不像GRF那样在canonical space下操作，因此本文方法可以适用于更一般的设定；
+    - 本文方法的效果更好（笔者注：从web 视频来看，在少量view输入合成任务下的效果非常好）
+
 - **Motivation**
-  - 
+
+  - image-conditioned NeRF
+
+    - >  To overcome the NeRF representation’s inability to share knowledge between scene
+
+    - 为了克服NeRF这样的表达不能在scene与scene之间保留/共享知识的问题（NeRF每次都要train from scratch）
+
+    - condition a NeRF on spatial image features
+
+  - 在训练时不需要一个一致的标准正视图坐标系![image-20201207190826404](media/image-20201207190826404.png)
+
+- **Main components**
+
+
+  - 全卷积图像encoder E
+
+    - 把输入图像encode进入一个pixel aligned 特征grid
+  - NeRF 网络 f
+
+    - 给定一个空间位置、encoded feature（位于重投影后的在图片上的坐标）
+    - 输出color + density
+  - ![image-20201207191400152](media/image-20201207191400152.png)
 
 </details>
 
