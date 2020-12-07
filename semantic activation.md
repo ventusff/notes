@@ -44,8 +44,8 @@
 ---
 
 **`"A Point Set Generation Network for 3D Object Reconstruction from a Single Image"`**  
-**[** `2016` **]** **[[paper]](https://arxiv.org/pdf/1612.00603.pdf)** **[[code]](https://github.com/fanhqme/PointSetGeneration)** **[** :mortar_board: `Tsinghua, Stanford` **]**   
-**[**  `Haoqiang Fan,Hao Su,Leonidas Guibas  `  **]**  
+**[** `2016` **]** **[[paper]](https://arxiv.org/pdf/1612.00603.pdf)** **[[code]](https://github.com/fanhqme/PointSetGeneration)** **[** :mortar_board: `Tsinghua` , `Stanford` **]**   
+**[**  `Haoqiang Fan`, `Hao Su`, `Leonidas Guibas  `  **]**  
 **[** _`point set generation`_ **]**  
 
 <details>
@@ -58,7 +58,7 @@
 ---
 
 **`<DPC> "Unsupervised Learning of Shape and Pose with Differentiable Point Clouds"`**  
-**[** `2018` **]** **[[paper]](https://abc.efg)** **[[code]](https://www.github.com)** **[** :mortar_board: `MPI` **]** **[** :office: `Intel` **]**  
+**[** `2018` **]** **[[paper]](https://arxiv.org/pdf/1810.09381.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `MPI` **]** **[** :office: `Intel` **]**  
 **[**  `Eldar Insafutdinov`, `Alexey Dosovitskiy`  **]**  
 **[** _`abcd`_ **]**  
 
@@ -133,45 +133,11 @@ GANS:
 
 - occupancy networks: 多分辨率等值面提取技术
 
+## continuous function representation (ray tracing)
 
+- DVR
 
-## differentiable mesh extraction / differentiable volumetric rendering / implicit field isosurface (not watertight)
-
-SRN也算此行列；可以微分的ray marching
-
----
-
-**`"MeshSDF: Differentiable Iso-Surface Extraction"`**  
-**[** `NeurIPS2020` **]** **[[paper]](https://arxiv.org/pdf/2006.03997.pdf)** **[[code]](https://github.com/cvlab-epfl/MeshSDF)** **[** :mortar_board: `EPFL` **]** **[** :office: `Neuralconcept`, `Intel` **]**  
-**[**  `Edoardo Remelli`, `Pascal Fua `   **]**  
-**[** _`differentiable iso-surface extraction`_  **]**  
-
-[differentiable iso-surface extraction]
-
-<details>
-  <summary>Click to expand</summary>
-
-- **Motivation**
-  - 
-
-</details>
-
----
-
-**`<DVR> "Differentiable Volumetric Rendering: Learning Implicit 3D Representations without 3D Supervision"`**  
-**[** `CVPR2020` **]** **[[paper]](https://arxiv.org/pdf/1912.07372.pdf)** **[[code]](https://github.com/autonomousvision/differentiable_volumetric_rendering)** **[** :mortar_board: `MPI`,`University of Tubingen` **]**   
-**[** `Michael Niemeyer,Andreas Geiger ` **]**  
-**[**  _`differentiable volumetric rendering`_ **]**  
-
-<details>
-  <summary>Click to expand</summary>
-
-- **Motivation**
-  - 
-
-</details>
-
-## iso-surface generation / generative / GAN
+## iso-surface / parametric generation / generative / GAN
 
 
 
@@ -179,41 +145,3 @@ SRN也算此行列；可以微分的ray marching
 
 
 
-## general thoughts
-
-### 很有启发性的 [course book](https://people.cs.clemson.edu/~dhouse/courses/405/notes/implicit-parametric.pdf)  
-
-- 一个球面形状的隐式形式和参数化形式：`implicit form` & `parametric form`![image-20201207201258315](media/image-20201207201258315.png)
-- implicit的形式无法直接通过其生成点，但是一般可以通过test来判断点在object内还是object外，对于ray-tracing非常友好
-  - ![image-20201207204020330](media/image-20201207204020330.png)
-- parametric的形式可以直接通过其生成surface上的点，对于OpenGL等方法很有帮助
-  - ![image-20201207204043660](media/image-20201207204043660.png)
-
-### implicit form 与 parametric form 之间的转换
-
-
-
-### learning parametric surface / converting from implicit field
-
-- keyword
-  - neural parametric surface
-
----
-
-**`"Pix2Surf: Learning Parametric 3D Surface Models of Objects from Images"`**  
-**[** `ECCV2020` **]** **[[paper]](https://arxiv.org/pdf/2008.07760.pdf)** **[[supp]](https://geometry.stanford.edu/projects/pix2surf/pub/pix2surf_supp.pdf)** **[[web]](https://geometry.stanford.edu/projects/pix2surf/)** **[[code]](https://github.com/JiahuiLei/Pix2Surf)** **[** :mortar_board: `Zhejiang University`, `Stanford` **]** **[** :office: `Adobe` **]**  
-**[**  `Jiahui Lei`, `Srinath Sridhar`, `Niloy Mitra`, `Leonidas J. Guibas`  **]**  
-**[** _`parametric 3D shape/parameterization`, `3D reconstruction`, `multi-view`, `single-view`_ **]**  
-
-<details>
-  <summary>Click to expand</summary>
-
-- **Result**
-  
-  - 评价：可以看到学出来的曲面可以不是闭合的
-  - ![image-20201207204146033](media/image-20201207204146033.png)
-    ![image-20201207204206853](media/image-20201207204206853.png)
-- **Motivation**
-  - 
-
-</details>

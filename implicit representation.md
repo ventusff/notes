@@ -74,14 +74,14 @@
 - **Main components**
 
 
-  - 全卷积图像encoder E
+    - 全卷积图像encoder E
 
-    - 把输入图像encode进入一个pixel aligned 特征grid
-  - NeRF 网络 f
+      - 把输入图像encode进入一个pixel aligned 特征grid
+    - NeRF 网络 f
 
-    - 给定一个空间位置、encoded feature（位于重投影后的在图片上的坐标）
-    - 输出color + density
-  - ![image-20201207191400152](media/image-20201207191400152.png)
+      - 给定一个空间位置、encoded feature（位于重投影后的在图片上的坐标）
+      - 输出color + density
+    - ![image-20201207191400152](media/image-20201207191400152.png)
 
 </details>
 
