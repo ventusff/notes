@@ -73,6 +73,12 @@
   - a index family $`\{(U_\alpha,\varphi_{\alpha}):\alpha \in I \}`$ of charts on *M* which `covers` *M* (that is, $`\cup_{\alpha \in I} U_{\alpha}=M`$)
   - 流形*M*上的一个图册是：
     一族*M*上的卡$`\mathcal{A}=\{(U_{\alpha}, \varphi_{\alpha})\}`$ ，使得定义域盖住了整个*M* 
+- `disk-topology`圆盘拓扑
+  - `disk`, also spelled as `disc`
+    - the region in a plane bounded by a circle
+    - 在cartesian coordinates下的：`open disk`<br>$`D=\{(x,y)\in \mathbb{R}^2: (x-a)^2+(y-b)^2<R^2\}`$
+    - `closed disk`<br>$`D=\{(x,y)\in \mathbb{R}^2: (x-a)^2+(y-b)^2 \leq R^2\}`$
+  - a surface **homeomorphic** to a disc in a plane
 
 ### losses
 
@@ -171,6 +177,8 @@ learning generalized templates comprised of elements
 - **Motivation**
   - represents a surface as a collection of parametric surface elements
     <br>把一个表面表征为一组parametric surface元素的集合
+  - 学到的一族从单位方到局部 2-流形的映射，非常类似一个surface 的 atlas 图册
+  - 每一个3D点最终都可以得到一个2D UV值
 - **overview**
   
   - ![image-20201208004950236](media/image-20201208004950236.png)
@@ -192,6 +200,11 @@ learning generalized templates comprised of elements
   - 证明了MLP+ReLU产生的2-manifolds can be learned to 很好地近似 target 2-manifolds
     <br>用了universal representation theorum：<br>
     Approximation capabilities of multilayer feedforward networks. *Neural Networks*, 1991
+- related work:  learning representations for 2-manifolds
+
+  - polygon mesh
+  - 建立一套3D shape和2D domain之间的连接是几何处理的一个存在已久的问题，它的应用有：texture mapping, re-meshing, shape correspondance
+  - 过去的方法需要input data就是parameterized；本篇直接从点云中学出这种parameterization
 
 </details>
 
@@ -209,10 +222,11 @@ learning generalized templates comprised of elements
   - 评价：可以看到学出来的曲面可以不是闭合的
   - ![image-20201207204146033](media/image-20201207204146033.png)
     ![image-20201207204206853](media/image-20201207204206853.png)
+  
 - **Motivation**
   - learning to generate 3D parametric surface representations for novel object instances, as seen from one or more views
   - 使用2D patch来作为UV parameterization，处理多个non-adjacent views，并且建立2D pixels和3D surface points之间的correspondence
-  - 用implicit functions表达的surface，想要得到显式的表面，需要昂贵的后处理步骤：如Marching Cubes
+  - 那些用implicit functions表达的surface，想要得到显式的表面，需要昂贵的后处理步骤：如Marching Cubes；本文直接学习生成显式的表面
 
 - **主要贡献**
   - high-quality parametric surfaces 遵循multi view一致性
@@ -238,7 +252,72 @@ learning generalized templates comprised of elements
       - [2019] Pix2vex: Image-togeometry reconstruction using a smooth differentiable renderer.
       - [CVPR2019] Learning view priors for single-view 3d reconstruction.
     - ==continuous 2D patches== 本篇类似：使用2D patch来作为UV parameterization
-      - [CVPR2018] Atlasnet: A papiermch approach to learning 3d surface generation. 
+      - [CVPR2018] Atlasnet: A papier-mâché approach to learning 3d surface generation. 
+      - AtlasNet for video clip <br>[CVPR2019] Photometric mesh optimization for video-aligned 3d object reconstruction.
+      - introduce topology modification to atlasnet <br>[ICCV2019] Deep mesh reconstruction from single rgb images via topology modification networks
+  
+- **preliminaries**
+
+
+  - NOCS
+
+    - 可以预测出一张图片的nocs map和mask
+  - surface parameterization
+
+    - 表面的UV参数化即一个`chart`
+    - 用一组全连接网络学习多个`chart`
+
+- overview
+
+
+  - ==注意==：不同于atlas net，uv不是来自于均匀采样，而是来自于一个learned network，uv predictor<br>所以是先预测出图像每个像素的uv值，再把图像上属于这个物体的uv值集合和图像的feature 拼接一起来 输出 三维点集合(二维流形的三维点坐标集)<br>
+
+  - ```mermaid
+    graph LR
+    	img[image coordinate] -.per index prediction.-> uv[uv value] --> MLP
+    	image --> z[global latent code z] --> MLP
+    	MLP --> 3d[3D surface coordinate]
+    ```
+
+  - <br>![image-20201208103708582](media/image-20201208103708582.png)
+
+- single view single chart pix2surf
+
+
+  - NOCS-UV branch
+
+    - 在过去的NOCS输出上额外加两个channel，输出uv值
+    - uv不是均匀采样来的，而是直接从图像预测出一张2-channel uv image <br>![image-20201208101930111](media/image-20201208101930111.png)
+    - 发现可以emergence of a chart，并且这个chart几乎已经multi view consistent，multi object consistent
+
+      - 即网络可以自己学出来如何把一个物体shape unrap到一个flat 空间
+    - code-extractor 一个小CNN
+
+      - 单张图片输入，输出一个global latent code z
+    - UV amplifier
+
+      - 因为UV坐标只有2维，而global latent code z维度很大，这两个信息不平衡
+      - 所以就是用一组MLP先把UV升维
+  - SP(surface parameterization) branch
+
+    - 类似atlas net，以升维后的UV和global latent code的拼接为输入，输出三维点坐标
+    - 与atlas net的不同：
+
+      - uv升维了
+      - 有一个learned chart，建立起图像坐标和3D surface坐标的直接相关
+      - uv不是来自于均匀采样，而是从一个网络学出来的（即上面的NOCS-UV branch）
+    - 输出的三维点坐标位于NOCS空间
+  - loss / train
+
+    - NOCS map的真值
+    - 3D surface point的真值（从shapenet 3d model直接得到）
+    - 其余都是端到端的
+
+- multi view atlas pix2surf
+
+
+  - 不同view的latent code取max pooling，max pooled code和该view的code concat在一起
+  - 从一个view的pixel的NOCS map的真值，找到这个真值在另一个view下的绝对对应pixel位置<br>最小化这两个pixel预测出的3D 点距离，即为所定义的multi view consistency loss<br>![image-20201208105212477](media/image-20201208105212477.png)
 
 </details>
 
