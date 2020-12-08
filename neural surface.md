@@ -30,26 +30,28 @@
   - 同胚是两个拓扑空间`topological space`之间的函数。
   - a function $`f: X \rightarrow Y`$ between two topological spaces is a homeomorphism if:
     - $`f`$ is a `bijection`   (i.e. `one-to-one` and `onto`)
-      $`f`$是一个双射，i.e.单射且满射
+      <br>$`f`$是一个双射，i.e.单射且满射
     - $`f`$ is a continuous function
     - the inverse function $`f^{-1}`$ is continuous
   - e.g. 咖啡杯和甜甜圈这两个拓扑空间同胚
-- 流形`manifold`， 坐标卡`chart`，参数化`parameterization`，
+- 流形`manifold`， 坐标卡`chart`，参数化`parameterization`
+  - 流形是一个拓扑空间
   - `2-manifold`(`two-dimensional manifold`)二维流形的定义：
     - a subset $`\mathcal{S}`$ of $`\mathbb{R}^3`$ is a 2-manifold if
       - for every point $`\boldsymbol{p} \in \mathcal{S}`$
         <br>there is an open set $`V`$ in $`\mathbb{R}^2`$ and an open set $`W`$ in $`\mathbb{R}^3`$ containing $`\boldsymbol{p}`$ <br> such that $`U=\mathcal{S} \cap W`$ is homeomorphic to $`V`$
         <br>对于 $`\mathcal{S}`$中的任意一个点 $`\boldsymbol{p}`$ ，
-        <br>都存在【$`\mathbb{R}^2`$ 中的一个开集$`V`$】(低维欧式空间中的一个开集) 和【$`\mathbb{R}^3`$中的包含点 $`\boldsymbol{p}`$ 一个开集$`W`$ 】<br>
-        使得【$`\mathcal{S}`$和$`W`$ 的交集$`U`$】($`S`$的一个包含点$`p`$的开子集)与$`V`$同胚
+        <br>都存在$`{[\mathbb{R}^2中的一个开集V]}_{欧式空间中的一个开子集}`$  和$`{[\mathbb{R}^3中的包含点\boldsymbol{p}的一个开集W}]`$ <br>
+        使得$`{[\mathcal{S}和W的交集U]}_{\mathcal{S}的一个包含点\boldsymbol{p}的开子集}`$与$`V_{欧式空间的一个开子集}`$同胚
       - 这个同胚记为$`\varphi: U \rightarrow V`$，有序对 $`(U,\varphi)`$ 叫做包含$`p`$的坐标卡
-      - 人话：<br>
-        $`S`$的一个开子集和低维欧式空间的一个开子集同胚，那么$`S`$就是一个流形；<br>
-        从$`S`$的一个开子集到低维欧式空间的开子集的同胚叫做`chart`坐标卡
-        <br>坐标卡的逆(从低维欧式空间的开子集 到 $`S`$的一个开子集的同胚)叫做`paramterization`参数化
-  - `manifold`理解：局部区域线性，与低维欧式空间拓扑同胚
+  - 人话
+    - $`S`$的一个开子集和欧式空间的一个开子集同胚，那么$`S`$就是一个流形
+    - 从$`S`$的一个开子集到欧式空间的开子集的同胚叫做`chart`坐标卡
+    - 坐标卡的逆(从低维欧式空间的开子集 到 $`S`$的一个开子集的同胚)叫做`paramterization`参数化
+  - `manifold`理解：局部区域线性，与(低维)欧式空间拓扑同胚
   - “自由度”的理解：<br>一个m维空间的中的曲线/曲面有n个自由度，其实严格数学定义指的是这个曲面/曲线是一个n维流形，与某一个n维欧式空间(局部)同胚
 - `chart`
+  - 坐标卡是一个同胚。
   - A `chart` for a `topological space` *M* is a `homeomorphism` $`\varphi`$ from an open subset *U* of *M* to an open subset of a Euclidean space.
     <br>一个拓扑空间的坐标卡，就是这个拓扑空间的一个开子集到一个欧式空间的开子集的同胚
   - the chart is traditionally recorded as the ordered pair $`(U,\varphi)`$ <br>坐标卡一般用有序对$`(U,\varphi)`$表示
@@ -64,8 +66,8 @@
   - `inverse image / preimage`原像：
     <br>the preimage or inverse image of set $`B \subseteq Y`$ under *f* , denoted by $`f^{-1}[B]`$, is the subset of *X* defined by<br>
     $`f^{-1}[B]=\{x\in X \vert f(x) \in B\}`$
-- 图册`atlas`
-  - 图册是一族坐标卡
+- `atlas`图册
+  - 图册是一族坐标卡。
   - a index family $`\{(U_\alpha,\varphi_{\alpha}):\alpha \in I \}`$ of charts on *M* which `covers` *M* (that is, $`\cup_{\alpha \in I} U_{\alpha}=M`$)
   - 流形*M*上的一个图册是：
     一族*M*上的卡$`\mathcal{A}=\{(U_{\alpha}, \varphi_{\alpha})\}`$ ，使得定义域盖住了整个*M* 
