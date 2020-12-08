@@ -210,6 +210,32 @@ learning generalized templates comprised of elements
 
 ---
 
+**`"Deep Mesh Reconstruction from Single RGB Images
+via Topology Modification Networks"`**  
+**[** `CVPR2019` **]** **[[paper]](https://arxiv.org/pdf/1909.00321.pdf)**  **[** :mortar_board: `CUHK(Shenzhen)`, `USC` **]**   
+**[**  `Junyi Pan`, `Xiaoguang Han`, `Weikai Chen`, `Jiapeng Tang`, `Kui Jia`  **]**  
+**[** _`topology modification`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - <br>![image-20201208110645619](media/image-20201208110645619.png)
+  - 优化的时候，可以alternates between shape deformation和topology modification
+- **overview**
+  - topology modification
+    - 通过动态地修改 faces-to-vertices关系来实现
+    - 学一个per face error estimation network
+    - 通过去掉那些deviate significantly的face来更新topology structure
+- 效果
+
+  - ![image-20201208111115100](media/image-20201208111115100.png)
+  - ![image-20201208111142570](media/image-20201208111142570.png)
+
+</details>
+
+---
+
 **`"Pix2Surf: Learning Parametric 3D Surface Models of Objects from Images"`**  
 **[** `ECCV2020` **]** **[[paper]](https://arxiv.org/pdf/2008.07760.pdf)** **[[supp]](https://geometry.stanford.edu/projects/pix2surf/pub/pix2surf_supp.pdf)** **[[web]](https://geometry.stanford.edu/projects/pix2surf/)** **[[code(trained)]](https://github.com/JiahuiLei/Pix2Surf)** **[** :mortar_board: `Zhejiang University`, `Stanford`, `UCL` **]** **[** :office: `Adobe` **]**  
 **[**  `Jiahui Lei`, `Srinath Sridhar`, `Niloy Mitra`, `Leonidas J. Guibas`  **]**  
