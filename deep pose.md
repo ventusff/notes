@@ -119,12 +119,10 @@
   <summary>Click to expand</summary>
 
 - 2017年的认知：大多数这类任务是用的pose分类问题，把pose space分成离散的bins，用CNN分类器
-
   - 所以作者要用CNN regression framework
   - 主要针对的还是 pose estimation问题
   - 挑战在于：3D pose space是非欧几里得的，因此CNN算法需要修改来应对输出空间的非线性
 - **主要贡献**
-
   - 设计了一个CNN框架来解决连续域下的pose 估计问题，通过设计一个尊重3D pose 空间非线性结构的合适的表征、数据增强和loss函数
 - **具体细节**
   - 网络
