@@ -48,10 +48,11 @@
         从$`S`$的一个开子集到低维欧式空间的开子集的同胚叫做`chart`坐标卡
         <br>坐标卡的逆(从低维欧式空间的开子集 到 $`S`$的一个开子集的同胚)叫做`paramterization`参数化
   - `manifold`理解：局部区域线性，与低维欧式空间拓扑同胚
+  - “自由度”的理解：<br>一个m维空间的中的曲线/曲面有n个自由度，其实严格数学定义指的是这个曲面/曲线是一个n维流形，与某一个n维欧式空间(局部)同胚
 - `chart`
   - A `chart` for a `topological space` *M* is a `homeomorphism` $`\varphi`$ from an open subset *U* of *M* to an open subset of a Euclidean space.
     <br>一个拓扑空间的坐标卡，就是这个拓扑空间的一个开子集到一个欧式空间的开子集的同胚
-  - the cart is traditionally recorded as the ordered pair $`(U,\varphi)`$ 
+  - the chart is traditionally recorded as the ordered pair $`(U,\varphi)`$ <br>坐标卡一般用有序对$`(U,\varphi)`$表示
 - `image`像：
   - 设$`f`$是一个从定义域$`X`$到值域$`Y`$的一个函数
   - image of an element
