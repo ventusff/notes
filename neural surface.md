@@ -89,6 +89,29 @@
 
 ## implicit form / implicit field 与 parametric form 之间的转换
 
+[nice coursebook](http://graphics.stanford.edu/courses/cs348a-20-winter/Handouts/a228715.pdf)
+
+[mathstackexchange](https://math.stackexchange.com/questions/904782/is-there-a-general-way-to-parameterize-all-implicit-functions)
+
+ - `monoid`, `monoidal` 幺半群/单位半群/具幺半群
+    - **幺半群**是一个带有二元运算 *: *M* × *M* → *M* 的集合 *M* ，其符合下列公理：
+       - 结合律：对任何在 *M* 内的*a*、*b*、*c* ， (*a*\**b*)\**c* = *a*\*(*b*\**c*) 。
+       - 单位元：存在一在 *M* 内的元素*e*，使得任一于 *M* 内的 *a* 都会符合 *a*\**e* = *e*\**a* = *a* 。
+    - 通常也会多加上另一个公理：
+       - 封闭性：对任何在 *M* 内的 *a* 、 *b* ， *a***b* 也会在 *M* 内。
+       - 但这不是必要的，因为在二元运算中即内含了此一公理。
+    - 幺半群除了没有[逆元素](https://zh.wikipedia.org/wiki/逆元素)之外，满足其他所有[群](https://zh.wikipedia.org/wiki/群)的公理。因此，一个带有逆元素的幺半群和群是一样的。
+- `monoidal surfaces`
+    - an algebraic surface $`f(x,y,z)=0`$ of degree _n_ that has an $`(n-1)-fold`$ point 
+    - monoidal surfaces包含了所有的quadrics, cubic surfaces with a double point, and Steiner surfaces
+
+### [parameterization] implicit form -> parametric form
+
+ - 没有已知的通用工具来判断一个给定的implicit surface是否可以被参数化，以及if so, how
+ - monoidal surfaces can be parameterized in a very simple manner
+
+### [implicitization] parametric form -> implicit form
+
 
 
 ## learning parametric surface

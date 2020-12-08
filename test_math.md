@@ -11,3 +11,8 @@ $ x_i' $
 三维旋转群的定义
 
 $SO(3)\dot=\{R:R \in \mathbb{R}^{3 \times 3}, R^TR=I_3, det(R)=1 \}$
+
+
+
+[local properties of algebraic curve](https://www3.risc.jku.at/education/courses/ss2017/caag/07-local.pdf)
+
