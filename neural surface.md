@@ -14,20 +14,21 @@
 
 ### 形状(geometry) 与 拓扑(topology)
 
-- 如果用mesh的数据结构来理解：
-  - 拓扑相同的几个形状，顶点之间的连接关系相同(不变)，互相之间可以直接通过顶点位移来变换得到；
+- 如果用mesh的数据结构来理解拓扑：
+  - 同形状代表相同的顶点位置和连接关系；同拓扑代表相同的顶点连接关系
+  - 若顶点之间的连接关系不变，可以通过顶点位移变化出的几个形状，互相之间是同拓扑的
     - 如甜甜圈和咖啡杯
   - 拓扑不同的形状，只要顶点之间的连接关系保持不变，怎么位移顶点都无法得到
   - 当然，上述的“位移顶点位置”是一个粗糙的描述，具体在形变时是要符合一定规则的，即【<u>光滑同胚/微分同胚</u>】 [bilibili视频：[斯梅尔悖论；球内外翻转](https://www.bilibili.com/video/BV1k54y1R7J5) ]
 
-### 流形`manifold`，卡(坐标卡)`chart`，图册`atlas`
+### `manifold`流形，`chart`卡(坐标卡)，`atlas`图册
 
 [知乎](https://zhuanlan.zhihu.com/p/41563330)
 
 [wiki](https://en.wikipedia.org/wiki/Atlas_(topology)#Charts)
 
 - `homeomorphism`同胚
-  - 同胚是两个`topological space`拓扑空间之间的函数。
+  - 同胚是两个`topological space`拓扑空间之间的函数
   - a function $`f: X \rightarrow Y`$ between two topological spaces is a homeomorphism if:
     - $`f`$ is a `bijection`   (i.e. `one-to-one` and `onto`)
       <br>$`f`$是一个双射，i.e.单射且满射
@@ -68,7 +69,7 @@
     <br>the preimage or inverse image of set $`B \subseteq Y`$ under *f* , denoted by $`f^{-1}[B]`$, is the subset of *X* defined by<br>
     $`f^{-1}[B]=\{x\in X \vert f(x) \in B\}`$
 - `atlas`图册
-  - 图册是一族坐标卡，一族同胚，一族函数，一族映射。
+  - 图册是一族坐标卡，一族同胚，一族函数，一族映射
   - a index family $`\{(U_\alpha,\varphi_{\alpha}):\alpha \in I \}`$ of charts on *M* which `covers` *M* (that is, $`\cup_{\alpha \in I} U_{\alpha}=M`$)
   - 流形*M*上的一个图册是：
     一族*M*上的卡$`\mathcal{A}=\{(U_{\alpha}, \varphi_{\alpha})\}`$ ，使得定义域盖住了整个*M* 
