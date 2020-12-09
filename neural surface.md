@@ -482,6 +482,27 @@ via Topology Modification Networks"`**
 
 </details>
 
+---
+
+**`"DISN: Deep Implicit Surface Network for
+High-quality Single-view 3D Reconstruction"`**  
+**[** `NeurIPS2019` **]** **[[paper]](https://arxiv.org/pdf/1905.10711.pdf)** **[[code]](https://github.com/laughtervv/DISN)** **[** :mortar_board: `University of Southern California` **]** **[** :office: `Adobe` **]**  
+**[**  `Weiyue Wang`, `Qiangeng Xu`, `Duygu Ceylan`, `Radomir Mech`, `Ulrich Neumann`  **]**  
+**[** _`SDF`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - 希望学到的shape，不仅全局特征好，还想有局部fine grained details 细粒度细节
+- **overview**
+
+  - 同时用global features和local features来infer SDF<br>![image-20201209122023941](media/image-20201209122023941.png)
+
+</details>
+
+
+
 ### ray-casting
 
 - SRN也算此行列；可以微分的ray marching
@@ -513,7 +534,6 @@ via Topology Modification Networks"`**
   <summary>Click to expand</summary>
 - **Motivation**
   - 
-
 </details>
 
 ## learning parameterization / implicitization
@@ -542,5 +562,33 @@ Deep Implicit Surface Networks"`**
   - ![image-20201209111706863](media/image-20201209111706863.png)
   - ![image-20201209105817256](media/image-20201209105817256.png)
   - ![image-20201209105846197](media/image-20201209105846197.png)
+
+</details>
+
+## tasks
+
+---
+
+**`"SkeletonNet: A Topology-Preserving Solution for
+Learning Mesh Reconstruction of Object
+Surfaces from RGB Images"`**  
+**[** `0000` **]** **[[paper]](https://abc.efg)** **[[code]](https://www.github.com)** **[** :mortar_board: `南方科技大学`, `CUHK` **]** **[** :office: `Microsoft Research Asia` **]**  
+**[**  `xxxx`  **]**  
+**[** _`skeleton-learning`, `topology preserving`, `GCN`, `implicit surface`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - 学习shape时保留本身的拓扑结构：先学skeleton，再从skeleton推shape
+- **overview**
+
+  - (skeleton-GCN) skeleton-based graph convolutional neural network
+  - (skeleton-DISN) skeleton-regularized deep implicit surface network
+
+    - 主要基于*Disn:Deep implicit surface network for high-quality single-view 3d reconstruction*，加入skeleton正则项
+- **效果**
+
+  - ![image-20201209120443432](media/image-20201209120443432.png)
 
 </details>
