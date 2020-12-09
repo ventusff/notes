@@ -1,4 +1,4 @@
-[toc]
+[[_TOC_]]
 
 ## math: implicit surface
 

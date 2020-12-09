@@ -1,4 +1,4 @@
-[toc]
+[[_TOC_]]
 
 - keyword
   - image segmentation

@@ -1,4 +1,4 @@
-[toc] 
+[[_TOC_]] 
 
 ## 关键词：NeRF引用中 带 encoder
 
