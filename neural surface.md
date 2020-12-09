@@ -518,3 +518,27 @@ via Topology Modification Networks"`**
 
 ## learning parameterization / implicitization
 
+---
+
+**`"Analytic Marching: An Analytic Meshing Solution from
+Deep Implicit Surface Networks"`**  
+**[** `ICML2020` **]** **[[paper]](http://proceedings.mlr.press/v119/lei20a/lei20a.pdf)** **[[supp]](http://proceedings.mlr.press/v119/lei20a/lei20a-supp.pdf)** **[** :mortar_board: `南方科技大学` **]** **[** :office: [`琶洲实验室`](https://www.pazhoulab.com/) **]**  
+**[**  `Jiabao Lei`, `Kui Jia贾奎`  **]**  
+**[** _`learning surface mesh via implicit field functions`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - deep learning领域出现了很多研究，surface 的implicit functions用MLP+ReLU实现
+  - 为了实现meshing **<u>(exactly recover meshes)</u>** from **<u>learned</u>** implicit functions (MLP+ReLU)
+    - 现有的方法采用的事实上都是标准的marching cubes采样算法；虽然效果还行，但是损失了学到的MLP的精确度，due to 离散化的本质
+    - 基于ReLU-based MLP 把input空间分为很多线性区域的事实，本篇把这些区域识别为analytic cells与analytic faces，与implicit function的零值等值面有关
+    - 推导了这些identified analytic faces在什么理论条件下可以保证形成一个闭合的、piecewise的planar surface
+    - 基于本篇的这些理论推导，提出了一个可并行化的算法，在这些analytic cells上做marching，来==**<u>exactly recover</u>**==这些由learned MLP学出来的mesh
+- **效果**
+
+  - ![image-20201209105817256](media/image-20201209105817256.png)
+  - ![image-20201209105846197](media/image-20201209105846197.png)
+
+</details>
