@@ -18,7 +18,7 @@
     - [2002]Purdue University - [Geometric and Solid Modeling - 几何与实体造型课程](https://www.cs.purdue.edu/homes/cmh/distribution/books/geo.html)
        - chapter 5 [Representation of Curved Edges and Faces](https://www.cs.purdue.edu/homes/cmh/distribution/books/chap5.pdf)
        - 有些不严谨，跳步很多，需要一定代数几何基础
-    - [2006] arXiv [monoid hypersurfaces](https://www.mn.uio.no/math/personer/vit/ragnip/monoids.pdf)
+    - [2006]arXiv [monoid hypersurfaces](https://www.mn.uio.no/math/personer/vit/ragnip/monoids.pdf)
 
 ###  surface: implicit form & parametric form  
 
@@ -389,40 +389,28 @@ via Topology Modification Networks"`**
   - <br>![image-20201208103708582](media/image-20201208103708582.png)
 
 - single view single chart pix2surf
-
-
   - NOCS-UV branch
-
     - 在过去的NOCS输出上额外加两个channel，输出uv值
     - uv不是均匀采样来的，而是直接从图像预测出一张2-channel uv image <br>![image-20201208101930111](media/image-20201208101930111.png)
     - 发现可以emergence of a chart，并且这个chart几乎已经multi view consistent，multi object consistent
-
       - 即网络可以自己学出来如何把一个物体shape unrap到一个flat 空间
     - code-extractor 一个小CNN
-
       - 单张图片输入，输出一个global latent code z
     - UV amplifier
-
       - 因为UV坐标只有2维，而global latent code z维度很大，这两个信息不平衡
       - 所以就是用一组MLP先把UV升维
   - SP(surface parameterization) branch
-
     - 类似atlas net，以升维后的UV和global latent code的拼接为输入，输出三维点坐标
     - 与atlas net的不同：
-
       - uv升维了
       - 有一个learned chart，建立起图像坐标和3D surface坐标的直接相关
       - uv不是来自于均匀采样，而是从一个网络学出来的（即上面的NOCS-UV branch）
     - 输出的三维点坐标位于NOCS空间
   - loss / train
-
     - NOCS map的真值
     - 3D surface point的真值（从shapenet 3d model直接得到）
     - 其余都是端到端的
-
 - multi view atlas pix2surf
-
-
   - 不同view的latent code取max pooling，max pooled code和该view的code concat在一起
   - 从一个view的pixel的NOCS map的真值，找到这个真值在另一个view下的绝对对应pixel位置<br>最小化这两个pixel预测出的3D 点距离，即为所定义的multi view consistency loss<br>![image-20201208105212477](media/image-20201208105212477.png)
 
@@ -496,7 +484,6 @@ High-quality Single-view 3D Reconstruction"`**
 - **Motivation**
   - 希望学到的shape，不仅全局特征好，还想有局部fine grained details 细粒度细节
 - **overview**
-
   - 同时用global features和local features来infer SDF<br>![image-20201209122023941](media/image-20201209122023941.png)
 
 </details>
@@ -557,7 +544,6 @@ Deep Implicit Surface Networks"`**
     - 推导了这些identified analytic faces在什么理论条件下可以保证形成一个闭合的、piecewise的planar surface
     - 基于本篇的这些理论推导，提出了一个可并行化的算法，在这些analytic cells上做marching，来==**<u>exactly recover</u>**==这些由learned MLP学出来的mesh
 - **效果**：解析解就是降维打击。精确度无限(exact 解) + CPU跑都比别人GPU跑快十几倍
-
   - ![image-20201209113035559](media/image-20201209113035559.png)
   - ![image-20201209111706863](media/image-20201209111706863.png)
   - ![image-20201209105817256](media/image-20201209105817256.png)
@@ -582,13 +568,10 @@ Surfaces from RGB Images"`**
 - **Motivation**
   - 学习shape时保留本身的拓扑结构：先学skeleton，再从skeleton推shape
 - **overview**
-
   - (skeleton-GCN) skeleton-based graph convolutional neural network
   - (skeleton-DISN) skeleton-regularized deep implicit surface network
-
     - 主要基于*Disn:Deep implicit surface network for high-quality single-view 3d reconstruction*，加入skeleton正则项
 - **效果**
-
   - ![image-20201209120443432](media/image-20201209120443432.png)
 
 </details>
