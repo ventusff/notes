@@ -17,7 +17,7 @@
         - 也正因如此，只要我们能够显式地解析出神经元的激活关系，就可以解析地找出MLP零值面对应的polygon <br>见[Analytic Marching: An Analytic Meshing Solution from
           Deep Implicit Surface Networks](http://proceedings.mlr.press/v119/lei20a/lei20a.pdf)
     - ![image-20201209162429622](media/image-20201209162429622.png)
-    - 上图是一个很好地复杂神经元MLP构成的<u>空间三元数量值函数</u>所实际学习到的东西的展示
+    - 上图是一个很好的复杂中间层的MLP+ReLU构成的<u>空间三元数量值函数</u>所实际学习到的东西的展示
       - MLP所学习到的，确实只是一段段线性的线段/平面/超平面，是一个分段函数；
       - 这个分段函数，可以是闭合的，也可以是开的；就像线性规划里的多个不等式既可以围成一个闭合的区域也可以围成一个开的区域
       - 这个分段函数，内、外部有明确的正负号，一定是内正外负或者内负外正
