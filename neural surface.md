@@ -2,9 +2,17 @@
 
 ## math: implicit surface
 
-###  [[wiki: implicit surface]](https://en.wikipedia.org/wiki/Implicit_surface)
+ - 参考资料
+    - [wiki: implicit surface](https://en.wikipedia.org/wiki/Implicit_surface)
+    - [wiki: atlas](https://en.wikipedia.org/wiki/Atlas_(topology)#Charts)
+    - [知乎: 光滑流形](https://zhuanlan.zhihu.com/p/41563330)
+    - Clemson University - [Computer Graphics 计算机图形学课程](https://people.cs.clemson.edu/~dhouse/courses/405/)
+       - chapter 12 [Implicit and Parametric Surfaces](https://people.cs.clemson.edu/~dhouse/courses/405/notes/implicit-parametric.pdf)
 
-###  很有启发性的 [CG course note](https://people.cs.clemson.edu/~dhouse/courses/405/notes/implicit-parametric.pdf): surface: implicit form & parametric form  
+###  surface: implicit form & parametric form  
+
+<details>
+  <summary>Click to expand</summary>
 
 - 一个球面形状的隐式形式和参数化形式：`implicit form` & `parametric form`![image-20201207201258315](media/image-20201207201258315.png)
 - implicit的形式无法直接通过其生成点，但是一般可以通过test来判断点在object内还是object外，对于ray-tracing非常友好
@@ -12,7 +20,12 @@
 - parametric的形式可以直接通过其生成surface上的点，对于OpenGL等方法很有帮助
   - ![image-20201207204043660](media/image-20201207204043660.png)
 
+</details>
+
 ### 形状(geometry) 与 拓扑(topology)
+
+<details>
+  <summary>Click to expand</summary>
 
 - 如果用mesh的数据结构来理解拓扑：
   - 同形状代表相同的顶点位置和连接关系；同拓扑代表相同的顶点连接关系
@@ -20,12 +33,11 @@
     - 如甜甜圈和咖啡杯
   - 拓扑不同的形状，只要顶点之间的连接关系保持不变，怎么位移顶点都无法得到
   - 当然，上述的“位移顶点位置”是一个粗糙的描述，具体在形变时是要符合一定规则的，即【<u>光滑同胚/微分同胚</u>】 [bilibili视频：[斯梅尔悖论；球内外翻转](https://www.bilibili.com/video/BV1k54y1R7J5) ]
+</details>
 
 ### `manifold`流形，`chart`卡(坐标卡)，`atlas`图册
-
-[知乎: 光滑流形](https://zhuanlan.zhihu.com/p/41563330)
-
-[wiki: atlas](https://en.wikipedia.org/wiki/Atlas_(topology)#Charts)
+<details>
+  <summary>Click to expand</summary>
 
 - `homeomorphism`同胚
   - 同胚是两个`topological space`拓扑空间之间的函数
@@ -80,27 +92,39 @@
     - `closed disk`<br>$`D=\{(x,y)\in \mathbb{R}^2: (x-a)^2+(y-b)^2 \leq R^2\}`$
   - a surface **homeomorphic** to a disc in a plane
 
+</details>
+
 ### losses
+
+<details>
+  <summary>Click to expand</summary>
 
 - chamfer loss
   - chamfer distance
-  - ![image-20201208012017960](media/image-20201208012017960.png)
-  - ![image-20201208012035153](media/image-20201208012035153.png)
 
-## implicit form / implicit field 与 parametric form 之间的转换
+|                                                              |                                                              |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ![image-20201208012017960](media/image-20201208012017960.png) | ![image-20201208012035153](media/image-20201208012035153.png) |
+
+</details>
+
+### implicit form / implicit field 与 parametric form 之间的转换
+
+<details>
+  <summary>Click to expand</summary>
 
  - 参考资料
      - JKU - [Commulative Algebra and Algebraic Geometry - 交换代数与代数几何课程](https://www3.risc.jku.at/education/courses/ss2017/caag/)
-         - chapt. 7 [Local properties of plane algebraic curves](https://www3.risc.jku.at/education/courses/ss2017/caag/07-local.pdf)
-         - chapt. 8 [Rational Parametrization of Curves](https://www3.risc.jku.at/education/courses/ss2017/caag/08-para.pdf)
+         - chapter 7 [Local properties of plane algebraic curves](https://www3.risc.jku.at/education/courses/ss2017/caag/07-local.pdf)
+         - chapter 8 [Rational Parametrization of Curves](https://www3.risc.jku.at/education/courses/ss2017/caag/08-para.pdf)
          - 这则课程主要研究平面代数曲线，所有的定理、证明都十分严谨；大多数定理其实都可以延伸至空间超曲面
      - 中科大 - [近世代数](http://staff.ustc.edu.cn/~msheng/references/moderna.pdf)
      - [1990]Purdue University - [Conversion methods beween parametric and implicit curves and surfaces](http://graphics.stanford.edu/courses/cs348a-20-winter/Handouts/a228715.pdf)
          - 非常老的手稿影印版，过程比较简略
      - [2002]Purdue University - [Geometric and Solid Modeling - 几何与实体造型课程](https://www.cs.purdue.edu/homes/cmh/distribution/books/geo.html)
-         - chapt.5 [Representation of Curved Edges and Faces](https://www.cs.purdue.edu/homes/cmh/distribution/books/chap5.pdf)
+         - chapter 5 [Representation of Curved Edges and Faces](https://www.cs.purdue.edu/homes/cmh/distribution/books/chap5.pdf)
          - 有些不严谨，跳步很多，需要一定代数几何基础
-     - [2006] arxiv [monoid hypersurfaces](https://www.mn.uio.no/math/personer/vit/ragnip/monoids.pdf)
+     - [2006] arXiv [monoid hypersurfaces](https://www.mn.uio.no/math/personer/vit/ragnip/monoids.pdf)
  - `affine space `仿射空间
  - `projective space` 射影空间
      - 射影空间是齐次坐标系
@@ -146,6 +170,7 @@
     - all curves and surfaces with a rational parametric form can be converted to implicit form
     - elimination algorithm, resultant, *etc.*
 
+</details>
 
 ## learning parametric surface
 
