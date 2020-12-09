@@ -156,7 +156,7 @@
        - *etc.*
  - `parameterization`: implicit -> parametric
      - ==本质==
-         - 这里的参数化，和拓扑学中的参数化，是一件事：从一个欧式空间到一个拓扑空间的同胚(映射)
+         - 这里的参数化，和拓扑学中的参数化，是一回事：从一个欧式空间到一个拓扑空间的同胚(映射)
     - curve
        - *Noether's theorem*<br> A plane algebraic curve f(x,y)=0 possesses a rational paramtric form iff f has genus 0
     - surface
