@@ -522,9 +522,9 @@ via Topology Modification Networks"`**
 
 **`"Analytic Marching: An Analytic Meshing Solution from
 Deep Implicit Surface Networks"`**  
-**[** `ICML2020` **]** **[[paper]](http://proceedings.mlr.press/v119/lei20a/lei20a.pdf)** **[[supp]](http://proceedings.mlr.press/v119/lei20a/lei20a-supp.pdf)** **[[slice]](https://slides.games-cn.org/pdf/Games2020148JiabaoLei.pdf)** **[** :mortar_board: `南方科技大学` **]** **[** :office: [`琶洲实验室`](https://www.pazhoulab.com/) **]**  
-**[**  `Jiabao Lei`, `Kui Jia贾奎`  **]**  
-**[** _`learning surface mesh via implicit field functions`, `MLP analytic solution`_ **]**  
+**[** `ICML2020` **]** **[[paper]](http://proceedings.mlr.press/v119/lei20a/lei20a.pdf)** **[[supp]](http://proceedings.mlr.press/v119/lei20a/lei20a-supp.pdf)** **[[slice]](https://slides.games-cn.org/pdf/Games2020148JiabaoLei.pdf)** **[** :mortar_board: `南方科技大学` **]** **[** :office: [`琶洲实验室`](https://www.pazhoulab.com/) **]**  
+**[**  `Jiabao Lei`, `Kui Jia贾奎`  **]**  
+**[** _`learning surface mesh via implicit field functions`, `MLP analytic solution`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
@@ -536,7 +536,7 @@ Deep Implicit Surface Networks"`**
     - 基于ReLU-based MLP 把input空间分为很多线性区域的事实，本篇把这些区域识别为analytic cells与analytic faces，与implicit function的零值等值面有关
     - 推导了这些identified analytic faces在什么理论条件下可以保证形成一个闭合的、piecewise的planar surface
     - 基于本篇的这些理论推导，提出了一个可并行化的算法，在这些analytic cells上做marching，来==**<u>exactly recover</u>**==这些由learned MLP学出来的mesh
-- **效果**
+- **效果**：解析解就是降维打击。精确度无限(exact 解) + CPU跑都比别人GPU跑快十几倍
 
   - ![image-20201209113035559](media/image-20201209113035559.png)
   - ![image-20201209111706863](media/image-20201209111706863.png)
