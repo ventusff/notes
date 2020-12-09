@@ -21,7 +21,7 @@
 
 **`"DPOD: 6D Pose Object Detector and Refiner"`**  
 **[** `ICCV2019` **]** **[[paper]](https://arxiv.org/pdf/1902.11020v3.pdf)** **[[code]](https://github.com/yshah43/DPOD)** **[** :mortar_board: `TUM` **]** **[** :office: `Siemens Corporate Technology` **]**  
-**[**  `Sergey Zakharov,Ivan Shugurov,Slobodan Ilic  `  **]**  
+**[**  `Sergey Zakharov`,`Ivan Shugurov`,`Slobodan Ilic  `  **]**  
 **[** _`6D pose esimation [2020 SOTA]`_ **]**  
 
 [思考：虽然我们的生成模型用不上这里的一些计算设定方式，但是在图定位的时候这个会很有用]
@@ -204,8 +204,8 @@ Closed Form"`**
 ---
 
 **`"Semantic Graph Convolutional Networks for 3D Human Pose Regression"`**  
-**[** `2019` **]** **[[paper]](https://abc.efg)** **[[code]](https://www.github.com)** **[** :mortar_board: `Rutgers University,Binghamton University ` **]**  
-**[**  `Long Zhao,Dimitris N. Metaxas `  **]**  
+**[** `2019` **]** **[[paper]](https://abc.efg)** **[[code]](https://www.github.com)** **[** :mortar_board: `Rutgers University`,`Binghamton University ` **]**  
+**[**  `Long Zhao`,`Dimitris N. Metaxas `  **]**  
 **[** _`abcd`, `efgh`_ **]**  
 
 <details>
