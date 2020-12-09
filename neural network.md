@@ -12,8 +12,10 @@
  - 另外也可以看到，y = 0 不仅是一段折线，y > 0 ， y < 0也可以把一个空间分成两部分
      - 从这个角度，可以理解到分类器是在特征空间中找到一个（或多个）区分多维特征的超曲面
  - 简单的ReLU带来的强大的非线性能力，让学习空间中的复杂表面成为了可能：因为确实只需要分段地学习每一个平面而已<br>
-    - 也正因如此，只要我们能够显式地解析出神经元的激活关系，就可以解析地找出MLP零值面对应的polygon (而且是)<br>见[Analytic Marching: An Analytic Meshing Solution from
-      Deep Implicit Surface Networks](http://proceedings.mlr.press/v119/lei20a/lei20a.pdf)
+     - 复杂MLP+ReLU，其实就是由一段段超平面构成的多元向量值分段函数
+         - 这种结构，其实和计算机中存储一个三维模型的Mesh的结构完全一致：<br>一个mesh就是由一段段polygon构成的
+        - 也正因如此，只要我们能够显式地解析出神经元的激活关系，就可以解析地找出MLP零值面对应的polygon <br>见[Analytic Marching: An Analytic Meshing Solution from
+          Deep Implicit Surface Networks](http://proceedings.mlr.press/v119/lei20a/lei20a.pdf)
     - ![image-20201209162429622](media/image-20201209162429622.png)
     - 上图是一个很好地复杂神经元MLP构成的<u>空间三元数量值函数</u>所实际学习到的东西的展示
       - MLP所学习到的，确实只是一段段线性的线段/平面/超平面，是一个分段函数；
