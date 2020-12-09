@@ -8,6 +8,17 @@
     - [知乎: 光滑流形](https://zhuanlan.zhihu.com/p/41563330)
     - Clemson University - [Computer Graphics 计算机图形学课程](https://people.cs.clemson.edu/~dhouse/courses/405/)
        - chapter 12 [Implicit and Parametric Surfaces](https://people.cs.clemson.edu/~dhouse/courses/405/notes/implicit-parametric.pdf)
+    - JKU - [Commulative Algebra and Algebraic Geometry - 交换代数与代数几何课程](https://www3.risc.jku.at/education/courses/ss2017/caag/)
+       - chapter 7 [Local properties of plane algebraic curves](https://www3.risc.jku.at/education/courses/ss2017/caag/07-local.pdf)
+       - chapter 8 [Rational Parametrization of Curves](https://www3.risc.jku.at/education/courses/ss2017/caag/08-para.pdf)
+       - 这则课程主要研究平面代数曲线，所有的定理、证明都十分严谨；大多数定理其实都可以延伸至空间超曲面
+    - 中科大 - [近世代数](http://staff.ustc.edu.cn/~msheng/references/moderna.pdf)
+    - [1990]Purdue University - [Conversion methods beween parametric and implicit curves and surfaces](http://graphics.stanford.edu/courses/cs348a-20-winter/Handouts/a228715.pdf)
+       - 非常老的手稿影印版，过程比较简略
+    - [2002]Purdue University - [Geometric and Solid Modeling - 几何与实体造型课程](https://www.cs.purdue.edu/homes/cmh/distribution/books/geo.html)
+       - chapter 5 [Representation of Curved Edges and Faces](https://www.cs.purdue.edu/homes/cmh/distribution/books/chap5.pdf)
+       - 有些不严谨，跳步很多，需要一定代数几何基础
+    - [2006] arXiv [monoid hypersurfaces](https://www.mn.uio.no/math/personer/vit/ragnip/monoids.pdf)
 
 ###  surface: implicit form & parametric form  
 
@@ -113,18 +124,7 @@
 <details>
   <summary>Click to expand</summary>
 
- - 参考资料
-     - JKU - [Commulative Algebra and Algebraic Geometry - 交换代数与代数几何课程](https://www3.risc.jku.at/education/courses/ss2017/caag/)
-         - chapter 7 [Local properties of plane algebraic curves](https://www3.risc.jku.at/education/courses/ss2017/caag/07-local.pdf)
-         - chapter 8 [Rational Parametrization of Curves](https://www3.risc.jku.at/education/courses/ss2017/caag/08-para.pdf)
-         - 这则课程主要研究平面代数曲线，所有的定理、证明都十分严谨；大多数定理其实都可以延伸至空间超曲面
-     - 中科大 - [近世代数](http://staff.ustc.edu.cn/~msheng/references/moderna.pdf)
-     - [1990]Purdue University - [Conversion methods beween parametric and implicit curves and surfaces](http://graphics.stanford.edu/courses/cs348a-20-winter/Handouts/a228715.pdf)
-         - 非常老的手稿影印版，过程比较简略
-     - [2002]Purdue University - [Geometric and Solid Modeling - 几何与实体造型课程](https://www.cs.purdue.edu/homes/cmh/distribution/books/geo.html)
-         - chapter 5 [Representation of Curved Edges and Faces](https://www.cs.purdue.edu/homes/cmh/distribution/books/chap5.pdf)
-         - 有些不严谨，跳步很多，需要一定代数几何基础
-     - [2006] arXiv [monoid hypersurfaces](https://www.mn.uio.no/math/personer/vit/ragnip/monoids.pdf)
+
  - `affine space `仿射空间
  - `projective space` 射影空间
      - 射影空间是齐次坐标系
