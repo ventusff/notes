@@ -467,9 +467,9 @@ via Topology Modification Networks"`**
 ---
 
 **`"Occupancy Networks: Learning 3D Reconstruction in Function Space"`**  
-**[** `CVPR2019` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2019/papers/Mescheder_Occupancy_Networks_Learning_3D_Reconstruction_in_Function_Space_CVPR_2019_paper.pdf)** **[[code]](https://github.com/autonomousvision/occupancy_networks)** **[** :mortar_board: `MPI,University of Tubingen ` **]** **[** :office: `Google AI Berlin` **]**  
-**[**  `Lars Mescheder，Andreas Geiger `  **]**  
-**[** _`continuous function occupancy, multi-resolution isosurface extraction`, `marching cubes`_ **]**  
+**[** `CVPR2019` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2019/papers/Mescheder_Occupancy_Networks_Learning_3D_Reconstruction_in_Function_Space_CVPR_2019_paper.pdf)** **[[code]](https://github.com/autonomousvision/occupancy_networks)** **[** :mortar_board: `MPI`, `University of Tubingen ` **]** **[** :office: `Google AI Berlin` **]**  
+**[**  `Lars Mescheder`， `Andreas Geiger `  **]**  
+**[** _`continuous function occupancy`, `multi-resolution isosurface extraction`, `marching cubes`_ **]**  
 
 <details>
   <summary>Click to expand</summary>

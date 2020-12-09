@@ -117,7 +117,7 @@ too old
 
 **`< GcGAN > "Geometry-Consistent Generative Adversarial Networks for One-Sided Unsupervised Domain Mapping"`**  
 **[** `CVPR2019` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2019/papers/Fu_Geometry-Consistent_Generative_Adversarial_Networks_for_One-Sided_Unsupervised_Domain_Mapping_CVPR_2019_paper.pdf)** **[[code]](https://github.com/hufu6371/GcGAN)** **[** :mortar_board: `University of Sydney`, `University of Pittsburgh`, `CMU`,`Universite Paris-Est` **]**   
-**[**  `Huan Fu, Mingming Gong, Chaohui Wang, Kayhan Batmanghelich, Kun Zhang, Dacheng Tao`  **]**  
+**[**  `Huan Fu`, `Mingming Gong`, `Chaohui Wang`, `Kayhan Batmanghelich`, `Kun Zhang`, `Dacheng Tao`  **]**  
 **[** _`  `_ **]**  
 
 <details>
@@ -131,7 +131,7 @@ too old
 
 **`"RGBD-GAN: Unsupervised 3D Representation Learning From Natural Image Datasets via RGBD Image Synthesis"`**  
 **[** `ICLR2020` **]** **[[paper]](https://arxiv.org/abs/1909.12573)**  **[** :mortar_board: `The University of Tokyo` **]** **[** :office: `RIKEN` **]**  
-**[**  `Atsuhiro Noguchi, Tatsuya Harada`  **]**  
+**[**  `Atsuhiro Noguchi`, `Tatsuya Harada`  **]**  
 **[** _`multi view geometry constraint`, `natural dataset`, `3D representation`_ **]**  
 
 <details>
@@ -213,8 +213,8 @@ too old
 **`"GRAF: Generative Radiance Fields for 3D-Aware Image Synthesis"`**  
 **[** `NeurIPS2020` **]** **[[paper](https://arxiv.org/pdf/2007.02442.pdf), [supp](http://www.cvlibs.net/publications/Schwarz2020NEURIPS_supplementary.pdf)]** **[[code]](https://github.com/autonomousvision/graf)** **[** :mortar_board: `University of Tubingen ` **]** **[** :office: `MPI-IS`**]**  
 **[** [autonomous_vision lab](https://github.com/autonomousvision) **]**
-**[**  `Katja Schwarz, Yiyi Liao, Michael Niemeyer, Andreas Geiger`  **]**  
-**[** _`neural radiance field`, `continuous representation`_, `camera viewpoint/object pose controllable image synthesis`,`HoloGAN->baseline` **]**  
+**[**  `Katja Schwarz`, `Yiyi Liao`, `Michael Niemeyer`, `Andreas Geiger`  **]**  
+**[** _`neural radiance field`, `continuous representation`, `camera viewpoint/object pose controllable image synthesis`, `HoloGAN->baseline`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
@@ -245,7 +245,7 @@ too old
 
 **`"Inverse Graphics GAN: Learning to Generate 3D Shapes from Unstructured 2D Data"`**  
 **[** `2020` **]** **[[paper](https://arxiv.org/pdf/2002.12674.pdf), [supp](https://lunz-s.github.io/iggan/iggan_supplemental.pdf)]**  **[** :mortar_board: `University of Cambridge` **]**  
-**[**  `Sebastian Lunz, Yingzhen Li, Andrew Fitzgibbon, Nate Kushman`  **]**  
+**[**  `Sebastian Lunz`, `Yingzhen Li`, `Andrew Fitzgibbon`, `Nate Kushman`  **]**  
 **[** _`Inverse Graphics`, `GAN`, `3D shape generation`_ **]**  
 
 <details>

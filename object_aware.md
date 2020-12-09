@@ -8,8 +8,8 @@
 
 **`[Encoder] <ROOTS> "Learning to Infer 3D Object Models from Images"`**  
 **[** `2020` **]** **[[paper]](https://arxiv.org/pdf/2006.06130.pdf)**  **[** :mortar_board: `Rutgers University` **]** 
-**[**  `Chang Chen, Fei Deng, Sungjin Ahn` **]**  
-**[** _`scene encoder`, `GQN-based`_, `3D object detection` **]**  
+**[**  `Chang Chen`, `Fei Deng`, `Sungjin Ahn` **]**  
+**[** _`scene encoder`, `GQN-based`, `3D object detection`_ **]**  
 
 main preliminary: GQN
 
@@ -129,7 +129,7 @@ main preliminary: GQN
 
 **`"Learning 3D Object-Oriented World Models from Unlabeled Videos"`**  
 **[** `ICMLW2020` **]** **[[paper]](http://e2crawfo.github.io/pdfs/icml_ool_2020.pdf)**  **[** :mortar_board: `McGill University` **]**  
-**[**  `Eric Crawford,Joelle Pineau `  **]**  
+**[**  `Eric Crawford`, `Joelle Pineau `  **]**  
 **[** _`SRN-based`, `3D objects moving through a 3D world`, `probabilistic`, `encoder/detector focused`_ **]**  
 
 main preliminary: SRN
@@ -314,8 +314,8 @@ Authors: Youngjoong Kwon , Stefano Petrangeli , Dahun Kim , Haoliang Wang , Eunb
 ---
 
 **`"FroDO: From Detections to 3D Objects"`**  
-**[** `CVPR2020` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2020/papers/Runz_FroDO_From_Detections_to_3D_Objects_CVPR_2020_paper.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `UCL, The University of Adelaide` **]** **[** :office: `Facebook` **]**  
-**[**  `Martin Runz,Kejie Li `  **]**  
+**[** `CVPR2020` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2020/papers/Runz_FroDO_From_Detections_to_3D_Objects_CVPR_2020_paper.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `UCL`, `The University of Adelaide` **]** **[** :office: `Facebook` **]**  
+**[**  `Martin Runz`, `Kejie Li `  **]**  
 **[** _`natural dataset`, `mask-RCNN`, `pre-learnt shape priors`_ **]**  
 
 <details>

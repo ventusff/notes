@@ -234,8 +234,8 @@ Closed Form"`**
 ---
 
 **`"Explaining the Ambiguity of Object Detection and 6D Pose From Visual Data"`**  
-**[** `ICCV2019` **]** **[[paper]](https://openaccess.thecvf.com/content_ICCV_2019/papers/Manhardt_Explaining_the_Ambiguity_of_Object_Detection_and_6D_Pose_From_ICCV_2019_paper.pdf)**  **[** :mortar_board: `TUM,Oxford,Stanford` **]** **[** :office: `Huawei,Google` **]**  
-**[**  ` Fabian Manhardt,`  **]**  
+**[** `ICCV2019` **]** **[[paper]](https://openaccess.thecvf.com/content_ICCV_2019/papers/Manhardt_Explaining_the_Ambiguity_of_Object_Detection_and_6D_Pose_From_ICCV_2019_paper.pdf)**  **[** :mortar_board: `TUM`, `Oxford`, `Stanford` **]** **[** :office: `Huawei`, `Google` **]**  
+**[**  ` Fabian Manhardt`  **]**  
 **[** _`Ambiguity`, `efgh`_ **]**  
 
 []

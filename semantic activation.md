@@ -44,7 +44,7 @@
 ---
 
 **`"A Point Set Generation Network for 3D Object Reconstruction from a Single Image"`**  
-**[** `2016` **]** **[[paper]](https://arxiv.org/pdf/1612.00603.pdf)** **[[code]](https://github.com/fanhqme/PointSetGeneration)** **[** :mortar_board: `Tsinghua` , `Stanford` **]**   
+**[** `2016` **]** **[[paper]](https://arxiv.org/pdf/1612.00603.pdf)** **[[code]](https://github.com/fanhqme/PointSetGeneration)** **[** :mortar_board: `Tsinghua`, `Stanford` **]**   
 **[**  `Haoqiang Fan`, `Hao Su`, `Leonidas Guibas  `  **]**  
 **[** _`point set generation`_ **]**  
 
@@ -112,7 +112,7 @@ GANS:
 
 **`"Inferring Semantic Information with 3D Neural Scene Representations"`**  
 **[** `3DV 2020` **]** **[[web]](https://www.computationalimaging.org/publications/semantic-srn/)** **[[paper]](https://arxiv.org/pdf/2003.12673.pdf)**  **[** :mortar_board: `Stanford` **]**  
-**[**  `Amit Kohli,Vincent Sitzmann, Gordon Wetzstein `  **]**  
+**[**  `Amit Kohli`, `Vincent Sitzmann`, `Gordon Wetzstein `  **]**  
 **[** _`multi-modal features， semi-supervision`_ **]**  
 
 <details>
