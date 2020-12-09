@@ -2,7 +2,7 @@
 
 ## math: implicit surface
 
-###  [[wiki]](https://en.wikipedia.org/wiki/Implicit_surface)
+###  [[wiki: implicit surface]](https://en.wikipedia.org/wiki/Implicit_surface)
 
 ###  很有启发性的 [CG course note](https://people.cs.clemson.edu/~dhouse/courses/405/notes/implicit-parametric.pdf): surface: implicit form & parametric form  
 
@@ -23,9 +23,9 @@
 
 ### `manifold`流形，`chart`卡(坐标卡)，`atlas`图册
 
-[知乎](https://zhuanlan.zhihu.com/p/41563330)
+[知乎: 光滑流形](https://zhuanlan.zhihu.com/p/41563330)
 
-[wiki](https://en.wikipedia.org/wiki/Atlas_(topology)#Charts)
+[wiki: atlas](https://en.wikipedia.org/wiki/Atlas_(topology)#Charts)
 
 - `homeomorphism`同胚
   - 同胚是两个`topological space`拓扑空间之间的函数
@@ -89,11 +89,24 @@
 
 ## implicit form / implicit field 与 parametric form 之间的转换
 
-[nice coursebook](http://graphics.stanford.edu/courses/cs348a-20-winter/Handouts/a228715.pdf)
-
-[mathstackexchange](https://math.stackexchange.com/questions/904782/is-there-a-general-way-to-parameterize-all-implicit-functions)
-
- - `monoid`, `monoidal` 幺半群/单位半群/具幺半群
+ - 参考资料
+     - JKU - [Commulative Algebra and Algebraic Geometry - 交换代数与代数几何课程](https://www3.risc.jku.at/education/courses/ss2017/caag/)
+         - chapt. 7 [Local properties of plane algebraic curves](https://www3.risc.jku.at/education/courses/ss2017/caag/07-local.pdf)
+         - chapt. 8 [Rational Parametrization of Curves](https://www3.risc.jku.at/education/courses/ss2017/caag/08-para.pdf)
+         - 这则课程主要研究平面代数曲线，所有的定理、证明都十分严谨；大多数定理其实都可以延伸至空间超曲面
+     - 中科大 - [近世代数](http://staff.ustc.edu.cn/~msheng/references/moderna.pdf)
+     - [1990]Purdue University - [Conversion methods beween parametric and implicit curves and surfaces](http://graphics.stanford.edu/courses/cs348a-20-winter/Handouts/a228715.pdf)
+         - 非常老的手稿影印版，过程比较简略
+     - [2002]Purdue University - [Geometric and Solid Modeling - 几何与实体造型课程](https://www.cs.purdue.edu/homes/cmh/distribution/books/geo.html)
+         - chapt.5 [Representation of Curved Edges and Faces](https://www.cs.purdue.edu/homes/cmh/distribution/books/chap5.pdf)
+         - 有些不严谨，跳步很多，需要一定代数几何基础
+     - [2006] arxiv [monoid hypersurfaces](https://www.mn.uio.no/math/personer/vit/ragnip/monoids.pdf)
+ - `affine space `仿射空间
+ - `projective space` 射影空间
+     - 射影空间是齐次坐标系
+ - `multiplicity` 重数
+ - `rational function` 有理函数（多项式加减乘除，只在有限个点没有定义）
+ - `monoid`, `monoidal` 幺半群 / 单位半群 / 具幺半群 / 独异点
     - **幺半群**是一个带有二元运算 *: *M* × *M* → *M* 的集合 *M* ，其符合下列公理：
        - 结合律：对任何在 *M* 内的*a*、*b*、*c* ， (*a*\**b*)\**c* = *a*\*(*b*\**c*) 。
        - 单位元：存在一在 *M* 内的元素*e*，使得任一于 *M* 内的 *a* 都会符合 *a*\**e* = *e*\**a* = *a* 。
@@ -101,17 +114,37 @@
        - 封闭性：对任何在 *M* 内的 *a* 、 *b* ， *a***b* 也会在 *M* 内。
        - 但这不是必要的，因为在二元运算中即内含了此一公理。
     - 幺半群除了没有[逆元素](https://zh.wikipedia.org/wiki/逆元素)之外，满足其他所有[群](https://zh.wikipedia.org/wiki/群)的公理。因此，一个带有逆元素的幺半群和群是一样的。
-- `monoidal surfaces`
-    - an algebraic surface $`f(x,y,z)=0`$ of degree _n_ that has an $`(n-1)-fold`$ point 
-    - monoidal surfaces包含了所有的quadrics, cubic surfaces with a double point, and Steiner surfaces
+- `monoidal surfaces` 独异点曲面
+    - an algebraic(polynomial) surface $`f(x,y,z)=0`$ of degree _n_ that has an $`(n-1)-fold`$ point (a point of multiplicity n-1)<br>一个有n-1重点的n次代数曲面(线)即为一个monoidal curve
+    - monoidal surfaces include:
+       - quadrics 二次曲面
+       - cubic surface with a double point 有二重点的三次曲面
+       - quartic surface with a triple point 有三重点的四次曲面
+       - *etc.*
+ - `parameterization`: implicit -> parametric
+    - curve
+       - *Noether's theorem*<br> A plane algebraic curve f(x,y)=0 possesses a rational paramtric form iff f has genus 0
+    - surface
+       - 没有已知的通用工具来判断一个给定的implicit surface是否可以被参数化，以及if so, how
+    - monoidal curves/ surfaces can be parameterized in a simple manner
+    - 参数化时常用方式：parameterization using a `pencil` of lines
+       - `pencil`
+          - in [geometry](https://en.wikipedia.org/wiki/Geometry), a **pencil** is a family of geometric objects with a common property
+          - a *pencil of lines* through a point *p* is a set of lines each containing *p*
+       - `Bezout's Theorem` 贝组定理
+          - Let $`\mathcal{C}`$ and $`\mathcal{D}`$ be projective plane curves without common components and degrees n and m, respectively. Then <br>$`n \cdot m = \sum \limits_{P \in \mathcal{C} \cap \mathcal{D}} mult_P(\mathcal{C},\mathcal{D})`$
+          - 即：在考虑重数设定的前提下，两个分别次数为n和m的仿射空间代数曲线(也可以是射影空间)，二者要么有共同项，要么没有共同项且相交mn次(相交点的重数和为mn)
+       - 因此，对于monoidal curves/surfaces来说，只要让a pencil of lines共同经过那个(n-1)重点，则这些直线一定与曲线/曲面还剩一个交点，如此便可实现参数化
 
-### [parameterization] implicit form -> parametric form
+| 让直线束经过二次曲线的一个"一重点"来参数化                   | 让直线束经过三次曲线的一个二重点来参数化                     |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ![image-20201209091156318](media/image-20201209091156318.png) | ![image-20201209091136948](media/image-20201209091136948.png) |
 
- - 没有已知的通用工具来判断一个给定的implicit surface是否可以被参数化，以及if so, how
- - monoidal surfaces can be parameterized in a very simple manner
+ - a `rational parameterization` of a surface in affine (x,y,z)-space corresponds to a `polynomial parameterization` of the same surface  in `projective (w,x,y,z)-space`<br>一个曲面在(x,y,z)-仿射空间的有理参数化 对应 同样曲面在(w,x,y,z)-射影空间的多项式参数化
 
-### [implicitization] parametric form -> implicit form
-
+ - `implicitization`: parametric -> implicit
+    - all curves and surfaces with a rational parametric form can be converted to implicit form
+    - elimination algorithm, resultant, *etc.*
 
 
 ## learning parametric surface
@@ -457,3 +490,6 @@ via Topology Modification Networks"`**
   - 
 
 </details>
+
+## learning parameterization / implicitization
+
