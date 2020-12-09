@@ -524,7 +524,7 @@ via Topology Modification Networks"`**
 Deep Implicit Surface Networks"`**  
 **[** `ICML2020` **]** **[[paper]](http://proceedings.mlr.press/v119/lei20a/lei20a.pdf)** **[[supp]](http://proceedings.mlr.press/v119/lei20a/lei20a-supp.pdf)** **[[slice]](https://slides.games-cn.org/pdf/Games2020148JiabaoLei.pdf)** **[** :mortar_board: `南方科技大学` **]** **[** :office: [`琶洲实验室`](https://www.pazhoulab.com/) **]**  
 **[**  `Jiabao Lei`, `Kui Jia贾奎`  **]**  
-**[** _`learning surface mesh via implicit field functions`_ **]**  
+**[** _`learning surface mesh via implicit field functions`, `MLP analytic solution`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
@@ -538,6 +538,7 @@ Deep Implicit Surface Networks"`**
     - 基于本篇的这些理论推导，提出了一个可并行化的算法，在这些analytic cells上做marching，来==**<u>exactly recover</u>**==这些由learned MLP学出来的mesh
 - **效果**
 
+  - ![image-20201209113035559](media/image-20201209113035559.png)
   - ![image-20201209111706863](media/image-20201209111706863.png)
   - ![image-20201209105817256](media/image-20201209105817256.png)
   - ![image-20201209105846197](media/image-20201209105846197.png)
