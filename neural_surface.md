@@ -112,7 +112,11 @@
 
 </details>
 
-### losses
+### algorithms
+
+#### marching cubes [[explain]](http://www.cs.carleton.edu/cs_comps/0405/shape/marching_cubes.html)
+
+#### losses
 
 <details>
   <summary>Click to expand</summary>
@@ -426,24 +430,7 @@ via Topology Modification Networks"`**
 </details>
 
 ## learning implicit surface: implicit fields/implicit functions
-### marching cubes [[explain]](http://www.cs.carleton.edu/cs_comps/0405/shape/marching_cubes.html)
-
----
-
-**`"MeshSDF: Differentiable Iso-Surface Extraction"`**  
-**[** `NeurIPS2020` **]** **[[paper]](https://arxiv.org/pdf/2006.03997.pdf)** **[[code]](https://github.com/cvlab-epfl/MeshSDF)** **[** :mortar_board: `EPFL` **]** **[** :office: `Neuralconcept`, `Intel` **]**  
-**[**  `Edoardo Remelli`, `Pascal Fua `   **]**  
-**[** _`differentiable iso-surface extraction`, `marching cubes`, `SDF`_  **]**  
-
-[differentiable iso-surface extraction]
-
-<details>
-  <summary>Click to expand</summary>
-
-- **Motivation**
-
-</details>
-
+### sample based methods to extract explicit surface
 
 ---
 
@@ -457,7 +444,7 @@ via Topology Modification Networks"`**
 
 - **Motivation**
   - 其实是一种类别级别的连续函数隐式的shape表征，类似occupancy networks；
-    <br>输入code + one point 坐标，输出在shape 内；外；（类似SDF）
+    <br>输入code + one point 坐标，输出在shape 内/外；（类似SDF）
   - ![image-20201203174748033](media/image-20201203174748033.png)
 
 </details>
@@ -481,6 +468,28 @@ via Topology Modification Networks"`**
 
 ---
 
+**`"DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation"`**  
+**[** `CVPR2019` **]** **[[paper]](https://arxiv.org/pdf/1901.05103.pdf)** **[[code]](https://github.com/facebookresearch/DeepSDF)** **[** :mortar_board: `UW`, `MIT` **]** **[** :office: `Faceboook reality labs` **]**  
+**[**  `Jeong Joon Park`, `Peter Florence`, `Julian Straub`, `Richard Newcombe`, `Steven Lovegrove`  **]**  
+**[** _`SDF`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - SDF是CG领域又一个形状的表征；本篇是first to use deep SDF functions to model shapes
+  - ![image-20201210100006815](media/image-20201210100006815.png)
+  - ![image-20201210095931233](media/image-20201210095931233.png)
+- **overview**
+
+  - 单个形状用单个SDF网络，一个category用code conditioned<br>![image-20201210100154456](media/image-20201210100154456.png)
+  - 使用auto-decoder<br>![image-20201210100244493](media/image-20201210100244493.png)
+
+</details>
+
+
+---
+
 **`"DISN: Deep Implicit Surface Network for
 High-quality Single-view 3D Reconstruction"`**  
 **[** `NeurIPS2019` **]** **[[paper]](https://arxiv.org/pdf/1905.10711.pdf)** **[[code]](https://github.com/laughtervv/DISN)** **[** :mortar_board: `University of Southern California` **]** **[** :office: `Adobe` **]**  
@@ -496,12 +505,6 @@ High-quality Single-view 3D Reconstruction"`**
   - 同时用global features和local features来infer SDF<br>![image-20201209122023941](media/image-20201209122023941.png)
 
 </details>
-
-
-
-### ray-casting
-
-- SRN也算此行列；可以微分的ray marching
 
 ---
 
@@ -528,11 +531,49 @@ High-quality Single-view 3D Reconstruction"`**
 
 <details>
   <summary>Click to expand</summary>
-- **Motivation**
-  - 
+
+- **review**
+
+  - 思路：首先手动推导出每个camera ray和隐表面交点的点坐标对网络参数的梯度，在实际计算时，就可以先在camera ray上采样得出交点坐标(类似二分法)，然后代入所手动推导出的式子构成完整的反向传播链路
+
+
 </details>
 
-## learning parameterization / implicitization
+---
+
+**`"MeshSDF: Differentiable Iso-Surface Extraction"`**  
+**[** `NeurIPS2020` **]** **[[paper]](https://arxiv.org/pdf/2006.03997.pdf)** **[[code]](https://github.com/cvlab-epfl/MeshSDF)** **[** :mortar_board: `EPFL` **]** **[** :office: `Neuralconcept`, `Intel` **]**  
+**[**  `Edoardo Remelli`, `Pascal Fua `   **]**  
+**[** _`differentiable iso-surface extraction`, `marching cubes`, `SDF`_  **]**  
+
+[differentiable iso-surface extraction]
+
+<details>
+  <summary>Click to expand</summary>
+
+- **review**
+
+  - 和DVR思路类似，首先手动推导出表面点坐标对网络参数的梯度，实际计算时就可以先用采样-based方法得出点坐标，再代入手动推导出的梯度式子构成完整的反向传播链路
+  - 手动推导表面点坐标对网络参数的梯度过程中，用到了SDF的特殊性质（某一点函数值的梯度就是该点的法向量），不适用于一般性implicit occupancy field
+
+</details>
+
+---
+
+**`"asdf: asdf"`**  
+**[** `0000` **]** **[[paper]](https://abc.efg)** **[[code]](https://www.github.com)** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
+**[**  `xxxx`  **]**  
+**[** _`meta-learning`, `SDF`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - 
+
+</details>
+
+### analytic exact solution
 
 ---
 
@@ -559,6 +600,10 @@ Deep Implicit Surface Networks"`**
   - ![image-20201209105846197](media/image-20201209105846197.png)
 
 </details>
+
+
+
+## learning parameterization / implicitization
 
 ## tasks
 
