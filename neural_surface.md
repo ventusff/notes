@@ -190,6 +190,9 @@
 - keyword
   - neural parametric surface
   - parametric surface generation/generative
+- overview
+   - 用一个参数方程$`[x(s,t),y(s,t),z(s,t)]`$表达一个曲面
+   - 可以用显式的手动构建或者隐式的神经网络来构建这个从s,t到x,y,z的映射关系
 
 ---
 
@@ -430,12 +433,13 @@ via Topology Modification Networks"`**
 </details>
 
 ## learning implicit surface: implicit fields/implicit functions
-### sample based methods to extract explicit surface
 
- - overview
-    - 既然可以用一个隐函数$`f(x,y,z)=0`$表达一个隐曲面<br>
-    - 那当然可以先用$`某种神经网络_{一般是MLP+ReLU}`$去拟合构建一个空间数量值函数$`f(x,y,z)_{数量值一般物理意义为占用概率/与表面距离/表面内外等}`$ ，然后训练这个神经网络
-    - 训练好以后，如果需要从这个隐函数中提取mesh，一般就用marching cubes类方法空间采样
+- overview
+   - 既然可以用一个隐函数$`f(x,y,z)=0`$表达一个隐曲面<br>
+   - 那当然可以先用$`某种神经网络_{一般是MLP+ReLU}`$去拟合构建一个空间数量值函数$`f(x,y,z)_{数量值一般物理意义为占用概率/与表面距离/表面内外等}`$ ，然后训练这个神经网络
+   - 训练好以后，如果需要从这个隐函数中提取mesh，一般就用marching cubes类方法空间采样
+
+### sample based methods to extract explicit surface
 
 ---
 
