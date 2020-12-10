@@ -580,7 +580,7 @@ High-quality Single-view 3D Reconstruction"`**
 - **Review**
   
   - DeepSDF / deep implicit field类方法往往都喜欢用auto-decoder，因为set-encoder有欠拟合的问题
-  - auto-decoder 在测试时也需要infer，infer一次比较耗时<br>因此用meta-learning找出一个合适的auto-decoder优化的初值code<br>这样在测试时infer就只需要少量的迭代就可以得到很好的效果
+  - auto-decoder 在测试时也需要infer，需要很多步迭代，infer一次比较耗时<br>因此用meta-learning（MAML类）找出一个合适的auto-decoder优化的初值code<br>这样在测试时infer就只需要少量步数的迭代就可以得到很好的效果
   - ![image-20201210102054355](media/image-20201210102054355.png)
 
 </details>
