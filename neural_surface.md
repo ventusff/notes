@@ -624,9 +624,9 @@ Deep Implicit Surface Networks"`**
 **`"SkeletonNet: A Topology-Preserving Solution for
 Learning Mesh Reconstruction of Object
 Surfaces from RGB Images"`**  
-**[** `0000` **]** **[[paper]](https://abc.efg)** **[[code]](https://www.github.com)** **[** :mortar_board: `南方科技大学`, `CUHK` **]** **[** :office: `Microsoft Research Asia` **]**  
-**[**  `xxxx`  **]**  
-**[** _`skeleton-learning`, `topology preserving`, `GCN`, `implicit surface`_ **]**  
+**[** `TPAMI2020` **]** **[[paper]](https://arxiv.org/pdf/2008.05742)** **[[code]](https://github.com/tangjiapeng/SkeletonNet)** **[** :mortar_board: `南方科技大学`, `CUHK` **]** **[** :office: `Microsoft Research Asia` **]**  
+**[**  `Jiapeng Tang`, `Xiaoguang Han`, `Mingkui Tan`, `Xin Tong`, `Kui Jia`  **]**  
+**[** _`skeleton`, `topology preserving`, `GCN`, `implicit surface`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
