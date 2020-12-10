@@ -47,11 +47,8 @@
   <summary>Click to expand</summary>
 
 - **评价**
-
-
   - 和GRF思路类似；每个点除了空间坐标以外，还额外condition一个feature，这个feature来自于把这个点重投影到input view之后索引出的input view feature space下的feature
   - 作者评价的与GRF的区别
-
     - 本篇在view下操作，而不像GRF那样在canonical space下操作，因此本文方法可以适用于更一般的设定；
     - 本文方法的效果更好（笔者注：从web 视频来看，在少量view输入合成任务下的效果非常好）
 
