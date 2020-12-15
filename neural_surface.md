@@ -517,6 +517,46 @@ High-quality Single-view 3D Reconstruction"`**
 
 ---
 
+**`"SDFDiff: Differentiable Rendering of Signed Distance Fields for 3D Shape
+Optimization"`**  
+**[** `CVPR2020(Oral)` **]** **[[paper]](https://arxiv.org/pdf/1912.07109.pdf)** **[[code]](https://github.com/YueJiang-nj/CVPR2020-SDFDiff)** **[** :mortar_board: `University of Maryland` **]**   
+**[**  `Yue Jiang`, `Dantong Ji`, `Zhizhong Han`, `Matthias Zwicker`  **]**  
+**[** _`SDF`, `differentiable rendering`, `multi-view`, `single-view`, `multi-resolution strategy`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - image-based shape optimization using differentiable rendering of 3D shapes represented by SDF
+    - SDF作为形状表征的优势：可以表征具有任意拓扑的形状，并且可以保证watertight
+- **Overview**
+
+  - learn SDF on a 3D grid
+  - perform ray-casting via sphere tracing
+
+</details>
+
+---
+
+**`"DIST: Rendering Deep Implicit Signed Distance Function
+with Differentiable Sphere Tracing"`**  
+**[** `CVPR2020` **]** **[[paper]](http://b1ueber2y.me/projects/DIST-Renderer/dist-paper.pdf)** **[[code]](https://github.com/B1ueber2y/DIST-Renderer)** **[** :mortar_board: `ETH`, `Tsinghua University`, `Peking University` **]** **[** :office: `Google`, `MPI`, `7Peng Cheng Laboratory` **]**  
+**[**  `Shaohui Liu`, `Yinda Zhang`, `Songyou Peng`, `Boxin Shi`, `Marc Pollefeys`, `Zhaopeng Cui`  **]**  
+**[** _`SDF`, `differentiable renderer`, `sphere tracing`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - ![image-20201215111010407](media/image-20201215111010407.png)
+- **overview**
+
+  - sphere tracing<br>![image-20201215111200177](media/image-20201215111200177.png)
+
+</details>
+
+---
+
 **`"Learning to Infer Implicit Surfaces without 3D Supervision"`**  
 **[** `NeuIPS2019` **]** **[[paper]](https://papers.nips.cc/paper/2019/file/bdf3fd65c81469f9b74cedd497f2f9ce-Paper.pdf)**  **[** :mortar_board: `University of Southern California` **]**   
 **[**  `Shichen Liu`, ` Shunsuke Saito`, `Weikai Chen`, `Hao Li`  **]**  
