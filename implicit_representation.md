@@ -69,7 +69,32 @@
 
 </details>
 
-
 ## 关键词：NeRF引用中带encoder-decoder或auto-encoder
+
+## NeRF引用
+
+---
+
+**`"DeRF: Decomposed Radiance Fields"`**  
+**[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2011.12490.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `University`, `SFU`, `University of Toronto` **]** **[** :office: `Google` **]**  
+**[**  `Daniel Rebain`, `Wei Jiang`, `Soroosh Yazdani`, `Ke Li`, `Kwang Moo Yi`, `Andrea Tagliasacchi`  **]**  
+**[** _`abcd`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  
+  - 对于NeRF这种研究，在提高网络深度、大小时，有diminishing returns（减小的回报）
+  - 因此，instead of 提高单个网络深度、大小，本篇把空间分成几个voronoi cell，对应几个NeRF，来学习
+  
+    - 因为是空间分区的network，因此无论分多少部分，Infer时间是几乎不变的
+    - voronoi空间分解非常合适，因为被证明与Painter's Algorithm 兼容，可以高效GPU渲染
+    - 对于现实世界场景，在相同的渲染质量情况下，比NeRF高效3倍以上
+- **Overview**
+
+  - ![image-20201215201013772](media/image-20201215201013772.png)
+
+</details>
 
 ## 关键词：DVR引用中 + generative / generic / generalize / category

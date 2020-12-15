@@ -548,10 +548,72 @@ with Differentiable Sphere Tracing"`**
   <summary>Click to expand</summary>
 
 - **Motivation**
-  - ![image-20201215111010407](media/image-20201215111010407.png)
-- **overview**
+  
+  - solving vision problem as inverse graphics process is one of the foundamental approaches, where the solution is the visual structure that best explains given observations 把视觉问题看做逆向图形学过程来解决；寻找能最好地解释给定观测的视觉结构
+  
+    - 3D geometry理解 领域：很早就被使用(1974, 1999, etc.)
+    - 常常需要一个高效的renderer来从从一个optimizable 的3D结构 精确地simulate这些观测(e.g. depth maps)，同时需要是可微的，来反向传播局部观测的误差
+    - (first) a differentiable renderer for learning-based SDF
+  - 用一个可微分的renderer来把learning-based SDF可微分地渲染为 depth image, surface normal, silhouettes，从任意相机viewpoints
+  - 应用：可用于infer 3D shape from various inputs, e.g. multi-view images and single depth image
+- 方法
 
+  - ![image-20201215111010407](media/image-20201215111010407.png)
+  - [auto-decoder] 给定一个已经pre-trained generative model, e.g. DeepSDF, 通过在latent code space 寻找能产生和给定观测最一致的3D shape
+- [sphere tracing] 使用一个类似sphere tracing的框架来做可微分的渲染
+
+  - 直接应用sphere tracing因为需要对network做反复的query并且在反向传播时产生递归的计算图（笔者注：就像SRN那样），计算费时、费内存；所以需要对前向传播和反向传播过程都要做出优化
+  - sphere-traced results (i.e. camera ray上的距离)，可以用于产生各种输出，如<u>深度图</u>、<u>表面法向量</u>、<u>轮廓</u>等，因此可以用loss来方便地形成端到端的manner
+  - 前向通路
+- ![image-20201215164421303](media/image-20201215164421303.png)
+    - 用一种coarse-to-fine的方法来save computation at initial steps
+
+      - 考虑到在sphere tracing的前面几步，不同pixel的ray都非常接近
+      - 从图像的1/4分辨率开始tracing，然后每3步以后把每个像素分成4份
+      - 在6步后，full resolution下的每个像素都有一个对应的ray，一直marching直到收敛
+    - 一个aggresive 策略来加速ray marching
+
+      - marching步长是$`\alpha=1.5`$倍的queried SDF value
+      - 在距离表面很远的时候更快地朝表面march
+      - 在ill-posed情况下能加速收敛（当表面法向量和ray direction的夹角很小时）
+
+        - [ ] what?
+      - ray可以射穿表面，能够采样到表面内部(SDF<0)；对表面的两侧都可以应用supervision
+    - dynamic synchronized inference
+    - 一个safe convergence criteria来防止不必要的网络query，同时保留分辨率
+      - 
+- 反向传播
+  
+    - 用SDF的梯度的近似值，对训练影响不大，但是显著减少计算和内存占用
+- **评价：文中出现了非常多技术细节的详细解释，值得一读**
   - sphere tracing<br>![image-20201215111200177](media/image-20201215111200177.png)
+  - 训练一个神经网络，同时为每个3D location 预测signed distance 和color
+- **实验**
+
+  - 收敛速度<br>![image-20201215112912115](media/image-20201215112912115.png)
+  - **Texture Re-rendering**<br>![image-20201215114347510](media/image-20201215114347510.png)
+  - **Shape Completion from Sparse Depths**<br>![image-20201215114703816](media/image-20201215114703816.png)
+  - **Shape Completion over Different Sparsity**<br>![image-20201215114227972](media/image-20201215114227972.png)
+  - **Inverse Optimization over Camera Extrinsics**<br>![image-20201215113343946](media/image-20201215113343946.png)
+  - **Multi-view Reconstruction from Video Sequences**<br>![image-20201215115145581](media/image-20201215115145581.png)
+
+</details>
+
+---
+
+**`"SDF-SRN: Learning Signed Distance
+3D Object Reconstruction from Static Images"`**  
+**[** `NeurIPS2020` **]** **[[paper]](https://papers.nips.cc/paper/2020/file/83fa5a432ae55c253d0e60dbfa716723-Paper.pdf)** **[[code]](https://github.com/chenhsuanlin/signed-distance-SRN)** **[[web]](https://chenhsuanlin.bitbucket.io/signed-distance-SRN/)** **[** :mortar_board: `CMU` **]**   
+**[**  `Chen-Hsuan Lin`, `Chaoyang Wang`, ` Simon Lucey`  **]**  
+**[** _`single-view`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+- **overview**
+  
+  - ![image-20201215173359177](media/image-20201215173359177.png)
 
 </details>
 
@@ -625,6 +687,23 @@ with Differentiable Sphere Tracing"`**
 
 </details>
 
+---
+
+**`"Learned Initializations for Optimizing Coordinate-Based Neural Representations"`**  
+**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2012.02189.pdf)**  **[** :mortar_board: `UCB` **]** **[** :office: `Google` **]**  
+**[**  `Matthew Tancik`, `Ben Mildenhall`, `Terrance Wang`, `Divi Schmidt`, `Pratul P. Srinivasan`, `Jonathan T. Barron`, `Ren Ng`  **]**  
+**[** _`meta-learning`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - 对于coordinate-based neural representations在auto-decoder时，用meta-learned 的initialization
+  - ![image-20201215193905125](media/image-20201215193905125.png)
+  - 与MetaSDF的差别：进一步拓展到更多种类的neural coordinate-based signals，并且把the power of using initial weight settings开发为一种先验信息
+
+</details>
+
 ### analytic exact solution
 
 ---
@@ -657,7 +736,7 @@ Deep Implicit Surface Networks"`**
 
 ## learning parameterization / implicitization
 
-## tasks
+## others
 
 ---
 
@@ -679,5 +758,20 @@ Surfaces from RGB Images"`**
     - 主要基于*Disn:Deep implicit surface network for high-quality single-view 3d reconstruction*，加入skeleton正则项
 - **效果**
   - ![image-20201209120443432](media/image-20201209120443432.png)
+
+</details>
+
+---
+
+**`"Autolabeling 3D Objects with Differentiable Rendering of SDF Shape Priors"`**  
+**[** `0000` **]** **[[paper]](https://abc.efg)** **[[code]](https://www.github.com)** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
+**[**  `xxxx`  **]**  
+**[** _`abcd`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - 已有2D检测框+lidar 数据，为lidar数据做标注（9D cuboid）<br>![image-20201215122457755](media/image-20201215122457755.png)
 
 </details>
