@@ -88,10 +88,6 @@
   - ![image-20201207194307508](media/image-20201207194307508.png)
   - tree结构的GCN![image-20201207194208941](media/image-20201207194208941.png)
 
-</details>
-
-
-
 [image-to-point cloud] Geometric adversarial loss for single-view 3D-object reconstruction
 
 [point cloud-to-point cloud]  Point cloud auto-encoder via deep grid deformation.
@@ -100,9 +96,7 @@ GANS:
 
 [40] 使用图卷积+GAN；邻接矩阵的计算太复杂，要平方计算
 
-
-
-
+</details>
 
 
 

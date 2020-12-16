@@ -71,14 +71,40 @@
 
 ## 关键词：NeRF引用中带encoder-decoder或auto-encoder
 
-## NeRF引用
+## NeRF及NeRF引用
+
+---
+
+**`"NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis"`**  
+**[** `ECCV2020(Oral)` **]** **[[web]](https://www.matthewtancik.com/nerf)** **[[paper]](https://arxiv.org/pdf/2003.08934.pdf)** **[[code(tf)]](https://github.com/bmild/nerf)** **[[code(pytorch)]](https://github.com/yenchenlin/nerf-pytorch)** **[[code(pytorch)(re-implement)]](https://github.com/krrish94/nerf-pytorch)** **[** :mortar_board: `UCB`, `UCSD` **]** **[** :office: `Google` **]**  
+**[**  `Ben Mildenhall`, `Pratul P. Srinivasan`, `Matthew Tancik`, `Jonathan T. Barron`, `Ravi Ramamoorthi`, `Ren Ng`  **]**  
+**[** _`NeRF`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - ![image-20201216210148432](media/image-20201216210148432.png)
+- **Review**
+
+  - 颜色值由ray上的积分函数构成：
+
+    - $`C(r)=\int_{t_n}^{t_f} T(t) \; \cdot \; \sigma(r(t)) \; \cdot \; c(r(t),d) \quad {\rm d}t`$
+
+      - 从near平面积分到far平面
+    - 其中，$`T(t)=\exp(-\int_{t_n}^t \sigma(r(s))) \; {\rm d}s`$
+
+      - 注意，这里是从near平面开始，累积$`\sigma`$积分的负数的指数；这意味着，如果已经经过了一些$`\sigma`$值很大的值，ray后的点累积值也会很大，T(t) 值就会很小了
+      - 这里一定程度上已经cover了遮挡的情况
+
+</details>
 
 ---
 
 **`"DeRF: Decomposed Radiance Fields"`**  
-**[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2011.12490.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `University`, `SFU`, `University of Toronto` **]** **[** :office: `Google` **]**  
+**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2011.12490.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `University`, `SFU`, `University of Toronto` **]** **[** :office: `Google` **]**  
 **[**  `Daniel Rebain`, `Wei Jiang`, `Soroosh Yazdani`, `Ke Li`, `Kwang Moo Yi`, `Andrea Tagliasacchi`  **]**  
-**[** _`abcd`_ **]**  
+**[** _`voronoi space decomposition`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
@@ -94,6 +120,47 @@
 - **Overview**
 
   - ![image-20201215201013772](media/image-20201215201013772.png)
+
+</details>
+
+---
+
+**`"AutoInt: Automatic Integration for Fast Neural Volume Rendering"`**  
+**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2012.01714.pdf)**  **[** :mortar_board: `Stanford` **]**   
+**[**  `David B. Lindell`, `Julien N. P. Martel`, `Gordon Wetzstein`  **]**  
+**[** _`AutoInt`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - 初版NeRF需要离散采样数值积分，计算非常费时：millions of rays，每个ray上hundreds of forward passes，用蒙特卡洛采样来近似积分
+  - 本文用了一种快速自动积分的算法，应对这种对一个隐式神经场的积分
+    - training: grad net来表征多视角图片
+    - testing: integral net来迅速evaluate per-ray integrals
+    - ![image-20201216203510708](media/image-20201216203510708.png)
+- **overview**
+
+  - 把grad network的parameters **reassembled** to form integral networks
+  - 用一个sampling network 预测ray上的piecewise sections的位置，用于计算定积分
+  - ![image-20201216204202712](media/image-20201216204202712.png)
+- neural volumetric rendering
+
+  - automatic integration支持高效地用closed-form solution来evaluate 定积分
+  - 不过volume rendering不能直接应用AutoInt，因为包含嵌套的积分：ray上的radiance加权**<u>累积transmittance</u>**以后的积分
+  - 因此，把这个积分近似为piecewise sections来用AutoInt高效地积分
+  - 将
+    - $`\boldsymbol{\rm C}(\boldsymbol{\rm r})=\int_{t_n}^{t_f} T(t) \; \cdot \; \sigma(\boldsymbol{\rm r}(t)) \; \cdot \; c(\boldsymbol{\rm r}(t),\boldsymbol{\rm d}) \quad {\rm d}t`$
+    - $`T(t)=\exp(-\int_{t_n}^t \sigma(\boldsymbol{\rm r}(s))) \; {\rm d}s`$
+  - 近似为                                                                                                                                                                                                                                              
+    - $`\tilde{\boldsymbol{\rm C}}(\boldsymbol{\rm r})=\sum_{i=1}^N \overline{\sigma}_i \overline{\boldsymbol{\rm c}}_i \overline{T}_i, \qquad \overline{T}_i=\exp(-\sum_{j=1}^{i-1}\overline{\sigma}_j)`$
+    - 其中$`\overline{\sigma}_i=\delta_i^{-1}\int_{t_i-1}^{t_i}\sigma(t)\;{\rm d}t, \qquad \overline{\boldsymbol{\rm c}}_i = \delta_i^{-1} \int_{t_i-1}^{t_i}\boldsymbol{\rm c}(t)\;{\rm d}t`$
+      - 每段的$`\overline{\sigma}_i`$由这段上的$`\sigma(t)`$积分求出，每段的$`\overline{\boldsymbol{\rm c}}_i`$由这段上的$`\boldsymbol{\rm c}(t)`$积分求出
+        - 这里用AutoInt近似
+      - 解释$`\overline{T}_i=\exp(-\sum_{j=1}^{i-1}\overline{\sigma}_j)`$：每段的累积transimittance$`T(t)`$则由这段之前的那些段的累加$`\overline{\sigma}_i`$的负指数幂近似
+        - 这里是真正的数值近似，把一段上的所有T(t)都用这段起始的T(t)近似
+        - ![image-20201216214526084](media/image-20201216214526084.png)
+  - 由于目前的autoint是两阶段的，训练很慢；本篇用了一个pytorch custom implementation of AutoDiff
 
 </details>
 
