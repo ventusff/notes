@@ -19,6 +19,8 @@
        - chapter 5 [Representation of Curved Edges and Faces](https://www.cs.purdue.edu/homes/cmh/distribution/books/chap5.pdf)
        - 有些不严谨，跳步很多，需要一定代数几何基础
     - [2006]arXiv [monoid hypersurfaces](https://www.mn.uio.no/math/personer/vit/ragnip/monoids.pdf)
+    - [2020]Thibault GROUEIX's slice  - [Deep Learning for 3D Toward Surface Generation](http://imagine.enpc.fr/~langloip/data/DeepLearningFor3D_3.pdf)
+       - 非常详细，非常总结，概括性很好
 
 ###  surface: implicit form & parametric form  
 
@@ -691,7 +693,7 @@ with Differentiable Sphere Tracing"`**
 
 **`"Learned Initializations for Optimizing Coordinate-Based Neural Representations"`**  
 **[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2012.02189.pdf)**  **[** :mortar_board: `UCB` **]** **[** :office: `Google` **]**  
-**[**  `Matthew Tancik`, `Ben Mildenhall`, `Terrance Wang`, `Divi Schmidt`, `Pratul P. Srinivasan`, `Jonathan T. Barron`, `Ren Ng`  **]**  
+**[**  `Matthew Tancik`, `Ben Mildenhall`, `Terrance Wang`, `Divi Schmidt`, `Pratul P. Srinivasan`, `Jonathan T. Barron`, `Ren Ng`  **]**  
 **[** _`meta-learning`_ **]**  
 
 <details>
