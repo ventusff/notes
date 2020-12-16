@@ -174,7 +174,7 @@ graph LR
 
 ## capsule networks
 
- - keywork
+ - keywords
     - Google scholar - [GE Hinton](https://scholar.google.com.hk/citations?hl=zh-CN&user=JicYPdAAAAAJ&view_op=list_works&sortby=pubdate)
 
 ---
