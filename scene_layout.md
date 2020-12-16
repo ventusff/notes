@@ -6,9 +6,6 @@
 **[**  `Andrew Luo`, `Zhoutong Zhang`, `Jiajun Wu`, `Joshua B. Tenenbaum  `  **]**  
 **[** _`conditional scene synthesis`, `2.5D`,`variational generative model`， `graph-based variational auto-encoders`_ **]**  
 
-<details>
-  <summary>Click to expand</summary>
-
 
 | ![image-20201028170115727](media/image-20201028170115727.png) |
 | ------------------------------------------------------------ |
@@ -153,8 +150,6 @@ graph LR
 
     - ![image-20201028170542200](media/image-20201028170542200.png)
 
-</details>
-
 
 
 ## capsule networks
@@ -196,7 +191,7 @@ graph LR
   - decomposition
 
     - 把点云$`\boldsymbol{P} \in \mathbb{R}^{P \times D}`$用一个encoder计算出K-fold attention map $`\boldsymbol{A} \in \mathbb{R}^{P \times K}`$和逐点的feature $`\boldsymbol{F} \in \mathbb{R}^{P \times C}`$ 
-    - 然后计算*k*-th capsule的pose $`\boldsymbol{\theta}_k \in \mathbb{R}^3`$和对应的capsule descriptor $`\boldsymbol{\beta}_k \in \mathbb{R}^C`$ <br> $`\boldsymbol{\theta}_k = \frac {\sum_p A_{p,k}P_p} {\sum_p A_{p,k}}`$       $`\boldsymbol{\beta}_k=\frac {\sum_p A_{p,k}F_p} {\sum_p A_{p,k}}`$ <br>其实就是attention map加权和后的点坐标和attention map加权和后的点feature
+    - 然后计算*k*-th capsule的pose $`\boldsymbol{\theta}_k \in \mathbb{R}^3`$和对应的capsule descriptor $`\boldsymbol{\beta}_k \in \mathbb{R}^C`$ <br> $`\boldsymbol{\theta}_k = \frac {\sum_p A_{p,k}P_p} {\sum_p A_{p,k}}`$       $`\boldsymbol{\beta}_k=\frac {\sum_p A_{p,k}F_p} {\sum_p A_{p,k}}`$ <br>其实就是attention map加权和后的点坐标和attention map加权和后的点feature
   - canonicalization
 
     - 单纯地保证不变性和等变性并不足以学出一个object-centric的3D表征，因为缺乏一种(无监督)的机制来==<u>**bring information into a shared "object-centric" reference frame**</u>==
