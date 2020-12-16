@@ -437,9 +437,9 @@ via Topology Modification Networks"`**
 ---
 
 **`"Meshlet Priors for 3D Mesh Reconstruction"`**  
-**[** `CVPR2020` **]** **[[paper]](https://arxiv.org/pdf/2001.01744.pdf)** **[[supp]](https://openaccess.thecvf.com/content_CVPR_2020/supplemental/Badki_Meshlet_Priors_for_CVPR_2020_supplemental.pdf)** **[[code]](https://github.com/NVlabs/meshlets)**   **[** :mortar_board: `UCSB` **]** **[** :office: `NVIDIA` **]**  
-**[**  `Abhishek Badki`, `Orazio Gallo`, `Jan Kautz`, `Pradeep Sen`  **]**  
-**[** _`local shape prior`, `geodesic parameterization`, `VAE`_ **]**  
+**[** `CVPR2020` **]** **[[paper]](https://arxiv.org/pdf/2001.01744.pdf)** **[[supp]](https://openaccess.thecvf.com/content_CVPR_2020/supplemental/Badki_Meshlet_Priors_for_CVPR_2020_supplemental.pdf)** **[[code]](https://github.com/NVlabs/meshlets)**   **[** :mortar_board: `UCSB` **]** **[** :office: `NVIDIA` **]**  
+**[**  `Abhishek Badki`, `Orazio Gallo`, `Jan Kautz`, `Pradeep Sen`  **]**  
+**[** _`local shape prior`, `geodesic parameterization`, `VAE`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
@@ -628,15 +628,12 @@ with Differentiable Sphere Tracing"`**
       - ray可以射穿表面，能够采样到表面内部(SDF<0)；对表面的两侧都可以应用supervision
     - dynamic synchronized inference
     - 一个safe convergence criteria来防止不必要的网络query，同时保留分辨率
-      - 
 - 反向传播
-  
     - 用SDF的梯度的近似值，对训练影响不大，但是显著减少计算和内存占用
 - **评价：文中出现了非常多技术细节的详细解释，值得一读**
   - sphere tracing<br>![image-20201215111200177](media/image-20201215111200177.png)
   - 训练一个神经网络，同时为每个3D location 预测signed distance 和color
 - **实验**
-
   - 收敛速度<br>![image-20201215112912115](media/image-20201215112912115.png)
   - **Texture Re-rendering**<br>![image-20201215114347510](media/image-20201215114347510.png)
   - **Shape Completion from Sparse Depths**<br>![image-20201215114703816](media/image-20201215114703816.png)
