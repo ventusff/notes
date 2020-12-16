@@ -434,6 +434,51 @@ via Topology Modification Networks"`**
 
 </details>
 
+---
+
+**`"Meshlet Priors for 3D Mesh Reconstruction"`**  
+**[** `CVPR2020` **]** **[[paper]](https://arxiv.org/pdf/2001.01744.pdf)** **[[supp]](https://openaccess.thecvf.com/content_CVPR_2020/supplemental/Badki_Meshlet_Priors_for_CVPR_2020_supplemental.pdf)** **[[code]](https://github.com/NVlabs/meshlets)**   **[** :mortar_board: `UCSB` **]** **[** :office: `NVIDIA` **]**  
+**[**  `Abhishek Badki`, `Orazio Gallo`, `Jan Kautz`, `Pradeep Sen`  **]**  
+**[** _`local shape prior`, `geodesic parameterization`, `VAE`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  
+  - 输入点云，输出mesh
+  - 过去的学习shape的方法，在学习先验时有两种：
+    - object级别的先验，没有和pose解耦；
+    - smooth regularizer先验，会损失local detail
+  - 本篇想学习的是那些处于canonical pose下的local natural meshlets，用local natural meshlets，这种meshlets在不同物体、不同类别之间完全是shared，然后用这样纯粹的局部先验来拼出一个完整mesh
+
+|                                                              |                                                              |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ![image-20201216162000056](media/image-20201216162000056.png) | P指的是测试时的物体在数据集物体pose分布内，红P指不在数据集pose分布内<br>N指的是低噪声，红N指moderate noise<br>T指训练集见过的物体类别，T指训练集没有见过的物体类别<br>可以看到，本篇重点强调学出那些和pose解耦了的局部的meshlets，用这些meshlets来拼出完整mesh |
+
+ - **geodesic parameterization**
+    - *Geodesic polar coordinates on polygonal meshes.* 
+    - 把一个顶点和周围的点映射到这个顶点的切平面的坐标上；然后把切平面通过变换变换到canonical pose（即顶点位移到坐标原点，切平面的法向量即z轴，切平面的u,v轴和x,y轴重合）
+    - 这样，可以实现pose解耦，学到那些各种各样的局部的meshlets
+    - ![image-20201216163007426](media/image-20201216163007426.png)
+ - **VAE**
+    - 用VAE把各种meshlets压缩到一个latent space
+    - 然后应用它fit一个点云集合的时候，首先用encoder提取一个初始的latent code，然后auto-decoder来更新几步latent code
+    - ![image-20201216162658302](media/image-20201216162658302.png)
+ - **overall optimization**
+    - 首先随便初始化一个rough mesh，从这个rough mesh提取meshlets，保证每个vertex至少被3个meshlets cover
+       - 注意，这样训练时就有两个量要迭代优化更新：一个是mesh，一个是一组meshlets；
+       - 其中，每个meshlets由顶点和形状code构成
+    - 迭代：更新每一个局部的local shape
+       - 用point cloud和meshlets“拼成的mesh”的loss来更新每一个meshlet的形状
+    - 迭代：再让local shape形成global consistency
+       - 最小化更新后的meshlets的形状和“拼成的mesh”的误差
+       - 首先固定meshlets的形状code，更新mesh顶点
+       - 然后固定mesh顶点，更新meshlet的形状code
+    - ![image-20201216163105638](media/image-20201216163105638.png)
+
+</details>
+
 ## learning implicit surface: implicit fields/implicit functions
 
 - overview
