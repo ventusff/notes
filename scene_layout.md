@@ -1,3 +1,6 @@
+[[_TOC_]]
+
+## scene layout generative models
 
 ---
 
@@ -6,6 +9,8 @@
 **[**  `Andrew Luo`, `Zhoutong Zhang`, `Jiajun Wu`, `Joshua B. Tenenbaum  `  **]**  
 **[** _`conditional scene synthesis`, `2.5D`,`variational generative model`， `graph-based variational auto-encoders`_ **]**  
 
+<details>
+  <summary>Click to expand</summary>
 
 | ![image-20201028170115727](media/image-20201028170115727.png) |
 | ------------------------------------------------------------ |
@@ -150,6 +155,7 @@ graph LR
 
     - ![image-20201028170542200](media/image-20201028170542200.png)
 
+</details>
 
 
 ## capsule networks
