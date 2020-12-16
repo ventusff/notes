@@ -169,3 +169,82 @@ graph LR
     - ![image-20201028170542200](media/image-20201028170542200.png)
 
 </details>
+
+
+
+## capsule networks
+
+ - keywork
+    - Google scholar - [GE Hinton](https://scholar.google.com.hk/citations?hl=zh-CN&user=JicYPdAAAAAJ&view_op=list_works&sortby=pubdate)
+
+---
+
+**`"Stacked Capsule Autoencoders"`**  
+**[** `NeurIPS2019` **]** **[[paper]](https://abc.efg)** **[[code]](https://www.github.com)** **[** :mortar_board: `Oxford` **]** **[** :office: `Google Brain`, `DeepMind` **]**  
+**[**  `Adam R. Kosiorek`, `Sara Sabour`, `Yee Whye Teh`, `Geoffrey E. Hinton`  **]**  
+**[** _`capsule networks`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - ![image-20201216165444435](media/image-20201216165444435.png)
+
+</details>
+
+---
+
+**`"Canonical Capsules: Unsupervised Capsules in Canonical Pose"`**  
+**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2012.04718.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `University of British Columbia`, `University of Toronto`, `University of Victoria` **]** **[** :office: `google` **]**  
+**[**  `Weiwei Sun`, `Andrea Tagliasacchi`, `Boyang Deng`, `Sara Sabour`, `Soroosh Yazdani`, `Geoffrey Hinton`, `Kwang Moo Yi`  **]**  
+**[** _`capsule network`, `3D pointclouds`, `Canonical`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - unsupervised capsule architecture for 3D point clouds
+  - ![image-20201216170228754](media/image-20201216170228754.png)
+- **overview**
+
+  - ![image-20201216171806453](media/image-20201216171806453.png)
+  - decomposition
+
+    - 把点云$`\boldsymbol{P} \in \mathbb{R}^{P \times D}`$用一个encoder计算出K-fold attention map $`\boldsymbol{A} \in \mathbb{R}^{P \times K}`$和逐点的feature $`\boldsymbol{F} \in \mathbb{R}^{P \times C}`$ 
+    - 然后计算*k*-th capsule的pose $`\boldsymbol{\theta}_k \in \mathbb{R}^3`$和对应的capsule descriptor $`\boldsymbol{\beta}_k \in \mathbb{R}^C`$ <br> $`\boldsymbol{\theta}_k = \frac {\sum_p A_{p,k}P_p} {\sum_p A_{p,k}}`$       $`\boldsymbol{\beta}_k=\frac {\sum_p A_{p,k}F_p} {\sum_p A_{p,k}}`$ <br>其实就是attention map加权和后的点坐标和attention map加权和后的点feature
+  - canonicalization
+
+    - 单纯地保证不变性和等变性并不足以学出一个object-centric的3D表征，因为缺乏一种(无监督)的机制来==<u>**bring information into a shared "object-centric" reference frame**</u>==
+    - 并且，一个"合适"的canonical frame其实就是一个convention，所以我们需要一个机制让网络做出一个**<u>选择</u>**——并且必须在所有物体中都是一致的
+
+      - 比如，一个沿着+z轴放置的飞机和一个沿着+y轴放置的飞机是<u>**一样好**</u>的
+    - 为了实现这一点：link the capsule descriptors to the capsule poses in canonical space；i.e. ask that objects with similar appearance to be located in similar Euclidean neighborhoods in canonical space
+
+      - 具体做法是用一个全连接层，从descriptor直接回归出每个capsule的pose
+      - $`\overline{\theta}=\mathcal{K}(\beta)`$<br> $`\overline{\theta} \in \mathbb{R}^{K\times 3}`$是canonical poses，<br>$`\mathcal{K}`$是全连接神经网络，<br>$`\beta \in \mathbb{R}^{K \times C}`$ 是capsule的descriptor
+      - [ ] why?居然直接从K个胶囊描述子直接回归出K个canonical pose
+
+</details>
+
+
+
+---
+
+**`"Unsupervised part representation by Flow Capsules"`**  
+**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2011.13920.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `University of Toronto` **]** **[** :office: `Google` **]**  
+**[**  `Sara Sabour`, `Andrea Tagliasacchi`, `Soroosh Yazdani`, `Geoffrey E. Hinton`, `David J. Fleet`  **]**  
+**[** _`capsule networks`, `motion cue`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - capsule networks不能高效地学到low level的part descriptions
+  - exploit motion as a powerful perceptual cue for part definition <br>用运动作为一个部件定义的有力的感知线索
+- results
+
+  - 从复杂背景中找出来原来的三角形、正方形、圆形等<br>![image-20201216170936463](media/image-20201216170936463.png)
+  - 对于运动的人学出来的部件![image-20201216171020883](media/image-20201216171020883.png)
+
+</details>
+
