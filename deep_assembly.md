@@ -1,11 +1,14 @@
+### part-aware representation
 
+ - partnet
+ - structure net
 
 ---
 
 **`"Compositionally Generalizable 3D Structure Prediction"`**  
 **[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2012.02493.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `UCSD`, `USTC`, `Stanford` **]** **[** :office: `Google` **]**  
 **[**  `Songfang Han`, `Jiayuan Gu`, `Kaichun Mo`, `Li Yi`, `Siyu Hu`, `Xuejin Chen`, `Hao Su`  **]**  
-**[** _`object parts`, `single view`_ **]**  
+**[** _`object parts`, `single view`, `partnet dataset`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
@@ -13,6 +16,7 @@
 - **Review**
   - 思路、框架清晰；carefully designed subproblems
   - 可解释性很强，不是随随便便拿来GCN胡乱用一下
+  - 部件表征：cuboids
 - **Motivation**
   - 学到不同物体、不同物体类别之间那些公共的部件、部件间的关系、连接
   - 把整个物体的shape生成问题转为几个子问题的组合
@@ -61,7 +65,7 @@
       - 接触点
         - 在part $`p_1`$坐标系下接触点坐标$`c^1`$，在part $`p_2`$坐标系下接触点坐标$`c^2`$，假设$`p_1`$, $`p_2`$在world frame下坐标为$`l_1^W`$, $`l_2^W`$，由于是同一个点，应有<br>$`l_1^W+c^1=l_2^W+c^2`$
         - 则两个center之间的相对位置可以这样infer：<br>$`l_{1 \rightarrow2}^W=l_2^W-l_1^W=c^1-c^2`$
-        - - [x] Q：这里可能有些问题，考虑到坐标系旋转，并不应是简单加法，不过意思到了<br>A：没有问题，这里$`c^1`$, $`c^2`$都是世界坐标系下的
+        - - [x] Q：这里可能有些问题，考虑到坐标系旋转，并不应是简单加法，不过意思到了<br>A：没有问题，这里$`c^1`$, $`c^2`$都是世界坐标系下的
       - 接触点估计：如何infer $`c^i`$
         - 接触点应位于cuboid表面或者cuboid内部，因此将接触点表示为cuboid顶点的interpolation<br>$`c^i=\sum_{j=1}^{8}\omega_{i,j}\cdot v_{i,j}`$, where $`\sum_{j=1}^8\omega_{i,j}=1`$ and $`\omega_{i,j} \geq0`$
         - 用神经网络预测$`\omega_i,j`$，输入reference image和两个部件mask的feature的stack
@@ -74,3 +78,71 @@
   - ![image-20201217095300439](media/image-20201217095300439.png)
 
 </details>
+
+---
+
+**`"DSM-Net: Disentangled Structured Mesh Net for Controllable
+Generation of Fine Geometry"`**  
+**[** `2020` **]** **[[web]](http://geometrylearning.com/dsm-net/)** **[[paper]](https://arxiv.org/pdf/2008.05440.pdf)**  **[** :mortar_board: `中科院计算所`, `中科院大学`, `Stanford`, `Cardiff University` **]** **[** :office: `company` **]**  
+**[**  `Jie Yang`, `Kaichun Mo`, `Yu-kun Lai`, `Leonidas Guibas`, `Lin Gao`  **]**  
+**[** _`3D shape generation`, `disentangled representation`, `structure`, `geometry`, `hierarchies`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - 把structure(topology)和geometry进一步解耦，in a synergistic manner
+  - ![image-20201217154222663](media/image-20201217154222663.png)
+- **Overview**
+
+  - 用Recursive Neural Networks(RvNNs, 注意RNN是recurrent NN) hierarchically encode和decode  structure和geometry，在hierarchy的每一层都有bijective mapping<br>![image-20201217155349248](media/image-20201217155349248.png)
+  - 同时用两个分开的但是高度耦合的VAE学习structure 和geometry，把他们encode into two latent spaces
+- **disentangled shape  representation**
+
+  - structure hierarchy抽象出符号部件(symbolic parts)与关系
+
+    - inspired by *PT2PC: Learning to Generate 3D Point Cloud Shapes from Part Tree Conditions. 2020*
+    - 每个部件用semantic label (e.g. chair back, chair leg)表示，引入PartNet dataset中丰富的部件关系
+
+      - $`\boldsymbol{\rm H}`$ **<u>纵向的parent-child inclusion 关系</u>** (e.g. chair back and chair back bars)
+      - $`\boldsymbol{\rm R}`$ **<u>横向的among-sibling 部件对称性与邻接性</u>**(e.g. chair back bars have translational symmetry)
+  - geometry hierarchy是部件的geometry
+
+    - 表征就是正常的多顶点mesh
+    - 假设一个5402顶点构成的封闭mesh，计算oriented bounding box
+    - 然后通过non-rigid registration 变形这个mesh到target part geometry
+    - 然后用ACAP作为部件表征
+
+      - *Sparse data driven mesh deformation. 2019*
+      - *SDM-NET: Deep Generative Network for Structured Deformable Mesh. 2019*
+  - structure hierarchy和geometry hierarchy之间有bijective mapping
+
+    - 符号部件$`l_i`$对应部件geometry $`G_i`$，层级$`\boldsymbol{\rm H}`$和关系$`\boldsymbol{\rm R}`$则隐式地互相一致
+
+      - 在学习的时候两个hierarchies有communication channels
+    - 虽然结构和几何要解耦，但是他们还是需要彼此兼容来产生好的、现实的形状
+
+      - 一方面，shape structure 为 part geometry提供high-level guidance
+
+        - e.g. 如果four legs of a chair对称，那么他们应该具有identical part geometry
+      - 另一方面，给定part geometry以后，只有若干种适用的shape structures（而不是全部）
+
+        - e.g. 如果没有lift handle或者gas cylinder parts，不可能组装一个swivel chair
+- **conditional part geometry VAE**
+
+  - encode和decode时候都condition on part structure information
+  - ![image-20201217162903345](media/image-20201217162903345.png)
+- **Disentangled Geometry and Structure VAEs**
+
+  - 下图蓝色代表geometry，红色代表structure<br>encoding的时候，从geometry和structure feature encode出geometry<br>decoding的时候，从geometry和structure feature decode出geometry<br>
+  - ![image-20201217162351563](media/image-20201217162351563.png)
+- **results**
+
+  - ![image-20201217163302020](media/image-20201217163302020.png)
+
+</details>
+
+
+
+### deep-assembly
+
