@@ -6,8 +6,8 @@
 
 ---
 
-**`[Encoder] <ROOTS> "Learning to Infer 3D Object Models from Images"`**  
-**[** `2020` **]** **[[paper]](https://arxiv.org/pdf/2006.06130.pdf)**  **[** :mortar_board: `Rutgers University` **]** 
+**`[Encoder] <ROOTS> "Learning to Infer 3D Object Models from Images"/"Object-Centric Representation and Rendering of 3D Scenes"`**  
+**[** `2020` **]** **[[paper]](https://arxiv.org/pdf/2006.06130.pdf)** **[[paper_v1]](https://arxiv.org/pdf/2006.06130v1.pdf)** **[** :mortar_board: `Rutgers University` **]** 
 **[**  `Chang Chen`, `Fei Deng`, `Sungjin Ahn` **]**  
 **[** _`scene encoder`, `GQN-based`, `3D object detection`_ **]**  
 
