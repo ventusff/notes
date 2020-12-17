@@ -1,6 +1,6 @@
 [[_TOC_]]
 
-## scene layout generative models
+## scene graph to image generation
 
 ---
 
@@ -154,6 +154,36 @@ graph LR
   - diverse layout generation
 
     - ![image-20201028170542200](media/image-20201028170542200.png)
+
+</details>
+
+---
+
+**`"Learning Canonical Representations for
+Scene Graph to Image Generation"`**  
+**[** `ECCV2020` **]** **[[web]](https://roeiherz.github.io/CanonicalSg2Im/)** **[[paper]](https://arxiv.org/pdf/1912.07414.pdf)** **[[code]](https://github.com/roeiherz/CanonicalSg2Im)** **[** :mortar_board: `Tel Aviv University`, `UCB`, `Bar-Ilan University` **]** **[** :office: `NVIDIA` **]**  
+**[**  `Roei Herzig`, `Amir Bar`, `Huijuan Xu`, `Gal Chechik`, `Trevor Darrell`, `Amir Globerson`  **]**  
+**[** _`semantic equivalence`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - 过去的sg2im的一个不足是不能捕捉graphs中的语义等价性(semantic equivalence)
+    - 即：同样一张图片可以用多个逻辑上等价的SG来表述
+  - 所以提出从数据中学习出canonical graph representations
+  - 主要展示3个数据集：visual genome, COCO, clevr
+- **Overview**
+
+  - SG to canonical weighted SG
+  - weighted SG to layout
+  - layout to image
+- **Scene Graph Canonicalization**
+
+  - transitive relation, converse relations
+- **效果**
+
+  - ![image-20201217112917616](media/image-20201217112917616.png)
 
 </details>
 
