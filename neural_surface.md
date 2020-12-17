@@ -748,7 +748,44 @@ with Differentiable Sphere Tracing"`**
 
 </details>
 
-### compositional
+---
+
+**`"PatchNets: Patch-Based Generalizable Deep Implicit 3D Shape Representations"`**  
+**[** `ECCV2020` **]** **[[paper]](https://arxiv.org/pdf/2008.01639.pdf)**  **[[slice]](http://gvv.mpi-inf.mpg.de/projects/PatchNets/data/patchnets_slides.pdf)** **[** :mortar_board: `MPI` **]** **[** :office: `facebook` **]**  
+**[**  `Edgar Tretschk`, `Ayush Tewari`, `Vladislav Golyanik`, `Michael Zollhöfer`, `Carsten Stoll`, `Christian Theobalt`  **]**  
+**[** _`implicit functions`, `patch-based surface representation`, `SDF`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - mid-level patch-based SDF
+  - 因为在patch层次，不同类别的物体有相似性，用上这种相似性就可以做更泛化的模型
+  - 在一个canonical space下学到这些patch-based representation
+  - 从ShapeNet的一个类别学出来的representation，可以用于表征任何一个其他类别的非常细节的shapes；并且可以用更少的shape来训练
+  - ![image-20201217115545052](media/image-20201217115545052.png)
+- **Overview**
+
+  - auto-decoder
+  - losses：重建loss和patch extrinsics的guidance loss，还有regularization
+- **extrinsic loss**
+
+  - 这个loss保证所有的patch都对surface有贡献，并且处于caonical space
+  - 第*i*个物体的patch extrinsics: $`\boldsymbol{e}_i=[\boldsymbol{e}_{i,0},\boldsymbol{e}_{i,1},\ldots,\boldsymbol{e}_{i,N_P-1}]`$
+  - $`\mathcal{L}_{ext}(\boldsymbol{e}_i) = \mathcal{L}_{sur}(\boldsymbol{e}_i) + \mathcal{L}_{cov}(\boldsymbol{e}_i) + \mathcal{L}_{rot}(\boldsymbol{e}_i) + \mathcal{L}_{scl}(\boldsymbol{e}_i) + \mathcal{L}_{var}(\boldsymbol{e}_i) `$
+  - $`\mathcal{L}_{sur}(\boldsymbol{e}_i)`$ 保证每个patch都离surface很近
+
+    - $`\max \limits_{逐patch} [surface上的所有点到该patch距离的最小值]`$ 
+  - $`\mathcal{L}_{cov}(\boldsymbol{e}_i)`$ symmetric coverage loss，鼓励surface上的每个点都至少被一个patch涵盖
+  - $`\mathcal{L}_{rot}(\boldsymbol{e}_i)`$ 把patches和surface normals对齐
+  - $`\mathcal{L}_{scl}(\boldsymbol{e}_i)`$ 鼓励patches to be reasonably small，防止不同patch之间显著的重叠
+  - $`\mathcal{L}_{var}(\boldsymbol{e}_i)`$ 鼓励所有patch大小相似
+- **result**
+
+  - ![image-20201217122000974](media/image-20201217122000974.png)
+  - ![image-20201217122618035](media/image-20201217122618035.png)
+
+</details>
 
 ### analytic exact solution
 
