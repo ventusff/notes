@@ -201,6 +201,26 @@
 
 </details>
 
+---
+
+**`"Neural Sparse Voxel Fields"`**  
+**[** `NeurIPS2020` **]** **[[paper]](https://proceedings.neurips.cc/paper/2020/file/b4b758962f17808746e9bb832a6fa4b8-Paper.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `MPI`, `NUS` **]** **[** :office: `Facebook` **]**  
+**[**  `Lingjie Liu`, `Jiatao Gu`, ` Kyaw Zaw Lin`, `Tat-Seng Chua`, `Christian Theobalt`  **]**  
+**[** _`NeRF`, `octree voxels fields`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - 现有的方法，由于网络容量/寻找和scene geometry的精确intersection有困难，目前的很多方法都是blurry results
+  - 提出一种新的表征，用octree结构的voxels来each 存local feature<br>这样在采样时就可以跳过无关的voxels，比NeRF快10倍<br>![image-20201221173251904](media/image-20201221173251904.png)
+  - 至于每个pixel的feature，渲染结构与NeRF类似<br>![image-20201221174122461](media/image-20201221174122461.png)
+- **results**
+
+  - ![image-20201221173910965](media/image-20201221173910965.png)
+
+</details>
+
 ### NeRF+compositional
 
  - GIRAFFE
@@ -254,3 +274,22 @@
 </details>
 
 ## 关键词：DVR引用中 + generative / generic / generalize / category
+
+### others
+
+---
+
+**`"Fourier Features Let Networks Learn
+High Frequency Functions in Low Dimensional Domains"`**  
+**[** `NeurIPS2020` **]** **[[paper]](https://abc.efg)** **[[code]](https://www.github.com)** **[** :mortar_board: `UCB`, `UCSD` **]** **[** :office: `Google` **]**  
+**[**  `Matthew Tancik`, `Pratul P. Srinivasan`, `Ben Mildenhall`, `Sara Fridovich-Keil`, `Nithin Raghavan`, `Utkarsh Singhal`, `Ravi Ramamoorthi`, `Jonathan T. Barron`, `Ren Ng`  **]**  
+**[** _`abcd`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - 傅里叶特征可以改善coordinate-based MLP的低维高频回归任务
+  - ![image-20201221172740873](media/image-20201221172740873.png)
+
+</details>
