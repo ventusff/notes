@@ -214,10 +214,8 @@
   - shape predictor，学到的是从mean shape出发的顶点的位移改变量
   - texture predictor，学到的是从输入图像的texture flow
   - camera predictor，学到的是canonical space下的camera pose
-
 - deformation predictor事实上学到的是从一个learned mean shape的变形
   texture使用标准UV映射定义
-
 - mesh定义在canonical frame下
     mean shape和sphere有相同的geometry
   - 相同的顶点连接性，相当于fixed topology，拓扑是固定的
@@ -226,7 +224,6 @@
   - 所谓shape predictor，其实是预测固定个数的vertices的位置改变<br>
     ![image-20201207231029039](media/image-20201207231029039.png)
   - 我们可以从uv图的坐标映射到球面坐标，再映射到mean shape上的坐标，再通过shape 变形（顶点移位）映射到当前shape上的顶点坐标
-
 - texture predictor 事实上学到的是从单张图片出发的texture flow
   ![image-20201207232213580](media/image-20201207232213580.png)
 
@@ -245,7 +242,6 @@ learning generalized templates comprised of elements
   <summary>Click to expand</summary>
 
 - **Motivation**
-  
   - 给这类从canonical space下的shape template学出物体shape的方法，提供一种更通用于各种类别的shape template 学习方法
   - 由于现实世界的形状和拓扑变化丰富，过去的_<u>这类</u>_方法一般用a library of handmade templates
   - 本篇使用了一种基于若干个local shape elements的组合来构成shape template；<br>
@@ -279,7 +275,6 @@ learning generalized templates comprised of elements
   - 学到的一族从单位方到局部 2-流形的映射，非常类似一个surface 的 atlas 图册
   - 每一个3D点最终都可以得到一个2D UV值
 - **overview**
-  
   - ![image-20201208004950236](media/image-20201208004950236.png)
   - pointcloud基线，是把一个latent shape code输出为一组点
   - 本篇方法，额外输入一个从均匀单位方内采样的2D坐标点，用其来产生surface上的一个single point
@@ -300,7 +295,6 @@ learning generalized templates comprised of elements
     <br>用了universal representation theorum：<br>
     Approximation capabilities of multilayer feedforward networks. *Neural Networks*, 1991
 - related work:  learning representations for 2-manifolds
-
   - polygon mesh
   - 建立一套3D shape和2D domain之间的连接是几何处理的一个存在已久的问题，它的应用有：texture mapping, re-meshing, shape correspondance
   - 过去的方法需要input data就是parameterized；本篇直接从点云中学出这种parameterization
@@ -326,7 +320,6 @@ learning generalized templates comprised of elements
     - 学一个per face error estimation network
     - 通过去掉那些deviate significantly的face来更新topology structure
 - 效果
-
   - ![image-20201208111115100](media/image-20201208111115100.png)
   - ![image-20201208111142570](media/image-20201208111142570.png)
 
@@ -346,16 +339,13 @@ learning generalized templates comprised of elements
   - 评价：可以看到学出来的曲面可以不是闭合的
   - ![image-20201207204146033](media/image-20201207204146033.png)
     ![image-20201207204206853](media/image-20201207204206853.png)
-  
 - **Motivation**
   - learning to generate 3D parametric surface representations for novel object instances, as seen from one or more views
   - 使用2D patch来作为UV parameterization，处理多个non-adjacent views，并且建立2D pixels和3D surface points之间的correspondence
   - 那些用implicit functions表达的surface，想要得到显式的表面，需要昂贵的后处理步骤：如Marching Cubes；本文直接学习生成显式的表面
-
 - **主要贡献**
   - high-quality parametric surfaces 遵循multi view一致性
   - 生成的3D表面保留了精确的图像像素到3D表面点的correspondance，使得可以lift texture information去reconstruct 带有丰富集合与外观的 shapes
-
 - **引用的directly reconstruct a parametric representation of a shape's surface**
   - class-specific templates  **<u>(canonical template / mean shape in canonical space)</u>**
     <br>逐个类别手动设计的shape template
@@ -369,7 +359,6 @@ learning generalized templates comprised of elements
       - [ECCV2018] Pixel2mesh: Generating 3d mesh models from single rgb images.
       - [ICCV2019] Pixel2mesh++: Multi-view 3d mesh generation via deformation
       - [CVPR2019] 3DN: 3d deformation network.
-      
     - differentiable mesh renderer + image supervision
       - [CVPR2018] Neural 3d mesh renderer
       - [2019]  Soft rasterizer: A differentiable renderer for image-based 3d reasoning
@@ -379,32 +368,22 @@ learning generalized templates comprised of elements
       - [CVPR2018] Atlasnet: A papier-mâché approach to learning 3d surface generation. 
       - AtlasNet for video clip <br>[CVPR2019] Photometric mesh optimization for video-aligned 3d object reconstruction.
       - introduce topology modification to atlasnet <br>[ICCV2019] Deep mesh reconstruction from single rgb images via topology modification networks
-  
 - **preliminaries**
-
-
   - NOCS
-
     - 可以预测出一张图片的nocs map和mask
   - surface parameterization
 
     - 表面的UV参数化即一个`chart`
     - 用一组全连接网络学习多个`chart`
-
 - overview
-
-
   - ==注意==：不同于atlas net，uv不是来自于均匀采样，而是来自于一个learned network，uv predictor<br>所以是先预测出图像每个像素的uv值，再把图像上属于这个物体的uv值集合和图像的feature 拼接一起来 输出 三维点集合(二维流形的三维点坐标集)<br>
-
   - ```mermaid
     graph LR
     	img[image coordinate] -.per index prediction.-> uv[uv value] --> MLP
     	image --> z[global latent code z] --> MLP
     	MLP --> 3d[3D surface coordinate]
     ```
-
   - <br>![image-20201208103708582](media/image-20201208103708582.png)
-
 - single view single chart pix2surf
   - NOCS-UV branch
     - 在过去的NOCS输出上额外加两个channel，输出uv值
@@ -444,7 +423,6 @@ learning generalized templates comprised of elements
   <summary>Click to expand</summary>
 
 - **Motivation**
-  
   - 输入点云，输出mesh
   - 过去的学习shape的方法，在学习先验时有两种：
     - object级别的先验，没有和pose解耦；
@@ -536,7 +514,6 @@ learning generalized templates comprised of elements
   - ![image-20201210100006815](media/image-20201210100006815.png)
   - ![image-20201210095931233](media/image-20201210095931233.png)
 - **overview**
-
   - 单个形状用单个SDF网络，一个category用code conditioned<br>![image-20201210100154456](media/image-20201210100154456.png)
   - 使用auto-decoder<br>![image-20201210100244493](media/image-20201210100244493.png)
 
@@ -576,7 +553,6 @@ Optimization"`**
   - image-based shape optimization using differentiable rendering of 3D shapes represented by SDF
     - SDF作为形状表征的优势：可以表征具有任意拓扑的形状，并且可以保证watertight
 - **Overview**
-
   - learn SDF on a 3D grid
   - perform ray-casting via sphere tracing
 
@@ -594,36 +570,29 @@ with Differentiable Sphere Tracing"`**
   <summary>Click to expand</summary>
 
 - **Motivation**
-  
   - 给SDF加上一个differentiable renderer，来为inverse graphics models和deep implicit surface field建设桥梁
   - solving vision problem as inverse graphics process is one of the foundamental approaches, where the solution is the visual structure that best explains given observations 把视觉问题看做逆向图形学过程来解决；寻找能最好地解释给定观测的视觉结构
-  
     - 3D geometry理解 领域：很早就被使用(1974, 1999, etc.)
     - 常常需要一个高效的renderer来从从一个optimizable 的3D结构 精确地simulate这些观测(e.g. depth maps)，同时需要是可微的，来反向传播局部观测的误差
     - (first) a differentiable renderer for learning-based SDF
   - 用一个可微分的renderer来把learning-based SDF可微分地渲染为 depth image, surface normal, silhouettes，从任意相机viewpoints
   - 应用：可用于infer 3D shape from various inputs, e.g. multi-view images and single depth image
 - 方法
-
   - ![image-20201215111010407](media/image-20201215111010407.png)
   - [auto-decoder] 给定一个已经pre-trained generative model, e.g. DeepSDF, 通过在latent code space 寻找能产生和给定观测最一致的3D shape
 - [sphere tracing] 使用一个类似sphere tracing的框架来做可微分的渲染
-
   - 直接应用sphere tracing因为需要对network做反复的query并且在反向传播时产生递归的计算图（笔者注：就像SRN那样），计算费时、费内存；所以需要对前向传播和反向传播过程都要做出优化
   - sphere-traced results (i.e. camera ray上的距离)，可以用于产生各种输出，如<u>深度图</u>、<u>表面法向量</u>、<u>轮廓</u>等，因此可以用loss来方便地形成端到端的manner
   - 前向通路
 - ![image-20201215164421303](media/image-20201215164421303.png)
     - 用一种coarse-to-fine的方法来save computation at initial steps
-
       - 考虑到在sphere tracing的前面几步，不同pixel的ray都非常接近
       - 从图像的1/4分辨率开始tracing，然后每3步以后把每个像素分成4份
       - 在6步后，full resolution下的每个像素都有一个对应的ray，一直marching直到收敛
     - 一个aggresive 策略来加速ray marching
-
       - marching步长是$`\alpha=1.5`$倍的queried SDF value
       - 在距离表面很远的时候更快地朝表面march
       - 在ill-posed情况下能加速收敛（当表面法向量和ray direction的夹角很小时）
-
         - [ ] what?
       - ray可以射穿表面，能够采样到表面内部(SDF<0)；对表面的两侧都可以应用supervision
     - dynamic synchronized inference
@@ -655,15 +624,12 @@ with Differentiable Sphere Tracing"`**
   <summary>Click to expand</summary>
 
 - **Motivation**
-
   - 单视角3D物体重建，过去的方法往往都有3D形状真值
   - 最近的方法可以没有3D监督信号，但是还是需要训练时多视角的对同个instance的silhouettes标注；因此大多只能应对合成数据集
   - 本篇提出SDF-SRN，只需要单视角图片(只在训练时+silhouette)输入<br>![image-20201221153940813](media/image-20201221153940813.png)
 - **overview**
-  
   - single-view一般需要encoder<br>![image-20201215173359177](media/image-20201215173359177.png)
 - **Results** 
-
   - 学出的形状奇奇怪怪；不过总归是纯图片输入，而且只有训练时需要silhouette<br>![image-20201221153429857](media/image-20201221153429857.png)
   - 颜色重建的质量也一般<br>![image-20201221155058978](media/image-20201221155058978.png)
 
