@@ -562,7 +562,7 @@ Optimization"`**
 
 **`"DIST: Rendering Deep Implicit Signed Distance Function
 with Differentiable Sphere Tracing"`**  
-**[** `CVPR2020` **]** **[[paper]](http://b1ueber2y.me/projects/DIST-Renderer/dist-paper.pdf)** **[[code]](https://github.com/B1ueber2y/DIST-Renderer)** **[[web]](http://b1ueber2y.me/projects/DIST-Renderer/)** **[** :mortar_board: `ETH`, `Tsinghua University`, `Peking University` **]** **[** :office: `Google`, `MPI`, `Peng Cheng Laboratory` **]**  
+**[** `CVPR2020` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2020/papers/Liu_DIST_Rendering_Deep_Implicit_Signed_Distance_Function_With_Differentiable_Sphere_CVPR_2020_paper.pdf)** **[[code]](https://github.com/B1ueber2y/DIST-Renderer)** **[[web]](http://b1ueber2y.me/projects/DIST-Renderer/)** **[** :mortar_board: `ETH`, `Tsinghua University`, `Peking University` **]** **[** :office: `Google`, `MPI`, `Peng Cheng Laboratory` **]**  
 **[**  `Shaohui Liu`, `Yinda Zhang`, `Songyou Peng`, `Boxin Shi`, `Marc Pollefeys`, `Zhaopeng Cui`  **]**  
 **[** _`SDF`, `differentiable renderer`, `sphere tracing`_ **]**  
 

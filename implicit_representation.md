@@ -215,9 +215,15 @@
   - 现有的方法，由于网络容量/寻找和scene geometry的精确intersection有困难，目前的很多方法都是blurry results
   - 提出一种新的表征，用octree结构的voxels来each 存local feature<br>这样在采样时就可以跳过无关的voxels，比NeRF快10倍<br>![image-20201221173251904](media/image-20201221173251904.png)
   - 至于每个pixel的feature，渲染结构与NeRF类似<br>![image-20201221174122461](media/image-20201221174122461.png)
+- **Overview**
+
+  - self-pruning <br>![image-20201221174308274](media/image-20201221174308274.png)
 - **results**
 
   - ![image-20201221173910965](media/image-20201221173910965.png)
+- 因为用的是显式的sparse voxel 表征，可以轻松用于scene composition
+
+  - ![image-20201221174604849](media/image-20201221174604849.png)
 
 </details>
 
