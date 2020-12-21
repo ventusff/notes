@@ -1,5 +1,8 @@
 [[_TOC_]] 
 
+ - 参考资料
+    - [[blog] NeRF Explosion 2020](https://dellaert.github.io/NeRF/)
+
 ## 关键词：NeRF引用中 带 encoder
 
 ---
