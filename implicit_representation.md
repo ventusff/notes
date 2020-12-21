@@ -66,6 +66,15 @@
      - 给定一个空间位置、encoded feature（位于重投影后的在图片上的坐标）
      - 输出color + density
    - ![image-20201207191400152](media/image-20201207191400152.png)
+   
+- multi-view aggregation 方式：
+
+
+  - ![image-20201221092641965](media/image-20201221092641965.png)
+  - 在任意一个query point，对任意一个view，把query point $`\boldsymbol{\rm x}, \boldsymbol{\rm d}`$ **<u>变换到input view space下</u>** <br>$`\boldsymbol{\rm x}^{(i)}=\boldsymbol{\rm P}^{(i)}\boldsymbol{\rm x}`,\quad \boldsymbol{\rm d}^{(i)}=\boldsymbol{\rm R}^{(i)}\boldsymbol{\rm d}$
+  - 在任意一个query point，对任意一个view，从投影后的图像位置的feature + position embedding + view direction embedding 计算中间变量<br>$`\boldsymbol{\rm V}^{(i)}=f_1(\gamma(\boldsymbol{\rm x}^{(i)}), \boldsymbol{\rm d}^{(i)};\boldsymbol{\rm W}(\pi(\boldsymbol{\rm x}^{(i)})))`$
+  - 在任意一个query point，对于所有view，把所有中间变量过average pooling layer $`\psi`$后再过一个网络渲染出$`(\sigma, \boldsymbol{\rm c})`$<br>$`(\sigma, \boldsymbol{\rm c})=f_2(\psi(\boldsymbol{\rm V}^{(1)},\ldots,\boldsymbol{\rm V}^{(n)}))`$
+  - single view就是直接$`(\sigma, \boldsymbol{\rm c})=f(\gamma(\boldsymbol{\rm x}),\boldsymbol{\rm d};\boldsymbol{\rm W}(\pi(\boldsymbol{\rm x})))`$
 
 </details>
 
@@ -120,6 +129,31 @@
 - **Overview**
 
   - ![image-20201215201013772](media/image-20201215201013772.png)
+
+</details>
+
+---
+
+**`"Deformable Neural Radiance Fields"`**  
+**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2011.12948.pdf)** **[[code]](https://www.github.com)** **[[web]](https://nerfies.github.io/)** **[** :mortar_board: `University of Washington` **]** **[** :office: `Google` **]**  
+**[**  `Keunhong Park`, `Utkarsh Sinha`, `Jonathan T. Barron`, `Sofien Bouaziz`, `Dan B Goldman`, `Steven M. Seitz`, `Ricardo Martin-Brualla`  **]**  
+**[** _`deformable NeRF`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - 为NeRF采集的图片中的物体可以变形
+- **Overview**
+
+  - 首先从observation space加上一个变形latent code映射到canonical space，然后再canonical space下进行NeRF的操作
+  - 这样通过变形latent code就可以捕捉到物体的变形<br>![image-20201221094736917](media/image-20201221094736917.png)
+- Elastic Regularization 弹性正则化
+
+  - 由于deformation field 引入了额外的ambiguities，导致`under-constrained optimization`欠约束最优化问题，带来不好的结果和artifacts<br>需要引入先验
+  - ![image-20201221095628241](media/image-20201221095628241.png)
+  - 在几何处理和图形学仿真领域，建模非刚体变形时，常常使用弹性能量`elastic enegies` 来建模local deformations from a rigid motion；在视觉领域也有利用`elastic energy`来重建、tracking非刚体的场景和物体；因此使用类似概念
+  - 对本篇的deformation field T来说，一个点$`\boldsymbol{\rm x}`$处的mapping(从observation frame到canonical frame)的`Jacobian` $`\boldsymbol{\rm J}_T(\boldsymbol{\rm x})`$描述了这个点处的mapping的`best linear approximation`
 
 </details>
 

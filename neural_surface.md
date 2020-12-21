@@ -309,8 +309,7 @@ learning generalized templates comprised of elements
 
 ---
 
-**`"Deep Mesh Reconstruction from Single RGB Images
-via Topology Modification Networks"`**  
+**`"Deep Mesh Reconstruction from Single RGB Images via Topology Modification Networks"`**  
 **[** `CVPR2019` **]** **[[paper]](https://arxiv.org/pdf/1909.00321.pdf)**  **[** :mortar_board: `CUHK(Shenzhen)`, `USC` **]**   
 **[**  `Junyi Pan`, `Xiaoguang Han`, `Weikai Chen`, `Jiapeng Tang`, `Kui Jia`  **]**  
 **[** _`topology modification`_ **]**  
@@ -655,9 +654,16 @@ with Differentiable Sphere Tracing"`**
   <summary>Click to expand</summary>
 
 - **Motivation**
+
+  - 单视角3D物体重建，过去的方法往往都有3D形状真值
+  - 最近的方法可以没有3D监督信号，但是还是需要训练时多视角的对同个instance的silhouettes标注；因此大多只能应对合成数据集
+  - 本篇提出SDF-SRN，只需要单视角图片(只在训练时+silhouette)输入<br>![image-20201221153940813](media/image-20201221153940813.png)
 - **overview**
   
-  - ![image-20201215173359177](media/image-20201215173359177.png)
+  - single-view一般需要encoder<br>![image-20201215173359177](media/image-20201215173359177.png)
+- **Results** 
+
+  - 学出的形状奇奇怪怪；不过总归是纯图片输入，而且只有训练时需要silhouette<br>![image-20201221153429857](media/image-20201221153429857.png)
 
 </details>
 
@@ -776,9 +782,9 @@ with Differentiable Sphere Tracing"`**
   - $`\mathcal{L}_{sur}(\boldsymbol{e}_i)`$ 保证每个patch都离surface很近
 
     - $`\max \limits_{逐patch} [surface上的所有点到该patch距离的最小值]`$ 
-  - $`\mathcal{L}_{cov}(\boldsymbol{e}_i)`$ symmetric coverage loss，鼓励surface上的每个点都至少被一个patch涵盖
-  - $`\mathcal{L}_{rot}(\boldsymbol{e}_i)`$ 把patches和surface normals对齐
-  - $`\mathcal{L}_{scl}(\boldsymbol{e}_i)`$ 鼓励patches to be reasonably small，防止不同patch之间显著的重叠
+  - $`\mathcal{L}_{cov}(\boldsymbol{e}_i)`$ symmetric coverage loss，鼓励surface上的每个点都至少被一个patch涵盖
+  - $`\mathcal{L}_{rot}(\boldsymbol{e}_i)`$ 把patches和surface normals对齐
+  - $`\mathcal{L}_{scl}(\boldsymbol{e}_i)`$ 鼓励patches to be reasonably small，防止不同patch之间显著的重叠
   - $`\mathcal{L}_{var}(\boldsymbol{e}_i)`$ 鼓励所有patch大小相似
 - **result**
 
@@ -823,9 +829,7 @@ Deep Implicit Surface Networks"`**
 
 ---
 
-**`"SkeletonNet: A Topology-Preserving Solution for
-Learning Mesh Reconstruction of Object
-Surfaces from RGB Images"`**  
+**`"SkeletonNet: A Topology-Preserving Solution for Learning Mesh Reconstruction of Object Surfaces from RGB Images"`**  
 **[** `TPAMI2020` **]** **[[paper]](https://arxiv.org/pdf/2008.05742)** **[[code]](https://github.com/tangjiapeng/SkeletonNet)** **[** :mortar_board: `南方科技大学`, `CUHK` **]** **[** :office: `Microsoft Research Asia` **]**  
 **[**  `Jiapeng Tang`, `Xiaoguang Han`, `Mingkui Tan`, `Xin Tong`, `Kui Jia`  **]**  
 **[** _`skeleton`, `topology preserving`, `GCN`, `implicit surface`_ **]**  
