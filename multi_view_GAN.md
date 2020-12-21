@@ -144,7 +144,7 @@ too old
 ---
 
 **`"Towards Unsupervised Learning of Generative Models for 3D Controllable Image Synthesis"`**  
-**[** `CVPR2020` **]** **[[paper]](https://arxiv.org/pdf/1912.05237.pdf)** **[[code]](https://github.com/autonomousvision/controllable_image_synthesis)** **[** :mortar_board: `University of Tubingen ` **]** **[** :office: `MPI-IS`,`Amazon` **]**  
+**[** `CVPR2020` **]** **[[paper]](https://arxiv.org/pdf/1912.05237.pdf)** **[[code]](https://github.com/autonomousvision/controllable_image_synthesis)** **[** :mortar_board: `University of Tubingen`, `MPI-IS` **]** **[** :office: `Amazon` **]**  
 **[**  `Yiyi Liao`,`Katja Schwarz`,`Lars Mescheder`, `Andreas Geiger`  **]**  
 **[** [autonomous_vision lab](https://github.com/autonomousvision) **]**  
 **[** _`HoloGAN->baseline`,`RGBD-GAN based`, `multi object multi view`,  `Controllable Image Synthesis`_ **]**  
@@ -209,7 +209,7 @@ too old
 ---
 
 **`"GRAF: Generative Radiance Fields for 3D-Aware Image Synthesis"`**  
-**[** `NeurIPS2020` **]** **[[paper](https://arxiv.org/pdf/2007.02442.pdf), [supp](http://www.cvlibs.net/publications/Schwarz2020NEURIPS_supplementary.pdf)]** **[[code]](https://github.com/autonomousvision/graf)** **[** :mortar_board: `University of Tubingen ` **]** **[** :office: `MPI-IS`**]**  
+**[** `NeurIPS2020` **]** **[[paper](https://arxiv.org/pdf/2007.02442.pdf), [supp](http://www.cvlibs.net/publications/Schwarz2020NEURIPS_supplementary.pdf)]** **[[code]](https://github.com/autonomousvision/graf)** **[** :mortar_board: `University of Tubingen`, `MPI-IS` **]**  
 **[** [autonomous_vision lab](https://github.com/autonomousvision) **]**
 **[**  `Katja Schwarz`, `Yiyi Liao`, `Michael Niemeyer`, `Andreas Geiger`  **]**  
 **[** _`neural radiance field`, `continuous representation`, `camera viewpoint/object pose controllable image synthesis`, `HoloGAN->baseline`_ **]**  
