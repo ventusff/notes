@@ -198,4 +198,56 @@
 
 </details>
 
+### NeRF+compositional
+
+ - GIRAFFE
+
+---
+
+**`"Object-Centric Neural Scene Rendering"`**  
+**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2012.08503.pdf)** **[[code]](https://www.github.com)** **[[web]](https://shellguo.com/osf/)** **[** :mortar_board: `Stanford` **]** **[** :office: `Google` **]**  
+**[**  `Michelle Guo`, `Alireza Fathi`, `Jiajun Wu`, `Thomas Funkhouser`  **]**  
+**[** _`object-centric neural scattering functions`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - ![image-20201221161533104](media/image-20201221161533104.png)
+  - OSF(object-centric neural scattering functions) models per-object light transport
+  - [ ] modeling dynamic scene：物体在移动/有无，光源在移动
+- **Review**
+
+  - [ ] 相比于GIRAFFE，把多物体的光照、反射等处理地很好了；GIRAFFE是用neural rendering逃避了显式地建模光照和多物体透射反射，这篇文章直面难题，类似Neural Reflectance Field
+  - [ ] seemingly 物体位置、id都是真值，重点主要是建模好多物体的光照
+- **Overview**
+
+  - 数据集
+
+    - furniture-single
+    - furniture-random 25个动态的场景，每个包含多个物体的随机layout
+    - furniture-realisitc
+  - ![image-20201221162223704](media/image-20201221162223704.png)
+- ![image-20201221162251641](media/image-20201221162251641.png)
+
+  - ![image-20201221162336799](media/image-20201221162336799.png)
+
+</details>
+
+---
+
+**`"Neural Scene Graphs for Dynamic Scenes"`**  
+**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2011.10379.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `TUM`, `Princeton University` **]** **[** :office: `Algolux` **]**  
+**[**  `Julian Ost`, `Fahim Mannan`, `Nils Thuerey`, `Julian Knodt`, `Felix Heide`  **]**  
+**[** _`dynamic scenes`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - 主要是为了model dynamic scenes；graph是显式的graph
+  - ![image-20201221165737154](media/image-20201221165737154.png)
+
+</details>
+
 ## 关键词：DVR引用中 + generative / generic / generalize / category

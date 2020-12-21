@@ -586,7 +586,7 @@ Optimization"`**
 
 **`"DIST: Rendering Deep Implicit Signed Distance Function
 with Differentiable Sphere Tracing"`**  
-**[** `CVPR2020` **]** **[[paper]](http://b1ueber2y.me/projects/DIST-Renderer/dist-paper.pdf)** **[[code]](https://github.com/B1ueber2y/DIST-Renderer)** **[** :mortar_board: `ETH`, `Tsinghua University`, `Peking University` **]** **[** :office: `Google`, `MPI`, `7Peng Cheng Laboratory` **]**  
+**[** `CVPR2020` **]** **[[paper]](http://b1ueber2y.me/projects/DIST-Renderer/dist-paper.pdf)** **[[code]](https://github.com/B1ueber2y/DIST-Renderer)** **[[web]](http://b1ueber2y.me/projects/DIST-Renderer/)** **[** :mortar_board: `ETH`, `Tsinghua University`, `Peking University` **]** **[** :office: `Google`, `MPI`, `Peng Cheng Laboratory` **]**  
 **[**  `Shaohui Liu`, `Yinda Zhang`, `Songyou Peng`, `Boxin Shi`, `Marc Pollefeys`, `Zhaopeng Cui`  **]**  
 **[** _`SDF`, `differentiable renderer`, `sphere tracing`_ **]**  
 
@@ -595,6 +595,7 @@ with Differentiable Sphere Tracing"`**
 
 - **Motivation**
   
+  - 给SDF加上一个differentiable renderer，来为inverse graphics models和deep implicit surface field建设桥梁
   - solving vision problem as inverse graphics process is one of the foundamental approaches, where the solution is the visual structure that best explains given observations 把视觉问题看做逆向图形学过程来解决；寻找能最好地解释给定观测的视觉结构
   
     - 3D geometry理解 领域：很早就被使用(1974, 1999, etc.)
@@ -638,7 +639,7 @@ with Differentiable Sphere Tracing"`**
   - **Shape Completion from Sparse Depths**<br>![image-20201215114703816](media/image-20201215114703816.png)
   - **Shape Completion over Different Sparsity**<br>![image-20201215114227972](media/image-20201215114227972.png)
   - **Inverse Optimization over Camera Extrinsics**<br>![image-20201215113343946](media/image-20201215113343946.png)
-  - **Multi-view Reconstruction from Video Sequences**<br>![image-20201215115145581](media/image-20201215115145581.png)
+  - **Multi-view Reconstruction from Video Sequences 从多视角视频序列重建**<br>![image-20201215115145581](media/image-20201215115145581.png)
 
 </details>
 
@@ -664,6 +665,7 @@ with Differentiable Sphere Tracing"`**
 - **Results** 
 
   - 学出的形状奇奇怪怪；不过总归是纯图片输入，而且只有训练时需要silhouette<br>![image-20201221153429857](media/image-20201221153429857.png)
+  - 颜色重建的质量也一般<br>![image-20201221155058978](media/image-20201221155058978.png)
 
 </details>
 
