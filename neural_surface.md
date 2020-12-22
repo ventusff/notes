@@ -171,7 +171,7 @@
           - in [geometry](https://en.wikipedia.org/wiki/Geometry), a **pencil** is a family of geometric objects with a common property
           - a *pencil of lines* through a point *p* is a set of lines each containing *p*
        - `Bezout's Theorem` 贝组定理
-          - Let $`\mathcal{C}`$ and $`\mathcal{D}`$ be projective plane curves without common components and degrees n and m, respectively. Then <br>$`n \cdot m = \sum \limits_{P \in \mathcal{C} \cap \mathcal{D}} mult_P(\mathcal{C},\mathcal{D})`$
+          - Let $`\mathcal{C}`$ and $`\mathcal{D}`$ be projective plane curves without common components and degrees n and m, respectively. Then <br>$`n \cdot m = \underset{P \in \mathcal{C} \cap \mathcal{D}}{\sum} mult_P(\mathcal{C},\mathcal{D})`$
           - 即：在考虑重数设定的前提下，两个分别次数为n和m的仿射空间代数曲线(也可以是射影空间)，二者要么有共同项，要么没有共同项且相交mn次(相交点的重数和为mn)
        - 因此，对于monoidal curves/surfaces来说，只要让a pencil of lines共同经过那个(n-1)重点，则这些直线一定与曲线/曲面还剩一个交点，如此便可实现参数化
 
@@ -287,7 +287,7 @@ learning generalized templates comprised of elements
     consider a `2-manifold` $`\mathcal{S}`$, a point $`\boldsymbol{p} \in \mathcal{S}`$, a `parameterization` $`\varphi`$ of $`\mathcal{S}`$ in a local neighborhood of $`\boldsymbol{p}`$
   - 假定这个局部参数化就是从单位方 $`]0,1[^2`$ 到2-manifold $`\mathcal{S}_{\theta}`$的映射 $`\varphi_{\theta}(x)`$ : $`\mathcal{S}_\theta=\varphi_{\theta}(]0,1[^2)`$
      <br>让$`\mathcal{S}_{\theta}`$去估计/近似局部2-manifold $`S_{loc}`$
-  - i.e.寻找 参数$`\theta`$来最小化目标函数$`\min \limits_{\theta} \mathcal{L}(\mathcal{S}_\theta, \mathcal{S}_{loc})+\lambda\mathcal{R}(\theta)`$
+  - i.e.寻找 参数$`\theta`$来最小化目标函数$`\underset{\theta}{\min}   \mathcal{L}(\mathcal{S}_\theta, \mathcal{S}_{loc})+\lambda\mathcal{R}(\theta)`$
     <br>上式的$`\mathcal{L}`$是两个2-manifold之间的loss，$`\mathcal{R}`$是参数$`\theta`$的正则化项；
     <br>实践中，计算的不是两个2-manifold之间的loss，<u>而是这两个2-manifold采样出的点集的chamfer 和 earth-mover距离</u>
   - 证明了MLP+ReLU就可以产生2-manifolds
@@ -526,7 +526,7 @@ learning generalized templates comprised of elements
 High-quality Single-view 3D Reconstruction"`**  
 **[** `NeurIPS2019` **]** **[[paper]](https://arxiv.org/pdf/1905.10711.pdf)** **[[code]](https://github.com/laughtervv/DISN)** **[** :mortar_board: `University of Southern California` **]** **[** :office: `Adobe` **]**  
 **[**  `Weiyue Wang`, `Qiangeng Xu`, `Duygu Ceylan`, `Radomir Mech`, `Ulrich Neumann`  **]**  
-**[** _`SDF`_ **]**  
+**[** _`SDF`, `single-view`, `encoder`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
@@ -535,103 +535,6 @@ High-quality Single-view 3D Reconstruction"`**
   - 希望学到的shape，不仅全局特征好，还想有局部fine grained details 细粒度细节
 - **overview**
   - 同时用global features和local features来infer SDF<br>![image-20201209122023941](media/image-20201209122023941.png)
-
-</details>
-
----
-
-**`"SDFDiff: Differentiable Rendering of Signed Distance Fields for 3D Shape
-Optimization"`**  
-**[** `CVPR2020(Oral)` **]** **[[paper]](https://arxiv.org/pdf/1912.07109.pdf)** **[[code]](https://github.com/YueJiang-nj/CVPR2020-SDFDiff)** **[** :mortar_board: `University of Maryland` **]**   
-**[**  `Yue Jiang`, `Dantong Ji`, `Zhizhong Han`, `Matthias Zwicker`  **]**  
-**[** _`SDF`, `differentiable rendering`, `multi-view`, `single-view`, `multi-resolution strategy`_ **]**  
-
-<details>
-  <summary>Click to expand</summary>
-
-- **Motivation**
-  - image-based shape optimization using differentiable rendering of 3D shapes represented by SDF
-    - SDF作为形状表征的优势：可以表征具有任意拓扑的形状，并且可以保证watertight
-- **Overview**
-  - learn SDF on a 3D grid
-  - perform ray-casting via sphere tracing
-
-</details>
-
----
-
-**`"DIST: Rendering Deep Implicit Signed Distance Function
-with Differentiable Sphere Tracing"`**  
-**[** `CVPR2020` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2020/papers/Liu_DIST_Rendering_Deep_Implicit_Signed_Distance_Function_With_Differentiable_Sphere_CVPR_2020_paper.pdf)** **[[code]](https://github.com/B1ueber2y/DIST-Renderer)** **[[web]](http://b1ueber2y.me/projects/DIST-Renderer/)** **[** :mortar_board: `ETH`, `Tsinghua University`, `Peking University`, `MPI` **]** **[** :office: `Google`, `Peng Cheng Laboratory` **]**  
-**[**  `Shaohui Liu`, `Yinda Zhang`, `Songyou Peng`, `Boxin Shi`, `Marc Pollefeys`, `Zhaopeng Cui`  **]**  
-**[** _`SDF`, `differentiable renderer`, `sphere tracing`_ **]**  
-
-<details>
-  <summary>Click to expand</summary>
-
-- **Motivation**
-  - 给SDF加上一个differentiable renderer，来为inverse graphics models和deep implicit surface field建设桥梁
-  - solving vision problem as inverse graphics process is one of the foundamental approaches, where the solution is the visual structure that best explains given observations 把视觉问题看做逆向图形学过程来解决；寻找能最好地解释给定观测的视觉结构
-    - 3D geometry理解 领域：很早就被使用(1974, 1999, etc.)
-    - 常常需要一个高效的renderer来从从一个optimizable 的3D结构 精确地simulate这些观测(e.g. depth maps)，同时需要是可微的，来反向传播局部观测的误差
-    - (first) a differentiable renderer for learning-based SDF
-  - 用一个可微分的renderer来把learning-based SDF可微分地渲染为 depth image, surface normal, silhouettes，从任意相机viewpoints
-  - 应用：可用于infer 3D shape from various inputs, e.g. multi-view images and single depth image
-- 方法
-  - ![image-20201215111010407](media/image-20201215111010407.png)
-  - [auto-decoder] 给定一个已经pre-trained generative model, e.g. DeepSDF, 通过在latent code space 寻找能产生和给定观测最一致的3D shape
-- [sphere tracing] 使用一个类似sphere tracing的框架来做可微分的渲染
-  - 直接应用sphere tracing因为需要对network做反复的query并且在反向传播时产生递归的计算图（笔者注：就像SRN那样），计算费时、费内存；所以需要对前向传播和反向传播过程都要做出优化
-  - sphere-traced results (i.e. camera ray上的距离)，可以用于产生各种输出，如<u>深度图</u>、<u>表面法向量</u>、<u>轮廓</u>等，因此可以用loss来方便地形成端到端的manner
-  - 前向通路
-- ![image-20201215164421303](media/image-20201215164421303.png)
-    - 用一种coarse-to-fine的方法来save computation at initial steps
-      - 考虑到在sphere tracing的前面几步，不同pixel的ray都非常接近
-      - 从图像的1/4分辨率开始tracing，然后每3步以后把每个像素分成4份
-      - 在6步后，full resolution下的每个像素都有一个对应的ray，一直marching直到收敛
-    - 一个aggresive 策略来加速ray marching
-      - marching步长是$`\alpha=1.5`$倍的queried SDF value
-      - 在距离表面很远的时候更快地朝表面march
-      - 在ill-posed情况下能加速收敛（当表面法向量和ray direction的夹角很小时）
-        - [ ] what?
-      - ray可以射穿表面，能够采样到表面内部(SDF<0)；对表面的两侧都可以应用supervision
-    - dynamic synchronized inference
-    - 一个safe convergence criteria来防止不必要的网络query，同时保留分辨率
-- 反向传播
-    - 用SDF的梯度的近似值，对训练影响不大，但是显著减少计算和内存占用
-- **评价：文中出现了非常多技术细节的详细解释，值得一读**
-  - sphere tracing<br>![image-20201215111200177](media/image-20201215111200177.png)
-  - 训练一个神经网络，同时为每个3D location 预测signed distance 和color
-- **实验**
-  - 收敛速度<br>![image-20201215112912115](media/image-20201215112912115.png)
-  - **Texture Re-rendering**<br>![image-20201215114347510](media/image-20201215114347510.png)
-  - **Shape Completion from Sparse Depths**<br>![image-20201215114703816](media/image-20201215114703816.png)
-  - **Shape Completion over Different Sparsity**<br>![image-20201215114227972](media/image-20201215114227972.png)
-  - **Inverse Optimization over Camera Extrinsics**<br>![image-20201215113343946](media/image-20201215113343946.png)
-  - **Multi-view Reconstruction from Video Sequences 从多视角视频序列重建**<br>![image-20201215115145581](media/image-20201215115145581.png)
-
-</details>
-
----
-
-**`"SDF-SRN: Learning Signed Distance
-3D Object Reconstruction from Static Images"`**  
-**[** `NeurIPS2020` **]** **[[paper]](https://papers.nips.cc/paper/2020/file/83fa5a432ae55c253d0e60dbfa716723-Paper.pdf)** **[[code]](https://github.com/chenhsuanlin/signed-distance-SRN)** **[[web]](https://chenhsuanlin.bitbucket.io/signed-distance-SRN/)** **[** :mortar_board: `CMU` **]**   
-**[**  `Chen-Hsuan Lin`, `Chaoyang Wang`, ` Simon Lucey`  **]**  
-**[** _`single-view`_ **]**  
-
-<details>
-  <summary>Click to expand</summary>
-
-- **Motivation**
-  - 单视角3D物体重建，过去的方法往往都有3D形状真值
-  - 最近的方法可以没有3D监督信号，但是还是需要训练时多视角的对同个instance的silhouettes标注；因此大多只能应对合成数据集
-  - 本篇提出SDF-SRN，只需要单视角图片(只在训练时+silhouette)输入<br>![image-20201221153940813](media/image-20201221153940813.png)
-- **overview**
-  - single-view一般需要encoder<br>![image-20201215173359177](media/image-20201215173359177.png)
-- **Results** 
-  - 学出的形状奇奇怪怪；不过总归是纯图片输入，而且只有训练时需要silhouette<br>![image-20201221153429857](media/image-20201221153429857.png)
-  - 颜色重建的质量也一般<br>![image-20201221155058978](media/image-20201221155058978.png)
 
 </details>
 
@@ -648,23 +551,6 @@ with Differentiable Sphere Tracing"`**
 - **Motivation**
   - ![image-20201207222950762](media/image-20201207222950762.png)
   - implicit occupancy field![image-20201207195643392](media/image-20201207195643392.png)
-
-</details>
-
----
-
-**`<DVR> "Differentiable Volumetric Rendering: Learning Implicit 3D Representations without 3D Supervision"`**  
-**[** `CVPR2020` **]** **[[paper]](https://arxiv.org/pdf/1912.07372.pdf)** **[[code]](https://github.com/autonomousvision/differentiable_volumetric_rendering)** **[** :mortar_board: `MPI`, `University of Tubingen` **]**   
-**[** `Michael Niemeyer`, `Andreas Geiger ` **]**  
-**[**  _`differentiable volumetric rendering`, `ray casting`_ **]**  
-
-<details>
-  <summary>Click to expand</summary>
-
-- **review**
-
-  - 思路：首先手动推导出每个camera ray和隐表面交点的点坐标对网络参数的梯度，在实际计算时，就可以先在camera ray上采样得出交点坐标(类似二分法)，然后代入所手动推导出的式子构成完整的反向传播链路
-
 
 </details>
 
@@ -749,7 +635,7 @@ with Differentiable Sphere Tracing"`**
   - $`\mathcal{L}_{ext}(\boldsymbol{e}_i) = \mathcal{L}_{sur}(\boldsymbol{e}_i) + \mathcal{L}_{cov}(\boldsymbol{e}_i) + \mathcal{L}_{rot}(\boldsymbol{e}_i) + \mathcal{L}_{scl}(\boldsymbol{e}_i) + \mathcal{L}_{var}(\boldsymbol{e}_i) `$
   - $`\mathcal{L}_{sur}(\boldsymbol{e}_i)`$ 保证每个patch都离surface很近
 
-    - $`\max \limits_{逐patch} [surface上的所有点到该patch距离的最小值]`$ 
+    - $`\underset{逐patch}{\max}[surface上的所有点到该patch距离的最小值]`$ 
   - $`\mathcal{L}_{cov}(\boldsymbol{e}_i)`$ symmetric coverage loss，鼓励surface上的每个点都至少被一个patch涵盖
   - $`\mathcal{L}_{rot}(\boldsymbol{e}_i)`$ 把patches和surface normals对齐
   - $`\mathcal{L}_{scl}(\boldsymbol{e}_i)`$ 鼓励patches to be reasonably small，防止不同patch之间显著的重叠
@@ -758,6 +644,244 @@ with Differentiable Sphere Tracing"`**
 
   - ![image-20201217122000974](media/image-20201217122000974.png)
   - ![image-20201217122618035](media/image-20201217122618035.png)
+
+</details>
+
+### differentiable renderer
+
+ - keyword
+    - DIST and its citations
+
+---
+
+**`<DVR> "Differentiable Volumetric Rendering: Learning Implicit 3D Representations without 3D Supervision"`**  
+**[** `CVPR2020` **]** **[[paper]](https://arxiv.org/pdf/1912.07372.pdf)** **[[code]](https://github.com/autonomousvision/differentiable_volumetric_rendering)** **[** :mortar_board: `MPI`, `University of Tubingen` **]**   
+**[** `Michael Niemeyer`, `Andreas Geiger ` **]**  
+**[**  _`differentiable volumetric rendering`, `ray casting`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **review**
+
+  - 思路：首先手动推导出每个camera ray和隐表面交点的点坐标对网络参数的梯度，在实际计算时，就可以先在camera ray上采样得出交点坐标(类似二分法)，然后代入所手动推导出的式子构成完整的反向传播链路
+
+</details>
+
+---
+
+**`"DIST: Rendering Deep Implicit Signed Distance Function
+with Differentiable Sphere Tracing"`**  
+**[** `CVPR2020` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2020/papers/Liu_DIST_Rendering_Deep_Implicit_Signed_Distance_Function_With_Differentiable_Sphere_CVPR_2020_paper.pdf)** **[[code]](https://github.com/B1ueber2y/DIST-Renderer)** **[[web]](http://b1ueber2y.me/projects/DIST-Renderer/)** **[** :mortar_board: `ETH`, `Tsinghua University`, `Peking University`, `MPI` **]** **[** :office: `Google`, `Peng Cheng Laboratory` **]**  
+**[**  `Shaohui Liu`, `Yinda Zhang`, `Songyou Peng`, `Boxin Shi`, `Marc Pollefeys`, `Zhaopeng Cui`  **]**  
+**[** _`SDF`, `differentiable renderer`, `sphere tracing`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- 需要silhouette真值
+- **Motivation**
+  - 给SDF加上一个differentiable renderer，来为inverse graphics models和deep implicit surface field建设桥梁
+  - solving vision problem as inverse graphics process is one of the foundamental approaches, where the solution is the visual structure that best explains given observations 把视觉问题看做逆向图形学过程来解决；寻找能最好地解释给定观测的视觉结构
+    - 3D geometry理解 领域：很早就被使用(1974, 1999, etc.)
+    - 常常需要一个高效的renderer来从从一个optimizable 的3D结构 精确地simulate这些观测(e.g. depth maps)，同时需要是可微的，来反向传播局部观测的误差
+    - (first) a differentiable renderer for learning-based SDF
+  - 用一个可微分的renderer来把learning-based SDF可微分地渲染为 depth image, surface normal, silhouettes，从任意相机viewpoints
+  - 应用：可用于infer 3D shape from various inputs, e.g. multi-view images and single depth image
+- 方法
+  - ![image-20201215111010407](media/image-20201215111010407.png)
+  - [auto-decoder] 给定一个已经pre-trained generative model, e.g. DeepSDF, 通过在latent code space 寻找能产生和给定观测最一致的3D shape
+- [sphere tracing] 使用一个类似sphere tracing的框架来做可微分的渲染
+  - 直接应用sphere tracing因为需要对network做反复的query并且在反向传播时产生递归的计算图（笔者注：就像SRN那样），计算费时、费内存；所以需要对前向传播和反向传播过程都要做出优化
+  - sphere-traced results (i.e. camera ray上的距离)，可以用于产生各种输出，如<u>深度图</u>、<u>表面法向量</u>、<u>轮廓</u>等，因此可以用loss来方便地形成端到端的manner
+  - 前向通路
+- ![image-20201215164421303](media/image-20201215164421303.png)
+    - 用一种coarse-to-fine的方法来save computation at initial steps
+      - 考虑到在sphere tracing的前面几步，不同pixel的ray都非常接近
+      - 从图像的1/4分辨率开始tracing，然后每3步以后把每个像素分成4份
+      - 在6步后，full resolution下的每个像素都有一个对应的ray，一直marching直到收敛
+    - 一个aggresive 策略来加速ray marching
+      - marching步长是$`\alpha=1.5`$倍的queried SDF value
+      - 在距离表面很远的时候更快地朝表面march
+      - 在ill-posed情况下能加速收敛（当表面法向量和ray direction的夹角很小时）
+        - [ ] what?
+      - ray可以射穿表面，能够采样到表面内部(SDF<0)；对表面的两侧都可以应用supervision
+    - dynamic synchronized inference
+    - 一个safe convergence criteria来防止不必要的网络query，同时保留分辨率
+- 反向传播
+    - 用SDF的梯度的近似值，对训练影响不大，但是显著减少计算和内存占用
+- **评价：文中出现了非常多技术细节的详细解释，值得一读**
+  - sphere tracing<br>![image-20201215111200177](media/image-20201215111200177.png)
+  - 训练一个神经网络，同时为每个3D location 预测signed distance 和color
+- **实验**
+  - 收敛速度<br>![image-20201215112912115](media/image-20201215112912115.png)
+  - **Texture Re-rendering**<br>![image-20201215114347510](media/image-20201215114347510.png)
+  - **Shape Completion from Sparse Depths**<br>![image-20201215114703816](media/image-20201215114703816.png)
+  - **Shape Completion over Different Sparsity**<br>![image-20201215114227972](media/image-20201215114227972.png)
+  - **Inverse Optimization over Camera Extrinsics**<br>![image-20201215113343946](media/image-20201215113343946.png)
+  - **Multi-view Reconstruction from Video Sequences 从多视角视频序列重建**<br>![image-20201215115145581](media/image-20201215115145581.png)
+
+</details>
+
+---
+
+**`"SDF-SRN: Learning Signed Distance
+3D Object Reconstruction from Static Images"`**  
+**[** `NeurIPS2020` **]** **[[paper]](https://papers.nips.cc/paper/2020/file/83fa5a432ae55c253d0e60dbfa716723-Paper.pdf)** **[[code]](https://github.com/chenhsuanlin/signed-distance-SRN)** **[[web]](https://chenhsuanlin.bitbucket.io/signed-distance-SRN/)** **[** :mortar_board: `CMU` **]**   
+**[**  `Chen-Hsuan Lin`, `Chaoyang Wang`, ` Simon Lucey`  **]**  
+**[** _`single-view`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- 训练时需要single view silhouette
+- **Motivation**
+  - 单视角3D物体重建，过去的方法往往都有3D形状真值
+  - 最近的方法可以没有3D监督信号，但是还是需要训练时多视角的对同个instance的silhouettes标注；因此大多只能应对合成数据集
+  - 本篇提出SDF-SRN，只需要单视角图片(只在训练时+silhouette)输入<br>![image-20201221153940813](media/image-20201221153940813.png)
+- **overview**
+  - single-view一般需要encoder<br>![image-20201215173359177](media/image-20201215173359177.png)
+- **Results** 
+  - 学出的形状奇奇怪怪；不过总归是纯图片输入，而且只有训练时需要silhouette<br>![image-20201221153429857](media/image-20201221153429857.png)
+  - 颜色重建的质量也一般<br>![image-20201221155058978](media/image-20201221155058978.png)
+
+</details>
+
+---
+
+**`"SDFDiff: Differentiable Rendering of Signed Distance Fields for 3D Shape
+Optimization"`**  
+**[** `CVPR2020(Oral)` **]** **[[paper]](https://arxiv.org/pdf/1912.07109.pdf)** **[[code]](https://github.com/YueJiang-nj/CVPR2020-SDFDiff)** **[** :mortar_board: `University of Maryland` **]**   
+**[**  `Yue Jiang`, `Dantong Ji`, `Zhizhong Han`, `Matthias Zwicker`  **]**  
+**[** _`SDF`, `differentiable rendering`, `multi-view`, `single-view`, `multi-resolution strategy`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- 需要分割好的多视角图片
+- **Motivation**
+  - **<u>`image-based shape optimization`</u>** using differentiable rendering of 3D shapes represented by SDF
+    - SDF作为形状表征的优势：可以表征具有任意拓扑的形状，并且可以保证watertight
+- **Overview**
+  - learn SDF on a `3D grid`
+  - perform ray-casting via `sphere tracing`
+- **differentiable renderer**
+
+  - 学到的是voxelized SDF，然后通过linear interpolation获取任意连续位置处的SDF
+  - 给定像素值的导数只与interpolation时的8个邻居体素有关
+
+    - 或者说，sphere tracing本身不需要是可微分的
+    - 只需要 local 8个邻居的 local 计算需要可微分
+- **energy function & losses**
+
+  - 从geometry相机位置等$`\Theta`$，可以render出image$`I`$：$`I=R(\Theta)`$<br>inverse rendering就是$`\Theta=R^{-1}(I)`$<br>但是inverse rendering并不直接可逆，因此把问题建模为`energy minimization problem`能量最小问题<br>$`\Theta^*=\underset{\Theta}{\arg\min} \mathcal{L}_{img}(R(\Theta),I)`$
+  - 重点在于一个differentiable renderer：本篇强调shape。输入camera pose和shape，输出渲染图像
+  - $`\mathcal{L}_{img}`$衡量render图像和$`I`$的差别
+  - $`\mathcal{L}_{reg}`$ 正则化项，保证$`\Theta`$是一个valid signed distance field（i.e. 梯度是单位向量）<br>实践中，是用$\Delta$近似的梯度
+- single view：从图像encode到一个voxelized 稀疏SDF，经过一些3D卷积refinement，经过differentiable renderer到image![image-20201222103114471](media/image-20201222103114471.png)
+- multi view：就用auto-decoder直接训练
+- **results**
+
+  - single view<br>![image-20201222110938605](media/image-20201222110938605.png)
+
+</details>
+
+---
+
+**`"Multiview Neural Surface Reconstruction
+by Disentangling Geometry and Appearance"`**  
+**[** `NeurIPS2020` **]** **[[paper]](https://proceedings.neurips.cc/paper/2020/file/1a77befc3b608d6ed363567685f70e1e-Paper.pdf)** **[[code]](https://github.com/lioryariv/idr)** **[** :mortar_board: `Weizmann Institute of Science` **]**   
+**[**  `Lior Yariv`, `Yoni Kasten`, `Dror Moran`, `Meirav Galun`, `Matan Atzmon`, `Ronen Basri`, `Yaron Lipman`  **]**  
+**[** _`multi-view`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- 训练需要multi view分割好的images，不一定需要相机pose
+- IDR=implicit differentiable renderer
+- **Motivation**
+
+  - SDF的differentiable renderer，用于从multi view image重建3D表面，在`未知相机参数`的情况下
+  - DVR和本篇很像，但是DVR不能处理泛化的外观，并且不能处理未知的、大噪声的相机位置
+  - SDF的优势
+
+    - 可以高效地用sphere tracing来做ray casting
+    - 平滑的、真实的表面
+  - ![image-20201222112206328](media/image-20201222112206328.png)
+- **review**
+
+  - 有一点SDF与NeRF结合的味道，因为其颜色是从坐标位置、几何参数、观测方向共同得来的
+  - 公式推导比较细致，因为值除了对几何参数有导数表达式外，还对相机参数有导数表达式
+  - 重点比较对象是DVR
+- **Overview**
+
+  - 把3D surface表达为一个deep implicit field $`f`$ 的zero level set<br>$`\mathcal{S}_{\theta}=\{ \boldsymbol{x}\in\mathbb{R}^3 \vert f(\boldsymbol{x},\theta)=0 \}`$
+
+    - 为了avoid everywhere 0 solution，$`f`$ 一般都会regularized，比如SDF的regularization；本篇用了 `implicit geometric regularization`(IGR) 
+  - 三个未知量：`geometry`几何$`\theta\in\mathbb{R}^m`$，`appearance`外观$`\gamma\in\mathbb{R}^n`$，`cameras`相机参数$`\tau\in\mathbb{R}^k`$
+
+    - 注意本篇中的相机参数也是一个未知量、被优化的值，因此所有值除了需要对几何参数$`\theta`$有导数表达式外，还需要对相机参数$`\tau`$（i.e.相机中心点$`\boldsymbol{c}`$和view direction $`\boldsymbol{v}`$）有导数表达式
+  - 把一个像素处的颜色/radiance建模为一个射线交点坐标$`\boldsymbol{\hat x}_p`$、表面法向量$`\boldsymbol{\hat n}_p`$、view direction$`\boldsymbol{\hat v}_p`$、几何参数$`\boldsymbol{\hat z}_p`$、外观参数$`\gamma`$的映射<br>$`L_p(\theta,\gamma,\tau)=M(\boldsymbol{\hat x}_p, \boldsymbol{\hat n}_p, \boldsymbol{\hat z}_p, \boldsymbol{\hat v}_p;\gamma)`$
+
+    - 某种程度上像NeRF
+    - 射线交点坐标、表面法向量、几何参数、view direction 与几何$`\theta`$、相机参数$`\tau`$有关，因为$`\boldsymbol{\hat x}_p=\boldsymbol{\hat x}_p(\theta,\tau)`$
+    - M是又一个MLP
+  - losses
+
+    - RGB loss，是L1-Norm，逐像素
+    - MASK loss，在render的时候就可以render出一个近似的可微分的mask，于是这里可以直接cross-entropy loss，逐像素
+    - reg loss，Eikonal regularization，保证是个SDF，即网络梯度模为1；bbox中均匀采点
+
+      - $`{\rm loss}_E(\theta)=\mathbb{E}_{\boldsymbol{x}}(\lVert \nabla_{\boldsymbol{x}}f(\boldsymbol{x};\theta) \rVert -1)^2`$, where $`\boldsymbol{x}`$在scene的一个bbox中均匀分布
+- **Differentiable intersections of view directions and geometry**
+
+  - 假设交叉点坐标表示为$`\boldsymbol{\hat x}_(\theta,\tau)=\boldsymbol{c}+t(\theta,\boldsymbol{c},\boldsymbol{v})\boldsymbol{v}`$，关键是t这个标量值是$`\theta`$, 相机中心点位置$`\boldsymbol{c}`$, 观测方向$`\boldsymbol{v}`$的函数
+  - $`\boldsymbol{\hat x}_p(\theta,\tau)=\boldsymbol{c}+t_0\boldsymbol{v} - \frac {\boldsymbol{v}}{\nabla_x f(\boldsymbol{x}_0;\theta_0) \cdot \boldsymbol{v}_0} f(\boldsymbol{c}+t_0\boldsymbol{v};\theta)`$
+
+    - 并且 `is exact in value and first derivatives of` $`\theta`$和$`\tau`$ at $`\theta=\theta_0, \tau=\tau_0`$
+    - [ ] what?
+  - 用隐函数微分；
+  - SDF在一点的法向量就是其梯度，是因为梯度的模就是1
+- **approximation of the surface light field**
+- **masked rendering**
+
+  - ==[*]== 在render的时候额外render出一个`可微分`的`近似binary`的mask
+- **results**
+
+  - ![image-20201222121157452](media/image-20201222121157452.png)
+  - 可以做外观transfer <br>![image-20201222122008369](media/image-20201222122008369.png)
+
+</details>
+
+
+### compositional / multi object scene
+
+---
+
+**`"Semi-Supervised Learning of Multi-Object 3D Scene Representations"`**  
+**[** `ICLR2021` **]** **[[paper]](https://openreview.net/pdf?id=GwjkaD3g-V1)** **[[code]](https://www.github.com)** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
+**[**  `xxxx`  **]**  
+**[** _`recurrent encoder`, `SDF`, `differentiable renderer`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - 把场景表征为多个物体
+  - 输入input RGB image，通过一个recurrent encoder，回归出每个物体的shape, pose, texture；shape通过SDF表征
+  - 半监督体现在训练时候用的是RGB-D，测试时候只需要RGB
+  - single view见所有物体；物体个数是已知的<br>![image-20201222094044348](media/image-20201222094044348.png)
+- **review**
+
+  - 只用了clevrn类数据集，而且甚至还是简单的低分辨率渲染，实验比较简单
+- **Overview**
+  - 首先从example shapes有监督地训练SDF（的decoder）；
+  - 然后自监督地通过RGB-D训练differentiable renderer和recurrent encoder
+  - [ ] recurrent真的能这样设计吗？<br>![image-20201222090334334](media/image-20201222090334334.png)
+  - 可以看到recurrent的主要目的是迭代、逐个地得出object的code，倒是和之前*Multi-object representation learning with iterative variational inference.*那篇有些像<br>每个物体输出深度估计，图像估计，与occulusion mask<br>![image-20201222091509810](media/image-20201222091509810.png)
+- **results**
+
+  - ![image-20201222090527412](media/image-20201222090527412.png)
 
 </details>
 
