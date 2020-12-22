@@ -123,12 +123,17 @@
 <details>
   <summary>Click to expand</summary>
 
-- chamfer loss
-  - chamfer distance
+- chamfer loss / `chamfer distance` (CD)
 
 |                                                              |                                                              |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | ![image-20201208012017960](media/image-20201208012017960.png) | ![image-20201208012035153](media/image-20201208012035153.png) |
+
+ - `Earth Mover Distance` (EMD)
+
+
+
+ - 
 
 </details>
 
@@ -501,6 +506,37 @@ learning generalized templates comprised of elements
 
 ---
 
+**`"Convolutional Occupancy Networks"`**  
+**[** `ECCV2020` **]** **[[paper]](https://arxiv.org/pdf/2003.04618.pdf)** **[[code]](https://github.com/autonomousvision/convolutional_occupancy_networks)** **[** :mortar_board: `ETH`, `MPI`, `University of Tubingen ` **]** **[** :office: `Amazon`, `Microsoft` **]**  
+**[**  `Songyou Peng`, `Michael Niemeyer`, `Lars Mescheder`, `Marc Pollefeys`, `Andreas Geiger`  **]**  
+**[** _`Occupancy Networks`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - 从Occupancy Network的continuous feature function到voxelized features + 3D conv<br>![image-20201222145923538](media/image-20201222145923538.png)
+
+</details>
+
+---
+
+**`"Dynamic Plane Convolutional Occupancy Networks"`**  
+**[** `WACV2021` **]** **[[paper]](https://arxiv.org/pdf/2011.05813.pdf)** **[[code]](https://github.com/dsvilarkovic/dynamic_plane_convolutional_onet)** **[** :mortar_board: `MPI`, `ETH` **]**   
+**[**  `Stefan Lionar`, `Daniil Emtsev`, `Dusan Svilarkovic`, `Songyou Peng`  **]**  
+**[** _`3D reconstruction`, `occupancy networks`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - occupancy networks是continuous function；<br>convolutional occupancy networks是voxelized features；<br>本篇是动态平面组上的features
+  - ![image-20201222161043946](media/image-20201222161043946.png)
+
+</details>
+
+---
+
 **`"DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation"`**  
 **[** `CVPR2019` **]** **[[paper]](https://arxiv.org/pdf/1901.05103.pdf)** **[[code]](https://github.com/facebookresearch/DeepSDF)** **[** :mortar_board: `UW`, `MIT` **]** **[** :office: `Faceboook reality labs` **]**  
 **[**  `Jeong Joon Park`, `Peter Florence`, `Julian Straub`, `Richard Newcombe`, `Steven Lovegrove`  **]**  
@@ -535,6 +571,69 @@ High-quality Single-view 3D Reconstruction"`**
   - 希望学到的shape，不仅全局特征好，还想有局部fine grained details 细粒度细节
 - **overview**
   - 同时用global features和local features来infer SDF<br>![image-20201209122023941](media/image-20201209122023941.png)
+
+</details>
+
+---
+
+**`"SAL: Sign agnostic learning of shapes from raw data."`**  
+**[** `CVPR2020` **]** **[[paper]](https://arxiv.org/pdf/1911.10414.pdf)** **[[code]](https://github.com/matanatz/SAL)** **[** :mortar_board: `Weizmann Institute of Science` **]**   
+**[**  `Matan Atzmon`, `Yaron Lipman`  **]**  
+**[** _`sign agnostic`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+
+</details>
+
+---
+
+**`"DUDE: Deep Unsigned Distance Embeddings for Hi-Fidelity Representation of Complex 3D Surfaces"`**  
+**[** `2021` **]** **[[paper]](https://abc.efg)** **[[code]](https://www.github.com)** **[** :mortar_board: `CMU` **]** **[** :office: `Verisk Analytics` **]**  
+**[**  `Rahul Venkatesh`, `Sarthak Sharma`, `Aurobrata Ghosh`, `Laszlo Jeni`, `Maneesh Singh`  **]**  
+**[** _`unsigned distance field`, `normal vector field`, `open topogoly surfaces`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - 现有的隐式表面deep networks方法只能表征拓扑上闭合的形状；<br>并且结果是，训练时候经常需要clean watertight meshes
+  - 本篇提出无符号的距离嵌入减轻了上述问题
+    - 利用`unsigned distance field (uDF)`无符号距离场来表达对表面的接近程度
+    - 利用`normal vector field (nVF)`法向量场来表达表面朝向
+    - uDF + nVF 可以表达任意开/闭拓扑的high fidelity形状
+    - 可以从带噪声的triangle soups学习，不需要watertight mehses
+    - 并且额外提供了学到的表征提取、渲染等值面的新方法
+  - ![image-20201222150310307](media/image-20201222150310307.png)
+- **overview**
+
+  - uDF+nVF<br>![image-20201222151610880](media/image-20201222151610880.png)
+
+</details>
+
+---
+
+**`"Deformed Implicit Field: Modeling 3D Shapes with Learned Dense Correspondence"`**  
+**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2011.13650.pdf)** **[[code]](https://github.com/microsoft/DIF-Net)** **[** :mortar_board: `Tsinghua` **]** **[** :office: `MSRA` **]**  
+**[**  `Yu Deng`, `Jiaolong Yang`, `Xin Tong`  **]**  
+**[** _`3D deformation field`, `template field`, `category shape correspondence`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+
+  - 用deformation field建立起**<u>`shape correspondence`</u>**，这样就可以做texture transfer、label transfer等
+  - ![image-20201222155438709](media/image-20201222155438709.png)
+- **overview**
+
+  - 用一个超网络预测DeformNet $`D`$的参数；<br>然后在空间中的每一处，从同一个template SDF，DeformNet $`D`$产生位置修正$`v`$与标量距离修正$`\Delta s`$，总共4维输出<br>即最终的$`p`$点处的SDF值为：$`s=T(p+v)+\Delta s=T(p+D^v_{\omega}(p))+D^{\Delta s}_{\omega}(p)`$![image-20201222153322051](media/image-20201222153322051.png)
+- **results**
+
+  - texture transfer <br>![image-20201222155357538](media/image-20201222155357538.png)
+  - label transfer<br>![image-20201222155611605](media/image-20201222155611605.png)
 
 </details>
 
@@ -605,6 +704,22 @@ High-quality Single-view 3D Reconstruction"`**
   - 对于coordinate-based neural representations在auto-decoder时，用meta-learned 的initialization
   - ![image-20201215193905125](media/image-20201215193905125.png)
   - 与MetaSDF的差别：进一步拓展到更多种类的neural coordinate-based signals，并且把the power of using initial weight settings开发为一种先验信息
+
+</details>
+
+---
+
+**`"Deep Optimized Priors for 3D Shape Modeling and Reconstruction"`**  
+**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2012.07241.pdf)**  **[** :mortar_board: `南方科技大学`, **]** **[** :office: `Tencent America` **]**  
+**[**  `Mingyue Yang`, `Yuxin Wen`, `Weikai Chen`, `Yongwei Chen`, `Kui Jia贾奎`  **]**  
+**[** _`better shape priors`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - 现有的很多方法test time都是从fixed trained priors
+  - 本篇提出在training以后，仍然从physical measurements进一步最优化learned prior
 
 </details>
 
@@ -777,7 +892,7 @@ Optimization"`**
   - 从geometry相机位置等$`\Theta`$，可以render出image$`I`$：$`I=R(\Theta)`$<br>inverse rendering就是$`\Theta=R^{-1}(I)`$<br>但是inverse rendering并不直接可逆，因此把问题建模为`energy minimization problem`能量最小问题<br>$`\Theta^*=\underset{\Theta}{\arg\min} \mathcal{L}_{img}(R(\Theta),I)`$
   - 重点在于一个differentiable renderer：本篇强调shape。输入camera pose和shape，输出渲染图像
   - $`\mathcal{L}_{img}`$衡量render图像和$`I`$的差别
-  - $`\mathcal{L}_{reg}`$ 正则化项，保证$`\Theta`$是一个valid signed distance field（i.e. 梯度是单位向量）<br>实践中，是用$\Delta$近似的梯度
+  - $`\mathcal{L}_{reg}`$ 正则化项，保证$`\Theta`$是一个valid signed distance field（i.e. 梯度是单位向量）<br>实践中，是用$\Delta$近似的梯度
 - single view：从图像encode到一个voxelized 稀疏SDF，经过一些3D卷积refinement，经过differentiable renderer到image![image-20201222103114471](media/image-20201222103114471.png)
 - multi view：就用auto-decoder直接训练
 - **results**
@@ -792,62 +907,49 @@ Optimization"`**
 by Disentangling Geometry and Appearance"`**  
 **[** `NeurIPS2020` **]** **[[paper]](https://proceedings.neurips.cc/paper/2020/file/1a77befc3b608d6ed363567685f70e1e-Paper.pdf)** **[[code]](https://github.com/lioryariv/idr)** **[** :mortar_board: `Weizmann Institute of Science` **]**   
 **[**  `Lior Yariv`, `Yoni Kasten`, `Dror Moran`, `Meirav Galun`, `Matan Atzmon`, `Ronen Basri`, `Yaron Lipman`  **]**  
-**[** _`multi-view`_ **]**  
+**[** _`multi-view`, `unposed images`, `single masked object image`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
 
-- 训练需要multi view分割好的images，不一定需要相机pose
+- 训练需要multi view分割好的unposed images，不一定需要相机pose
 - IDR=implicit differentiable renderer
 - **Motivation**
-
   - SDF的differentiable renderer，用于从multi view image重建3D表面，在`未知相机参数`的情况下
   - DVR和本篇很像，但是DVR不能处理泛化的外观，并且不能处理未知的、大噪声的相机位置
   - SDF的优势
-
     - 可以高效地用sphere tracing来做ray casting
     - 平滑的、真实的表面
   - ![image-20201222112206328](media/image-20201222112206328.png)
 - **review**
-
   - 有一点SDF与NeRF结合的味道，因为其颜色是从坐标位置、几何参数、观测方向共同得来的
   - 公式推导比较细致，因为值除了对几何参数有导数表达式外，还对相机参数有导数表达式
   - 重点比较对象是DVR
 - **Overview**
-
-  - 把3D surface表达为一个deep implicit field $`f`$ 的zero level set<br>$`\mathcal{S}_{\theta}=\{ \boldsymbol{x}\in\mathbb{R}^3 \vert f(\boldsymbol{x},\theta)=0 \}`$
-
+  - 把3D surface表达为一个deep implicit field $`f`$ 的zero level set<br>$`\mathcal{S}_{\theta}=\{ \boldsymbol{x}\in\mathbb{R}^3 \vert f(\boldsymbol{x},\theta)=0 \}`$
     - 为了avoid everywhere 0 solution，$`f`$ 一般都会regularized，比如SDF的regularization；本篇用了 `implicit geometric regularization`(IGR) 
-  - 三个未知量：`geometry`几何$`\theta\in\mathbb{R}^m`$，`appearance`外观$`\gamma\in\mathbb{R}^n`$，`cameras`相机参数$`\tau\in\mathbb{R}^k`$
-
+  - **<u>三个未知量（也是被优化的量）</u>**：`geometry`几何$`\theta\in\mathbb{R}^m`$，`appearance`外观$`\gamma\in\mathbb{R}^n`$，`cameras`相机参数$`\tau\in\mathbb{R}^k`$
     - 注意本篇中的相机参数也是一个未知量、被优化的值，因此所有值除了需要对几何参数$`\theta`$有导数表达式外，还需要对相机参数$`\tau`$（i.e.相机中心点$`\boldsymbol{c}`$和view direction $`\boldsymbol{v}`$）有导数表达式
   - 把一个像素处的颜色/radiance建模为一个射线交点坐标$`\boldsymbol{\hat x}_p`$、表面法向量$`\boldsymbol{\hat n}_p`$、view direction$`\boldsymbol{\hat v}_p`$、几何参数$`\boldsymbol{\hat z}_p`$、外观参数$`\gamma`$的映射<br>$`L_p(\theta,\gamma,\tau)=M(\boldsymbol{\hat x}_p, \boldsymbol{\hat n}_p, \boldsymbol{\hat z}_p, \boldsymbol{\hat v}_p;\gamma)`$
-
     - 某种程度上像NeRF
     - 射线交点坐标、表面法向量、几何参数、view direction 与几何$`\theta`$、相机参数$`\tau`$有关，因为$`\boldsymbol{\hat x}_p=\boldsymbol{\hat x}_p(\theta,\tau)`$
     - M是又一个MLP
   - losses
-
     - RGB loss，是L1-Norm，逐像素
     - MASK loss，在render的时候就可以render出一个近似的可微分的mask，于是这里可以直接cross-entropy loss，逐像素
     - reg loss，Eikonal regularization，保证是个SDF，即网络梯度模为1；bbox中均匀采点
-
       - $`{\rm loss}_E(\theta)=\mathbb{E}_{\boldsymbol{x}}(\lVert \nabla_{\boldsymbol{x}}f(\boldsymbol{x};\theta) \rVert -1)^2`$, where $`\boldsymbol{x}`$在scene的一个bbox中均匀分布
 - **Differentiable intersections of view directions and geometry**
-
   - 假设交叉点坐标表示为$`\boldsymbol{\hat x}_(\theta,\tau)=\boldsymbol{c}+t(\theta,\boldsymbol{c},\boldsymbol{v})\boldsymbol{v}`$，关键是t这个标量值是$`\theta`$, 相机中心点位置$`\boldsymbol{c}`$, 观测方向$`\boldsymbol{v}`$的函数
   - $`\boldsymbol{\hat x}_p(\theta,\tau)=\boldsymbol{c}+t_0\boldsymbol{v} - \frac {\boldsymbol{v}}{\nabla_x f(\boldsymbol{x}_0;\theta_0) \cdot \boldsymbol{v}_0} f(\boldsymbol{c}+t_0\boldsymbol{v};\theta)`$
-
     - 并且 `is exact in value and first derivatives of` $`\theta`$和$`\tau`$ at $`\theta=\theta_0, \tau=\tau_0`$
     - [ ] what?
   - 用隐函数微分；
   - SDF在一点的法向量就是其梯度，是因为梯度的模就是1
 - **approximation of the surface light field**
 - **masked rendering**
-
   - ==[*]== 在render的时候额外render出一个`可微分`的`近似binary`的mask
 - **results**
-
   - ![image-20201222121157452](media/image-20201222121157452.png)
   - 可以做外观transfer <br>![image-20201222122008369](media/image-20201222122008369.png)
 
@@ -913,7 +1015,28 @@ Deep Implicit Surface Networks"`**
 
 </details>
 
+---
 
+**`"Iso-Points: Optimizing Neural Implicit Surfaces with Hybrid Representations"`**  
+**[** `2020` **]** **[[paper]](https://arxiv.org/pdf/2012.06434.pdf)**  **[** :mortar_board: `ETH`, `cambridge` **]**   
+**[**  `Wang Yifan`, `Shihao Wu`, `Cengiz Oztireli`, `Olga Sorkine-Hornung`  **]**  
+**[** _`iso-points`, `hybrid representation`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - 目前这些deep implicit field学surface的方法，optimizing时，精确、鲁棒的重建仍然非常有挑战性
+  - 本篇提出用等值面上的点作为一个额外的显式表征；被计算、更新on-the-fly，有效提高收敛率和最终质量
+- overview
+
+  - 目标是在一个neural implicit function以外，高效地生成、利用一组稠密的、均匀分布的iso-points (points at zero level set)
+  - 这组iso-points可以用于
+
+    - 改进training data的sampling
+    - 提供最优化时的regularization
+
+</details>
 
 ## learning parameterization / implicitization
 
@@ -952,5 +1075,23 @@ Deep Implicit Surface Networks"`**
 
 - **Motivation**
   - 已有2D检测框+lidar 数据，为lidar数据做标注（9D cuboid）<br>![image-20201215122457755](media/image-20201215122457755.png)
+
+</details>
+
+---
+
+**`"NodeSLAM: Neural Object Descriptors for Multi-View Shape Reconstruction"`**  
+**[** `2020` **]** **[[paper]](https://abc.efg)** **[[code]](https://www.github.com)** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
+**[**  `Edgar Sucar`, `Kentaro Wada`, `Andrew Davison`  **]**  
+**[** _`differential rendering engine`, `VAE`, `multi-class learned object descriptor`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - 用的是voxelized occupancy表征
+  - shape and pose reference
+  - 需要depth + masked image输入；相当于pose未知情况下的object SLAM，object voxelized representation是descriptor
+  - ![image-20201222164917541](media/image-20201222164917541.png)
 
 </details>
