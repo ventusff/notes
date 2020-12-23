@@ -1,7 +1,13 @@
 [[_TOC_]] 
 
-### resourses
+### resources
 - [[blog] NeRF Explosion 2020](https://dellaert.github.io/NeRF/)
+
+- 对于neural volume rendering能够取得如此巨大成功(i.e. high fidelity details, easy and fast to converge)的一个possible explanation
+
+  - from *Neural Volumes: Learning Dynamic Renderable Volumes from Images*
+
+  - > [We] propose using a volumetric representation consisting of opacity and color at each position in 3D space, where rendering is realized through integral projection. During optimization, this semi-transparent representation of geometry <u>**disperses gradient information along the ray of integration**, effectively widening the basin of convergence, enabling the discovery of good solutions</u>.
 
 
 ### Neural Volume Rendering
