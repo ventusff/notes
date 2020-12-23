@@ -313,10 +313,10 @@ for 3D-Aware Image Synthesis"`**
 - **Motivation**
   - ![image-20201221161533104](media/image-20201221161533104.png)
   - OSF(object-centric neural scattering functions) models per-object light transport
-  - [ ] modeling dynamic scene：物体在移动/有无，光源在移动
+  - modeling dynamic scene：物体在移动/有无，光源在移动
 - **Review**
-  - [ ] 相比于GIRAFFE，把多物体的光照、反射等处理地很好了；GIRAFFE是用neural rendering逃避了显式地建模光照和多物体透射反射，这篇文章直面难题，类似Neural Reflectance Field
-  - [ ] seemingly 物体位置、id都是真值，重点主要是建模好多物体的光照
+  - 相比于GIRAFFE，把多物体的光照、反射等处理地很好了；GIRAFFE是用neural rendering逃避了显式地建模光照和多物体透射反射，这篇文章直面难题，类似Neural Reflectance Field
+  - seemingly 物体位置、id都是真值，重点主要是建模好多物体的光照
 - **Overview**
   - 数据集
     - furniture-single
