@@ -4,9 +4,7 @@
 - [[blog] NeRF Explosion 2020](https://dellaert.github.io/NeRF/)
 
 - 对于neural volume rendering能够取得如此巨大成功(i.e. high fidelity details, easy and fast to converge)的一个possible explanation
-
   - from *Neural Volumes: Learning Dynamic Renderable Volumes from Images*
-
   - > [We] propose using a volumetric representation consisting of opacity and color at each position in 3D space, where rendering is realized through integral projection. During optimization, this semi-transparent representation of geometry <u>**disperses gradient information along the ray of integration**, effectively widening the basin of convergence, enabling the discovery of good solutions</u>.
 
 
@@ -174,6 +172,7 @@
     >
     > **因为2D GAN缺少对3D世界的理解；缺少图像生成过程的理解，所以不能提供对于camera viewpoint和物体pose的精确控制**。
   - 使用连续表征neural radiance filed
+    
     - 从location x, view direction d映射到color c 和 体素密度$`\sigma`$
   - 数据集使用unposed RGB images
 
@@ -191,11 +190,9 @@ for 3D-Aware Image Synthesis"`**
   <summary>Click to expand</summary>
 
 - **Motivation**
-
   - StyleGAN类似的noise输入方式 + SIREN的周期性激活函数
   - ![image-20201223163530375](media/image-20201223163530375.png)
 - **results**
-
   - ![image-20201223163713693](media/image-20201223163713693.png)
 
 </details>
