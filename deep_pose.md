@@ -30,9 +30,7 @@
   <summary>Click to expand</summary>
 
 - **相关研究**
-  
   - full 6D detection from RGB images
-    
     - SSD6D
     - YOLO6D -> real
     - AAE
@@ -41,7 +39,6 @@
     - BB8
     - iPose
   - datasets
-  
     - LineMOD
     - OCCLUSION
   - refiners：在检测后还要再进行一次refinement
@@ -52,16 +49,12 @@
 
 
 
-
 - **大概思路**
-
   - 首先，每个物体都有一个具体的材质图-三维模型对应；知道材质图上的uv坐标就知道物体模型三维坐标系下的坐标；*vice versa.*
   - 然后，在预测的时候，事实上是预测RGB中的每个像素都属于哪个物体，属于那个物体的材质图中的哪一个uv像素；
   - 这样，知道了RGB中的每个点对应物体的材质uv图，也就知道了每个点对应物体的三维坐标系值；这样一来，其实对于每个物体，就相当于知道了一些关键点的在物体三维坐标系下的坐标和图像坐标以及相机内参矩阵，于是可以利用PnP算法来计算相机在物体坐标系下的外参；反过来就知道了物体在相机坐标系下的坐标
   - $\Delta$ 即关键feature是不直接预测rotations itself (因为会有pose ambiguity问题)，而是预测uv map；
-
     - 思考：我们如果同时预测$cos(\theta)$和$sin(\theta)$，是不是就可以避免这个问题？
-
       - 预测的输出要满足$cos(\theta)^2+sin(\theta)^2=1$，这样可以吗？
         - 搜索了一圈以后的回答：
           似乎存在一个explicitly normalized 操作
@@ -73,10 +66,8 @@
   - 用simple spherical 或者 cylindrical投射的方式给物体上材质
   - ![image-20201101170837857](media/image-20201101170837857.png)
   - 这样便建立了一个bijective(双射)函数：
-  
   - 给定一个材质图上的u,v点，我们便知道了其三维模型坐标；
     - 给定了三维模型坐标，可以计算出材质图上的u,v点
-  
 - **pipeline**
   - **correspondence block**
     - 有3个通道的输出，预测3个信息：ID,u,v值
@@ -255,8 +246,6 @@ Closed Form"`**
   - 这个工作中，我们显式地处理这些ambiguity
   - 对于每个物体实例，我们预测多个6D pose 输出来估计 由对称性和重复材质产生的具体的pose分布<br>当视觉外观可以uniquely identifies 只有一个有效的pose时，这个分布collapses to 单个输出
   - 优势：不仅是对pose ambiguity更好的解释，同时也在pose估计上实现了更好的精确度
-
-
 - **ambiguity in object detection and pose estimation的正式建模表述**
 - 描述刚体transformations: $`SE(3)`$, 它是 $`SO(3)`$和$`\mathbb{R}^3`$的semi-direct product
   - 对于$`\mathbb{R}^3`$，我们使用欧几里得3-vectors

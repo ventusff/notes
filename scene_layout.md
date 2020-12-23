@@ -1,6 +1,6 @@
 [[_TOC_]]
 
-## scene graph to image generation
+# scene graph to image generation
 
 ---
 
@@ -184,7 +184,7 @@ Scene Graph to Image Generation"`**
 </details>
 
 
-## capsule networks
+# capsule networks
 
  - keywords
     - Google scholar - [GE Hinton](https://scholar.google.com.hk/citations?hl=zh-CN&user=JicYPdAAAAAJ&view_op=list_works&sortby=pubdate)

@@ -1,6 +1,6 @@
 [[_TOC_]] 
 
-### resources
+# resources
 - [[blog] NeRF Explosion 2020](https://dellaert.github.io/NeRF/)
 
 - 对于neural volume rendering能够取得如此巨大成功(i.e. high fidelity details, easy and fast to converge)的一个possible explanation
@@ -8,7 +8,7 @@
   - > [We] propose using a volumetric representation consisting of opacity and color at each position in 3D space, where rendering is realized through integral projection. During optimization, this semi-transparent representation of geometry <u>**disperses gradient information along the ray of integration**, effectively widening the basin of convergence, enabling the discovery of good solutions</u>.
 
 
-### Neural Volume Rendering
+# Neural Volume Rendering
 
 ---
 
@@ -47,7 +47,7 @@
 
 </details>
 
-### performance / timing
+# performance / timing
 
  - Learned Initializations for Optimizing Coordinate-Based Neural Representations
 
@@ -150,7 +150,7 @@
 
 </details>
 
-### generative / category / GAN
+# generative / category / GAN
 
 ---
 
@@ -195,7 +195,7 @@ for 3D-Aware Image Synthesis"`**
 
 </details>
 
-### dynamic / deform
+# dynamic / deform
 
 ---
 
@@ -291,7 +291,7 @@ for 3D-Aware Image Synthesis"`**
 </details>
 
 
-### compositional
+# compositional
 
  - GIRAFFE
     - **review**
@@ -346,7 +346,7 @@ for 3D-Aware Image Synthesis"`**
 </details>
 
 
-###  encoder
+#  encoder
 
 ---
 
@@ -419,7 +419,7 @@ for 3D-Aware Image Synthesis"`**
 
 </details>
 
-### relighting
+# relighting
 
 ---
 
@@ -478,7 +478,7 @@ for Relighting and View Synthesis"`**
 
 </details>
 
-### pose estimation
+# pose estimation
 
 ---
 
@@ -499,7 +499,7 @@ for Relighting and View Synthesis"`**
 
 </details>
 
-### basics
+# basics
 
 ---
 

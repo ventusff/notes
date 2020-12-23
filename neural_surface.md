@@ -1,6 +1,6 @@
 [[_TOC_]]
 
-## math: implicit surface
+# math: implicit surface
 
  - 参考资料
     - [wiki: implicit surface](https://en.wikipedia.org/wiki/Implicit_surface)
@@ -22,7 +22,7 @@
     - [2020]Thibault GROUEIX's slice  - [Deep Learning for 3D Toward Surface Generation](http://imagine.enpc.fr/~langloip/data/DeepLearningFor3D_3.pdf)
        - 非常详细，非常总结，概括性很好
 
-###  surface: implicit form & parametric form  
+##  surface: implicit form & parametric form  
 
 <details>
   <summary>Click to expand</summary>
@@ -35,7 +35,7 @@
 
 </details>
 
-### 形状(geometry) 与 拓扑(topology)
+## 形状(geometry) 与 拓扑(topology)
 
 <details>
   <summary>Click to expand</summary>
@@ -48,7 +48,7 @@
   - 当然，上述的“位移顶点位置”是一个粗糙的描述，具体在形变时是要符合一定规则的，即【<u>光滑同胚/微分同胚</u>】 [bilibili视频：[斯梅尔悖论：内翻球面和外翻球面是微分同胚的](https://www.bilibili.com/video/BV1k54y1R7J5) ]
 </details>
 
-### `manifold`流形，`chart`卡(坐标卡)，`atlas`图册
+## `manifold`流形，`chart`卡(坐标卡)，`atlas`图册
 <details>
   <summary>Click to expand</summary>
 
@@ -114,11 +114,11 @@
 
 </details>
 
-### algorithms
+## algorithms
 
-#### marching cubes [[explain]](http://www.cs.carleton.edu/cs_comps/0405/shape/marching_cubes.html)
+### marching cubes [[explain]](http://www.cs.carleton.edu/cs_comps/0405/shape/marching_cubes.html)
 
-#### losses
+### losses
 
 <details>
   <summary>Click to expand</summary>
@@ -137,7 +137,7 @@
 
 </details>
 
-### implicit form / implicit field 与 parametric form 之间的转换
+## implicit form / implicit field 与 parametric form 之间的转换
 
 <details>
   <summary>Click to expand</summary>
@@ -192,7 +192,7 @@
 
 </details>
 
-## learning parametric surface
+# learning parametric surface
 
 - keyword
   - neural parametric surface
@@ -461,14 +461,14 @@ learning generalized templates comprised of elements
 
 </details>
 
-## learning implicit surface: implicit fields/implicit functions
+# learning implicit surface: implicit fields/implicit functions
 
 - overview
    - 既然可以用一个隐函数$`f(x,y,z)=0`$表达一个隐曲面<br>
    - 那当然可以先用$`某种神经网络_{一般是MLP+ReLU}`$去拟合构建一个空间数量值函数$`f(x,y,z)_{数量值一般物理意义为占用概率/与表面距离/表面内外等}`$ ，然后训练这个神经网络
    - 训练好以后，如果需要从这个隐函数中提取mesh，一般就用marching cubes类方法空间采样
 
-### sample based methods to extract explicit surface
+## sample based methods to extract explicit surface
 
 ---
 
@@ -780,7 +780,7 @@ High-quality Single-view 3D Reconstruction"`**
 
 </details>
 
-### differentiable renderer
+## differentiable renderer
 
  - keyword
     - DIST and its citations
@@ -1011,7 +1011,7 @@ by Disentangling Geometry and Appearance"`**
 </details>
 
 
-### compositional / multi object scene
+## compositional / multi object scene
 
 ---
 
@@ -1042,7 +1042,7 @@ by Disentangling Geometry and Appearance"`**
 
 </details>
 
-### analytic exact solution
+## analytic exact solution
 
 ---
 
@@ -1075,9 +1075,9 @@ Deep Implicit Surface Networks"`**
 </details>
 
 
-## learning parameterization / implicitization
+# learning parameterization / implicitization
 
-## others
+# others
 
 ---
 

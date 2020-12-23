@@ -13,7 +13,7 @@
   - implicit field/feature + semantic information
   - sitzmann inferring semantic 引文
 
-## point set generation (fixed length)
+# point set generation (fixed length)
 
 ---
 
@@ -71,7 +71,7 @@
 
 </details>
 
-## point cloud generation (from distribution to distribution)
+# point cloud generation (from distribution to distribution)
 
 ---
 
@@ -100,7 +100,7 @@ GANS:
 
 
 
-## continuous function representation (sampling)
+# continuous function representation (sampling)
 
 ---
 
@@ -127,15 +127,15 @@ GANS:
 
 - occupancy networks: 多分辨率等值面提取技术
 
-## continuous function representation (ray tracing)
+# continuous function representation (ray tracing)
 
 - DVR
 
-## iso-surface / parametric generation / generative / GAN
+# iso-surface / parametric generation / generative / GAN
 
 
 
-## implicit field/feature semantic information
+# implicit field/feature semantic information
 
 
 

@@ -1,4 +1,6 @@
-### part-aware representation
+[[_TOC_]]
+
+# part-aware representation
 
  - partnet
  - structure net
@@ -104,7 +106,7 @@ Generation of Fine Geometry"`**
     - inspired by *PT2PC: Learning to Generate 3D Point Cloud Shapes from Part Tree Conditions. 2020*
     - 每个部件用semantic label (e.g. chair back, chair leg)表示，引入PartNet dataset中丰富的部件关系
 
-      - $`\boldsymbol{\rm H}`$ **<u>纵向的parent-child inclusion 关系</u>** (e.g. chair back and chair back bars)
+      - $`\boldsymbol{\rm H}`$ **<u>纵向的parent-child inclusion 关系</u>** (e.g. chair back and chair back bars)
       - $`\boldsymbol{\rm R}`$ **<u>横向的among-sibling 部件对称性与邻接性</u>**(e.g. chair back bars have translational symmetry)
   - geometry hierarchy是部件的geometry
 
@@ -145,5 +147,5 @@ Generation of Fine Geometry"`**
 
 
 
-### deep-assembly
+# deep-assembly
 

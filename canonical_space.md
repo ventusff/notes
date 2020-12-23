@@ -1,4 +1,4 @@
-## NOCS系列
+# NOCS系列
 
 **[[NOCS]](https://geometry.stanford.edu/projects/NOCS_CVPR2019/)** NOCS for Pose Estimation [CVPR2019]
 
@@ -10,8 +10,7 @@
 
 **[[T-NOCS]](https://geometry.stanford.edu/projects/caspr/)** NOCS along Time Axis [arXiv2020 Pre-print]
 
-## learning a canonical representation from non-canonical data
+# learning a canonical representation from non-canonical data
 
 - GIRAFFE
-
 - spectralGAN
