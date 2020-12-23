@@ -35,6 +35,7 @@
 
       - 注意，这里是从near平面开始，累积$`\sigma`$积分的负数的指数；这意味着，如果已经经过了一些$`\sigma`$值很大的值，ray后的点累积值也会很大，T(t) 值就会很小了
       - 这里一定程度上已经cover了遮挡的情况
+      - ![image-20201216214526084](media/image-20201216214526084.png)
 
 </details>
 
@@ -173,7 +174,7 @@
 
 **`"pi-GAN: Periodic Implicit Generative Adversarial Networks
 for 3D-Aware Image Synthesis"`**  
-**[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2012.00926.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `Stanford` **]**   
+**[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2012.00926.pdf)** **[[code]](https://www.github.com)** **[[web]](https://marcoamonteiro.github.io/pi-GAN-website/)** **[** :mortar_board: `Stanford` **]**   
 **[**  `Eric R. Chan`, `Marco Monteiro`, `Petr Kellnhofer`, `Jiajun Wu`, `Gordon Wetzstein`  **]**  
 **[** _`SIREN-style `_ **]**  
 
@@ -181,6 +182,12 @@ for 3D-Aware Image Synthesis"`**
   <summary>Click to expand</summary>
 
 - **Motivation**
+
+  - StyleGAN类似的noise输入方式 + SIREN的周期性激活函数
+  - ![image-20201223163530375](media/image-20201223163530375.png)
+- **results**
+
+  - ![image-20201223163713693](media/image-20201223163713693.png)
 
 </details>
 
