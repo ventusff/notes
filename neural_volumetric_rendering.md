@@ -90,8 +90,8 @@
   - self-pruning <br>![image-20201221174308274](media/image-20201221174308274.png)
 - **results**
   - ![image-20201221173910965](media/image-20201221173910965.png)
-- 因为用的是显式的sparse voxel 表征，可以轻松用于scene composition
-  - ![image-20201221174604849](media/image-20201221174604849.png)
+  - 因为用的是显式的sparse voxel 表征，可以轻松用于scene composition
+    - ![image-20201221174604849](media/image-20201221174604849.png)
 
 </details>
 
@@ -168,7 +168,6 @@
     >
     > **因为2D GAN缺少对3D世界的理解；缺少图像生成过程的理解，所以不能提供对于camera viewpoint和物体pose的精确控制**。
   - 使用连续表征neural radiance filed
-    
     - 从location x, view direction d映射到color c 和 体素密度$`\sigma`$
   - 数据集使用unposed RGB images
 
