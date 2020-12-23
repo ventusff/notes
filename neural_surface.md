@@ -601,7 +601,7 @@ High-quality Single-view 3D Reconstruction"`**
 - **Motivation**
   - 现有的隐式表面deep networks方法只能表征拓扑上闭合的形状；<br>并且结果是，训练时候经常需要clean watertight meshes
   - 本篇提出无符号的距离嵌入减轻了上述问题
-    - 利用`unsigned distance field (uDF)`无符号距离场来表达对表面的接近程度
+    - 利用`unsigned distance field (uDF)`无符号距离场来表达对表面的接近程度
     - 利用`normal vector field (nVF)`法向量场来表达表面朝向
     - uDF + nVF 可以表达任意开/闭拓扑的high fidelity形状
     - 可以从带噪声的triangle soups学习，不需要watertight mehses
@@ -762,6 +762,24 @@ High-quality Single-view 3D Reconstruction"`**
 
 </details>
 
+---
+
+**`<OverfitSDF> "Overfit Neural Networks as a Compact Shape Representation"`**  
+**[** `2020` **]** **[[paper]](https://arxiv.org/pdf/2009.09808.pdf)** **[[code]](https://github.com/nathanrgodwin/overfit-shapes)** **[** :mortar_board: `University of Toronto`. `McGill University` **]**   
+**[**  `Thomas Davies`, `Derek Nowrouzezahrai`, `Alec Jacobson`  **]**  
+**[** _`compact representation`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - 现在的DeepSDF倾向于做category类别的泛化/生成；
+  - 本篇主要提出其实overfit到一个具体的shape的SDF可以作为mesh的一种更`compact`紧致的表征，而且相比于显式地mesh更省空间
+  - 同时，做了很多具体shape optimization的优化，比如采样时基于重要度采样，一些biased points，等
+  - ![image-20201223092223714](media/image-20201223092223714.png)
+
+</details>
+
 ### differentiable renderer
 
  - keyword
@@ -907,7 +925,7 @@ Optimization"`**
 by Disentangling Geometry and Appearance"`**  
 **[** `NeurIPS2020` **]** **[[paper]](https://proceedings.neurips.cc/paper/2020/file/1a77befc3b608d6ed363567685f70e1e-Paper.pdf)** **[[code]](https://github.com/lioryariv/idr)** **[** :mortar_board: `Weizmann Institute of Science` **]**   
 **[**  `Lior Yariv`, `Yoni Kasten`, `Dror Moran`, `Meirav Galun`, `Matan Atzmon`, `Ronen Basri`, `Yaron Lipman`  **]**  
-**[** _`multi-view`, `unposed images`, `single masked object image`_ **]**  
+**[** _`multi-view`, `unposed images`, `single masked object image`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
