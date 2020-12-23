@@ -146,6 +146,8 @@
 
 - **Motivation**
 
+  - 面对unbounded scenes时，用一种球内 / 球外$`\frac {1}{r}`$的参数化来更好的处理foreground / background
+
 </details>
 
 ### generative / category / GAN
