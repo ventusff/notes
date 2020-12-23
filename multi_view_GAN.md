@@ -214,31 +214,6 @@ too old
 **[**  `Katja Schwarz`, `Yiyi Liao`, `Michael Niemeyer`, `Andreas Geiger`  **]**  
 **[** _`neural radiance field`, `continuous representation`, `camera viewpoint/object pose controllable image synthesis`, `HoloGAN->baseline`_ **]**  
 
-<details>
-  <summary>Click to expand</summary>
-
-| ![img](media/58379603.png) |
-| -------------------------- |
-| motivation                 |
-
-- _**Motivation**_
-  
-  
-  - > While 2D generative adversarial networks have enabled high-resolution image synthesis, they largely lack an understanding of the 3D world and the image formation process. 
-    >
-    > Thus, they do not provide precise control over camera viewpoint or object pose.
-    >
-    > **因为2D GAN缺少对3D世界的理解；缺少图像生成过程的理解，所以不能提供对于camera viewpoint和物体pose的精确控制**。
-  
-- 使用连续表征neural radiance filed
-  
-  
-  - 从location x, view direction d映射到color c 和 体素密度$`\sigma`$
-  
-- 数据集使用unposed RGB images
-
-</details>
-
 ---
 
 **`"Inverse Graphics GAN: Learning to Generate 3D Shapes from Unstructured 2D Data"`**  
