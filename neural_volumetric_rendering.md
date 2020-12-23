@@ -1,7 +1,7 @@
 [[_TOC_]] 
 
- - resourses
-    - [[blog] NeRF Explosion 2020](https://dellaert.github.io/NeRF/)
+### resourses
+- [[blog] NeRF Explosion 2020](https://dellaert.github.io/NeRF/)
 
 
 ### Neural Volume Rendering
@@ -43,7 +43,6 @@
   <summary>Click to expand</summary>
 
 - **Motivation**
-  - 
 
 </details>
 
@@ -62,15 +61,12 @@
   <summary>Click to expand</summary>
 
 - **Motivation**
-  
   - 对于NeRF这种研究，在提高网络深度、大小时，有diminishing returns（减小的回报）
   - 因此，instead of 提高单个网络深度、大小，本篇把空间分成几个voronoi cell，对应几个NeRF，来学习
-  
     - 因为是空间分区的network，因此无论分多少部分，Infer时间是几乎不变的
     - voronoi空间分解非常合适，因为被证明与Painter's Algorithm 兼容，可以高效GPU渲染
     - 对于现实世界场景，在相同的渲染质量情况下，比NeRF高效3倍以上
 - **Overview**
-
   - ![image-20201215201013772](media/image-20201215201013772.png)
 
 </details>
@@ -148,7 +144,6 @@
   <summary>Click to expand</summary>
 
 - **Motivation**
-  - 
 
 </details>
 
@@ -165,7 +160,6 @@
   <summary>Click to expand</summary>
 
 - **Motivation**
-  - 
 
 </details>
 
@@ -181,7 +175,6 @@ for 3D-Aware Image Synthesis"`**
   <summary>Click to expand</summary>
 
 - **Motivation**
-  - 
 
 </details>
 
@@ -200,11 +193,9 @@ for 3D-Aware Image Synthesis"`**
 - **Motivation**
   - 为NeRF采集的图片中的物体可以变形
 - **Overview**
-
   - 首先从observation space加上一个变形latent code映射到canonical space，然后再canonical space下进行NeRF的操作
   - 这样通过变形latent code就可以捕捉到物体的变形<br>![image-20201221094736917](media/image-20201221094736917.png)
 - Elastic Regularization 弹性正则化
-
   - 由于deformation field 引入了额外的ambiguities，导致`under-constrained optimization`欠约束最优化问题，带来不好的结果和artifacts<br>需要引入先验
   - ![image-20201221095628241](media/image-20201221095628241.png)
   - 在几何处理和图形学仿真领域，建模非刚体变形时，常常使用弹性能量`elastic enegies` 来建模local deformations from a rigid motion；在视觉领域也有利用`elastic energy`来重建、tracking非刚体的场景和物体；因此使用类似概念
@@ -223,7 +214,6 @@ for 3D-Aware Image Synthesis"`**
   <summary>Click to expand</summary>
 
 - **Motivation**
-  - 
 
 </details>
 
@@ -238,7 +228,6 @@ for 3D-Aware Image Synthesis"`**
   <summary>Click to expand</summary>
 
 - **Motivation**
-  - 
 
 </details>
 
@@ -253,7 +242,6 @@ for 3D-Aware Image Synthesis"`**
   <summary>Click to expand</summary>
 
 - **Motivation**
-  - 
 
 </details>
 
@@ -268,7 +256,6 @@ for 3D-Aware Image Synthesis"`**
   <summary>Click to expand</summary>
 
 - **Motivation**
-  - 
 
 </details>
 
@@ -283,7 +270,6 @@ for 3D-Aware Image Synthesis"`**
   <summary>Click to expand</summary>
 
 - **Motivation**
-  - 
 
 </details>
 
@@ -305,7 +291,6 @@ for 3D-Aware Image Synthesis"`**
   <summary>Click to expand</summary>
 
 - **review**
-  
   - 相比于组成式，其实更关注多物体之间的Lighting
   - 物体pose都是真值
 - **Motivation**
@@ -313,19 +298,15 @@ for 3D-Aware Image Synthesis"`**
   - OSF(object-centric neural scattering functions) models per-object light transport
   - [ ] modeling dynamic scene：物体在移动/有无，光源在移动
 - **Review**
-
   - [ ] 相比于GIRAFFE，把多物体的光照、反射等处理地很好了；GIRAFFE是用neural rendering逃避了显式地建模光照和多物体透射反射，这篇文章直面难题，类似Neural Reflectance Field
   - [ ] seemingly 物体位置、id都是真值，重点主要是建模好多物体的光照
 - **Overview**
-
   - 数据集
-
     - furniture-single
     - furniture-random 25个动态的场景，每个包含多个物体的随机layout
     - furniture-realisitc
   - ![image-20201221162223704](media/image-20201221162223704.png)
-- ![image-20201221162251641](media/image-20201221162251641.png)
-
+  - ![image-20201221162251641](media/image-20201221162251641.png)
   - ![image-20201221162336799](media/image-20201221162336799.png)
 
 </details>
@@ -399,7 +380,6 @@ for 3D-Aware Image Synthesis"`**
   - 作者评价的与GRF的区别
     - 本篇在view下操作，而不像GRF那样在canonical space下操作，因此本文方法可以适用于更一般的设定；
     - 本文方法的效果更好（笔者注：从web 视频来看，在少量view输入合成任务下的效果非常好）
-
 - **Motivation**
   - image-conditioned NeRF
     - >  To overcome the NeRF representation’s inability to share knowledge between scene
@@ -435,7 +415,6 @@ for 3D-Aware Image Synthesis"`**
   <summary>Click to expand</summary>
 
 - **Motivation**
-  - 
 
 </details>
 
@@ -450,7 +429,6 @@ for 3D-Aware Image Synthesis"`**
   <summary>Click to expand</summary>
 
 - **Motivation**
-  - 
 
 </details>
 
@@ -466,7 +444,6 @@ for Relighting and View Synthesis"`**
   <summary>Click to expand</summary>
 
 - **Motivation**
-  - 
 
 </details>
 
@@ -481,7 +458,6 @@ for Relighting and View Synthesis"`**
   <summary>Click to expand</summary>
 
 - **Motivation**
-  - 
 
 </details>
 
