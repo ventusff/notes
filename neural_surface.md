@@ -973,6 +973,43 @@ by Disentangling Geometry and Appearance"`**
 
 </details>
 
+---
+
+**`"Iso-Points: Optimizing Neural Implicit Surfaces with Hybrid Representations"`**  
+**[** `2020` **]** **[[paper]](https://arxiv.org/pdf/2012.06434.pdf)**  **[** :mortar_board: `ETH`, `cambridge` **]**   
+**[**  `Wang Yifan`, `Shihao Wu`, `Cengiz Oztireli`, `Olga Sorkine-Hornung`  **]**  
+**[** _`iso-points`, `hybrid representation`, `SDF`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - 目前这些deep implicit field学surface的方法，optimizing时，精确、鲁棒的重建仍然非常有挑战性
+  - 本篇提出用等值面上的点作为一个额外的显式表征；被计算、更新on-the-fly，有效提高收敛率和最终质量
+- **overview**
+  - 目标：给定一个neural implicit function $`f_t(\boldsymbol{\rm p};\theta_t)`$ at *t*-th iteration，efficiently generate and utilize 一组`稠密的、均匀分布的iso-points` (points at zero level set)
+    - 这组iso-points可以用于
+      - 改进training data的sampling
+      - 提供最优化时的regularization
+- **iso-surface sampling**：如何得到iso-surface上均匀分布的点
+  - ![image-20201223112811012](media/image-20201223112811012.png)
+  - **projection**：projecing a point onto the iso-surface 可以被视作 在一个给定点用牛顿法估计一个方程的根
+    - 考虑这里和贾奎那篇analytic marching算法初始找到表面上一个点的思路是很像的
+    - 给定隐函数$`f(\boldsymbol{\rm p}): \mathbb{R}^3\rightarrow \mathbb{R}`$，初始点$`\boldsymbol{\rm q}_0\in\mathbb{R}^3`$<br>牛顿法求根：$`\boldsymbol{\rm q}_{k+1}=\boldsymbol{\rm q}_{k}-J_f(\boldsymbol{\rm q}_k)^+ f(\boldsymbol{\rm q}_k)`$, where $`J_f(\boldsymbol{\rm q}_k)^+`$是Jacobian的Moore-Penrose 伪逆
+    - $`J_f`$是一个row 3-vector，所以$`J_f(\boldsymbol{\rm q}_k)^+ = \frac {J_f^{\top}(\boldsymbol{\rm q}_k)} {\lVert J_f(\boldsymbol{\rm q}_k) \rVert^2}`$, where $`J_f(\boldsymbol{\rm q}_k)`$ 可以直接通过反向传播计算
+    - 不过，由于一些同时代的工作常采用sine activation functions或者positional encoding，SDF噪声很大，梯度高度non-smooth，直接使用牛顿法会导致overshooting和oscillation
+    - 当然可以用一些更精致的line search算法，不过这里直接用简单的clipping操作
+    - 点$`\mathcal{Q}_t`$集合的初始化：刚开始就用一个unit sphere shape初始化，后面用$`\mathcal{Q}_{t-1}`$初始化
+    - 最大10个牛顿迭代，停止阈值从$`10^{-4}`$逐渐缩小到$`10^{-5}`$
+  - **uniform resampling**
+    - 迭代地把点从high-density regions移开
+    - 这步和f没有关系了，移开的方向都是由邻居点定义的
+  - **upsampling**
+    - 基于 `EAR` (edge-aware resampling)
+      - *Edge-aware point set resampling, SIGGRAPH Asia 2013*
+
+</details>
+
 
 ### compositional / multi object scene
 
@@ -1025,6 +1062,10 @@ Deep Implicit Surface Networks"`**
     - 基于ReLU-based MLP 把input空间分为很多线性区域的事实，本篇把这些区域识别为analytic cells与analytic faces，与implicit function的零值等值面有关
     - 推导了这些identified analytic faces在什么理论条件下可以保证形成一个闭合的、piecewise的planar surface
     - 基于本篇的这些理论推导，提出了一个可并行化的算法，在这些analytic cells上做marching，来==**<u>exactly recover</u>**==这些由learned MLP学出来的mesh
+- **overview**
+
+  - 算法的初始：先用SGD $`\underset {\boldsymbol{x}\in\mathbb{R}^3}{\min} \lvert F(\boldsymbol{x}) \rvert`$ 找到表面上的一个点
+  - ![image-20201223105803235](media/image-20201223105803235.png)
 - **效果**：解析解就是降维打击。精确度无限(exact 解) + CPU跑都比别人GPU跑快十几倍
   - ![image-20201209113035559](media/image-20201209113035559.png)
   - ![image-20201209111706863](media/image-20201209111706863.png)
@@ -1033,28 +1074,6 @@ Deep Implicit Surface Networks"`**
 
 </details>
 
----
-
-**`"Iso-Points: Optimizing Neural Implicit Surfaces with Hybrid Representations"`**  
-**[** `2020` **]** **[[paper]](https://arxiv.org/pdf/2012.06434.pdf)**  **[** :mortar_board: `ETH`, `cambridge` **]**   
-**[**  `Wang Yifan`, `Shihao Wu`, `Cengiz Oztireli`, `Olga Sorkine-Hornung`  **]**  
-**[** _`iso-points`, `hybrid representation`_ **]**  
-
-<details>
-  <summary>Click to expand</summary>
-
-- **Motivation**
-  - 目前这些deep implicit field学surface的方法，optimizing时，精确、鲁棒的重建仍然非常有挑战性
-  - 本篇提出用等值面上的点作为一个额外的显式表征；被计算、更新on-the-fly，有效提高收敛率和最终质量
-- overview
-
-  - 目标是在一个neural implicit function以外，高效地生成、利用一组稠密的、均匀分布的iso-points (points at zero level set)
-  - 这组iso-points可以用于
-
-    - 改进training data的sampling
-    - 提供最优化时的regularization
-
-</details>
 
 ## learning parameterization / implicitization
 

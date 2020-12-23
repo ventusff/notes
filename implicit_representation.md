@@ -74,7 +74,7 @@
 
 
   - ![image-20201221092641965](media/image-20201221092641965.png)
-  - 在任意一个query point，对任意一个view，把query point $`\boldsymbol{\rm x}, \boldsymbol{\rm d}`$ **<u>变换到input view space下</u>** <br>$`\boldsymbol{\rm x}^{(i)}=\boldsymbol{\rm P}^{(i)}\boldsymbol{\rm x}`,\quad \boldsymbol{\rm d}^{(i)}=\boldsymbol{\rm R}^{(i)}\boldsymbol{\rm d}$
+  - 在任意一个query point，对任意一个view，把query point $`\boldsymbol{\rm x}, \boldsymbol{\rm d}`$ **<u>变换到input view space下</u>** <br>$`\boldsymbol{\rm x}^{(i)}=\boldsymbol{\rm P}^{(i)}\boldsymbol{\rm x}`,\quad \boldsymbol{\rm d}^{(i)}=\boldsymbol{\rm R}^{(i)}\boldsymbol{\rm d}$
   - 在任意一个query point，对任意一个view，从投影后的图像位置的feature + position embedding + view direction embedding 计算中间变量<br>$`\boldsymbol{\rm V}^{(i)}=f_1(\gamma(\boldsymbol{\rm x}^{(i)}), \boldsymbol{\rm d}^{(i)};\boldsymbol{\rm W}(\pi(\boldsymbol{\rm x}^{(i)})))`$
   - 在任意一个query point，对于所有view，把所有中间变量过average pooling layer $`\psi`$后再过一个网络渲染出$`(\sigma, \boldsymbol{\rm c})`$<br>$`(\sigma, \boldsymbol{\rm c})=f_2(\psi(\boldsymbol{\rm V}^{(1)},\ldots,\boldsymbol{\rm V}^{(n)}))`$
   - single view就是直接$`(\sigma, \boldsymbol{\rm c})=f(\gamma(\boldsymbol{\rm x}),\boldsymbol{\rm d};\boldsymbol{\rm W}(\pi(\boldsymbol{\rm x})))`$
@@ -138,9 +138,9 @@
 ---
 
 **`"Deformable Neural Radiance Fields"`**  
-**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2011.12948.pdf)** **[[code]](https://www.github.com)** **[[web]](https://nerfies.github.io/)** **[** :mortar_board: `University of Washington` **]** **[** :office: `Google` **]**  
+**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2011.12948.pdf)** **[[code]](https://www.github.com)** **[[web]](https://nerfies.github.io/)** **[** :mortar_board: `University of Washington` **]** **[** :office: `Google` **]**  
 **[**  `Keunhong Park`, `Utkarsh Sinha`, `Jonathan T. Barron`, `Sofien Bouaziz`, `Dan B Goldman`, `Steven M. Seitz`, `Ricardo Martin-Brualla`  **]**  
-**[** _`deformable NeRF`_ **]**  
+**[** _`deformable NeRF`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
@@ -156,7 +156,7 @@
   - 由于deformation field 引入了额外的ambiguities，导致`under-constrained optimization`欠约束最优化问题，带来不好的结果和artifacts<br>需要引入先验
   - ![image-20201221095628241](media/image-20201221095628241.png)
   - 在几何处理和图形学仿真领域，建模非刚体变形时，常常使用弹性能量`elastic enegies` 来建模local deformations from a rigid motion；在视觉领域也有利用`elastic energy`来重建、tracking非刚体的场景和物体；因此使用类似概念
-  - 对本篇的deformation field T来说，一个点$`\boldsymbol{\rm x}`$处的mapping(从observation frame到canonical frame)的`Jacobian` $`\boldsymbol{\rm J}_T(\boldsymbol{\rm x})`$描述了这个点处的mapping的`best linear approximation`
+  - 对本篇的deformation field T来说，一个点$`\boldsymbol{\rm x}`$处的mapping(从observation frame到canonical frame)的`Jacobian` $`\boldsymbol{\rm J}_T(\boldsymbol{\rm x})`$描述了这个点处的mapping的`best linear approximation`
 
 </details>
 
@@ -281,7 +281,7 @@
 
 ## 关键词：DVR引用中 + generative / generic / generalize / category
 
-### others
+## others
 
 ---
 
