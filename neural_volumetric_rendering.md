@@ -168,6 +168,7 @@
     >
     > **因为2D GAN缺少对3D世界的理解；缺少图像生成过程的理解，所以不能提供对于camera viewpoint和物体pose的精确控制**。
   - 使用连续表征neural radiance filed
+    
     - 从location x, view direction d映射到color c 和 体素密度$`\sigma`$
   - 数据集使用unposed RGB images
 
@@ -489,6 +490,10 @@ for Relighting and View Synthesis"`**
 
 - **Motivation**
   - ![iNerf](media/iNerf.gif)
+- **Overview**
+  - 就直接用像素的loss直接反向传播给pose<br>![image-20201223180241800](media/image-20201223180241800.png)
+  - 关键在于sample pixels时的sample策略
+  - pose参数化用的是exponential coordinates
 
 </details>
 
