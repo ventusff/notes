@@ -1,6 +1,6 @@
 [[_TOC_]]
 
-# topic 非线性激活 ReLU
+# topic: 非线性激活 ReLU
 
  - MLP不能学到multiplier
     - 可以考虑用log-normalization，这样就把乘法转换为加法
@@ -25,7 +25,7 @@
    - 这个分段函数所围区域，可以是闭合的，也可以是开的；就像线性规划里的多个不等式既可以围成一个闭合的区域也可以围成一个开的区域
    - 这个分段函数所围区域，内、外部有明确的正负号，一定是内正外负或者内负外正
 
-# topic 卷积操作
+# topic: 卷积操作
 
 - 卷积核出现的必要性
   - 考虑图像分类。
@@ -36,3 +36,22 @@
       - 手动设计，多样性其实不多
     - 考虑图像分类。卷积核的出现，就是为了更好地提取局部特征，从而搭配MLP形成一个合适的特征空间，这个特征空间可以只用一个个二分类的组合就可以分开多个类别<br>![MNIST tSNE plot](media/image-20201209163614662.png)
 
+# topic: frequencies
+
+ - >  inherent limitations of neural networks to capture, preserve, and generate high frequencies
+    - *Neural Cages for Detail-Preserving 3D Deformations, CVPR2020*
+    - 神经网络难以捕捉、保留、产生高频率的特征
+      - e.g. 该文中的表面deformations时，那些表面上的thin structures, fine details
+  
+ - > As fully connected layers are biased towards learning low-frequency representations [26]
+   - *Canonical Capsules: Unsupervised Capsules in Canonical Pose, 2020*
+   - 全连接层倾向于biased to 低频的表征
+     - e.g. 该文中，对于胶囊描述子的点云特征直接通过MLP就回归出了胶囊描述子的当前(在canonical space中)的pose
+   - 其引文[26]: *Convergence and Generalization in Neural Networks. NeurIPS2018* 
+   
+- coordinate-based 方法（如NeRF，SIREN），往往使用一种周期性的positional encoding / periodic activation，来更好地表达fine details
+  
+  - *NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis. ECCV2020*
+  - *Fourier Features Let Networks Learn High Frequency Functions in Low Dimensional Domains. NeurIPS2020*
+  - *(SIREN) Implicit Neural Representations*
+    *with Periodic Activation Functions. NeurIPS2020*

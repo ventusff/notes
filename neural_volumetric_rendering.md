@@ -503,8 +503,7 @@ for Relighting and View Synthesis"`**
 
 ---
 
-**`"Fourier Features Let Networks Learn
-High Frequency Functions in Low Dimensional Domains"`**  
+**`"Fourier Features Let Networks Learn High Frequency Functions in Low Dimensional Domains"`**  
 **[** `NeurIPS2020` **]** **[[paper]](https://abc.efg)** **[[code]](https://www.github.com)** **[** :mortar_board: `UCB`, `UCSD` **]** **[** :office: `Google` **]**  
 **[**  `Matthew Tancik`, `Pratul P. Srinivasan`, `Ben Mildenhall`, `Sara Fridovich-Keil`, `Nithin Raghavan`, `Utkarsh Singhal`, `Ravi Ramamoorthi`, `Jonathan T. Barron`, `Ren Ng`  **]**  
 **[** _`fourier features`_ **]**  

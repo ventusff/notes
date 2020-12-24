@@ -185,7 +185,6 @@
 | ![image-20201209091156318](media/image-20201209091156318.png) | ![image-20201209091136948](media/image-20201209091136948.png) |
 
  - a `rational parameterization` of a surface in affine (x,y,z)-space corresponds to a `polynomial parameterization` of the same surface  in `projective (w,x,y,z)-space`<br>一个曲面在(x,y,z)-仿射空间的有理参数化 对应 同样曲面在(w,x,y,z)-射影空间的多项式参数化
-
  - `implicitization`: parametric -> implicit
     - all curves and surfaces with a rational parametric form can be converted to implicit form
     - elimination algorithm, resultant, *etc.*
@@ -377,7 +376,6 @@ learning generalized templates comprised of elements
   - NOCS
     - 可以预测出一张图片的nocs map和mask
   - surface parameterization
-
     - 表面的UV参数化即一个`chart`
     - 用一组全连接网络学习多个`chart`
 - overview
@@ -458,6 +456,73 @@ learning generalized templates comprised of elements
        - 首先固定meshlets的形状code，更新mesh顶点
        - 然后固定mesh顶点，更新meshlet的形状code
     - ![image-20201216163105638](media/image-20201216163105638.png)
+
+</details>
+
+---
+
+**`"Shape Reconstruction by Learning Differentiable Surface Representations"`**  
+**[** `CVPR2020` **]** **[[paper]](https://arxiv.org/pdf/1911.11227)** **[[code]](https://github.com/bednarikjan/differential_surface_representation)** **[[video]](https://www.youtube.com/watch?v=6xEIDvCk1wA)** **[** :mortar_board: `EPFL` **]**   
+**[**  `Jan Bednarik`, `Shaifali Parashar`, `Erhan Gundogdu`, `Mathieu Salzmann`, `Pascal Fua`  **]**  
+**[** _`patch`, `control over patches`, `overlap`, `collapse`, `differential surface properties`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - 目前有一些学习an ensumble of Parametric表征的方法
+    - 但是这些方法并没有控制表面patch的变形，因此并不能阻止patches彼此重叠或者折叠成一个点、一条线
+    - 这种情况下，计算表面法向量就会变得困难、不可靠
+  - 本篇提出 在训练时，开发深度神经网络的天生的可微性
+    - 来利用表面的微分属性去阻止patch折叠、显著减少互相重叠
+    - 并且这让我们可以可靠地计算表面法向量、曲率等
+  - ![image-20201224164231425](media/image-20201224164231425.png)
+- **related works**: 在训练时使用differential surface properties
+  - *Learning to Reconstruct Texture-Less Deformable Surfaces. 3DV2018*
+  - *Marr Revisited: 2D-3D Model Alignment via Surface Normal Prediction. CVPR2016*
+  - *A Two-Stream Network for Fast and Accurate 3D Cloth Draping. ICCV2019*
+- **overview**
+  - ![image-20201224193837533](media/image-20201224193837533.png)
+- **results**
+  - 主要对比基线就是atlasNet
+  - Pointcloud Autoencoding (PCAE)<br>![image-20201224175724685](media/image-20201224175724685.png)
+  - single view reconstruction (SVR) 单目重建<br>![image-20201224175853915](media/image-20201224175853915.png)
+
+</details>
+
+---
+
+**`"Better Patch Stitching for Parametric Surface Reconstruction"`**  
+**[** `2020` **]** **[[paper]](https://arxiv.org/pdf/2010.07021.pdf)** **[** :mortar_board: `EPFL` **]**   
+**[**  `Zhantao Deng`, `Jan Bednařík`, `Mathieu Salzmann`, `Pascal Fua`  **]**  
+**[** _`patch stitching`, `atlas`, `learning`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - 对目前的multiple patch based parametric surface representations（atlas），改进patches的`global consistency`（即防止**<u>孔洞</u>**和多个patch不正确**<u>交叉</u>**"jagged/带**<u>锯齿</u>**的"的情况）
+  - ![image-20201224174834579](media/image-20201224174834579.png)
+  - 典型的缝合问题（1D表示）<br>![image-20201224175209265](media/image-20201224175209265.png)
+- **Related works：patch-wise representations**
+  - FoldingNet *Foldingnet: Point Cloud Auto-Encoder via Deep Grid Deformation.CVPR2018*<br>第一个基于深度神经网络的工作：学到一个参数化的函数来在3D空间中嵌入一个2D流形
+  - 后面的工作shifted to ensembles of such learned functions来做patch-wise表征：
+    - learning (encoder)
+      - *Atlasnet: A papier-mâché approach to learning 3d surface generation. CVPR2018*
+      - *Learning elementary structures for 3d shape generation and matching. NeurIPS2019*
+      - *Shape reconstruction by learning differentiable surface representations. CVPR2020* 这是作者的前作，用正则化来减轻表面的扭曲、重叠
+      - *Tearingnet: Point cloud autoencoder to learn topology-friendly representations. arXiv, 2020.*
+    - optimization (auto-decoder)
+      - *Deep geometric prior for surface reconstruction. CVPR2019*
+      - *Meshlet priors for 3d mesh reconstruction. CVPR2020*
+    - 2D output domain
+      - *Deep parametric shape predictions using distance fields. CVPR2020*
+    - 因为连续的patch可以以任意精度采样，因此在拟合的时候可以有很高的精度
+    - 目前方法的主要缺陷
+      - 学到的表面高度扭曲、大规模重叠；只能通过适当的regularization正则化来减轻（即作者前一篇工作*Shape reconstruction by learning differentiable surface representations*）
+      - 更紧急的问题：individual patches的放置时的global inconsistency，导致surface artifacts，比如孔洞，或者一些多个patch不正确交叉的区域
+        - 这个问题在meshlet和*Deep geometric prior for surface reconstruction.* 两篇里有一定程度攻击，但是只在optimization settings，很缓慢，并且在test time还需要几何观测（如带噪声的点云）；
+      - 本篇主要基于learning-based (带encoder) 前作，利用它的低扭曲、低重叠属性，改进patches的global consistency
 
 </details>
 
@@ -608,7 +673,6 @@ High-quality Single-view 3D Reconstruction"`**
     - 并且额外提供了学到的表征提取、渲染等值面的新方法
   - ![image-20201222150310307](media/image-20201222150310307.png)
 - **overview**
-
   - uDF+nVF<br>![image-20201222151610880](media/image-20201222151610880.png)
 
 </details>
@@ -624,14 +688,11 @@ High-quality Single-view 3D Reconstruction"`**
   <summary>Click to expand</summary>
 
 - **Motivation**
-
   - 用deformation field建立起**<u>`shape correspondence`</u>**，这样就可以做texture transfer、label transfer等
   - ![image-20201222155438709](media/image-20201222155438709.png)
 - **overview**
-
   - 用一个超网络预测DeformNet $`D`$的参数；<br>然后在空间中的每一处，从同一个template SDF，DeformNet $`D`$产生位置修正$`v`$与标量距离修正$`\Delta s`$，总共4维输出<br>即最终的$`p`$点处的SDF值为：$`s=T(p+v)+\Delta s=T(p+D^v_{\omega}(p))+D^{\Delta s}_{\omega}(p)`$![image-20201222153322051](media/image-20201222153322051.png)
 - **results**
-
   - texture transfer <br>![image-20201222155357538](media/image-20201222155357538.png)
   - label transfer<br>![image-20201222155611605](media/image-20201222155611605.png)
 
@@ -666,7 +727,6 @@ High-quality Single-view 3D Reconstruction"`**
   <summary>Click to expand</summary>
 
 - **review**
-
   - 和DVR思路类似，首先手动推导出表面点坐标对网络参数的梯度，实际计算时就可以先用采样-based方法得出点坐标，再代入手动推导出的梯度式子构成完整的反向传播链路
   - 手动推导表面点坐标对网络参数的梯度过程中，用到了SDF的特殊性质（某一点函数值的梯度就是该点的法向量），不适用于一般性implicit occupancy field
 
@@ -740,23 +800,19 @@ High-quality Single-view 3D Reconstruction"`**
   - 从ShapeNet的一个类别学出来的representation，可以用于表征任何一个其他类别的非常细节的shapes；并且可以用更少的shape来训练
   - ![image-20201217115545052](media/image-20201217115545052.png)
 - **Overview**
-
   - auto-decoder
   - losses：重建loss和patch extrinsics的guidance loss，还有regularization
 - **extrinsic loss**
-
   - 这个loss保证所有的patch都对surface有贡献，并且处于caonical space
   - 第*i*个物体的patch extrinsics: $`\boldsymbol{e}_i=[\boldsymbol{e}_{i,0},\boldsymbol{e}_{i,1},\ldots,\boldsymbol{e}_{i,N_P-1}]`$
   - $`\mathcal{L}_{ext}(\boldsymbol{e}_i) = \mathcal{L}_{sur}(\boldsymbol{e}_i) + \mathcal{L}_{cov}(\boldsymbol{e}_i) + \mathcal{L}_{rot}(\boldsymbol{e}_i) + \mathcal{L}_{scl}(\boldsymbol{e}_i) + \mathcal{L}_{var}(\boldsymbol{e}_i) `$
   - $`\mathcal{L}_{sur}(\boldsymbol{e}_i)`$ 保证每个patch都离surface很近
-
     - $`\underset{逐patch}{\max}[surface上的所有点到该patch距离的最小值]`$ 
   - $`\mathcal{L}_{cov}(\boldsymbol{e}_i)`$ symmetric coverage loss，鼓励surface上的每个点都至少被一个patch涵盖
   - $`\mathcal{L}_{rot}(\boldsymbol{e}_i)`$ 把patches和surface normals对齐
   - $`\mathcal{L}_{scl}(\boldsymbol{e}_i)`$ 鼓励patches to be reasonably small，防止不同patch之间显著的重叠
   - $`\mathcal{L}_{var}(\boldsymbol{e}_i)`$ 鼓励所有patch大小相似
 - **result**
-
   - ![image-20201217122000974](media/image-20201217122000974.png)
   - ![image-20201217122618035](media/image-20201217122618035.png)
 
@@ -899,14 +955,11 @@ Optimization"`**
   - learn SDF on a `3D grid`
   - perform ray-casting via `sphere tracing`
 - **differentiable renderer**
-
   - 学到的是voxelized SDF，然后通过linear interpolation获取任意连续位置处的SDF
   - 给定像素值的导数只与interpolation时的8个邻居体素有关
-
     - 或者说，sphere tracing本身不需要是可微分的
     - 只需要 local 8个邻居的 local 计算需要可微分
 - **energy function & losses**
-
   - 从geometry相机位置等$`\Theta`$，可以render出image$`I`$：$`I=R(\Theta)`$<br>inverse rendering就是$`\Theta=R^{-1}(I)`$<br>但是inverse rendering并不直接可逆，因此把问题建模为`energy minimization problem`能量最小问题<br>$`\Theta^*=\underset{\Theta}{\arg\min} \mathcal{L}_{img}(R(\Theta),I)`$
   - 重点在于一个differentiable renderer：本篇强调shape。输入camera pose和shape，输出渲染图像
   - $`\mathcal{L}_{img}`$衡量render图像和$`I`$的差别
@@ -914,7 +967,6 @@ Optimization"`**
 - single view：从图像encode到一个voxelized 稀疏SDF，经过一些3D卷积refinement，经过differentiable renderer到image![image-20201222103114471](media/image-20201222103114471.png)
 - multi view：就用auto-decoder直接训练
 - **results**
-
   - single view<br>![image-20201222110938605](media/image-20201222110938605.png)
 
 </details>
@@ -976,7 +1028,7 @@ by Disentangling Geometry and Appearance"`**
 ---
 
 **`"Iso-Points: Optimizing Neural Implicit Surfaces with Hybrid Representations"`**  
-**[** `2020` **]** **[[paper]](https://arxiv.org/pdf/2012.06434.pdf)**  **[** :mortar_board: `ETH`, `cambridge` **]**   
+**[** `2020` **]** **[[paper]](https://arxiv.org/pdf/2012.06434.pdf)** **[[web]](https://yifita.github.io/project/neural-shape/)** **[** :mortar_board: `ETH`, `cambridge` **]**   
 **[**  `Wang Yifan`, `Shihao Wu`, `Cengiz Oztireli`, `Olga Sorkine-Hornung`  **]**  
 **[** _`iso-points`, `hybrid representation`, `SDF`_ **]**  
 
@@ -1029,7 +1081,6 @@ by Disentangling Geometry and Appearance"`**
   - 半监督体现在训练时候用的是RGB-D，测试时候只需要RGB
   - single view见所有物体；物体个数是已知的<br>![image-20201222094044348](media/image-20201222094044348.png)
 - **review**
-
   - 只用了clevrn类数据集，而且甚至还是简单的低分辨率渲染，实验比较简单
 - **Overview**
   - 首先从example shapes有监督地训练SDF（的decoder）；
@@ -1037,7 +1088,6 @@ by Disentangling Geometry and Appearance"`**
   - [ ] recurrent真的能这样设计吗？<br>![image-20201222090334334](media/image-20201222090334334.png)
   - 可以看到recurrent的主要目的是迭代、逐个地得出object的code，倒是和之前*Multi-object representation learning with iterative variational inference.*那篇有些像<br>每个物体输出深度估计，图像估计，与occulusion mask<br>![image-20201222091509810](media/image-20201222091509810.png)
 - **results**
-
   - ![image-20201222090527412](media/image-20201222090527412.png)
 
 </details>
@@ -1063,7 +1113,6 @@ Deep Implicit Surface Networks"`**
     - 推导了这些identified analytic faces在什么理论条件下可以保证形成一个闭合的、piecewise的planar surface
     - 基于本篇的这些理论推导，提出了一个可并行化的算法，在这些analytic cells上做marching，来==**<u>exactly recover</u>**==这些由learned MLP学出来的mesh
 - **overview**
-
   - 算法的初始：先用SGD $`\underset {\boldsymbol{x}\in\mathbb{R}^3}{\min} \lvert F(\boldsymbol{x}) \rvert`$ 找到表面上的一个点
   - ![image-20201223105803235](media/image-20201223105803235.png)
 - **效果**：解析解就是降维打击。精确度无限(exact 解) + CPU跑都比别人GPU跑快十几倍
