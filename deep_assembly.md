@@ -121,10 +121,10 @@ Generation of Fine Geometry"`**
   - ![image-20201217162903345](media/image-20201217162903345.png)
 - **Disentangled Geometry and Structure VAEs**
   - 下图蓝色代表geometry，红色代表structure<br>encoding的时候，从geometry和structure feature encode出geometry<br>decoding的时候，从geometry和structure feature decode出geometry<br>
-  - [ ] ![image-20201217162351563](media/image-20201217162351563.png)
+  - ![image-20201217162351563](media/image-20201217162351563.png)
   - [ ] what?
 - **results**
-  - [ ] ![image-20201217163302020](media/image-20201217163302020.png)
+  - ![image-20201217163302020](media/image-20201217163302020.png)
 
 </details>
 
