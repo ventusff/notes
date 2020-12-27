@@ -52,26 +52,16 @@ main preliminary: GQN
   <summary>Click to expand</summary>
 
 - **自监督的方式，从真实世界图片中提取出3D物体**
-
 - **两阶段训练**
-
-
   - 首先学习一个base shape，然后从base shape到full model
   - 如果不用两阶段训练，学习到的形状都变成了一个椭球，变得模糊化了。
   - <br>![img](media/0473e31c-1289-4436-9167-a4483a143024.png)
-
 - <br>![img](media/d7558150-cfef-48ad-9ce7-05cc20ceb89e.png)
-
 - **主要贡献**
-  
 - > 为了应对复杂的形状、复杂的真实世界背景，使用对于物体表面和背景的强regularization
-  >
   > To suppress it, we propose using strong regularization and constraints on object surfaces and background images. 
-  >
   > 可以从cifar10, pascal这样的数据集中重建出各种各样的物体
-  >
   > 由于数据集中经常有ill-posed摆放的图片，学习出并且利用先验知识是关键。
-  >
   > Since this is a severely ill-posed problem, learning and leveraging the prior knowledge of objects is the key to this task.
 
 </details>
@@ -146,7 +136,6 @@ main preliminary: SRN
 
 
 - **Motivation**
-  
   - 不仅可以从感知流中分割出物体
   - 而且可以提取物体的3D信息、在3D空间中跟踪他们
 - **主要特点**
@@ -214,11 +203,9 @@ Authors: Youngjoong Kwon , Stefano Petrangeli , Dahun Kim , Haoliang Wang , Eunb
 
 
 - **前景背景区分方式**
-  
   - 通过encoder 编码 context views of a video $`\{x_z, v_z\}`$ 为两个隐向量：scene embedding和camera paramter embedding，把这两个embedding decode为逐个cell中的是否有物体 + 各个物体的外观、pose参数 + 背景形状、材质
   - 借鉴了传统CV中图像分割的一些思想，依靠强大的loss设计，用encoder-decoder的方式实现了视频生成。泛化性未知
 - **主要贡献**
-  
   - 通过预测**分割**mask、随时间跟踪物体，把一段given **video** **分解**为其组成物体、背景
   - 通过预测深度、3D bbox， determine 场景及物体的3D结构
   - 生成连贯的视频，视频中物体在一个3D背景中进行3D空间移动
@@ -230,11 +217,9 @@ Authors: Youngjoong Kwon , Stefano Petrangeli , Dahun Kim , Haoliang Wang , Eunb
   - 把每个物体的pose时间t序列 、外观embedding、背景形状、材质 随时间逐帧渲染
   - _**ego-centric**_ model
 - **==loss / regularization==** （<u>*由于从2D videos中infer 3D结构是inherently ambiguous，因此需要regularization来避免degerate solutions*</u>）
-
   - L1 regularization on 物体速度大小：discourages local minima, 防止模型不能track物体
   - hinge regularization on 物体存在概率：discourages 物体在优化早期在shape还没适应(学到)时就消失
   - (inspired by *图像分割* 任务中的*Markov random fiields*) we penalize edges in the reconstructed foreground mask for occurring in areas of the original image that have small gradients. ：This discourages undesirable but mathematically-correct solutions where an object is in front of an untextured surface, and parts of that surface are incorporated in the object rather than the background. 
-
     - [ ] what ??
   - standard mesh regulirazers for 背景、mesh物体，避免degenerate shapes：L2 on Laplacian curvature, L1 on angles between faces, L1 on edge lenghts variance
 
@@ -259,22 +244,13 @@ Authors: Youngjoong Kwon , Stefano Petrangeli , Dahun Kim , Haoliang Wang , Eunb
 
 
 - **主要特点**
-  
   - **数据集中的物体都是缓慢移动的；从motion cue中发现物体**
   - 用SDF表示每个物体
-  
 - **Motivation**
-
-
   - > we explore how physics, especially object interactions, facilitates learning to disentangle and segment instances from raw videos, and to infer the 3D geometry and position of each object, all without supervision
-    >
     > 探索物理学：<u>尤其是物体之间的交互，促进学习出物体之间的解耦，从raw videos中</u>；
-
     - [ ] what is physics？
-
-
   - > our Physical Object Discovery Network (POD-Net) uses both multi-scale pixel cues and physical motion cues to accurately segment observable and partially occluded objects of varying sizes, and infer properties of those objects.
-    >
     > 同时使用multi-scale的pixel cue和physical motion cue来精确地分割出可见的、部分被遮挡的尺寸多样的物体，并且infer这些物体的属性
 
 

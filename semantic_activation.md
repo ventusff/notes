@@ -30,13 +30,10 @@
   - 使用了全连接层；由于全连接层在生成有结构的数据时有困难，因此难以产生带有多样性的真实形状
 - **Motivation**
 - 主要构成
-
   - Raw point cloud GAN (r-GAN) 产生raw $`2048 \times 3`$ point set 输出
-
     - generator从高斯噪声vector产生 $`2048 \times 3`$ 点云集输出
     - discriminator使用正常的auto encoder，直接输入raw point cloud
   - Latent-space GAN (l-GAN)
-
     - 首先预训练一个pre-trained AE，然后generator和discriminator 都在这个pretrained AE的 bottle-neck variables 操作
 
 </details>
@@ -84,7 +81,6 @@
   <summary>Click to expand</summary>
 
 - **Motivation**
-  
   - ![image-20201207194307508](media/image-20201207194307508.png)
   - tree结构的GCN![image-20201207194208941](media/image-20201207194208941.png)
 
@@ -113,7 +109,6 @@ GANS:
   <summary>Click to expand</summary>
 
 - **Motivation**
-  
   - 证明像SRN这样的隐式神经表征也可以包含多模态的信息：外观，形状，语义，*etc.*
 - **OverView**
 - 1. [训练] 正常的类别物体SRN预训练

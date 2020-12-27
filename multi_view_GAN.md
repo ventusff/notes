@@ -18,40 +18,28 @@
   <summary>Click to expand</summary>
 
 - **主要贡献**
-  
   - 第一个调查GAN模型的"complete representations"
   - 用CR-GAN来学习完整的表达，使用一种两通路的模式(`reconstruction path` + `generation path`)
   - CR-GAN可以利用`unlabeled data`来`self supervision`，使得生成的质量更好
   - 即使对于**unseen**的dataset，对于**wild conditions**，CR-GAN可以产生高质量的**multi view**图片
-  
 - **之前的GAN-based方法**：encoder-decoder+discriminator
-  
-  
+
   - |                  ![img](media/56666611.png)                  |
     | :----------------------------------------------------------: |
     | 相比于之前的GAN-based方法，多了一条`generation path`，试图补全z space |
     
   - encoder把图片map到一个latent space，然后操作embedding，然后decoder生成新视角
-  
   - [CVPR 2017] [[paper]](https://openaccess.thecvf.com/content_cvpr_2017/papers/Tran_Disentangled_Representation_Learning_CVPR_2017_paper.pdf) <DR-GAN> Disentangled Representation Learning GAN for Pose-Invariant Face Recognition
-  
   - [2017]  Multi-view image generation from a single-view. 
-  
   - **_之前的GAN-based方法的问题_**：
-  
-  
     - 学到的都是“不完整”的表征，对于"unseen"data\无边界的data的泛化性很差
     - ==**思考**==：encoder网络学到的大概率就是不完整的表征；这也是为什么用auto-decoder而不是encoder-decoder
-  
 - **proposal**
   - 除了`reconstruction path`外，引入另一条`generation path`来 从随机采样的sample 创建view-specific images
   - 两条path **共享**同样的G参数：在生成通路学到的G 会引导reconstruction path中的E和D的学习，反过来也是一样
   - E is force to be G的逆向过程，使得学到的**representation可以span the entire Z space**  
   - 更重要的是，两通路的学习过程可以很容易地利用**有label、无label**的数据，对于自监督学习而言，从而大大丰富了Z space，对于自然的生成来说。
-  
 - **discriminators** 
-  
-  
   - ![img](media/57229841-1603684635887.png)
   - **==问题==** ：原来这些GAN-based方法中的discriminator都是干什么用的？单纯只是增加图像的细节程度？
   - DR-GAN中：discriminator有两个任务：① id 分类。discriminator输出一个分类输出。② pose分类。分类器输出。
@@ -167,33 +155,22 @@ too old
   - 比如有可能把2个物体理解为同一个primitive，甚至...；
   - 因此，使用多个loss来鼓励一个解耦、可解释的3D表征；同时从训练集分布中生成图片。
 - **loss**
-
   - _**adversarial loss**_：标准的real/fake loss + condition
-
     - > condition on: 是完全的composite image还是background image
       >
       > 实验证明，这个condition有助于从背景中解耦物体  
-
     - 因此在训练时，收集两组数据集：带有物体的和没有物体的
-
   - _**compactness loss**_ ：紧凑性loss
-
     - > To bias solutions towards compact representations and to encourage the 3D primitives to tightly encase the objects, we minimize the projected shape of each object.
       >
       > 为了让solutions 倾向于完整的表征，鼓励3D primitives能够紧贴合物体，我们最小化每个物体的投影shape
-
     - 惩罚每个物体`alpha map`的 `L1-范数`
-
     - > ![img](media/63491889.png)
       >
       > $`\tau=0.1`$ 是一个防止收缩到一个固定最小值以下的截短阈值， $`A_i`$ 依赖于模型参数和 latent code z（so 这个loss可以对模型参数有作用）
-
   - **(==self supervised==) geometry consistency loss**
-
     - > 为了得到在不同的 `camera viewpoints` 和 `3D物体pose `中都**consistent**的solutions，遵循 _**[33]RGBD-GAN**_ 来鼓励生成模型来遵守多视几何约束。
-
     - > 比如，对于pose(外参)的改变应该改变物体的pose但是不应该alter它的颜色或者identity.
-
     - > 这样formulate这个约束：
       >
       > ![img](media/63872134.png)
@@ -201,7 +178,6 @@ too old
       > $`X_i'`$ $`D_i'`$ 是 latent code z的2D generator 输出
       >
       > $`\tilde{X}_i'`$ $`\tilde{D}_i'`$ 是 同一个latent code对每个primitive的pose加入随机噪声 并且 [**Warp**ing the result back to the original viewpoint] (即**重投影**回加噪声之前的viewpoint)  后的2D generator输出
-
     - 相当于是一个自监督的重投影误差loss
 
 </details>
@@ -246,7 +222,6 @@ too old
   <summary>Click to expand</summary>
 
 - **dataset**
-
   - ground truth **voxel** data of SUNCG dataset.
 - ![image-20201026195610963](media/image-20201026195610963.png)
 

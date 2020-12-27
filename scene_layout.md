@@ -31,7 +31,7 @@
     - 基于2.5D+语义目标的object locations的refinement
       - [ ] what?
 - **主要贡献**
-  - 3D-SLN model 可以从一个scene graph生成**diverse and accurate** scene layouts 
+  - 3D-SLN model 可以从一个scene graph生成 **diverse and accurate** scene layouts 
   - 3D scene layouts 可以用 2.5D+语义信息 finetune
   - 应用展示：scene graph based layout synthesis + exemplar based image synthesis
 - **数据集/数据特征/数据定义**
@@ -49,7 +49,7 @@
     - 把传统2D scene graph数据增强为3D scene graph，把每个物体关系编码到三维空间
     - <u>**虽然是一个encoder-decoder结构，但是generate过程其实就用不到encoder了，decoder才是关键**</u>
   - 集成了一个differentiable renderer来只用scene的2D投影来refine 最终的layout
-    - 给定一张semantics map和depth map，可微分渲染器来**optimize over** the synthesized layout去**拟合**给定的输入，通过**<u>analysis-by-synthesis</u>** fashion
+    - 给定一张semantics map和depth map，可微分渲染器来 **optimize over** the synthesized layout去 **拟合** 给定的输入，通过 **<u>analysis-by-synthesis</u>** fashion
     - 其实就是一个auto-decoder结构，通过整个可微分通路，把sample出的layout latent反向传播最优化更新（文中称之为"refinement"/"fine tune"/"generate a layout toward a target layout"）
 - **layout generator的网络架构**
 
@@ -170,15 +170,12 @@ Scene Graph to Image Generation"`**
   - 所以提出从数据中学习出canonical graph representations
   - 主要展示3个数据集：visual genome, COCO, clevr
 - **Overview**
-
   - SG to canonical weighted SG
   - weighted SG to layout
   - layout to image
 - **Scene Graph Canonicalization**
-
   - transitive relation, converse relations
 - **效果**
-
   - ![image-20201217112917616](media/image-20201217112917616.png)
 
 </details>

@@ -117,7 +117,7 @@
   - ![image-20201216204202712](media/image-20201216204202712.png)
 - neural volumetric rendering
   - automatic integration支持高效地用closed-form solution来evaluate 定积分
-  - 不过volume rendering不能直接应用AutoInt，因为包含嵌套的积分：ray上的radiance加权**<u>累积transmittance</u>**以后的积分
+  - 不过volume rendering不能直接应用AutoInt，因为包含嵌套的积分：ray上的radiance加权 **<u>累积transmittance</u>** 以后的积分
   - 因此，把这个积分近似为piecewise sections来用AutoInt高效地积分
   - 将
     - $`\boldsymbol{\rm C}(\boldsymbol{\rm r})=\int_{t_n}^{t_f} T(t) \; \cdot \; \sigma(\boldsymbol{\rm r}(t)) \; \cdot \; c(\boldsymbol{\rm r}(t),\boldsymbol{\rm d}) \quad {\rm d}t`$
@@ -145,7 +145,6 @@
   <summary>Click to expand</summary>
 
 - **Motivation**
-
   - 面对unbounded scenes时，用一种球内 / 球外$`\frac {1}{r}`$的参数化来更好的处理foreground / background
 
 </details>
@@ -170,7 +169,6 @@
     >
     > **因为2D GAN缺少对3D世界的理解；缺少图像生成过程的理解，所以不能提供对于camera viewpoint和物体pose的精确控制**。
   - 使用连续表征neural radiance filed
-    
     - 从location x, view direction d映射到color c 和 体素密度$`\sigma`$
   - 数据集使用unposed RGB images
 
@@ -360,7 +358,7 @@ for 3D-Aware Image Synthesis"`**
 
 - **Motivation**
   - NeRF + encoder-decoder结构
-  - 用一个**<u>single forward pass</u>** infer出novel scene representations
+  - 用一个 **<u>single forward pass</u>** infer出novel scene representations
     - encoder输入：2D images + camera poses + intrinsics
     - encoder输出：neural radiance fieilds
 - 主要做法

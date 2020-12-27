@@ -743,7 +743,6 @@ High-quality Single-view 3D Reconstruction"`**
   <summary>Click to expand</summary>
 
 - **Review**
-  
   - DeepSDF / deep implicit field类方法往往都喜欢用auto-decoder，因为set-encoder有欠拟合的问题
   - auto-decoder 在测试时也需要infer，需要很多步迭代，infer一次比较耗时<br>因此用meta-learning（MAML类）找出一个合适的auto-decoder优化的初值code<br>这样在测试时infer就只需要少量步数的迭代就可以得到很好的效果
   - ![image-20201210102054355](media/image-20201210102054355.png)
@@ -852,7 +851,6 @@ High-quality Single-view 3D Reconstruction"`**
   <summary>Click to expand</summary>
 
 - **review**
-
   - 思路：首先手动推导出每个camera ray和隐表面交点的点坐标对网络参数的梯度，在实际计算时，就可以先在camera ray上采样得出交点坐标(类似二分法)，然后代入所手动推导出的式子构成完整的反向传播链路
 
 </details>
