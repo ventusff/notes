@@ -682,14 +682,16 @@ High-quality Single-view 3D Reconstruction"`**
 ---
 
 **`"BSP-Net: Generating Compact Meshes via Binary Space Partitioning"`**  
-**[** `CVPR2020` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2020/papers/Chen_BSP-Net_Generating_Compact_Meshes_via_Binary_Space_Partitioning_CVPR_2020_paper.pdf)** **[[code]](https://github.com/czq142857/BSP-NET-original)**  **[** :mortar_board: `SFU` **]** **[** :office: `Google` **]**  
+**[** `CVPR2020(Oral)` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2020/papers/Chen_BSP-Net_Generating_Compact_Meshes_via_Binary_Space_Partitioning_CVPR_2020_paper.pdf)** **[[code(tf)]](https://github.com/czq142857/BSP-NET-original)** **[[code(pytorch)]](https://github.com/czq142857/BSP-NET-pytorch)** **[[web]](https://bsp-net.github.io/)**  **[** :mortar_board: `SFU` **]** **[** :office: `Google` **]**  
 **[**  `Zhiqin Chen`, `Andrea Tagliasacchi`, `Hao Zhang`  **]**  
 **[** _`low-poly`, `convex composition`, `category-shape correspondence`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
 
-- IM-Net同作的续作
+- **review**
+  - IM-Net同作的续作
+  - 效果很好；但是对于thin-structure表现不佳
 - **Motivation**
   - take inspiration from binary space partitions，学到更`compact` / 紧致 / low-poly的mesh表征 <br>![image-20201229112704532](media/image-20201229112704532.png)
 - **overview**
@@ -1231,7 +1233,6 @@ Deep Implicit Surface Networks"`**
   - ![image-20201209105846197](media/image-20201209105846197.png)
 
 </details>
-
 
 # learning parameterization / implicitization
 
