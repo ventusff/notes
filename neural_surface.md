@@ -200,6 +200,8 @@
    - 用一个参数方程$`[x(s,t),y(s,t),z(s,t)]`$表达一个曲面
    - 可以用显式的手动构建或者隐式的神经网络来构建这个从s,t到x,y,z的映射关系
 
+## explicit shape templates + deformation
+
 ---
 
 **`"Learning Category-Specific Mesh Reconstruction from Image Collections"`**  
@@ -264,6 +266,32 @@ learning generalized templates comprised of elements
 
 ---
 
+**`"Deep Mesh Reconstruction from Single RGB Images via Topology Modification Networks"`**  
+**[** `CVPR2019` **]** **[[paper]](https://arxiv.org/pdf/1909.00321.pdf)**  **[** :mortar_board: `CUHK(Shenzhen)`, `USC` **]**   
+**[**  `Junyi Pan`, `Xiaoguang Han`, `Weikai Chen`, `Jiapeng Tang`, `Kui Jia`  **]**  
+**[** _`topology modification`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - <br>![image-20201208110645619](media/image-20201208110645619.png)
+  - 优化的时候，可以alternates between shape deformation和topology modification
+- **overview**
+  - topology modification
+    - 通过动态地修改 faces-to-vertices关系来实现
+    - 学一个per face error estimation network
+    - 通过去掉那些deviate significantly的face来更新topology structure
+- 效果
+  - ![image-20201208111115100](media/image-20201208111115100.png)
+  - ![image-20201208111142570](media/image-20201208111142570.png)
+
+</details>
+
+## continuous patches
+
+---
+
 **`"AtlasNet: A Papier-Mâché Approach to Learning 3D Surface Generation"`**  
 **[** `CVPR2018` **]** **[[paper]](https://arxiv.org/pdf/1802.05384.pdf)** **[[web]](http://imagine.enpc.fr/~groueixt/atlasnet/)** **[[code]](https://github.com/ThibaultGROUEIX/AtlasNet)** **[[code-easy-to-understand]](https://github.com/ThibaultGROUEIX/AtlasNet/tree/V2.2)** **[** :mortar_board: `University` **]** **[** :office: `Adobe` **]**  
 **[**  `Thibault Groueix`  **]**  
@@ -307,25 +335,20 @@ learning generalized templates comprised of elements
 
 ---
 
-**`"Deep Mesh Reconstruction from Single RGB Images via Topology Modification Networks"`**  
-**[** `CVPR2019` **]** **[[paper]](https://arxiv.org/pdf/1909.00321.pdf)**  **[** :mortar_board: `CUHK(Shenzhen)`, `USC` **]**   
-**[**  `Junyi Pan`, `Xiaoguang Han`, `Weikai Chen`, `Jiapeng Tang`, `Kui Jia`  **]**  
-**[** _`topology modification`_ **]**  
+**`"Deep Geometric Prior for Surface Reconstruction"`**  
+**[** `CVPR2019` **]** **[[paper]](https://arxiv.org/pdf/1811.10943.pdf)** **[[code]](https://github.com/fwilliams/deep-geometric-prior)**  **[** :mortar_board: `New York University` **]**   
+**[**  `Francis Williams`, `Teseo Schneider`, `Claudio Silva`, `Denis Zorin`, `Joan Bruna`, `Daniele Panozzo`  **]**  
+**[** _`chart representation`, `auto-decoder`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
 
 - **Motivation**
-  - <br>![image-20201208110645619](media/image-20201208110645619.png)
-  - 优化的时候，可以alternates between shape deformation和topology modification
-- **overview**
-  - topology modification
-    - 通过动态地修改 faces-to-vertices关系来实现
-    - 学一个per face error estimation network
-    - 通过去掉那些deviate significantly的face来更新topology structure
-- 效果
-  - ![image-20201208111115100](media/image-20201208111115100.png)
-  - ![image-20201208111142570](media/image-20201208111142570.png)
+  - 首先把输入点云分成若干个重叠的部分，然后用MLP流形学习每个部分；
+  - 每个local流形学习用`2-Wasserstein loss` / `EMD loss`；<br>并在所有流形之间保证consistency
+  - ![image-20201228171157982](media/image-20201228171157982.png)
+- **results**
+  - ![image-20201228174443654](media/image-20201228174443654.png)
 
 </details>
 
@@ -537,7 +560,7 @@ learning generalized templates comprised of elements
 
 ---
 
-**`"Learning Implicit Fields for Generative Shape Modeling"`**  
+**`<IM-Net> "Learning Implicit Fields for Generative Shape Modeling"`**  
 **[** `CVPR2019` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2019/papers/Chen_Learning_Implicit_Fields_for_Generative_Shape_Modeling_CVPR_2019_paper.pdf)** **[[code]](https://github.com/czq142857/implicit-decoder)** **[[code-improve]](https://github.com/czq142857/IM-NET)**  **[[code-pytorch]](https://github.com/czq142857/IM-NET-pytorch)** **[** :mortar_board: `SFU` **]**   
 **[**  `Zhiqin Chen`, `Hao Zhang `  **]**  
 **[** _`implicit shape representation`_ **]**  
@@ -546,6 +569,7 @@ learning generalized templates comprised of elements
   <summary>Click to expand</summary>
 
 - **Motivation**
+  - inside / outside indicator
   - 其实是一种类别级别的连续函数隐式的shape表征，类似occupancy networks；
     <br>输入code + one point 坐标，输出在shape 内/外；（类似SDF）
   - ![image-20201203174748033](media/image-20201203174748033.png)
@@ -632,6 +656,8 @@ High-quality Single-view 3D Reconstruction"`**
 <details>
   <summary>Click to expand</summary>
 
+- **review**
+  - 训练时是有3D shape 的SDF的真值数据的；图像feature只是提供一个辅助的code输入而已
 - **Motivation**
   - 希望学到的shape，不仅全局特征好，还想有局部fine grained details 细粒度细节
 - **overview**
@@ -650,6 +676,56 @@ High-quality Single-view 3D Reconstruction"`**
   <summary>Click to expand</summary>
 
 - **Motivation**
+
+</details>
+
+---
+
+**`"BSP-Net: Generating Compact Meshes via Binary Space Partitioning"`**  
+**[** `CVPR2020` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2020/papers/Chen_BSP-Net_Generating_Compact_Meshes_via_Binary_Space_Partitioning_CVPR_2020_paper.pdf)** **[[code]](https://github.com/czq142857/BSP-NET-original)**  **[** :mortar_board: `SFU` **]** **[** :office: `Google` **]**  
+**[**  `Zhiqin Chen`, `Andrea Tagliasacchi`, `Hao Zhang`  **]**  
+**[** _`low-poly`, `convex composition`, `category-shape correspondence`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- IM-Net同作的续作
+- **Motivation**
+  - take inspiration from binary space partitions，学到更`compact` / 紧致 / low-poly的mesh表征 <br>![image-20201229112704532](media/image-20201229112704532.png)
+- **overview**
+  - 依旧是输入point坐标 + shape code condition，输出inside / outside；
+  - 不同之处在于构造的内部模型是`n`个平面方程，靠`n`个这样的binary space partition的组合来表征shape
+  - 靠binary partition的组合来表达shape的示意图：<br>首先组合出一个个的`convex`凸包，再组合成 whole shape
+    - 其实做的事情本质上类似于把MLP+ReLU显式，不过这里的convex的概念值得思考
+
+| 示意图                                                       | 网络结构                                                     |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ![image-20201229113148367](media/image-20201229113148367.png) | ![image-20201229113341539](media/image-20201229113341539.png) |
+
+ - **few shot segmentation**
+   -  因为同category的shape的convex组合之间已经建立起了`correspondence`，只需要手动给几个shape标一下convex id对应的part label，就可以利用correspondence获得其他同category shape的标注<br><img src="media/image-20201229113640866.png" alt="image-20201229113640866" style="zoom:67%;" />
+ - **results**
+    - <img src="media/image-20201229113556212.png" alt="image-20201229113556212" style="zoom: 67%;" />
+    - <img src="media/image-20201229114054936.png" alt="image-20201229114054936" style="zoom:67%;" />
+
+</details>
+
+---
+
+**`"Neural-Pull: Learning Signed Distance Functions from Point Clouds by Learning to Pull Space onto Surfaces"`**  
+**[** `2020` **]** **[[paper]](https://arxiv.org/pdf/2011.13495.pdf)** **[[code]](https://www.github.com)** **[[web]](abc.efg)** **[** :mortar_board: `Tsinghua`, , `University of Maryland` **]**   
+**[**  `Baorui Ma`, `Zhizhong Han`, `Yu-Shen Liu`, `Matthias Zwicker`  **]**  
+**[** _`reconstructing surfaces from 3D pointcloud`, `surface reconstruction`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - 训练一个神经网络去把query 3D locations "拉" 到他们在表面上的最近邻居；<br>拉的操作，方向是query locations处的网络梯度，步长是query locations处的网络SDF值，这两个都是从网络自身计算出来的<br>
+  - 让我们可以同时更新sdf值和梯度
+  - ![image-20201228162639806](media/image-20201228162639806.png)
+- **overview**
+  - loss functions直接从GT点云本身定义，而不是利用GT SDF作回归；<br>![image-20201228163704020](media/image-20201228163704020.png)<br>![image-20201228163648881](media/image-20201228163648881.png)
 
 </details>
 
@@ -688,6 +764,7 @@ High-quality Single-view 3D Reconstruction"`**
   <summary>Click to expand</summary>
 
 - **Motivation**
+  - 把每个具体instance shape表达为一个template的shape的deformation
   - 用deformation field建立起**<u>`shape correspondence`</u>**，这样就可以做texture transfer、label transfer等
   - ![image-20201222155438709](media/image-20201222155438709.png)
 - **overview**
@@ -716,6 +793,30 @@ High-quality Single-view 3D Reconstruction"`**
 
 ---
 
+**`<IGR> "Implicit Geometric Regularization for Learning Shapes"`**  
+**[** `ICML2020` **]** **[[paper]](https://arxiv.org/pdf/2002.10099.pdf)** **[[code]](https://github.com/amosgropp/IGR)** **[[video]](https://youtu.be/6cOvBGBQF9g)** **[** :mortar_board: `Weizmann Institute of Science` **]**   
+**[**  `Amos Gropp`, `Lior Yariv`, `Niv Haim`, `Matan Atzmon`, `Yaron Lipman`  **]**  
+**[** _`SDF`, `Implicit geometrical regularization`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - 从raw 点云中直接学习DeepSDF，在with or without 法向量数据的情况下
+  - 用隐式的shape先验，就可以获得plausible solutions<br>其实就是简单的loss函数，鼓励输入点云处的函数值为0，鼓励空间散布的点的梯度是单位模梯度<br>![image-20201228164827136](media/image-20201228164827136.png)
+- **overview**
+  - given raw input pointcloud $`\mathcal{X}=\{x_i\}_{i\in I} \subset \mathbb{R}^3`$,  <u>**with or without normal**</u> data $`\mathcal{N}=\{n_i\}_{i\in I} \subset \mathbb{R}^3`$，从中学出一个 **<u>plausible</u>** 的surface $`\mathcal{M}`$
+  - 学SDF时的常规loss：<br>有数据处函数值为0，法向量为真值；<br>(无数据处)空间分布的点法向量2-norm为1<br><img src="media/image-20201228172709924.png" alt="image-20201228172709924" style="zoom: 67%;" />
+  - 然而只有上述loss存在问题
+    - 首先，不能保证学到的是SDF
+    - 其次，即使能学到SDF，也不能保证学到的是一个 **<u>plausible one</u>**
+  - 本篇通过理论证明，如果对上述loss使用梯度下降算法，，就可以避免bad critical solutions
+    - 是从平面的线性问题考虑的，把这种属性叫做 **<u>plane reduction</u>** <br>![image-20201228173842422](media/image-20201228173842422.png)
+
+</details>
+
+---
+
 **`"MeshSDF: Differentiable Iso-Surface Extraction"`**  
 **[** `NeurIPS2020` **]** **[[paper]](https://arxiv.org/pdf/2006.03997.pdf)** **[[code]](https://github.com/cvlab-epfl/MeshSDF)** **[** :mortar_board: `EPFL` **]** **[** :office: `Neuralconcept`, `Intel` **]**  
 **[**  `Edoardo Remelli`, `Pascal Fua `   **]**  
@@ -732,55 +833,7 @@ High-quality Single-view 3D Reconstruction"`**
 
 </details>
 
----
 
-**`"MetaSDF: Meta-learning Signed Distance Functions"`**  
-**[** `NeurIPS2020` **]** **[[paper]](https://arxiv.org/pdf/2006.09662.pdf)** **[[code]](https://github.com/vsitzmann/metasdf)** **[** :mortar_board: `Stanford` **]** **[** :office: `Google` **]**  
-**[**  `Vincent Sitzmann`, `Eric R. Chan`, `Richard Tucker`, `Noah Snavely`, `Gordon Wetzstein`  **]**  
-**[** _`meta-learning`, `SDF`_ **]**  
-
-<details>
-  <summary>Click to expand</summary>
-
-- **Review**
-  - DeepSDF / deep implicit field类方法往往都喜欢用auto-decoder，因为set-encoder有欠拟合的问题
-  - auto-decoder 在测试时也需要infer，需要很多步迭代，infer一次比较耗时<br>因此用meta-learning（MAML类）找出一个合适的auto-decoder优化的初值code<br>这样在测试时infer就只需要少量步数的迭代就可以得到很好的效果
-  - ![image-20201210102054355](media/image-20201210102054355.png)
-
-</details>
-
----
-
-**`"Learned Initializations for Optimizing Coordinate-Based Neural Representations"`**  
-**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2012.02189.pdf)**  **[** :mortar_board: `UCB` **]** **[** :office: `Google` **]**  
-**[**  `Matthew Tancik`, `Ben Mildenhall`, `Terrance Wang`, `Divi Schmidt`, `Pratul P. Srinivasan`, `Jonathan T. Barron`, `Ren Ng`  **]**  
-**[** _`meta-learning`_ **]**  
-
-<details>
-  <summary>Click to expand</summary>
-
-- **Motivation**
-  - 对于coordinate-based neural representations在auto-decoder时，用meta-learned 的initialization
-  - ![image-20201215193905125](media/image-20201215193905125.png)
-  - 与MetaSDF的差别：进一步拓展到更多种类的neural coordinate-based signals，并且把the power of using initial weight settings开发为一种先验信息
-
-</details>
-
----
-
-**`"Deep Optimized Priors for 3D Shape Modeling and Reconstruction"`**  
-**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2012.07241.pdf)**  **[** :mortar_board: `南方科技大学`, **]** **[** :office: `Tencent America` **]**  
-**[**  `Mingyue Yang`, `Yuxin Wen`, `Weikai Chen`, `Yongwei Chen`, `Kui Jia贾奎`  **]**  
-**[** _`better shape priors`_ **]**  
-
-<details>
-  <summary>Click to expand</summary>
-
-- **Motivation**
-  - 现有的很多方法test time都是从fixed trained priors
-  - 本篇提出在training以后，仍然从physical measurements进一步最优化learned prior
-
-</details>
 
 ---
 
@@ -791,6 +844,7 @@ High-quality Single-view 3D Reconstruction"`**
 
 <details>
   <summary>Click to expand</summary>
+
 
 - **Motivation**
   - mid-level patch-based SDF
@@ -832,6 +886,59 @@ High-quality Single-view 3D Reconstruction"`**
   - 本篇主要提出其实overfit到一个具体的shape的SDF可以作为mesh的一种更`compact`紧致的表征，而且相比于显式地mesh更省空间
   - 同时，做了很多具体shape optimization的优化，比如采样时基于重要度采样，一些biased points，等
   - ![image-20201223092223714](media/image-20201223092223714.png)
+
+</details>
+
+## initialization / priors for auto-decoders
+
+---
+
+**`"MetaSDF: Meta-learning Signed Distance Functions"`**  
+**[** `NeurIPS2020` **]** **[[paper]](https://arxiv.org/pdf/2006.09662.pdf)** **[[code]](https://github.com/vsitzmann/metasdf)** **[** :mortar_board: `Stanford` **]** **[** :office: `Google` **]**  
+**[**  `Vincent Sitzmann`, `Eric R. Chan`, `Richard Tucker`, `Noah Snavely`, `Gordon Wetzstein`  **]**  
+**[** _`meta-learning`, `SDF`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+
+- **Review**
+  - DeepSDF / deep implicit field类方法往往都喜欢用auto-decoder，因为set-encoder有欠拟合的问题
+  - auto-decoder 在测试时也需要infer，需要很多步迭代，infer一次比较耗时<br>因此用meta-learning（MAML类）找出一个合适的auto-decoder优化的初值code<br>这样在测试时infer就只需要少量步数的迭代就可以得到很好的效果
+  - ![image-20201210102054355](media/image-20201210102054355.png)
+
+</details>
+
+---
+
+**`"Learned Initializations for Optimizing Coordinate-Based Neural Representations"`**  
+**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2012.02189.pdf)**  **[** :mortar_board: `UCB` **]** **[** :office: `Google` **]**  
+**[**  `Matthew Tancik`, `Ben Mildenhall`, `Terrance Wang`, `Divi Schmidt`, `Pratul P. Srinivasan`, `Jonathan T. Barron`, `Ren Ng`  **]**  
+**[** _`meta-learning`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - 对于coordinate-based neural representations在auto-decoder时，用meta-learned 的initialization
+  - ![image-20201215193905125](media/image-20201215193905125.png)
+  - 与MetaSDF的差别：进一步拓展到更多种类的neural coordinate-based signals，并且把the power of using initial weight settings开发为一种先验信息
+
+</details>
+
+---
+
+**`"Deep Optimized Priors for 3D Shape Modeling and Reconstruction"`**  
+**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2012.07241.pdf)**  **[** :mortar_board: `南方科技大学`, **]** **[** :office: `Tencent America` **]**  
+**[**  `Mingyue Yang`, `Yuxin Wen`, `Weikai Chen`, `Yongwei Chen`, `Kui Jia贾奎`  **]**  
+**[** _`better shape priors`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - 现有的很多方法test time都是从fixed trained priors
+  - 本篇提出在training以后，仍然从physical measurements进一步最优化learned prior
 
 </details>
 
@@ -975,7 +1082,7 @@ Optimization"`**
 by Disentangling Geometry and Appearance"`**  
 **[** `NeurIPS2020` **]** **[[paper]](https://proceedings.neurips.cc/paper/2020/file/1a77befc3b608d6ed363567685f70e1e-Paper.pdf)** **[[code]](https://github.com/lioryariv/idr)** **[** :mortar_board: `Weizmann Institute of Science` **]**   
 **[**  `Lior Yariv`, `Yoni Kasten`, `Dror Moran`, `Meirav Galun`, `Matan Atzmon`, `Ronen Basri`, `Yaron Lipman`  **]**  
-**[** _`multi-view`, `unposed images`, `single masked object image`_ **]**  
+**[** _`multi-view`, `unposed images`, `single masked object image`, `SDF`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
@@ -1149,23 +1256,8 @@ Deep Implicit Surface Networks"`**
 
 ---
 
-**`"Autolabeling 3D Objects with Differentiable Rendering of SDF Shape Priors"`**  
-**[** `0000` **]** **[[paper]](https://abc.efg)** **[[code]](https://www.github.com)** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
-**[**  `xxxx`  **]**  
-**[** _`abcd`_ **]**  
-
-<details>
-  <summary>Click to expand</summary>
-
-- **Motivation**
-  - 已有2D检测框+lidar 数据，为lidar数据做标注（9D cuboid）<br>![image-20201215122457755](media/image-20201215122457755.png)
-
-</details>
-
----
-
 **`"NodeSLAM: Neural Object Descriptors for Multi-View Shape Reconstruction"`**  
-**[** `2020` **]** **[[paper]](https://abc.efg)** **[[code]](https://www.github.com)** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
+**[** `2020` **]** **[[paper]](https://arxiv.org/pdf/2004.04485.pdf)** **[[web]](https://edgarsucar.github.io/NodeSLAM/)** **[** :mortar_board: `ICL` **]** **[** :office: `Dyson Robotic Lab` **]**  
 **[**  `Edgar Sucar`, `Kentaro Wada`, `Andrew Davison`  **]**  
 **[** _`differential rendering engine`, `VAE`, `multi-class learned object descriptor`_ **]**  
 

@@ -109,6 +109,7 @@ GANS:
   <summary>Click to expand</summary>
 
 - **Motivation**
+  
   - 证明像SRN这样的隐式神经表征也可以包含多模态的信息：外观，形状，语义，*etc.*
 - **OverView**
 - 1. [训练] 正常的类别物体SRN预训练
@@ -131,6 +132,30 @@ GANS:
 
 
 # implicit field/feature semantic information
+
+# DeepSDF 引用中带label
+
+
+
+---
+
+**`"Autolabeling 3D Objects with Differentiable Rendering of SDF Shape Priors"`**  
+**[** `CVPR2020` **]** **[[paper]](https://arxiv.org/pdf/1911.11288.pdf)** **[[code]](https://github.com/TRI-ML/sdflabel)** **[[video]](https://www.youtube.com/watch?v=Utzj-kfWHP4)** **[** :mortar_board: `TUM`, `Toyota Research Institute` **]**   
+**[**  `Sergey Zakharov`, `Wadim Kehl`, `Arjun Bhargava`, `Adrien Gaidon`  **]**  
+**[** _`SDF-label`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - 已有2D检测框+lidar 数据，为lidar数据做标注（9D cuboid）<br>![image-20201215122457755](media/image-20201215122457755.png)
+
+</details>
+
+
+# NeRF 引用中带label
+
+暂无
 
 # semantic envelope 
 
@@ -178,7 +203,7 @@ GANS:
     - $`\mathcal{C}_{\mathcal{s}}=\mathcal{N}_{\mathcal{C}}(\mathcal{S}_{\mathcal{s}})+\mathcal{C}_0`$
   - deformation-prediction model $`\mathcal{N}_{d}`$，预测从$`\mathcal{C}_{\mathcal{S}}`$的offset，来获得deformed cage
     - $`\mathcal{C}_{\mathcal{s}\rightarrow t}=\mathcal{N}_{d}(\mathcal{S}_{t},\mathcal{S}_{\mathcal{s}})+\mathcal{C}_{\mathcal{s}}`$
-  - source shape提pointnet feature，decode预测source cage <br>source net的pointnet feature和target shape的pointnet feature拼一起，decode预测deformed cage<br>source cage通过MVC得到source shape的权重函数，然后用CBD变形得到deformed shape<br>![image-20201224114815289](media/image-20201224114815289.png)
+  - source shape提输入点云的pointNet feature，decode预测source cage <br>source net的pointNet feature和target shape的pointNet feature拼一起，decode预测deformed cage<br>source cage通过MVC得到source shape的权重函数，然后用CBD变形得到deformed shape<br>![image-20201224114815289](media/image-20201224114815289.png)
 - **losses**
   - 主要分三项
     - 最优化source cage，鼓励正的mean value coordinates；就是惩罚负的MVC坐标（相当于让surface一定在笼子里）
@@ -193,18 +218,4 @@ GANS:
 
 </details>
 
----
-
-**`"asdf: asdf"`**  
-**[** `0000` **]** **[[paper]](abc.efg)** **[[code]](https://www.github.com)** **[[web]](abc.efg)** **[** :mortar_board: `university`,  **]** **[** :office: `company` **]**  
-**[**  `xxxx`  **]**  
-**[** _`abcd`_ **]**  
-
-<details>
-  <summary>Click to expand</summary>
-
-- **Motivation**
-  - 
-
-</details>
 
