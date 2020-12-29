@@ -1,10 +1,28 @@
 [[_TOC_]]
 
-# part-aware representation
+# part/structure-aware representation
 
 ## shape correspondence
 
  - *Deformed Implicit Field: Modeling 3D Shapes with Learned Dense Correspondence*
+
+---
+
+**`"Unsupervised Learning of Intrinsic Structural Representation Points"`**  
+**[** `CVPR2020` **]** **[[paper]](https://arxiv.org/pdf/2003.01661.pdf)** **[[code]](https://github.com/NolenChen/3DStructurePoints)**  **[** :mortar_board: `The University of Hong Kong`, `MPI`, `Shandong University` **]** **[** :office: `Adobe` **]**  
+**[**  `Nenglun Chen`, `Lingjie Liu`, `Zhiming Cui`, `Runnan Chen`, `Duygu Ceylan`, `Changhe Tu`, `Wenping Wang`  **]**  
+**[** _`abcd`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - 点云输入，无监督地learning structures of 3D shape
+  - ![image-20201229153625536](media/image-20201229153625536.png)
+- **results**
+  - ![image-20201229153526461](media/image-20201229153526461.png)
+
+</details>
 
 ---
 
@@ -224,5 +242,5 @@ Generation of Fine Geometry"`**
 
 </details>
 
-# deep-assembly
+# deep assembly
 

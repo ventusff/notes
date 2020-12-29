@@ -74,7 +74,7 @@
 
 **`<tree-GAN> "3D Point Cloud Generative Adversarial Network Based on Tree Structured Graph Convolutions"`**  
 **[** `ICCV2019` **]** **[[paper]](https://openaccess.thecvf.com/content_ICCV_2019/papers/Shu_3D_Point_Cloud_Generative_Adversarial_Network_Based_on_Tree_Structured_ICCV_2019_paper.pdf)** **[[supp]](https://openaccess.thecvf.com/content_ICCV_2019/supplemental/Shu_3D_Point_Cloud_ICCV_2019_supplemental.pdf)** **[[code]](https:// github.com/seowok/TreeGAN)** **[** :mortar_board: `(Korea)Chung-Ang University` **]**   
-**[**  `Dong Wook Shu`  **]**  
+**[**  `Dong Wook Shu`, `Sung Woo Park`, `Junseok Kwon`  **]**  
 **[** _`abcd`_ **]**  
 
 <details>
@@ -98,12 +98,13 @@ GANS:
 
 # continuous function representation (sampling)
 
+
 ---
 
 **`"Inferring Semantic Information with 3D Neural Scene Representations"`**  
 **[** `3DV 2020` **]** **[[web]](https://www.computationalimaging.org/publications/semantic-srn/)** **[[paper]](https://arxiv.org/pdf/2003.12673.pdf)**  **[** :mortar_board: `Stanford` **]**  
 **[**  `Amit Kohli`, `Vincent Sitzmann`, `Gordon Wetzstein `  **]**  
-**[** _`multi-modal features， semi-supervision`_ **]**  
+**[** _`multi-modal features`, ` semi-supervision`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
