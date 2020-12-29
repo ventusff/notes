@@ -779,6 +779,68 @@ High-quality Single-view 3D Reconstruction"`**
 
 ---
 
+**`"Deep Implicit Templates for 3D Shape Representation"`**  
+**[** `2020` **]** **[[paper]](https://arxiv.org/pdf/2011.14565.pdf)** **[[code]](https://github.com/ZhengZerong/DeepImplicitTemplates)**  **[** :mortar_board: `Tsinghua` **]**   
+**[**  `Zerong Zheng`, `Tao Yu`, `Qionghai Dai`, `Yebin Liu`  **]**  
+**[** _`spatial warping LSTM`, `category shape correpondence`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **review**
+  - 和 *deformed implicit field* 思路很像，那篇也是清华的
+  - 因为有很多谨慎的设计（1. 使用LSTM warp而不是MLP warp 2.对canonical的正则化 3. 对空间扭曲的正则化），从transfer的效果上看要比deformed implicit field好一些？
+
+| 本篇：Deep Implicit Templates for 3D Shape Representation的transfer效果 | deformed implicit field的transfer效果                        |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ![image-20201229180439537](media/image-20201229180439537.png) | ![image-20201229180759966](media/image-20201229180759966.png) |
+
+
+- **Motivation**
+  - 把一个具体shape表征为 `conditional deformations` of a `template`，建立起 category level 的dense correspondence<br>注意是 **<u>conditional</u>** deformations，相当与Deformed NeRF那篇，有一个deformation code <br>![image-20201229171836408](media/image-20201229171836408.png)
+  - 把一个条件空间变换 分解为 若干个仿射变换
+  - training loss经过谨慎设计，无监督地保证重建的精度 + plausible template
+- **overview**
+  - ![image-20201229171755900](media/image-20201229171755900.png)
+  - ![image-20201229173256894](media/image-20201229173256894.png)
+  - warping函数把首先把一个点p映射到一个`canonical position` ，然后在模板SDF中query这个canonical position来获取SDF值
+  - 照搬原DeepSDF训练是不行的：尤其容易学出一个过分简单的template和过拟合到一个复杂的transformer（这里译作变换器更合适），最终带来不准确的correspondence
+  - 目标：
+    - 一个最优的template，能够表达一组物体的公共结构
+    - together with a 空间变换器，能够建立精确的稠密的相关性
+    - 学到的模型应保留DeepSDF的表达能力和泛化能力，因此支持mesh补间和形状补完
+- **spatial warping LSTM**
+  - 实践发现用MLP来表达warping function不太合适：
+    - [ ] Q: 考虑理论上的原因
+    - MLP和LSTM作warping的对比：warping的补间<br>![image-20201229172212443](media/image-20201229172212443.png)
+  - 把一个点的空间变换表示为多步仿射变换：
+    - $`(\alpha^{(i)},\beta^{(i)},\phi^{(i)},\psi^{i})={\rm LSTMCell}(c,p^{(i-1)},\phi^{(i-1)},\psi^{(i-1)})`$
+    - 其中$`\phi`$和$`\psi`$是输出和cell state，$`\alpha`$和$`\beta`$是仿射变换的参数，角标$`(i)`$代表迭代的*i*-th step
+    - 点$`p`$的更新：$`p^{(i)}=p^{(i-1)}+(\alpha^{(i)} p^{(i-1)}+\beta^{(i)})`$
+    - 迭代重复S=8次，得到最终的warping的输出
+  - 训练loss
+    - **reconstruction loss**
+      - 因为warping函数是迭代的，从 `Curriculum deepsdf, Yueqi Duan et al.2020`得到启发，用progressive reconstruction loss
+      - ![image-20201229175034719](media/image-20201229175034719.png)
+    - **regularization loss**
+      - <u>point-wise regularization</u> 
+        - 认为所有meshes都normlized 到一个`单位球`，并和`canonical pose`对齐
+        - ![image-20201229175243291](media/image-20201229175243291.png)
+        - [Huber kernel](https://en.wikipedia.org/wiki/Huber_loss)
+      - <u>point pair regularization</u> 对空间扭曲程度的限制
+        - 尽管deform时空间扭曲是不可避免的，极端的空间扭曲还是可以避免的
+        - ![image-20201229175618093](media/image-20201229175618093.png)
+        - 其中，$`\Delta p=T(p,c)-p`$是点p的position shift，<br>$`\epsilon = 0.5 `$是控制扭曲容忍度的参数，对于防止shape collapse（形状崩塌，指学到过于简单的shape template）很关键
+        - 下图是在有无此loss的情况下学到的template；<br>可见，如果没有point pair regularization，会学到过于简单的template<br>![image-20201229175909233](media/image-20201229175909233.png)
+- **results**
+  - 形状补间的效果：<br>![image-20201229180146944](media/image-20201229180146944.png)
+  - 因为已经建立起了shape correspondense，可以做关键点检测的迁移<br>![image-20201229180103315](media/image-20201229180103315.png)
+  - 应用：texture transfer，等<br>![image-20201229172342590](media/image-20201229172342590.png)
+
+</details>
+
+---
+
 **`"Learning to Infer Implicit Surfaces without 3D Supervision"`**  
 **[** `NeuIPS2019` **]** **[[paper]](https://papers.nips.cc/paper/2019/file/bdf3fd65c81469f9b74cedd497f2f9ce-Paper.pdf)**  **[** :mortar_board: `University of Southern California` **]**   
 **[**  `Shichen Liu`, ` Shunsuke Saito`, `Weikai Chen`, `Hao Li`  **]**  

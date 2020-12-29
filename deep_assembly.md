@@ -5,6 +5,7 @@
 ## shape correspondence
 
  - *Deformed Implicit Field: Modeling 3D Shapes with Learned Dense Correspondence*
+ - *Deep Implicit Templates for 3D Shape Representation*
 
 ---
 
