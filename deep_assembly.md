@@ -2,9 +2,32 @@
 
 # part-aware representation
 
+## shape correspondence
+
+ - *Deformed Implicit Field: Modeling 3D Shapes with Learned Dense Correspondence*
+
+---
+
+**`"Learning Implicit Functions for Topology-Varying Dense 3D Shape Correspondence"`**  
+**[** `NeurIPS2020(Oral)` **]** **[[paper]](https://arxiv.org/pdf/2010.12320.pdf)** **[[supp]](http://cvlab.cse.msu.edu/pdfs/Implicit_Dense_Correspondence_Supp.pdf)** **[[code]](https://github.com/liuf1990/Implicit_Dense_Correspondence)** **[[web]](http://cvlab.cse.msu.edu/project-implicit-dense-correspondence.html)** **[** :mortar_board: `Michigan State University` **]**   
+**[**  `Feng Liu`, `Xiaoming Liu`  **]**  
+**[** _`implicit function`, `correspondence score`, `category shape correspondence`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **Motivation**
+  - 给定一组3D shapes（点云），category-specific model 无监督地学出逐pair（source 与target之间）的correspondence和部件segmentation
+  - 即使拓扑不一样也能学到相关性
+  - 有`correspondence`相关性分数输出<br>![image-20201229144020259](media/image-20201229144020259.png)
+- **Overview**
+
+  - 
+
+</details>
+
 ## shape analysis
 
- - deformed implicit field
 ---
 
 **`<IP-Net> "Combining Implicit Function Learning and Parametric Models for 3D Human Reconstruction"`**  
