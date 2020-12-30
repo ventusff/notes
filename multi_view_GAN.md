@@ -1,4 +1,5 @@
-[[_TOC_]]
+* TOC
+{:toc}
 
 # multi-view GAN (multi-view image generation)
 

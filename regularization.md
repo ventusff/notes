@@ -1,4 +1,5 @@
-[[_TOC_]]
+* TOC
+{:toc}
 
 > regularization：改进问题的conditioning；把问题从ill-posed变成well-posed
 

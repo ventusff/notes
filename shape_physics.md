@@ -1,4 +1,5 @@
-[[_TOC_]]
+* TOC
+{:toc}
 
 # physics
 

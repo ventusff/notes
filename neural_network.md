@@ -1,4 +1,5 @@
-[[_TOC_]]
+* TOC
+{:toc}
 
 # topic: 非线性激活 ReLU
 

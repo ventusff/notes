@@ -1,4 +1,5 @@
-[[_TOC_]] 
+* TOC
+{:toc} 
 
 # resources
 - [[blog] NeRF Explosion 2020](https://dellaert.github.io/NeRF/)

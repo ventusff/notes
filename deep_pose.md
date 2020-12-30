@@ -1,4 +1,5 @@
-[[_TOC_]]
+* TOC
+{:toc}
 # deep learning perform [regression on 6D pose] / [transformation]
 
 ## topic: object 6D pose estimation from images
