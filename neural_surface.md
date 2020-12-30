@@ -559,7 +559,7 @@ learning generalized templates comprised of elements
 **`<IM-Net> "Learning Implicit Fields for Generative Shape Modeling"`**  
 **[** `CVPR2019` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2019/papers/Chen_Learning_Implicit_Fields_for_Generative_Shape_Modeling_CVPR_2019_paper.pdf)** **[[code]](https://github.com/czq142857/implicit-decoder)** **[[code-improve]](https://github.com/czq142857/IM-NET)**  **[[code-pytorch]](https://github.com/czq142857/IM-NET-pytorch)** **[** :mortar_board: `SFU` **]**   
 **[**  `Zhiqin Chen`, `Hao Zhang `  **]**  
-**[** _`implicit shape representation`_ **]**  
+**[** _`implicit shape representation`, `inside-outside indicator`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
@@ -679,7 +679,7 @@ learning generalized templates comprised of elements
 **`"BSP-Net: Generating Compact Meshes via Binary Space Partitioning"`**  
 **[** `CVPR2020(Oral)` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2020/papers/Chen_BSP-Net_Generating_Compact_Meshes_via_Binary_Space_Partitioning_CVPR_2020_paper.pdf)** **[[code(tf)]](https://github.com/czq142857/BSP-NET-original)** **[[code(pytorch)]](https://github.com/czq142857/BSP-NET-pytorch)** **[[web]](https://bsp-net.github.io/)**  **[** :mortar_board: `SFU` **]** **[** :office: `Google` **]**  
 **[**  `Zhiqin Chen`, `Andrea Tagliasacchi`, `Hao Zhang`  **]**  
-**[** _`low-poly`, `convex composition`, `category-shape correspondence`_ **]**  
+**[** _`low-poly`, `convex composition`, `category-shape correspondence`, `inside-outside indicator`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
@@ -693,7 +693,7 @@ learning generalized templates comprised of elements
   - 依旧是输入point坐标 + shape code condition，输出inside / outside；
   - 不同之处在于构造的内部模型是`n`个平面方程，靠`n`个这样的binary space partition的组合来表征shape
   - 靠binary partition的组合来表达shape的示意图：<br>首先组合出一个个的`convex`凸包，再组合成 whole shape
-    - 其实做的事情本质上类似于把MLP+ReLU显式，不过这里的convex的概念值得思考
+    - 其实做的事情本质上类似于把MLP+ReLU的空间线性划分过程显式化，不过这里的convex的概念值得思考
 
 | 示意图                                                       | 网络结构                                                     |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -704,6 +704,25 @@ learning generalized templates comprised of elements
  - **results**
     - <img src="media/image-20201229113556212.png" alt="image-20201229113556212" style="zoom: 67%;" />
     - <img src="media/image-20201229114054936.png" alt="image-20201229114054936" style="zoom:67%;" />
+
+</details>
+
+---
+
+**`"CvxNet: Learnable Convex Decomposition"`**  
+**[** `CVPR2020` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2020/papers/Deng_CvxNet_Learnable_Convex_Decomposition_CVPR_2020_paper.pdf)** **[[code(tf-graphics official repo)]](https://github.com/tensorflow/graphics/tree/master/tensorflow_graphics/projects/cvxnet)** **[[web]](https://cvxnet.github.io/)**  **[** :office: `Google` **]**  
+**[**  `Boyang Deng`, `Kyle Genova`, `Soroosh Yazdani`, `Sofien Bouaziz`, `Geoffrey Hinton`, `Andrea Tagliasacchi`  **]**  
+**[** _`convex composition`, `inside-outside indicator`_ **]**  
+
+<details>
+  <summary>Click to expand</summary>
+
+- **review**
+  - 和BSP-Net的概念很像；用一个个由平面包围出的`convex`定义surface；输入是点坐标，输出是 `inside/outside indicator`
+  - [ ] 和BSP-Net的区别是这里是softmax？
+- **Motivation**
+  - from hyperplanes to occupancy<br>![image-20201230092051009](media/image-20201230092051009.png)
+  - ![CvxNet](media/CvxNet.gif)
 
 </details>
 
