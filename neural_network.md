@@ -4,7 +4,7 @@
 
  - MLP不能学到multiplier
     - 可以考虑用log-normalization，这样就把乘法转换为加法
-       - $`m=x \cdot y \Rightarrow \ln(m)=\ln(x)+\ln(y)`$
+       - $$ m=x \cdot y \Rightarrow \ln(m)=\ln(x)+\ln(y) $$
     - MLP在一定范围(一定区域)内可以学到这个乘法函数
        - 本质是在学习函数的一定区域内的surface，==而不是函数本身==<br>![image-20201209155947067](media/image-20201209155947067.png)
  -  MLP+ReLU的本质：在一定范围内分段线性拟合一个曲线/曲面/超曲面

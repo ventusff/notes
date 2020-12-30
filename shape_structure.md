@@ -64,7 +64,7 @@
   - 输入一个稀疏点云（来自有关节、不同形状、不同pose、不同clothing的人类），一个occupancy predictor估计R0,R1,R2，一个multi-class classifier 估计part label（人的14类part）<br>![image-20201229102312212](media/image-20201229102312212.png)
     - 使用Marching Cubes从predict出的implicit functions产生mesh surface（内表面，外表面）
   - 把IP-Net的predictions注册到SMPL人类模型
-    - optimization-based ，最优化SMPL的参数来fit 内表面预测$`\mathcal{S}_{in}`$
+    - optimization-based ，最优化SMPL的参数来fit 内表面预测$$ \mathcal{S}_{in} $$
     - 额外利用IP-Net预测出的part-labels，来保证SMPL的不同部件的mesh能正确解释对应部件的surface区域
   - 同样的idea还可以generalize to 3D hands
     - ![image-20201229103342683](media/image-20201229103342683.png)
@@ -138,8 +138,8 @@
   - structure hierarchy抽象出符号部件(symbolic parts)与关系
     - inspired by *PT2PC: Learning to Generate 3D Point Cloud Shapes from Part Tree Conditions. 2020*
     - 每个部件用semantic label (e.g. chair back, chair leg)表示，引入PartNet dataset中丰富的部件关系
-      - $`\boldsymbol{\rm H}`$ **<u>纵向的parent-child inclusion 关系</u>** (e.g. chair back and chair back bars)
-      - $`\boldsymbol{\rm R}`$ **<u>横向的among-sibling 部件对称性与邻接性</u>**(e.g. chair back bars have translational symmetry)
+      - $$ \boldsymbol{\rm H} $$ **<u>纵向的parent-child inclusion 关系</u>** (e.g. chair back and chair back bars)
+      - $$ \boldsymbol{\rm R} $$ **<u>横向的among-sibling 部件对称性与邻接性</u>**(e.g. chair back bars have translational symmetry)
   - geometry hierarchy是部件的geometry
     - 表征就是正常的多顶点mesh
     - 假设一个5402顶点构成的封闭mesh，计算oriented bounding box
@@ -148,7 +148,7 @@
       - *Sparse data driven mesh deformation. 2019*
       - *SDM-NET: Deep Generative Network for Structured Deformable Mesh. 2019*
   - structure hierarchy和geometry hierarchy之间有bijective mapping
-    - 符号部件$`l_i`$对应部件geometry $`G_i`$，层级$`\boldsymbol{\rm H}`$和关系$`\boldsymbol{\rm R}`$则隐式地互相一致
+    - 符号部件$$ l_i $$对应部件geometry $$ G_i $$，层级$$ \boldsymbol{\rm H} $$和关系$$ \boldsymbol{\rm R} $$则隐式地互相一致
       - 在学习的时候两个hierarchies有communication channels
     - 虽然结构和几何要解耦，但是他们还是需要彼此兼容来产生好的、现实的形状
       - 一方面，shape structure 为 part geometry提供high-level guidance
@@ -187,7 +187,7 @@
   - 关注的是逐part pair的相对位置的预测
   - ![image-20201217094300461](media/image-20201217094300461.png)
 - **overview**
-  - 用geometry primitives来代表部件（具体来说，oriented bounding cuboids，长方体），每个部件有$`p_i=[c_x,c_y,c_z,s_x,s_y,s_z,q]`$
+  - 用geometry primitives来代表部件（具体来说，oriented bounding cuboids，长方体），每个部件有$$ p_i=[c_x,c_y,c_z,s_x,s_y,s_z,q] $$
     - 遵循StructureNet的设定<br>*Structurenet: Hierarchical graph networks for 3d shape generation 2019*
   - 所有模块都是有监督的；part真值来自于PartNet的3D labels
   - 步骤：
@@ -225,12 +225,12 @@
     - 接触点必须位于每个部件的cuboid中
     - 用接触点来参数化部件center之间的相对关系
       - 接触点
-        - 在part $`p_1`$坐标系下接触点坐标$`c^1`$，在part $`p_2`$坐标系下接触点坐标$`c^2`$，假设$`p_1`$, $`p_2`$在world frame下坐标为$`l_1^W`$, $`l_2^W`$，由于是同一个点，应有<br>$`l_1^W+c^1=l_2^W+c^2`$
-        - 则两个center之间的相对位置可以这样infer：<br>$`l_{1 \rightarrow2}^W=l_2^W-l_1^W=c^1-c^2`$
-        - - [x] Q：这里可能有些问题，考虑到坐标系旋转，并不应是简单加法，不过意思到了<br>A：没有问题，这里$`c^1`$, $`c^2`$都是世界坐标系下的
-      - 接触点估计：如何infer $`c^i`$
-        - 接触点应位于cuboid表面或者cuboid内部，因此将接触点表示为cuboid顶点的interpolation<br>$`c^i=\sum_{j=1}^{8}\omega_{i,j}\cdot v_{i,j}`$, where $`\sum_{j=1}^8\omega_{i,j}=1`$ and $`\omega_{i,j} \geq0`$
-        - 用神经网络预测$`\omega_i,j`$，输入reference image和两个部件mask的feature的stack
+        - 在part $$ p_1 $$坐标系下接触点坐标$$ c^1 $$，在part $$ p_2 $$坐标系下接触点坐标$$ c^2 $$，假设$$ p_1 $$, $$ p_2 $$在world frame下坐标为$$ l_1^W $$, $$ l_2^W $$，由于是同一个点，应有<br>$$ l_1^W+c^1=l_2^W+c^2 $$
+        - 则两个center之间的相对位置可以这样infer：<br>$$ l_{1 \rightarrow2}^W=l_2^W-l_1^W=c^1-c^2 $$
+        - - [x] Q：这里可能有些问题，考虑到坐标系旋转，并不应是简单加法，不过意思到了<br>A：没有问题，这里$$ c^1 $$, $$ c^2 $$都是世界坐标系下的
+      - 接触点估计：如何infer $$ c^i $$
+        - 接触点应位于cuboid表面或者cuboid内部，因此将接触点表示为cuboid顶点的interpolation<br>$$ c^i=\sum_{j=1}^{8}\omega_{i,j}\cdot v_{i,j} $$, where $$ \sum_{j=1}^8\omega_{i,j}=1 $$ and $$ \omega_{i,j} \geq0 $$
+        - 用神经网络预测$$ \omega_i,j $$，输入reference image和两个部件mask的feature的stack
         - 为了让接触点预测的结果和cuboid顶点顺序无关，结构和PointNet segmentation的结构类似
         - *Deep learning on point sets for 3d classification and segmentation.2017* 
       - ![image-20201217095049304](media/image-20201217095049304.png)

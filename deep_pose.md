@@ -120,40 +120,40 @@
     - pose network，为每个类别单独设计
   - 表征：两种表征：轴角和四元数
 - representing 3D poses
-  - 一个三维旋转群的定义：$`SO(3)\dot=\{R:R \in \mathbb{R}^{3 \times 3}, R^TR=I_3, det(R)=1 \}`$ 
-  - 然后可以定义两个旋转矩阵$`R_1`$, $`R_2`$之间的测地距离(`geodesic distance`)<br>$`d(R_1, R_2)=\frac {\lVert \log(R_1R_2^T) \rVert_F} {\sqrt{2}}`$
+  - 一个三维旋转群的定义：$$ SO(3)\dot=\{R:R \in \mathbb{R}^{3 \times 3}, R^TR=I_3, det(R)=1 \} $$ 
+  - 然后可以定义两个旋转矩阵$$ R_1 $$, $$ R_2 $$之间的测地距离(`geodesic distance`)<br>$$ d(R_1, R_2)=\frac {\lVert \log(R_1R_2^T) \rVert_F} {\sqrt{2}} $$
   - **axis-angle** 轴角定义
-    - 一个旋转矩阵$`R`$代表着3D点绕着轴$`v`$旋转角$`\theta`$ , $`\lVert v \rVert_2=1`$
-    - 这可以被表达为 $`R=\exp(\theta[v]_\times)`$
-      - $`\exp`$是矩阵指数
-      - $`[v]_\times`$是$`v`$的skew-symmetric操作符，i.e., $`[v]_\times=\left( \begin{smallmatrix} 0 & -v_3 & v_2 \\ v_3 & 0 & -v_1 \\ -v_2 & v_1 & 0 \end{smallmatrix} \right)`$  for $`v=[v_1,v_2,v_3]^T`$ 
-        - skew-symmetric 斜对称矩阵，$`A=-A^T`$  i.e.  $`a_{ij}=-a_{ji}`$ 
-    - 因此，每一个旋转矩阵$`R`$有一个相应的aixs-angle vector  $`y=\theta v`$, vice-versa
-        - 限制 $`\theta \in [0,\pi)`$，定义$`R=I_3 \iff y=\boldsymbol{0}_3`$ ，保证旋转矩阵R和表征y的单一映射
-        - 矩阵指数可以被简化为$`R=I_3+\sin\theta[v]_\times+(1-\cos\theta)[v]_\times`$，用Rodrigues' rotation formula
-    - 于是，$`d(R_1, R_2)=\frac {\lVert \log(R_1R_2^T) \rVert_F} {\sqrt{2}}`$可以被简化为：
-        - $`d_A(R_1,R_2)=\cos^{-1}[\frac {tr(R_1^TR^2)-1} {2}]`$ 
-        - 注意到 $`\lVert \log\left( \exp(\theta_1[v_1]_\times)\exp(\theta_2[v_2]_\times)^T \right)\rVert_F /\sqrt{2}`$ 看上去很像 $`\lVert \theta_1 v_1 - \theta_2 v_2 \rVert_2`$ ，但是他们不一样，因为$`\exp(\theta_1[v_1]_\times)\exp(\theta_2[v_2]_\times)^T \neq  \exp\left( \theta_1[v_1]_{\times}-\theta_2[v_2]_{\times} \right)`$ in general. 这个等式只在 matrices $`[v_1]_{\times}`$和$`[v_2]_{\times}`$ commute时才成立。i.e. $`v_1=\pm v_2`$ 
+    - 一个旋转矩阵$$ R $$代表着3D点绕着轴$$ v $$旋转角$$ \theta $$ , $$ \lVert v \rVert_2=1 $$
+    - 这可以被表达为 $$ R=\exp(\theta[v]_\times) $$
+      - $$ \exp $$是矩阵指数
+      - $$ [v]_\times $$是$$ v $$的skew-symmetric操作符，i.e., $$ [v]_\times=\left( \begin{smallmatrix} 0 & -v_3 & v_2 \\ v_3 & 0 & -v_1 \\ -v_2 & v_1 & 0 \end{smallmatrix} \right) $$  for $$ v=[v_1,v_2,v_3]^T $$ 
+        - skew-symmetric 斜对称矩阵，$$ A=-A^T $$  i.e.  $$ a_{ij}=-a_{ji} $$ 
+    - 因此，每一个旋转矩阵$$ R $$有一个相应的aixs-angle vector  $$ y=\theta v $$, vice-versa
+        - 限制 $$ \theta \in [0,\pi) $$，定义$$ R=I_3 \iff y=\boldsymbol{0}_3 $$ ，保证旋转矩阵R和表征y的单一映射
+        - 矩阵指数可以被简化为$$ R=I_3+\sin\theta[v]_\times+(1-\cos\theta)[v]_\times $$，用Rodrigues' rotation formula
+    - 于是，$$ d(R_1, R_2)=\frac {\lVert \log(R_1R_2^T) \rVert_F} {\sqrt{2}} $$可以被简化为：
+        - $$ d_A(R_1,R_2)=\cos^{-1}[\frac {tr(R_1^TR^2)-1} {2}] $$ 
+        - 注意到 $$ \lVert \log\left( \exp(\theta_1[v_1]_\times)\exp(\theta_2[v_2]_\times)^T \right)\rVert_F /\sqrt{2} $$ 看上去很像 $$ \lVert \theta_1 v_1 - \theta_2 v_2 \rVert_2 $$ ，但是他们不一样，因为$$ \exp(\theta_1[v_1]_\times)\exp(\theta_2[v_2]_\times)^T \neq  \exp\left( \theta_1[v_1]_{\times}-\theta_2[v_2]_{\times} \right) $$ in general. 这个等式只在 matrices $$ [v_1]_{\times} $$和$$ [v_2]_{\times} $$ commute时才成立。i.e. $$ v_1=\pm v_2 $$ 
   - **quaternion** 四元数定义 另一个3D旋转矩阵常用的表征
-    - 给定一个轴角向量$`y=\theta v`$，相应的四元数$`q=(c,s)`$由$`(\cos \frac {\theta} {2}, \sin \frac {\theta} {2} v)^T`$
-      - 在构造时，四元数是unit-norm的（单位正交），$`\lVert q \rVert_2=1`$
-      - 使用四元数代数，我们有：$`(c_1,s_1)\cdot (c_2, s_2)=\left( c_1 c_2-\langle s_1,s_2 \rangle, c_1s_2+c_2s_1+s_1\times s_2 \right)`$ 以及 $`(c,s)^{-1}=(c,-s)`$对于单位正交$`q=(c,s)`$. 
+    - 给定一个轴角向量$$ y=\theta v $$，相应的四元数$$ q=(c,s) $$由$$ (\cos \frac {\theta} {2}, \sin \frac {\theta} {2} v)^T $$
+      - 在构造时，四元数是unit-norm的（单位正交），$$ \lVert q \rVert_2=1 $$
+      - 使用四元数代数，我们有：$$ (c_1,s_1)\cdot (c_2, s_2)=\left( c_1 c_2-\langle s_1,s_2 \rangle, c_1s_2+c_2s_1+s_1\times s_2 \right) $$ 以及 $$ (c,s)^{-1}=(c,-s) $$对于单位正交$$ q=(c,s) $$. 
         - 这里是四元数乘法的定义，以及单位正交四元数的性质(共轭为逆运算)
-      - 现在，用四元数来表达$`d(R_1, R_2)=\frac {\lVert \log(R_1R_2^T) \rVert_F} {\sqrt{2}}`$：
-        - $`d(q_1,q_2)=2\cos^{-1}(\lvert c \rvert) \quad where \quad (c,s)=q_1^{-1}\cdot q_2`$ ，再简化一些得到：<br>$`d_Q(q_1,q_2)=2\cos^{-1} \left( \lvert \langle q_1, q_2 \rangle \rvert \right)`$
+      - 现在，用四元数来表达$$ d(R_1, R_2)=\frac {\lVert \log(R_1R_2^T) \rVert_F} {\sqrt{2}} $$：
+        - $$ d(q_1,q_2)=2\cos^{-1}(\lvert c \rvert) \quad where \quad (c,s)=q_1^{-1}\cdot q_2 $$ ，再简化一些得到：<br>$$ d_Q(q_1,q_2)=2\cos^{-1} \left( \lvert \langle q_1, q_2 \rangle \rvert \right) $$
           - 加绝对值是为了handle double cover问题
 - **网络结构**
   - 对于轴角表示：
-    - 输出$`\theta v`$，用$`\pi \tanh`$ 非线性激活层来建模 约束$`\theta \in [0,\pi)`$ 与 $`v_i \in [-1,1]`$ 
-    - 用$`\mathcal{L}=d_A(R,\hat{R})=\cos^{-1}[\frac {tr(R_1^TR^2)-1} {2}]`$来最优化
-    - ==思考==：这里还是直接回归角度，是否还是会存在pose-ambiguity问题？也许angle 会存在一个既接近0又接近$`\pi`$的值？是否会因为这个有影响？
+    - 输出$$ \theta v $$，用$$ \pi \tanh $$ 非线性激活层来建模 约束$$ \theta \in [0,\pi) $$ 与 $$ v_i \in [-1,1] $$ 
+    - 用$$ \mathcal{L}=d_A(R,\hat{R})=\cos^{-1}[\frac {tr(R_1^TR^2)-1} {2}] $$来最优化
+    - ==思考==：这里还是直接回归角度，是否还是会存在pose-ambiguity问题？也许angle 会存在一个既接近0又接近$$ \pi $$的值？是否会因为这个有影响？
     - loss这头先在没有影响了，因为用的是geodesic loss
       - 主要是输出这头，可能在输出时存在ambiguity
   - ==思考==：用一个周期性的激活函数是否可以消除这个问题？
   - 对于四元数表示：
     - 输出是一个4维量，单位正交约束通过 choosing the non-linearity as L2 normalization 来保证
       - [ ] what ?
-    - 用$`\mathcal{L}=d_Q(R,\hat{R})=2\cos^{-1} \left( \lvert \langle q_1, q_2 \rangle \rvert \right)`$ 来最优化
+    - 用$$ \mathcal{L}=d_Q(R,\hat{R})=2\cos^{-1} \left( \lvert \langle q_1, q_2 \rangle \rvert \right) $$ 来最优化
 
 </details>
 
@@ -236,36 +236,36 @@ Closed Form"`**
   - 对于每个物体实例，我们预测多个6D pose 输出来估计 由对称性和重复材质产生的具体的pose分布<br>当视觉外观可以uniquely identifies 只有一个有效的pose时，这个分布collapses to 单个输出
   - 优势：不仅是对pose ambiguity更好的解释，同时也在pose估计上实现了更好的精确度
 - **ambiguity in object detection and pose estimation的正式建模表述**
-- 描述刚体transformations: $`SE(3)`$, 它是 $`SO(3)`$和$`\mathbb{R}^3`$的semi-direct product
-  - 对于$`\mathbb{R}^3`$，我们使用欧几里得3-vectors
-    - 对于$`SO(3)`$，用 the algebra of $`\mathbb{H}_1`$ of unit quaternions 来model $`SO(3)`$中的空间旋转
+- 描述刚体transformations: $$ SE(3) $$, 它是 $$ SO(3) $$和$$ \mathbb{R}^3 $$的semi-direct product
+  - 对于$$ \mathbb{R}^3 $$，我们使用欧几里得3-vectors
+    - 对于$$ SO(3) $$，用 the algebra of $$ \mathbb{H}_1 $$ of unit quaternions 来model $$ SO(3) $$中的空间旋转
     - a quaternion is given by
-      $`\boldsymbol{q}=q_1 \boldsymbol{1}+q_2 \boldsymbol{i}+q_3 \boldsymbol{j} + q_4 \boldsymbol{k}=(q_1,q_2,q_3,q_4)`$, with $`(q_1,q_2,q_3,q_4) \in \mathbb{R}^3`$ and $`i^2=j^2=k^2=ijk=-1`$
-    - we regress the quaternions above the $`q_1=0`$ hyperplane 并且因此忽略掉souther hemisphere，这样任何3D rotation可以被单个的quaternion表达
+      $$ \boldsymbol{q}=q_1 \boldsymbol{1}+q_2 \boldsymbol{i}+q_3 \boldsymbol{j} + q_4 \boldsymbol{k}=(q_1,q_2,q_3,q_4) $$, with $$ (q_1,q_2,q_3,q_4) \in \mathbb{R}^3 $$ and $$ i^2=j^2=k^2=ijk=-1 $$
+    - we regress the quaternions above the $$ q_1=0 $$ hyperplane 并且因此忽略掉souther hemisphere，这样任何3D rotation可以被单个的quaternion表达
   - 在有ambiguity的情况下，a direct naive regression of the rotation as a quaternion将带来很糟糕的结果，因为网络将会学习到一个closest to all results in the symmetry group的rotation。
       这个学出的预测可以被看做(conditional) mean rotation
-    - 正式表述：在一个典型的有监督学习的设定下，we associate images $`I_i`$ with poses $`p_i`$ in a dataset $`(I_i, p_i)`$ ；为了描述对称性，我们定义对于一张给定的image $`I_i`$, the set $`\mathcal{S}(I_i)`$ of poses 都有这一张相同的image
-        $`\mathcal{S}(I_i)=\{P_J \vert I_j=I_i \}`$
-        注意对于非离散的对称性，$`\mathcal{S}`$中将含有无数个poses
-    - 直接从$`I`$回归一个pose $`p'`$的 naive model $`f(I,\theta)`$，最小化loss $`\mathcal{L}(p,p')`$来最优化
-      $`\theta^*={\underset {\theta}{\operatorname {arg\,min} }} \sum_{i=1}^N \mathcal{L}(f_{\theta}(I_i), p_i)`$
-        然而，从$`I`$到$`p`$的映射is not well defined 并且不能被model为一个function
-    - 于是，$`f`$事实上学到的是和$`\mathcal{S}(I_i)`$中所有点都equally close的一个rotation.
+    - 正式表述：在一个典型的有监督学习的设定下，we associate images $$ I_i $$ with poses $$ p_i $$ in a dataset $$ (I_i, p_i) $$ ；为了描述对称性，我们定义对于一张给定的image $$ I_i $$, the set $$ \mathcal{S}(I_i) $$ of poses 都有这一张相同的image
+        $$ \mathcal{S}(I_i)=\{P_J \vert I_j=I_i \} $$
+        注意对于非离散的对称性，$$ \mathcal{S} $$中将含有无数个poses
+    - 直接从$$ I $$回归一个pose $$ p' $$的 naive model $$ f(I,\theta) $$，最小化loss $$ \mathcal{L}(p,p') $$来最优化
+      $$ \theta^*={\underset {\theta}{\operatorname {arg\,min} }} \sum_{i=1}^N \mathcal{L}(f_{\theta}(I_i), p_i) $$
+        然而，从$$ I $$到$$ p $$的映射is not well defined 并且不能被model为一个function
+    - 于是，$$ f $$事实上学到的是和$$ \mathcal{S}(I_i) $$中所有点都equally close的一个rotation.
     - [ ] multiple pose hypothesis
 - **网络结构**
-    - SSD-300带一个InceptionV4的backbone，每次检测时额外提供6D pose：每个anchor box提供$`C+M \cdot P`$个输出：$`C`$代表类别个数，$`M`$代表symmetry hypotheses的个数，$`P`$代表来描述6D pose的参数个数
-        $`P=5`$，4(explicitly normalized四元数)+1(物体到camera的距离)
+    - SSD-300带一个InceptionV4的backbone，每次检测时额外提供6D pose：每个anchor box提供$$ C+M \cdot P $$个输出：$$ C $$代表类别个数，$$ M $$代表symmetry hypotheses的个数，$$ P $$代表来描述6D pose的参数个数
+        $$ P=5 $$，4(explicitly normalized四元数)+1(物体到camera的距离)
         剩下的两个自由度通过把2D检测框的中心用深度back-project可以获得
     - **loss**
-        - class: cross-entropy $`\mathcal{L}_{class}`$
-        - anchor box: L1-norm $`\mathcal{L}_{fit}`$
-        - quaternion: $`\mathcal{L}_{rotation}(q,q')=\arccos \left( 2 \langle q,q' \rangle^2-1 \right)`$
-          - $` \iff 2\cos^{-1} \left( \lvert \langle q_1, q_2 \rangle \rvert \right)`$，等价的，只是用二倍角公式变一下而已
-          - $`let\,\cos\beta=\langle q,q'\rangle`$
-            $`2\beta=2\beta \; \Rightarrow \cos^{-1}(\cos 2\beta)=2\cos^{-1}(\cos\beta)`$
-            $`\Rightarrow \cos^{-1}(2\cos^2 \beta-1)=2\cos^{-1}\beta`$
-            $`\Rightarrow \cos^{-1}(2\langle q,q' \rangle^2-1)=2\cos^{-1}(\lvert \langle q,q' \rangle \rvert)`$
-        - depth: smooth L1-norm  $`\mathcal{L}_{depth}`$
+        - class: cross-entropy $$ \mathcal{L}_{class} $$
+        - anchor box: L1-norm $$ \mathcal{L}_{fit} $$
+        - quaternion: $$ \mathcal{L}_{rotation}(q,q')=\arccos \left( 2 \langle q,q' \rangle^2-1 \right) $$
+          - $$  \iff 2\cos^{-1} \left( \lvert \langle q_1, q_2 \rangle \rvert \right) $$，等价的，只是用二倍角公式变一下而已
+          - $$ let\,\cos\beta=\langle q,q'\rangle $$
+            $$ 2\beta=2\beta \; \Rightarrow \cos^{-1}(\cos 2\beta)=2\cos^{-1}(\cos\beta) $$
+            $$ \Rightarrow \cos^{-1}(2\cos^2 \beta-1)=2\cos^{-1}\beta $$
+            $$ \Rightarrow \cos^{-1}(2\langle q,q' \rangle^2-1)=2\cos^{-1}(\lvert \langle q,q' \rangle \rvert) $$
+        - depth: smooth L1-norm  $$ \mathcal{L}_{depth} $$
 
 </details>
 
