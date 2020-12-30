@@ -10,6 +10,5 @@
   <summary>Click to expand</summary>
 
 - **Motivation**
-  - 
 
 </details>
