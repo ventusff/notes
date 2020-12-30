@@ -558,7 +558,7 @@ learning generalized templates comprised of elements
 
 **`<IM-Net> "Learning Implicit Fields for Generative Shape Modeling"`**  
 **[** `CVPR2019` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2019/papers/Chen_Learning_Implicit_Fields_for_Generative_Shape_Modeling_CVPR_2019_paper.pdf)** **[[web]](https://www.sfu.ca/~zhiqinc/imgan/Readme.html)** **[[code]](https://github.com/czq142857/implicit-decoder)** **[[code-improve]](https://github.com/czq142857/IM-NET)**  **[[code-pytorch]](https://github.com/czq142857/IM-NET-pytorch)** **[** :mortar_board: `SFU` **]**   
-**[**  `Zhiqin Chen`, `Hao Zhang `  **]**  
+**[**  `Zhiqin Chen`, `Hao Zhang`  **]**  
 **[** _`implicit shape representation`, `inside-outside indicator`_ **]**  
 
 <details>
@@ -575,8 +575,8 @@ learning generalized templates comprised of elements
 ---
 
 **`"Occupancy Networks: Learning 3D Reconstruction in Function Space"`**  
-**[** `CVPR2019` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2019/papers/Mescheder_Occupancy_Networks_Learning_3D_Reconstruction_in_Function_Space_CVPR_2019_paper.pdf)** **[[code]](https://github.com/autonomousvision/occupancy_networks)** **[** :mortar_board: `MPI`, `University of Tubingen ` **]** **[** :office: `Google AI Berlin` **]**  
-**[**  `Lars Mescheder`， `Andreas Geiger `  **]**  
+**[** `CVPR2019` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2019/papers/Mescheder_Occupancy_Networks_Learning_3D_Reconstruction_in_Function_Space_CVPR_2019_paper.pdf)** **[[code]](https://github.com/autonomousvision/occupancy_networks)** **[** :mortar_board: `MPI`, `University of Tubingen` **]** **[** :office: `Google AI Berlin` **]**  
+**[**  `Lars Mescheder`， `Andreas Geiger`  **]**  
 **[** _`continuous function occupancy`, `multi-resolution isosurface extraction`, `marching cubes`_ **]**  
 
 <details>
@@ -592,7 +592,7 @@ learning generalized templates comprised of elements
 ---
 
 **`"Convolutional Occupancy Networks"`**  
-**[** `ECCV2020` **]** **[[paper]](https://arxiv.org/pdf/2003.04618.pdf)** **[[code]](https://github.com/autonomousvision/convolutional_occupancy_networks)** **[** :mortar_board: `ETH`, `MPI`, `University of Tubingen ` **]** **[** :office: `Amazon`, `Microsoft` **]**  
+**[** `ECCV2020` **]** **[[paper]](https://arxiv.org/pdf/2003.04618.pdf)** **[[code]](https://github.com/autonomousvision/convolutional_occupancy_networks)** **[** :mortar_board: `ETH`, `MPI`, `University of Tubingen` **]** **[** :office: `Amazon`, `Microsoft` **]**  
 **[**  `Songyou Peng`, `Michael Niemeyer`, `Lars Mescheder`, `Marc Pollefeys`, `Andreas Geiger`  **]**  
 **[** _`Occupancy Networks`_ **]**  
 
@@ -857,7 +857,7 @@ learning generalized templates comprised of elements
 
 **`"Learning to Infer Implicit Surfaces without 3D Supervision"`**  
 **[** `NeuIPS2019` **]** **[[paper]](https://papers.nips.cc/paper/2019/file/bdf3fd65c81469f9b74cedd497f2f9ce-Paper.pdf)**  **[** :mortar_board: `University of Southern California` **]**   
-**[**  `Shichen Liu`, ` Shunsuke Saito`, `Weikai Chen`, `Hao Li`  **]**  
+**[**  `Shichen Liu`, `Shunsuke Saito`, `Weikai Chen`, `Hao Li`  **]**  
 **[** _`ray casting`_ **]**  
 
 <details>
@@ -897,7 +897,7 @@ learning generalized templates comprised of elements
 
 **`"MeshSDF: Differentiable Iso-Surface Extraction"`**  
 **[** `NeurIPS2020` **]** **[[paper]](https://arxiv.org/pdf/2006.03997.pdf)** **[[code]](https://github.com/cvlab-epfl/MeshSDF)** **[** :mortar_board: `EPFL` **]** **[** :office: `Neuralconcept`, `Intel` **]**  
-**[**  `Edoardo Remelli`, `Pascal Fua `   **]**  
+**[**  `Edoardo Remelli`, `Pascal Fua`   **]**  
 **[** _`differentiable iso-surface extraction`, `marching cubes`, `SDF`_  **]**  
 
 [differentiable iso-surface extraction]
@@ -952,7 +952,7 @@ learning generalized templates comprised of elements
 ---
 
 **`<OverfitSDF> "Overfit Neural Networks as a Compact Shape Representation"`**  
-**[** `2020` **]** **[[paper]](https://arxiv.org/pdf/2009.09808.pdf)** **[[code]](https://github.com/nathanrgodwin/overfit-shapes)** **[** :mortar_board: `University of Toronto`. `McGill University` **]**   
+**[** `2020` **]** **[[paper]](https://arxiv.org/pdf/2009.09808.pdf)** **[[code]](https://github.com/nathanrgodwin/overfit-shapes)** **[** :mortar_board: `University of Toronto`, `McGill University` **]**   
 **[**  `Thomas Davies`, `Derek Nowrouzezahrai`, `Alec Jacobson`  **]**  
 **[** _`compact representation`_ **]**  
 
@@ -1069,7 +1069,7 @@ learning generalized templates comprised of elements
 
 **`<DVR> "Differentiable Volumetric Rendering: Learning Implicit 3D Representations without 3D Supervision"`**  
 **[** `CVPR2020` **]** **[[paper]](https://arxiv.org/pdf/1912.07372.pdf)** **[[code]](https://github.com/autonomousvision/differentiable_volumetric_rendering)** **[** :mortar_board: `MPI`, `University of Tubingen` **]**   
-**[** `Michael Niemeyer`, `Andreas Geiger ` **]**  
+**[** `Michael Niemeyer`, `Andreas Geiger` **]**  
 **[**  _`differentiable volumetric rendering`, `ray casting`_ **]**  
 
 <details>
@@ -1138,7 +1138,7 @@ learning generalized templates comprised of elements
 
 **`"SDF-SRN: Learning Signed Distance 3D Object Reconstruction from Static Images"`**  
 **[** `NeurIPS2020` **]** **[[paper]](https://papers.nips.cc/paper/2020/file/83fa5a432ae55c253d0e60dbfa716723-Paper.pdf)** **[[code]](https://github.com/chenhsuanlin/signed-distance-SRN)** **[[web]](https://chenhsuanlin.bitbucket.io/signed-distance-SRN/)** **[** :mortar_board: `CMU` **]**   
-**[**  `Chen-Hsuan Lin`, `Chaoyang Wang`, ` Simon Lucey`  **]**  
+**[**  `Chen-Hsuan Lin`, `Chaoyang Wang`, `Simon Lucey`  **]**  
 **[** _`single-view`_ **]**  
 
 <details>

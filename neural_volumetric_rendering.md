@@ -76,7 +76,7 @@
 
 **`"Neural Sparse Voxel Fields"`**  
 **[** `NeurIPS2020` **]** **[[paper]](https://proceedings.neurips.cc/paper/2020/file/b4b758962f17808746e9bb832a6fa4b8-Paper.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `MPI`, `NUS` **]** **[** :office: `Facebook` **]**  
-**[**  `Lingjie Liu`, `Jiatao Gu`, ` Kyaw Zaw Lin`, `Tat-Seng Chua`, `Christian Theobalt`  **]**  
+**[**  `Lingjie Liu`, `Jiatao Gu`, `Kyaw Zaw Lin`, `Tat-Seng Chua`, `Christian Theobalt`  **]**  
 **[** _`NeRF`, `octree voxels fields`_ **]**  
 
 <details>
@@ -179,7 +179,7 @@
 **`"pi-GAN: Periodic Implicit Generative Adversarial Networks for 3D-Aware Image Synthesis"`**  
 **[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2012.00926.pdf)** **[[code]](https://www.github.com)** **[[web]](https://marcoamonteiro.github.io/pi-GAN-website/)** **[** :mortar_board: `Stanford` **]**   
 **[**  `Eric R. Chan`, `Marco Monteiro`, `Petr Kellnhofer`, `Jiajun Wu`, `Gordon Wetzstein`  **]**  
-**[** _`SIREN-style `_ **]**  
+**[** _`SIREN-style`_ **]**  
 
 <details>
   <summary markdown="0">Click to expand</summary>
@@ -234,7 +234,7 @@
 ---
 
 **`"Neural Scene Flow Fields for Space-Time View Synthesis of Dynamic Scenes"`**  
-**[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2011.13084)** **[[supp]](http://www.cs.cornell.edu/~zl548/NSFF/NSFF_supp.pdf)** **[[code]](https://www.github.com)** **[[web]](http://www.cs.cornell.edu/~zl548/NSFF/)** **[** :mortar_board: `Cornell Tech `,  **]** **[** :office: `Adobe` **]**  
+**[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2011.13084)** **[[supp]](http://www.cs.cornell.edu/~zl548/NSFF/NSFF_supp.pdf)** **[[code]](https://www.github.com)** **[[web]](http://www.cs.cornell.edu/~zl548/NSFF/)** **[** :mortar_board: `Cornell Tech`,  **]** **[** :office: `Adobe` **]**  
 **[**  `Zhengqi Li`, `Simon Niklaus`, `Noah Snavely`, `Oliver Wang`  **]**  
 **[** _`abcd`_ **]**  
 

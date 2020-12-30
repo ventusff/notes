@@ -109,7 +109,7 @@ too old
 **`< GcGAN > "Geometry-Consistent Generative Adversarial Networks for One-Sided Unsupervised Domain Mapping"`**  
 **[** `CVPR2019` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2019/papers/Fu_Geometry-Consistent_Generative_Adversarial_Networks_for_One-Sided_Unsupervised_Domain_Mapping_CVPR_2019_paper.pdf)** **[[code]](https://github.com/hufu6371/GcGAN)** **[** :mortar_board: `University of Sydney`, `University of Pittsburgh`, `CMU`,`Universite Paris-Est` **]**   
 **[**  `Huan Fu`, `Mingming Gong`, `Chaohui Wang`, `Kayhan Batmanghelich`, `Kun Zhang`, `Dacheng Tao`  **]**  
-**[** _`  `_ **]**  
+**[** _`abcd`_ **]**  
 
 <details>
   <summary markdown="0">Click to expand</summary>

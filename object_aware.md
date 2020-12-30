@@ -110,7 +110,7 @@ main preliminary: GQN
 
 **`"Learning 3D Object-Oriented World Models from Unlabeled Videos"`**  
 **[** `ICMLW2020` **]** **[[paper]](http://e2crawfo.github.io/pdfs/icml_ool_2020.pdf)**  **[** :mortar_board: `McGill University` **]**  
-**[**  `Eric Crawford`, `Joelle Pineau `  **]**  
+**[**  `Eric Crawford`, `Joelle Pineau`  **]**  
 **[** _`SRN-based`, `3D objects moving through a 3D world`, `probabilistic`, `encoder/detector focused`_ **]**  
 
 main preliminary: SRN
@@ -149,7 +149,7 @@ main preliminary: SRN
 ---
 
 **`"Rotationally-Temporally Consistent Novel View Synthesis of Human Performance Video"`**  
-**[** `ECCV2020` **]** **[[paper]](https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123490375.pdf)**  **[** :mortar_board: `University of North Carolina` **]** **[** :office: `Adobe`,` Korea Advanced Institute of Science and Technology` **]**  
+**[** `ECCV2020` **]** **[[paper]](https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123490375.pdf)**  **[** :mortar_board: `University of North Carolina` **]** **[** :office: `Adobe`,`Korea Advanced Institute of Science and Technology` **]**  
 **[**  `Youngjoong Kwon`, `Stefano Petrangeli`, `Dahun Kim`, `Haoliang Wang`, `Eunbyung Park`, `Viswanathan Swaminathan`, `Henry Fuchs` **]**  
 **[** _`Novel View Video Synthesis`, `Synthetic Human Dataset`_ **]**  
 
@@ -165,7 +165,7 @@ main preliminary: SRN
 
 **`< 3D object aware video generation> "Unsupervised object-centric video generation and decomposition in 3D"`**  
 **[** `NeurIPS2020` **]** **[[paper]](https://arxiv.org/pdf/2007.06705.pdf)** **[[code]](https://github.com/pmh47/o3v)** **[[web]](https://www.pmh47.net/o3v/)** **[** :office: `IST Austria` **]**  
-**[**  `Paul Henderson`, `Christoph H. Lampert `  **]**  
+**[**  `Paul Henderson`, `Christoph H. Lampert`  **]**  
 **[** _`encoder-decoder`, `object-centric generative models`, `inspired by classical image segmentation`,`object tracking`_ **]**  
 
 **[** `review`: 从视频中分解出物体（及运动）与背景的3D表征，传统机器学习功底深厚，loss设计值得研究；利用了视频中的一些hint (object tracking)，没有用到多视几何 **]**
