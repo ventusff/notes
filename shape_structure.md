@@ -82,7 +82,7 @@
 **`"BAE-NET: Branched Autoencoder for Shape Co-Segmentation"`**  
 **[** `ICCV2019` **]** **[[paper]](https://openaccess.thecvf.com/content_ICCV_2019/papers/Chen_BAE-NET_Branched_Autoencoder_for_Shape_Co-Segmentation_ICCV_2019_paper.pdf)** **[[supp]](https://openaccess.thecvf.com/content_ICCV_2019/supplemental/Chen_BAE-NET_Branched_Autoencoder_ICCV_2019_supplemental.pdf)** **[[code(tf)]](https://github.com/czq142857/BAE-NET)**  **[** :mortar_board: `SFU`, `IIT Bombay` **]** **[** :office: `Adobe` **]**  
 **[**  `Zhiqin Chen`, `Kangxue Yin`, `Matthew Fisher`, `Siddhartha Chaudhuri`, `Hao Zhang`  **]**  
-**[** _`one-shot learning`, `k-neuron inside/outside`_ **]**  
+**[** _`one-shot learning`, `k-neuron`, `inside-outside indicator`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
