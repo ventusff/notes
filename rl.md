@@ -3,7 +3,7 @@
 
 **`"unsupervised predictive memory in a goal-directed agent"`**  
 **[** `2018` **]** **[[paper]](https://arxiv.org/pdf/1803.10760)** **[[code-(non-official)]](https://github.com/Kajiyu/MERLIN)**   **[** :office: `DeepMind` **]**  
-**[**  `Greg Wayne`, `Chia-Chun Hung`, `David Amos`  **]**  
+**[**  `Greg Wayne`, `Chia-Chun Hung`, `David Amos`, ...  **]**  
 **[** _`abcd`_ **]**  
 
 <details>
