@@ -10,7 +10,8 @@
 **[** _`motion cue`_ **]**  
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 | ![img](media/a946e1b7-fc9f-441a-b5cd-bafb3563a50a.png) |
 | ------------------------------------------------------ |
@@ -36,7 +37,8 @@
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 - **Motivation**
 
@@ -50,7 +52,8 @@
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 - **Motivation**
 
@@ -64,7 +67,8 @@
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 - **Motivation**
 
@@ -78,7 +82,8 @@
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 - **Motivation**
 
@@ -92,7 +97,8 @@
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 - **Motivation**
 
@@ -106,7 +112,8 @@
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 - **Motivation**
 
@@ -120,7 +127,8 @@
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 - **Motivation**
 

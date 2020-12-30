@@ -15,7 +15,8 @@
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 - **Motivation**
   - 点云输入，无监督地learning structures of 3D shape
@@ -33,7 +34,8 @@
 **[** _`implicit function`, `correspondence score`, `category shape correspondence`_ **]**  
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 - **Motivation**
   - 给定一组3D shapes（点云），category-specific model 无监督地学出逐pair（source 与target之间）的correspondence和部件segmentation
@@ -53,7 +55,8 @@
 **[** _`parametric human body model SMPL`_ **]**  
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 - **Motivation**
   - **<u>keypoint 1</u>**：不是inside / outside两类区分的单层表面，而是 inside the body (R0), between the body and clothing (R1), outside the clothing (R2) 3类区分的双层表面<br><img src="media/image-20201229100344345.png" alt="image-20201229100344345" style="zoom: 67%;" />
@@ -84,7 +87,8 @@
 **[** _`one-shot learning`, `k-neuron`, `inside-outside indicator`_ **]**  
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 - *<IM-Net> Learning Implicit Fields for Generative Shape Modeling (CVPR2019)* 的续作，inside / outside indicator作为shape表征
 - **Motivation**
@@ -107,7 +111,8 @@
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 - **Motivation**
   - Reconstructing 3D objects from 2D images + structured reconstruction
@@ -126,7 +131,8 @@
 **[** _`3D shape generation`, `disentangled representation`, `structure`, `geometry`, `hierarchies`_ **]**  
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 - **Motivation**
   - 把structure(topology)和geometry进一步解耦，in a synergistic manner
@@ -175,7 +181,8 @@
 **[** _`object parts`, `single view`, `partnet dataset`_ **]**  
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 - **Review**
   - 思路、框架清晰；carefully designed subproblems

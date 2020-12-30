@@ -10,7 +10,8 @@
 **[** _`conditional scene synthesis`, `2.5D`,`variational generative model`， `graph-based variational auto-encoders`_ **]**  
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 | ![image-20201028170115727](media/image-20201028170115727.png) |
 | ------------------------------------------------------------ |
@@ -161,7 +162,8 @@ graph LR
 **[** _`semantic equivalence`_ **]**  
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 - **Motivation**
   - 过去的sg2im的一个不足是不能捕捉graphs中的语义等价性(semantic equivalence)
@@ -193,7 +195,8 @@ graph LR
 **[** _`capsule networks`_ **]**  
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 - **Motivation**
   - ![image-20201216165444435](media/image-20201216165444435.png)
@@ -208,7 +211,8 @@ graph LR
 **[** _`capsule network`, `3D pointclouds`, `Canonical`_ **]**  
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 - **Motivation**
   - unsupervised capsule architecture for 3D point clouds
@@ -239,7 +243,8 @@ graph LR
 **[** _`capsule networks`, `motion cue`_ **]**  
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 - **Motivation**
   - capsule networks不能高效地学到low level的part descriptions

@@ -14,7 +14,8 @@
 main preliminary: GQN
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 - **Motivation**
   - ![image-20201027191207023](media/image-20201027191207023.png)
@@ -45,7 +46,8 @@ main preliminary: GQN
 **[** _`natural images`_ **]**  
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 - **Motivation**
 - **自监督的方式，从真实世界图片中提取出3D物体**
@@ -71,7 +73,8 @@ main preliminary: GQN
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 - **Motivation**
 
@@ -85,7 +88,8 @@ main preliminary: GQN
 **[** _`GENESIS-based`, `efgh`_ **]**  
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 - **Motivation**
 
@@ -99,7 +103,8 @@ main preliminary: GQN
 **[** _`baseline->GENESIS`, `efgh`_ **]**  
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 - **Motivation**
   - ![teaser](media/teaser.png)
@@ -116,7 +121,8 @@ main preliminary: GQN
 main preliminary: SRN
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 | ![img](media/40c89125-3bd2-4651-9ec0-2cef3245ac11.png) |
 | ------------------------------------------------------ |
@@ -139,7 +145,8 @@ main preliminary: SRN
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 - **Motivation**
   - ![image-20201028160442930](media/image-20201028160442930.png)
@@ -154,7 +161,8 @@ main preliminary: SRN
 **[** _`Novel View Video Synthesis`, `Synthetic Human Dataset`_ **]**  
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 - **Motivation**
   - ![image-20201027202644934](media/image-20201027202644934.png)
@@ -171,7 +179,8 @@ main preliminary: SRN
 **[** `review`: 从视频中分解出物体（及运动）与背景的3D表征，传统机器学习功底深厚，loss设计值得研究；利用了视频中的一些hint (object tracking)，没有用到多视几何 **]**
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 - **Motivation**
   - ![img](media/6e9983a7-f1e3-4121-b15a-b7f05f0d6f9e.png)
@@ -207,7 +216,8 @@ main preliminary: SRN
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 - **Motivation**
 
@@ -221,7 +231,8 @@ main preliminary: SRN
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 - **Motivation**
 
@@ -235,7 +246,8 @@ main preliminary: SRN
 **[** _`natural dataset`, `mask-RCNN`, `pre-learnt shape priors`_ **]**  
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Click to expand
+</summary>
 
 - **Motivation**
   - 从一个定位好的RGB输入序列，检测出物体并infer他们的pose和一个progressively fine grained and expressive 物体shape表征<br>![img](media/7493d181-c6cb-486d-a9a4-239e5415c984.png)
