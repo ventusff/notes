@@ -679,7 +679,7 @@ learning generalized templates comprised of elements
 **`"BSP-Net: Generating Compact Meshes via Binary Space Partitioning"`**  
 **[** `CVPR2020(Oral)` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2020/papers/Chen_BSP-Net_Generating_Compact_Meshes_via_Binary_Space_Partitioning_CVPR_2020_paper.pdf)** **[[code(tf)]](https://github.com/czq142857/BSP-NET-original)** **[[code(pytorch)]](https://github.com/czq142857/BSP-NET-pytorch)** **[[web]](https://bsp-net.github.io/)**  **[** :mortar_board: `SFU` **]** **[** :office: `Google` **]**  
 **[**  `Zhiqin Chen`, `Andrea Tagliasacchi`, `Hao Zhang`  **]**  
-**[** _`low-poly`, `convex composition`, `category-shape correspondence`, `inside-outside indicator`_ **]**  
+**[** _`low-poly`, `convex composition`, `category-shape correspondence`,  `part correpondence`, `inside-outside indicator`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
