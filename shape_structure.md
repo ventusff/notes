@@ -1,6 +1,6 @@
 [[_TOC_]]
 
-# part/structure-aware representation
+# part/structure-aware shape representation
 
 ## shape correspondence
 
@@ -40,7 +40,6 @@
   - 即使拓扑不一样也能学到相关性
   - 有`correspondence`相关性分数输出<br>![image-20201229144020259](media/image-20201229144020259.png)
 - **Overview**
-
   - 
 
 </details>

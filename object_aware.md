@@ -71,7 +71,7 @@ main preliminary: GQN
 **`"Multi-Object Representation Learning with Iterative Variational Inference"`**  
 **[** `2019` **]** **[[paper]](https://arxiv.org/pdf/1903.00450.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
 **[**  `xxxx`  **]**  
-**[** _`abcd`, `efgh`_ **]**  
+**[** _`abcd`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
@@ -149,7 +149,7 @@ main preliminary: SRN
 **`"Neural Graphics Pipeline for Controllable Image Generation"`**  
 **[** `2020` **]** **[[paper]](https://arxiv.org/pdf/2006.10569.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
 **[**  `xxxx`  **]**  
-**[** _`abcd`, `efgh`_ **]**  
+**[** _`abcd`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
@@ -225,44 +225,13 @@ Authors: Youngjoong Kwon , Stefano Petrangeli , Dahun Kim , Haoliang Wang , Eunb
 
 </details>
 
----
-
-**`"Unsupervised Discovery of 3D Physical Objects from Video"`**  
-**[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2007.12348.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `MIT` **]** **[** :office: `company` **]**  
-**[**  `xxxx`  **]**  
-**[** _`abcd`, `efgh`_ **]**  
-
-<details>
-  <summary>Click to expand</summary>
-
-
-| ![img](media/a946e1b7-fc9f-441a-b5cd-bafb3563a50a.png) |
-| ------------------------------------------------------ |
-| 利用物体缓慢移动的motion cue + physics ==(?)==         |
-
-
-
-
-- **主要特点**
-  - **数据集中的物体都是缓慢移动的；从motion cue中发现物体**
-  - 用SDF表示每个物体
-- **Motivation**
-  - > we explore how physics, especially object interactions, facilitates learning to disentangle and segment instances from raw videos, and to infer the 3D geometry and position of each object, all without supervision
-    > 探索物理学：<u>尤其是物体之间的交互，促进学习出物体之间的解耦，从raw videos中</u>；
-    - [ ] what is physics？
-  - > our Physical Object Discovery Network (POD-Net) uses both multi-scale pixel cues and physical motion cues to accurately segment observable and partially occluded objects of varying sizes, and infer properties of those objects.
-    > 同时使用multi-scale的pixel cue和physical motion cue来精确地分割出可见的、部分被遮挡的尺寸多样的物体，并且infer这些物体的属性
-
-
-
-</details>
 
 ---
 
 **`"Unsupervised Discovery of Object Landmarks via Contrastive Learning"`**  
 **[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2006.14787.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `MIT` **]** **[** :office: `company` **]**  
 **[**  `xxxx`  **]**  
-**[** _`abcd`, `efgh`_ **]**  
+**[** _`abcd`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
@@ -277,7 +246,7 @@ Authors: Youngjoong Kwon , Stefano Petrangeli , Dahun Kim , Haoliang Wang , Eunb
 **`"UNSUPERVISED DISCOVERY OF PARTS, STRUCTURE, AND DYNAMICS"`**  
 **[** `0000` **]** **[[paper]](https://abc.efg)** **[[code]](https://www.github.com)** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
 **[**  `xxxx`  **]**  
-**[** _`abcd`, `efgh`_ **]**  
+**[** _`abcd`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
