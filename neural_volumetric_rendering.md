@@ -369,7 +369,7 @@
 
 **`"pixelNeRF: Neural Radiance Fields from One or Few Images"`**  
 **[** `XXXX2021` **]** **[[paper]](https://arxiv.org/pdf/2012.02190.pdf)** **[[web]](https://alexyu.net/pixelnerf/)** **[** :mortar_board: `UCB` **]**  
-**[**  `Alex Yu`,`Vickie Ye`, `Matthew Tancik`, `Angjoo Kanazawa`  **]**  
+**[**  `Alex Yu`, `Vickie Ye`, `Matthew Tancik`, `Angjoo Kanazawa` **]**  
 **[** _`scene prior/category`, `CNN encoder`_ **]**  
 
 <details>
