@@ -261,20 +261,6 @@
 
 ---
 
-**`"Neural Scene Flow Fields for Space-Time View Synthesis of Dynamic Scenes"`**  
-**[** `0000` **]** **[[paper]](abc.efg)** **[[code]](https://www.github.com)** **[[web]](abc.efg)** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
-**[**  `xxxx`  **]**  
-**[** _`abcd`_ **]**  
-
-<details>
-  <summary>Click to expand</summary>
-
-- **Motivation**
-
-</details>
-
----
-
 **`"Neural Radiance Flow for 4D View Synthesis and Video Processing"`**  
 **[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2012.09790.pdf)** **[[code]](https://www.github.com)** **[[web]](https://yilundu.github.io/nerflow/)** **[** :mortar_board: `MIT`, `Stanford` **]**   
 **[**  `Yilun Du`, `Yinan Zhang`, `Hong-Xing Yu`, `Joshua B. Tenenbaum`, `Jiajun Wu`  **]**  
