@@ -1,8 +1,11 @@
+[[_TOC_]]
+
+# physics
 
 ---
 
 **`"Unsupervised Discovery of 3D Physical Objects from Video"`**  
-**[** `ICLR2021` **]** **[[paper]](https://arxiv.org/pdf/2007.12348.pdf)**  **[** :mortar_board: `MIT`, `Harvard`, `Stanford` **]**   
+**[** `ICLR2021` **]** **[[paper]](https://arxiv.org/pdf/2007.12348.pdf)**  **[** :mortar_board: `MIT`, `Harvard`, `Stanford` **]**   
 **[**  `Yilun Du`, `Kevin Smith`, `Tomer Ulman`, `Joshua Tenenbaum`, `Jiajun Wu`  **]**  
 **[** _`motion cue`_ **]**  
 
