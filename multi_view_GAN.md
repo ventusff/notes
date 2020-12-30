@@ -7,6 +7,9 @@
   - GAN multi view geometry
   - multi view image generation from graph
 
+- GRAF
+- pi-GAN
+
 ---
 
 **`"CR-GAN: Learning Complete Representations for Multi-view Generation"`**  
@@ -17,7 +20,7 @@
 <details>
   <summary>Click to expand</summary>
 
-- **主要贡献**
+- **Motivation**
   - 第一个调查GAN模型的"complete representations"
   - 用CR-GAN来学习完整的表达，使用一种两通路的模式(`reconstruction path` + `generation path`)
   - CR-GAN可以利用`unlabeled data`来`self supervision`，使得生成的质量更好
@@ -57,12 +60,13 @@
   <summary>Click to expand</summary>
 too old
 
-- ![img](media/54910786.png)
-  - 把BiGAN改造成适应conditional 概率；一个可以学到P(y\|x)，x可以是单张图片或者是多张view的集合
-- ![img](media/55062754.png)
-  - 创造了一个multi-view model，给予任意一组subset of views，评估可能的输出的分布
-  - 如果说，一种自然的把BiGAN 延伸到适应multi view输入的方式 是 定义一个从a set of view到一个representation space的mapping function，那么，这种方法已经被证明会有不达到要求的表现
-  - 因此，我们提出了一种约束模型的方式：基于一个想法：对任意一组subset of views添加一个view都应该降低输出分布的不确定性。给的view越多，方差越小。用KL散度来正则化
+- **Motivation**
+  - ![img](media/54910786.png)
+    - 把BiGAN改造成适应conditional 概率；一个可以学到P(y\|x)，x可以是单张图片或者是多张view的集合
+  - ![img](media/55062754.png)
+    - 创造了一个multi-view model，给予任意一组subset of views，评估可能的输出的分布
+    - 如果说，一种自然的把BiGAN 延伸到适应multi view输入的方式 是 定义一个从a set of view到一个representation space的mapping function，那么，这种方法已经被证明会有不达到要求的表现
+    - 因此，我们提出了一种约束模型的方式：基于一个想法：对任意一组subset of views添加一个view都应该降低输出分布的不确定性。给的view越多，方差越小。用KL散度来正则化
 
 </details>
 
@@ -76,26 +80,27 @@ too old
 <details>
   <summary>Click to expand</summary>
 
-- **task**: image based shape generation
-- 把多张图片的重建问题 建模为 计算每个单张图片重建出的shape 空间的 交集
+- **Motivation**
+  - **task**: image based shape generation
+  - 把多张图片的重建问题 建模为 计算每个单张图片重建出的shape 空间的 交集
 
 </details>
 
 ---
 
 **`"Multi-view Relighting using a Geometry-Aware Network"`**  
-**[** `ACM T-Graphics 2019` **]** **[[paper]](https://repo-sam.inria.fr/fungraph/deep-relighting/Multi-view-Relighting.pdf)** **[** :mortar_board: `Université Côte d'Azur and Inria`,`UCB` **]** **[** :office: `Adobe` **]**  
-**[**  `Julien Philip, MICHAËL GHARBI,TINGHUI ZHOU, ALEXEI A. EFROS, GEORGE DRETTAKIS `  **]**  
+**[** `ACM T-Graphics 2019` **]** **[[paper]](https://repo-sam.inria.fr/fungraph/deep-relighting/Multi-view-Relighting.pdf)** **[** :mortar_board: `Université Côte d'Azur and Inria`, `UCB` **]** **[** :office: `Adobe` **]**  
+**[**  `Julien Philip`, `MICHAËL GHARBI`,`TINGHUI ZHOU`, `ALEXEI A. EFROS`, `GEORGE DRETTAKIS` **]**  
 **[** _`multi view video relighting`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
 
-- **task**: multi-view video relighting
-- ![img](media/54422638.png)
-- ![img](media/54653900.png)
-
+- **Motivation**
+  - multi-view video relighting
   - 首先从multi view的视频创建一个proxy geometry，然后考虑relighting
+  - ![img](media/54422638.png)
+  - ![img](media/54653900.png)
 
 </details>
 
@@ -109,7 +114,7 @@ too old
 <details>
   <summary>Click to expand</summary>
 
-- TODO
+- **Motivation**
 
 </details>
 
@@ -123,9 +128,10 @@ too old
 <details>
   <summary>Click to expand</summary>
 
-- **natural datasets**下，通过RGBD图像生成，进行**无监督**的**3D表征**学习
-- **3.2.2 SELF-SUPERVISED RGBD CONSISTENCY LOSS**
-  - ![img](media/65147862.png)
+- **Motivation**
+  - **natural datasets**下，通过RGBD图像生成，进行**无监督**的**3D表征**学习
+  - **3.2.2 SELF-SUPERVISED RGBD CONSISTENCY LOSS**
+    - ![img](media/65147862.png)
 
 </details>
 
@@ -140,11 +146,8 @@ too old
 <details>
   <summary>Click to expand</summary>
 
-| ![img](media/59007435.png)                                   |
-| ------------------------------------------------------------ |
-| 首先 从一个高斯采样的latent code 映射到一系列3D primitives（一些原初3D物体表征）<br> 再渲染物体 再渲染背景 |
-
-
+- **Motivation**
+  - 首先 从一个高斯采样的latent code 映射到一系列3D primitives（一些原初3D物体表征）<br> 再渲染物体 再渲染背景<br>![img](media/59007435.png)
 
 | Input   | unlabeled image                                              |
 | ------- | :----------------------------------------------------------- |
@@ -184,14 +187,6 @@ too old
 
 ---
 
-**`"GRAF: Generative Radiance Fields for 3D-Aware Image Synthesis"`**  
-**[** `NeurIPS2020` **]** **[[paper](https://arxiv.org/pdf/2007.02442.pdf), [supp](http://www.cvlibs.net/publications/Schwarz2020NEURIPS_supplementary.pdf)]** **[[code]](https://github.com/autonomousvision/graf)** **[** :mortar_board: `University of Tubingen`, `MPI-IS` **]**  
-**[** [autonomous_vision lab](https://github.com/autonomousvision) **]**
-**[**  `Katja Schwarz`, `Yiyi Liao`, `Michael Niemeyer`, `Andreas Geiger`  **]**  
-**[** _`neural radiance field`, `continuous representation`, `camera viewpoint/object pose controllable image synthesis`, `HoloGAN->baseline`_ **]**  
-
----
-
 **`"Inverse Graphics GAN: Learning to Generate 3D Shapes from Unstructured 2D Data"`**  
 **[** `2020` **]** **[[paper](https://arxiv.org/pdf/2002.12674.pdf), [supp](https://lunz-s.github.io/iggan/iggan_supplemental.pdf)]**  **[** :mortar_board: `University of Cambridge` **]**  
 **[**  `Sebastian Lunz`, `Yingzhen Li`, `Andrew Fitzgibbon`, `Nate Kushman`  **]**  
@@ -200,14 +195,11 @@ too old
 <details>
   <summary>Click to expand</summary>
 
-
-| ![image-20201026194450596](media/image-20201026194450596.png) |
-| ------------------------------------------------------------ |
-|                                                              |
-
-
-- 从非结构化的2D数据生成voxels类3D shape
-- 效果：![image-20201026193704383](media/image-20201026193704383.png)
+- **Motivation**
+  - 从非结构化的2D数据生成voxels类3D shape
+  - ![image-20201026194450596](media/image-20201026194450596.png)
+- results：
+  - ![image-20201026193704383](media/image-20201026193704383.png)
 
 </details>
 
@@ -221,9 +213,11 @@ too old
 <details>
   <summary>Click to expand</summary>
 
+- **Motivation**
 - **dataset**
   - ground truth **voxel** data of SUNCG dataset.
-- ![image-20201026195610963](media/image-20201026195610963.png)
+- **results**
+  - ![image-20201026195610963](media/image-20201026195610963.png)
 
 </details>
 

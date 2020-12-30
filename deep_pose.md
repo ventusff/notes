@@ -22,13 +22,14 @@
 **`"DPOD: 6D Pose Object Detector and Refiner"`**  
 **[** `ICCV2019` **]** **[[paper]](https://arxiv.org/pdf/1902.11020v3.pdf)** **[[code]](https://github.com/yshah43/DPOD)** **[** :mortar_board: `TUM` **]** **[** :office: `Siemens Corporate Technology` **]**  
 **[**  `Sergey Zakharov`,`Ivan Shugurov`,`Slobodan Ilic  `  **]**  
-**[** _`6D pose esimation [2020 SOTA]`_ **]**  
+**[** _`6D pose esimation [2020 SOTA]`, `correspondence`_ **]**  
 
 [思考：虽然我们的生成模型用不上这里的一些计算设定方式，但是在图定位的时候这个会很有用]
 
 <details>
   <summary>Click to expand</summary>
 
+- **Motivation**
 - **相关研究**
   - full 6D detection from RGB images
     - SSD6D
@@ -46,8 +47,6 @@
 | ![image-20201101163039928](media/image-20201101163039928.png) |
 | ------------------------------------------------------------ |
 | Pipeline                                                     |
-
-
 
 - **大概思路**
   - 首先，每个物体都有一个具体的材质图-三维模型对应；知道材质图上的uv坐标就知道物体模型三维坐标系下的坐标；*vice versa.*
@@ -113,7 +112,7 @@
   - 所以作者要用CNN regression framework
   - 主要针对的还是 pose estimation问题
   - 挑战在于：3D pose space是非欧几里得的，因此CNN算法需要修改来应对输出空间的非线性
-- **主要贡献**
+- **Motivation**
   - 设计了一个CNN框架来解决连续域下的pose 估计问题，通过设计一个尊重3D pose 空间非线性结构的合适的表征、数据增强和loss函数
 - **具体细节**
   - 网络
@@ -170,8 +169,7 @@ Closed Form"`**
 <details>
   <summary>Click to expand</summary>
 
-- **主要贡献**
-  - 
+- **Motivation**
 
 </details>
 
@@ -202,14 +200,8 @@ Closed Form"`**
 <details>
   <summary>Click to expand</summary>
 
-
-| ![image-20201102113621308](media/image-20201102113621308.png) |
-| ------------------------------------------------------------ |
-|                                                              |
-
-
-
-
+- **Motivation**
+  - ![image-20201102113621308](media/image-20201102113621308.png)
 - **loss function**
   - ![image-20201102114343918](media/image-20201102114343918.png)
   - 其实只有骨骼向量和关节点3D位置的L2-loss. 没有涉及到rigid body transformation
@@ -234,12 +226,9 @@ Closed Form"`**
 <details>
   <summary>Click to expand</summary>
 
+![image-20201102121246748](media/image-20201102121246748.png)
 
-| ![image-20201102121246748](media/image-20201102121246748.png) |
-| ------------------------------------------------------------ |
-|                                                              |
-
-- Motivation
+- **Motivation**
   - 3D object detection and pose estimation from a single image are two inherently ambiguous problems.
   - 很经常的，不同viewpoints下的物体由于对称性、遮挡和重复的材质出现相似的外观
   - 检测和pose估计中都带有的ambiguity意味着物体实例可以被几个不同的pose甚至结构不同的类别完美描述

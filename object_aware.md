@@ -16,16 +16,12 @@ main preliminary: GQN
 <details>
   <summary>Click to expand</summary>
 
-
-![image-20201027191207023](media/image-20201027191207023.png)
-
-
+- **Motivation**
+  - ![image-20201027191207023](media/image-20201027191207023.png)
 - **前景背景区分方式**： 通过其`Scene Encoder`；其实是在GVFM下做3D物体检测
-  
   - 把3D 空间分为 $`N_{max}=N_x \times N_y \times N_z`$ 个cell，每个最多检测1个物体（类似Yolo，扩展到三维）；
   - 检测是否有一个物体其中心落在了cell内；如果有，那么回归出一个连续量 $`\boldsymbol{z}_{ijk}^{where} \in \mathbb{R}^3`$ 来specify坐标
   - 具体做法：把一系列context 观测 $`\mathcal{C}=\{(\boldsymbol{x}_c, \boldsymbol{y}_c)\}`$ encode into a Geometric Volume Feature Map 三维体素特征空间 $`\boldsymbol{r} \in \mathbb{R}^{N_x \times N_y \times N_z \times d}`$ ，逐个cell infer 是否有物体以及中心点坐标
-  
     - GVFM需要把一系列partial observation aggregate起来；
     - ① 对$`\mathcal{C}`$ 计算一个order-invariant summary $`\psi`$ ：$`\psi=\sum_{c=1}^{\lvert\mathcal{C} \rvert} \psi_{\mathcal{c}}=\sum_{c=1}^{\lvert\mathcal{C} \rvert} f_\psi(x_c, y_c)`$  
     - ② 对 $`\psi`$ 应用一个3D transposed convolution 来把 scene-level 表征$`\psi`$ split 成单个的$`\boldsymbol{r}_{ijk}`$ slots
@@ -51,6 +47,7 @@ main preliminary: GQN
 <details>
   <summary>Click to expand</summary>
 
+- **Motivation**
 - **自监督的方式，从真实世界图片中提取出3D物体**
 - **两阶段训练**
   - 首先学习一个base shape，然后从base shape到full model
@@ -76,8 +73,7 @@ main preliminary: GQN
 <details>
   <summary>Click to expand</summary>
 
-- **主要贡献**
-  - 
+- **Motivation**
 
 </details>
 
@@ -91,8 +87,7 @@ main preliminary: GQN
 <details>
   <summary>Click to expand</summary>
 
-- **主要贡献**
-  - 
+- **Motivation**
 
 </details>
 
@@ -106,12 +101,8 @@ main preliminary: GQN
 <details>
   <summary>Click to expand</summary>
 
-
-![teaser](media/teaser.png)
-
-
-- **主要贡献**
-  - 
+- **Motivation**
+  - ![teaser](media/teaser.png)
 
 </details>
 
@@ -127,13 +118,9 @@ main preliminary: SRN
 <details>
   <summary>Click to expand</summary>
 
-
 | ![img](media/40c89125-3bd2-4651-9ec0-2cef3245ac11.png) |
 | ------------------------------------------------------ |
 |                                                        |
-
-
-
 
 - **Motivation**
   - 不仅可以从感知流中分割出物体
@@ -154,16 +141,8 @@ main preliminary: SRN
 <details>
   <summary>Click to expand</summary>
 
-
-| ![image-20201028160442930](media/image-20201028160442930.png) |
-| ------------------------------------------------------------ |
-|                                                              |
-
-
-
-
-- **主要贡献**
-  - 
+- **Motivation**
+  - ![image-20201028160442930](media/image-20201028160442930.png)
 
 </details>
 
@@ -171,18 +150,14 @@ main preliminary: SRN
 
 **`"Rotationally-Temporally Consistent Novel View Synthesis of Human Performance Video"`**  
 **[** `ECCV2020` **]** **[[paper]](https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123490375.pdf)**  **[** :mortar_board: `University of North Carolina` **]** **[** :office: `Adobe`,` Korea Advanced Institute of Science and Technology` **]**  
-**[**  `Youngjoong Kwon`  **]**  
+**[**  `Youngjoong Kwon`, `Stefano Petrangeli`, `Dahun Kim`, `Haoliang Wang`, `Eunbyung Park`, `Viswanathan Swaminathan`, `Henry Fuchs` **]**  
 **[** _`Novel View Video Synthesis`, `Synthetic Human Dataset`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
-Authors: Youngjoong Kwon , Stefano Petrangeli , Dahun Kim , Haoliang Wang , Eunbyung Park , Viswanathan Swaminathan , and Henry Fuchs
 
-![image-20201027202644934](media/image-20201027202644934.png)
-
-
-- **主要贡献**
-  - 
+- **Motivation**
+  - ![image-20201027202644934](media/image-20201027202644934.png)
 
 </details>
 
@@ -190,7 +165,7 @@ Authors: Youngjoong Kwon , Stefano Petrangeli , Dahun Kim , Haoliang Wang , Eunb
 
 **`< 3D object aware video generation> "Unsupervised object-centric video generation and decomposition in 3D"`**  
 **[** `NeurIPS2020` **]** **[[paper]](https://arxiv.org/pdf/2007.06705.pdf)** **[[code]](https://github.com/pmh47/o3v)** **[[web]](https://www.pmh47.net/o3v/)** **[** :office: `IST Austria` **]**  
-**[**  `Paul Henderson,Christoph H. Lampert `  **]**  
+**[**  `Paul Henderson`, `Christoph H. Lampert `  **]**  
 **[** _`encoder-decoder`, `object-centric generative models`, `inspired by classical image segmentation`,`object tracking`_ **]**  
 
 **[** `review`: 从视频中分解出物体（及运动）与背景的3D表征，传统机器学习功底深厚，loss设计值得研究；利用了视频中的一些hint (object tracking)，没有用到多视几何 **]**
@@ -198,10 +173,8 @@ Authors: Youngjoong Kwon , Stefano Petrangeli , Dahun Kim , Haoliang Wang , Eunb
 <details>
   <summary>Click to expand</summary>
 
-
-![img](media/6e9983a7-f1e3-4121-b15a-b7f05f0d6f9e.png)
-
-
+- **Motivation**
+  - ![img](media/6e9983a7-f1e3-4121-b15a-b7f05f0d6f9e.png)
 - **前景背景区分方式**
   - 通过encoder 编码 context views of a video $`\{x_z, v_z\}`$ 为两个隐向量：scene embedding和camera paramter embedding，把这两个embedding decode为逐个cell中的是否有物体 + 各个物体的外观、pose参数 + 背景形状、材质
   - 借鉴了传统CV中图像分割的一些思想，依靠强大的loss设计，用encoder-decoder的方式实现了视频生成。泛化性未知
@@ -236,8 +209,7 @@ Authors: Youngjoong Kwon , Stefano Petrangeli , Dahun Kim , Haoliang Wang , Eunb
 <details>
   <summary>Click to expand</summary>
 
-- **主要贡献**
-  - 
+- **Motivation**
 
 </details>
 
@@ -251,8 +223,7 @@ Authors: Youngjoong Kwon , Stefano Petrangeli , Dahun Kim , Haoliang Wang , Eunb
 <details>
   <summary>Click to expand</summary>
 
-- **主要贡献**
-  - 
+- **Motivation**
 
 </details>
 
@@ -260,17 +231,14 @@ Authors: Youngjoong Kwon , Stefano Petrangeli , Dahun Kim , Haoliang Wang , Eunb
 
 **`"FroDO: From Detections to 3D Objects"`**  
 **[** `CVPR2020` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2020/papers/Runz_FroDO_From_Detections_to_3D_Objects_CVPR_2020_paper.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `UCL`, `The University of Adelaide` **]** **[** :office: `Facebook` **]**  
-**[**  `Martin Runz`, `Kejie Li `  **]**  
+**[**  `Martin Runz`, `Kejie Li`, `Meng Tang`, `Lingni Ma`, `Chen Kong`, `Tanner Schmidt`, `Ian Reid`, `Lourdes Agapito`, `Julian Straub`, `Steven Lovegrove`, `Richard Newcombed`**]**  
 **[** _`natural dataset`, `mask-RCNN`, `pre-learnt shape priors`_ **]**  
 
 <details>
   <summary>Click to expand</summary>
-Authos: Martin Runz, Kejie Li, Meng Tang , Lingni Ma , Chen Kong , Tanner Schmidt , Ian Reid , Lourdes Agapito, Julian Straub, Steven Lovegrove, and Richard Newcombed
 
-| ![img](media/7493d181-c6cb-486d-a9a4-239e5415c984.png)       |
-| ------------------------------------------------------------ |
-| 从一个定位好的RGB输入序列，检测出物体并infer他们的pose和一个progressively fine grained and expressive 物体shape表征 |
-
+- **Motivation**
+  - 从一个定位好的RGB输入序列，检测出物体并infer他们的pose和一个progressively fine grained and expressive 物体shape表征<br>![img](media/7493d181-c6cb-486d-a9a4-239e5415c984.png)
 - **前景背景区分方式**
   - **使用一个标准的检测、分割框架：mask RCNN**
   - 重点不在分割，而在对分割出来的物体multi view encoder成一个合适的object shape embedding
@@ -282,11 +250,5 @@ Authos: Martin Runz, Kejie Li, Meng Tang , Lingni Ma , Chen Kong , Tanner Schmid
 | ![img](media/a21da736-1ecf-441f-91b0-ea7f2ed54e75.png)       |
 | ------------------------------------------------------------ |
 | 提出了一种新的joint shape embedding，利用了稀疏点云表征的效率和稠密surface表征的表达能力 |
-
-
-
-
-- **主要贡献**
-  - 
 
 </details>
