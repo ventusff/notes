@@ -449,8 +449,7 @@ for 3D-Aware Image Synthesis"`**
 
 ---
 
-**`"NeRV: Neural Reflectance and Visibility Fields
-for Relighting and View Synthesis"`**  
+**`"NeRV: Neural Reflectance and Visibility Fields for Relighting and View Synthesis"`**  
 **[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2012.03927.pdf)** **[[code]](https://www.github.com)** **[[web]](https://people.eecs.berkeley.edu/~pratul/nerv/)** **[** :mortar_board: `UCB`, `MIT` **]** **[** :office: `Google` **]**  
 **[**  `Pratul P. Srinivasan`, `Boyang Deng`, `Xiuming Zhang`, `Matthew Tancik`, `Ben Mildenhall`, `Jonathan T. Barron`  **]**  
 **[** _`abcd`_ **]**  

@@ -155,8 +155,7 @@ graph LR
 
 ---
 
-**`"Learning Canonical Representations for
-Scene Graph to Image Generation"`**  
+**`"Learning Canonical Representations for Scene Graph to Image Generation"`**  
 **[** `ECCV2020` **]** **[[web]](https://roeiherz.github.io/CanonicalSg2Im/)** **[[paper]](https://arxiv.org/pdf/1912.07414.pdf)** **[[code]](https://github.com/roeiherz/CanonicalSg2Im)** **[** :mortar_board: `Tel Aviv University`, `UCB`, `Bar-Ilan University` **]** **[** :office: `NVIDIA` **]**  
 **[**  `Roei Herzig`, `Amir Bar`, `Huijuan Xu`, `Gal Chechik`, `Trevor Darrell`, `Amir Globerson`  **]**  
 **[** _`semantic equivalence`_ **]**  

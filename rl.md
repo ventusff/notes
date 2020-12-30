@@ -1,3 +1,4 @@
+
 ---
 
 **`"unsupervised predictive memory in a goal-directed agent"`**  
@@ -10,9 +11,7 @@
 
 - **Motivation**
 - **overview**
-
   - ![image-20201229182024033](media/image-20201229182024033.png)
-
  - 几种不同的记忆模型
 
 | methods                                                      | description |

@@ -130,9 +130,6 @@
 | ![image-20201208012017960](media/image-20201208012017960.png) | ![image-20201208012035153](media/image-20201208012035153.png) |
 
  - `Earth Mover Distance` (EMD)
-
-
-
  - 
 
 </details>
@@ -141,7 +138,6 @@
 
 <details>
   <summary>Click to expand</summary>
-
 
  - `affine space `仿射空间
  - `projective space` 射影空间
@@ -647,8 +643,7 @@ learning generalized templates comprised of elements
 
 ---
 
-**`"DISN: Deep Implicit Surface Network for
-High-quality Single-view 3D Reconstruction"`**  
+**`"DISN: Deep Implicit Surface Network for High-quality Single-view 3D Reconstruction"`**  
 **[** `NeurIPS2019` **]** **[[paper]](https://arxiv.org/pdf/1905.10711.pdf)** **[[code]](https://github.com/laughtervv/DISN)** **[** :mortar_board: `University of Southern California` **]** **[** :office: `Adobe` **]**  
 **[**  `Weiyue Wang`, `Qiangeng Xu`, `Duygu Ceylan`, `Radomir Mech`, `Ulrich Neumann`  **]**  
 **[** _`SDF`, `single-view`, `encoder`_ **]**  
@@ -1016,7 +1011,6 @@ High-quality Single-view 3D Reconstruction"`**
 <details>
   <summary>Click to expand</summary>
 
-
 - **Motivation**
   - 目前这些输入点云deep implicit field学surface的方法，optimizing时，精确、鲁棒的重建仍然非常有挑战性
   - 本篇提出用等值面上的点作为一个额外的显式表征；被计算、更新on-the-fly，有效提高收敛率和最终质量
@@ -1069,8 +1063,7 @@ High-quality Single-view 3D Reconstruction"`**
 
 ---
 
-**`"DIST: Rendering Deep Implicit Signed Distance Function
-with Differentiable Sphere Tracing"`**  
+**`"DIST: Rendering Deep Implicit Signed Distance Function with Differentiable Sphere Tracing"`**  
 **[** `CVPR2020` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2020/papers/Liu_DIST_Rendering_Deep_Implicit_Signed_Distance_Function_With_Differentiable_Sphere_CVPR_2020_paper.pdf)** **[[code]](https://github.com/B1ueber2y/DIST-Renderer)** **[[web]](http://b1ueber2y.me/projects/DIST-Renderer/)** **[** :mortar_board: `ETH`, `Tsinghua University`, `Peking University`, `MPI` **]** **[** :office: `Google`, `Peng Cheng Laboratory` **]**  
 **[**  `Shaohui Liu`, `Yinda Zhang`, `Songyou Peng`, `Boxin Shi`, `Marc Pollefeys`, `Zhaopeng Cui`  **]**  
 **[** _`SDF`, `differentiable renderer`, `sphere tracing`_ **]**  
@@ -1124,8 +1117,7 @@ with Differentiable Sphere Tracing"`**
 
 ---
 
-**`"SDF-SRN: Learning Signed Distance
-3D Object Reconstruction from Static Images"`**  
+**`"SDF-SRN: Learning Signed Distance 3D Object Reconstruction from Static Images"`**  
 **[** `NeurIPS2020` **]** **[[paper]](https://papers.nips.cc/paper/2020/file/83fa5a432ae55c253d0e60dbfa716723-Paper.pdf)** **[[code]](https://github.com/chenhsuanlin/signed-distance-SRN)** **[[web]](https://chenhsuanlin.bitbucket.io/signed-distance-SRN/)** **[** :mortar_board: `CMU` **]**   
 **[**  `Chen-Hsuan Lin`, `Chaoyang Wang`, ` Simon Lucey`  **]**  
 **[** _`single-view`_ **]**  
@@ -1148,8 +1140,7 @@ with Differentiable Sphere Tracing"`**
 
 ---
 
-**`"SDFDiff: Differentiable Rendering of Signed Distance Fields for 3D Shape
-Optimization"`**  
+**`"SDFDiff: Differentiable Rendering of Signed Distance Fields for 3D Shape Optimization"`**  
 **[** `CVPR2020(Oral)` **]** **[[paper]](https://arxiv.org/pdf/1912.07109.pdf)** **[[code]](https://github.com/YueJiang-nj/CVPR2020-SDFDiff)** **[** :mortar_board: `University of Maryland` **]**   
 **[**  `Yue Jiang`, `Dantong Ji`, `Zhizhong Han`, `Matthias Zwicker`  **]**  
 **[** _`SDF`, `differentiable rendering`, `multi-view`, `single-view`, `multi-resolution strategy`_ **]**  
@@ -1183,8 +1174,7 @@ Optimization"`**
 
 ---
 
-**`"Multiview Neural Surface Reconstruction
-by Disentangling Geometry and Appearance"`**  
+**`"Multiview Neural Surface Reconstruction by Disentangling Geometry and Appearance"`**  
 **[** `NeurIPS2020` **]** **[[paper]](https://proceedings.neurips.cc/paper/2020/file/1a77befc3b608d6ed363567685f70e1e-Paper.pdf)** **[[code]](https://github.com/lioryariv/idr)** **[** :mortar_board: `Weizmann Institute of Science` **]**   
 **[**  `Lior Yariv`, `Yoni Kasten`, `Dror Moran`, `Meirav Galun`, `Matan Atzmon`, `Ronen Basri`, `Yaron Lipman`  **]**  
 **[** _`multi-view`, `unposed images`, `single masked object image`, `SDF`_ **]**  
@@ -1269,8 +1259,7 @@ by Disentangling Geometry and Appearance"`**
 
 ---
 
-**`"Analytic Marching: An Analytic Meshing Solution from
-Deep Implicit Surface Networks"`**  
+**`"Analytic Marching: An Analytic Meshing Solution from Deep Implicit Surface Networks"`**  
 **[** `ICML2020` **]** **[[paper]](http://proceedings.mlr.press/v119/lei20a/lei20a.pdf)** **[[supp]](http://proceedings.mlr.press/v119/lei20a/lei20a-supp.pdf)** **[[slice]](https://slides.games-cn.org/pdf/Games2020148JiabaoLei.pdf)** **[** :mortar_board: `南方科技大学` **]** **[** :office: [`琶洲实验室`](https://www.pazhoulab.com/) **]**  
 **[**  `Jiabao Lei`, `Kui Jia贾奎`  **]**  
 **[** _`learning surface mesh via implicit field functions`, `MLP analytic solution`_ **]**  

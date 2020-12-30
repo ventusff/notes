@@ -122,8 +122,7 @@
 
 ---
 
-**`"DSM-Net: Disentangled Structured Mesh Net for Controllable
-Generation of Fine Geometry"`**  
+**`"DSM-Net: Disentangled Structured Mesh Net for Controllable Generation of Fine Geometry"`**  
 **[** `2020` **]** **[[web]](http://geometrylearning.com/dsm-net/)** **[[paper]](https://arxiv.org/pdf/2008.05440.pdf)**  **[** :mortar_board: `中科院计算所`, `中科院大学`, `Stanford`, `Cardiff University` **]** **[** :office: `company` **]**  
 **[**  `Jie Yang`, `Kaichun Mo`, `Yu-kun Lai`, `Leonidas Guibas`, `Lin Gao`  **]**  
 **[** _`3D shape generation`, `disentangled representation`, `structure`, `geometry`, `hierarchies`_ **]**  
