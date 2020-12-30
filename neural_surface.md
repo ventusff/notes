@@ -25,8 +25,7 @@
 ##  surface: implicit form & parametric form  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - 一个球面形状的隐式形式和参数化形式：`implicit form` & `parametric form`![image-20201207201258315](media/image-20201207201258315.png)
 - implicit的形式无法直接通过其生成点，但是一般可以通过test来判断点在object内还是object外，对于ray-tracing非常友好
@@ -39,8 +38,7 @@
 ## 形状(geometry) 与 拓扑(topology)
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - 如果用mesh的数据结构来理解拓扑：
   - 同形状代表相同的顶点位置和连接关系；同拓扑代表相同的顶点连接关系
@@ -52,8 +50,7 @@
 
 ## `manifold`流形，`chart`卡(坐标卡)，`atlas`图册
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - `homeomorphism`同胚
   - 同胚是两个`topological space`拓扑空间之间的函数
@@ -124,8 +121,7 @@
 ### losses
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - chamfer loss / `chamfer distance` (CD)
 
@@ -141,8 +137,7 @@
 ## implicit form / implicit field 与 parametric form 之间的转换
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
  - `affine space `仿射空间
  - `projective space` 射影空间
@@ -211,8 +206,7 @@
 **[** _`category-specific canonical shape template`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   ![image-20201207225935008](media/image-20201207225935008.png)
@@ -247,8 +241,7 @@
 learning generalized templates comprised of elements
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - 给这类从canonical space下的shape template学出物体shape的方法，提供一种更通用于各种类别的shape template 学习方法
@@ -275,8 +268,7 @@ learning generalized templates comprised of elements
 **[** _`topology modification`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - <br>![image-20201208110645619](media/image-20201208110645619.png)
@@ -302,8 +294,7 @@ learning generalized templates comprised of elements
 **[** _`continous 2D patches`, `learning 2-manifold parameterization`, `2-manifold generation`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - ![image-20201208004500075](media/image-20201208004500075.png)
 - **Motivation**
@@ -346,8 +337,7 @@ learning generalized templates comprised of elements
 **[** _`chart representation`, `auto-decoder`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - 首先把输入点云分成若干个重叠的部分，然后用MLP流形学习每个部分；
@@ -366,8 +356,7 @@ learning generalized templates comprised of elements
 **[** _`parametric 3D shape/parameterization`, `3D reconstruction`, `multi-view`, `single-view`, `surface reconstruction in NOCS`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Result**
   - 评价：可以看到学出来的曲面可以不是闭合的
@@ -453,8 +442,7 @@ learning generalized templates comprised of elements
 **[** _`local shape prior`, `geodesic parameterization`, `VAE`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - 输入点云，输出mesh
@@ -498,8 +486,7 @@ learning generalized templates comprised of elements
 **[** _`patch`, `control over patches`, `overlap`, `collapse`, `differential surface properties`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - 目前有一些学习an ensumble of Parametric表征的方法
@@ -530,8 +517,7 @@ learning generalized templates comprised of elements
 **[** _`patch stitching`, `atlas`, `learning`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - 对目前的multiple patch based parametric surface representations（atlas），改进patches的`global consistency`（即防止**<u>孔洞</u>**和多个patch不正确**<u>交叉</u>**"jagged/带**<u>锯齿</u>**的"的情况）
@@ -576,8 +562,7 @@ learning generalized templates comprised of elements
 **[** _`implicit shape representation`, `inside-outside indicator`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - inside / outside indicator
@@ -595,8 +580,7 @@ learning generalized templates comprised of elements
 **[** _`continuous function occupancy`, `multi-resolution isosurface extraction`, `marching cubes`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - 用一个隐式函数来表达占用概率，从而可以实现任意分辨率的表达<br>![image-20201203153023230](media/image-20201203153023230.png)
@@ -613,8 +597,7 @@ learning generalized templates comprised of elements
 **[** _`Occupancy Networks`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - 从Occupancy Network的continuous feature function到voxelized features + 3D conv<br>![image-20201222145923538](media/image-20201222145923538.png)
@@ -629,8 +612,7 @@ learning generalized templates comprised of elements
 **[** _`3D reconstruction`, `occupancy networks`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - occupancy networks是continuous function；<br>convolutional occupancy networks是voxelized features；<br>本篇是动态平面组上的features
@@ -646,8 +628,7 @@ learning generalized templates comprised of elements
 **[** _`SDF`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - SDF是CG领域又一个形状的表征；本篇是first to use deep SDF functions to model shapes
@@ -668,8 +649,7 @@ learning generalized templates comprised of elements
 **[** _`SDF`, `single-view`, `encoder`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **review**
   - 训练时是有3D shape 的SDF的真值数据的；图像feature只是提供一个辅助的code输入而已
@@ -688,8 +668,7 @@ learning generalized templates comprised of elements
 **[** _`sign agnostic`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
 
@@ -703,8 +682,7 @@ learning generalized templates comprised of elements
 **[** _`low-poly`, `convex composition`, `category-shape correspondence`,  `part correpondence`, `inside-outside indicator`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **review**
   - IM-Net同作的续作
@@ -737,8 +715,7 @@ learning generalized templates comprised of elements
 **[** _`convex composition`, `inside-outside indicator`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **review**
   - 和BSP-Net的概念很像；用一个个由平面包围出的`convex`定义surface；输入是点坐标，输出是 `inside/outside indicator`
@@ -757,8 +734,7 @@ learning generalized templates comprised of elements
 **[** _`reconstructing surfaces from 3D pointcloud`, `surface reconstruction`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - 训练一个神经网络去把query 3D locations "拉" 到他们在表面上的最近邻居；<br>拉的操作，方向是query locations处的网络梯度，步长是query locations处的网络SDF值，这两个都是从网络自身计算出来的<br>
@@ -777,8 +753,7 @@ learning generalized templates comprised of elements
 **[** _`unsigned distance field`, `normal vector field`, `open topogoly surfaces`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - 现有的隐式表面deep networks方法只能表征拓扑上闭合的形状；<br>并且结果是，训练时候经常需要clean watertight meshes
@@ -802,8 +777,7 @@ learning generalized templates comprised of elements
 **[** _`3D deformation field`, `template field`, `category shape correspondence`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - 把每个具体instance shape表达为一个template的shape的deformation
@@ -825,8 +799,7 @@ learning generalized templates comprised of elements
 **[** _`spatial warping LSTM`, `category shape correpondence`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **review**
   - 和 *deformed implicit field* 思路很像，那篇也是清华的
@@ -888,8 +861,7 @@ learning generalized templates comprised of elements
 **[** _`ray casting`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - ![image-20201207222950762](media/image-20201207222950762.png)
@@ -905,8 +877,7 @@ learning generalized templates comprised of elements
 **[** _`SDF`, `Implicit geometrical regularization`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - 从raw 点云中直接学习DeepSDF，在with or without 法向量数据的情况下
@@ -932,8 +903,7 @@ learning generalized templates comprised of elements
 [differentiable iso-surface extraction]
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **review**
   - 和DVR思路类似，首先手动推导出表面点坐标对网络参数的梯度，实际计算时就可以先用采样-based方法得出点坐标，再代入手动推导出的梯度式子构成完整的反向传播链路
@@ -951,8 +921,7 @@ learning generalized templates comprised of elements
 **[** _`implicit functions`, `patch-based surface representation`, `SDF`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 
 - **Motivation**
@@ -988,8 +957,7 @@ learning generalized templates comprised of elements
 **[** _`compact representation`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - 现在的DeepSDF倾向于做category类别的泛化/生成；
@@ -1009,8 +977,7 @@ learning generalized templates comprised of elements
 **[** _`meta-learning`, `SDF`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 
 - **Review**
@@ -1028,8 +995,7 @@ learning generalized templates comprised of elements
 **[** _`meta-learning`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - 对于coordinate-based neural representations在auto-decoder时，用meta-learned 的initialization
@@ -1046,8 +1012,7 @@ learning generalized templates comprised of elements
 **[** _`better shape priors`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - 现有的很多方法test time都是从fixed trained priors
@@ -1063,8 +1028,7 @@ learning generalized templates comprised of elements
 **[** _`iso-points`, `hybrid representation`, `SDF`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - 目前这些输入点云deep implicit field学surface的方法，optimizing时，精确、鲁棒的重建仍然非常有挑战性
@@ -1109,8 +1073,7 @@ learning generalized templates comprised of elements
 **[**  _`differentiable volumetric rendering`, `ray casting`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **review**
   - 思路：首先手动推导出每个camera ray和隐表面交点的点坐标对网络参数的梯度，在实际计算时，就可以先在camera ray上采样得出交点坐标(类似二分法)，然后代入所手动推导出的式子构成完整的反向传播链路
@@ -1125,8 +1088,7 @@ learning generalized templates comprised of elements
 **[** _`SDF`, `differentiable renderer`, `sphere tracing`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - 需要silhouette真值
 - **Motivation**
@@ -1180,8 +1142,7 @@ learning generalized templates comprised of elements
 **[** _`single-view`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - 训练时需要single view silhouette
 - **Motivation**
@@ -1204,8 +1165,7 @@ learning generalized templates comprised of elements
 **[** _`SDF`, `differentiable rendering`, `multi-view`, `single-view`, `multi-resolution strategy`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - 需要分割好的多视角图片
 - **Motivation**
@@ -1239,8 +1199,7 @@ learning generalized templates comprised of elements
 **[** _`multi-view`, `unposed images`, `single masked object image`, `SDF`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - 训练需要multi view分割好的unposed images，不一定需要相机pose
 - IDR=implicit differentiable renderer
@@ -1296,8 +1255,7 @@ learning generalized templates comprised of elements
 **[** _`recurrent encoder`, `SDF`, `differentiable renderer`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - 把场景表征为多个物体
@@ -1326,8 +1284,7 @@ learning generalized templates comprised of elements
 **[** _`learning surface mesh via implicit field functions`, `MLP analytic solution`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - deep learning领域出现了很多研究，surface 的implicit functions用MLP+ReLU实现
@@ -1359,8 +1316,7 @@ learning generalized templates comprised of elements
 **[** _`skeleton`, `topology preserving`, `GCN`, `implicit surface`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - 学习shape时保留本身的拓扑结构：先学skeleton，再从skeleton推shape
@@ -1381,8 +1337,7 @@ learning generalized templates comprised of elements
 **[** _`differential rendering engine`, `VAE`, `multi-class learned object descriptor`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - 用的是voxelized occupancy表征

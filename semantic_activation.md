@@ -23,8 +23,7 @@
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - 评价
 
@@ -47,8 +46,7 @@
 **[** _`point set generation`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
 
@@ -62,8 +60,7 @@
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - from unlabeled category-specific images to 3D shape + camera pose
@@ -81,8 +78,7 @@
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - ![image-20201207194307508](media/image-20201207194307508.png)
@@ -111,8 +107,7 @@ GANS:
 **[** _`multi-modal features`, ` semi-supervision`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   
@@ -151,8 +146,7 @@ GANS:
 **[** _`SDF-label`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - 已有2D检测框+lidar 数据，为lidar数据做标注（9D cuboid）<br>![image-20201215122457755](media/image-20201215122457755.png)
@@ -174,8 +168,7 @@ GANS:
 **[** _`cage-based deformation`, `pointnet encoder`, `deformation`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - ![image-20201224095705974](media/image-20201224095705974.png)

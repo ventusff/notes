@@ -10,8 +10,7 @@
 **[** _`motion cue`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 | ![img](media/a946e1b7-fc9f-441a-b5cd-bafb3563a50a.png) |
 | ------------------------------------------------------ |
@@ -23,6 +22,7 @@
 - **Motivation**
   - > we explore how physics, especially object interactions, facilitates learning to disentangle and segment instances from raw videos, and to infer the 3D geometry and position of each object, all without supervision
     > 探索物理学：<u>尤其是物体之间的交互，促进学习出物体之间的解耦，从raw videos中</u>；
+    
     - [ ] Q: what is physics？
   - > our Physical Object Discovery Network (POD-Net) uses both multi-scale pixel cues and physical motion cues to accurately segment observable and partially occluded objects of varying sizes, and infer properties of those objects.
     > 同时使用multi-scale的pixel cue和physical motion cue来精确地分割出可见的、部分被遮挡的尺寸多样的物体，并且infer这些物体的属性
@@ -37,8 +37,7 @@
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
 
@@ -52,8 +51,7 @@
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
 
@@ -67,8 +65,7 @@
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
 
@@ -82,8 +79,7 @@
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
 
@@ -97,8 +93,7 @@
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
 
@@ -112,8 +107,7 @@
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
 
@@ -127,8 +121,7 @@
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
 

@@ -18,8 +18,7 @@
 **[** _`NeRF`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - ![image-20201216210148432](media/image-20201216210148432.png)
@@ -42,8 +41,7 @@
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
 
@@ -61,8 +59,7 @@
 **[** _`voronoi space decomposition`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - 对于NeRF这种研究，在提高网络深度、大小时，有diminishing returns（减小的回报）
@@ -83,8 +80,7 @@
 **[** _`NeRF`, `octree voxels fields`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - 现有的方法，由于网络容量/寻找和scene geometry的精确intersection有困难，目前的很多方法都是blurry results
@@ -107,8 +103,7 @@
 **[** _`AutoInt`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - 初版NeRF需要离散采样数值积分，计算非常费时：millions of rays，每个ray上hundreds of forward passes，用蒙特卡洛采样来近似积分
@@ -147,8 +142,7 @@
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - 面对unbounded scenes时，用一种球内 / 球外$`\frac {1}{r}`$的参数化来更好的处理foreground / background
@@ -165,8 +159,7 @@
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - _**Motivation**_
   - ![img](media/58379603.png)
@@ -189,8 +182,7 @@
 **[** _`SIREN-style `_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - StyleGAN类似的noise输入方式 + SIREN的周期性激活函数
@@ -210,8 +202,7 @@
 **[** _`deformable NeRF`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - 为NeRF采集的图片中的物体可以变形
@@ -234,8 +225,7 @@
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
 
@@ -249,8 +239,7 @@
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
 
@@ -264,8 +253,7 @@
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
 
@@ -279,8 +267,7 @@
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
 
@@ -301,8 +288,7 @@
 **[** _`object-centric neural scattering functions`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **review**
   - 相比于组成式，其实更关注多物体之间的Lighting
@@ -333,8 +319,7 @@
 **[** _`dynamic scenes`, `motion-clue`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - 主要是为了model dynamic scenes；graph是显式的graph
@@ -354,8 +339,7 @@
 **[** _`encoder-decoder`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - NeRF + encoder-decoder结构
@@ -389,8 +373,7 @@
 **[** _`scene prior/category`, `CNN encoder`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **评价**
   - 和GRF思路类似；每个点除了空间坐标以外，还额外condition一个feature，这个feature来自于把这个点重投影到input view之后索引出的input view feature space下的feature
@@ -429,8 +412,7 @@
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
 
@@ -444,8 +426,7 @@
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
 
@@ -459,8 +440,7 @@
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
 
@@ -474,8 +454,7 @@
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
 
@@ -491,8 +470,7 @@
 **[** _`pose estimation`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - ![iNerf](media/iNerf.gif)
@@ -513,8 +491,7 @@
 **[** _`fourier features`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - 傅里叶特征可以改善coordinate-based MLP的低维高频回归任务

@@ -18,8 +18,7 @@
 **[** _`complete representation`, `GAN`, `encoder-decoder`_  **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - 第一个调查GAN模型的"complete representations"
@@ -58,8 +57,7 @@
 **[** _`BiGAN`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 too old
 
 - **Motivation**
@@ -80,8 +78,7 @@ too old
 **[** _`multi view geometry constraint`, `image based shape generation`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - **task**: image based shape generation
@@ -97,8 +94,7 @@ too old
 **[** _`multi view video relighting`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - multi-view video relighting
@@ -116,8 +112,7 @@ too old
 **[** _`  `_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
 
@@ -131,8 +126,7 @@ too old
 **[** _`multi view geometry constraint`, `natural dataset`, `3D representation`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - **natural datasets**下，通过RGBD图像生成，进行**无监督**的**3D表征**学习
@@ -150,8 +144,7 @@ too old
 **[** _`HoloGAN->baseline`,`RGBD-GAN based`, `multi object multi view`,  `Controllable Image Synthesis`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - 首先 从一个高斯采样的latent code 映射到一系列3D primitives（一些原初3D物体表征）<br> 再渲染物体 再渲染背景<br>![img](media/59007435.png)
@@ -200,8 +193,7 @@ too old
 **[** _`Inverse Graphics`, `GAN`, `3D shape generation`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
   - 从非结构化的2D数据生成voxels类3D shape
@@ -219,8 +211,7 @@ too old
 **[** _`3DGAN`, `3D shape generation`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
 - **dataset**

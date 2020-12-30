@@ -7,8 +7,7 @@
 **[** _`abcd`_ **]**  
 
 <details>
-  <summary>Click to expand
-</summary>
+  <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
 - **overview**
