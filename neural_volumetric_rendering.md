@@ -1,5 +1,6 @@
 ---
-note_type: paper
+note_type: paper_reading
+title: math and DL for implicit representations + neural volume rendering
 ---
 
 * TOC

@@ -1,5 +1,6 @@
 ---
-note_type: paper
+note_type: paper_reading
+title: scene layout
 ---
 
 * TOC

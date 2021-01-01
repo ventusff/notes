@@ -1,7 +1,3 @@
----
-note_type: paper
----
-
 
 ---
 

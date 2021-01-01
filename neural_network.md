@@ -1,5 +1,6 @@
 ---
 note_type: basic
+title: neural network basics
 ---
 
 * TOC
