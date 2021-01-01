@@ -1,6 +1,7 @@
 ---
 note_type: paper_reading
-title: canonical spaces
+title: works in canonical spaces
+not_published: true
 ---
 
 # NOCS系列
