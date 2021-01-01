@@ -1,3 +1,6 @@
+If you are visiting this repo from Github, I am sorry that since <u>Github does not support Markdown Math rendering</u>, the notes are not corretcly displayed.  
+Please visit my **[personal website](https://ventusff.github.io/notes)** that also include this note repo for a better view.
+
 | current notes                                                |
 | ------------------------------------------------------------ |
 | [math and DL for **shapes**  (spatial surfaces)](neural_surface.md) |
