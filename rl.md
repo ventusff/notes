@@ -6,7 +6,7 @@
 **[**  `Greg Wayne`, `Chia-Chun Hung`, `David Amos`, ...  **]**  
 **[** _`abcd`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**

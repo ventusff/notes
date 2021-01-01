@@ -25,7 +25,7 @@
 
 ##  surface: implicit form & parametric form  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - 一个球面形状的隐式形式和参数化形式：`implicit form` & `parametric form`![image-20201207201258315](media/image-20201207201258315.png)
@@ -38,7 +38,7 @@
 
 ## 形状(geometry) 与 拓扑(topology)
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - 如果用mesh的数据结构来理解拓扑：
@@ -50,7 +50,7 @@
 </details>
 
 ## `manifold`流形，`chart`卡(坐标卡)，`atlas`图册
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - `homeomorphism`同胚
@@ -121,7 +121,7 @@
 
 ### losses
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - chamfer loss / `chamfer distance` (CD)
@@ -137,7 +137,7 @@
 
 ## implicit form / implicit field 与 parametric form 之间的转换
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
  - `affine space `仿射空间
@@ -206,7 +206,7 @@
 **[**  `Angjoo Kanazawa`, `Shubham Tulsiani`, `Alexei A. Efros`, `Jitendra Malik`  **]**  
 **[** _`category-specific canonical shape template`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -241,7 +241,7 @@
 
 learning generalized templates comprised of elements
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -268,7 +268,7 @@ learning generalized templates comprised of elements
 **[**  `Junyi Pan`, `Xiaoguang Han`, `Weikai Chen`, `Jiapeng Tang`, `Kui Jia`  **]**  
 **[** _`topology modification`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -294,7 +294,7 @@ learning generalized templates comprised of elements
 **[**  `Thibault Groueix`  **]**  
 **[** _`continous 2D patches`, `learning 2-manifold parameterization`, `2-manifold generation`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - ![image-20201208004500075](media/image-20201208004500075.png)
@@ -337,7 +337,7 @@ learning generalized templates comprised of elements
 **[**  `Francis Williams`, `Teseo Schneider`, `Claudio Silva`, `Denis Zorin`, `Joan Bruna`, `Daniele Panozzo`  **]**  
 **[** _`chart representation`, `auto-decoder`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -356,7 +356,7 @@ learning generalized templates comprised of elements
 **[**  `Jiahui Lei`, `Srinath Sridhar`, `Niloy Mitra`, `Leonidas J. Guibas`  **]**  
 **[** _`parametric 3D shape/parameterization`, `3D reconstruction`, `multi-view`, `single-view`, `surface reconstruction in NOCS`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Result**
@@ -442,7 +442,7 @@ learning generalized templates comprised of elements
 **[**  `Abhishek Badki`, `Orazio Gallo`, `Jan Kautz`, `Pradeep Sen`  **]**  
 **[** _`local shape prior`, `geodesic parameterization`, `VAE`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -486,7 +486,7 @@ learning generalized templates comprised of elements
 **[**  `Jan Bednarik`, `Shaifali Parashar`, `Erhan Gundogdu`, `Mathieu Salzmann`, `Pascal Fua`  **]**  
 **[** _`patch`, `control over patches`, `overlap`, `collapse`, `differential surface properties`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -517,7 +517,7 @@ learning generalized templates comprised of elements
 **[**  `Zhantao Deng`, `Jan Bednařík`, `Mathieu Salzmann`, `Pascal Fua`  **]**  
 **[** _`patch stitching`, `atlas`, `learning`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -562,7 +562,7 @@ learning generalized templates comprised of elements
 **[**  `Zhiqin Chen`, `Hao Zhang`  **]**  
 **[** _`implicit shape representation`, `inside-outside indicator`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -580,7 +580,7 @@ learning generalized templates comprised of elements
 **[**  `Lars Mescheder`， `Andreas Geiger`  **]**  
 **[** _`continuous function occupancy`, `multi-resolution isosurface extraction`, `marching cubes`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -597,7 +597,7 @@ learning generalized templates comprised of elements
 **[**  `Songyou Peng`, `Michael Niemeyer`, `Lars Mescheder`, `Marc Pollefeys`, `Andreas Geiger`  **]**  
 **[** _`Occupancy Networks`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -612,7 +612,7 @@ learning generalized templates comprised of elements
 **[**  `Stefan Lionar`, `Daniil Emtsev`, `Dusan Svilarkovic`, `Songyou Peng`  **]**  
 **[** _`3D reconstruction`, `occupancy networks`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -628,7 +628,7 @@ learning generalized templates comprised of elements
 **[**  `Jeong Joon Park`, `Peter Florence`, `Julian Straub`, `Richard Newcombe`, `Steven Lovegrove`  **]**  
 **[** _`SDF`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -649,7 +649,7 @@ learning generalized templates comprised of elements
 **[**  `Weiyue Wang`, `Qiangeng Xu`, `Duygu Ceylan`, `Radomir Mech`, `Ulrich Neumann`  **]**  
 **[** _`SDF`, `single-view`, `encoder`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **review**
@@ -668,7 +668,7 @@ learning generalized templates comprised of elements
 **[**  `Matan Atzmon`, `Yaron Lipman`  **]**  
 **[** _`sign agnostic`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -682,7 +682,7 @@ learning generalized templates comprised of elements
 **[**  `Zhiqin Chen`, `Andrea Tagliasacchi`, `Hao Zhang`  **]**  
 **[** _`low-poly`, `convex composition`, `category-shape correspondence`,  `part correpondence`, `inside-outside indicator`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **review**
@@ -715,7 +715,7 @@ learning generalized templates comprised of elements
 **[**  `Boyang Deng`, `Kyle Genova`, `Soroosh Yazdani`, `Sofien Bouaziz`, `Geoffrey Hinton`, `Andrea Tagliasacchi`  **]**  
 **[** _`convex composition`, `inside-outside indicator`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **review**
@@ -734,7 +734,7 @@ learning generalized templates comprised of elements
 **[**  `Baorui Ma`, `Zhizhong Han`, `Yu-Shen Liu`, `Matthias Zwicker`  **]**  
 **[** _`reconstructing surfaces from 3D pointcloud`, `surface reconstruction`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -753,7 +753,7 @@ learning generalized templates comprised of elements
 **[**  `Rahul Venkatesh`, `Sarthak Sharma`, `Aurobrata Ghosh`, `Laszlo Jeni`, `Maneesh Singh`  **]**  
 **[** _`unsigned distance field`, `normal vector field`, `open topogoly surfaces`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -777,7 +777,7 @@ learning generalized templates comprised of elements
 **[**  `Yu Deng`, `Jiaolong Yang`, `Xin Tong`  **]**  
 **[** _`3D deformation field`, `template field`, `category shape correspondence`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -799,7 +799,7 @@ learning generalized templates comprised of elements
 **[**  `Zerong Zheng`, `Tao Yu`, `Qionghai Dai`, `Yebin Liu`  **]**  
 **[** _`spatial warping LSTM`, `category shape correpondence`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **review**
@@ -861,7 +861,7 @@ learning generalized templates comprised of elements
 **[**  `Shichen Liu`, `Shunsuke Saito`, `Weikai Chen`, `Hao Li`  **]**  
 **[** _`ray casting`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -877,7 +877,7 @@ learning generalized templates comprised of elements
 **[**  `Amos Gropp`, `Lior Yariv`, `Niv Haim`, `Matan Atzmon`, `Yaron Lipman`  **]**  
 **[** _`SDF`, `Implicit geometrical regularization`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -903,7 +903,7 @@ learning generalized templates comprised of elements
 
 [differentiable iso-surface extraction]
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **review**
@@ -921,7 +921,7 @@ learning generalized templates comprised of elements
 **[**  `Edgar Tretschk`, `Ayush Tewari`, `Vladislav Golyanik`, `Michael Zollhöfer`, `Carsten Stoll`, `Christian Theobalt`  **]**  
 **[** _`implicit functions`, `patch-based surface representation`, `SDF`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 
@@ -957,7 +957,7 @@ learning generalized templates comprised of elements
 **[**  `Thomas Davies`, `Derek Nowrouzezahrai`, `Alec Jacobson`  **]**  
 **[** _`compact representation`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -977,7 +977,7 @@ learning generalized templates comprised of elements
 **[**  `Vincent Sitzmann`, `Eric R. Chan`, `Richard Tucker`, `Noah Snavely`, `Gordon Wetzstein`  **]**  
 **[** _`meta-learning`, `SDF`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 
@@ -995,7 +995,7 @@ learning generalized templates comprised of elements
 **[**  `Matthew Tancik`, `Ben Mildenhall`, `Terrance Wang`, `Divi Schmidt`, `Pratul P. Srinivasan`, `Jonathan T. Barron`, `Ren Ng`  **]**  
 **[** _`meta-learning`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -1012,7 +1012,7 @@ learning generalized templates comprised of elements
 **[**  `Mingyue Yang`, `Yuxin Wen`, `Weikai Chen`, `Yongwei Chen`, `Kui Jia贾奎`  **]**  
 **[** _`better shape priors`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -1028,7 +1028,7 @@ learning generalized templates comprised of elements
 **[**  `Wang Yifan`, `Shihao Wu`, `Cengiz Oztireli`, `Olga Sorkine-Hornung`  **]**  
 **[** _`iso-points`, `hybrid representation`, `SDF`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -1073,7 +1073,7 @@ learning generalized templates comprised of elements
 **[** `Michael Niemeyer`, `Andreas Geiger` **]**  
 **[**  _`differentiable volumetric rendering`, `ray casting`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **review**
@@ -1088,7 +1088,7 @@ learning generalized templates comprised of elements
 **[**  `Shaohui Liu`, `Yinda Zhang`, `Songyou Peng`, `Boxin Shi`, `Marc Pollefeys`, `Zhaopeng Cui`  **]**  
 **[** _`SDF`, `differentiable renderer`, `sphere tracing`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - 需要silhouette真值
@@ -1142,7 +1142,7 @@ learning generalized templates comprised of elements
 **[**  `Chen-Hsuan Lin`, `Chaoyang Wang`, `Simon Lucey`  **]**  
 **[** _`single-view`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - 训练时需要single view silhouette
@@ -1165,7 +1165,7 @@ learning generalized templates comprised of elements
 **[**  `Yue Jiang`, `Dantong Ji`, `Zhizhong Han`, `Matthias Zwicker`  **]**  
 **[** _`SDF`, `differentiable rendering`, `multi-view`, `single-view`, `multi-resolution strategy`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - 需要分割好的多视角图片
@@ -1199,7 +1199,7 @@ learning generalized templates comprised of elements
 **[**  `Lior Yariv`, `Yoni Kasten`, `Dror Moran`, `Meirav Galun`, `Matan Atzmon`, `Ronen Basri`, `Yaron Lipman`  **]**  
 **[** _`multi-view`, `unposed images`, `single masked object image`, `SDF`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - 训练需要multi view分割好的unposed images，不一定需要相机pose
@@ -1255,7 +1255,7 @@ learning generalized templates comprised of elements
 **[**  `xxxx`  **]**  
 **[** _`recurrent encoder`, `SDF`, `differentiable renderer`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -1284,7 +1284,7 @@ learning generalized templates comprised of elements
 **[**  `Jiabao Lei`, `Kui Jia贾奎`  **]**  
 **[** _`learning surface mesh via implicit field functions`, `MLP analytic solution`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -1316,7 +1316,7 @@ learning generalized templates comprised of elements
 **[**  `Jiapeng Tang`, `Xiaoguang Han`, `Mingkui Tan`, `Xin Tong`, `Kui Jia`  **]**  
 **[** _`skeleton`, `topology preserving`, `GCN`, `implicit surface`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -1337,7 +1337,7 @@ learning generalized templates comprised of elements
 **[**  `Edgar Sucar`, `Kentaro Wada`, `Andrew Davison`  **]**  
 **[** _`differential rendering engine`, `VAE`, `multi-class learned object descriptor`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**

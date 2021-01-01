@@ -27,7 +27,7 @@
 
 [思考：虽然我们的生成模型用不上这里的一些计算设定方式，但是在图定位的时候这个会很有用]
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -106,7 +106,7 @@
 
 [ 3D pose estimation，其实只考虑旋转角，没有考虑位移 ]
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - 2017年的认知：大多数这类任务是用的pose分类问题，把pose space分成离散的bins，用CNN分类器
@@ -167,7 +167,7 @@ Closed Form"`**
 **[**  `xxxx`  **]**  
 **[** _`abcd`, `efgh`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -198,7 +198,7 @@ Closed Form"`**
 **[**  `Long Zhao`,`Dimitris N. Metaxas`  **]**  
 **[** _`abcd`, `efgh`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -224,7 +224,7 @@ Closed Form"`**
 
 []
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 ![image-20201102121246748](media/image-20201102121246748.png)

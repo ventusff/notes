@@ -10,7 +10,7 @@
 **[**  `Yilun Du`, `Kevin Smith`, `Tomer Ulman`, `Joshua Tenenbaum`, `Jiajun Wu`  **]**  
 **[** _`motion cue`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 | ![img](media/a946e1b7-fc9f-441a-b5cd-bafb3563a50a.png) |
@@ -37,7 +37,7 @@
 **[**  `xxxx`  **]**  
 **[** _`abcd`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -51,7 +51,7 @@
 **[**  `xxxx`  **]**  
 **[** _`abcd`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -65,7 +65,7 @@
 **[**  `xxxx`  **]**  
 **[** _`abcd`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -79,7 +79,7 @@
 **[**  `xxxx`  **]**  
 **[** _`abcd`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -93,7 +93,7 @@
 **[**  `xxxx`  **]**  
 **[** _`abcd`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -107,7 +107,7 @@
 **[**  `xxxx`  **]**  
 **[** _`abcd`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -121,7 +121,7 @@
 **[**  `xxxx`  **]**  
 **[** _`abcd`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**

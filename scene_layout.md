@@ -10,7 +10,7 @@
 **[**  `Andrew Luo`, `Zhoutong Zhang`, `Jiajun Wu`, `Joshua B. Tenenbaum`  **]**  
 **[** _`conditional scene synthesis`, `2.5D`,`variational generative model`， `graph-based variational auto-encoders`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 | ![image-20201028170115727](media/image-20201028170115727.png) |
@@ -161,7 +161,7 @@ graph LR
 **[**  `Roei Herzig`, `Amir Bar`, `Huijuan Xu`, `Gal Chechik`, `Trevor Darrell`, `Amir Globerson`  **]**  
 **[** _`semantic equivalence`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -193,7 +193,7 @@ graph LR
 **[**  `Adam R. Kosiorek`, `Sara Sabour`, `Yee Whye Teh`, `Geoffrey E. Hinton`  **]**  
 **[** _`capsule networks`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -208,7 +208,7 @@ graph LR
 **[**  `Weiwei Sun`, `Andrea Tagliasacchi`, `Boyang Deng`, `Sara Sabour`, `Soroosh Yazdani`, `Geoffrey Hinton`, `Kwang Moo Yi`  **]**  
 **[** _`capsule network`, `3D pointclouds`, `Canonical`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -239,7 +239,7 @@ graph LR
 **[**  `Sara Sabour`, `Andrea Tagliasacchi`, `Soroosh Yazdani`, `Geoffrey E. Hinton`, `David J. Fleet`  **]**  
 **[** _`capsule networks`, `motion cue`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**

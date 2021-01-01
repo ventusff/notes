@@ -13,7 +13,7 @@
 
 main preliminary: GQN
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -44,7 +44,7 @@ main preliminary: GQN
 **[**  `Hiroharu Kato and Tatsuya Harada`  **]** < RGBD-GAN 同组> 
 **[** _`natural images`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -70,7 +70,7 @@ main preliminary: GQN
 **[**  `xxxx`  **]**  
 **[** _`abcd`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -84,7 +84,7 @@ main preliminary: GQN
 **[**  `xxxx`  **]**  
 **[** _`GENESIS-based`, `efgh`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -98,7 +98,7 @@ main preliminary: GQN
 **[**  `xxxx`  **]**  
 **[** _`baseline->GENESIS`, `efgh`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -115,7 +115,7 @@ main preliminary: GQN
 
 main preliminary: SRN
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 | ![img](media/40c89125-3bd2-4651-9ec0-2cef3245ac11.png) |
@@ -138,7 +138,7 @@ main preliminary: SRN
 **[**  `xxxx`  **]**  
 **[** _`abcd`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -153,7 +153,7 @@ main preliminary: SRN
 **[**  `Youngjoong Kwon`, `Stefano Petrangeli`, `Dahun Kim`, `Haoliang Wang`, `Eunbyung Park`, `Viswanathan Swaminathan`, `Henry Fuchs` **]**  
 **[** _`Novel View Video Synthesis`, `Synthetic Human Dataset`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -170,7 +170,7 @@ main preliminary: SRN
 
 **[** `review`: 从视频中分解出物体（及运动）与背景的3D表征，传统机器学习功底深厚，loss设计值得研究；利用了视频中的一些hint (object tracking)，没有用到多视几何 **]**
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -206,7 +206,7 @@ main preliminary: SRN
 **[**  `xxxx`  **]**  
 **[** _`abcd`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -220,7 +220,7 @@ main preliminary: SRN
 **[**  `xxxx`  **]**  
 **[** _`abcd`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -234,7 +234,7 @@ main preliminary: SRN
 **[**  `Martin Runz`, `Kejie Li`, `Meng Tang`, `Lingni Ma`, `Chen Kong`, `Tanner Schmidt`, `Ian Reid`, `Lourdes Agapito`, `Julian Straub`, `Steven Lovegrove`, `Richard Newcombed`**]**  
 **[** _`natural dataset`, `mask-RCNN`, `pre-learnt shape priors`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**

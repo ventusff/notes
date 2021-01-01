@@ -23,7 +23,7 @@
 **[**  `xxxx`  **]**  
 **[** _`abcd`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - 评价
@@ -46,7 +46,7 @@
 **[**  `Haoqiang Fan`, `Hao Su`, `Leonidas Guibas`  **]**  
 **[** _`point set generation`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -60,7 +60,7 @@
 **[**  `Eldar Insafutdinov`, `Alexey Dosovitskiy`  **]**  
 **[** _`abcd`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -78,7 +78,7 @@
 **[**  `Dong Wook Shu`, `Sung Woo Park`, `Junseok Kwon`  **]**  
 **[** _`abcd`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -107,7 +107,7 @@ GANS:
 **[**  `Amit Kohli`, `Vincent Sitzmann`, `Gordon Wetzstein`  **]**  
 **[** _`multi-modal features`, `semi-supervision`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -146,7 +146,7 @@ GANS:
 **[**  `Sergey Zakharov`, `Wadim Kehl`, `Arjun Bhargava`, `Adrien Gaidon`  **]**  
 **[** _`SDF-label`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -168,7 +168,7 @@ GANS:
 **[**  `Wang Yifan`, `Noam Aigerman`, `Vladimir G. Kim`, `Siddhartha Chaudhuri`, `Olga Sorkine-Hornung`  **]**  
 **[** _`cage-based deformation`, `pointnet encoder`, `deformation`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**

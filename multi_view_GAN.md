@@ -18,7 +18,7 @@
 **[**  `Yu Tian`,  `Dimitris N. Metaxas` **]**  
 **[** _`complete representation`, `GAN`, `encoder-decoder`_  **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -57,7 +57,7 @@
 **[**  `Mickaël Chen`, `Ludovic Denoyer`  **]**  
 **[** _`BiGAN`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 too old
 
@@ -78,7 +78,7 @@ too old
 **[**  `Yi Wei`, `Shaohui Liu`, `Jiwen Lu`  **]**  
 **[** _`multi view geometry constraint`, `image based shape generation`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -94,7 +94,7 @@ too old
 **[**  `Julien Philip`, `MICHAËL GHARBI`,`TINGHUI ZHOU`, `ALEXEI A. EFROS`, `GEORGE DRETTAKIS` **]**  
 **[** _`multi view video relighting`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -112,7 +112,7 @@ too old
 **[**  `Huan Fu`, `Mingming Gong`, `Chaohui Wang`, `Kayhan Batmanghelich`, `Kun Zhang`, `Dacheng Tao`  **]**  
 **[** _`abcd`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -126,7 +126,7 @@ too old
 **[**  `Atsuhiro Noguchi`, `Tatsuya Harada`  **]**  
 **[** _`multi view geometry constraint`, `natural dataset`, `3D representation`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -144,7 +144,7 @@ too old
 **[** [autonomous_vision lab](https://github.com/autonomousvision) **]**  
 **[** _`HoloGAN->baseline`,`RGBD-GAN based`, `multi object multi view`,  `Controllable Image Synthesis`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -193,7 +193,7 @@ too old
 **[**  `Sebastian Lunz`, `Yingzhen Li`, `Andrew Fitzgibbon`, `Nate Kushman`  **]**  
 **[** _`Inverse Graphics`, `GAN`, `3D shape generation`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -211,7 +211,7 @@ too old
 **[**  `Yu Nishimura`  **]**  
 **[** _`3DGAN`, `3D shape generation`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**

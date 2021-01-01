@@ -18,7 +18,7 @@
 **[**  `Ben Mildenhall`, `Pratul P. Srinivasan`, `Matthew Tancik`, `Jonathan T. Barron`, `Ravi Ramamoorthi`, `Ren Ng`  **]**  
 **[** _`NeRF`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -41,7 +41,7 @@
 **[**  `xxxx`  **]**  
 **[** _`abcd`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -59,7 +59,7 @@
 **[**  `Daniel Rebain`, `Wei Jiang`, `Soroosh Yazdani`, `Ke Li`, `Kwang Moo Yi`, `Andrea Tagliasacchi`  **]**  
 **[** _`voronoi space decomposition`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -80,7 +80,7 @@
 **[**  `Lingjie Liu`, `Jiatao Gu`, `Kyaw Zaw Lin`, `Tat-Seng Chua`, `Christian Theobalt`  **]**  
 **[** _`NeRF`, `octree voxels fields`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -103,7 +103,7 @@
 **[**  `David B. Lindell`, `Julien N. P. Martel`, `Gordon Wetzstein`  **]**  
 **[** _`AutoInt`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -142,7 +142,7 @@
 **[**  `Kai Zhang`, `Gernot Riegler`, `Noah Snavely`, `Vladlen Koltun`  **]**  
 **[** _`abcd`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -159,7 +159,7 @@
 **[**  `Katja Schwarz`, `Yiyi Liao`, `Michael Niemeyer`, `Andreas Geiger`  **]**  
 **[** _`abcd`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - _**Motivation**_
@@ -182,7 +182,7 @@
 **[**  `Eric R. Chan`, `Marco Monteiro`, `Petr Kellnhofer`, `Jiajun Wu`, `Gordon Wetzstein`  **]**  
 **[** _`SIREN-style`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -202,7 +202,7 @@
 **[**  `Keunhong Park`, `Utkarsh Sinha`, `Jonathan T. Barron`, `Sofien Bouaziz`, `Dan B Goldman`, `Steven M. Seitz`, `Ricardo Martin-Brualla`  **]**  
 **[** _`deformable NeRF`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -225,7 +225,7 @@
 **[**  `Albert Pumarola`, `Enric Corona`, `Gerard Pons-Moll`, `Francesc Moreno-Noguer`  **]**  
 **[** _`abcd`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -239,7 +239,7 @@
 **[**  `Zhengqi Li`, `Simon Niklaus`, `Noah Snavely`, `Oliver Wang`  **]**  
 **[** _`abcd`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -253,7 +253,7 @@
 **[**  `Wenqi Xian`, `Jia-Bin Huang`, `Johannes Kopf`, `Changil Kim`  **]**  
 **[** _`abcd`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -267,7 +267,7 @@
 **[**  `Yilun Du`, `Yinan Zhang`, `Hong-Xing Yu`, `Joshua B. Tenenbaum`, `Jiajun Wu`  **]**  
 **[** _`abcd`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -288,7 +288,7 @@
 **[**  `Michelle Guo`, `Alireza Fathi`, `Jiajun Wu`, `Thomas Funkhouser`  **]**  
 **[** _`object-centric neural scattering functions`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **review**
@@ -319,7 +319,7 @@
 **[**  `Julian Ost`, `Fahim Mannan`, `Nils Thuerey`, `Julian Knodt`, `Felix Heide`  **]**  
 **[** _`dynamic scenes`, `motion-clue`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -339,7 +339,7 @@
 **[**  `Alex Trevithick`, `Bo Yang`  **]**  
 **[** _`encoder-decoder`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -373,7 +373,7 @@
 **[**  `Alex Yu`, `Vickie Ye`, `Matthew Tancik`, `Angjoo Kanazawa` **]**  
 **[** _`scene prior/category`, `CNN encoder`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **评价**
@@ -412,7 +412,7 @@
 **[**  `Ricardo Martin-Brualla`, `Noha Radwan`, `Mehdi S. M. Sajjadi`, `Jonathan T. Barron`, `Alexey Dosovitskiy`, `Daniel Duckworth`  **]**  
 **[** _`abcd`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -426,7 +426,7 @@
 **[**  `Sai Bi`, `Zexiang Xu`, `Pratul Srinivasan`, `Ben Mildenhall`, `Kalyan Sunkavalli`, `Miloš Hašan`, `Yannick Hold-Geoffroy`, `David Kriegman`, `Ravi Ramamoorthi`  **]**  
 **[** _`abcd`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -440,7 +440,7 @@
 **[**  `Pratul P. Srinivasan`, `Boyang Deng`, `Xiuming Zhang`, `Matthew Tancik`, `Ben Mildenhall`, `Jonathan T. Barron`  **]**  
 **[** _`abcd`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -454,7 +454,7 @@
 **[**  `Mark Boss`, `Raphael Braun`, `Varun Jampani`, `Jonathan T. Barron`, `Ce Liu`, `Hendrik P.A. Lensch`  **]**  
 **[** _`abcd`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -470,7 +470,7 @@
 **[**  `Lin Yen-Chen`, `Pete Florence`, `Jonathan T. Barron`, `Alberto Rodriguez`, `Phillip Isola`, `Tsung-Yi Lin`  **]**  
 **[** _`pose estimation`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -491,7 +491,7 @@
 **[**  `Matthew Tancik`, `Pratul P. Srinivasan`, `Ben Mildenhall`, `Sara Fridovich-Keil`, `Nithin Raghavan`, `Utkarsh Singhal`, `Ravi Ramamoorthi`, `Jonathan T. Barron`, `Ren Ng`  **]**  
 **[** _`fourier features`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**

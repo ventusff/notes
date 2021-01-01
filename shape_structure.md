@@ -15,7 +15,7 @@
 **[**  `Nenglun Chen`, `Lingjie Liu`, `Zhiming Cui`, `Runnan Chen`, `Duygu Ceylan`, `Changhe Tu`, `Wenping Wang`  **]**  
 **[** _`abcd`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -33,7 +33,7 @@
 **[**  `Feng Liu`, `Xiaoming Liu`  **]**  
 **[** _`implicit function`, `correspondence score`, `category shape correspondence`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -53,7 +53,7 @@
 **[**  `Bharat Lal Bhatnagar`, `Cristian Sminchisescu`, `Christian Theobalt`, `Gerard Pons-Moll`  **]**  
 **[** _`parametric human body model SMPL`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -84,7 +84,7 @@
 **[**  `Zhiqin Chen`, `Kangxue Yin`, `Matthew Fisher`, `Siddhartha Chaudhuri`, `Hao Zhang`  **]**  
 **[** _`one-shot learning`, `k-neuron`, `inside-outside indicator`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - *<IM-Net> Learning Implicit Fields for Generative Shape Modeling (CVPR2019)* 的续作，inside / outside indicator作为shape表征
@@ -107,7 +107,7 @@
 **[**  `Yuki Kawana`, `Yusuke Mukuta`, `Tatsuya Harada`  **]**  
 **[** _`abcd`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -126,7 +126,7 @@
 **[**  `Jie Yang`, `Kaichun Mo`, `Yu-kun Lai`, `Leonidas Guibas`, `Lin Gao`  **]**  
 **[** _`3D shape generation`, `disentangled representation`, `structure`, `geometry`, `hierarchies`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
@@ -175,7 +175,7 @@
 **[**  `Songfang Han`, `Jiayuan Gu`, `Kaichun Mo`, `Li Yi`, `Siyu Hu`, `Xuejin Chen`, `Hao Su`  **]**  
 **[** _`object parts`, `single view`, `partnet dataset`_ **]**  
 
-<details>
+<details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Review**
