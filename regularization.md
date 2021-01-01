@@ -1,4 +1,5 @@
 ---
+note_type: basic
 ---
 
 * TOC
