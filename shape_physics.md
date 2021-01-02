@@ -1,6 +1,7 @@
 ---
 note_type: paper_reading
 title: DL for shape physics prior
+not_published: true
 ---
 
 * TOC
