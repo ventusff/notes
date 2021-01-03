@@ -787,7 +787,7 @@ learning generalized templates comprised of elements
 
 - **Motivation**
   - 把每个具体instance shape表达为一个template的shape的deformation
-  - 用deformation field建立起**<u>`shape correspondence`</u>**，这样就可以做texture transfer、label transfer等
+  - 用deformation field建立起 **`<u>shape correspondence</u>`**，这样就可以做texture transfer、label transfer等
   - ![image-20201222155438709](media/image-20201222155438709.png)
 - **overview**
   - 用一个超网络预测DeformNet $$ D $$的参数；<br>然后在空间中的每一处，从同一个template SDF，DeformNet $$ D $$产生位置修正$$ v $$与标量距离修正$$ \Delta s $$，总共4维输出<br>即最终的$$ p $$点处的SDF值为：$$ s=T(p+v)+\Delta s=T(p+D^v_{\omega}(p))+D^{\Delta s}_{\omega}(p) $$![image-20201222153322051](media/image-20201222153322051.png)
@@ -1175,7 +1175,7 @@ learning generalized templates comprised of elements
 
 - 需要分割好的多视角图片
 - **Motivation**
-  - **<u>`image-based shape optimization`</u>** using differentiable rendering of 3D shapes represented by SDF
+  - **`<u>image-based shape optimization</u>`** using differentiable rendering of 3D shapes represented by SDF
     - SDF作为形状表征的优势：可以表征具有任意拓扑的形状，并且可以保证watertight
 - **Overview**
   - learn SDF on a `3D grid`

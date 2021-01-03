@@ -209,7 +209,7 @@ title: DL for shape structures prior
   - 从root part开始，逐pair地添加other parts
   - 很多过去的工作都是估计在相机坐标系下的绝对位置，或者是一个(类别级别先验)canonical space下的pose
   - 然而，绝对位置对于shape scale敏感，对optical axis的平动也很敏感，对于简单的类别内预测的表现都很差
-  - <u>**Connectivity-based Part Tree**</u>：追求通过strong **pairwise** relationships来组装parts
+  - **<u>Connectivity-based Part Tree</u>**：追求通过strong **pairwise** relationships来组装parts
     - 主要用的是基于连接性的关系
     - 首先识别空间上接触的部件pair，然后预测他们之间的相对位置
     - 选择【接触关系】原因：

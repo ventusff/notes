@@ -53,7 +53,7 @@ title: scene layout
   - conditional (on scene graph) layout synthesizer
     - 产生的而是3D scene layout；<br>每个物体都有3D bbox + 竖直轴旋转
     - 把传统2D scene graph数据增强为3D scene graph，把每个物体关系编码到三维空间
-    - <u>**虽然是一个encoder-decoder结构，但是generate过程其实就用不到encoder了，decoder才是关键**</u>
+    - **<u>虽然是一个encoder-decoder结构，但是generate过程其实就用不到encoder了，decoder才是关键</u>**
   - 集成了一个differentiable renderer来只用scene的2D投影来refine 最终的layout
     - 给定一张semantics map和depth map，可微分渲染器来 **optimize over** the synthesized layout去 **拟合** 给定的输入，通过 **<u>analysis-by-synthesis</u>** fashion
     - 其实就是一个auto-decoder结构，通过整个可微分通路，把sample出的layout latent反向传播最优化更新（文中称之为"refinement"/"fine tune"/"generate a layout toward a target layout"）
@@ -61,7 +61,7 @@ title: scene layout
 
 | ![image-20201028170249809](media/image-20201028170249809.png) |
 | ------------------------------------------------------------ |
-| <u>**测试**</u>时，scene graph + 从一个learned distribution 采样latent code => generate scene layout <br><u>**训练**</u>时，input scene graph + GT layout 先通过encoder提取出其layout latent  (学出一个distribution)，然后用提取出的layout latent + input scene graph 生成predicted layout |
+| **<u>测试</u>** 时，scene graph + 从一个learned distribution 采样latent code => generate scene layout <br>**<u>训练</u>** 时，input scene graph + GT layout 先通过encoder提取出其layout latent  (学出一个distribution)，然后用提取出的layout latent + input scene graph 生成predicted layout |
 
 
 - **encoder**
@@ -225,9 +225,9 @@ graph LR
     - 把点云$$ \boldsymbol{P} \in \mathbb{R}^{P \times D} $$用一个encoder计算出K-fold attention map $$ \boldsymbol{A} \in \mathbb{R}^{P \times K} $$和逐点的feature $$ \boldsymbol{F} \in \mathbb{R}^{P \times C} $$ 
     - 然后计算*k*-th capsule的pose $$ \boldsymbol{\theta}_k \in \mathbb{R}^3 $$和对应的capsule descriptor $$ \boldsymbol{\beta}_k \in \mathbb{R}^C $$ <br> $$ \boldsymbol{\theta}_k = \frac {\sum_p A_{p,k}P_p} {\sum_p A_{p,k}} $$       $$ \boldsymbol{\beta}_k=\frac {\sum_p A_{p,k}F_p} {\sum_p A_{p,k}} $$ <br>其实就是attention map加权和后的点坐标和attention map加权和后的点feature
   - canonicalization
-    - 单纯地保证不变性和等变性并不足以学出一个object-centric的3D表征，因为缺乏一种(无监督)的机制来==<u>**bring information into a shared "object-centric" reference frame**</u>==
+    - 单纯地保证不变性和等变性并不足以学出一个object-centric的3D表征，因为缺乏一种(无监督)的机制来==**<u>bring information into a shared "object-centric" reference frame</u>**==
     - 并且，一个"合适"的canonical frame其实就是一个convention，所以我们需要一个机制让网络做出一个**<u>选择</u>**——并且必须在所有物体中都是一致的
-      - 比如，一个沿着+z轴放置的飞机和一个沿着+y轴放置的飞机是<u>**一样好**</u>的
+      - 比如，一个沿着+z轴放置的飞机和一个沿着+y轴放置的飞机是**<u>一样好</u>**的
     - 为了实现这一点：link the capsule descriptors to the capsule poses in canonical space；i.e. ask that objects with similar appearance to be located in similar Euclidean neighborhoods in canonical space
       - 具体做法是用一个全连接层，从descriptor直接回归出每个capsule的pose
       - $$ \overline{\theta}=\mathcal{K}(\beta) $$<br> $$ \overline{\theta} \in \mathbb{R}^{K\times 3} $$是canonical poses，<br>$$ \mathcal{K} $$是全连接神经网络，<br>$$ \beta \in \mathbb{R}^{K \times C} $$ 是capsule的descriptor

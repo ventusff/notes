@@ -1,6 +1,6 @@
 ---
 note_type: paper_reading
-title: works in canonical spaces
+title: works in <strong>canonical spaces</strong>
 not_published: true
 ---
 
