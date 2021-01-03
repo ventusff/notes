@@ -46,7 +46,7 @@ title: scene layout
     - scene graph `y`由一组triplets构成，$$ (o_i, p, o_j) $$
     - $$ o_i $$代表第i-th物体的type(索引embedding) + attributes(索引embedding), $$ p $$代表空间关系(索引embedding)
   - 本文中layout的数据结构/物理含义：
-    - each element $$ y_i $$ in layout $$ y $$ 定义是一个 7-tuple，代表物体的bbox和竖直轴旋转：$$$ y_i=(min_{X_i}, min_{Y_i}, min_{Z_i}, max_{X_i}, max_{Y_i}, max_{Z_i}, \omega_i ) $$$
+    - each element $$ y_i $$ in layout $$ y $$ 定义是一个 7-tuple，代表物体的bbox和竖直轴旋转：$$ y_i=(min_{X_i}, min_{Y_i}, min_{Z_i}, max_{X_i}, max_{Y_i}, max_{Z_i}, \omega_i ) $$
   - 本文中latent space的定义：
     - [box_emdding, angle_ambedding] (因为是VAE，所以还分了mean, var)
 - **主要组件**
