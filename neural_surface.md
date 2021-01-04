@@ -790,7 +790,7 @@ learning generalized templates comprised of elements
   - 用deformation field建立起 **`<u>shape correspondence</u>`**，这样就可以做texture transfer、label transfer等
   - ![image-20201222155438709](media/image-20201222155438709.png)
 - **overview**
-  - 用一个超网络从code预测DeformNet $$ D $$的参数；<br>然后在空间中的每一处，从同一个template SDF，DeformNet $$ D $$产生位置修正$$ v $$与标量距离修正$$ \Delta s $$，总共4维输出<br>即最终的$$ p $$点处的SDF值为：$$ s=T(p+v)+\Delta s=T(p+D^v_{\omega}(p))+D^{\Delta s}_{\omega}(p) $$![image-20201222153322051](media/image-20201222153322051.png)
+  - 用一个超网络从code预测DeformNet $$ D $$的参数；<br>然后在空间中的每一处，从同一个template SDF，DeformNet $$ D $$产生位置修正$$ v $$与标量距离修正$$ \Delta s $$，总共4维输出<br>即最终的$$ p $$点处的SDF值为：$$ s=T(p+v)+\Delta s=T(p+D^v_{\omega}(p))+D^{\Delta s}_{\omega}(p) $$<br>注意变形向量$$v$$其实反映的是从shape instance场 到 template 场所需的变形向量<br>![image-20201222153322051](media/image-20201222153322051.png)
 - **losses**
   - SDF loss
     - 被训练的量：变形场超网络$$\Psi$$，SDF输出场$$\Phi$$，模板场$$T$$，learned latent codes $$\{\alpha_j\}$$；$$\Psi_i(p)$$代表predicted SDF值$$\Phi_{\Psi(\alpha_i)}(p)$$，$$\Omega$$代表3D空间，$$\mathcal{S}_i$$ 代表形状表面
@@ -813,14 +813,30 @@ learning generalized templates comprised of elements
       - $$L_{normal}=\underset{i}{\sum} \underset{p\in\mathcal{S}_i}{\sum} \left( 1 - \langle \nabla T(p+D_{\omega_i}^v (p)), \overline{n} \rangle \right)$$
       - 即让模板场中的 对应位置p的点 和 真值法向量保持一致
       - ~~如果没有标量修正场，模板场对应位置p的点处的法向量就是 最终输出场的法向量，和$$L_{sdf}$$的第2项一样~~
-        - [ ] 变形后的形状shape instance场中的点坐标是$$p$$，模板场中的 **相关** 点坐标是 $$p+D_{\omega_i}^v (p)$$
-        - [ ] **相关** 点处的法向量 其实是$$\nabla_{p+D_{\omega_i}^v (p)} T(p+D_{\omega_i}^v (p))$$，而非$$\nabla_p T(p+D_{\omega_i}^v (p))$$
-        - [ ] $$L_{sdf}$$第2项是$$\nabla_p\Phi_i(p)=\nabla_p \left( \quad T(p+D_{\omega_i}^v (p)) \; (+D_{\omega_i}^{\Delta s}(p)) \quad \right)$$
-        - [ ] 即其主要是强调 模板场 和 变形后的形状实例场 中 相关点处的 两个场的法向量保持一致性
-        - [ ] 其实应该是$$\nabla_{p+D_{\omega_i}^v (p)} T(p+D_{\omega_i}^v (p))$$和$$\nabla_p\Phi_i(p)$$的夹角，而不是和$$\overline{n}$$的夹角；<br>只不过$$\nabla_p\Phi_i(p)$$就是$$\overline{n}$$的近似，所以用$$\overline{n}$$也可
+        - [ ] Q: 以下为笔者猜想。有待代码检查验证。
+        - 变形后的形状shape instance场中的点坐标是$$p$$，模板场中的 **相关** 点坐标是 $$p+D_{\omega_i}^v (p)$$
+        - **相关** 点处的法向量 其实是$$\nabla_{p+D_{\omega_i}^v (p)} T(p+D_{\omega_i}^v (p))$$，而非$$\nabla_p T(p+D_{\omega_i}^v (p))$$
+        - $$L_{sdf}$$第2项是$$\nabla_p\Phi_i(p)=\nabla_p \left( \quad T(p+D_{\omega_i}^v (p)) \; (+D_{\omega_i}^{\Delta s}(p)) \quad \right)$$
+        - 即其主要是强调 模板场 和 变形后的形状实例场 中 相关点处的 两个场的法向量保持一致性
+        - 其实应该是$$\nabla_{p+D_{\omega_i}^v (p)} T(p+D_{\omega_i}^v (p))$$和$$\nabla_p\Phi_i(p)$$的夹角，而不是和$$\overline{n}$$的夹角；<br>只不过$$\nabla_p\Phi_i(p)$$就是$$\overline{n}$$的近似，所以用$$\overline{n}$$也可
+  - deformation smoothness prior 变形平滑先验
+    - 鼓励平滑的变形、防止巨大的形状扭曲，引入一个对变形场的平滑loss
+    - $$L_{smooth}=\underset{i}{\sum} \underset{p\in\Omega}{\sum} \underset{d\in{X,Y,Z}}{\sum} \lVert \nabla D_{\omega_i}^v \vert_d (p) \rVert_2$$ 惩罚X,Y,Z方向的空间梯度
+  - minimal correction prior
+    - 鼓励形状表征主要是通过 形变场，而不是通过标量修正
+    - $$L_c=\underset{i}{\sum} \underset{p\in\Omega}{\sum} \lvert D_{\omega_i}^{\Delta s}(p) \rvert$$ 惩罚标量修正L1大小
+  - $$\underset{\{\alpha_j\}, \Psi, T }{\arg\min} L_{sdf} + w_1 L_{normal}+w_2 L_{smooth}+w_3 L_c + w_4 L_{reg}$$，<br>$$L_{sdf}$$中的4项：3e3, 1e2, 5e1, 5e2<br>$$w_1=1{\rm e}2, w_2=\{1,2,5\}, w_3=\{1{\rm e}2, 5{\rm e}1\}, w_4 = 1{\rm e}2$$
+- **相关性 uncertainty measurement**
+  - 两个物体$$\mathcal{O}_i$$和 $$\mathcal{O}_j$$之间的 `相关性` 可以通过在 `template space`中进行 **`最近邻搜索`** 来建立；
+  - 假设物体$$\mathcal{O}_i$$（表面）上一点$$p_i$$，通过最近邻搜索找到了点$$p_i$$在物体$$\mathcal{O}_j$$上`相关`的（表面上的）一点$$p_j$$
+    - 那么二者之间相关性的不确定性可以通过一个simple yet surprisingly-effective的uncertainty metric评估：
+    - $$u(p_i,p_j)=1-\exp(-\gamma \lVert (p_i+v_i) - (p_j+v_j) \rVert_2^2)$$
+      - 其中$$v_i=D_{\omega_i}^v(p_i)$$ 是点上的变形向量；是从 shape instance space到 template space的$$\Delta$$
+      - $$\lVert (p_i+v_i) - (p_j+v_j) \rVert_2$$其实就是这对相关点$$p_i$$和$$p_j$$在template space下的距离
+    - 不确定性大的区域 comform well to 形状之间的 `structure discrepancy` 结构不符<br>下图展示的是形状A（表面）上的点，在形状B（表面）上找到的相关的点的不确定性；红色高不确定性，蓝色低不确定性<br>![image-20210104200614483](media/image-20210104200614483.png)
 - **results**
   - texture transfer <br>![image-20201222155357538](media/image-20201222155357538.png)<br>![image-20210104173728589](media/image-20210104173728589.png)
-  - label transfer<br>![image-20201222155611605](media/image-20201222155611605.png)
+  - label transfer：可以看到对于 椅子把 这种时有时无的结构也可以handle<br>![image-20201222155611605](media/image-20201222155611605.png)
 - **Ablation study / discussions**
   - 单纯的位置修正就已经可以构成变形场；但是本篇发现，仅仅位置修正不够，加入标量修正可以：
     - 加入标量修正对生成所需shape有帮助
