@@ -1,5 +1,5 @@
 ---
-\nabla_p\Phi_i(p)note_type: paper_reading
+note_type: paper_reading
 title: math and DL for shapes  (spatial surfaces)
 ---
 
