@@ -58,3 +58,6 @@ title: neural network basics
   - *Fourier Features Let Networks Learn High Frequency Functions in Low Dimensional Domains. NeurIPS2020*
   - *(SIREN) Implicit Neural Representations*
     *with Periodic Activation Functions. NeurIPS2020*
+
+# topic: condition embedding vs. hyper networks
+

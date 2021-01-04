@@ -1,5 +1,5 @@
 ---
-note_type: paper_reading
+\nabla_p\Phi_i(p)note_type: paper_reading
 title: math and DL for shapes  (spatial surfaces)
 ---
 
@@ -563,7 +563,7 @@ learning generalized templates comprised of elements
 ---
 
 **`<IM-Net> "Learning Implicit Fields for Generative Shape Modeling"`**  
-**[** `CVPR2019` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2019/papers/Chen_Learning_Implicit_Fields_for_Generative_Shape_Modeling_CVPR_2019_paper.pdf)** **[[web]](https://www.sfu.ca/~zhiqinc/imgan/Readme.html)** **[[code]](https://github.com/czq142857/implicit-decoder)** **[[code-improve]](https://github.com/czq142857/IM-NET)**  **[[code-pytorch]](https://github.com/czq142857/IM-NET-pytorch)** **[** :mortar_board: `SFU` **]**   
+**[** `CVPR2019` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2019/papers/Chen_Learning_Implicit_Fields_for_Generative_Shape_Modeling_CVPR_2019_paper.pdf)** **[[web]](https://www.sfu.ca/~zhiqinc/imgan/Readme.html)** **[[code]](https://github.com/czq142857/implicit-decoder)** **[[code-improve]](https://github.com/czq142857/IM-NET)**  **[[code-pytorch]](https://github.com/czq142857/IM-NET-pytorch)** **[** :mortar_board: `SFU` **]**   
 **[**  `Zhiqin Chen`, `Hao Zhang`  **]**  
 **[** _`implicit shape representation`, `inside-outside indicator`_ **]**  
 
@@ -778,7 +778,7 @@ learning generalized templates comprised of elements
 ---
 
 **`"Deformed Implicit Field: Modeling 3D Shapes with Learned Dense Correspondence"`**  
-**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2011.13650.pdf)** **[[code]](https://github.com/microsoft/DIF-Net)** **[** :mortar_board: `Tsinghua` **]** **[** :office: `MSRA` **]**  
+**[** `2021` **]** **[[paper+supp]](https://arxiv.org/pdf/2011.13650.pdf)** **[[code]](https://github.com/microsoft/DIF-Net)** **[** :office: `MSRA` **]** **[** :mortar_board: `Tsinghua` **]**   
 **[**  `Yu Deng`, `Jiaolong Yang`, `Xin Tong`  **]**  
 **[** _`3D deformation field`, `template field`, `category shape correspondence`_ **]**  
 
@@ -790,30 +790,76 @@ learning generalized templates comprised of elements
   - 用deformation field建立起 **`<u>shape correspondence</u>`**，这样就可以做texture transfer、label transfer等
   - ![image-20201222155438709](media/image-20201222155438709.png)
 - **overview**
-  - 用一个超网络预测DeformNet $$ D $$的参数；<br>然后在空间中的每一处，从同一个template SDF，DeformNet $$ D $$产生位置修正$$ v $$与标量距离修正$$ \Delta s $$，总共4维输出<br>即最终的$$ p $$点处的SDF值为：$$ s=T(p+v)+\Delta s=T(p+D^v_{\omega}(p))+D^{\Delta s}_{\omega}(p) $$![image-20201222153322051](media/image-20201222153322051.png)
+  - 用一个超网络从code预测DeformNet $$ D $$的参数；<br>然后在空间中的每一处，从同一个template SDF，DeformNet $$ D $$产生位置修正$$ v $$与标量距离修正$$ \Delta s $$，总共4维输出<br>即最终的$$ p $$点处的SDF值为：$$ s=T(p+v)+\Delta s=T(p+D^v_{\omega}(p))+D^{\Delta s}_{\omega}(p) $$![image-20201222153322051](media/image-20201222153322051.png)
+- **losses**
+  - SDF loss
+    - 被训练的量：变形场超网络$$\Psi$$，SDF输出场$$\Phi$$，模板场$$T$$，learned latent codes $$\{\alpha_j\}$$；$$\Psi_i(p)$$代表predicted SDF值$$\Phi_{\Psi(\alpha_i)}(p)$$，$$\Omega$$代表3D空间，$$\mathcal{S}_i$$ 代表形状表面
+      - $$\Phi_{\Psi(\alpha)}(p)=T(p+D_{\Psi(\alpha)}^v(p)) + D_{\Psi(\alpha)}^{\Delta s}(p)$$
+    - $$L_{sdf}=\underset {i}{\sum} \left( $1 + $2 + $3 + $4 \right)$$
+      - $$\underset {p \in \Omega}{\sum} \lvert \Phi_i(p)-\overline{s}\rvert$$ 代表预测SDF和正确SDF的误差
+      - $$\underset{p\in \mathcal{S}_i}{\sum} (1-\langle \nabla\Phi_i(p), \overline{n} \rangle)$$ 代表预测法向量和正确法向量的误差（角度误差，用夹角余弦应接近1来表达）
+      - $$\underset{p\in\Omega}{\sum} \lvert \Vert \nabla\Phi_i(p) \rVert_2 - 1 \rvert$$ 代表预测法向量的模应该是1 （因为是SDF）
+      - $$\underset{p\in\Omega \backslash \mathcal{S}_i}{\sum} \rho(\Phi_i(p)), \;where \; \rho(s)=\exp(-\delta \cdot \lvert s \rvert), \delta \gg 1 $$ 代表对 **SDF值靠近0** 的 **非表面** 点的惩罚；
+        - $$\delta \gg 1$$就代表只有靠近0的时候这项loss才有值
+          - [ ] Q: 类似一种负的L0-norm ？
+        - 详见 *(SIREN) Implicit neural representations with periodic activation functions. NeurIPS2020* 论文
+  - 正则化
+    - regularization loss to constrain the learned latent codes: $$L_{reg}=\underset{i}{\sum} \lVert \alpha_i \rVert_2^2$$
+    - 可以用一些其他更强的正则化，比如VAE训练时用的 最小化latent code后验分布和高斯分布的KL散度
+  - normal consistency prior 法向量一致性先验
+    - 考虑到表面点和语义 高度关联：e.g. （在canonical space假设下）车顶总是指向天空，左车门总是指向左侧
+    - 因此，让相关的点的法向量互相一致
+      - 鼓励 模板场中的点处的法向量 和 **所有给定shape instance** 中的相关点 处的法向量 一致
+      - $$L_{normal}=\underset{i}{\sum} \underset{p\in\mathcal{S}_i}{\sum} \left( 1 - \langle \nabla T(p+D_{\omega_i}^v (p)), \overline{n} \rangle \right)$$
+      - 即让模板场中的 对应位置p的点 和 真值法向量保持一致
+      - ~~如果没有标量修正场，模板场对应位置p的点处的法向量就是 最终输出场的法向量，和$$L_{sdf}$$的第2项一样~~
+        - [ ] 变形后的形状shape instance场中的点坐标是$$p$$，模板场中的 **相关** 点坐标是 $$p+D_{\omega_i}^v (p)$$
+        - [ ] **相关** 点处的法向量 其实是$$\nabla_{p+D_{\omega_i}^v (p)} T(p+D_{\omega_i}^v (p))$$，而非$$\nabla_p T(p+D_{\omega_i}^v (p))$$
+        - [ ] $$L_{sdf}$$第2项是$$\nabla_p\Phi_i(p)=\nabla_p \left( \quad T(p+D_{\omega_i}^v (p)) \; (+D_{\omega_i}^{\Delta s}(p)) \quad \right)$$
+        - [ ] 即其主要是强调 模板场 和 变形后的形状实例场 中 相关点处的 两个场的法向量保持一致性
+        - [ ] 其实应该是$$\nabla_{p+D_{\omega_i}^v (p)} T(p+D_{\omega_i}^v (p))$$和$$\nabla_p\Phi_i(p)$$的夹角，而不是和$$\overline{n}$$的夹角；<br>只不过$$\nabla_p\Phi_i(p)$$就是$$\overline{n}$$的近似，所以用$$\overline{n}$$也可
 - **results**
-  - texture transfer <br>![image-20201222155357538](media/image-20201222155357538.png)
+  - texture transfer <br>![image-20201222155357538](media/image-20201222155357538.png)<br>![image-20210104173728589](media/image-20210104173728589.png)
   - label transfer<br>![image-20201222155611605](media/image-20201222155611605.png)
+- **Ablation study / discussions**
+  - 单纯的位置修正就已经可以构成变形场；但是本篇发现，仅仅位置修正不够，加入标量修正可以：
+    - 加入标量修正对生成所需shape有帮助
+      - <img src="media/image-20210104165611897.png" alt="image-20210104165611897" style="zoom: 67%;" />
+    - 实验发现 **<u>加入标量修正对于学习高质量的相关性也很重要</u>**
+      - [ ] Q: why ? <br>试图解释：标量修正可以控制形状的一部分 特征： `膨胀`？`结构/拓扑改变`？，从而更容易学到简单、plausible的对应关系？
+        - [ ] Q: 类似CGAN中，用一个随机噪声z控制一些`"不想要"`的特征？
+        - [ ] Q: 除了标量修正这种控制`"额外"`/`"不想要"`的特征的方式以外，可否设法引入其他方式控制其他`"不想要"`的特征？
+  - template implicit field ≠ template shape
+    - template implicit field并不是template shape；甚至都不是valid SDF
+    - instead，template implicit field 捕捉的是 **一个category中不同物体的shape `结构`** 
+    - 在实验中，发现如果loss不合适的情况下，template implicit field **`degenerates` to a <u>valid shape SDF</u>** representing a certain shape, 导致重建的 **精确度下降**、**相关性降低**
+  - 几个training loss对结果的影响<br>![image-20210104120743115](media/image-20210104120743115.png)
+- **implementation details**
+  - 网络结构<br>![image-20210104121544233](media/image-20210104121544233.png)
 
 </details>
 
 ---
 
 **`"Deep Implicit Templates for 3D Shape Representation"`**  
-**[** `2020` **]** **[[paper]](https://arxiv.org/pdf/2011.14565.pdf)** **[[code]](https://github.com/ZhengZerong/DeepImplicitTemplates)**  **[** :mortar_board: `Tsinghua` **]**   
-**[**  `Zerong Zheng`, `Tao Yu`, `Qionghai Dai`, `Yebin Liu`  **]**  
+**[** `2020` **]** **[[paper]](https://arxiv.org/pdf/2011.14565.pdf)** **[[web]](http://www.liuyebin.com/dit/dit.html)** **[[supp_video]](http://www.liuyebin.com/dit/assets/supp_vid.mp4)** **[[code]](https://github.com/ZhengZerong/DeepImplicitTemplates)**  **[** :mortar_board: `Tsinghua` **]**   
+**[**  `Zerong Zheng`, `Tao Yu`, `Qionghai Dai`, [`Yebin Liu`](http://www.liuyebin.com/)  **]**  
 **[** _`spatial warping LSTM`, `category shape correpondence`_ **]**  
 
 <details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **review**
+  - 这种变形场类方法，最大的问题应该在于当 层级结构 / 拓扑 发生大的改变时，这种很大程度由位置决定的对应关系是否无法准确反应结构上的变化，从而导致degenerates的行为
   - 和 *deformed implicit field* 思路很像，那篇也是清华的
+    - deformed implicit field 除了位置修正外还有$$\Delta s$$修正；本篇只有位置修正
+    - deformed implicit field 是一个超参数网络，从code得到位置修正、$$\Delta S$$修正的网络 **<u>参数</u>**；本篇是一个LSTM，输入code+p输出位置修正
   - 因为有很多谨慎的设计（1. 使用LSTM warp而不是MLP warp 2.对canonical的正则化 3. 对空间扭曲的正则化），从transfer的效果上看要比deformed implicit field好一些？
 
 | 本篇：Deep Implicit Templates for 3D Shape Representation的transfer效果 | deformed implicit field的transfer效果                        |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| ![image-20201229180439537](media/image-20201229180439537.png) | ![image-20201229180759966](media/image-20201229180759966.png) |
+| <img src="media/image-20201229180439537.png" alt="image-20201229180439537" style="zoom: 67%;" /> | ![image-20201229180759966](media/image-20201229180759966.png) |
+| keypoint detection PCK accuracy<br>![image-20210104120316992](media/image-20210104120316992.png) | label transfer IOU banchmark<br>![image-20210104114757341](media/image-20210104114757341.png) |
 
 
 - **Motivation**
