@@ -197,11 +197,11 @@ title: math for deformations
 </details>
 
  - 结论：<u>刚性形变对应的形变梯度张量是一个常旋转矩阵</u>
-    - 记对所有$$\boldsymbol {\rm x} \in \mathcal{R}_0$$ ，$$\boldsymbol {\rm F}(\boldsymbol {\rm x})=\boldsymbol {\rm Q}$$，$$\boldsymbol {\rm Q}$$是一个 **<u>旋转矩阵</u>**（`proper orthogonal tensor`行列式为1的正交矩阵）
+    - 记对所有$$\boldsymbol {\rm x} \in \mathcal{R}_0$$ ，$$\boldsymbol {\rm F}(\boldsymbol {\rm x})=\boldsymbol {\rm Q}$$，$$\boldsymbol {\rm Q}$$是一个 **<u>旋转矩阵</u>**（`proper orthogonal tensor`行列式为1的正交矩阵）
     - 则刚性形变的形式为：
        - $$\boldsymbol {\rm y}(\boldsymbol {\rm x})=\boldsymbol {\rm Q} \boldsymbol {\rm x} + \boldsymbol {\rm b}$$
 
-## :pushpin: ​一般形变：形变梯度张量 分解为 旋转矩阵 & stretch tensor
+## :pushpin: ​一般形变：形变梯度张量 分解为 旋转矩阵 & stretch tensor
 
  - 先前结论：
     - 形变梯度张量$$\boldsymbol {\rm F}(\boldsymbol {\rm x})$$完备地描述了在粒子$$\boldsymbol {\rm x}$$一个邻域中的变形的特征；
@@ -219,7 +219,7 @@ title: math for deformations
  - `right stretch tensor`右拉伸张量 $$\boldsymbol {\rm U}$$ 的性质
     - `symmetric`对称
        - 有3个实数特征值$$\lambda_1, \lambda_2, \lambda_3$$；
-       - 有和3个特征值相对应的三元组`orthonormal`正规特征向量$$\boldsymbol {\rm r}_1, \boldsymbol {\rm r}_2, \boldsymbol {\rm r}_3 $$ 
+       - 有和3个特征值相对应的三元组`orthonormal`正规特征向量$$\boldsymbol {\rm r}_1, \boldsymbol {\rm r}_2, \boldsymbol {\rm r}_3 $$ 
     - `positive definite` 正定
        - 3个特征值均为正数
     - 在基底/主方向$$\{ \boldsymbol {\rm r}_1, \boldsymbol {\rm r}_2, \boldsymbol {\rm r}_3 \} $$ 下的表示
@@ -240,7 +240,7 @@ title: math for deformations
     - $$\boldsymbol {\rm V}$$与$$\boldsymbol {\rm U}$$性质相似：
        - 有3个正实数特征值$$\lambda_1, \lambda_2, \lambda_3$$及对应的特征向量 $$\boldsymbol {l}_1, \boldsymbol {l}_2, \boldsymbol {l}_3 $$，组成主基底$$\{\boldsymbol {l}_1, \boldsymbol {l}_2, \boldsymbol {l}_3 \}$$
  - $$\boldsymbol {\rm U}$$、$$\boldsymbol {\rm V}$$、$$\boldsymbol {\rm F}$$、$$\boldsymbol {\rm R}$$的联系
-    - $$\boldsymbol {\rm U}$$和$$\boldsymbol {\rm V}$$的三个特征值$$\lambda_1, \lambda_2, \lambda_3$$一模一样；又被称作`principle stretches` 主拉伸，意味着在$$\boldsymbol {\rm x}$$处的变形
+    - $$\boldsymbol {\rm U}$$和$$\boldsymbol {\rm V}$$的三个特征值$$\lambda_1, \lambda_2, \lambda_3$$一模一样；又被称作`principle stretches` 主拉伸，意味着在$$\boldsymbol {\rm x}$$处的变形
     - $$\boldsymbol {\rm U}$$的特征向量与$$\boldsymbol {\rm V}$$的特征向量的联系：$$\boldsymbol {l}_i=\boldsymbol {\rm R}\boldsymbol {\rm r}_i, i=1,2,3$$
     - $$\boldsymbol {\rm U}$$和$$\boldsymbol {\rm V}$$用其特征向量表示：
        - $$\boldsymbol {\rm U}=\overset{3}{\underset{i=1}{\sum}} \lambda_i \boldsymbol {\rm r}_i \otimes \boldsymbol {\rm r}_i \qquad \boldsymbol {\rm V}=\overset{3}{\underset{i=1}{\sum}} \lambda_i \boldsymbol {l}_i \otimes \boldsymbol {l}_i$$
@@ -284,14 +284,14 @@ title: math for deformations
     - 这些应变评估张量对应的`principle strain` 主应变为：<br>$$\frac {1}{2}(\lambda_i^2-1)$$<br>$$\frac {1}{m}(\lambda_i^m-1)$$<br>$$\ln{\lambda_i}$$
     - 注意：几种应变评估张量在选择的时候，并没有统一的偏好；往往对于特定材质、特定应变种类才有对某种应变评估张量的偏好
     - 几种不同的`Eularian strain`欧拉应变评估张量：与`Lagrangian strain`相似
-       - `Almansi strain` 格林应变：$$\frac {1}{2}(\boldsymbol {\rm I}-\boldsymbol {\rm V}^{-2})$$<br>`generalized Green strain` 广义格林应变：$$\frac {1}{m}(\boldsymbol {\rm I}-\boldsymbol {\rm V}^{-m})$$<br>`Hencky strain / logarithmic strain` 对数应变：$$\ln{\boldsymbol {\rm V}}$$
+       - `Almansi strain` 阿尔曼西应变：$$\frac {1}{2}(\boldsymbol {\rm I}-\boldsymbol {\rm V}^{-2})$$<br>`generalized Almansi strain` 广义阿尔曼西应变：$$\frac {1}{m}(\boldsymbol {\rm I}-\boldsymbol {\rm V}^{-m})$$<br>`logarithmic strain` 对数应变：$$\ln{\boldsymbol {\rm V}}$$
        - 这些应变评估张量的`principle directions`主方向都和$$\boldsymbol {\rm V}$$的一样，即$$\boldsymbol {l}_1, \boldsymbol {l}_2, \boldsymbol {l}_3 $$
  - 更广义、一般化的的`Lagrangian strain tensor`拉格朗日应变张量$$\boldsymbol {\rm E}(\boldsymbol {\rm U})$$
     - 让$$e(\cdot)$$为一个/任意的在$$(0,\infty)$$定义的标量值函数，它满足以下条件：
        - $$\begin{array}{l} \text{(a)} & e(1)=0 \\ \text{(b)} & e'(1)=1 \\ \text{(c)} & e'(\lambda) \gt 0 & \text{for all $\lambda \gt 0$} \end{array}$$
           - (a) 用来保证如果deformed 和reference coincide，`vanish` (i.e. $$\boldsymbol {\rm E}=\boldsymbol {\rm O}$$ )
           - (b) 用来使$$\boldsymbol {\rm E}(\boldsymbol {\rm U})$$适用于经典的`infinitesimal strain tensor` 无穷小应变张量的理论 见章节 [liearization 线性化近似 （无穷小形变张量）](#linearization 线性化近似 （无穷小形变张量）)
-          - (c) 用来保证主应变 $$e(\lambda_i)$$ 随相应的主拉伸 $$\lambda_i$$单调递增
+          - (c) 用来保证主应变 $$e(\lambda_i)$$ 随相应的主拉伸 $$\lambda_i$$单调递增
     - 则可以用特征向量$$\boldsymbol {\rm r}_i$$和对应的特征值$$e(\lambda_i)$$来构造拉格朗日应变张量：
        - $$\boldsymbol {\rm E}=\overset{3}{\underset{i=1}{\sum}} e(\lambda_i) \left( \boldsymbol {\rm r}_i \otimes \boldsymbol {\rm r}_i \right)$$
  - **应变张量的物理意义**
@@ -324,7 +324,7 @@ title: math for deformations
        - $$\boldsymbol {\rm H}(\boldsymbol {\rm x})={\rm Grad}\,\boldsymbol{\rm u}(\boldsymbol {\rm x})$$
        - 组分为：$$H_{ij}(\boldsymbol {\rm x})=\frac{\partial u_i}{\partial x_j} $$
        - $$\boldsymbol {\rm H}=\boldsymbol {\rm F}-\boldsymbol {\rm I}$$
- - 在"$$\boldsymbol {\rm H}$$ 很小"的特例情况下，$$\boldsymbol {\rm U}, \boldsymbol {\rm V}, \boldsymbol {\rm R}, \boldsymbol {\rm E}$$ 用 $$\boldsymbol {\rm H}$$ 进行`线性化`近似表述
+ - 在"$$\boldsymbol {\rm H}$$ 很小"的特例情况下，$$\boldsymbol {\rm U}, \boldsymbol {\rm V}, \boldsymbol {\rm R}, \boldsymbol {\rm E}$$ 用 $$\boldsymbol {\rm H}$$ 进行`线性化`近似表述
     - 前面的$$\boldsymbol {\rm U}, \boldsymbol {\rm V}, \boldsymbol {\rm R}, \boldsymbol {\rm E}$$ 都是用$$\boldsymbol {\rm F}$$ 表示
     - 这里假定"$$\boldsymbol {\rm H}$$ 很小"意味着$$\lVert \boldsymbol {\rm H} \rVert$$很小
     - set $$\lVert \boldsymbol {\rm H} \rVert = \epsilon$$，当$$\epsilon \rightarrow 0$$时
@@ -336,7 +336,7 @@ title: math for deformations
           -  $$\boldsymbol{\varepsilon} \overset{\rm def}{=} \frac{1}{2} \left(  \boldsymbol {\rm H}+ \boldsymbol {\rm H}^{\top} \right) $$
           - 如果$$\varepsilon_i$$为其特征值，则有$$\lambda_i=1+\varepsilon_i+O(\epsilon^2)$$
        - `infinitesimal rotation tensor` 无穷小旋转张量 
-          -  $$\boldsymbol{\omega}\overset{\rm def}{=} \frac{1}{2} \left(  \boldsymbol {\rm H}- \boldsymbol {\rm H}^{\top} \right)$$
+          -  $$\boldsymbol{\omega}\overset{\rm def}{=} \frac{1}{2} \left(  \boldsymbol {\rm H}- \boldsymbol {\rm H}^{\top} \right)$$
        - 组分为$$\varepsilon_{ij}=\frac {1}{2} \left( \frac{\partial u_i}{\partial x_j} + \frac{\partial u_j}{\partial x_i} \right) \qquad \omega_{ij}=\frac {1}{2} \left( \frac{\partial u_i}{\partial x_j} - \frac{\partial u_j}{\partial x_i} \right)$$
        - 则有：
           - $$\boldsymbol {\rm H}=\boldsymbol{\varepsilon}+\boldsymbol{\omega}$$
