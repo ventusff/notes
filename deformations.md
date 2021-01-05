@@ -305,10 +305,10 @@ title: math for deformations
           - 其中，$$\boldsymbol {\rm u}$$是`displacement vector`
           - $$\boldsymbol {\rm E}$$的组分为：$$E_{ij}=\frac {1}{2} \left( \frac{\partial u_i}{\partial x_j} + \frac{\partial u_j}{\partial x_i} + \frac{\partial u_k}{\partial x_j} \frac{\partial u_k}{\partial x_j} \right)$$
        - 纤维长度改变量代入得：$${\rm d}s_y={\rm d}s_x \sqrt{1 + 2 \boldsymbol {\rm E}\boldsymbol {\rm n}_0 \cdot \boldsymbol {\rm n}_0 }$$
-          - 即 $$\frac{{\rm d}s_y-{\rm d}s_x}{{\rm d}s_x}  =\sqrt{1 + 2 \boldsymbol {\rm E}\boldsymbol {\rm n}_0 \cdot \boldsymbol {\rm n}_0 } - 1$$
+          - 即 $$\frac{ {\rm d}s_y-{\rm d}s_x}{ {\rm d}s_x}  =\sqrt{1 + 2 \boldsymbol {\rm E}\boldsymbol {\rm n}_0 \cdot \boldsymbol {\rm n}_0 } - 1$$
           - 上式刻画了对于 *任意* 纤维方向$$\boldsymbol {\rm n}_0$$ 的长度相对改变量
           - 假设特例：$$\boldsymbol {\rm n}_0=\boldsymbol {\rm e}_1$$
-             - 则有$$\frac{{\rm d}s_y-{\rm d}s_x}{{\rm d}s_x}  =\sqrt{1 + 2 E_{11} } - 1$$
+             - 则有$$\frac{ {\rm d}s_y-{\rm d}s_x}{ {\rm d}s_x}  =\sqrt{1 + 2 E_{11} } - 1$$
              - 可见对于一般情况，应变的`normal components` $$E_{11}, E_{22}, E_{33}$$ 描述的是坐标方向$$x_1, x_2, x_3$$的长度变化
        - 夹角改变代入得：$$\cos{\theta_y}=\frac  {(1 + 2 \boldsymbol {\rm E}\boldsymbol) \boldsymbol {\rm n}_0^{(1)} \cdot \boldsymbol{\rm n}_0^{(2)}}  {\sqrt{(1 + 2 \boldsymbol {\rm E})\boldsymbol {\rm n}_0^{(1)} \cdot \boldsymbol{\rm n}_0^{(1)}}  \sqrt{(1 + 2 \boldsymbol {\rm E})\boldsymbol {\rm n}_0^{(2)} \cdot \boldsymbol{\rm n}_0^{(2)}}}$$
           - 假设特例：$$\boldsymbol {\rm n}_0^{(1)}=\boldsymbol {\rm e}_1, \quad \boldsymbol {\rm n}_0^{(2)}=\boldsymbol {\rm e}_2$$
