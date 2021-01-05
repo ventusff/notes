@@ -833,7 +833,7 @@ learning generalized templates comprised of elements
     - $$u(p_i,p_j)=1-\exp(-\gamma \lVert (p_i+v_i) - (p_j+v_j) \rVert_2^2)$$
       - 其中$$v_i=D_{\omega_i}^v(p_i)$$ 是点上的变形向量；是从 shape instance space到 template space的$$\Delta$$
       - $$\lVert (p_i+v_i) - (p_j+v_j) \rVert_2$$其实就是这对相关点$$p_i$$和$$p_j$$在template space下的距离
-    - 不确定性大的区域 comform well to 形状之间的 `structure discrepancy` 结构不符<br>下图展示的是形状A（表面）上的点，在形状B（表面）上找到的相关的点的不确定性；红色高不确定性，蓝色低不确定性<br>![image-20210104200614483](media/image-20210104200614483.png)
+    - 不确定性大的区域 comform well to 形状之间的 `structure discrepancy` 结构不符<br>下图展示的是形状A（表面）上的点，在形状B（表面）上找到的相关的点的不确定性；红色高不确定性，蓝色低不确定性<br>![image-20210104200614483](media/image-20210104200614483.png)
 - **results**
   - texture transfer <br>![image-20201222155357538](media/image-20201222155357538.png)<br>![image-20210104173728589](media/image-20210104173728589.png)
   - label transfer：可以看到对于 椅子把 这种时有时无的结构也可以handle<br>![image-20201222155611605](media/image-20201222155611605.png)
@@ -1151,7 +1151,7 @@ learning generalized templates comprised of elements
 ---
 
 **`"DIST: Rendering Deep Implicit Signed Distance Function with Differentiable Sphere Tracing"`**  
-**[** `CVPR2020` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2020/papers/Liu_DIST_Rendering_Deep_Implicit_Signed_Distance_Function_With_Differentiable_Sphere_CVPR_2020_paper.pdf)** **[[code]](https://github.com/B1ueber2y/DIST-Renderer)** **[[web]](http://b1ueber2y.me/projects/DIST-Renderer/)** **[** :mortar_board: `ETH`, `Tsinghua University`, `Peking University`, `MPI` **]** **[** :office: `Google`, `Peng Cheng Laboratory` **]**  
+**[** `CVPR2020` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2020/papers/Liu_DIST_Rendering_Deep_Implicit_Signed_Distance_Function_With_Differentiable_Sphere_CVPR_2020_paper.pdf)** **[[code]](https://github.com/B1ueber2y/DIST-Renderer)** **[[web]](http://b1ueber2y.me/projects/DIST-Renderer/)** **[[slice]](http://b1ueber2y.me/projects/DIST-Renderer/dist-slides.pdf)** **[** :mortar_board: `ETH`, `Tsinghua University`, `Peking University`, `MPI` **]** **[** :office: `Google`, `Peng Cheng Laboratory` **]**  
 **[**  `Shaohui Liu`, `Yinda Zhang`, `Songyou Peng`, `Boxin Shi`, `Marc Pollefeys`, `Zhaopeng Cui`  **]**  
 **[** _`SDF`, `differentiable renderer`, `sphere tracing`_ **]**  
 
@@ -1167,13 +1167,15 @@ learning generalized templates comprised of elements
     - (first) a differentiable renderer for learning-based SDF
   - 用一个可微分的renderer来把learning-based SDF可微分地渲染为 depth image, surface normal, silhouettes，从任意相机viewpoints
   - 应用：可用于infer 3D shape from various inputs, e.g. multi-view images and single depth image
-- 方法
+- **overview**
   - ![image-20201215111010407](media/image-20201215111010407.png)
   - [auto-decoder] 给定一个已经pre-trained generative model, e.g. DeepSDF, 通过在latent code space 寻找能产生和给定观测最一致的3D shape
+  - ![image-20210105074006003](media/image-20210105074006003.png)
 - [sphere tracing] 使用一个类似sphere tracing的框架来做可微分的渲染
   - 直接应用sphere tracing因为需要对network做反复的query并且在反向传播时产生递归的计算图（笔者注：就像SRN那样），计算费时、费内存；所以需要对前向传播和反向传播过程都要做出优化
   - sphere-traced results (i.e. camera ray上的距离)，可以用于产生各种输出，如<u>深度图</u>、<u>表面法向量</u>、<u>轮廓</u>等，因此可以用loss来方便地形成端到端的manner
   - 前向通路
+  - ![image-20210105073826931](media/image-20210105073826931.png)
 - ![image-20201215164421303](media/image-20201215164421303.png)
     - 用一种coarse-to-fine的方法来save computation at initial steps
       - 考虑到在sphere tracing的前面几步，不同pixel的ray都非常接近
