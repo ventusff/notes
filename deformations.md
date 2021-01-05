@@ -176,8 +176,6 @@ title: math for deformations
     - 上式等价于$$\boldsymbol {\rm F}(\boldsymbol {\rm x})$$是一个 **<u>常量张量</u>** ，且是一个 **<u>旋转矩阵</u>**（行列式为1的正交矩阵）
 
 <details markdown="1"><summary markdown="0">证明：点击展开</summary>
-    
-</details>
 
  - 首先两边对$$x_j$$求偏导
     - $$\underset{i}{\sum} -2 F_{ij}(\boldsymbol {\rm x})(y_i(\boldsymbol {\rm z}) - y_i(\boldsymbol {\rm x}))=-2(z_j-x_j)$$
