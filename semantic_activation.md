@@ -31,8 +31,8 @@
   - 使用了全连接层；由于全连接层在生成有结构的数据时有困难，因此难以产生带有多样性的真实形状
 - **Motivation**
 - 主要构成
-  - Raw point cloud GAN (r-GAN) 产生raw $2048 \times 3$ point set 输出
-    - generator从高斯噪声vector产生 $2048 \times 3$ 点云集输出
+  - Raw point cloud GAN (r-GAN) 产生raw $$2048 \times 3$$ point set 输出
+    - generator从高斯噪声vector产生 $$2048 \times 3$$ 点云集输出
     - discriminator使用正常的auto encoder，直接输入raw point cloud
   - Latent-space GAN (l-GAN)
     - 首先预训练一个pre-trained AE，然后generator和discriminator 都在这个pretrained AE的 bottle-neck variables 操作
@@ -193,17 +193,17 @@ GANS:
 - **cage-based deformations CBD**
   - **intuition**
     - instead of 单独变形表面上的那些点，CBD 直接 warp 整个surface 嵌入到的那个ambient space
-  - CBD通过控制一个稀疏的triangle mesh: $cage \; \mathcal{C}$控制这个warping
-    - 在给定一个cage后，ambient space中的任意一点$\boldsymbol{\rm p}\in\mathbb{R}^3$ 被一组`generalized barycentric coordinates` 编码，即通过cage顶点$\boldsymbol{\rm v}_j$的加权平均来表达：<br>$\boldsymbol{\rm p}=\sum \phi^{\mathcal{C}}_j(\boldsymbol{\rm p}) \boldsymbol{\rm v}_j$ <br>其中权重函数$\{ \phi^{\mathcal{C}}_j \}$ 依赖于$\boldsymbol{\rm p}$ 相对于cage 顶点$\{\boldsymbol{\rm v}_j\}$的相对位置
-    - 通过简单地offset cage的顶点，然后再用pre-computed weights去计算ambient space中的任意一点新坐标$\boldsymbol{\rm v}_j'$，就可以实现变形<br>$\boldsymbol{\rm p}'=\underset {0 \leq j \lt \lvert V_{\mathcal{C}}\rvert }{\sum} \phi^{\mathcal{C}}_j(\boldsymbol{\rm p}) \boldsymbol{\rm v}_j'$<br>注意上式中的权重函数$\{ \phi^{\mathcal{C}}_j \}$还是之前计算好的，即权重函数不变，只有笼子顶点变了
+  - CBD通过控制一个稀疏的triangle mesh: $$cage \; \mathcal{C}$$控制这个warping
+    - 在给定一个cage后，ambient space中的任意一点$$\boldsymbol{\rm p}\in\mathbb{R}^3$$ 被一组`generalized barycentric coordinates` 编码，即通过cage顶点$$\boldsymbol{\rm v}_j$$的加权平均来表达：<br>$$\boldsymbol{\rm p}=\sum \phi^{\mathcal{C}}_j(\boldsymbol{\rm p}) \boldsymbol{\rm v}_j$$ <br>其中权重函数$$\{ \phi^{\mathcal{C}}_j \}$$ 依赖于$$\boldsymbol{\rm p}$$ 相对于cage 顶点$$\{\boldsymbol{\rm v}_j\}$$的相对位置
+    - 通过简单地offset cage的顶点，然后再用pre-computed weights去计算ambient space中的任意一点新坐标$$\boldsymbol{\rm v}_j'$$，就可以实现变形<br>$$\boldsymbol{\rm p}'=\underset {0 \leq j \lt \lvert V_{\mathcal{C}}\rvert }{\sum} \phi^{\mathcal{C}}_j(\boldsymbol{\rm p}) \boldsymbol{\rm v}_j'$$<br>注意上式中的权重函数$$\{ \phi^{\mathcal{C}}_j \}$$还是之前计算好的，即权重函数不变，只有笼子顶点变了
   - attain weight functions
     - 过去CBD领域构造了很多规则来获取带有各种特殊属性的权重函数，比如补间、线性精度、平滑和最小的扭曲；
     - 本文选择了`mean value coordinates` (MVC) ，因为他们的方法补间属性很好，并且简洁、对source cage顶点和deformed cage顶点可微
 - **learning**：如何改成learning based CBD
   - 目标是end-to-end pipeline，所以训练网络去预测source cage和target cage
-  - cage-prediction model $\mathcal{N}_{\mathcal{C}}$：给定一个source shape$\mathcal{S}_{\mathcal{s}}$，预测它的cage $\mathcal{C}_{\mathcal{s}}$
+  - cage-prediction model $$\mathcal{N}_{\mathcal{C}}$$：给定一个source shape$$\mathcal{S}_{\mathcal{s}}$$，预测它的cage $$\mathcal{C}_{\mathcal{s}}$$
     - $$ \mathcal{C}_{\mathcal{s}}=\mathcal{N}_{\mathcal{C}}(\mathcal{S}_{\mathcal{s}})+\mathcal{C}_0 $$
-  - deformation-prediction model $\mathcal{N}_{d}$，预测从$\mathcal{C}_{\mathcal{S}}$的offset，来获得deformed cage
+  - deformation-prediction model $$\mathcal{N}_{d}$$，预测从$$\mathcal{C}_{\mathcal{S}}$$的offset，来获得deformed cage
     - $$ \mathcal{C}_{\mathcal{s}\rightarrow t}=\mathcal{N}_{d}(\mathcal{S}_{t},\mathcal{S}_{\mathcal{s}})+\mathcal{C}_{\mathcal{s}} $$
   - source shape提输入点云的pointNet feature，decode预测source cage <br>source net的pointNet feature和target shape的pointNet feature拼一起，decode预测deformed cage<br>source cage通过MVC得到source shape的权重函数，然后用CBD变形得到deformed shape<br>![image-20201224114815289](media/image-20201224114815289.png){:.postimage .three_noscale}
 - **losses**

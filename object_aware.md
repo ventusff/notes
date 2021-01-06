@@ -24,12 +24,12 @@ main preliminary: GQN
 - **Motivation**
   - ![image-20201027191207023](media/image-20201027191207023.png){:.postimage .three_noscale}
 - **前景背景区分方式**： 通过其`Scene Encoder`；其实是在GVFM下做3D物体检测
-  - 把3D 空间分为 $N_{max}=N_x \times N_y \times N_z$ 个cell，每个最多检测1个物体（类似Yolo，扩展到三维）；
-  - 检测是否有一个物体其中心落在了cell内；如果有，那么回归出一个连续量 $\boldsymbol{z}_{ijk}^{where} \in \mathbb{R}^3$ 来specify坐标
-  - 具体做法：把一系列context 观测 $\mathcal{C}=\{(\boldsymbol{x}_c, \boldsymbol{y}_c)\}$ encode into a Geometric Volume Feature Map 三维体素特征空间 $\boldsymbol{r} \in \mathbb{R}^{N_x \times N_y \times N_z \times d}$ ，逐个cell infer 是否有物体以及中心点坐标
+  - 把3D 空间分为 $$N_{max}=N_x \times N_y \times N_z$$ 个cell，每个最多检测1个物体（类似Yolo，扩展到三维）；
+  - 检测是否有一个物体其中心落在了cell内；如果有，那么回归出一个连续量 $$\boldsymbol{z}_{ijk}^{where} \in \mathbb{R}^3$$ 来specify坐标
+  - 具体做法：把一系列context 观测 $$\mathcal{C}=\{(\boldsymbol{x}_c, \boldsymbol{y}_c)\}$$ encode into a Geometric Volume Feature Map 三维体素特征空间 $$\boldsymbol{r} \in \mathbb{R}^{N_x \times N_y \times N_z \times d}$$ ，逐个cell infer 是否有物体以及中心点坐标
     - GVFM需要把一系列partial observation aggregate起来；
-    - ① 对$\mathcal{C}$ 计算一个order-invariant summary $\psi$ ：$\psi=\sum_{c=1}^{\lvert\mathcal{C} \rvert} \psi_{\mathcal{c}}=\sum_{c=1}^{\lvert\mathcal{C} \rvert} f_\psi(x_c, y_c)$  
-    - ② 对 $\psi$ 应用一个3D transposed convolution 来把 scene-level 表征$\psi$ split 成单个的$\boldsymbol{r}_{ijk}$ slots
+    - ① 对$$\mathcal{C}$$ 计算一个order-invariant summary $$\psi$$ ：$$\psi=\sum_{c=1}^{\lvert\mathcal{C} \rvert} \psi_{\mathcal{c}}=\sum_{c=1}^{\lvert\mathcal{C} \rvert} f_\psi(x_c, y_c)$$  
+    - ② 对 $$\psi$$ 应用一个3D transposed convolution 来把 scene-level 表征$$\psi$$ split 成单个的$$\boldsymbol{r}_{ijk}$$ slots
 - **主要贡献**
   - object-aware scene encoder，把一系列观测首先映射到体素特征空间，再逐cell检测回归有无物体及中心坐标
     - ==思考== ：
@@ -181,7 +181,7 @@ main preliminary: SRN
 - **Motivation**
   - ![img](media/6e9983a7-f1e3-4121-b15a-b7f05f0d6f9e.png){:.postimage .three_noscale}
 - **前景背景区分方式**
-  - 通过encoder 编码 context views of a video $\{x_z, v_z\}$ 为两个隐向量：scene embedding和camera paramter embedding，把这两个embedding decode为逐个cell中的是否有物体 + 各个物体的外观、pose参数 + 背景形状、材质
+  - 通过encoder 编码 context views of a video $$\{x_z, v_z\}$$ 为两个隐向量：scene embedding和camera paramter embedding，把这两个embedding decode为逐个cell中的是否有物体 + 各个物体的外观、pose参数 + 背景形状、材质
   - 借鉴了传统CV中图像分割的一些思想，依靠强大的loss设计，用encoder-decoder的方式实现了视频生成。泛化性未知
 - **主要贡献**
   - 通过预测**分割**mask、随时间跟踪物体，把一段given **video** **分解**为其组成物体、背景
