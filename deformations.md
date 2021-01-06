@@ -105,7 +105,7 @@ title: math for deformations
 
  - $$\boldsymbol {\rm y}=\boldsymbol {\rm F} \boldsymbol {\rm x} \qquad where \qquad \boldsymbol {\rm F}=\lambda_1 \boldsymbol {\rm e}_1 \otimes \boldsymbol {\rm e}_1 + \lambda_2 \boldsymbol {\rm e}_2 \otimes \boldsymbol {\rm e}_2 + \lambda_3 \boldsymbol {\rm e}_3 \otimes \boldsymbol {\rm e}_3$$
  - 在标准正规基底$\{\boldsymbol {\rm e}_1, \boldsymbol {\rm e}_2, \boldsymbol {\rm e}_3\}$下
-    - $\boldsymbol {\rm e}_1 \otimes \boldsymbol {\rm e}_1$就是$\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} \begin{pmatrix} 1 & 0 & 0 \end{pmatrix} =  \begin{pmatrix} 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}$
+    - $$\boldsymbol {\rm e}_1 \otimes \boldsymbol {\rm e}_1=\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} \begin{pmatrix} 1 & 0 & 0 \end{pmatrix} =  \begin{pmatrix} 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}$$
     - $$\boldsymbol {\rm F}=\begin{pmatrix} \lambda_1 & 0 & 0 \\ 0 & \lambda_2 & 0 \\ 0 & 0 & \lambda_3  \end{pmatrix}$$
     - $\lambda_1, \lambda_2, \lambda_3$代表在3个基底方向上的拉压比率
  - 如果$\lambda_1 \lambda_2 \lambda_3 = 1$，则是`isochoric`等容的变形
@@ -126,7 +126,7 @@ title: math for deformations
 
  - $$\boldsymbol {\rm y}=\boldsymbol {\rm F} \boldsymbol {\rm x} \qquad where \qquad \boldsymbol {\rm F}=\boldsymbol {\rm I} + k \;  \boldsymbol{\rm e}_1 \otimes \boldsymbol {\rm e}_2$$
  - 在标准正规基底$\{\boldsymbol {\rm e}_1, \boldsymbol {\rm e}_2, \boldsymbol {\rm e}_3\}$下
-    - $\boldsymbol{\rm e}_1 \otimes \boldsymbol {\rm e}_2$ 就是$\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} \begin{pmatrix} 0 & 1 & 0 \end{pmatrix} =  \begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}$
+    - $$\boldsymbol{\rm e}_1 \otimes \boldsymbol {\rm e}_2=\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} \begin{pmatrix} 0 & 1 & 0 \end{pmatrix} =  \begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}$$
     - $$\boldsymbol {\rm F}=\begin{pmatrix} 1 & k & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1  \end{pmatrix}$$
  - $$\boldsymbol {\rm u}(\boldsymbol {\rm x})=\boldsymbol {\rm y}(\boldsymbol {\rm x})-\boldsymbol {\rm x}=\boldsymbol {\rm F}\boldsymbol {\rm x}-\boldsymbol {\rm x}=k \;  \boldsymbol{\rm e}_1 \otimes \boldsymbol {\rm e}_2 \; \boldsymbol {\rm x}=kx_2\boldsymbol {\rm e}_1$$
     - 意味着$x_2={\rm constant}$平面朝着$x_1$-方向 刚体平动，平动量为$kx_2$
