@@ -25,9 +25,9 @@ title: DL for shape structures prior
 
 - **Motivation**
   - 点云输入，无监督地learning structures of 3D shape
-  - ![image-20201229153625536](media/image-20201229153625536.png)
+  - ![image-20201229153625536](media/image-20201229153625536.png){:.postimage .three_noscale}
 - **results**
-  - ![image-20201229153526461](media/image-20201229153526461.png)
+  - ![image-20201229153526461](media/image-20201229153526461.png){:.postimage .three_noscale}
 
 </details>
 
@@ -44,7 +44,7 @@ title: DL for shape structures prior
 - **Motivation**
   - 给定一组3D shapes（点云），category-specific model 无监督地学出逐pair（source 与target之间）的correspondence和部件segmentation
   - 即使拓扑不一样也能学到相关性
-  - 有`correspondence`相关性分数输出<br>![image-20201229144020259](media/image-20201229144020259.png)
+  - 有`correspondence`相关性分数输出<br>![image-20201229144020259](media/image-20201229144020259.png){:.postimage .three_noscale}
 - **Overview**
 
 </details>
@@ -62,18 +62,18 @@ title: DL for shape structures prior
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
-  - **<u>keypoint 1</u>**：不是inside / outside两类区分的单层表面，而是 inside the body (R0), between the body and clothing (R1), outside the clothing (R2) 3类区分的双层表面<br><img src="media/image-20201229100344345.png" alt="image-20201229100344345" style="zoom: 67%;" />
+  - **<u>keypoint 1</u>**：不是inside / outside两类区分的单层表面，而是 inside the body (R0), between the body and clothing (R1), outside the clothing (R2) 3类区分的双层表面<br><img src="media/image-20201229100344345.png" alt="image-20201229100344345"  class="postimage three_noscale" />
   - **keypoint 2** 
     - 隐函数类的方法可以产生任意分辨率的细节，但是一般是static的不能控制
-    - 建立和parametric body model ([SMPL](https://smpl.is.tue.mpg.de/))的相关性，可以对预测出的implicit surface `register`注册 SMPL+D ，让预测出的implicit representation **<u>可以控制</u>** <br>![image-20201229101504269](media/image-20201229101504269.png)
+    - 建立和parametric body model ([SMPL](https://smpl.is.tue.mpg.de/))的相关性，可以对预测出的implicit surface `register`注册 SMPL+D ，让预测出的implicit representation **<u>可以控制</u>** <br>![image-20201229101504269](media/image-20201229101504269.png){:.postimage .three_noscale}
 - **overview**
-  - 输入一个稀疏点云（来自有关节、不同形状、不同pose、不同clothing的人类），一个occupancy predictor估计R0,R1,R2，一个multi-class classifier 估计part label（人的14类part）<br>![image-20201229102312212](media/image-20201229102312212.png)
+  - 输入一个稀疏点云（来自有关节、不同形状、不同pose、不同clothing的人类），一个occupancy predictor估计R0,R1,R2，一个multi-class classifier 估计part label（人的14类part）<br>![image-20201229102312212](media/image-20201229102312212.png){:.postimage .three_noscale}
     - 使用Marching Cubes从predict出的implicit functions产生mesh surface（内表面，外表面）
   - 把IP-Net的predictions注册到SMPL人类模型
     - optimization-based ，最优化SMPL的参数来fit 内表面预测$\mathcal{S}_{in}$
     - 额外利用IP-Net预测出的part-labels，来保证SMPL的不同部件的mesh能正确解释对应部件的surface区域
   - 同样的idea还可以generalize to 3D hands
-    - ![image-20201229103342683](media/image-20201229103342683.png)
+    - ![image-20201229103342683](media/image-20201229103342683.png){:.postimage .three_noscale}
 
 </details>
 
@@ -96,11 +96,11 @@ title: DL for shape structures prior
 - **Motivation**
   - 把形状的 `co-segmentation` 看做表征学习问题
   - 可以无监督、弱监督、`one-shot learning`，只需要用几个exemplars，就可以在shape 分割任务上好过在分割shape上训练的SOTA
-  - 无监督的 **<u>co-segmentation</u>** <br>![image-20201229094035378](media/image-20201229094035378.png)
+  - 无监督的 **<u>co-segmentation</u>** <br>![image-20201229094035378](media/image-20201229094035378.png){:.postimage .three_noscale}
 - **overview**
   - 就是在*Learning Implicit Fields for Generative Shape Modeling* 的基础上，从原来的单个inside / outside indicator变成 `k` 个inside / outside indicator (`branched output`, one neuron each) ，然后在最后max pooling 把几个neuron `compose`在一起。
-  - ![image-20201229095002537](media/image-20201229095002537.png)
-  - 让网络 **<u>“自动”</u>** 学出来一个个natural shape的neuron；没有强制保证<br>![image-20201229095340266](media/image-20201229095340266.png)
+  - ![image-20201229095002537](media/image-20201229095002537.png){:.postimage .three_noscale}
+  - 让网络 **<u>“自动”</u>** 学出来一个个natural shape的neuron；没有强制保证<br>![image-20201229095340266](media/image-20201229095340266.png){:.postimage .three_noscale}
 
 </details>
 
@@ -117,10 +117,10 @@ title: DL for shape structures prior
 
 - **Motivation**
   - Reconstructing 3D objects from 2D images + structured reconstruction
-  - ![image-20201229115853741](media/image-20201229115853741.png)
-  - ![image-20201229115906619](media/image-20201229115906619.png)
+  - ![image-20201229115853741](media/image-20201229115853741.png){:.postimage .three_noscale}
+  - ![image-20201229115906619](media/image-20201229115906619.png){:.postimage .three_noscale}
 - **overview**
-  - ![image-20201229120028285](media/image-20201229120028285.png)
+  - ![image-20201229120028285](media/image-20201229120028285.png){:.postimage .three_noscale}
 
 </details>
 
@@ -136,9 +136,9 @@ title: DL for shape structures prior
 
 - **Motivation**
   - 把structure(topology)和geometry进一步解耦，in a synergistic manner
-  - ![image-20201217154222663](media/image-20201217154222663.png)
+  - ![image-20201217154222663](media/image-20201217154222663.png){:.postimage .three_noscale}
 - **Overview**
-  - 用Recursive Neural Networks(RvNNs, 注意RNN是recurrent NN) hierarchically encode和decode  structure和geometry，在hierarchy的每一层都有bijective mapping<br>![image-20201217155349248](media/image-20201217155349248.png)
+  - 用Recursive Neural Networks(RvNNs, 注意RNN是recurrent NN) hierarchically encode和decode  structure和geometry，在hierarchy的每一层都有bijective mapping<br>![image-20201217155349248](media/image-20201217155349248.png){:.postimage .three_noscale}
   - 同时用两个分开的但是高度耦合的VAE学习structure 和geometry，把他们encode into two latent spaces
 - **disentangled shape  representation**
   - structure hierarchy抽象出符号部件(symbolic parts)与关系
@@ -163,13 +163,13 @@ title: DL for shape structures prior
         - e.g. 如果没有lift handle或者gas cylinder parts，不可能组装一个swivel chair
 - **conditional part geometry VAE**
   - encode和decode时候都condition on part structure information
-  - ![image-20201217162903345](media/image-20201217162903345.png)
+  - ![image-20201217162903345](media/image-20201217162903345.png){:.postimage .three_noscale}
 - **Disentangled Geometry and Structure VAEs**
   - 下图蓝色代表geometry，红色代表structure<br>encoding的时候，从geometry和structure feature encode出geometry<br>decoding的时候，从geometry和structure feature decode出geometry<br>
-  - ![image-20201217162351563](media/image-20201217162351563.png)
+  - ![image-20201217162351563](media/image-20201217162351563.png){:.postimage .three_noscale}
   - [ ] what?
 - **results**
-  - ![image-20201217163302020](media/image-20201217163302020.png)
+  - ![image-20201217163302020](media/image-20201217163302020.png){:.postimage .three_noscale}
 
 </details>
 
@@ -191,7 +191,7 @@ title: DL for shape structures prior
   - 学到不同物体、不同物体类别之间那些公共的部件、部件间的关系、连接
   - 把整个物体的shape生成问题转为几个子问题的组合
   - 关注的是逐part pair的相对位置的预测
-  - ![image-20201217094300461](media/image-20201217094300461.png)
+  - ![image-20201217094300461](media/image-20201217094300461.png){:.postimage .three_noscale}
 - **overview**
   - 用geometry primitives来代表部件（具体来说，oriented bounding cuboids，长方体），每个部件有$p_i=[c_x,c_y,c_z,s_x,s_y,s_z,q]$
     - 遵循StructureNet的设定<br>*Structurenet: Hierarchical graph networks for 3d shape generation 2019*
@@ -204,7 +204,7 @@ title: DL for shape structures prior
     - 预测邻接部件的相对位置，在遍历部件树的时候组装整个形状
   - [isolation principle] 重度依赖部件masks作为模块的输入来引起对局部区域的关注
   - [relativity principle] 依赖于pairwise关系
-  - ![image-20201217094400096](media/image-20201217094400096.png)
+  - ![image-20201217094400096](media/image-20201217094400096.png){:.postimage .three_noscale}
 - ==**relative position prediciton**==
   - 从root part开始，逐pair地添加other parts
   - 很多过去的工作都是估计在相机坐标系下的绝对位置，或者是一个(类别级别先验)canonical space下的pose
@@ -239,10 +239,10 @@ title: DL for shape structures prior
         - 用神经网络预测$\omega_i,j$，输入reference image和两个部件mask的feature的stack
         - 为了让接触点预测的结果和cuboid顶点顺序无关，结构和PointNet segmentation的结构类似
         - *Deep learning on point sets for 3d classification and segmentation.2017* 
-      - ![image-20201217095049304](media/image-20201217095049304.png)
+      - ![image-20201217095049304](media/image-20201217095049304.png){:.postimage .three_noscale}
 - **效果**
   - 真值mask基本可以做到很完美的组装，predicted mask效果也可以接受，毕竟predict出来的mask会出问题
-  - ![image-20201217095300439](media/image-20201217095300439.png)
+  - ![image-20201217095300439](media/image-20201217095300439.png){:.postimage .three_noscale}
 
 </details>
 

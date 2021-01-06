@@ -33,11 +33,11 @@ title: math and DL for shapes  (spatial surfaces)
 <details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
-- 一个球面形状的隐式形式和参数化形式：`implicit form` & `parametric form`![image-20201207201258315](media/image-20201207201258315.png)
+- 一个球面形状的隐式形式和参数化形式：`implicit form` & `parametric form`![image-20201207201258315](media/image-20201207201258315.png){:.postimage .three_noscale}
 - implicit的形式无法直接通过其生成点，但是一般可以通过test来判断点在object内还是object外，对于ray-tracing非常友好
-  - ![image-20201207204020330](media/image-20201207204020330.png)
+  - ![image-20201207204020330](media/image-20201207204020330.png){:.postimage .three_noscale}
 - parametric的形式可以直接通过其生成surface上的点，对于OpenGL等方法很有帮助
-  - ![image-20201207204043660](media/image-20201207204043660.png)
+  - ![image-20201207204043660](media/image-20201207204043660.png){:.postimage .three_noscale}
 
 </details>
 
@@ -133,7 +133,7 @@ title: math and DL for shapes  (spatial surfaces)
 
 |                                                              |                                                              |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| ![image-20201208012017960](media/image-20201208012017960.png) | ![image-20201208012035153](media/image-20201208012035153.png) |
+| ![image-20201208012017960](media/image-20201208012017960.png) | ![image-20201208012035153](media/image-20201208012035153.png){:.postimage .three_noscale} |
 
  - `Earth Mover Distance` (EMD)
  - 
@@ -184,7 +184,7 @@ title: math and DL for shapes  (spatial surfaces)
 
 | 让直线束经过二次曲线的一个"一重点"来参数化                   | 让直线束经过三次曲线的一个二重点来参数化                     |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| ![image-20201209091156318](media/image-20201209091156318.png) | ![image-20201209091136948](media/image-20201209091136948.png) |
+| ![image-20201209091156318](media/image-20201209091156318.png) | ![image-20201209091136948](media/image-20201209091136948.png){:.postimage .three_noscale} |
 
  - a `rational parameterization` of a surface in affine (x,y,z)-space corresponds to a `polynomial parameterization` of the same surface  in `projective (w,x,y,z)-space`<br>一个曲面在(x,y,z)-仿射空间的有理参数化 对应 同样曲面在(w,x,y,z)-射影空间的多项式参数化
  - `implicitization`: parametric -> implicit
@@ -215,9 +215,9 @@ title: math and DL for shapes  (spatial surfaces)
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
-  ![image-20201207225935008](media/image-20201207225935008.png)
+  ![image-20201207225935008](media/image-20201207225935008.png){:.postimage .three_noscale}
 - **Overview**
-  ![image-20201207230015167](media/image-20201207230015167.png)
+  ![image-20201207230015167](media/image-20201207230015167.png){:.postimage .three_noscale}
   - 一张图片encode到一个latent space, 被三个模块共享
   - shape predictor，学到的是从mean shape出发的顶点的位移改变量
   - texture predictor，学到的是从输入图像的texture flow
@@ -230,10 +230,10 @@ title: math and DL for shapes  (spatial surfaces)
     - 思考甜甜圈和咖啡杯的拓扑是一样的：通过顶点移位变形可以变形过去
     - a fixed and pre-determined mesh connectivity 连接性是固定的
   - 所谓shape predictor，其实是预测固定个数的vertices的位置改变<br>
-    ![image-20201207231029039](media/image-20201207231029039.png)
+    ![image-20201207231029039](media/image-20201207231029039.png){:.postimage .three_noscale}
   - 我们可以从uv图的坐标映射到球面坐标，再映射到mean shape上的坐标，再通过shape 变形（顶点移位）映射到当前shape上的顶点坐标
 - texture predictor 事实上学到的是从单张图片出发的texture flow
-  ![image-20201207232213580](media/image-20201207232213580.png)
+  ![image-20201207232213580](media/image-20201207232213580.png){:.postimage .three_noscale}
 
 </details>
 
@@ -256,13 +256,13 @@ learning generalized templates comprised of elements
     每个element是一个隐式的surface representation
     - 每个element可以当做一个高斯椭球形状
     - 这样，不同的elements位置、扁圆、大小组合，就可以组合出==<u>不同形状、不同拓扑</u>==的shape template
-  - 使用10，25，100个不同的elements训练的效果<br>![image-20201207235340273](media/image-20201207235340273.png)
+  - 使用10，25，100个不同的elements训练的效果<br>![image-20201207235340273](media/image-20201207235340273.png){:.postimage .three_noscale}
 - 隐式的shape表征：
   - 假定每一个input shape都可以建模为一个watertight surface，由一个函数的 $\mathcal{l}$ level set描述（l-等值面集）；
   - 这个函数可以由N个local elements构成
   - 每个elements是一个 _scaled axis-aligned anisotropic 3D Gaussians_ 
     <br>由参数$\theta_i$描述，$\theta_i$包含$c_i, p_i \in \mathbb{R}^3, r_i \in \mathbb{R}^3$
-    <br>![image-20201208000148898](media/image-20201208000148898.png)
+    <br>![image-20201208000148898](media/image-20201208000148898.png){:.postimage .three_noscale}
 
 </details>
 
@@ -277,7 +277,7 @@ learning generalized templates comprised of elements
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
-  - <br>![image-20201208110645619](media/image-20201208110645619.png)
+  - <br>![image-20201208110645619](media/image-20201208110645619.png){:.postimage .three_noscale}
   - 优化的时候，可以alternates between shape deformation和topology modification
 - **overview**
   - topology modification
@@ -285,8 +285,8 @@ learning generalized templates comprised of elements
     - 学一个per face error estimation network
     - 通过去掉那些deviate significantly的face来更新topology structure
 - 效果
-  - ![image-20201208111115100](media/image-20201208111115100.png)
-  - ![image-20201208111142570](media/image-20201208111142570.png)
+  - ![image-20201208111115100](media/image-20201208111115100.png){:.postimage .three_noscale}
+  - ![image-20201208111142570](media/image-20201208111142570.png){:.postimage .three_noscale}
 
 </details>
 
@@ -302,14 +302,14 @@ learning generalized templates comprised of elements
 <details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
-- ![image-20201208004500075](media/image-20201208004500075.png)
+- ![image-20201208004500075](media/image-20201208004500075.png){:.postimage .three_noscale}
 - **Motivation**
   - represents a surface as a collection of parametric surface elements
     <br>把一个表面表征为一组parametric surface元素的集合
   - 学到的一族从单位方到局部 2-流形的映射，非常类似一个surface 的 atlas 图册
   - 每一个3D点最终都可以得到一个2D UV值
 - **overview**
-  - ![image-20201208004950236](media/image-20201208004950236.png)
+  - ![image-20201208004950236](media/image-20201208004950236.png){:.postimage .three_noscale}
   - pointcloud基线，是把一个latent shape code输出为一组点
   - 本篇方法，额外输入一个从均匀单位方内采样的2D坐标点，用其来产生surface上的一个single point
     - 从点云/数据中学出这种`2-manifold`（i.e. [two-dimensional manifolds](https://www2.cs.duke.edu/courses/fall06/cps296.1/Lectures/sec-II-1.pdf)，二维流形）的parameterization
@@ -348,9 +348,9 @@ learning generalized templates comprised of elements
 - **Motivation**
   - 首先把输入点云分成若干个重叠的部分，然后用MLP流形学习每个部分；
   - 每个local流形学习用`2-Wasserstein loss` / `EMD loss`；<br>并在所有流形之间保证consistency
-  - ![image-20201228171157982](media/image-20201228171157982.png)
+  - ![image-20201228171157982](media/image-20201228171157982.png){:.postimage .three_noscale}
 - **results**
-  - ![image-20201228174443654](media/image-20201228174443654.png)
+  - ![image-20201228174443654](media/image-20201228174443654.png){:.postimage .three_noscale}
 
 </details>
 
@@ -366,8 +366,8 @@ learning generalized templates comprised of elements
 
 - **Result**
   - 评价：可以看到学出来的曲面可以不是闭合的
-  - ![image-20201207204146033](media/image-20201207204146033.png)
-    ![image-20201207204206853](media/image-20201207204206853.png)
+  - ![image-20201207204146033](media/image-20201207204146033.png){:.postimage .three_noscale}
+    ![image-20201207204206853](media/image-20201207204206853.png){:.postimage .three_noscale}
 - **Motivation**
   - learning to generate 3D parametric surface representations for novel object instances, as seen from one or more views
   - 使用2D patch来作为UV parameterization，处理多个non-adjacent views，并且建立2D pixels和3D surface points之间的correspondence
@@ -411,11 +411,11 @@ learning generalized templates comprised of elements
     	image --> z[global latent code z] --> MLP
     	MLP --> 3d[3D surface coordinate]
     ```
-  - <br>![image-20201208103708582](media/image-20201208103708582.png)
+  - <br>![image-20201208103708582](media/image-20201208103708582.png){:.postimage .three_noscale}
 - single view single chart pix2surf
   - NOCS-UV branch
     - 在过去的NOCS输出上额外加两个channel，输出uv值
-    - uv不是均匀采样来的，而是直接从图像预测出一张2-channel uv image <br>![image-20201208101930111](media/image-20201208101930111.png)
+    - uv不是均匀采样来的，而是直接从图像预测出一张2-channel uv image <br>![image-20201208101930111](media/image-20201208101930111.png){:.postimage .three_noscale}
     - 发现可以emergence of a chart，并且这个chart几乎已经multi view consistent，multi object consistent
       - 即网络可以自己学出来如何把一个物体shape unrap到一个flat 空间
     - code-extractor 一个小CNN
@@ -436,7 +436,7 @@ learning generalized templates comprised of elements
     - 其余都是端到端的
 - multi view atlas pix2surf
   - 不同view的latent code取max pooling，max pooled code和该view的code concat在一起
-  - 从一个view的pixel的NOCS map的真值，找到这个真值在另一个view下的绝对对应pixel位置<br>最小化这两个pixel预测出的3D 点距离，即为所定义的multi view consistency loss<br>![image-20201208105212477](media/image-20201208105212477.png)
+  - 从一个view的pixel的NOCS map的真值，找到这个真值在另一个view下的绝对对应pixel位置<br>最小化这两个pixel预测出的3D 点距离，即为所定义的multi view consistency loss<br>![image-20201208105212477](media/image-20201208105212477.png){:.postimage .three_noscale}
 
 </details>
 
@@ -459,17 +459,17 @@ learning generalized templates comprised of elements
 
 |                                                              |                                                              |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| ![image-20201216162000056](media/image-20201216162000056.png) | P指的是测试时的物体在数据集物体pose分布内，红P指不在数据集pose分布内<br>N指的是低噪声，红N指moderate noise<br>T指训练集见过的物体类别，T指训练集没有见过的物体类别<br>可以看到，本篇重点强调学出那些和pose解耦了的局部的meshlets，用这些meshlets来拼出完整mesh |
+| ![image-20201216162000056](media/image-20201216162000056.png){:.postimage .three_noscale} | P指的是测试时的物体在数据集物体pose分布内，红P指不在数据集pose分布内<br>N指的是低噪声，红N指moderate noise<br>T指训练集见过的物体类别，T指训练集没有见过的物体类别<br>可以看到，本篇重点强调学出那些和pose解耦了的局部的meshlets，用这些meshlets来拼出完整mesh |
 
  - **geodesic parameterization**
     - *Geodesic polar coordinates on polygonal meshes.* 
     - 把一个顶点和周围的点映射到这个顶点的切平面的坐标上；然后把切平面通过变换变换到canonical pose（即顶点位移到坐标原点，切平面的法向量即z轴，切平面的u,v轴和x,y轴重合）
     - 这样，可以实现pose解耦，学到那些各种各样的局部的meshlets
-    - ![image-20201216163007426](media/image-20201216163007426.png)
+    - ![image-20201216163007426](media/image-20201216163007426.png){:.postimage .three_noscale}
  - **VAE**
     - 用VAE把各种meshlets压缩到一个latent space
     - 然后应用它fit一个点云集合的时候，首先用encoder提取一个初始的latent code，然后auto-decoder来更新几步latent code
-    - ![image-20201216162658302](media/image-20201216162658302.png)
+    - ![image-20201216162658302](media/image-20201216162658302.png){:.postimage .three_noscale}
  - **overall optimization**
     - 首先随便初始化一个rough mesh，从这个rough mesh提取meshlets，保证每个vertex至少被3个meshlets cover
        - 注意，这样训练时就有两个量要迭代优化更新：一个是mesh，一个是一组meshlets；
@@ -480,7 +480,7 @@ learning generalized templates comprised of elements
        - 最小化更新后的meshlets的形状和“拼成的mesh”的误差
        - 首先固定meshlets的形状code，更新mesh顶点
        - 然后固定mesh顶点，更新meshlet的形状code
-    - ![image-20201216163105638](media/image-20201216163105638.png)
+    - ![image-20201216163105638](media/image-20201216163105638.png){:.postimage .three_noscale}
 
 </details>
 
@@ -501,17 +501,17 @@ learning generalized templates comprised of elements
   - 本篇提出 在训练时，开发深度神经网络的天生的可微性
     - 来利用表面的微分属性去阻止patch折叠、显著减少互相重叠
     - 并且这让我们可以可靠地计算表面法向量、曲率等
-  - ![image-20201224164231425](media/image-20201224164231425.png)
+  - ![image-20201224164231425](media/image-20201224164231425.png){:.postimage .three_noscale}
 - **related works**: 在训练时使用differential surface properties
   - *Learning to Reconstruct Texture-Less Deformable Surfaces. 3DV2018*
   - *Marr Revisited: 2D-3D Model Alignment via Surface Normal Prediction. CVPR2016*
   - *A Two-Stream Network for Fast and Accurate 3D Cloth Draping. ICCV2019*
 - **overview**
-  - ![image-20201224193837533](media/image-20201224193837533.png)
+  - ![image-20201224193837533](media/image-20201224193837533.png){:.postimage .three_noscale}
 - **results**
   - 主要对比基线就是atlasNet
-  - Pointcloud Autoencoding (PCAE)<br>![image-20201224175724685](media/image-20201224175724685.png)
-  - single view reconstruction (SVR) 单目重建<br>![image-20201224175853915](media/image-20201224175853915.png)
+  - Pointcloud Autoencoding (PCAE)<br>![image-20201224175724685](media/image-20201224175724685.png){:.postimage .three_noscale}
+  - single view reconstruction (SVR) 单目重建<br>![image-20201224175853915](media/image-20201224175853915.png){:.postimage .three_noscale}
 
 </details>
 
@@ -527,8 +527,8 @@ learning generalized templates comprised of elements
 
 - **Motivation**
   - 对目前的multiple patch based parametric surface representations（atlas），改进patches的`global consistency`（即防止**<u>孔洞</u>**和多个patch不正确**<u>交叉</u>**"jagged/带**<u>锯齿</u>**的"的情况）
-  - ![image-20201224174834579](media/image-20201224174834579.png)
-  - 典型的缝合问题（1D表示）<br>![image-20201224175209265](media/image-20201224175209265.png)
+  - ![image-20201224174834579](media/image-20201224174834579.png){:.postimage .three_noscale}
+  - 典型的缝合问题（1D表示）<br>![image-20201224175209265](media/image-20201224175209265.png){:.postimage .three_noscale}
 - **Related works：patch-wise representations**
   - FoldingNet *Foldingnet: Point Cloud Auto-Encoder via Deep Grid Deformation.CVPR2018*<br>第一个基于深度神经网络的工作：学到一个参数化的函数来在3D空间中嵌入一个2D流形
   - 后面的工作shifted to ensembles of such learned functions来做patch-wise表征：
@@ -574,7 +574,7 @@ learning generalized templates comprised of elements
   - inside / outside indicator
   - 其实是一种类别级别的连续函数隐式的shape表征，类似occupancy networks；
     <br>输入code + one point 坐标，输出在shape 内/外；（类似SDF）
-  - ![image-20201203174748033](media/image-20201203174748033.png)
+  - ![image-20201203174748033](media/image-20201203174748033.png){:.postimage .three_noscale}
 
 </details>
 
@@ -589,9 +589,9 @@ learning generalized templates comprised of elements
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
-  - 用一个隐式函数来表达占用概率，从而可以实现任意分辨率的表达<br>![image-20201203153023230](media/image-20201203153023230.png)
+  - 用一个隐式函数来表达占用概率，从而可以实现任意分辨率的表达<br>![image-20201203153023230](media/image-20201203153023230.png){:.postimage .three_noscale}
 - **主要框架**
-  - **多分辨率等值面提取技术** [Multiresolution IsoSurface Extraction (MISE)]<br>![image-20201203153114826](media/image-20201203153114826.png)
+  - **多分辨率等值面提取技术** [Multiresolution IsoSurface Extraction (MISE)]<br>![image-20201203153114826](media/image-20201203153114826.png){:.postimage .three_noscale}
 
 </details>
 
@@ -606,7 +606,7 @@ learning generalized templates comprised of elements
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
-  - 从Occupancy Network的continuous feature function到voxelized features + 3D conv<br>![image-20201222145923538](media/image-20201222145923538.png)
+  - 从Occupancy Network的continuous feature function到voxelized features + 3D conv<br>![image-20201222145923538](media/image-20201222145923538.png){:.postimage .three_noscale}
 
 </details>
 
@@ -622,7 +622,7 @@ learning generalized templates comprised of elements
 
 - **Motivation**
   - occupancy networks是continuous function；<br>convolutional occupancy networks是voxelized features；<br>本篇是动态平面组上的features
-  - ![image-20201222161043946](media/image-20201222161043946.png)
+  - ![image-20201222161043946](media/image-20201222161043946.png){:.postimage .three_noscale}
 
 </details>
 
@@ -638,11 +638,11 @@ learning generalized templates comprised of elements
 
 - **Motivation**
   - SDF是CG领域又一个形状的表征；本篇是first to use deep SDF functions to model shapes
-  - ![image-20201210100006815](media/image-20201210100006815.png)
-  - ![image-20201210095931233](media/image-20201210095931233.png)
+  - ![image-20201210100006815](media/image-20201210100006815.png){:.postimage .three_noscale}
+  - ![image-20201210095931233](media/image-20201210095931233.png){:.postimage .three_noscale}
 - **overview**
-  - 单个形状用单个SDF网络，一个category用code conditioned<br>![image-20201210100154456](media/image-20201210100154456.png)
-  - 使用auto-decoder<br>![image-20201210100244493](media/image-20201210100244493.png)
+  - 单个形状用单个SDF网络，一个category用code conditioned<br>![image-20201210100154456](media/image-20201210100154456.png){:.postimage .three_noscale}
+  - 使用auto-decoder<br>![image-20201210100244493](media/image-20201210100244493.png){:.postimage .three_noscale}
 
 </details>
 
@@ -662,7 +662,7 @@ learning generalized templates comprised of elements
 - **Motivation**
   - 希望学到的shape，不仅全局特征好，还想有局部fine grained details 细粒度细节
 - **overview**
-  - 同时用global features和local features来infer SDF<br>![image-20201209122023941](media/image-20201209122023941.png)
+  - 同时用global features和local features来infer SDF<br>![image-20201209122023941](media/image-20201209122023941.png){:.postimage .three_noscale}
 
 </details>
 
@@ -694,7 +694,7 @@ learning generalized templates comprised of elements
   - IM-Net同作的续作
   - 效果很好；但是对于thin-structure表现不佳
 - **Motivation**
-  - take inspiration from binary space partitions，学到更`compact` / 紧致 / low-poly的mesh表征 <br>![image-20201229112704532](media/image-20201229112704532.png)
+  - take inspiration from binary space partitions，学到更`compact` / 紧致 / low-poly的mesh表征 <br>![image-20201229112704532](media/image-20201229112704532.png){:.postimage .three_noscale}
 - **overview**
   - 依旧是输入point坐标 + shape code condition，输出inside / outside；
   - 不同之处在于构造的内部模型是`n`个平面方程，靠`n`个这样的binary space partition的组合来表征shape
@@ -703,13 +703,13 @@ learning generalized templates comprised of elements
 
 | 示意图                                                       | 网络结构                                                     |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| ![image-20201229113148367](media/image-20201229113148367.png) | ![image-20201229113341539](media/image-20201229113341539.png) |
+| ![image-20201229113148367](media/image-20201229113148367.png) | ![image-20201229113341539](media/image-20201229113341539.png){:.postimage .three_noscale} |
 
  - **few shot segmentation**
-   -  因为同category的shape的convex组合之间已经建立起了`correspondence`，只需要手动给几个shape标一下convex id对应的part label，就可以利用correspondence获得其他同category shape的标注<br><img src="media/image-20201229113640866.png" alt="image-20201229113640866" style="zoom:67%;" />
+   -  因为同category的shape的convex组合之间已经建立起了`correspondence`，只需要手动给几个shape标一下convex id对应的part label，就可以利用correspondence获得其他同category shape的标注<br><img src="media/image-20201229113640866.png" alt="image-20201229113640866"  class="postimage three_noscale" />
  - **results**
-    - <img src="media/image-20201229113556212.png" alt="image-20201229113556212" style="zoom: 67%;" />
-    - <img src="media/image-20201229114054936.png" alt="image-20201229114054936" style="zoom:67%;" />
+    - <img src="media/image-20201229113556212.png" alt="image-20201229113556212" class="postimage three_noscale" />
+    - <img src="media/image-20201229114054936.png" alt="image-20201229114054936" class="postimage three_noscale" />
 
 </details>
 
@@ -727,8 +727,8 @@ learning generalized templates comprised of elements
   - 和BSP-Net的概念很像；用一个个由平面包围出的`convex`定义surface；输入是点坐标，输出是 `inside/outside indicator`
   - [ ] 和BSP-Net的区别是这里是softmax？
 - **Motivation**
-  - from hyperplanes to occupancy<br>![image-20201230092051009](media/image-20201230092051009.png)
-  - ![CvxNet](media/CvxNet.gif)
+  - from hyperplanes to occupancy<br>![image-20201230092051009](media/image-20201230092051009.png){:.postimage .three_noscale}
+  - ![CvxNet](media/CvxNet.gif){:.postimage .three_noscale}
 
 </details>
 
@@ -745,9 +745,9 @@ learning generalized templates comprised of elements
 - **Motivation**
   - 训练一个神经网络去把query 3D locations "拉" 到他们在表面上的最近邻居；<br>拉的操作，方向是query locations处的网络梯度，步长是query locations处的网络SDF值，这两个都是从网络自身计算出来的<br>
   - 让我们可以同时更新sdf值和梯度
-  - ![image-20201228162639806](media/image-20201228162639806.png)
+  - ![image-20201228162639806](media/image-20201228162639806.png){:.postimage .three_noscale}
 - **overview**
-  - loss functions直接从GT点云本身定义，而不是利用GT SDF作回归；<br>![image-20201228163704020](media/image-20201228163704020.png)<br>![image-20201228163648881](media/image-20201228163648881.png)
+  - loss functions直接从GT点云本身定义，而不是利用GT SDF作回归；<br>![image-20201228163704020](media/image-20201228163704020.png)<br>![image-20201228163648881](media/image-20201228163648881.png){:.postimage .three_noscale}
 
 </details>
 
@@ -769,9 +769,9 @@ learning generalized templates comprised of elements
     - uDF + nVF 可以表达任意开/闭拓扑的high fidelity形状
     - 可以从带噪声的triangle soups学习，不需要watertight mehses
     - 并且额外提供了学到的表征提取、渲染等值面的新方法
-  - ![image-20201222150310307](media/image-20201222150310307.png)
+  - ![image-20201222150310307](media/image-20201222150310307.png){:.postimage .three_noscale}
 - **overview**
-  - uDF+nVF<br>![image-20201222151610880](media/image-20201222151610880.png)
+  - uDF+nVF<br>![image-20201222151610880](media/image-20201222151610880.png){:.postimage .three_noscale}
 
 </details>
 
@@ -788,9 +788,9 @@ learning generalized templates comprised of elements
 - **Motivation**
   - 把每个具体instance shape表达为一个template的shape的deformation
   - 用deformation field建立起 **`<u>shape correspondence</u>`**，这样就可以做texture transfer、label transfer等
-  - ![image-20201222155438709](media/image-20201222155438709.png)
+  - ![image-20201222155438709](media/image-20201222155438709.png){:.postimage .three_noscale}
 - **overview**
-  - 用一个超网络从code预测DeformNet $D$的参数；<br>然后在空间中的每一处，从同一个template SDF，DeformNet $D$产生位置修正$v$与标量距离修正$\Delta s$，总共4维输出<br>即最终的$p$点处的SDF值为：$s=T(p+v)+\Delta s=T(p+D^v_{\omega}(p))+D^{\Delta s}_{\omega}(p)$<br>注意变形向量$v$其实反映的是从shape instance场 到 template 场所需的变形向量<br>![image-20201222153322051](media/image-20201222153322051.png)
+  - 用一个超网络从code预测DeformNet $D$的参数；<br>然后在空间中的每一处，从同一个template SDF，DeformNet $D$产生位置修正$v$与标量距离修正$\Delta s$，总共4维输出<br>即最终的$p$点处的SDF值为：$s=T(p+v)+\Delta s=T(p+D^v_{\omega}(p))+D^{\Delta s}_{\omega}(p)$<br>注意变形向量$v$其实反映的是从shape instance场 到 template 场所需的变形向量<br>![image-20201222153322051](media/image-20201222153322051.png){:.postimage .three_noscale}
 - **losses**
   - SDF loss
     - 被训练的量：变形场超网络$\Psi$，SDF输出场$\Phi$，模板场$T$，learned latent codes $\{\alpha_j\}$；$\Psi_i(p)$代表predicted SDF值$\Phi_{\Psi(\alpha_i)}(p)$，$\Omega$代表3D空间，$\mathcal{S}_i$ 代表形状表面
@@ -833,14 +833,14 @@ learning generalized templates comprised of elements
     - $$u(p_i,p_j)=1-\exp(-\gamma \lVert (p_i+v_i) - (p_j+v_j) \rVert_2^2)$$
       - 其中$v_i=D_{\omega_i}^v(p_i)$ 是点上的变形向量；是从 shape instance space到 template space的$\Delta$
       - $\lVert (p_i+v_i) - (p_j+v_j) \rVert_2$其实就是这对相关点$p_i$和$p_j$在template space下的距离
-    - 不确定性大的区域 comform well to 形状之间的 `structure discrepancy` 结构不符<br>下图展示的是形状A（表面）上的点，在形状B（表面）上找到的相关的点的不确定性；红色高不确定性，蓝色低不确定性<br><img src="media/image-20210104200614483.png" alt="image-20210104200614483"  />
+    - 不确定性大的区域 comform well to 形状之间的 `structure discrepancy` 结构不符<br>下图展示的是形状A（表面）上的点，在形状B（表面）上找到的相关的点的不确定性；红色高不确定性，蓝色低不确定性<br><img src="media/image-20210104200614483.png" alt="image-20210104200614483"  class="postimage three_noscale" />
 - **results**
-  - texture transfer <br>![image-20201222155357538](media/image-20201222155357538.png)<br>![image-20210104173728589](media/image-20210104173728589.png)
-  - label transfer：可以看到对于 椅子把 这种时有时无的结构也可以handle<br>![image-20201222155611605](media/image-20201222155611605.png)
+  - texture transfer <br>![image-20201222155357538](media/image-20201222155357538.png)<br>![image-20210104173728589](media/image-20210104173728589.png){:.postimage .three_noscale}
+  - label transfer：可以看到对于 椅子把 这种时有时无的结构也可以handle<br>![image-20201222155611605](media/image-20201222155611605.png){:.postimage .three_noscale}
 - **Ablation study / discussions**
   - 单纯的位置修正就已经可以构成变形场；但是本篇发现，仅仅位置修正不够，加入标量修正可以：
     - 加入标量修正对生成所需shape有帮助
-      - <img src="media/image-20210104165611897.png" alt="image-20210104165611897" style="zoom: 67%;" />
+      - <img src="media/image-20210104165611897.png" alt="image-20210104165611897" class="postimage three_noscale" />
     - 实验发现 **<u>加入标量修正对于学习高质量的相关性也很重要</u>**
       - [ ] Q: why ? <br>试图解释：标量修正可以控制形状的一部分 特征： `膨胀`？`结构/拓扑改变`？，从而更容易学到简单、plausible的对应关系？
         - [ ] Q: 类似CGAN中，用一个随机噪声z控制一些`"不想要"`的特征？
@@ -849,9 +849,9 @@ learning generalized templates comprised of elements
     - template implicit field并不是template shape；甚至都不是valid SDF
     - instead，template implicit field 捕捉的是 **一个category中不同物体的shape `结构`** 
     - 在实验中，发现如果loss不合适的情况下，template implicit field **`degenerates` to a <u>valid shape SDF</u>** representing a certain shape, 导致重建的 **精确度下降**、**相关性降低**
-  - 几个training loss对结果的影响<br>![image-20210104120743115](media/image-20210104120743115.png)
+  - 几个training loss对结果的影响<br>![image-20210104120743115](media/image-20210104120743115.png){:.postimage .three_noscale}
 - **implementation details**
-  - 网络结构<br>![image-20210104121544233](media/image-20210104121544233.png)
+  - 网络结构<br>![image-20210104121544233](media/image-20210104121544233.png){:.postimage .three_noscale}
 
 </details>
 
@@ -874,17 +874,17 @@ learning generalized templates comprised of elements
 
 | 本篇：Deep Implicit Templates for 3D Shape Representation的transfer效果 | deformed implicit field的transfer效果                        |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="media/image-20201229180439537.png" alt="image-20201229180439537" style="zoom: 67%;" /> | ![image-20201229180759966](media/image-20201229180759966.png) |
-| keypoint detection PCK accuracy<br>![image-20210104120316992](media/image-20210104120316992.png) | label transfer IOU banchmark<br>![image-20210104114757341](media/image-20210104114757341.png) |
+| <img src="media/image-20201229180439537.png" alt="image-20201229180439537" class="postimage three_noscale" /> | ![image-20201229180759966](media/image-20201229180759966.png){:.postimage .three_noscale} |
+| keypoint detection PCK accuracy<br>![image-20210104120316992](media/image-20210104120316992.png) | label transfer IOU banchmark<br>![image-20210104114757341](media/image-20210104114757341.png){:.postimage .three_noscale} |
 
 
 - **Motivation**
-  - 把一个具体shape表征为 `conditional deformations` of a `template`，建立起 category level 的dense correspondence<br>注意是 **<u>conditional</u>** deformations，相当与Deformed NeRF那篇，有一个deformation code <br>![image-20201229171836408](media/image-20201229171836408.png)
+  - 把一个具体shape表征为 `conditional deformations` of a `template`，建立起 category level 的dense correspondence<br>注意是 **<u>conditional</u>** deformations，相当与Deformed NeRF那篇，有一个deformation code <br>![image-20201229171836408](media/image-20201229171836408.png){:.postimage .three_noscale}
   - 把一个条件空间变换 分解为 若干个仿射变换
   - training loss经过谨慎设计，无监督地保证重建的精度 + plausible template
 - **overview**
-  - ![image-20201229171755900](media/image-20201229171755900.png)
-  - ![image-20201229173256894](media/image-20201229173256894.png)
+  - ![image-20201229171755900](media/image-20201229171755900.png){:.postimage .three_noscale}
+  - ![image-20201229173256894](media/image-20201229173256894.png){:.postimage .three_noscale}
   - warping函数把首先把一个点p映射到一个`canonical position` ，然后在模板SDF中query这个canonical position来获取SDF值
   - 照搬原DeepSDF训练是不行的：尤其容易学出一个过分简单的template和过拟合到一个复杂的transformer（这里译作变换器更合适），最终带来不准确的correspondence
   - 目标：
@@ -894,7 +894,7 @@ learning generalized templates comprised of elements
 - **spatial warping LSTM**
   - 实践发现用MLP来表达warping function不太合适：
     - [ ] Q: 考虑理论上的原因
-    - MLP和LSTM作warping的对比：warping的补间<br>![image-20201229172212443](media/image-20201229172212443.png)
+    - MLP和LSTM作warping的对比：warping的补间<br>![image-20201229172212443](media/image-20201229172212443.png){:.postimage .three_noscale}
   - 把一个点的空间变换表示为多步仿射变换：
     - $$ (\alpha^{(i)},\beta^{(i)},\phi^{(i)},\psi^{i})={\rm LSTMCell}(c,p^{(i-1)},\phi^{(i-1)},\psi^{(i-1)}) $$
     - 其中$\phi$和$\psi$是输出和cell state，$\alpha$和$\beta$是仿射变换的参数，角标$(i)$代表迭代的*i*-th step
@@ -903,21 +903,21 @@ learning generalized templates comprised of elements
   - 训练loss
     - **reconstruction loss**
       - 因为warping函数是迭代的，从 `Curriculum deepsdf, Yueqi Duan et al.2020`得到启发，用progressive reconstruction loss
-      - ![image-20201229175034719](media/image-20201229175034719.png)
+      - ![image-20201229175034719](media/image-20201229175034719.png){:.postimage .three_noscale}
     - **regularization loss**
       - <u>point-wise regularization</u> 
         - 认为所有meshes都normlized 到一个`单位球`，并和`canonical pose`对齐
-        - ![image-20201229175243291](media/image-20201229175243291.png)
+        - ![image-20201229175243291](media/image-20201229175243291.png){:.postimage .three_noscale}
         - [Huber kernel](https://en.wikipedia.org/wiki/Huber_loss)
       - <u>point pair regularization</u> 对空间扭曲程度的限制
         - 尽管deform时空间扭曲是不可避免的，极端的空间扭曲还是可以避免的
-        - ![image-20201229175618093](media/image-20201229175618093.png)
+        - ![image-20201229175618093](media/image-20201229175618093.png){:.postimage .three_noscale}
         - 其中，$\Delta p=T(p,c)-p$是点p的position shift，<br>$\epsilon = 0.5$是控制扭曲容忍度的参数，对于防止shape collapse（形状崩塌，指学到过于简单的shape template）很关键
-        - 下图是在有无此loss的情况下学到的template；<br>可见，如果没有point pair regularization，会学到过于简单的template<br>![image-20201229175909233](media/image-20201229175909233.png)
+        - 下图是在有无此loss的情况下学到的template；<br>可见，如果没有point pair regularization，会学到过于简单的template<br>![image-20201229175909233](media/image-20201229175909233.png){:.postimage .three_noscale}
 - **results**
-  - 形状补间的效果：<br>![image-20201229180146944](media/image-20201229180146944.png)
-  - 因为已经建立起了shape correspondense，可以做关键点检测的迁移<br>![image-20201229180103315](media/image-20201229180103315.png)
-  - 应用：texture transfer，等<br>![image-20201229172342590](media/image-20201229172342590.png)
+  - 形状补间的效果：<br>![image-20201229180146944](media/image-20201229180146944.png){:.postimage .three_noscale}
+  - 因为已经建立起了shape correspondense，可以做关键点检测的迁移<br>![image-20201229180103315](media/image-20201229180103315.png){:.postimage .three_noscale}
+  - 应用：texture transfer，等<br>![image-20201229172342590](media/image-20201229172342590.png){:.postimage .three_noscale}
 
 </details>
 
@@ -932,8 +932,8 @@ learning generalized templates comprised of elements
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
-  - ![image-20201207222950762](media/image-20201207222950762.png)
-  - implicit occupancy field![image-20201207195643392](media/image-20201207195643392.png)
+  - ![image-20201207222950762](media/image-20201207222950762.png){:.postimage .three_noscale}
+  - implicit occupancy field![image-20201207195643392](media/image-20201207195643392.png){:.postimage .three_noscale}
 
 </details>
 
@@ -949,15 +949,15 @@ learning generalized templates comprised of elements
 
 - **Motivation**
   - 从raw 点云中直接学习DeepSDF，在with or without 法向量数据的情况下
-  - 用隐式的shape先验，就可以获得plausible solutions<br>其实就是简单的loss函数，鼓励输入点云处的函数值为0，鼓励空间散布的点的梯度是单位模梯度<br>![image-20201228164827136](media/image-20201228164827136.png)
+  - 用隐式的shape先验，就可以获得plausible solutions<br>其实就是简单的loss函数，鼓励输入点云处的函数值为0，鼓励空间散布的点的梯度是单位模梯度<br>![image-20201228164827136](media/image-20201228164827136.png){:.postimage .three_noscale}
 - **overview**
   - given raw input pointcloud $\mathcal{X}=\{x_i\}_{i\in I} \subset \mathbb{R}^3$,  <u>**with or without normal**</u> data $\mathcal{N}=\{n_i\}_{i\in I} \subset \mathbb{R}^3$，从中学出一个 **<u>plausible</u>** 的surface $\mathcal{M}$
-  - 学SDF时的常规loss：<br>有数据处函数值为0，法向量为真值；<br>(无数据处)空间分布的点法向量2-norm为1<br><img src="media/image-20201228172709924.png" alt="image-20201228172709924" style="zoom: 67%;" />
+  - 学SDF时的常规loss：<br>有数据处函数值为0，法向量为真值；<br>(无数据处)空间分布的点法向量2-norm为1<br><img src="media/image-20201228172709924.png" alt="image-20201228172709924" class="postimage three_noscale" />
   - 然而只有上述loss存在问题
     - 首先，不能保证学到的是SDF
     - 其次，即使能学到SDF，也不能保证学到的是一个 **<u>plausible one</u>**
   - 本篇通过理论证明，如果对上述loss使用梯度下降算法，，就可以避免bad critical solutions
-    - 是从平面的线性问题考虑的，把这种属性叫做 **<u>plane reduction</u>** <br>![image-20201228173842422](media/image-20201228173842422.png)
+    - 是从平面的线性问题考虑的，把这种属性叫做 **<u>plane reduction</u>** <br>![image-20201228173842422](media/image-20201228173842422.png){:.postimage .three_noscale}
 
 </details>
 
@@ -997,7 +997,7 @@ learning generalized templates comprised of elements
   - 因为在patch层次，不同类别的物体有相似性，用上这种相似性就可以做更泛化的模型
   - 在一个canonical space下学到这些patch-based representation
   - 从ShapeNet的一个类别学出来的representation，可以用于表征任何一个其他类别的非常细节的shapes；并且可以用更少的shape来训练
-  - ![image-20201217115545052](media/image-20201217115545052.png)
+  - ![image-20201217115545052](media/image-20201217115545052.png){:.postimage .three_noscale}
 - **Overview**
   - auto-decoder
   - losses：重建loss和patch extrinsics的guidance loss，还有regularization
@@ -1012,8 +1012,8 @@ learning generalized templates comprised of elements
   - $\mathcal{L}_{scl}(\boldsymbol{e}_i)$ 鼓励patches to be reasonably small，防止不同patch之间显著的重叠
   - $\mathcal{L}_{var}(\boldsymbol{e}_i)$ 鼓励所有patch大小相似
 - **result**
-  - ![image-20201217122000974](media/image-20201217122000974.png)
-  - ![image-20201217122618035](media/image-20201217122618035.png)
+  - ![image-20201217122000974](media/image-20201217122000974.png){:.postimage .three_noscale}
+  - ![image-20201217122618035](media/image-20201217122618035.png){:.postimage .three_noscale}
 
 </details>
 
@@ -1031,7 +1031,7 @@ learning generalized templates comprised of elements
   - 现在的DeepSDF倾向于做category类别的泛化/生成；
   - 本篇主要提出其实overfit到一个具体的shape的SDF可以作为mesh的一种更`compact`紧致的表征，而且相比于显式地mesh更省空间
   - 同时，做了很多具体shape optimization的优化，比如采样时基于重要度采样，一些biased points，等
-  - ![image-20201223092223714](media/image-20201223092223714.png)
+  - ![image-20201223092223714](media/image-20201223092223714.png){:.postimage .three_noscale}
 
 </details>
 
@@ -1051,7 +1051,7 @@ learning generalized templates comprised of elements
 - **Review**
   - DeepSDF / deep implicit field类方法往往都喜欢用auto-decoder，因为set-encoder有欠拟合的问题
   - auto-decoder 在测试时也需要infer，需要很多步迭代，infer一次比较耗时<br>因此用meta-learning（MAML类）找出一个合适的auto-decoder优化的初值code<br>这样在测试时infer就只需要少量步数的迭代就可以得到很好的效果
-  - ![image-20201210102054355](media/image-20201210102054355.png)
+  - ![image-20201210102054355](media/image-20201210102054355.png){:.postimage .three_noscale}
 
 </details>
 
@@ -1067,7 +1067,7 @@ learning generalized templates comprised of elements
 
 - **Motivation**
   - 对于coordinate-based neural representations在auto-decoder时，用meta-learned 的initialization
-  - ![image-20201215193905125](media/image-20201215193905125.png)
+  - ![image-20201215193905125](media/image-20201215193905125.png){:.postimage .three_noscale}
   - 与MetaSDF的差别：进一步拓展到更多种类的neural coordinate-based signals，并且把the power of using initial weight settings开发为一种先验信息
 
 </details>
@@ -1107,7 +1107,7 @@ learning generalized templates comprised of elements
       - 改进training data的sampling
       - 提供最优化时的regularization
 - **iso-surface sampling**：如何得到iso-surface上均匀分布的点
-  - ![image-20201223112811012](media/image-20201223112811012.png)
+  - ![image-20201223112811012](media/image-20201223112811012.png){:.postimage .three_noscale}
   - **projection**：projecing a point onto the iso-surface 可以被视作 在一个给定点用牛顿法估计一个方程的根
     - 考虑这里和贾奎那篇analytic marching算法初始找到表面上一个点的思路是很像的
     - 给定隐函数$f(\boldsymbol{\rm p}): \mathbb{R}^3\rightarrow \mathbb{R}$，初始点$\boldsymbol{\rm q}_0\in\mathbb{R}^3$<br>牛顿法求根：$\boldsymbol{\rm q}_{k+1}=\boldsymbol{\rm q}_{k}-J_f(\boldsymbol{\rm q}_k)^+ f(\boldsymbol{\rm q}_k)$, where $J_f(\boldsymbol{\rm q}_k)^+$是Jacobian的Moore-Penrose 伪逆
@@ -1124,7 +1124,7 @@ learning generalized templates comprised of elements
       - *Edge-aware point set resampling, SIGGRAPH Asia 2013*
 - **results**
 
-  - ![image-20201229153051697](media/image-20201229153051697.png)
+  - ![image-20201229153051697](media/image-20201229153051697.png){:.postimage .three_noscale}
 
 </details>
 
@@ -1168,15 +1168,15 @@ learning generalized templates comprised of elements
   - 用一个可微分的renderer来把learning-based SDF可微分地渲染为 depth image, surface normal, silhouettes，从任意相机viewpoints
   - 应用：可用于infer 3D shape from various inputs, e.g. multi-view images and single depth image
 - **overview**
-  - ![image-20201215111010407](media/image-20201215111010407.png)
+  - ![image-20201215111010407](media/image-20201215111010407.png){:.postimage .three_noscale}
   - [auto-decoder] 给定一个已经pre-trained generative model, e.g. DeepSDF, 通过在latent code space 寻找能产生和给定观测最一致的3D shape
-  - ![image-20210105074006003](media/image-20210105074006003.png)
+  - ![image-20210105074006003](media/image-20210105074006003.png){:.postimage .three_noscale}
 - [sphere tracing] 使用一个类似sphere tracing的框架来做可微分的渲染
   - 直接应用sphere tracing因为需要对network做反复的query并且在反向传播时产生递归的计算图（笔者注：就像SRN那样），计算费时、费内存；所以需要对前向传播和反向传播过程都要做出优化
   - sphere-traced results (i.e. camera ray上的距离)，可以用于产生各种输出，如<u>深度图</u>、<u>表面法向量</u>、<u>轮廓</u>等，因此可以用loss来方便地形成端到端的manner
   - 前向通路
-  - ![image-20210105073826931](media/image-20210105073826931.png)
-- ![image-20201215164421303](media/image-20201215164421303.png)
+  - ![image-20210105073826931](media/image-20210105073826931.png){:.postimage .three_noscale}
+- ![image-20201215164421303](media/image-20201215164421303.png){:.postimage .three_noscale}
     - 用一种coarse-to-fine的方法来save computation at initial steps
       - 考虑到在sphere tracing的前面几步，不同pixel的ray都非常接近
       - 从图像的1/4分辨率开始tracing，然后每3步以后把每个像素分成4份
@@ -1192,15 +1192,15 @@ learning generalized templates comprised of elements
 - 反向传播
     - 用SDF的梯度的近似值，对训练影响不大，但是显著减少计算和内存占用
 - **评价：文中出现了非常多技术细节的详细解释，值得一读**
-  - sphere tracing<br>![image-20201215111200177](media/image-20201215111200177.png)
+  - sphere tracing<br>![image-20201215111200177](media/image-20201215111200177.png){:.postimage .three_noscale}
   - 训练一个神经网络，同时为每个3D location 预测signed distance 和color
 - **实验**
-  - 收敛速度<br>![image-20201215112912115](media/image-20201215112912115.png)
-  - **Texture Re-rendering**<br>![image-20201215114347510](media/image-20201215114347510.png)
-  - **Shape Completion from Sparse Depths**<br>![image-20201215114703816](media/image-20201215114703816.png)
-  - **Shape Completion over Different Sparsity**<br>![image-20201215114227972](media/image-20201215114227972.png)
-  - **Inverse Optimization over Camera Extrinsics**<br>![image-20201215113343946](media/image-20201215113343946.png)
-  - **Multi-view Reconstruction from Video Sequences 从多视角视频序列重建**<br>![image-20201215115145581](media/image-20201215115145581.png)
+  - 收敛速度<br>![image-20201215112912115](media/image-20201215112912115.png){:.postimage .three_noscale}
+  - **Texture Re-rendering**<br>![image-20201215114347510](media/image-20201215114347510.png){:.postimage .three_noscale}
+  - **Shape Completion from Sparse Depths**<br>![image-20201215114703816](media/image-20201215114703816.png){:.postimage .three_noscale}
+  - **Shape Completion over Different Sparsity**<br>![image-20201215114227972](media/image-20201215114227972.png){:.postimage .three_noscale}
+  - **Inverse Optimization over Camera Extrinsics**<br>![image-20201215113343946](media/image-20201215113343946.png){:.postimage .three_noscale}
+  - **Multi-view Reconstruction from Video Sequences 从多视角视频序列重建**<br>![image-20201215115145581](media/image-20201215115145581.png){:.postimage .three_noscale}
 
 </details>
 
@@ -1218,12 +1218,12 @@ learning generalized templates comprised of elements
 - **Motivation**
   - 单视角3D物体重建，过去的方法往往都有3D形状真值
   - 最近的方法可以没有3D监督信号，但是还是需要训练时多视角的对同个instance的silhouettes标注；因此大多只能应对合成数据集
-  - 本篇提出SDF-SRN，只需要单视角图片(只在训练时+silhouette)输入<br>![image-20201221153940813](media/image-20201221153940813.png)
+  - 本篇提出SDF-SRN，只需要单视角图片(只在训练时+silhouette)输入<br>![image-20201221153940813](media/image-20201221153940813.png){:.postimage .three_noscale}
 - **overview**
-  - single-view一般需要encoder<br>![image-20201215173359177](media/image-20201215173359177.png)
+  - single-view一般需要encoder<br>![image-20201215173359177](media/image-20201215173359177.png){:.postimage .three_noscale}
 - **Results** 
-  - 学出的形状奇奇怪怪；不过总归是纯图片输入，而且只有训练时需要silhouette<br>![image-20201221153429857](media/image-20201221153429857.png)
-  - 颜色重建的质量也一般<br>![image-20201221155058978](media/image-20201221155058978.png)
+  - 学出的形状奇奇怪怪；不过总归是纯图片输入，而且只有训练时需要silhouette<br>![image-20201221153429857](media/image-20201221153429857.png){:.postimage .three_noscale}
+  - 颜色重建的质量也一般<br>![image-20201221155058978](media/image-20201221155058978.png){:.postimage .three_noscale}
 
 </details>
 
@@ -1254,10 +1254,10 @@ learning generalized templates comprised of elements
   - 重点在于一个differentiable renderer：本篇强调shape。输入camera pose和shape，输出渲染图像
   - $\mathcal{L}_{img}$衡量render图像和$I$的差别
   - $\mathcal{L}_{reg}$ 正则化项，保证$\Theta$是一个valid signed distance field（i.e. 梯度是单位向量）<br>实践中，是用$\Delta$近似的梯度
-- single view：从图像encode到一个voxelized 稀疏SDF，经过一些3D卷积refinement，经过differentiable renderer到image![image-20201222103114471](media/image-20201222103114471.png)
+- single view：从图像encode到一个voxelized 稀疏SDF，经过一些3D卷积refinement，经过differentiable renderer到image![image-20201222103114471](media/image-20201222103114471.png){:.postimage .three_noscale}
 - multi view：就用auto-decoder直接训练
 - **results**
-  - single view<br>![image-20201222110938605](media/image-20201222110938605.png)
+  - single view<br>![image-20201222110938605](media/image-20201222110938605.png){:.postimage .three_noscale}
 
 </details>
 
@@ -1279,7 +1279,7 @@ learning generalized templates comprised of elements
   - SDF的优势
     - 可以高效地用sphere tracing来做ray casting
     - 平滑的、真实的表面
-  - ![image-20201222112206328](media/image-20201222112206328.png)
+  - ![image-20201222112206328](media/image-20201222112206328.png){:.postimage .three_noscale}
 - **review**
   - 有一点SDF与NeRF结合的味道，因为其颜色是从坐标位置、几何参数、观测方向共同得来的
   - 公式推导比较细致，因为值除了对几何参数有导数表达式外，还对相机参数有导数表达式
@@ -1309,8 +1309,8 @@ learning generalized templates comprised of elements
 - **masked rendering**
   - ==[*]== 在render的时候额外render出一个`可微分`的`近似binary`的mask
 - **results**
-  - ![image-20201222121157452](media/image-20201222121157452.png)
-  - 可以做外观transfer <br>![image-20201222122008369](media/image-20201222122008369.png)
+  - ![image-20201222121157452](media/image-20201222121157452.png){:.postimage .three_noscale}
+  - 可以做外观transfer <br>![image-20201222122008369](media/image-20201222122008369.png){:.postimage .three_noscale}
 
 </details>
 
@@ -1331,16 +1331,16 @@ learning generalized templates comprised of elements
   - 把场景表征为多个物体
   - 输入input RGB image，通过一个recurrent encoder，回归出每个物体的shape, pose, texture；shape通过SDF表征
   - 半监督体现在训练时候用的是RGB-D，测试时候只需要RGB
-  - single view见所有物体；物体个数是已知的<br>![image-20201222094044348](media/image-20201222094044348.png)
+  - single view见所有物体；物体个数是已知的<br>![image-20201222094044348](media/image-20201222094044348.png){:.postimage .three_noscale}
 - **review**
   - 只用了clevrn类数据集，而且甚至还是简单的低分辨率渲染，实验比较简单
 - **Overview**
   - 首先从example shapes有监督地训练SDF（的decoder）；
   - 然后自监督地通过RGB-D训练differentiable renderer和recurrent encoder
-  - [ ] recurrent真的能这样设计吗？<br>![image-20201222090334334](media/image-20201222090334334.png)
-  - 可以看到recurrent的主要目的是迭代、逐个地得出object的code，倒是和之前*Multi-object representation learning with iterative variational inference.*那篇有些像<br>每个物体输出深度估计，图像估计，与occulusion mask<br>![image-20201222091509810](media/image-20201222091509810.png)
+  - [ ] recurrent真的能这样设计吗？<br>![image-20201222090334334](media/image-20201222090334334.png){:.postimage .three_noscale}
+  - 可以看到recurrent的主要目的是迭代、逐个地得出object的code，倒是和之前*Multi-object representation learning with iterative variational inference.*那篇有些像<br>每个物体输出深度估计，图像估计，与occulusion mask<br>![image-20201222091509810](media/image-20201222091509810.png){:.postimage .three_noscale}
 - **results**
-  - ![image-20201222090527412](media/image-20201222090527412.png)
+  - ![image-20201222090527412](media/image-20201222090527412.png){:.postimage .three_noscale}
 
 </details>
 
@@ -1365,12 +1365,12 @@ learning generalized templates comprised of elements
     - 基于本篇的这些理论推导，提出了一个可并行化的算法，在这些analytic cells上做marching，来==**<u>exactly recover</u>**==这些由learned MLP学出来的mesh
 - **overview**
   - 算法的初始：先用SGD $\underset {\boldsymbol{x}\in\mathbb{R}^3}{\min} \lvert F(\boldsymbol{x}) \rvert$ 找到表面上的一个点
-  - ![image-20201223105803235](media/image-20201223105803235.png)
+  - ![image-20201223105803235](media/image-20201223105803235.png){:.postimage .three_noscale}
 - **效果**：解析解就是降维打击。精确度无限(exact 解) + CPU跑都比别人GPU跑快十几倍
-  - ![image-20201209113035559](media/image-20201209113035559.png)
-  - ![image-20201209111706863](media/image-20201209111706863.png)
-  - ![image-20201209105817256](media/image-20201209105817256.png)
-  - ![image-20201209105846197](media/image-20201209105846197.png)
+  - ![image-20201209113035559](media/image-20201209113035559.png){:.postimage .three_noscale}
+  - ![image-20201209111706863](media/image-20201209111706863.png){:.postimage .three_noscale}
+  - ![image-20201209105817256](media/image-20201209105817256.png){:.postimage .three_noscale}
+  - ![image-20201209105846197](media/image-20201209105846197.png){:.postimage .three_noscale}
 
 </details>
 
@@ -1395,7 +1395,7 @@ learning generalized templates comprised of elements
   - (skeleton-DISN) skeleton-regularized deep implicit surface network
     - 主要基于*Disn:Deep implicit surface network for high-quality single-view 3d reconstruction*，加入skeleton正则项
 - **效果**
-  - ![image-20201209120443432](media/image-20201209120443432.png)
+  - ![image-20201209120443432](media/image-20201209120443432.png){:.postimage .three_noscale}
 
 </details>
 
@@ -1413,6 +1413,6 @@ learning generalized templates comprised of elements
   - 用的是voxelized occupancy表征
   - shape and pose reference
   - 需要depth + masked image输入；相当于pose未知情况下的object SLAM，object voxelized representation是descriptor
-  - ![image-20201222164917541](media/image-20201222164917541.png)
+  - ![image-20201222164917541](media/image-20201222164917541.png){:.postimage .three_noscale}
 
 </details>

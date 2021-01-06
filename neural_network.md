@@ -12,15 +12,15 @@ title: neural network basics
     - 可以考虑用log-normalization，这样就把乘法转换为加法
        - $$ m=x \cdot y \Rightarrow \ln(m)=\ln(x)+\ln(y) $$
     - MLP在一定范围(一定区域)内可以学到这个乘法函数
-       - 本质是在学习函数的一定区域内的surface，==而不是函数本身==<br>![image-20201209155947067](media/image-20201209155947067.png)
+       - 本质是在学习函数的一定区域内的surface，==而不是函数本身==<br>![image-20201209155947067](media/image-20201209155947067.png){:.postimage .three_noscale}
  -  MLP+ReLU的本质：在一定范围内分段线性拟合一个曲线/曲面/超曲面
      - 因此，只要一个函数(数量值或向量值)的值域是闭集，那就基本可以学出任何复杂的连续函数
      - 比如对于一个一元数量值函数y=x^2的MLP+ReLU拟合：
          - 1层感知机+2个中间层neuron，函数就分了2段 
          - 多加层、多加神经元，无非是把函数分了更多段去拟合；
-         - ![image-20201209155947067](media/image-20201209155947067.png)
+         - ![image-20201209155947067](media/image-20201209155947067.png){:.postimage .three_noscale}
      - 把上面的折线扩展延伸到空间，MLP+ReLU学到的就是一个个线性平面多边形构成的<u>分段三元数量值函数</u>，去分段拟合一个空间曲面
-         - ![image-20201209162429622](media/image-20201209162429622.png)
+         - ![image-20201209162429622](media/image-20201209162429622.png){:.postimage .three_noscale}
          - 这种结构，其实和计算机中存储一个三维模型的Mesh的结构完全一致：<br>一个mesh就是由一段段polygon构成的
          - 也正因如此，只要我们能够显式地解析出神经元的激活关系，就可以解析地找出MLP零值面对应的polygon <br>见[Analytic Marching: An Analytic Meshing Solution from
             Deep Implicit Surface Networks](http://proceedings.mlr.press/v119/lei20a/lei20a.pdf)
@@ -40,7 +40,7 @@ title: neural network basics
       - 毕竟MLP学到的空间分割其实都是二分割，多分类器也只是一个个二分类器的集合；只用图像像素特征难以很好地区分
     - 不用图像像素，用手动设计的一些特征提取子，比如拉普拉斯算子、边缘提取算子、高斯算子...
       - 手动设计，多样性其实不多
-    - 考虑图像分类。卷积核的出现，就是为了更好地提取局部特征，从而搭配MLP形成一个合适的特征空间，这个特征空间可以只用一个个二分类的组合就可以分开多个类别<br>![MNIST tSNE plot](media/image-20201209163614662.png)
+    - 考虑图像分类。卷积核的出现，就是为了更好地提取局部特征，从而搭配MLP形成一个合适的特征空间，这个特征空间可以只用一个个二分类的组合就可以分开多个类别<br>![MNIST tSNE plot](media/image-20201209163614662.png){:.postimage .three_noscale}
 
 # topic: frequencies
 

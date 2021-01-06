@@ -19,7 +19,7 @@ not_published: true
 <details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
-| ![img](media/a946e1b7-fc9f-441a-b5cd-bafb3563a50a.png) |
+| ![img](media/a946e1b7-fc9f-441a-b5cd-bafb3563a50a.png){:.postimage .three_noscale} |
 | ------------------------------------------------------ |
 | 利用物体缓慢移动的motion cue + physics ==(?)==         |
 

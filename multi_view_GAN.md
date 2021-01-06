@@ -33,7 +33,7 @@ title: multi view + GAN
   - 即使对于**unseen**的dataset，对于**wild conditions**，CR-GAN可以产生高质量的**multi view**图片
 - **之前的GAN-based方法**：encoder-decoder+discriminator
 
-  - |                  ![img](media/56666611.png)                  |
+  - |                  ![img](media/56666611.png){:.postimage .three_noscale}                  |
     | :----------------------------------------------------------: |
     | 相比于之前的GAN-based方法，多了一条`generation path`，试图补全z space |
     
@@ -49,7 +49,7 @@ title: multi view + GAN
   - E is force to be G的逆向过程，使得学到的**representation可以span the entire Z space**  
   - 更重要的是，两通路的学习过程可以很容易地利用**有label、无label**的数据，对于自监督学习而言，从而大大丰富了Z space，对于自然的生成来说。
 - **discriminators** 
-  - ![img](media/57229841-1603684635887.png)
+  - ![img](media/57229841-1603684635887.png){:.postimage .three_noscale}
   - **==问题==** ：原来这些GAN-based方法中的discriminator都是干什么用的？单纯只是增加图像的细节程度？
   - DR-GAN中：discriminator有两个任务：① id 分类。discriminator输出一个分类输出。② pose分类。分类器输出。
 
@@ -67,9 +67,9 @@ title: multi view + GAN
 too old
 
 - **Motivation**
-  - ![img](media/54910786.png)
+  - ![img](media/54910786.png){:.postimage .three_noscale}
     - 把BiGAN改造成适应conditional 概率；一个可以学到P(y\|x)，x可以是单张图片或者是多张view的集合
-  - ![img](media/55062754.png)
+  - ![img](media/55062754.png){:.postimage .three_noscale}
     - 创造了一个multi-view model，给予任意一组subset of views，评估可能的输出的分布
     - 如果说，一种自然的把BiGAN 延伸到适应multi view输入的方式 是 定义一个从a set of view到一个representation space的mapping function，那么，这种方法已经被证明会有不达到要求的表现
     - 因此，我们提出了一种约束模型的方式：基于一个想法：对任意一组subset of views添加一个view都应该降低输出分布的不确定性。给的view越多，方差越小。用KL散度来正则化
@@ -105,8 +105,8 @@ too old
 - **Motivation**
   - multi-view video relighting
   - 首先从multi view的视频创建一个proxy geometry，然后考虑relighting
-  - ![img](media/54422638.png)
-  - ![img](media/54653900.png)
+  - ![img](media/54422638.png){:.postimage .three_noscale}
+  - ![img](media/54653900.png){:.postimage .three_noscale}
 
 </details>
 
@@ -137,7 +137,7 @@ too old
 - **Motivation**
   - **natural datasets**下，通过RGBD图像生成，进行**无监督**的**3D表征**学习
   - **3.2.2 SELF-SUPERVISED RGBD CONSISTENCY LOSS**
-    - ![img](media/65147862.png)
+    - ![img](media/65147862.png){:.postimage .three_noscale}
 
 </details>
 
@@ -153,12 +153,12 @@ too old
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
-  - 首先 从一个高斯采样的latent code 映射到一系列3D primitives（一些原初3D物体表征）<br> 再渲染物体 再渲染背景<br>![img](media/59007435.png)
+  - 首先 从一个高斯采样的latent code 映射到一系列3D primitives（一些原初3D物体表征）<br> 再渲染物体 再渲染背景<br>![img](media/59007435.png){:.postimage .three_noscale}
 
 | Input   | unlabeled image                                              |
 | ------- | :----------------------------------------------------------- |
 | output  | multi view images                                            |
-| dataset | ![img](media/59114641.png) <br>**随机背景、随机物体、随机view point** <br>3D primitives: no label <br/> instance segmentation: no label <br/> pose annotations: no label |
+| dataset | ![img](media/59114641.png){:.postimage .three_noscale} <br>**随机背景、随机物体、随机view point** <br>3D primitives: no label <br/> instance segmentation: no label <br/> pose annotations: no label |
 
 - 训练这样的模型是有挑战的：
   - 比如有可能把2个物体理解为同一个primitive，甚至...；
@@ -174,7 +174,7 @@ too old
       >
       > 为了让solutions 倾向于完整的表征，鼓励3D primitives能够紧贴合物体，我们最小化每个物体的投影shape
     - 惩罚每个物体`alpha map`的 `L1-范数`
-    - > ![img](media/63491889.png)
+    - > ![img](media/63491889.png){:.postimage .three_noscale}
       >
       > $\tau=0.1$ 是一个防止收缩到一个固定最小值以下的截短阈值， $A_i$ 依赖于模型参数和 latent code z（so 这个loss可以对模型参数有作用）
   - **(==self supervised==) geometry consistency loss**
@@ -182,7 +182,7 @@ too old
     - > 比如，对于pose(外参)的改变应该改变物体的pose但是不应该alter它的颜色或者identity.
     - > 这样formulate这个约束：
       >
-      > ![img](media/63872134.png)
+      > ![img](media/63872134.png){:.postimage .three_noscale}
       >
       > $X_i'$ $D_i'$ 是 latent code z的2D generator 输出
       >
@@ -203,9 +203,9 @@ too old
 
 - **Motivation**
   - 从非结构化的2D数据生成voxels类3D shape
-  - ![image-20201026194450596](media/image-20201026194450596.png)
+  - ![image-20201026194450596](media/image-20201026194450596.png){:.postimage .three_noscale}
 - results：
-  - ![image-20201026193704383](media/image-20201026193704383.png)
+  - ![image-20201026193704383](media/image-20201026193704383.png){:.postimage .three_noscale}
 
 </details>
 
@@ -223,7 +223,7 @@ too old
 - **dataset**
   - ground truth **voxel** data of SUNCG dataset.
 - **results**
-  - ![image-20201026195610963](media/image-20201026195610963.png)
+  - ![image-20201026195610963](media/image-20201026195610963.png){:.postimage .three_noscale}
 
 </details>
 
