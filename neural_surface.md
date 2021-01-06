@@ -60,33 +60,33 @@ title: math and DL for shapes  (spatial surfaces)
 
 - `homeomorphism`同胚
   - 同胚是两个`topological space`拓扑空间之间的函数
-  - a function $$ f: X \rightarrow Y $$ between two topological spaces is a homeomorphism if:
-    - $$ f $$ is a `bijection`   (i.e. `one-to-one` and `onto`)
-      <br>$$ f $$是一个双射，i.e.单射且满射
-    - $$ f $$ is a continuous function
-    - the inverse function $$ f^{-1} $$ is continuous
+  - a function $f: X \rightarrow Y$ between two topological spaces is a homeomorphism if:
+    - $f$ is a `bijection`   (i.e. `one-to-one` and `onto`)
+      <br>$f$是一个双射，i.e.单射且满射
+    - $f$ is a continuous function
+    - the inverse function $f^{-1}$ is continuous
   - e.g. 咖啡杯和甜甜圈这两个拓扑空间同胚
 - `manifold`流形， `chart`坐标卡，`parameterization`参数化
   - 流形是一个拓扑空间
   - `2-manifold`(`two-dimensional manifold`)二维流形的定义：
-    - a subset $$ \mathcal{S} $$ of $$ \mathbb{R}^3 $$ is a 2-manifold if
-      - for every point $$ \boldsymbol{p} \in \mathcal{S} $$
-        <br>there is an open set $$ V $$ in $$ \mathbb{R}^2 $$ and an open set $$ W $$ in $$ \mathbb{R}^3 $$ containing $$ \boldsymbol{p} $$ <br> such that $$ U=\mathcal{S} \cap W $$ is homeomorphic to $$ V $$
-        <br>对于 $$ \mathcal{S} $$中的任意一个点 $$ \boldsymbol{p} $$ ，
-        <br>都存在$$ {[\mathbb{R}^2中的一个开集V]}_{欧式空间中的一个开子集} $$  和$$ {[\mathbb{R}^3中的包含点\boldsymbol{p}的一个开集W}] $$ <br>
-        使得$$ {[\mathcal{S}和W的交集U]}_{\mathcal{S}的一个包含点\boldsymbol{p}的开子集} $$与$$ V_{欧式空间的一个开子集} $$同胚
-      - 这个同胚记为$$ \varphi: U \rightarrow V $$，有序对 $$ (U,\varphi) $$ 叫做包含$$ p $$的坐标卡
+    - a subset $\mathcal{S}$ of $\mathbb{R}^3$ is a 2-manifold if
+      - for every point $\boldsymbol{p} \in \mathcal{S}$
+        <br>there is an open set $V$ in $\mathbb{R}^2$ and an open set $W$ in $\mathbb{R}^3$ containing $\boldsymbol{p}$ <br> such that $U=\mathcal{S} \cap W$ is homeomorphic to $V$
+        <br>对于 $\mathcal{S}$中的任意一个点 $\boldsymbol{p}$ ，
+        <br>都存在${[\mathbb{R}^2中的一个开集V]}_{欧式空间中的一个开子集}$  和${[\mathbb{R}^3中的包含点\boldsymbol{p}的一个开集W}]$ <br>
+        使得${[\mathcal{S}和W的交集U]}_{\mathcal{S}的一个包含点\boldsymbol{p}的开子集}$与$V_{欧式空间的一个开子集}$同胚
+      - 这个同胚记为$\varphi: U \rightarrow V$，有序对 $(U,\varphi)$ 叫做包含$p$的坐标卡
   - 人话
-    - $$ S $$的一个开子集和欧式空间的一个开子集同胚，那么$$ S $$就是一个流形
-    - 从$$ S $$的一个开子集到欧式空间的开子集的同胚叫做`chart`坐标卡
-    - 坐标卡的逆(从低维欧式空间的开子集 到 $$ S $$的一个开子集的同胚)叫做`parameterization`参数化
+    - $S$的一个开子集和欧式空间的一个开子集同胚，那么$S$就是一个流形
+    - 从$S$的一个开子集到欧式空间的开子集的同胚叫做`chart`坐标卡
+    - 坐标卡的逆(从低维欧式空间的开子集 到 $S$的一个开子集的同胚)叫做`parameterization`参数化
   - `manifold`理解：局部区域线性，与(低维)欧式空间拓扑同胚
   - “自由度”的理解：<br>一个m维空间的中的曲线/曲面有n个自由度，其实严格数学定义指的是这个曲面/曲线是一个n维流形，与某一个n维欧式空间(局部)同胚
 - `chart`卡/坐标卡
   - 坐标卡是一个同胚，一个函数，一个映射。
-  - A `chart` for a `topological space` *M* is a `homeomorphism` $$ \varphi $$ from an open subset *U* of *M* to an open subset of a Euclidean space.
+  - A `chart` for a `topological space` *M* is a `homeomorphism` $\varphi$ from an open subset *U* of *M* to an open subset of a Euclidean space.
     <br>一个拓扑空间的坐标卡，就是这个拓扑空间的一个开子集到一个欧式空间的开子集的同胚
-  - the chart is traditionally recorded as the ordered pair $$ (U,\varphi) $$ <br>坐标卡一般用有序对$$ (U,\varphi) $$表示
+  - the chart is traditionally recorded as the ordered pair $(U,\varphi)$ <br>坐标卡一般用有序对$(U,\varphi)$表示
 - `parameterization`参数化
   - 参数化是一个同胚，一个函数，一个映射
   - `chart`坐标卡的逆映射就是参数化：从一个欧式空间的开子集到拓扑空间的开子集的同胚
@@ -96,26 +96,26 @@ title: math and DL for shapes  (spatial surfaces)
     - 在代数几何/计算机视觉中，一个平面曲线的参数化，本质就是从一个1维欧式空间(参数的集合)到一个2维拓扑空间的映射；一个空间曲面的参数化，本质就是从一个2维欧式空间(参数的集合)到一个3维拓扑空间的映射；都是同胚，都是参数化
 - `image`像
   - 像是一个点集。
-  - 设$$ f $$是一个从定义域$$ X $$到值域$$ Y $$的一个函数
+  - 设$f$是一个从定义域$X$到值域$Y$的一个函数
   - image of an element
     If *x* is a member of *X*, then the image of *x* under *f*, denoted *f*(*x*), is the value of *f* when applied to *x.*
   - image of a subset
-    the image of subset $$ A \subseteq X $$ under *f*, denoted $$ f[A] $$ is the subset of *Y* which can be defined as:
-    <br>$$ f[A] = \{f(x) \vert x \in A\} $$
-    <br>when there is no risk of confusion, $$ f[A] $$ is simply written as $$ f(A) $$
+    the image of subset $A \subseteq X$ under *f*, denoted $f[A]$ is the subset of *Y* which can be defined as:
+    <br>$f[A] = \{f(x) \vert x \in A\}$
+    <br>when there is no risk of confusion, $f[A]$ is simply written as $f(A)$
   - `inverse image / preimage`原像：
-    <br>the preimage or inverse image of set $$ B \subseteq Y $$ under *f* , denoted by $$ f^{-1}[B] $$, is the subset of *X* defined by<br>
+    <br>the preimage or inverse image of set $B \subseteq Y$ under *f* , denoted by $f^{-1}[B]$, is the subset of *X* defined by<br>
     $$ f^{-1}[B]=\{x\in X \vert f(x) \in B\} $$
 - `atlas`图册
   - 图册是一族坐标卡，一族同胚，一族函数，一族映射
-  - a index family $$ \{(U_\alpha,\varphi_{\alpha}):\alpha \in I \} $$ of charts on *M* which `covers` *M* (that is, $$ \cup_{\alpha \in I} U_{\alpha}=M $$)
+  - a index family $\{(U_\alpha,\varphi_{\alpha}):\alpha \in I \}$ of charts on *M* which `covers` *M* (that is, $\cup_{\alpha \in I} U_{\alpha}=M$)
   - 流形*M*上的一个图册是：
-    一族*M*上的卡$$ \mathcal{A}=\{(U_{\alpha}, \varphi_{\alpha})\} $$ ，使得定义域盖住了整个*M* 
+    一族*M*上的卡$\mathcal{A}=\{(U_{\alpha}, \varphi_{\alpha})\}$ ，使得定义域盖住了整个*M* 
 - `disk-topology`圆盘拓扑
   - `disk`, also spelled as `disc`
     - the region in a plane bounded by a circle
-    - 在cartesian coordinates下的：`open disk`<br>$$ D=\{(x,y)\in \mathbb{R}^2: (x-a)^2+(y-b)^2<R^2\} $$
-    - `closed disk`<br>$$ D=\{(x,y)\in \mathbb{R}^2: (x-a)^2+(y-b)^2 \leq R^2\} $$
+    - 在cartesian coordinates下的：`open disk`<br>$D=\{(x,y)\in \mathbb{R}^2: (x-a)^2+(y-b)^2<R^2\}$
+    - `closed disk`<br>$D=\{(x,y)\in \mathbb{R}^2: (x-a)^2+(y-b)^2 \leq R^2\}$
   - a surface **homeomorphic** to a disc in a plane
 
 </details>
@@ -159,7 +159,7 @@ title: math and DL for shapes  (spatial surfaces)
        - 但这不是必要的，因为在二元运算中即内含了此一公理。
     - 幺半群除了没有[逆元素](https://zh.wikipedia.org/wiki/逆元素)之外，满足其他所有[群](https://zh.wikipedia.org/wiki/群)的公理。因此，一个带有逆元素的幺半群和群是一样的。
 - `monoidal surfaces` 独异点曲面
-    - an algebraic(polynomial) surface $$ f(x,y,z)=0 $$ of degree _n_ that has an $$ (n-1)-fold $$ point (a point of multiplicity n-1)<br>一个有n-1重点的n次代数曲面(线)即为一个monoidal curve
+    - an algebraic(polynomial) surface $f(x,y,z)=0$ of degree _n_ that has an $(n-1)-fold$ point (a point of multiplicity n-1)<br>一个有n-1重点的n次代数曲面(线)即为一个monoidal curve
     - monoidal surfaces include:
        - quadrics 二次曲面
        - cubic surface with a double point 有二重点的三次曲面
@@ -178,7 +178,7 @@ title: math and DL for shapes  (spatial surfaces)
           - in [geometry](https://en.wikipedia.org/wiki/Geometry), a **pencil** is a family of geometric objects with a common property
           - a *pencil of lines* through a point *p* is a set of lines each containing *p*
        - `Bezout's Theorem` 贝组定理
-          - Let $$ \mathcal{C} $$ and $$ \mathcal{D} $$ be projective plane curves without common components and degrees n and m, respectively. Then <br>$$ n \cdot m = \underset{P \in \mathcal{C} \cap \mathcal{D}}{\sum} mult_P(\mathcal{C},\mathcal{D}) $$
+          - Let $\mathcal{C}$ and $\mathcal{D}$ be projective plane curves without common components and degrees n and m, respectively. Then <br>$n \cdot m = \underset{P \in \mathcal{C} \cap \mathcal{D}}{\sum} mult_P(\mathcal{C},\mathcal{D})$
           - 即：在考虑重数设定的前提下，两个分别次数为n和m的仿射空间代数曲线(也可以是射影空间)，二者要么有共同项，要么没有共同项且相交mn次(相交点的重数和为mn)
        - 因此，对于monoidal curves/surfaces来说，只要让a pencil of lines共同经过那个(n-1)重点，则这些直线一定与曲线/曲面还剩一个交点，如此便可实现参数化
 
@@ -199,7 +199,7 @@ title: math and DL for shapes  (spatial surfaces)
   - neural parametric surface
   - parametric surface generation/generative
 - overview
-   - 用一个参数方程$$ [x(s,t),y(s,t),z(s,t)] $$表达一个曲面
+   - 用一个参数方程$[x(s,t),y(s,t),z(s,t)]$表达一个曲面
    - 可以用显式的手动构建或者隐式的神经网络来构建这个从s,t到x,y,z的映射关系
 
 ## explicit shape templates + deformation
@@ -258,10 +258,10 @@ learning generalized templates comprised of elements
     - 这样，不同的elements位置、扁圆、大小组合，就可以组合出==<u>不同形状、不同拓扑</u>==的shape template
   - 使用10，25，100个不同的elements训练的效果<br>![image-20201207235340273](media/image-20201207235340273.png)
 - 隐式的shape表征：
-  - 假定每一个input shape都可以建模为一个watertight surface，由一个函数的 $$ \mathcal{l} $$ level set描述（l-等值面集）；
+  - 假定每一个input shape都可以建模为一个watertight surface，由一个函数的 $\mathcal{l}$ level set描述（l-等值面集）；
   - 这个函数可以由N个local elements构成
   - 每个elements是一个 _scaled axis-aligned anisotropic 3D Gaussians_ 
-    <br>由参数$$ \theta_i $$描述，$$ \theta_i $$包含$$ c_i, p_i \in \mathbb{R}^3, r_i \in \mathbb{R}^3 $$
+    <br>由参数$\theta_i$描述，$\theta_i$包含$c_i, p_i \in \mathbb{R}^3, r_i \in \mathbb{R}^3$
     <br>![image-20201208000148898](media/image-20201208000148898.png)
 
 </details>
@@ -318,11 +318,11 @@ learning generalized templates comprised of elements
   - 很容易扩展多次，来把一个3D shape表征为几个surface 元素的联合
 - 局部参数化表面的生成 locally parameterized surface generation
   - 把surface看做一个广义的2-manifold（允许self-intersection & disjoint sets），考虑局部的参数化<br>
-    consider a `2-manifold` $$ \mathcal{S} $$, a point $$ \boldsymbol{p} \in \mathcal{S} $$, a `parameterization` $$ \varphi $$ of $$ \mathcal{S} $$ in a local neighborhood of $$ \boldsymbol{p} $$
-  - 假定这个局部参数化就是从单位方 $$ ]0,1[^2 $$ 到2-manifold $$ \mathcal{S}_{\theta} $$的映射 $$ \varphi_{\theta}(x) $$ : $$ \mathcal{S}_\theta=\varphi_{\theta}(]0,1[^2) $$
-     <br>让$$ \mathcal{S}_{\theta} $$去估计/近似局部2-manifold $$ S_{loc} $$
-  - i.e.寻找 参数$$ \theta $$来最小化目标函数$$ \underset{\theta}{\min}   \mathcal{L}(\mathcal{S}_\theta, \mathcal{S}_{loc})+\lambda\mathcal{R}(\theta) $$
-    <br>上式的$$ \mathcal{L} $$是两个2-manifold之间的loss，$$ \mathcal{R} $$是参数$$ \theta $$的正则化项；
+    consider a `2-manifold` $\mathcal{S}$, a point $\boldsymbol{p} \in \mathcal{S}$, a `parameterization` $\varphi$ of $\mathcal{S}$ in a local neighborhood of $\boldsymbol{p}$
+  - 假定这个局部参数化就是从单位方 $]0,1[^2$ 到2-manifold $\mathcal{S}_{\theta}$的映射 $\varphi_{\theta}(x)$ : $\mathcal{S}_\theta=\varphi_{\theta}(]0,1[^2)$
+     <br>让$\mathcal{S}_{\theta}$去估计/近似局部2-manifold $S_{loc}$
+  - i.e.寻找 参数$\theta$来最小化目标函数$\underset{\theta}{\min}   \mathcal{L}(\mathcal{S}_\theta, \mathcal{S}_{loc})+\lambda\mathcal{R}(\theta)$
+    <br>上式的$\mathcal{L}$是两个2-manifold之间的loss，$\mathcal{R}$是参数$\theta$的正则化项；
     <br>实践中，计算的不是两个2-manifold之间的loss，<u>而是这两个2-manifold采样出的点集的chamfer 和 earth-mover距离</u>
   - 证明了MLP+ReLU就可以产生2-manifolds
   - 证明了MLP+ReLU产生的2-manifolds can be learned to 很好地近似 target 2-manifolds
@@ -554,8 +554,8 @@ learning generalized templates comprised of elements
 # learning implicit surface: implicit fields/implicit functions
 
 - overview
-   - 既然可以用一个隐函数$$ f(x,y,z)=0 $$表达一个隐曲面<br>
-   - 那当然可以先用$$ 某种神经网络_{一般是MLP+ReLU} $$去拟合构建一个空间数量值函数$$ f(x,y,z)_{数量值一般物理意义为占用概率/与表面距离/表面内外等} $$ ，然后训练这个神经网络
+   - 既然可以用一个隐函数$f(x,y,z)=0$表达一个隐曲面<br>
+   - 那当然可以先用$某种神经网络_{一般是MLP+ReLU}$去拟合构建一个空间数量值函数$f(x,y,z)_{数量值一般物理意义为占用概率/与表面距离/表面内外等}$ ，然后训练这个神经网络
    - 训练好以后，如果需要从这个隐函数中提取mesh，一般就用marching cubes类方法空间采样
 
 ## sample based methods to extract explicit surface
@@ -790,21 +790,21 @@ learning generalized templates comprised of elements
   - 用deformation field建立起 **`<u>shape correspondence</u>`**，这样就可以做texture transfer、label transfer等
   - ![image-20201222155438709](media/image-20201222155438709.png)
 - **overview**
-  - 用一个超网络从code预测DeformNet $$ D $$的参数；<br>然后在空间中的每一处，从同一个template SDF，DeformNet $$ D $$产生位置修正$$ v $$与标量距离修正$$ \Delta s $$，总共4维输出<br>即最终的$$ p $$点处的SDF值为：$$ s=T(p+v)+\Delta s=T(p+D^v_{\omega}(p))+D^{\Delta s}_{\omega}(p) $$<br>注意变形向量$$v$$其实反映的是从shape instance场 到 template 场所需的变形向量<br>![image-20201222153322051](media/image-20201222153322051.png)
+  - 用一个超网络从code预测DeformNet $D$的参数；<br>然后在空间中的每一处，从同一个template SDF，DeformNet $D$产生位置修正$v$与标量距离修正$\Delta s$，总共4维输出<br>即最终的$p$点处的SDF值为：$s=T(p+v)+\Delta s=T(p+D^v_{\omega}(p))+D^{\Delta s}_{\omega}(p)$<br>注意变形向量$v$其实反映的是从shape instance场 到 template 场所需的变形向量<br>![image-20201222153322051](media/image-20201222153322051.png)
 - **losses**
   - SDF loss
-    - 被训练的量：变形场超网络$$\Psi$$，SDF输出场$$\Phi$$，模板场$$T$$，learned latent codes $$\{\alpha_j\}$$；$$\Psi_i(p)$$代表predicted SDF值$$\Phi_{\Psi(\alpha_i)}(p)$$，$$\Omega$$代表3D空间，$$\mathcal{S}_i$$ 代表形状表面
+    - 被训练的量：变形场超网络$\Psi$，SDF输出场$\Phi$，模板场$T$，learned latent codes $\{\alpha_j\}$；$\Psi_i(p)$代表predicted SDF值$\Phi_{\Psi(\alpha_i)}(p)$，$\Omega$代表3D空间，$\mathcal{S}_i$ 代表形状表面
       - $$\Phi_{\Psi(\alpha)}(p)=T(p+D_{\Psi(\alpha)}^v(p)) + D_{\Psi(\alpha)}^{\Delta s}(p)$$
-    - $$L_{sdf}=\underset {i}{\sum} \left( $1 + $2 + $3 + $4 \right)$$
-      - $$\underset {p \in \Omega}{\sum} \lvert \Phi_i(p)-\overline{s}\rvert$$ 代表预测SDF和正确SDF的误差
-      - $$\underset{p\in \mathcal{S}_i}{\sum} (1-\langle \nabla\Phi_i(p), \overline{n} \rangle)$$ 代表预测法向量和正确法向量的误差（角度误差，用夹角余弦应接近1来表达）
-      - $$\underset{p\in\Omega}{\sum} \lvert \Vert \nabla\Phi_i(p) \rVert_2 - 1 \rvert$$ 代表预测法向量的模应该是1 （因为是SDF）
-      - $$\underset{p\in\Omega \backslash \mathcal{S}_i}{\sum} \rho(\Phi_i(p)), \;where \; \rho(s)=\exp(-\delta \cdot \lvert s \rvert), \delta \gg 1 $$ 代表对 **SDF值靠近0** 的 **非表面** 点的惩罚；
-        - $$\delta \gg 1$$就代表只有靠近0的时候这项loss才有值
+    - $$L_{sdf}=\underset {i}{\sum} \left( $1 +$2 + $3 +$4 \right)$$
+      - $\underset {p \in \Omega}{\sum} \lvert \Phi_i(p)-\overline{s}\rvert$ 代表预测SDF和正确SDF的误差
+      - $\underset{p\in \mathcal{S}_i}{\sum} (1-\langle \nabla\Phi_i(p), \overline{n} \rangle)$ 代表预测法向量和正确法向量的误差（角度误差，用夹角余弦应接近1来表达）
+      - $\underset{p\in\Omega}{\sum} \lvert \Vert \nabla\Phi_i(p) \rVert_2 - 1 \rvert$ 代表预测法向量的模应该是1 （因为是SDF）
+      - $\underset{p\in\Omega \backslash \mathcal{S}_i}{\sum} \rho(\Phi_i(p)), \;where \; \rho(s)=\exp(-\delta \cdot \lvert s \rvert), \delta \gg 1$ 代表对 **SDF值靠近0** 的 **非表面** 点的惩罚；
+        - $\delta \gg 1$就代表只有靠近0的时候这项loss才有值
           - [ ] Q: 类似一种负的L0-norm ？
         - 详见 *(SIREN) Implicit neural representations with periodic activation functions. NeurIPS2020* 论文
   - 正则化
-    - regularization loss to constrain the learned latent codes: $$L_{reg}=\underset{i}{\sum} \lVert \alpha_i \rVert_2^2$$
+    - regularization loss to constrain the learned latent codes: $L_{reg}=\underset{i}{\sum} \lVert \alpha_i \rVert_2^2$
     - 可以用一些其他更强的正则化，比如VAE训练时用的 最小化latent code后验分布和高斯分布的KL散度
   - normal consistency prior 法向量一致性先验
     - 考虑到表面点和语义 高度关联：e.g. （在canonical space假设下）车顶总是指向天空，左车门总是指向左侧
@@ -812,27 +812,27 @@ learning generalized templates comprised of elements
       - 鼓励 模板场中的点处的法向量 和 **所有给定shape instance** 中的相关点 处的法向量 一致
       - $$L_{normal}=\underset{i}{\sum} \underset{p\in\mathcal{S}_i}{\sum} \left( 1 - \langle \nabla T(p+D_{\omega_i}^v (p)), \overline{n} \rangle \right)$$
       - 即让模板场中的 对应位置p的点 和 真值法向量保持一致
-      - ~~如果没有标量修正场，模板场对应位置p的点处的法向量就是 最终输出场的法向量，和$$L_{sdf}$$的第2项一样~~
+      - ~~如果没有标量修正场，模板场对应位置p的点处的法向量就是 最终输出场的法向量，和$L_{sdf}$的第2项一样~~
         - [ ] Q: 以下为笔者猜想。有待代码检查验证。
-        - 变形后的形状shape instance场中的点坐标是$$p$$，模板场中的 **相关** 点坐标是 $$p+D_{\omega_i}^v (p)$$
-        - **相关** 点处的法向量 其实是$$\nabla_{p+D_{\omega_i}^v (p)} T(p+D_{\omega_i}^v (p))$$，而非$$\nabla_p T(p+D_{\omega_i}^v (p))$$
-        - $$L_{sdf}$$第2项是$$\nabla_p\Phi_i(p)=\nabla_p \left( \quad T(p+D_{\omega_i}^v (p)) \; (+D_{\omega_i}^{\Delta s}(p)) \quad \right)$$
+        - 变形后的形状shape instance场中的点坐标是$p$，模板场中的 **相关** 点坐标是 $p+D_{\omega_i}^v (p)$
+        - **相关** 点处的法向量 其实是$\nabla_{p+D_{\omega_i}^v (p)} T(p+D_{\omega_i}^v (p))$，而非$\nabla_p T(p+D_{\omega_i}^v (p))$
+        - $L_{sdf}$第2项是$\nabla_p\Phi_i(p)=\nabla_p \left( \quad T(p+D_{\omega_i}^v (p)) \; (+D_{\omega_i}^{\Delta s}(p)) \quad \right)$
         - 即其主要是强调 模板场 和 变形后的形状实例场 中 相关点处的 两个场的法向量保持一致性
-        - 其实应该是$$\nabla_{p+D_{\omega_i}^v (p)} T(p+D_{\omega_i}^v (p))$$和$$\nabla_p\Phi_i(p)$$的夹角，而不是和$$\overline{n}$$的夹角；<br>只不过$$\nabla_p\Phi_i(p)$$就是$$\overline{n}$$的近似，所以用$$\overline{n}$$也可
+        - 其实应该是$\nabla_{p+D_{\omega_i}^v (p)} T(p+D_{\omega_i}^v (p))$和$\nabla_p\Phi_i(p)$的夹角，而不是和$\overline{n}$的夹角；<br>只不过$\nabla_p\Phi_i(p)$就是$\overline{n}$的近似，所以用$\overline{n}$也可
   - deformation smoothness prior 变形平滑先验
     - 鼓励平滑的变形、防止巨大的形状扭曲，引入一个对变形场的平滑loss
-    - $$L_{smooth}=\underset{i}{\sum} \underset{p\in\Omega}{\sum} \underset{d\in{X,Y,Z}}{\sum} \lVert \nabla D_{\omega_i}^v \vert_d (p) \rVert_2$$ 惩罚X,Y,Z方向的空间梯度
+    - $L_{smooth}=\underset{i}{\sum} \underset{p\in\Omega}{\sum} \underset{d\in{X,Y,Z}}{\sum} \lVert \nabla D_{\omega_i}^v \vert_d (p) \rVert_2$ 惩罚X,Y,Z方向的空间梯度
   - minimal correction prior
     - 鼓励形状表征主要是通过 形变场，而不是通过标量修正
-    - $$L_c=\underset{i}{\sum} \underset{p\in\Omega}{\sum} \lvert D_{\omega_i}^{\Delta s}(p) \rvert$$ 惩罚标量修正L1大小
-  - $$\underset{\{\alpha_j\}, \Psi, T }{\arg\min} L_{sdf} + w_1 L_{normal}+w_2 L_{smooth}+w_3 L_c + w_4 L_{reg}$$，<br>$$L_{sdf}$$中的4项：3e3, 1e2, 5e1, 5e2<br>$$w_1=1{\rm e}2, w_2=\{1,2,5\}, w_3=\{1{\rm e}2, 5{\rm e}1\}, w_4 = 1{\rm e}2$$
+    - $L_c=\underset{i}{\sum} \underset{p\in\Omega}{\sum} \lvert D_{\omega_i}^{\Delta s}(p) \rvert$ 惩罚标量修正L1大小
+  - $\underset{\{\alpha_j\}, \Psi, T }{\arg\min} L_{sdf} + w_1 L_{normal}+w_2 L_{smooth}+w_3 L_c + w_4 L_{reg}$，<br>$L_{sdf}$中的4项：3e3, 1e2, 5e1, 5e2<br>$w_1=1{\rm e}2, w_2=\{1,2,5\}, w_3=\{1{\rm e}2, 5{\rm e}1\}, w_4 = 1{\rm e}2$
 - **相关性 uncertainty measurement**
-  - 两个物体$$\mathcal{O}_i$$和 $$\mathcal{O}_j$$之间的 `相关性` 可以通过在 `template space`中进行 **`最近邻搜索`** 来建立；
-  - 假设物体$$\mathcal{O}_i$$（表面）上一点$$p_i$$，通过最近邻搜索找到了点$$p_i$$在物体$$\mathcal{O}_j$$上`相关`的（表面上的）一点$$p_j$$
+  - 两个物体$\mathcal{O}_i$和 $\mathcal{O}_j$之间的 `相关性` 可以通过在 `template space`中进行 **`最近邻搜索`** 来建立；
+  - 假设物体$\mathcal{O}_i$（表面）上一点$p_i$，通过最近邻搜索找到了点$p_i$在物体$\mathcal{O}_j$上`相关`的（表面上的）一点$p_j$
     - 那么二者之间相关性的不确定性可以通过一个simple yet surprisingly-effective的uncertainty metric评估：
     - $$u(p_i,p_j)=1-\exp(-\gamma \lVert (p_i+v_i) - (p_j+v_j) \rVert_2^2)$$
-      - 其中$$v_i=D_{\omega_i}^v(p_i)$$ 是点上的变形向量；是从 shape instance space到 template space的$$\Delta$$
-      - $$\lVert (p_i+v_i) - (p_j+v_j) \rVert_2$$其实就是这对相关点$$p_i$$和$$p_j$$在template space下的距离
+      - 其中$v_i=D_{\omega_i}^v(p_i)$ 是点上的变形向量；是从 shape instance space到 template space的$\Delta$
+      - $\lVert (p_i+v_i) - (p_j+v_j) \rVert_2$其实就是这对相关点$p_i$和$p_j$在template space下的距离
     - 不确定性大的区域 comform well to 形状之间的 `structure discrepancy` 结构不符<br>下图展示的是形状A（表面）上的点，在形状B（表面）上找到的相关的点的不确定性；红色高不确定性，蓝色低不确定性<br>![image-20210104200614483](media/image-20210104200614483.png)
 - **results**
   - texture transfer <br>![image-20201222155357538](media/image-20201222155357538.png)<br>![image-20210104173728589](media/image-20210104173728589.png)
@@ -868,8 +868,8 @@ learning generalized templates comprised of elements
 - **review**
   - 这种变形场类方法，最大的问题应该在于当 层级结构 / 拓扑 发生大的改变时，这种很大程度由位置决定的对应关系是否无法准确反应结构上的变化，从而导致degenerates的行为
   - 和 *deformed implicit field* 思路很像，那篇也是清华的
-    - deformed implicit field 除了位置修正外还有$$\Delta s$$修正；本篇只有位置修正
-    - deformed implicit field 是一个超参数网络，从code得到位置修正、$$\Delta S$$修正的网络 **<u>参数</u>**；本篇是一个LSTM，输入code+p输出位置修正
+    - deformed implicit field 除了位置修正外还有$\Delta s$修正；本篇只有位置修正
+    - deformed implicit field 是一个超参数网络，从code得到位置修正、$\Delta S$修正的网络 **<u>参数</u>**；本篇是一个LSTM，输入code+p输出位置修正
   - 因为有很多谨慎的设计（1. 使用LSTM warp而不是MLP warp 2.对canonical的正则化 3. 对空间扭曲的正则化），从transfer的效果上看要比deformed implicit field好一些？
 
 | 本篇：Deep Implicit Templates for 3D Shape Representation的transfer效果 | deformed implicit field的transfer效果                        |
@@ -897,8 +897,8 @@ learning generalized templates comprised of elements
     - MLP和LSTM作warping的对比：warping的补间<br>![image-20201229172212443](media/image-20201229172212443.png)
   - 把一个点的空间变换表示为多步仿射变换：
     - $$ (\alpha^{(i)},\beta^{(i)},\phi^{(i)},\psi^{i})={\rm LSTMCell}(c,p^{(i-1)},\phi^{(i-1)},\psi^{(i-1)}) $$
-    - 其中$$ \phi $$和$$ \psi $$是输出和cell state，$$ \alpha $$和$$ \beta $$是仿射变换的参数，角标$$ (i) $$代表迭代的*i*-th step
-    - 点$$ p $$的更新：$$ p^{(i)}=p^{(i-1)}+(\alpha^{(i)} p^{(i-1)}+\beta^{(i)}) $$
+    - 其中$\phi$和$\psi$是输出和cell state，$\alpha$和$\beta$是仿射变换的参数，角标$(i)$代表迭代的*i*-th step
+    - 点$p$的更新：$p^{(i)}=p^{(i-1)}+(\alpha^{(i)} p^{(i-1)}+\beta^{(i)})$
     - 迭代重复S=8次，得到最终的warping的输出
   - 训练loss
     - **reconstruction loss**
@@ -912,7 +912,7 @@ learning generalized templates comprised of elements
       - <u>point pair regularization</u> 对空间扭曲程度的限制
         - 尽管deform时空间扭曲是不可避免的，极端的空间扭曲还是可以避免的
         - ![image-20201229175618093](media/image-20201229175618093.png)
-        - 其中，$$ \Delta p=T(p,c)-p $$是点p的position shift，<br>$$ \epsilon = 0.5  $$是控制扭曲容忍度的参数，对于防止shape collapse（形状崩塌，指学到过于简单的shape template）很关键
+        - 其中，$\Delta p=T(p,c)-p$是点p的position shift，<br>$\epsilon = 0.5$是控制扭曲容忍度的参数，对于防止shape collapse（形状崩塌，指学到过于简单的shape template）很关键
         - 下图是在有无此loss的情况下学到的template；<br>可见，如果没有point pair regularization，会学到过于简单的template<br>![image-20201229175909233](media/image-20201229175909233.png)
 - **results**
   - 形状补间的效果：<br>![image-20201229180146944](media/image-20201229180146944.png)
@@ -951,7 +951,7 @@ learning generalized templates comprised of elements
   - 从raw 点云中直接学习DeepSDF，在with or without 法向量数据的情况下
   - 用隐式的shape先验，就可以获得plausible solutions<br>其实就是简单的loss函数，鼓励输入点云处的函数值为0，鼓励空间散布的点的梯度是单位模梯度<br>![image-20201228164827136](media/image-20201228164827136.png)
 - **overview**
-  - given raw input pointcloud $$ \mathcal{X}=\{x_i\}_{i\in I} \subset \mathbb{R}^3 $$,  <u>**with or without normal**</u> data $$ \mathcal{N}=\{n_i\}_{i\in I} \subset \mathbb{R}^3 $$，从中学出一个 **<u>plausible</u>** 的surface $$ \mathcal{M} $$
+  - given raw input pointcloud $\mathcal{X}=\{x_i\}_{i\in I} \subset \mathbb{R}^3$,  <u>**with or without normal**</u> data $\mathcal{N}=\{n_i\}_{i\in I} \subset \mathbb{R}^3$，从中学出一个 **<u>plausible</u>** 的surface $\mathcal{M}$
   - 学SDF时的常规loss：<br>有数据处函数值为0，法向量为真值；<br>(无数据处)空间分布的点法向量2-norm为1<br><img src="media/image-20201228172709924.png" alt="image-20201228172709924" style="zoom: 67%;" />
   - 然而只有上述loss存在问题
     - 首先，不能保证学到的是SDF
@@ -1003,14 +1003,14 @@ learning generalized templates comprised of elements
   - losses：重建loss和patch extrinsics的guidance loss，还有regularization
 - **extrinsic loss**
   - 这个loss保证所有的patch都对surface有贡献，并且处于caonical space
-  - 第*i*个物体的patch extrinsics: $$ \boldsymbol{e}_i=[\boldsymbol{e}_{i,0},\boldsymbol{e}_{i,1},\ldots,\boldsymbol{e}_{i,N_P-1}] $$
+  - 第*i*个物体的patch extrinsics: $\boldsymbol{e}_i=[\boldsymbol{e}_{i,0},\boldsymbol{e}_{i,1},\ldots,\boldsymbol{e}_{i,N_P-1}]$
   - $$ \mathcal{L}_{ext}(\boldsymbol{e}_i) = \mathcal{L}_{sur}(\boldsymbol{e}_i) + \mathcal{L}_{cov}(\boldsymbol{e}_i) + \mathcal{L}_{rot}(\boldsymbol{e}_i) + \mathcal{L}_{scl}(\boldsymbol{e}_i) + \mathcal{L}_{var}(\boldsymbol{e}_i)  $$
-  - $$ \mathcal{L}_{sur}(\boldsymbol{e}_i) $$ 保证每个patch都离surface很近
-    - $$ \underset{逐patch}{\max}[surface上的所有点到该patch距离的最小值] $$ 
-  - $$ \mathcal{L}_{cov}(\boldsymbol{e}_i) $$ symmetric coverage loss，鼓励surface上的每个点都至少被一个patch涵盖
-  - $$ \mathcal{L}_{rot}(\boldsymbol{e}_i) $$ 把patches和surface normals对齐
-  - $$ \mathcal{L}_{scl}(\boldsymbol{e}_i) $$ 鼓励patches to be reasonably small，防止不同patch之间显著的重叠
-  - $$ \mathcal{L}_{var}(\boldsymbol{e}_i) $$ 鼓励所有patch大小相似
+  - $\mathcal{L}_{sur}(\boldsymbol{e}_i)$ 保证每个patch都离surface很近
+    - $\underset{逐patch}{\max}[surface上的所有点到该patch距离的最小值]$ 
+  - $\mathcal{L}_{cov}(\boldsymbol{e}_i)$ symmetric coverage loss，鼓励surface上的每个点都至少被一个patch涵盖
+  - $\mathcal{L}_{rot}(\boldsymbol{e}_i)$ 把patches和surface normals对齐
+  - $\mathcal{L}_{scl}(\boldsymbol{e}_i)$ 鼓励patches to be reasonably small，防止不同patch之间显著的重叠
+  - $\mathcal{L}_{var}(\boldsymbol{e}_i)$ 鼓励所有patch大小相似
 - **result**
   - ![image-20201217122000974](media/image-20201217122000974.png)
   - ![image-20201217122618035](media/image-20201217122618035.png)
@@ -1102,7 +1102,7 @@ learning generalized templates comprised of elements
   - 目前这些输入点云deep implicit field学surface的方法，optimizing时，精确、鲁棒的重建仍然非常有挑战性
   - 本篇提出用等值面上的点作为一个额外的显式表征；被计算、更新on-the-fly，有效提高收敛率和最终质量
 - **overview**
-  - 目标：给定一个neural implicit function $$ f_t(\boldsymbol{\rm p};\theta_t) $$ at *t*-th iteration，efficiently generate and utilize 一组`稠密的、均匀分布的iso-points` (points at zero level set)
+  - 目标：给定一个neural implicit function $f_t(\boldsymbol{\rm p};\theta_t)$ at *t*-th iteration，efficiently generate and utilize 一组`稠密的、均匀分布的iso-points` (points at zero level set)
     - 这组iso-points可以用于
       - 改进training data的sampling
       - 提供最优化时的regularization
@@ -1110,12 +1110,12 @@ learning generalized templates comprised of elements
   - ![image-20201223112811012](media/image-20201223112811012.png)
   - **projection**：projecing a point onto the iso-surface 可以被视作 在一个给定点用牛顿法估计一个方程的根
     - 考虑这里和贾奎那篇analytic marching算法初始找到表面上一个点的思路是很像的
-    - 给定隐函数$$ f(\boldsymbol{\rm p}): \mathbb{R}^3\rightarrow \mathbb{R} $$，初始点$$ \boldsymbol{\rm q}_0\in\mathbb{R}^3 $$<br>牛顿法求根：$$ \boldsymbol{\rm q}_{k+1}=\boldsymbol{\rm q}_{k}-J_f(\boldsymbol{\rm q}_k)^+ f(\boldsymbol{\rm q}_k) $$, where $$ J_f(\boldsymbol{\rm q}_k)^+ $$是Jacobian的Moore-Penrose 伪逆
-    - $$ J_f $$是一个row 3-vector，所以$$ J_f(\boldsymbol{\rm q}_k)^+ = \frac {J_f^{\top}(\boldsymbol{\rm q}_k)} {\lVert J_f(\boldsymbol{\rm q}_k) \rVert^2} $$, where $$ J_f(\boldsymbol{\rm q}_k) $$ 可以直接通过反向传播计算
+    - 给定隐函数$f(\boldsymbol{\rm p}): \mathbb{R}^3\rightarrow \mathbb{R}$，初始点$\boldsymbol{\rm q}_0\in\mathbb{R}^3$<br>牛顿法求根：$\boldsymbol{\rm q}_{k+1}=\boldsymbol{\rm q}_{k}-J_f(\boldsymbol{\rm q}_k)^+ f(\boldsymbol{\rm q}_k)$, where $J_f(\boldsymbol{\rm q}_k)^+$是Jacobian的Moore-Penrose 伪逆
+    - $J_f$是一个row 3-vector，所以$J_f(\boldsymbol{\rm q}_k)^+ = \frac {J_f^{\top}(\boldsymbol{\rm q}_k)} {\lVert J_f(\boldsymbol{\rm q}_k) \rVert^2}$, where $J_f(\boldsymbol{\rm q}_k)$ 可以直接通过反向传播计算
     - 不过，由于一些同时代的工作常采用sine activation functions或者positional encoding，SDF噪声很大，梯度高度non-smooth，直接使用牛顿法会导致overshooting和oscillation
     - 当然可以用一些更精致的line search算法，不过这里直接用简单的clipping操作
-    - 点$$ \mathcal{Q}_t $$集合的初始化：刚开始就用一个unit sphere shape初始化，后面用$$ \mathcal{Q}_{t-1} $$初始化
-    - 最大10个牛顿迭代，停止阈值从$$ 10^{-4} $$逐渐缩小到$$ 10^{-5} $$
+    - 点$\mathcal{Q}_t$集合的初始化：刚开始就用一个unit sphere shape初始化，后面用$\mathcal{Q}_{t-1}$初始化
+    - 最大10个牛顿迭代，停止阈值从$10^{-4}$逐渐缩小到$10^{-5}$
   - **uniform resampling**
     - 迭代地把点从high-density regions移开
     - 这步和f没有关系了，移开的方向都是由邻居点定义的
@@ -1182,7 +1182,7 @@ learning generalized templates comprised of elements
       - 从图像的1/4分辨率开始tracing，然后每3步以后把每个像素分成4份
       - 在6步后，full resolution下的每个像素都有一个对应的ray，一直marching直到收敛
     - 一个aggresive 策略来加速ray marching
-      - marching步长是$$ \alpha=1.5 $$倍的queried SDF value
+      - marching步长是$\alpha=1.5$倍的queried SDF value
       - 在距离表面很远的时候更快地朝表面march
       - 在ill-posed情况下能加速收敛（当表面法向量和ray direction的夹角很小时）
         - [ ] what?
@@ -1250,10 +1250,10 @@ learning generalized templates comprised of elements
     - 或者说，sphere tracing本身不需要是可微分的
     - 只需要 local 8个邻居的 local 计算需要可微分
 - **energy function & losses**
-  - 从geometry相机位置等$$ \Theta $$，可以render出image$$ I $$：$$ I=R(\Theta) $$<br>inverse rendering就是$$ \Theta=R^{-1}(I) $$<br>但是inverse rendering并不直接可逆，因此把问题建模为`energy minimization problem`能量最小问题<br>$$ \Theta^*=\underset{\Theta}{\arg\min} \mathcal{L}_{img}(R(\Theta),I) $$
+  - 从geometry相机位置等$\Theta$，可以render出image$I$：$I=R(\Theta)$<br>inverse rendering就是$\Theta=R^{-1}(I)$<br>但是inverse rendering并不直接可逆，因此把问题建模为`energy minimization problem`能量最小问题<br>$\Theta^*=\underset{\Theta}{\arg\min} \mathcal{L}_{img}(R(\Theta),I)$
   - 重点在于一个differentiable renderer：本篇强调shape。输入camera pose和shape，输出渲染图像
-  - $$ \mathcal{L}_{img} $$衡量render图像和$$ I $$的差别
-  - $$ \mathcal{L}_{reg} $$ 正则化项，保证$$ \Theta $$是一个valid signed distance field（i.e. 梯度是单位向量）<br>实践中，是用$\Delta$近似的梯度
+  - $\mathcal{L}_{img}$衡量render图像和$I$的差别
+  - $\mathcal{L}_{reg}$ 正则化项，保证$\Theta$是一个valid signed distance field（i.e. 梯度是单位向量）<br>实践中，是用$\Delta$近似的梯度
 - single view：从图像encode到一个voxelized 稀疏SDF，经过一些3D卷积refinement，经过differentiable renderer到image![image-20201222103114471](media/image-20201222103114471.png)
 - multi view：就用auto-decoder直接训练
 - **results**
@@ -1285,23 +1285,23 @@ learning generalized templates comprised of elements
   - 公式推导比较细致，因为值除了对几何参数有导数表达式外，还对相机参数有导数表达式
   - 重点比较对象是DVR
 - **Overview**
-  - 把3D surface表达为一个deep implicit field $$ f $$ 的zero level set<br>$$ \mathcal{S}_{\theta}=\{ \boldsymbol{x}\in\mathbb{R}^3 \vert f(\boldsymbol{x},\theta)=0 \} $$
-    - 为了avoid everywhere 0 solution，$$ f $$ 一般都会regularized，比如SDF的regularization；本篇用了 `implicit geometric regularization`(IGR) 
-  - **<u>三个未知量（也是被优化的量）</u>**：`geometry`几何$$ \theta\in\mathbb{R}^m $$，`appearance`外观$$ \gamma\in\mathbb{R}^n $$，`cameras`相机参数$$ \tau\in\mathbb{R}^k $$
-    - 注意本篇中的相机参数也是一个未知量、被优化的值，因此所有值除了需要对几何参数$$ \theta $$有导数表达式外，还需要对相机参数$$ \tau $$（i.e.相机中心点$$ \boldsymbol{c} $$和view direction $$ \boldsymbol{v} $$）有导数表达式
-  - 把一个像素处的颜色/radiance建模为一个射线交点坐标$$ \boldsymbol{\hat x}_p $$、表面法向量$$ \boldsymbol{\hat n}_p $$、view direction$$ \boldsymbol{\hat v}_p $$、几何参数$$ \boldsymbol{\hat z}_p $$、外观参数$$ \gamma $$的映射<br>$$ L_p(\theta,\gamma,\tau)=M(\boldsymbol{\hat x}_p, \boldsymbol{\hat n}_p, \boldsymbol{\hat z}_p, \boldsymbol{\hat v}_p;\gamma) $$
+  - 把3D surface表达为一个deep implicit field $f$ 的zero level set<br>$\mathcal{S}_{\theta}=\{ \boldsymbol{x}\in\mathbb{R}^3 \vert f(\boldsymbol{x},\theta)=0 \}$
+    - 为了avoid everywhere 0 solution，$f$ 一般都会regularized，比如SDF的regularization；本篇用了 `implicit geometric regularization`(IGR) 
+  - **<u>三个未知量（也是被优化的量）</u>**：`geometry`几何$\theta\in\mathbb{R}^m$，`appearance`外观$\gamma\in\mathbb{R}^n$，`cameras`相机参数$\tau\in\mathbb{R}^k$
+    - 注意本篇中的相机参数也是一个未知量、被优化的值，因此所有值除了需要对几何参数$\theta$有导数表达式外，还需要对相机参数$\tau$（i.e.相机中心点$\boldsymbol{c}$和view direction $\boldsymbol{v}$）有导数表达式
+  - 把一个像素处的颜色/radiance建模为一个射线交点坐标$\boldsymbol{\hat x}_p$、表面法向量$\boldsymbol{\hat n}_p$、view direction$\boldsymbol{\hat v}_p$、几何参数$\boldsymbol{\hat z}_p$、外观参数$\gamma$的映射<br>$L_p(\theta,\gamma,\tau)=M(\boldsymbol{\hat x}_p, \boldsymbol{\hat n}_p, \boldsymbol{\hat z}_p, \boldsymbol{\hat v}_p;\gamma)$
     - 某种程度上像NeRF
-    - 射线交点坐标、表面法向量、几何参数、view direction 与几何$$ \theta $$、相机参数$$ \tau $$有关，因为$$ \boldsymbol{\hat x}_p=\boldsymbol{\hat x}_p(\theta,\tau) $$
+    - 射线交点坐标、表面法向量、几何参数、view direction 与几何$\theta$、相机参数$\tau$有关，因为$\boldsymbol{\hat x}_p=\boldsymbol{\hat x}_p(\theta,\tau)$
     - M是又一个MLP
   - losses
     - RGB loss，是L1-Norm，逐像素
     - MASK loss，在render的时候就可以render出一个近似的可微分的mask，于是这里可以直接cross-entropy loss，逐像素
     - reg loss，Eikonal regularization，保证是个SDF，即网络梯度模为1；bbox中均匀采点
-      - $$ {\rm loss}_E(\theta)=\mathbb{E}_{\boldsymbol{x}}(\lVert \nabla_{\boldsymbol{x}}f(\boldsymbol{x};\theta) \rVert -1)^2 $$, where $$ \boldsymbol{x} $$在scene的一个bbox中均匀分布
+      - ${\rm loss}_E(\theta)=\mathbb{E}_{\boldsymbol{x}}(\lVert \nabla_{\boldsymbol{x}}f(\boldsymbol{x};\theta) \rVert -1)^2$, where $\boldsymbol{x}$在scene的一个bbox中均匀分布
 - **Differentiable intersections of view directions and geometry**
-  - 假设交叉点坐标表示为$$ \boldsymbol{\hat x}_(\theta,\tau)=\boldsymbol{c}+t(\theta,\boldsymbol{c},\boldsymbol{v})\boldsymbol{v} $$，关键是t这个标量值是$$ \theta $$, 相机中心点位置$$ \boldsymbol{c} $$, 观测方向$$ \boldsymbol{v} $$的函数
+  - 假设交叉点坐标表示为$\boldsymbol{\hat x}_(\theta,\tau)=\boldsymbol{c}+t(\theta,\boldsymbol{c},\boldsymbol{v})\boldsymbol{v}$，关键是t这个标量值是$\theta$, 相机中心点位置$\boldsymbol{c}$, 观测方向$\boldsymbol{v}$的函数
   - $$ \boldsymbol{\hat x}_p(\theta,\tau)=\boldsymbol{c}+t_0\boldsymbol{v} - \frac {\boldsymbol{v}}{\nabla_x f(\boldsymbol{x}_0;\theta_0) \cdot \boldsymbol{v}_0} f(\boldsymbol{c}+t_0\boldsymbol{v};\theta) $$
-    - 并且 `is exact in value and first derivatives of` $$ \theta $$和$$ \tau $$ at $$ \theta=\theta_0, \tau=\tau_0 $$
+    - 并且 `is exact in value and first derivatives of` $\theta$和$\tau$ at $\theta=\theta_0, \tau=\tau_0$
     - [ ] what?
   - 用隐函数微分；
   - SDF在一点的法向量就是其梯度，是因为梯度的模就是1
@@ -1364,7 +1364,7 @@ learning generalized templates comprised of elements
     - 推导了这些identified analytic faces在什么理论条件下可以保证形成一个闭合的、piecewise的planar surface
     - 基于本篇的这些理论推导，提出了一个可并行化的算法，在这些analytic cells上做marching，来==**<u>exactly recover</u>**==这些由learned MLP学出来的mesh
 - **overview**
-  - 算法的初始：先用SGD $$ \underset {\boldsymbol{x}\in\mathbb{R}^3}{\min} \lvert F(\boldsymbol{x}) \rvert $$ 找到表面上的一个点
+  - 算法的初始：先用SGD $\underset {\boldsymbol{x}\in\mathbb{R}^3}{\min} \lvert F(\boldsymbol{x}) \rvert$ 找到表面上的一个点
   - ![image-20201223105803235](media/image-20201223105803235.png)
 - **效果**：解析解就是降维打击。精确度无限(exact 解) + CPU跑都比别人GPU跑快十几倍
   - ![image-20201209113035559](media/image-20201209113035559.png)

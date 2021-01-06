@@ -32,8 +32,8 @@ title: math and DL for implicit representations + neural volume rendering
   - 颜色值由ray上的积分函数构成：
     - $$ C(r)=\int_{t_n}^{t_f} T(t) \; \cdot \; \sigma(r(t)) \; \cdot \; c(r(t),d) \quad {\rm d}t $$
       - 从near平面积分到far平面
-    - 其中，$$ T(t)=\exp(-\int_{t_n}^t \sigma(r(s))) \; {\rm d}s $$
-      - 注意，这里是从near平面开始，累积$$ \sigma $$积分的负数的指数；这意味着，如果已经经过了一些$$ \sigma $$值很大的值，ray后的点累积值也会很大，T(t) 值就会很小了
+    - 其中，$T(t)=\exp(-\int_{t_n}^t \sigma(r(s))) \; {\rm d}s$
+      - 注意，这里是从near平面开始，累积$\sigma$积分的负数的指数；这意味着，如果已经经过了一些$\sigma$值很大的值，ray后的点累积值也会很大，T(t) 值就会很小了
       - 这里一定程度上已经cover了遮挡的情况
       - ![image-20201216214526084](media/image-20201216214526084.png)
 
@@ -130,10 +130,10 @@ title: math and DL for implicit representations + neural volume rendering
     - $$ T(t)=\exp(-\int_{t_n}^t \sigma(\boldsymbol{\rm r}(s))) \; {\rm d}s $$
   - 近似为
     - $$ \tilde{\boldsymbol{\rm C}}(\boldsymbol{\rm r})=\sum_{i=1}^N \overline{\sigma}_i \overline{\boldsymbol{\rm c}}_i \overline{T}_i, \qquad \overline{T}_i=\exp(-\sum_{j=1}^{i-1}\overline{\sigma}_j) $$
-    - 其中$$ \overline{\sigma}_i=\delta_i^{-1}\int_{t_i-1}^{t_i}\sigma(t)\;{\rm d}t, \qquad \overline{\boldsymbol{\rm c}}_i = \delta_i^{-1} \int_{t_i-1}^{t_i}\boldsymbol{\rm c}(t)\;{\rm d}t $$
-      - 每段的$$ \overline{\sigma}_i $$由这段上的$$ \sigma(t) $$积分求出，每段的$$ \overline{\boldsymbol{\rm c}}_i $$由这段上的$$ \boldsymbol{\rm c}(t) $$积分求出
+    - 其中$\overline{\sigma}_i=\delta_i^{-1}\int_{t_i-1}^{t_i}\sigma(t)\;{\rm d}t, \qquad \overline{\boldsymbol{\rm c}}_i = \delta_i^{-1} \int_{t_i-1}^{t_i}\boldsymbol{\rm c}(t)\;{\rm d}t$
+      - 每段的$\overline{\sigma}_i$由这段上的$\sigma(t)$积分求出，每段的$\overline{\boldsymbol{\rm c}}_i$由这段上的$\boldsymbol{\rm c}(t)$积分求出
         - 这里用AutoInt近似
-      - 解释$$ \overline{T}_i=\exp(-\sum_{j=1}^{i-1}\overline{\sigma}_j) $$：每段的累积transimittance$$ T(t) $$则由这段之前的那些段的累加$$ \overline{\sigma}_i $$的负指数幂近似
+      - 解释$\overline{T}_i=\exp(-\sum_{j=1}^{i-1}\overline{\sigma}_j)$：每段的累积transimittance$T(t)$则由这段之前的那些段的累加$\overline{\sigma}_i$的负指数幂近似
         - 这里是真正的数值近似，把一段上的所有T(t)都用这段起始的T(t)近似
         - ![image-20201216214526084](media/image-20201216214526084.png)
   - 由于目前的autoint是两阶段的，训练很慢；本篇用了一个pytorch custom implementation of AutoDiff
@@ -151,7 +151,7 @@ title: math and DL for implicit representations + neural volume rendering
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
-  - 面对unbounded scenes时，用一种球内 / 球外$$ \frac {1}{r} $$的参数化来更好的处理foreground / background
+  - 面对unbounded scenes时，用一种球内 / 球外$\frac {1}{r}$的参数化来更好的处理foreground / background
 
 </details>
 
@@ -175,7 +175,7 @@ title: math and DL for implicit representations + neural volume rendering
     >
     > **因为2D GAN缺少对3D世界的理解；缺少图像生成过程的理解，所以不能提供对于camera viewpoint和物体pose的精确控制**。
   - 使用连续表征neural radiance filed
-    - 从location x, view direction d映射到color c 和 体素密度$$ \sigma $$
+    - 从location x, view direction d映射到color c 和 体素密度$\sigma$
   - 数据集使用unposed RGB images
 
 </details>
@@ -219,7 +219,7 @@ title: math and DL for implicit representations + neural volume rendering
   - 由于deformation field 引入了额外的ambiguities，导致`under-constrained optimization`欠约束最优化问题，带来不好的结果和artifacts<br>需要引入先验
   - ![image-20201221095628241](media/image-20201221095628241.png)
   - 在几何处理和图形学仿真领域，建模非刚体变形时，常常使用弹性能量`elastic enegies` 来建模local deformations from a rigid motion；在视觉领域也有利用`elastic energy`来重建、tracking非刚体的场景和物体；因此使用类似概念
-  - 对本篇的deformation field T来说，一个点$$ \boldsymbol{\rm x} $$处的mapping(从observation frame到canonical frame)的`Jacobian` $$ \boldsymbol{\rm J}_T(\boldsymbol{\rm x}) $$描述了这个点处的mapping的`best linear approximation`
+  - 对本篇的deformation field T来说，一个点$\boldsymbol{\rm x}$处的mapping(从observation frame到canonical frame)的`Jacobian` $\boldsymbol{\rm J}_T(\boldsymbol{\rm x})$描述了这个点处的mapping的`best linear approximation`
 
 </details>
 
@@ -401,10 +401,10 @@ title: math and DL for implicit representations + neural volume rendering
    - ![image-20201207191400152](media/image-20201207191400152.png)
 - multi-view aggregation 方式：
   - ![image-20201221092641965](media/image-20201221092641965.png)
-  - 在任意一个query point，对任意一个view，把query point $$ \boldsymbol{\rm x}, \boldsymbol{\rm d} $$ **<u>变换到input view space下</u>** <br>$`\boldsymbol{\rm x}^{(i)}=\boldsymbol{\rm P}^{(i)}\boldsymbol{\rm x}`,\quad \boldsymbol{\rm d}^{(i)}=\boldsymbol{\rm R}^{(i)}\boldsymbol{\rm d}$
-  - 在任意一个query point，对任意一个view，从投影后的图像位置的feature + position embedding + view direction embedding 计算中间变量<br>$$ \boldsymbol{\rm V}^{(i)}=f_1(\gamma(\boldsymbol{\rm x}^{(i)}), \boldsymbol{\rm d}^{(i)};\boldsymbol{\rm W}(\pi(\boldsymbol{\rm x}^{(i)}))) $$
-  - 在任意一个query point，对于所有view，把所有中间变量过average pooling layer $$ \psi $$后再过一个网络渲染出$$ (\sigma, \boldsymbol{\rm c}) $$<br>$$ (\sigma, \boldsymbol{\rm c})=f_2(\psi(\boldsymbol{\rm V}^{(1)},\ldots,\boldsymbol{\rm V}^{(n)})) $$
-  - single view就是直接$$ (\sigma, \boldsymbol{\rm c})=f(\gamma(\boldsymbol{\rm x}),\boldsymbol{\rm d};\boldsymbol{\rm W}(\pi(\boldsymbol{\rm x}))) $$
+  - 在任意一个query point，对任意一个view，把query point $\boldsymbol{\rm x}, \boldsymbol{\rm d}$ **<u>变换到input view space下</u>** <br>$`\boldsymbol{\rm x}^{(i)}=\boldsymbol{\rm P}^{(i)}\boldsymbol{\rm x}`,\quad \boldsymbol{\rm d}^{(i)}=\boldsymbol{\rm R}^{(i)}\boldsymbol{\rm d}$
+  - 在任意一个query point，对任意一个view，从投影后的图像位置的feature + position embedding + view direction embedding 计算中间变量<br>$\boldsymbol{\rm V}^{(i)}=f_1(\gamma(\boldsymbol{\rm x}^{(i)}), \boldsymbol{\rm d}^{(i)};\boldsymbol{\rm W}(\pi(\boldsymbol{\rm x}^{(i)})))$
+  - 在任意一个query point，对于所有view，把所有中间变量过average pooling layer $\psi$后再过一个网络渲染出$(\sigma, \boldsymbol{\rm c})$<br>$(\sigma, \boldsymbol{\rm c})=f_2(\psi(\boldsymbol{\rm V}^{(1)},\ldots,\boldsymbol{\rm V}^{(n)}))$
+  - single view就是直接$(\sigma, \boldsymbol{\rm c})=f(\gamma(\boldsymbol{\rm x}),\boldsymbol{\rm d};\boldsymbol{\rm W}(\pi(\boldsymbol{\rm x})))$
 
 </details>
 

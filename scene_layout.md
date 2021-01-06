@@ -43,10 +43,10 @@ title: scene layout
 - **数据集/数据特征/数据定义**
   - 物体3D model 是直接从SUNCG数据集中 retrive的；选择类别内最相似的bbox
   - scene graph定义：==与我们类似==
-    - scene graph `y`由一组triplets构成，$$ (o_i, p, o_j) $$
-    - $$ o_i $$代表第i-th物体的type(索引embedding) + attributes(索引embedding), $$ p $$代表空间关系(索引embedding)
+    - scene graph `y`由一组triplets构成，$(o_i, p, o_j)$
+    - $o_i$代表第i-th物体的type(索引embedding) + attributes(索引embedding), $p$代表空间关系(索引embedding)
   - 本文中layout的数据结构/物理含义：
-    - each element $$ y_i $$ in layout $$ y $$ 定义是一个 7-tuple，代表物体的bbox和竖直轴旋转：$$ y_i=(min_{X_i}, min_{Y_i}, min_{Z_i}, max_{X_i}, max_{Y_i}, max_{Z_i}, \omega_i ) $$
+    - each element $y_i$ in layout $y$ 定义是一个 7-tuple，代表物体的bbox和竖直轴旋转：$y_i=(min_{X_i}, min_{Y_i}, min_{Z_i}, max_{X_i}, max_{Y_i}, max_{Z_i}, \omega_i )$
   - 本文中latent space的定义：
     - [box_emdding, angle_ambedding] (因为是VAE，所以还分了mean, var)
 - **主要组件**
@@ -222,15 +222,15 @@ graph LR
 - **overview**
   - ![image-20201216171806453](media/image-20201216171806453.png)
   - decomposition
-    - 把点云$$ \boldsymbol{P} \in \mathbb{R}^{P \times D} $$用一个encoder计算出K-fold attention map $$ \boldsymbol{A} \in \mathbb{R}^{P \times K} $$和逐点的feature $$ \boldsymbol{F} \in \mathbb{R}^{P \times C} $$ 
-    - 然后计算*k*-th capsule的pose $$ \boldsymbol{\theta}_k \in \mathbb{R}^3 $$和对应的capsule descriptor $$ \boldsymbol{\beta}_k \in \mathbb{R}^C $$ <br> $$ \boldsymbol{\theta}_k = \frac {\sum_p A_{p,k}P_p} {\sum_p A_{p,k}} $$       $$ \boldsymbol{\beta}_k=\frac {\sum_p A_{p,k}F_p} {\sum_p A_{p,k}} $$ <br>其实就是attention map加权和后的点坐标和attention map加权和后的点feature
+    - 把点云$\boldsymbol{P} \in \mathbb{R}^{P \times D}$用一个encoder计算出K-fold attention map $\boldsymbol{A} \in \mathbb{R}^{P \times K}$和逐点的feature $\boldsymbol{F} \in \mathbb{R}^{P \times C}$ 
+    - 然后计算*k*-th capsule的pose $\boldsymbol{\theta}_k \in \mathbb{R}^3$和对应的capsule descriptor $\boldsymbol{\beta}_k \in \mathbb{R}^C$ <br> $\boldsymbol{\theta}_k = \frac {\sum_p A_{p,k}P_p} {\sum_p A_{p,k}}$       $\boldsymbol{\beta}_k=\frac {\sum_p A_{p,k}F_p} {\sum_p A_{p,k}}$ <br>其实就是attention map加权和后的点坐标和attention map加权和后的点feature
   - canonicalization
     - 单纯地保证不变性和等变性并不足以学出一个object-centric的3D表征，因为缺乏一种(无监督)的机制来==**<u>bring information into a shared "object-centric" reference frame</u>**==
     - 并且，一个"合适"的canonical frame其实就是一个convention，所以我们需要一个机制让网络做出一个**<u>选择</u>**——并且必须在所有物体中都是一致的
       - 比如，一个沿着+z轴放置的飞机和一个沿着+y轴放置的飞机是**<u>一样好</u>**的
     - 为了实现这一点：link the capsule descriptors to the capsule poses in canonical space；i.e. ask that objects with similar appearance to be located in similar Euclidean neighborhoods in canonical space
       - 具体做法是用一个全连接层，从descriptor直接回归出每个capsule的pose
-      - $$ \overline{\theta}=\mathcal{K}(\beta) $$<br> $$ \overline{\theta} \in \mathbb{R}^{K\times 3} $$是canonical poses，<br>$$ \mathcal{K} $$是全连接神经网络，<br>$$ \beta \in \mathbb{R}^{K \times C} $$ 是capsule的descriptor
+      - $\overline{\theta}=\mathcal{K}(\beta)$<br> $\overline{\theta} \in \mathbb{R}^{K\times 3}$是canonical poses，<br>$\mathcal{K}$是全连接神经网络，<br>$\beta \in \mathbb{R}^{K \times C}$ 是capsule的descriptor
       - [ ] why?居然直接从K个胶囊描述子直接回归出K个canonical pose
 
 </details>

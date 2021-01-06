@@ -176,7 +176,7 @@ too old
     - 惩罚每个物体`alpha map`的 `L1-范数`
     - > ![img](media/63491889.png)
       >
-      > $$ \tau=0.1 $$ 是一个防止收缩到一个固定最小值以下的截短阈值， $$ A_i $$ 依赖于模型参数和 latent code z（so 这个loss可以对模型参数有作用）
+      > $\tau=0.1$ 是一个防止收缩到一个固定最小值以下的截短阈值， $A_i$ 依赖于模型参数和 latent code z（so 这个loss可以对模型参数有作用）
   - **(==self supervised==) geometry consistency loss**
     - > 为了得到在不同的 `camera viewpoints` 和 `3D物体pose `中都**consistent**的solutions，遵循 _**[33]RGBD-GAN**_ 来鼓励生成模型来遵守多视几何约束。
     - > 比如，对于pose(外参)的改变应该改变物体的pose但是不应该alter它的颜色或者identity.
@@ -184,9 +184,9 @@ too old
       >
       > ![img](media/63872134.png)
       >
-      > $$ X_i' $$ $$ D_i' $$ 是 latent code z的2D generator 输出
+      > $X_i'$ $D_i'$ 是 latent code z的2D generator 输出
       >
-      > $$ \tilde{X}_i' $$ $$ \tilde{D}_i' $$ 是 同一个latent code对每个primitive的pose加入随机噪声 并且 [**Warp**ing the result back to the original viewpoint] (即**重投影**回加噪声之前的viewpoint)  后的2D generator输出
+      > $\tilde{X}_i'$ $\tilde{D}_i'$ 是 同一个latent code对每个primitive的pose加入随机噪声 并且 [**Warp**ing the result back to the original viewpoint] (即**重投影**回加噪声之前的viewpoint)  后的2D generator输出
     - 相当于是一个自监督的重投影误差loss
 
 </details>
