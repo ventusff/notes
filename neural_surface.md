@@ -184,7 +184,7 @@ title: math and DL for shapes  (spatial surfaces)
 
 | 让直线束经过二次曲线的一个"一重点"来参数化                   | 让直线束经过三次曲线的一个二重点来参数化                     |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| ![image-20201209091156318](media/image-20201209091156318.png) | ![image-20201209091136948](media/image-20201209091136948.png){:.postimage .three_noscale} |
+| ![image-20201209091156318](media/image-20201209091156318.png){:.postimage .three_noscale} | ![image-20201209091136948](media/image-20201209091136948.png){:.postimage .three_noscale} |
 
  - a `rational parameterization` of a surface in affine (x,y,z)-space corresponds to a `polynomial parameterization` of the same surface  in `projective (w,x,y,z)-space`<br>一个曲面在(x,y,z)-仿射空间的有理参数化 对应 同样曲面在(w,x,y,z)-射影空间的多项式参数化
  - `implicitization`: parametric -> implicit
@@ -703,7 +703,7 @@ learning generalized templates comprised of elements
 
 | 示意图                                                       | 网络结构                                                     |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| ![image-20201229113148367](media/image-20201229113148367.png) | ![image-20201229113341539](media/image-20201229113341539.png){:.postimage .three_noscale} |
+| ![image-20201229113148367](media/image-20201229113148367.png){:.postimage .three_noscale} | ![image-20201229113341539](media/image-20201229113341539.png){:.postimage .three_noscale} |
 
  - **few shot segmentation**
    -  因为同category的shape的convex组合之间已经建立起了`correspondence`，只需要手动给几个shape标一下convex id对应的part label，就可以利用correspondence获得其他同category shape的标注<br><img src="media/image-20201229113640866.png" alt="image-20201229113640866"  class="postimage three_noscale" />
@@ -747,7 +747,7 @@ learning generalized templates comprised of elements
   - 让我们可以同时更新sdf值和梯度
   - ![image-20201228162639806](media/image-20201228162639806.png){:.postimage .three_noscale}
 - **overview**
-  - loss functions直接从GT点云本身定义，而不是利用GT SDF作回归；<br>![image-20201228163704020](media/image-20201228163704020.png)<br>![image-20201228163648881](media/image-20201228163648881.png){:.postimage .three_noscale}
+  - loss functions直接从GT点云本身定义，而不是利用GT SDF作回归；<br>![image-20201228163704020](media/image-20201228163704020.png){:.postimage .three_noscale}<br>![image-20201228163648881](media/image-20201228163648881.png){:.postimage .three_noscale}
 
 </details>
 
@@ -835,7 +835,7 @@ learning generalized templates comprised of elements
       - $$\lVert (p_i+v_i) - (p_j+v_j) \rVert_2$$其实就是这对相关点$$p_i$$和$$p_j$$在template space下的距离
     - 不确定性大的区域 comform well to 形状之间的 `structure discrepancy` 结构不符<br>下图展示的是形状A（表面）上的点，在形状B（表面）上找到的相关的点的不确定性；红色高不确定性，蓝色低不确定性<br><img src="media/image-20210104200614483.png" alt="image-20210104200614483"  class="postimage three_noscale" />
 - **results**
-  - texture transfer <br>![image-20201222155357538](media/image-20201222155357538.png)<br>![image-20210104173728589](media/image-20210104173728589.png){:.postimage .three_noscale}
+  - texture transfer <br>![image-20201222155357538](media/image-20201222155357538.png){:.postimage .three_noscale}<br>![image-20210104173728589](media/image-20210104173728589.png){:.postimage .three_noscale}
   - label transfer：可以看到对于 椅子把 这种时有时无的结构也可以handle<br>![image-20201222155611605](media/image-20201222155611605.png){:.postimage .three_noscale}
 - **Ablation study / discussions**
   - 单纯的位置修正就已经可以构成变形场；但是本篇发现，仅仅位置修正不够，加入标量修正可以：
@@ -875,7 +875,7 @@ learning generalized templates comprised of elements
 | 本篇：Deep Implicit Templates for 3D Shape Representation的transfer效果 | deformed implicit field的transfer效果                        |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | <img src="media/image-20201229180439537.png" alt="image-20201229180439537" class="postimage three_noscale" /> | ![image-20201229180759966](media/image-20201229180759966.png){:.postimage .three_noscale} |
-| keypoint detection PCK accuracy<br>![image-20210104120316992](media/image-20210104120316992.png) | label transfer IOU banchmark<br>![image-20210104114757341](media/image-20210104114757341.png){:.postimage .three_noscale} |
+| keypoint detection PCK accuracy<br>![image-20210104120316992](media/image-20210104120316992.png){:.postimage .three_noscale} | label transfer IOU banchmark<br>![image-20210104114757341](media/image-20210104114757341.png){:.postimage .three_noscale} |
 
 
 - **Motivation**
