@@ -187,7 +187,7 @@ title: math for deformations
  - 首先两边对$$x_j$$求偏导
     - $$\underset{i}{\sum} -2 F_{ij}(\boldsymbol {\rm x})(y_i(\boldsymbol {\rm z}) - y_i(\boldsymbol {\rm x}))=-2(z_j-x_j)$$
  - 再两边对$$z_k$$求偏导：
-    - $$-2 F_{ij}(\boldsymbol {\rm x})F_{ik}(\boldsymbol {\rm z})= -2\delta_{jk} =\begin{cases} -2 & \text{if $$j = k$$ } \\ 0 & \text{if $$j \neq k$$ }  \end{cases}$$
+    - $$-2 F_{ij}(\boldsymbol {\rm x})F_{ik}(\boldsymbol {\rm z})= -2\delta_{jk} =\begin{cases} -2 & \text{if $j = k$ } \\ 0 & \text{if $j \neq k$ }  \end{cases}$$
     - i.e. $$F_{ij}(\boldsymbol {\rm x})F_{ik}(\boldsymbol {\rm z})= \delta_{jk}$$
     - 即得： $$\boldsymbol {\rm F}^{\top}(\boldsymbol {\rm x}) \boldsymbol {\rm F}(\boldsymbol {\rm z})=\boldsymbol {\rm I} \qquad {\rm for \; all \;} \boldsymbol {\rm x},\boldsymbol {\rm z} \in \mathcal{R}_0$$
        - 可得出$$\boldsymbol {\rm F}(\boldsymbol {\rm x})$$处处行列式为1
@@ -288,7 +288,7 @@ title: math for deformations
        - 这些应变评估张量的`principle directions`主方向都和$$\boldsymbol {\rm V}$$的一样，即$$\boldsymbol {l}_1, \boldsymbol {l}_2, \boldsymbol {l}_3$$
  - 更广义、一般化的的`Lagrangian strain tensor`拉格朗日应变张量$$\boldsymbol {\rm E}(\boldsymbol {\rm U})$$
     - 让$$e(\cdot)$$为一个/任意的在$$(0,\infty)$$定义的标量值函数，它满足以下条件：
-       - $$\begin{array}{l} \text{(a)} & e(1)=0 \\ \text{(b)} & e'(1)=1 \\ \text{(c)} & e'(\lambda) \gt 0 & \text{for all $$\lambda \gt 0$$} \end{array}$$
+       - $$\begin{array}{l} \text{(a)} & e(1)=0 \\ \text{(b)} & e'(1)=1 \\ \text{(c)} & e'(\lambda) \gt 0 & \text{for all $\lambda \gt 0$} \end{array}$$
           - (a) 用来保证如果deformed 和reference coincide，`vanish` (i.e. $$\boldsymbol {\rm E}=\boldsymbol {\rm O}$$ )
           - (b) 用来使$$\boldsymbol {\rm E}(\boldsymbol {\rm U})$$适用于经典的`infinitesimal strain tensor` 无穷小应变张量的理论 见章节 [liearization 线性化近似 （无穷小形变张量）](#linearization 线性化近似 （无穷小形变张量）)
           - (c) 用来保证主应变 $$e(\lambda_i)$$ 随相应的主拉伸 $$\lambda_i$$单调递增
