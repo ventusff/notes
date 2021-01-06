@@ -133,7 +133,7 @@ title: math and DL for shapes  (spatial surfaces)
 
 |                                                              |                                                              |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| ![image-20201208012017960](media/image-20201208012017960.png) | ![image-20201208012035153](media/image-20201208012035153.png){:.postimage .three_noscale} |
+| ![image-20201208012017960](media/image-20201208012017960.png){:.postimage .three_noscale} | ![image-20201208012035153](media/image-20201208012035153.png){:.postimage .three_noscale} |
 
  - `Earth Mover Distance` (EMD)
  - 
