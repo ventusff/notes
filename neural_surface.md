@@ -833,7 +833,7 @@ learning generalized templates comprised of elements
     - $$u(p_i,p_j)=1-\exp(-\gamma \lVert (p_i+v_i) - (p_j+v_j) \rVert_2^2)$$
       - 其中$v_i=D_{\omega_i}^v(p_i)$ 是点上的变形向量；是从 shape instance space到 template space的$\Delta$
       - $\lVert (p_i+v_i) - (p_j+v_j) \rVert_2$其实就是这对相关点$p_i$和$p_j$在template space下的距离
-    - 不确定性大的区域 comform well to 形状之间的 `structure discrepancy` 结构不符<br>下图展示的是形状A（表面）上的点，在形状B（表面）上找到的相关的点的不确定性；红色高不确定性，蓝色低不确定性<br>![image-20210104200614483](media/image-20210104200614483.png)
+    - 不确定性大的区域 comform well to 形状之间的 `structure discrepancy` 结构不符<br>下图展示的是形状A（表面）上的点，在形状B（表面）上找到的相关的点的不确定性；红色高不确定性，蓝色低不确定性<br><img src="media/image-20210104200614483.png" alt="image-20210104200614483"  />
 - **results**
   - texture transfer <br>![image-20201222155357538](media/image-20201222155357538.png)<br>![image-20210104173728589](media/image-20210104173728589.png)
   - label transfer：可以看到对于 椅子把 这种时有时无的结构也可以handle<br>![image-20201222155611605](media/image-20201222155611605.png)

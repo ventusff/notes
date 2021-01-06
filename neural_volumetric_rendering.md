@@ -88,16 +88,24 @@ title: math and DL for implicit representations + neural volume rendering
 <details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
+- **review**
+  - 兼顾精度、速度？
+  - 既然是利用形状/点云信息，加快query时的速度，那可否利用SDF？
+    - 这种加速，相当于额外存储一下空间中哪些位置占用低
 - **Motivation**
   - 现有的方法，由于网络容量/寻找和scene geometry的精确intersection有困难，目前的很多方法都是blurry results
-  - 提出一种新的表征，用octree结构的voxels来each 存local feature<br>这样在采样时就可以跳过无关的voxels，比NeRF快10倍<br>![image-20201221173251904](media/image-20201221173251904.png)
+  - 提出一种新的表征，**<u>用octree结构的voxels来each 存local feature</u>** <br>这样在采样时就可以跳过无关的voxels，比NeRF快10倍<br>![image-20201221173251904](media/image-20201221173251904.png)
   - 至于每个pixel的feature，渲染结构与NeRF类似<br>![image-20201221174122461](media/image-20201221174122461.png)
 - **Overview**
-  - self-pruning <br>![image-20201221174308274](media/image-20201221174308274.png)
+  - self-pruning <br>把占用小于阈值的网格直接剪枝掉<br>![image-20201221174308274](media/image-20201221174308274.png)
+  - 一个voxel上的feature有顶点补间得来<br>![image-20210106152320554](media/image-20210106152320554.png)
 - **results**
   - ![image-20201221173910965](media/image-20201221173910965.png)
   - 因为用的是显式的sparse voxel 表征，可以轻松用于scene composition
     - ![image-20201221174604849](media/image-20201221174604849.png)
+  - 还可以在 `ScanNet` 上直接进行尝试：首先用注册后的深度图提取点云<br>![image-20210106151555886](media/image-20210106151555886.png)
+  - 还可以做scene editing：因为用的是显式的voxel
+    - ![image-20210106151644456](media/image-20210106151644456.png)
 
 </details>
 
@@ -183,7 +191,7 @@ title: math and DL for implicit representations + neural volume rendering
 ---
 
 **`"pi-GAN: Periodic Implicit Generative Adversarial Networks for 3D-Aware Image Synthesis"`**  
-**[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2012.00926.pdf)** **[[code]](https://www.github.com)** **[[web]](https://marcoamonteiro.github.io/pi-GAN-website/)** **[** :mortar_board: `Stanford` **]**   
+**[** `0000` **]** **[[paper(compressed)]](https://marcoamonteiro.github.io/pi-GAN-website/pdf/compressed_paper.pdf)** **[[paper]](https://arxiv.org/pdf/2012.00926.pdf)** **[[code]](https://www.github.com)** **[[web]](https://marcoamonteiro.github.io/pi-GAN-website/)** **[** :mortar_board: `Stanford` **]**   
 **[**  `Eric R. Chan`, `Marco Monteiro`, `Petr Kellnhofer`, `Jiajun Wu`, `Gordon Wetzstein`  **]**  
 **[** _`SIREN-style`_ **]**  
 
@@ -193,6 +201,9 @@ title: math and DL for implicit representations + neural volume rendering
 - **Motivation**
   - StyleGAN类似的noise输入方式 + SIREN的周期性激活函数
   - ![image-20201223163530375](media/image-20201223163530375.png)
+- **losses**
+  - discriminator
+    - simple ProgressiveGA-like convolutional discriminator; 
 - **results**
   - ![image-20201223163713693](media/image-20201223163713693.png)
 
