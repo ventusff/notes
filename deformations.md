@@ -137,28 +137,28 @@ title: math for deformations
 
 ## 一般形变：研究长度、朝向、夹角、体积、表面的改变
 
-### 一个物质纤维的改变：长度、朝向
+### 一个物质纤维微元的改变：长度、朝向
 
 <img src="media/image-20210105215817089.png" alt="image-20210105215817089" style="zoom:67%;" />
 
  - 长度改变比例：$$\lVert \boldsymbol {\rm F} \boldsymbol {\rm n}_0 \rVert$$
  - 新朝向：$$\frac {\boldsymbol {\rm F} \boldsymbol {\rm n}_0}{\lVert \boldsymbol {\rm F} \boldsymbol {\rm n}_0 \rVert}$$
 
-### 两个物质纤维的改变：夹角
+### 两个物质纤维微元的改变：夹角
 
 <img src="media/image-20210105220321108.png" alt="image-20210105220321108" style="zoom:67%;" />
 
  - 考虑由$$\boldsymbol {\rm n}_0^{(1)}$$，$$\boldsymbol {\rm n}_0^{(2)}$$定义的夹角
  - 新夹角大小：$$\cos{\theta_y}= \frac {\boldsymbol {\rm F}\boldsymbol {\rm n}_0^{(1)} \cdot \boldsymbol {\rm F}\boldsymbol {\rm n}_0^{(2)}} { \lVert \boldsymbol {\rm F}\boldsymbol {\rm n}_0^{(1)} \rVert  \lVert \boldsymbol {\rm F}\boldsymbol {\rm n}_0^{(2)} \rVert}$$
 
-### 一块体积物质的改变：体积
+### 一块体积物质微元的改变：体积
 
 <img src="media/image-20210105220459906.png" alt="image-20210105220459906" style="zoom:67%;" />
 
  - 考虑由$${\rm d}\boldsymbol {\rm x}^{(1)}, {\rm d}\boldsymbol {\rm x}^{(2)}, {\rm d}\boldsymbol {\rm x}^{(3)}$$ 定义的`tetrahedron`四面体
  - 体积改变：$${\rm d}V_y=J {\rm d}V_x \qquad where \qquad J=\det\boldsymbol {\rm F}$$
 
-### :pushpin: :warning: 一块表面物质的改变：面积，平面法向量
+### :pushpin: :warning: 一块表面物质微元的改变：面积，平面法向量
 
 <img src="media/image-20210105220824590.png" alt="image-20210105220824590" style="zoom:67%;" />
 
