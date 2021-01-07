@@ -18,7 +18,7 @@ title: scene layout
 <details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
-| ![image-20201028170115727](media/image-20201028170115727.png){:.postimage .three_noscale} |
+| ![image-20201028170115727](media/image-20201028170115727.png) |
 | ------------------------------------------------------------ |
 | scene generation + refinement                                |
 
@@ -59,7 +59,7 @@ title: scene layout
     - 其实就是一个auto-decoder结构，通过整个可微分通路，把sample出的layout latent反向传播最优化更新（文中称之为"refinement"/"fine tune"/"generate a layout toward a target layout"）
 - **layout generator的网络架构**
 
-| ![image-20201028170249809](media/image-20201028170249809.png){:.postimage .three_noscale} |
+| ![image-20201028170249809](media/image-20201028170249809.png) |
 | ------------------------------------------------------------ |
 | **<u>测试</u>** 时，scene graph + 从一个learned distribution 采样latent code => generate scene layout <br>**<u>训练</u>** 时，input scene graph + GT layout 先通过encoder提取出其layout latent  (学出一个distribution)，然后用提取出的layout latent + input scene graph 生成predicted layout |
 
@@ -144,18 +144,18 @@ graph LR
 
 - **refinement (finetune) 过程**
 
-| ![image-20201028170332920](media/image-20201028170332920.png){:.postimage .three_noscale} |
+| ![image-20201028170332920](media/image-20201028170332920.png) |
 | ------------------------------------------------------------ |
 | 类似auto-decoder结构；<br>通过整个可微分通路，把sample出的layout latent反向传播最优化更新（文中称之为"refinement"/"fine tune"/"generate a layout toward a target layout"） |
 
 
 - **效果**
   - 2.5D vs. 2D
-    - ![image-20201028170455621](media/image-20201028170455621.png){:.postimage .three_noscale}
+    - ![image-20201028170455621](media/image-20201028170455621.png)
   - diverse layout from the same scene graph
-    - ![image-20201028171028235](media/image-20201028171028235.png){:.postimage .three_noscale}
+    - ![image-20201028171028235](media/image-20201028171028235.png)
   - diverse layout generation
-    - ![image-20201028170542200](media/image-20201028170542200.png){:.postimage .three_noscale}
+    - ![image-20201028170542200](media/image-20201028170542200.png)
 
 </details>
 
@@ -181,7 +181,7 @@ graph LR
 - **Scene Graph Canonicalization**
   - transitive relation, converse relations
 - **效果**
-  - ![image-20201217112917616](media/image-20201217112917616.png){:.postimage .three_noscale}
+  - ![image-20201217112917616](media/image-20201217112917616.png)
 
 </details>
 
@@ -202,7 +202,7 @@ graph LR
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
-  - ![image-20201216165444435](media/image-20201216165444435.png){:.postimage .three_noscale}
+  - ![image-20201216165444435](media/image-20201216165444435.png)
 
 </details>
 
@@ -218,9 +218,9 @@ graph LR
 
 - **Motivation**
   - unsupervised capsule architecture for 3D point clouds
-  - ![image-20201216170228754](media/image-20201216170228754.png){:.postimage .three_noscale}
+  - ![image-20201216170228754](media/image-20201216170228754.png)
 - **overview**
-  - ![image-20201216171806453](media/image-20201216171806453.png){:.postimage .three_noscale}
+  - ![image-20201216171806453](media/image-20201216171806453.png)
   - decomposition
     - 把点云$$\boldsymbol{P} \in \mathbb{R}^{P \times D}$$用一个encoder计算出K-fold attention map $$\boldsymbol{A} \in \mathbb{R}^{P \times K}$$和逐点的feature $$\boldsymbol{F} \in \mathbb{R}^{P \times C}$$ 
     - 然后计算$$k$$-th capsule的pose $$\boldsymbol{\theta}_k \in \mathbb{R}^3$$ 和对应的capsule descriptor $$\boldsymbol{\beta}_k \in \mathbb{R}^C$$
@@ -254,8 +254,8 @@ graph LR
   - capsule networks不能高效地学到low level的part descriptions
   - exploit motion as a powerful perceptual cue for part definition <br>用运动作为一个部件定义的有力的感知线索
 - results
-  - 从复杂背景中找出来原来的三角形、正方形、圆形等<br>![image-20201216170936463](media/image-20201216170936463.png){:.postimage .three_noscale}
-  - 对于运动的人学出来的部件![image-20201216171020883](media/image-20201216171020883.png){:.postimage .three_noscale}
+  - 从复杂背景中找出来原来的三角形、正方形、圆形等<br>![image-20201216170936463](media/image-20201216170936463.png)
+  - 对于运动的人学出来的部件![image-20201216171020883](media/image-20201216171020883.png)
 
 </details>
 

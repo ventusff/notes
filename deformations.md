@@ -38,7 +38,7 @@ title: math for deformations
        - takes $$\mathcal{R}_0 \rightarrow \mathcal{R}$$
     - `displacment vector field` $$\hat{u}(x)$$ 定义为
        - $$\hat{\boldsymbol {\rm u}}(\boldsymbol {\rm x})=\hat{\boldsymbol {\rm y}}(\boldsymbol {\rm x})-\boldsymbol {\rm x}$$
-    - <img src="media/image-20210105200719506.png" alt="image-20210105200719506" class="postimage three_noscale"/>
+    - <img src="media/image-20210105200719506.png" alt="image-20210105200719506"/>
 
 ## `Deformation Gradient Tensor` 形变梯度张量: deformation in the neighborhood of a particle 在一个粒子邻域中的变形
 
@@ -65,7 +65,7 @@ title: math for deformations
           - $${\rm d}y_i=\underset{j}{\sum} F_{ij} {\rm d}x_j$$ or $$\{y\}=[F]\{x\}$$
        - 注意，这个近似并不需要假设梯度场的变化小；它只需要假设p和q挨得足够近
        - 即：$$\boldsymbol {\rm F}$$ 把 无穷小未变形物质纤维$${\rm d}\boldsymbol {\rm x}$$ `carries into`带到了它在变形configuration中的位置$${\rm d}\boldsymbol {\rm y}$$处
-    - <img src="media/image-20210105203801521.png" alt="image-20210105203801521" class="postimage three_noscale" />
+    - <img src="media/image-20210105203801521.png" alt="image-20210105203801521" />
  - $$\boldsymbol {\rm F}$$应具有的一些假设
     - 行列式不为0
        - 考虑一个物理上可实现的变形：单个物质纤维不会裂变为两个物质纤维；两个不同的物质纤维不会合并为同一个物质纤维
@@ -80,7 +80,7 @@ title: math for deformations
           - 镜射变换，手性就不保留；
        - 一个变形是`orientation preserving`的，当且仅当行列式大于0：
           - $$J=\det \boldsymbol {\rm F} \gt 0$$
-       - <img src="media/image-20210105210342160.png" alt="image-20210105210342160" class="postimage three_noscale" />
+       - <img src="media/image-20210105210342160.png" alt="image-20210105210342160" />
  - **变形的正式表述**
     - 如上，一个粒子$$\boldsymbol {\rm x}$$一般的邻域粒子$$\boldsymbol {\rm x} + {\rm d}\boldsymbol {\rm x}$$的变形正式表述为：
        - $$\boldsymbol {\rm y}(\boldsymbol {\rm x} + {\rm d}\boldsymbol {\rm x})=\boldsymbol {\rm y}(\boldsymbol {\rm x})+\boldsymbol {\rm F}{\rm d}\boldsymbol {\rm x}$$
@@ -101,7 +101,7 @@ title: math for deformations
 
 ### `pure stretch` 纯拉伸
 
-<img src="media/image-20210105211037474.png" alt="image-20210105211037474" class="postimage three_noscale" />
+<img src="media/image-20210105211037474.png" alt="image-20210105211037474" />
 
  - $$\boldsymbol {\rm y}=\boldsymbol {\rm F} \boldsymbol {\rm x} \qquad where \qquad \boldsymbol {\rm F}=\lambda_1 \boldsymbol {\rm e}_1 \otimes \boldsymbol {\rm e}_1 + \lambda_2 \boldsymbol {\rm e}_2 \otimes \boldsymbol {\rm e}_2 + \lambda_3 \boldsymbol {\rm e}_3 \otimes \boldsymbol {\rm e}_3$$
  - 在标准正规基底$$\{\boldsymbol {\rm e}_1, \boldsymbol {\rm e}_2, \boldsymbol {\rm e}_3\}$$下
@@ -122,7 +122,7 @@ title: math for deformations
 
 ### `simple shearing deformation` 简单剪切变形
 
-<img src="media/image-20210105214214790.png" alt="image-20210105214214790" class="postimage three_noscale" />
+<img src="media/image-20210105214214790.png" alt="image-20210105214214790" />
 
  - $$\boldsymbol {\rm y}=\boldsymbol {\rm F} \boldsymbol {\rm x} \qquad where \qquad \boldsymbol {\rm F}=\boldsymbol {\rm I} + k \;  \boldsymbol{\rm e}_1 \otimes \boldsymbol {\rm e}_2$$
  - 在标准正规基底$$\{\boldsymbol {\rm e}_1, \boldsymbol {\rm e}_2, \boldsymbol {\rm e}_3\}$$下
@@ -139,28 +139,28 @@ title: math for deformations
 
 ### 一个物质纤维微元的改变：长度、朝向
 
-<img src="media/image-20210105215817089.png" alt="image-20210105215817089" class="postimage three_noscale" />
+<img src="media/image-20210105215817089.png" alt="image-20210105215817089" />
 
  - 长度改变比例：$$\lVert \boldsymbol {\rm F} \boldsymbol {\rm n}_0 \rVert$$
  - 新朝向：$$\frac {\boldsymbol {\rm F} \boldsymbol {\rm n}_0}{\lVert \boldsymbol {\rm F} \boldsymbol {\rm n}_0 \rVert}$$
 
 ### 两个物质纤维微元的改变：夹角
 
-<img src="media/image-20210105220321108.png" alt="image-20210105220321108" class="postimage three_noscale" />
+<img src="media/image-20210105220321108.png" alt="image-20210105220321108" />
 
  - 考虑由$$\boldsymbol {\rm n}_0^{(1)}$$，$$\boldsymbol {\rm n}_0^{(2)}$$定义的夹角
  - 新夹角大小：$$\cos{\theta_y}= \frac {\boldsymbol {\rm F}\boldsymbol {\rm n}_0^{(1)} \cdot \boldsymbol {\rm F}\boldsymbol {\rm n}_0^{(2)}} { \lVert \boldsymbol {\rm F}\boldsymbol {\rm n}_0^{(1)} \rVert  \lVert \boldsymbol {\rm F}\boldsymbol {\rm n}_0^{(2)} \rVert}$$
 
 ### 一块体积物质微元的改变：体积
 
-<img src="media/image-20210105220459906.png" alt="image-20210105220459906" class="postimage three_noscale" />
+<img src="media/image-20210105220459906.png" alt="image-20210105220459906" />
 
  - 考虑由$${\rm d}\boldsymbol {\rm x}^{(1)}, {\rm d}\boldsymbol {\rm x}^{(2)}, {\rm d}\boldsymbol {\rm x}^{(3)}$$ 定义的`tetrahedron`四面体
  - 体积改变：$${\rm d}V_y=J {\rm d}V_x \qquad where \qquad J=\det\boldsymbol {\rm F}$$
 
 ### :pushpin: :warning: 一块表面物质微元的改变：面积，平面法向量
 
-<img src="media/image-20210105220824590.png" alt="image-20210105220824590" class="postimage three_noscale" />
+<img src="media/image-20210105220824590.png" alt="image-20210105220824590" />
 
  - 考虑由$${\rm d}\boldsymbol {\rm x}^{(1)}, {\rm d}\boldsymbol {\rm x}^{(2)}$$ 定义的`parallelogram`平行四边形
  - 新法向量：$$\boldsymbol {\rm n}=\frac {\boldsymbol {\rm F}^{-\top} \boldsymbol {\rm n}_0 }  {\lVert  \boldsymbol {\rm F}^{-\top} \boldsymbol {\rm n}_0  \rVert}$$

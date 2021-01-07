@@ -10,7 +10,7 @@
   - **point-based** representation
     - point set generation network (大多是auto-decoder结构，输出固定个数的点)
     - point cloud generation (GAN)
-    - ![image-20201203153023230](media/image-20201203153023230.png){:.postimage .three_noscale}
+    - ![image-20201203153023230](media/image-20201203153023230.png)
   - implicit field/feature + semantic information
   - sitzmann inferring semantic 引文
 
@@ -82,8 +82,8 @@
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
-  - ![image-20201207194307508](media/image-20201207194307508.png){:.postimage .three_noscale}
-  - tree结构的GCN![image-20201207194208941](media/image-20201207194208941.png){:.postimage .three_noscale}
+  - ![image-20201207194307508](media/image-20201207194307508.png)
+  - tree结构的GCN![image-20201207194208941](media/image-20201207194208941.png)
 
 [image-to-point cloud] Geometric adversarial loss for single-view 3D-object reconstruction
 
@@ -119,7 +119,7 @@ GANS:
     3. [测试] 单张RGB图片 ==**<u>and/or</u>**== 单张标注好的语义图片，提取code
        1. 注意这里的and/or：训练的时候RGB和语义监督信号都有，测试的时候只需要二者之一就足够，不一定全都要
     4. [测试] 利用第3步提取好的code在更多camera view下render出RGB和语义
-  - ![image-20201203121856589](media/image-20201203121856589.png){:.postimage .three_noscale}
+  - ![image-20201203121856589](media/image-20201203121856589.png)
 
 </details>
 
@@ -150,7 +150,7 @@ GANS:
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
-  - 已有2D检测框+lidar 数据，为lidar数据做标注（9D cuboid）<br>![image-20201215122457755](media/image-20201215122457755.png){:.postimage .three_noscale}
+  - 已有2D检测框+lidar 数据，为lidar数据做标注（9D cuboid）<br>![image-20201215122457755](media/image-20201215122457755.png)
 
 </details>
 
@@ -172,8 +172,8 @@ GANS:
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
-  - ![image-20201224095705974](media/image-20201224095705974.png){:.postimage .three_noscale}
-  - ![image-20201224105352429](media/image-20201224105352429.png){:.postimage .three_noscale}
+  - ![image-20201224095705974](media/image-20201224095705974.png)
+  - ![image-20201224105352429](media/image-20201224105352429.png)
   - deformation一般都会有两组互相矛盾的目标函数
     - alignment with the target 和目标对齐
     - adhering to quality metrics 比如最小的扭曲，保留局部几何细节
@@ -185,11 +185,11 @@ GANS:
     - *Mean value coordinates for closed triangular meshes. Tao Ju et al., 2005*
     - *Green coordinates. Yaron Lipman et al., 2008*
 - **Overview**
-  - 不直接变形surface，而是变形稀疏笼子；<br>surface上面的每个点都有笼子顶点的加权和表达，权重函数不变，通过变形笼子来变形surface<br>这样可以最大程度保留局部细节，相当于直接扭曲空间，而不是移动surface vertices![image-20201224090310673](media/image-20201224090310673.png){:.postimage .three_noscale}
+  - 不直接变形surface，而是变形稀疏笼子；<br>surface上面的每个点都有笼子顶点的加权和表达，权重函数不变，通过变形笼子来变形surface<br>这样可以最大程度保留局部细节，相当于直接扭曲空间，而不是移动surface vertices![image-20201224090310673](media/image-20201224090310673.png)
 - **results**
-  - ![image-20201224111334294](media/image-20201224111334294.png){:.postimage .three_noscale}
+  - ![image-20201224111334294](media/image-20201224111334294.png)
   - deformation transfer
-    - ![image-20201224111514751](media/image-20201224111514751.png){:.postimage .three_noscale}
+    - ![image-20201224111514751](media/image-20201224111514751.png)
 - **cage-based deformations CBD**
   - **intuition**
     - instead of 单独变形表面上的那些点，CBD 直接 warp 整个surface 嵌入到的那个ambient space
@@ -205,7 +205,7 @@ GANS:
     - $$ \mathcal{C}_{\mathcal{s}}=\mathcal{N}_{\mathcal{C}}(\mathcal{S}_{\mathcal{s}})+\mathcal{C}_0 $$
   - deformation-prediction model $$\mathcal{N}_{d}$$，预测从$$\mathcal{C}_{\mathcal{S}}$$的offset，来获得deformed cage
     - $$ \mathcal{C}_{\mathcal{s}\rightarrow t}=\mathcal{N}_{d}(\mathcal{S}_{t},\mathcal{S}_{\mathcal{s}})+\mathcal{C}_{\mathcal{s}} $$
-  - source shape提输入点云的pointNet feature，decode预测source cage <br>source net的pointNet feature和target shape的pointNet feature拼一起，decode预测deformed cage<br>source cage通过MVC得到source shape的权重函数，然后用CBD变形得到deformed shape<br>![image-20201224114815289](media/image-20201224114815289.png){:.postimage .three_noscale}
+  - source shape提输入点云的pointNet feature，decode预测source cage <br>source net的pointNet feature和target shape的pointNet feature拼一起，decode预测deformed cage<br>source cage通过MVC得到source shape的权重函数，然后用CBD变形得到deformed shape<br>![image-20201224114815289](media/image-20201224114815289.png)
 - **losses**
   - 主要分三项
     - 最优化source cage，鼓励正的mean value coordinates；就是惩罚负的MVC坐标（相当于让surface一定在笼子里）
@@ -216,7 +216,7 @@ GANS:
     - 对于man-made shapes，使用两个额外的loss来学到这类人工制品的形状的先验
       - normal consistency：法向量一致性<br>保留平面元素，比如桌面<br>惩罚deformation后的PCA-normal<br>有效提升了感知的质量
       - 类似 *3DN: 3D deformation network. Wang et al. CVPR2019*，使用对称性loss：衡量形状和它在x=0平面的镜像的chamfer distance
-      - ![image-20201224162354565](media/image-20201224162354565.png){:.postimage .three_noscale}
+      - ![image-20201224162354565](media/image-20201224162354565.png)
 
 </details>
 

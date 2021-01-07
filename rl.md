@@ -11,13 +11,13 @@
 
 - **Motivation**
 - **overview**
-  - ![image-20201229182024033](media/image-20201229182024033.png){:.postimage .three_noscale}
+  - ![image-20201229182024033](media/image-20201229182024033.png)
  - 几种不同的记忆模型
 
 | methods                                                      | description |
 | ------------------------------------------------------------ | ----------- |
-| ![image-20201229182006075](media/image-20201229182006075.png){:.postimage .three_noscale} |             |
-| ![image-20201229182014349](media/image-20201229182014349.png){:.postimage .three_noscale} |             |
-| ![image-20201229182024033](media/image-20201229182024033.png){:.postimage .three_noscale} |             |
+| ![image-20201229182006075](media/image-20201229182006075.png) |             |
+| ![image-20201229182014349](media/image-20201229182014349.png) |             |
+| ![image-20201229182024033](media/image-20201229182024033.png) |             |
 
 </details>

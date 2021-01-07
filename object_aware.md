@@ -22,7 +22,7 @@ main preliminary: GQN
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
-  - ![image-20201027191207023](media/image-20201027191207023.png){:.postimage .three_noscale}
+  - ![image-20201027191207023](media/image-20201027191207023.png)
 - **前景背景区分方式**： 通过其`Scene Encoder`；其实是在GVFM下做3D物体检测
   - 把3D 空间分为 $$N_{max}=N_x \times N_y \times N_z$$ 个cell，每个最多检测1个物体（类似Yolo，扩展到三维）；
   - 检测是否有一个物体其中心落在了cell内；如果有，那么回归出一个连续量 $$\boldsymbol{z}_{ijk}^{where} \in \mathbb{R}^3$$ 来specify坐标
@@ -38,7 +38,7 @@ main preliminary: GQN
   - 重点考虑了object level如何重建图片；对我们会有一定帮助
 - **效果**
 
-![img](media/bcd05a95-3328-4004-af8f-42e62294b993.png){:.postimage .three_noscale}
+![img](media/bcd05a95-3328-4004-af8f-42e62294b993.png)
 
 </details>
 
@@ -57,8 +57,8 @@ main preliminary: GQN
 - **两阶段训练**
   - 首先学习一个base shape，然后从base shape到full model
   - 如果不用两阶段训练，学习到的形状都变成了一个椭球，变得模糊化了。
-  - <br>![img](media/0473e31c-1289-4436-9167-a4483a143024.png){:.postimage .three_noscale}
-- <br>![img](media/d7558150-cfef-48ad-9ce7-05cc20ceb89e.png){:.postimage .three_noscale}
+  - <br>![img](media/0473e31c-1289-4436-9167-a4483a143024.png)
+- <br>![img](media/d7558150-cfef-48ad-9ce7-05cc20ceb89e.png)
 - **主要贡献**
 - > 为了应对复杂的形状、复杂的真实世界背景，使用对于物体表面和背景的强regularization
   > To suppress it, we propose using strong regularization and constraints on object surfaces and background images. 
@@ -107,7 +107,7 @@ main preliminary: GQN
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
-  - ![teaser](media/teaser.png){:.postimage .three_noscale}
+  - ![teaser](media/teaser.png)
 
 </details>
 
@@ -123,7 +123,7 @@ main preliminary: SRN
 <details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
-| ![img](media/40c89125-3bd2-4651-9ec0-2cef3245ac11.png){:.postimage .three_noscale} |
+| ![img](media/40c89125-3bd2-4651-9ec0-2cef3245ac11.png) |
 | ------------------------------------------------------ |
 |                                                        |
 
@@ -147,7 +147,7 @@ main preliminary: SRN
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
-  - ![image-20201028160442930](media/image-20201028160442930.png){:.postimage .three_noscale}
+  - ![image-20201028160442930](media/image-20201028160442930.png)
 
 </details>
 
@@ -162,7 +162,7 @@ main preliminary: SRN
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
-  - ![image-20201027202644934](media/image-20201027202644934.png){:.postimage .three_noscale}
+  - ![image-20201027202644934](media/image-20201027202644934.png)
 
 </details>
 
@@ -179,7 +179,7 @@ main preliminary: SRN
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
-  - ![img](media/6e9983a7-f1e3-4121-b15a-b7f05f0d6f9e.png){:.postimage .three_noscale}
+  - ![img](media/6e9983a7-f1e3-4121-b15a-b7f05f0d6f9e.png)
 - **前景背景区分方式**
   - 通过encoder 编码 context views of a video $$\{x_z, v_z\}$$ 为两个隐向量：scene embedding和camera paramter embedding，把这两个embedding decode为逐个cell中的是否有物体 + 各个物体的外观、pose参数 + 背景形状、材质
   - 借鉴了传统CV中图像分割的一些思想，依靠强大的loss设计，用encoder-decoder的方式实现了视频生成。泛化性未知
@@ -243,16 +243,16 @@ main preliminary: SRN
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
-  - 从一个定位好的RGB输入序列，检测出物体并infer他们的pose和一个progressively fine grained and expressive 物体shape表征<br>![img](media/7493d181-c6cb-486d-a9a4-239e5415c984.png){:.postimage .three_noscale}
+  - 从一个定位好的RGB输入序列，检测出物体并infer他们的pose和一个progressively fine grained and expressive 物体shape表征<br>![img](media/7493d181-c6cb-486d-a9a4-239e5415c984.png)
 - **前景背景区分方式**
   - **使用一个标准的检测、分割框架：mask RCNN**
   - 重点不在分割，而在对分割出来的物体multi view encoder成一个合适的object shape embedding
 
-| ![img](media/85c27bf6-aca7-4c46-9b60-a2c8a3615a43.png){:.postimage .three_noscale} |
+| ![img](media/85c27bf6-aca7-4c46-9b60-a2c8a3615a43.png) |
 | ------------------------------------------------------ |
 | 把                                                     |
 
-| ![img](media/a21da736-1ecf-441f-91b0-ea7f2ed54e75.png){:.postimage .three_noscale}       |
+| ![img](media/a21da736-1ecf-441f-91b0-ea7f2ed54e75.png)       |
 | ------------------------------------------------------------ |
 | 提出了一种新的joint shape embedding，利用了稀疏点云表征的效率和稠密surface表征的表达能力 |
 

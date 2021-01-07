@@ -50,7 +50,7 @@ title: math and DL for rigid body poses
     - OCCLUSION
   - refiners：在检测后还要再进行一次refinement
 
-| ![image-20201101163039928](media/image-20201101163039928.png){:.postimage .three_noscale} |
+| ![image-20201101163039928](media/image-20201101163039928.png) |
 | ------------------------------------------------------------ |
 | Pipeline                                                     |
 
@@ -69,14 +69,14 @@ title: math and DL for rigid body poses
 - 有一个三维模型数据集
   - 数据集中的每一个三维model的材质都是用correspondence map来建模的
   - 用simple spherical 或者 cylindrical投射的方式给物体上材质
-  - ![image-20201101170837857](media/image-20201101170837857.png){:.postimage .three_noscale}
+  - ![image-20201101170837857](media/image-20201101170837857.png)
   - 这样便建立了一个bijective(双射)函数：
   - 给定一个材质图上的u,v点，我们便知道了其三维模型坐标；
     - 给定了三维模型坐标，可以计算出材质图上的u,v点
 - **pipeline**
   - **correspondence block**
     - 有3个通道的输出，预测3个信息：ID,u,v值
-    - ![image-20201101171756785](media/image-20201101171756785.png){:.postimage .three_noscale}
+    - ![image-20201101171756785](media/image-20201101171756785.png)
     - 也就是预测图片中的每个像素属于哪个ID，以及属于那个ID的材质图中的哪个point
   - **pose block** 负责预测pose
     - 给定一个估计的ID mask，我们可以观察哪些物体在图片中被检测到了、以及他们的2D位置；
@@ -207,9 +207,9 @@ Closed Form"`**
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
-  - ![image-20201102113621308](media/image-20201102113621308.png){:.postimage .three_noscale}
+  - ![image-20201102113621308](media/image-20201102113621308.png)
 - **loss function**
-  - ![image-20201102114343918](media/image-20201102114343918.png){:.postimage .three_noscale}
+  - ![image-20201102114343918](media/image-20201102114343918.png)
   - 其实只有骨骼向量和关节点3D位置的L2-loss. 没有涉及到rigid body transformation
 
 </details>
@@ -232,7 +232,7 @@ Closed Form"`**
 <details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
-![image-20201102121246748](media/image-20201102121246748.png){:.postimage .three_noscale}
+![image-20201102121246748](media/image-20201102121246748.png)
 
 - **Motivation**
   - 3D object detection and pose estimation from a single image are two inherently ambiguous problems.

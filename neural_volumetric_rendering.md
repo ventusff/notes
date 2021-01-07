@@ -27,7 +27,7 @@ title: math and DL for implicit representations + neural volume rendering
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
-  - ![image-20201216210148432](media/image-20201216210148432.png){:.postimage .three_noscale}
+  - ![image-20201216210148432](media/image-20201216210148432.png)
 - **Review**
   - 颜色值由ray上的积分函数构成：
     - $$ C(r)=\int_{t_n}^{t_f} T(t) \; \cdot \; \sigma(r(t)) \; \cdot \; c(r(t),d) \quad {\rm d}t $$
@@ -35,7 +35,7 @@ title: math and DL for implicit representations + neural volume rendering
     - 其中，$$T(t)=\exp(-\int_{t_n}^t \sigma(r(s))) \; {\rm d}s$$
       - 注意，这里是从near平面开始，累积$$\sigma$$积分的负数的指数；这意味着，如果已经经过了一些$$\sigma$$值很大的值，ray后的点累积值也会很大，T(t) 值就会很小了
       - 这里一定程度上已经cover了遮挡的情况
-      - ![image-20201216214526084](media/image-20201216214526084.png){:.postimage .three_noscale}
+      - ![image-20201216214526084](media/image-20201216214526084.png)
 
 </details>
 
@@ -74,7 +74,7 @@ title: math and DL for implicit representations + neural volume rendering
     - voronoi空间分解非常合适，因为被证明与Painter's Algorithm 兼容，可以高效GPU渲染
     - 对于现实世界场景，在相同的渲染质量情况下，比NeRF高效3倍以上
 - **Overview**
-  - ![image-20201215201013772](media/image-20201215201013772.png){:.postimage .three_noscale}
+  - ![image-20201215201013772](media/image-20201215201013772.png)
 
 </details>
 
@@ -94,18 +94,18 @@ title: math and DL for implicit representations + neural volume rendering
     - 这种加速，相当于额外存储一下空间中哪些位置占用低
 - **Motivation**
   - 现有的方法，由于网络容量/寻找和scene geometry的精确intersection有困难，目前的很多方法都是blurry results
-  - 提出一种新的表征，**<u>用octree结构的voxels来each 存local feature</u>** <br>这样在采样时就可以跳过无关的voxels，比NeRF快10倍<br>![image-20201221173251904](media/image-20201221173251904.png){:.postimage .three_noscale}
-  - 至于每个pixel的feature，渲染结构与NeRF类似<br>![image-20201221174122461](media/image-20201221174122461.png){:.postimage .three_noscale}
+  - 提出一种新的表征，**<u>用octree结构的voxels来each 存local feature</u>** <br>这样在采样时就可以跳过无关的voxels，比NeRF快10倍<br>![image-20201221173251904](media/image-20201221173251904.png)
+  - 至于每个pixel的feature，渲染结构与NeRF类似<br>![image-20201221174122461](media/image-20201221174122461.png)
 - **Overview**
-  - self-pruning <br>把占用小于阈值的网格直接剪枝掉<br>![image-20201221174308274](media/image-20201221174308274.png){:.postimage .three_noscale}
-  - 一个voxel上的feature有顶点补间得来<br>![image-20210106152320554](media/image-20210106152320554.png){:.postimage .three_noscale}
+  - self-pruning <br>把占用小于阈值的网格直接剪枝掉<br>![image-20201221174308274](media/image-20201221174308274.png)
+  - 一个voxel上的feature有顶点补间得来<br>![image-20210106152320554](media/image-20210106152320554.png)
 - **results**
-  - ![image-20201221173910965](media/image-20201221173910965.png){:.postimage .three_noscale}
+  - ![image-20201221173910965](media/image-20201221173910965.png)
   - 因为用的是显式的sparse voxel 表征，可以轻松用于scene composition
-    - ![image-20201221174604849](media/image-20201221174604849.png){:.postimage .three_noscale}
-  - 还可以在 `ScanNet` 上直接进行尝试：首先用注册后的深度图提取点云<br>![image-20210106151555886](media/image-20210106151555886.png){:.postimage .three_noscale}
+    - ![image-20201221174604849](media/image-20201221174604849.png)
+  - 还可以在 `ScanNet` 上直接进行尝试：首先用注册后的深度图提取点云<br>![image-20210106151555886](media/image-20210106151555886.png)
   - 还可以做scene editing：因为用的是显式的voxel
-    - ![image-20210106151644456](media/image-20210106151644456.png){:.postimage .three_noscale}
+    - ![image-20210106151644456](media/image-20210106151644456.png)
 
 </details>
 
@@ -124,11 +124,11 @@ title: math and DL for implicit representations + neural volume rendering
   - 本文用了一种快速自动积分的算法，应对这种对一个隐式神经场的积分
     - training: grad net来表征多视角图片
     - testing: integral net来迅速evaluate per-ray integrals
-    - ![image-20201216203510708](media/image-20201216203510708.png){:.postimage .three_noscale}
+    - ![image-20201216203510708](media/image-20201216203510708.png)
 - **overview**
   - 把grad network的parameters **reassembled** to form integral networks
   - 用一个sampling network 预测ray上的piecewise sections的位置，用于计算定积分
-  - ![image-20201216204202712](media/image-20201216204202712.png){:.postimage .three_noscale}
+  - ![image-20201216204202712](media/image-20201216204202712.png)
 - neural volumetric rendering
   - automatic integration支持高效地用closed-form solution来evaluate 定积分
   - 不过volume rendering不能直接应用AutoInt，因为包含嵌套的积分：ray上的radiance加权 **<u>累积transmittance</u>** 以后的积分
@@ -143,7 +143,7 @@ title: math and DL for implicit representations + neural volume rendering
         - 这里用AutoInt近似
       - 解释$$\overline{T}_i=\exp(-\sum_{j=1}^{i-1}\overline{\sigma}_j)$$：每段的累积transimittance$$T(t)$$则由这段之前的那些段的累加$$\overline{\sigma}_i$$的负指数幂近似
         - 这里是真正的数值近似，把一段上的所有T(t)都用这段起始的T(t)近似
-        - ![image-20201216214526084](media/image-20201216214526084.png){:.postimage .three_noscale}
+        - ![image-20201216214526084](media/image-20201216214526084.png)
   - 由于目前的autoint是两阶段的，训练很慢；本篇用了一个pytorch custom implementation of AutoDiff
 
 </details>
@@ -176,7 +176,7 @@ title: math and DL for implicit representations + neural volume rendering
   <summary markdown="0">Click to expand</summary>
 
 - _**Motivation**_
-  - ![img](media/58379603.png){:.postimage .three_noscale}
+  - ![img](media/58379603.png)
   - > While 2D generative adversarial networks have enabled high-resolution image synthesis, they largely lack an understanding of the 3D world and the image formation process. 
     >
     > Thus, they do not provide precise control over camera viewpoint or object pose.
@@ -200,12 +200,12 @@ title: math and DL for implicit representations + neural volume rendering
 
 - **Motivation**
   - StyleGAN类似的noise输入方式 + SIREN的周期性激活函数
-  - ![image-20201223163530375](media/image-20201223163530375.png){:.postimage .three_noscale}
+  - ![image-20201223163530375](media/image-20201223163530375.png)
 - **losses**
   - discriminator
     - simple ProgressiveGA-like convolutional discriminator; 
 - **results**
-  - ![image-20201223163713693](media/image-20201223163713693.png){:.postimage .three_noscale}
+  - ![image-20201223163713693](media/image-20201223163713693.png)
 
 </details>
 
@@ -225,10 +225,10 @@ title: math and DL for implicit representations + neural volume rendering
   - 为NeRF采集的图片中的物体可以变形
 - **Overview**
   - 首先从observation space加上一个变形latent code映射到canonical space，然后再canonical space下进行NeRF的操作
-  - 这样通过变形latent code就可以捕捉到物体的变形<br>![image-20201221094736917](media/image-20201221094736917.png){:.postimage .three_noscale}
+  - 这样通过变形latent code就可以捕捉到物体的变形<br>![image-20201221094736917](media/image-20201221094736917.png)
 - Elastic Regularization 弹性正则化
   - 由于deformation field 引入了额外的ambiguities，导致`under-constrained optimization`欠约束最优化问题，带来不好的结果和artifacts<br>需要引入先验
-  - ![image-20201221095628241](media/image-20201221095628241.png){:.postimage .three_noscale}
+  - ![image-20201221095628241](media/image-20201221095628241.png)
   - 在几何处理和图形学仿真领域，建模非刚体变形时，常常使用弹性能量`elastic enegies` 来建模local deformations from a rigid motion；在视觉领域也有利用`elastic energy`来重建、tracking非刚体的场景和物体；因此使用类似概念
   - 对本篇的deformation field T来说，一个点$$\boldsymbol{\rm x}$$处的mapping(从observation frame到canonical frame)的`Jacobian` $$\boldsymbol{\rm J}_T(\boldsymbol{\rm x})$$描述了这个点处的mapping的`best linear approximation`
 
@@ -311,7 +311,7 @@ title: math and DL for implicit representations + neural volume rendering
   - 相比于组成式，其实更关注多物体之间的Lighting
   - 物体pose都是真值
 - **Motivation**
-  - ![image-20201221161533104](media/image-20201221161533104.png){:.postimage .three_noscale}
+  - ![image-20201221161533104](media/image-20201221161533104.png)
   - OSF(object-centric neural scattering functions) models per-object light transport
   - modeling dynamic scene：物体在移动/有无，光源在移动
 - **Review**
@@ -322,9 +322,9 @@ title: math and DL for implicit representations + neural volume rendering
     - furniture-single
     - furniture-random 25个动态的场景，每个包含多个物体的随机layout
     - furniture-realisitc
-  - ![image-20201221162223704](media/image-20201221162223704.png){:.postimage .three_noscale}
-  - ![image-20201221162251641](media/image-20201221162251641.png){:.postimage .three_noscale}
-  - ![image-20201221162336799](media/image-20201221162336799.png){:.postimage .three_noscale}
+  - ![image-20201221162223704](media/image-20201221162223704.png)
+  - ![image-20201221162251641](media/image-20201221162251641.png)
+  - ![image-20201221162336799](media/image-20201221162336799.png)
 
 </details>
 
@@ -341,7 +341,7 @@ title: math and DL for implicit representations + neural volume rendering
 - **Motivation**
   - 主要是为了model dynamic scenes；graph是显式的graph
   - 虽然是compositional的工作，但是是用到了motion clue的那种
-  - ![image-20201221165737154](media/image-20201221165737154.png){:.postimage .three_noscale}
+  - ![image-20201221165737154](media/image-20201221165737154.png)
 
 </details>
 
@@ -367,7 +367,7 @@ title: math and DL for implicit representations + neural volume rendering
   - 为每一个light ray (pixel) 提取general features
   - 把features重投影到query 3D point p上
   - 然后从p的feature infer出RGB和volume density
-  - **关键在于**：对于任意同一个点，从不同的角度看来的feature是始终一样的，因此不同view的这个点渲染出的RGB和volume density也会保持一致![image-20201202175634941](media/image-20201202175634941.png){:.postimage .three_noscale}
+  - **关键在于**：对于任意同一个点，从不同的角度看来的feature是始终一样的，因此不同view的这个点渲染出的RGB和volume density也会保持一致![image-20201202175634941](media/image-20201202175634941.png)
 - 构成：四个部件，连接起来，端到端的训练
   - 对每一个2D pixel的feature extractor
   - 一个reprojector，从2D feature到3D空间
@@ -402,16 +402,16 @@ title: math and DL for implicit representations + neural volume rendering
     - >  To overcome the NeRF representation’s inability to share knowledge between scene
     - 为了克服NeRF这样的表达不能在scene与scene之间保留/共享知识的问题（NeRF每次都要train from scratch）
     - condition a NeRF on spatial image features
-  - 在训练时不需要一个一致的标准正视图坐标系![image-20201207190826404](media/image-20201207190826404.png){:.postimage .three_noscale}
+  - 在训练时不需要一个一致的标准正视图坐标系![image-20201207190826404](media/image-20201207190826404.png)
  - **Main components**
    - 全卷积图像encoder E
      - 把输入图像encode进入一个pixel aligned 特征grid
    - NeRF 网络 f
      - 给定一个空间位置、encoded feature（位于重投影后的在图片上的坐标）
      - 输出color + density
-   - ![image-20201207191400152](media/image-20201207191400152.png){:.postimage .three_noscale}
+   - ![image-20201207191400152](media/image-20201207191400152.png)
 - multi-view aggregation 方式：
-  - ![image-20201221092641965](media/image-20201221092641965.png){:.postimage .three_noscale}
+  - ![image-20201221092641965](media/image-20201221092641965.png)
   - 在任意一个query point，对任意一个view，把query point $$\boldsymbol{\rm x}, \boldsymbol{\rm d}$$ **<u>变换到input view space下</u>** <br>$$`\boldsymbol{\rm x}^{(i)}=\boldsymbol{\rm P}^{(i)}\boldsymbol{\rm x}`,\quad \boldsymbol{\rm d}^{(i)}=\boldsymbol{\rm R}^{(i)}\boldsymbol{\rm d}$$
   - 在任意一个query point，对任意一个view，从投影后的图像位置的feature + position embedding + view direction embedding 计算中间变量<br>$$\boldsymbol{\rm V}^{(i)}=f_1(\gamma(\boldsymbol{\rm x}^{(i)}), \boldsymbol{\rm d}^{(i)};\boldsymbol{\rm W}(\pi(\boldsymbol{\rm x}^{(i)})))$$
   - 在任意一个query point，对于所有view，把所有中间变量过average pooling layer $$\psi$$后再过一个网络渲染出$$(\sigma, \boldsymbol{\rm c})$$<br>$$(\sigma, \boldsymbol{\rm c})=f_2(\psi(\boldsymbol{\rm V}^{(1)},\ldots,\boldsymbol{\rm V}^{(n)}))$$
@@ -490,9 +490,9 @@ title: math and DL for implicit representations + neural volume rendering
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
-  - ![iNerf](media/iNerf.gif){:.postimage .three_noscale}
+  - ![iNerf](media/iNerf.gif)
 - **Overview**
-  - 就直接用像素的loss直接反向传播给pose<br>![image-20201223180241800](media/image-20201223180241800.png){:.postimage .three_noscale}
+  - 就直接用像素的loss直接反向传播给pose<br>![image-20201223180241800](media/image-20201223180241800.png)
   - 关键在于sample pixels时的sample策略
   - pose参数化用的是exponential coordinates
 
@@ -512,6 +512,6 @@ title: math and DL for implicit representations + neural volume rendering
 
 - **Motivation**
   - 傅里叶特征可以改善coordinate-based MLP的低维高频回归任务
-  - ![image-20201221172740873](media/image-20201221172740873.png){:.postimage .three_noscale}
+  - ![image-20201221172740873](media/image-20201221172740873.png)
 
 </details>
