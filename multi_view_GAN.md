@@ -7,6 +7,7 @@ title_cn: 多视角与GAN相关的结合
 * TOC
 {:toc}
 
+---
 
 ## multi-view image generation
 - keywords

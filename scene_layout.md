@@ -7,6 +7,8 @@ title_cn: 场景布局相关研究
 * TOC
 {:toc}
 
+---
+
 ## scene graph to image generation
 
 ---

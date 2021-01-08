@@ -7,6 +7,8 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 * TOC
 {:toc} 
 
+---
+
 ## resources
 - [[blog] NeRF Explosion 2020](https://dellaert.github.io/NeRF/)
 

@@ -7,6 +7,8 @@ title_cn: <strong>形状</strong>[as空间曲面]有关的数学与DL类方法
 * TOC
 {:toc}
 
+---
+
 ## math: implicit surface
 
  - 参考资料

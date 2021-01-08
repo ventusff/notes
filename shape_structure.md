@@ -7,6 +7,8 @@ title_cn: <strong>形状</strong>+结构先验 DL类方法
 * TOC
 {:toc}
 
+---
+
 ## part/structure-aware shape representation
 
 ### shape correspondence

@@ -7,6 +7,8 @@ title_cn: 形变有关的数学（连续介质力学）
 * TOC
 {:toc}
 
+---
+
  - resource
     - MIT [Continuum Mechanics 连续介质力学 课程笔记](http://web.mit.edu/abeyaratne/Volumes/RCA_Vol_II.pdf)，Chapter 2
        - 重要参考资料：非常详尽、非常严谨、非常简洁明了，与线代知识紧密接续

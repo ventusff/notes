@@ -7,6 +7,7 @@ title_cn: 正则化基础讨论
 * TOC
 {:toc}
 
+---
 
  - regularization：改进问题的conditioning；把问题从ill-posed变成well-posed
 
