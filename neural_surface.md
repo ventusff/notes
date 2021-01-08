@@ -798,7 +798,7 @@ learning generalized templates comprised of elements
   - SDF loss
     - 被训练的量：变形场超网络$$\Psi$$，SDF输出场$$\Phi$$，模板场$$T$$，learned latent codes $$\{\alpha_j\}$$；$$\Psi_i(p)$$代表predicted SDF值$$\Phi_{\Psi(\alpha_i)}(p)$$，$$\Omega$$代表3D空间，$$\mathcal{S}_i$$ 代表形状表面
       - $$\Phi_{\Psi(\alpha)}(p)=T(p+D_{\Psi(\alpha)}^v(p)) + D_{\Psi(\alpha)}^{\Delta s}(p)$$
-    - $$L_{sdf}=\underset {i}{\sum} \left( $$1 +$$2 + $$3 +$$4 \right)$$
+    - $$L_{sdf}=\underset {i}{\sum} \left( L_1 + L_2 + L_3 + L_4 \right)$$
       - $$\underset {p \in \Omega}{\sum} \lvert \Phi_i(p)-\overline{s}\rvert$$ 代表预测SDF和正确SDF的误差
       - $$\underset{p\in \mathcal{S}_i}{\sum} (1-\langle \nabla\Phi_i(p), \overline{n} \rangle)$$ 代表预测法向量和正确法向量的误差（角度误差，用夹角余弦应接近1来表达）
       - $$\underset{p\in\Omega}{\sum} \lvert \Vert \nabla\Phi_i(p) \rVert_2 - 1 \rvert$$ 代表预测法向量的模应该是1 （因为是SDF）
@@ -871,8 +871,13 @@ learning generalized templates comprised of elements
 - **review**
   - 这种变形场类方法，最大的问题应该在于当 层级结构 / 拓扑 发生大的改变时，这种很大程度由位置决定的对应关系是否无法准确反应结构上的变化，从而导致degenerates的行为
   - 和 *deformed implicit field* 思路很像，那篇也是清华的
-    - deformed implicit field 除了位置修正外还有$$\Delta s$$修正；本篇只有位置修正
+    - deformed implicit field 除了位置修正外还有标量$$\Delta s$$修正；本篇只有位置修正
+      - deformed implicit field在表面上的点变形后不一定还在表面上；需要用 **<u>最近邻算法</u>** 来计算变形后的形状相关点的位置
+      - 本篇在表面上的点，变形后一定还在表面上（变形前后的点的SDF值均为0）
     - deformed implicit field 是一个超参数网络，从code得到位置修正、$$\Delta S$$修正的网络 **<u>参数</u>**；本篇是一个LSTM，输入code+p输出位置修正
+    - 对于模板的理解与deformed implicit field 完全不同：
+      - deformed implicit field认为模板是一种对类别中形状公共捕捉/"存储"，甚至模板本身不一定是一个valid SDF
+      - 本篇认为模板就是一个valid shape，甚至可以选择数据集中的某个具体物体形状作为模板（`user defined templates`）
   - 因为有很多谨慎的设计（1. 使用LSTM warp而不是MLP warp 2.对canonical的正则化 3. 对空间扭曲的正则化），从transfer的效果上看要比deformed implicit field好一些？
 
 | 本篇：Deep Implicit Templates for 3D Shape Representation的transfer效果 | deformed implicit field的transfer效果                        |
