@@ -1,12 +1,13 @@
 ---
 note_type: paper_reading
 title: scene layout
+title_cn: 场景布局相关研究
 ---
 
 * TOC
 {:toc}
 
-# scene graph to image generation
+## scene graph to image generation
 
 ---
 
@@ -186,7 +187,7 @@ graph LR
 </details>
 
 
-# capsule networks
+## capsule networks
 
  - keywords
     - Google scholar - [GE Hinton](https://scholar.google.com.hk/citations?hl=zh-CN&user=JicYPdAAAAAJ&view_op=list_works&sortby=pubdate)

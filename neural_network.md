@@ -1,12 +1,14 @@
 ---
 note_type: basic
 title: neural network basics
+title_cn: 神经网络基础讨论
 ---
 
 * TOC
 {:toc}
 
-# topic: 非线性激活 ReLU
+
+## topic: 非线性激活 ReLU
 
  - MLP不能学到multiplier
     - 可以考虑用log-normalization，这样就把乘法转换为加法
@@ -31,7 +33,7 @@ title: neural network basics
    - 这个分段函数所围区域，可以是闭合的，也可以是开的；就像线性规划里的多个不等式既可以围成一个闭合的区域也可以围成一个开的区域
    - 这个分段函数所围区域，内、外部有明确的正负号，一定是内正外负或者内负外正
 
-# topic: 卷积操作
+## topic: 卷积操作
 
 - 卷积核出现的必要性
   - 考虑图像分类。
@@ -42,7 +44,7 @@ title: neural network basics
       - 手动设计，多样性其实不多
     - 考虑图像分类。卷积核的出现，就是为了更好地提取局部特征，从而搭配MLP形成一个合适的特征空间，这个特征空间可以只用一个个二分类的组合就可以分开多个类别<br>![MNIST tSNE plot](media/image-20201209163614662.png)
 
-# topic: frequencies
+## topic: frequencies
 
  - >  inherent limitations of neural networks to capture, preserve, and generate high frequencies
     - *Neural Cages for Detail-Preserving 3D Deformations, CVPR2020*
@@ -59,5 +61,5 @@ title: neural network basics
   - *(SIREN) Implicit Neural Representations*
     *with Periodic Activation Functions. NeurIPS2020*
 
-# topic: condition embedding vs. hyper networks
+## topic: condition embedding vs. hyper networks
 

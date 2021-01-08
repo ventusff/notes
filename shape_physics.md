@@ -1,13 +1,14 @@
 ---
 note_type: paper_reading
-title: DL for shape physics prior
+title: DL for <strong>shape physics</strong> prior
+title_cn: <strong>形状</strong>+物理先验 DL类方法
 not_published: true
 ---
 
 * TOC
 {:toc}
 
-# physics
+## physics
 
 ---
 

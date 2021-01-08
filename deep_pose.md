@@ -1,13 +1,15 @@
 ---
 note_type: paper_reading
 title: math and DL for rigid body poses
+title_cn: 刚体姿态相关的数学与DL类方法
 ---
 
 * TOC
 {:toc}
-# deep learning perform [regression on 6D pose] / [transformation]
 
-## topic: object 6D pose estimation from images
+## deep learning perform [regression on 6D pose] / [transformation]
+
+### topic: object 6D pose estimation from images
 
 | paper                                                        | method                                                       |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -91,7 +93,7 @@ title: math and DL for rigid body poses
 </details>
 
 
-## topic: regression 3d transformation / regression 6d pose
+### topic: regression 3d transformation / regression 6d pose
 
 - **keyword**
   - neural network regression 3d transformation
@@ -179,7 +181,7 @@ Closed Form"`**
 
 </details>
 
-## topic: regression 3d transformation GCN
+### topic: regression 3d transformation GCN
 
 - **keyword**
   - regression transformation tree GCN
@@ -188,7 +190,7 @@ Closed Form"`**
   - encoder-decoder for 3d transformations
   - neural representations with implicit transformations
 
-## topic: human pose estimation
+### topic: human pose estimation
 
 - 考虑人的各个关节的pose就是由关系约束的，这里可能有一些带关系约束的pose估计
 - ==考虑==：有没有用关系/GCN + 生成模型/neural representations去解决human pose estimation的
@@ -214,7 +216,7 @@ Closed Form"`**
 
 </details>
 
-## topic: pose estimation / regression + ambiguity 如何消除ambiguity
+### topic: pose estimation / regression + ambiguity 如何消除ambiguity
 
 - **keyword**
   - 3d pose regression ambiguity

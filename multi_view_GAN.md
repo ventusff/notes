@@ -1,13 +1,14 @@
 ---
 note_type: paper_reading
-title: multi view + GAN
+title: multi-view + GAN / multi-view image generation
+title_cn: 多视角与GAN相关的结合
 ---
 
 * TOC
 {:toc}
 
-# multi-view GAN (multi-view image generation)
 
+## multi-view image generation
 - keywords
   - GAN 3D scene multi view
   - GAN multi view geometry
@@ -227,6 +228,6 @@ too old
 
 </details>
 
-# video-GAN / video generation
+## video-GAN / video generation
 
  - 用的discriminator一般都是时空卷积；主要考虑的是时间域的分布，没有管multi view

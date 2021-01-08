@@ -1,12 +1,13 @@
 ---
 note_type: paper_reading
-title: math and DL for shapes  (spatial surfaces)
+title: math and DL for <strong>shapes</strong>[as spatial surfaces]
+title_cn: <strong>形状</strong>[as空间曲面]有关的数学与DL类方法
 ---
 
 * TOC
 {:toc}
 
-# math: implicit surface
+## math: implicit surface
 
  - 参考资料
     - [wiki: implicit surface](https://en.wikipedia.org/wiki/Implicit_surface)
@@ -28,7 +29,7 @@ title: math and DL for shapes  (spatial surfaces)
     - [2020]Thibault GROUEIX's slice  - [Deep Learning for 3D Toward Surface Generation](http://imagine.enpc.fr/~langloip/data/DeepLearningFor3D_3.pdf)
        - 非常详细，非常总结，概括性很好
 
-##  surface: implicit form & parametric form  
+###  surface: implicit form & parametric form  
 
 <details markdown="1">
   <summary markdown="0">Click to expand</summary>
@@ -41,7 +42,7 @@ title: math and DL for shapes  (spatial surfaces)
 
 </details>
 
-## 形状(geometry) 与 拓扑(topology)
+### 形状(geometry) 与 拓扑(topology)
 
 <details markdown="1">
   <summary markdown="0">Click to expand</summary>
@@ -54,7 +55,7 @@ title: math and DL for shapes  (spatial surfaces)
   - 当然，上述的“位移顶点位置”是一个粗糙的描述，具体在形变时是要符合一定规则的，即【<u>光滑同胚/微分同胚</u>】 [bilibili视频：[斯梅尔悖论：内翻球面和外翻球面是微分同胚的](https://www.bilibili.com/video/BV1k54y1R7J5) ]
 </details>
 
-## `manifold`流形，`chart`卡(坐标卡)，`atlas`图册
+### `manifold`流形，`chart`卡(坐标卡)，`atlas`图册
 <details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
@@ -120,11 +121,11 @@ title: math and DL for shapes  (spatial surfaces)
 
 </details>
 
-## algorithms
+### algorithms
 
-### marching cubes [[explain]](http://www.cs.carleton.edu/cs_comps/0405/shape/marching_cubes.html)
+#### marching cubes [[explain]](http://www.cs.carleton.edu/cs_comps/0405/shape/marching_cubes.html)
 
-### losses
+#### losses
 
 <details markdown="1">
   <summary markdown="0">Click to expand</summary>
@@ -140,7 +141,7 @@ title: math and DL for shapes  (spatial surfaces)
 
 </details>
 
-## implicit form / implicit field 与 parametric form 之间的转换
+### implicit form / implicit field 与 parametric form 之间的转换
 
 <details markdown="1">
   <summary markdown="0">Click to expand</summary>
@@ -193,7 +194,7 @@ title: math and DL for shapes  (spatial surfaces)
 
 </details>
 
-# learning parametric surface
+## learning parametric surface
 
 - keyword
   - neural parametric surface
@@ -202,7 +203,7 @@ title: math and DL for shapes  (spatial surfaces)
    - 用一个参数方程$$[x(s,t),y(s,t),z(s,t)]$$表达一个曲面
    - 可以用显式的手动构建或者隐式的神经网络来构建这个从s,t到x,y,z的映射关系
 
-## explicit shape templates + deformation
+### explicit shape templates + deformation
 
 ---
 
@@ -290,7 +291,7 @@ learning generalized templates comprised of elements
 
 </details>
 
-## continuous patches
+### continuous patches
 
 ---
 
@@ -551,14 +552,14 @@ learning generalized templates comprised of elements
 
 </details>
 
-# learning implicit surface: implicit fields/implicit functions
+## learning implicit surface: implicit fields/implicit functions
 
 - overview
    - 既然可以用一个隐函数$$f(x,y,z)=0$$表达一个隐曲面<br>
    - 那当然可以先用$$某种神经网络_{一般是MLP+ReLU}$$去拟合构建一个空间数量值函数$$f(x,y,z)_{数量值一般物理意义为占用概率/与表面距离/表面内外等}$$ ，然后训练这个神经网络
    - 训练好以后，如果需要从这个隐函数中提取mesh，一般就用marching cubes类方法空间采样
 
-## sample based methods to extract explicit surface
+### sample based methods to extract explicit surface
 
 ---
 
@@ -1035,7 +1036,7 @@ learning generalized templates comprised of elements
 
 </details>
 
-## initialization / priors for auto-decoders
+### initialization / priors for auto-decoders
 
 ---
 
@@ -1128,7 +1129,7 @@ learning generalized templates comprised of elements
 
 </details>
 
-## differentiable renderer
+### differentiable renderer
 
  - keyword
     - DIST and its citations
@@ -1315,7 +1316,7 @@ learning generalized templates comprised of elements
 </details>
 
 
-## compositional / multi object scene
+### compositional / multi object scene
 
 ---
 
@@ -1344,7 +1345,7 @@ learning generalized templates comprised of elements
 
 </details>
 
-## analytic exact solution
+### analytic exact solution
 
 ---
 
@@ -1374,9 +1375,9 @@ learning generalized templates comprised of elements
 
 </details>
 
-# learning parameterization / implicitization
+## learning parameterization / implicitization
 
-# others
+## others
 
 ---
 

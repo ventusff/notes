@@ -1,27 +1,29 @@
 ---
 note_type: basic
 title: regularizations
+title_cn: 正则化基础讨论
 ---
 
 * TOC
 {:toc}
 
-> regularization：改进问题的conditioning；把问题从ill-posed变成well-posed
 
-# math
+ - regularization：改进问题的conditioning；把问题从ill-posed变成well-posed
 
-## Laplace–Beltrami operator
+## math
+
+### Laplace–Beltrami operator
 
  - 拉普拉斯-贝尔特拉米算子
  - 在微分几何中，拉普拉斯算子可以推广定义到曲面上，或者更一般地黎曼流形、伪黎曼流形上，这个更一般的算子就叫做拉普拉斯-贝尔斯特拉算子；
  - 与拉普拉斯算子一样，拉普拉斯-贝尔特拉米算子定义为梯度的散度
 
-# weight decay
+## weight decay
 
  - [toward data science](https://towardsdatascience.com/this-thing-called-weight-decay-a7cd4bcfccab)
  - 
 
-# [Tikhonov regularization](https://en.wikipedia.org/wiki/Tikhonov_regularization)
+## [Tikhonov regularization](https://en.wikipedia.org/wiki/Tikhonov_regularization)
 
 - 是`非适定性问题`的正则化的最常见的方法
 - 在统计学中被称为 `ridge regression`脊回归
@@ -40,7 +42,7 @@ title: regularizations
   - $$\lVert \boldsymbol{A}\boldsymbol{\rm x}-\boldsymbol{\rm b} \rVert^2_{P} + \lVert \Gamma \boldsymbol{\rm x} \rVert^2_{Q}$$, 其中$$\lVert x \rVert^2_{Q}$$代表weighted norm squared $$\boldsymbol{\rm x}^{\top}Q \boldsymbol{\rm x}$$
   - 这种意义下，Tikhonov matrix其实是给出的矩阵的分解矩阵：$$Q=\Gamma^{\top}\Gamma$$
 
-# [manifold regularization](https://en.wikipedia.org/wiki/Manifold_regularization)
+## [manifold regularization](https://en.wikipedia.org/wiki/Manifold_regularization)
 
 - 在机器学习中，manifold regularization是一种 利用数据集的<u>shape</u> 来约束从数据集学到的函数的技术
 - **manifold learning**
@@ -57,7 +59,7 @@ title: regularizations
     - 因此，这个流形 / `intrinsic space`的<u>geometry</u>就可以用来决定正则化项
   - 这种算法常可以用来扩展`semi-supervised`半监督学习和`transductive learning`"直推"式学习，因为那些算法中都有unlabeled data
 
-## Laplacian regularization / Laplacian norm
+### Laplacian regularization / Laplacian norm
 
  - 这个名称来自于拉普拉斯算子（梯度的散度）
  - 对流形M的梯度进行操作，即提供了一种目标函数有多平滑的衡量；

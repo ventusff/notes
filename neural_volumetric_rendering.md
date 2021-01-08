@@ -1,12 +1,13 @@
 ---
 note_type: paper_reading
 title: math and DL for implicit representations + neural volume rendering
+title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 ---
 
 * TOC
 {:toc} 
 
-# resources
+## resources
 - [[blog] NeRF Explosion 2020](https://dellaert.github.io/NeRF/)
 
 - 对于neural volume rendering能够取得如此巨大成功(i.e. high fidelity details, easy and fast to converge)的一个possible explanation
@@ -14,7 +15,7 @@ title: math and DL for implicit representations + neural volume rendering
   - > [We] propose using a volumetric representation consisting of opacity and color at each position in 3D space, where rendering is realized through integral projection. During optimization, this semi-transparent representation of geometry <u>**disperses gradient information along the ray of integration**, effectively widening the basin of convergence, enabling the discovery of good solutions</u>.
 
 
-# Neural Volume Rendering
+## Neural Volume Rendering
 
 ---
 
@@ -53,7 +54,7 @@ title: math and DL for implicit representations + neural volume rendering
 
 </details>
 
-# performance / timing
+## performance / timing
 
  - Learned Initializations for Optimizing Coordinate-Based Neural Representations
 
@@ -163,7 +164,7 @@ title: math and DL for implicit representations + neural volume rendering
 
 </details>
 
-# generative / category / GAN
+## generative / category / GAN
 
 ---
 
@@ -209,7 +210,7 @@ title: math and DL for implicit representations + neural volume rendering
 
 </details>
 
-# dynamic / deform
+## dynamic / deform
 
 ---
 
@@ -291,7 +292,7 @@ title: math and DL for implicit representations + neural volume rendering
 </details>
 
 
-# compositional
+## compositional
 
  - GIRAFFE
     - **review**
@@ -346,7 +347,7 @@ title: math and DL for implicit representations + neural volume rendering
 </details>
 
 
-#  encoder
+##  encoder
 
 ---
 
@@ -419,7 +420,7 @@ title: math and DL for implicit representations + neural volume rendering
 
 </details>
 
-# relighting
+## relighting
 
 ---
 
@@ -477,7 +478,7 @@ title: math and DL for implicit representations + neural volume rendering
 
 </details>
 
-# pose estimation
+## pose estimation
 
 ---
 
@@ -498,7 +499,7 @@ title: math and DL for implicit representations + neural volume rendering
 
 </details>
 
-# basics
+## basics
 
 ---
 

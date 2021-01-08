@@ -1,9 +1,10 @@
 ---
 note_type: paper_reading
 title: object aware encoder / generative models
+title_cn: object-aware的encoder/生成模型
 ---
 
-# object aware representations
+## object aware representations
 
  - keyword:
     - **blockGAN被引**

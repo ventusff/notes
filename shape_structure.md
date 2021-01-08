@@ -1,14 +1,15 @@
 ---
 note_type: paper_reading
-title: DL for shape structures prior
+title: DL for <strong>shape structures</strong> prior
+title_cn: <strong>形状</strong>+结构先验 DL类方法
 ---
 
 * TOC
 {:toc}
 
-# part/structure-aware shape representation
+## part/structure-aware shape representation
 
-## shape correspondence
+### shape correspondence
 
  - *Deformed Implicit Field: Modeling 3D Shapes with Learned Dense Correspondence*
  - *Deep Implicit Templates for 3D Shape Representation*
@@ -49,7 +50,7 @@ title: DL for shape structures prior
 
 </details>
 
-## shape analysis
+### shape analysis
 
 ---
 
@@ -77,7 +78,7 @@ title: DL for shape structures prior
 
 </details>
 
-## structured models
+### structured models
  - BSP-Net: Generating Compact Meshes via Binary Space Partitioning
  - partnet
  - structure net
@@ -246,5 +247,5 @@ title: DL for shape structures prior
 
 </details>
 
-# deep assembly
+## deep assembly
 

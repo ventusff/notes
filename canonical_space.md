@@ -1,10 +1,11 @@
 ---
 note_type: paper_reading
 title: works in <strong>canonical spaces</strong>
+title_cn: 标准正视图空间的有关研究
 not_published: true
 ---
 
-# NOCS系列
+## NOCS系列
 
 **[[NOCS]](https://geometry.stanford.edu/projects/NOCS_CVPR2019/)** NOCS for Pose Estimation [CVPR2019]
 
@@ -16,7 +17,7 @@ not_published: true
 
 **[[T-NOCS]](https://geometry.stanford.edu/projects/caspr/)** NOCS along Time Axis [arXiv2020 Pre-print]
 
-# learning a canonical representation from non-canonical data
+## learning a canonical representation from non-canonical data
 
 - GIRAFFE
 - spectralGAN
