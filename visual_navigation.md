@@ -14,7 +14,7 @@ not_published: true
 ---
 
 **`"PlanIT: Planning and Instantiating Indoor Scenes with Relation Graph and Spatial Prior Networks"`**  
-**[** `SIGGRAPH2019` **]** **[[paper]](https://kwang-ether.github.io/pdf/planit.pdf)** **[[code]](https://github.com/brownvc/planit)** **[[web]]** **[** :mortar_board: `Brown University`, `SFU` **]**   
+**[** `TOG2019` **]** **[[paper]](https://kwang-ether.github.io/pdf/planit.pdf)** **[[code]](https://github.com/brownvc/planit)** **[[web]]** **[** :mortar_board: `Brown University`, `SFU` **]**   
 **[**  `Kai Wang`, `Yu-An Lin`, `Ben Weissmann`, `Manolis Savva`, `Angel X. Chang`, `Daniel Ritchie`  **]**  
 **[** _`abcd`_ **]**  
 
