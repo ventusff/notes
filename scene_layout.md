@@ -13,13 +13,16 @@ title_cn: 场景布局相关研究
  - ~~SUNCG~~ (until now, 2021-01-10)
  - scannet
  - scenenet
-    - scenenet RGBD
+- scenenet RGBD
+    - 由于随机生成场景时是"从空中往下落"的设定，很多random的场景重度散乱，渲染是realistic了，场景布置非常non-realistic<br>不过那57个manual的场景还是足够真实的
+    - ![SceneNetRGBD_table](media/SceneNetRGBD_table.png)
  - replica
  - matterport3D
  - gibson / gibsonv2
  - habitat
  - ai2thor
- - [3DFront](https://tianchi.aliyun.com/specials/promotion/alibaba-3d-scene-dataset), by [Alibaba 躺平](https://www.tangping.com/), 中科院计算所, SFU
+ - [3DFront](https://tianchi.aliyun.com/specials/promotion/alibaba-3d-scene-dataset), by [Alibaba 躺平](https://www.tangping.com/), 中科院计算所, SFU；[paper](https://arxiv.org/pdf/2011.09127.pdf)
+     - ![image-20210110184524771](media/image-20210110184524771.png)
 
 ## scene graph / scene text to image generation / indoor scene synthesis
 
