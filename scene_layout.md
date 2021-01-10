@@ -19,7 +19,7 @@ title_cn: 场景布局相关研究
  - gibson / gibsonv2
  - habitat
  - ai2thor
- - [3DFront]((https://tianchi.aliyun.com/specials/promotion/alibaba-3d-scene-dataset)), by [Alibaba 躺平](https://www.tangping.com/), 中科院计算所, SFU
+ - [3DFront](https://tianchi.aliyun.com/specials/promotion/alibaba-3d-scene-dataset), by [Alibaba 躺平](https://www.tangping.com/), 中科院计算所, SFU
 
 ## scene graph / scene text to image generation / indoor scene synthesis
 
@@ -71,7 +71,7 @@ title_cn: 场景布局相关研究
   - Traditional scene graph based image generation (e.g. *[CVPR2018] sg2im*)
     - 在image space中建模物体关系(而不是scene space)
     - 没有显式的3D物体概念（只有像素）
-  - Layout Generation (e.g. *<Deep-Synth> [SIGGRAPH2018] Deep Convolutional Priors for Indoor Scene Synthesis*)
+  - Layout Generation (e.g. *<Deep-Synth> [SIGGRAPH2018] Deep Convolutional Priors for Indoor Scene Synthesis*)
     - no spatial-conditioning
     - auto-regressive 自回归 (slow)
       - [x] Q: what?<br>A: 第n+1个物体的属性depend on 前n个物体的属性；序列化的结构
