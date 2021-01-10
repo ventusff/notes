@@ -48,7 +48,7 @@ title_cn: 标准正视图空间的有关研究
 ---
 
 **`<ANCSH> "Category-Level Articulated Object Pose Estimation"`**  
-**[** `CVPR2020` **]** **[[paper]](https://articulated-pose.github.io/paper.pdf)** **[[code]](https://github.com/dragonlong/articulated-pose)** **[[web]]** **[** :mortar_board: `Virginia Tech`, `Stanford`, `Columbia University` **]** **[** :office: `Google` **]**  
+**[** `CVPR2020` **]** **[[paper]](https://articulated-pose.github.io/paper.pdf)** **[[code]](https://github.com/dragonlong/articulated-pose)** **[[web]](https://articulated-pose.github.io/)** **[** :mortar_board: `Virginia Tech`, `Stanford`, `Columbia University` **]** **[** :office: `Google` **]**  
 **[**  `Xiaolong Li`, `He Wang`, `Li Yi`, `Leonidas Guibas`, `A. Lynn Abbott`, `Shuran Song`  **]**  
 **[** _`abcd`_ **]**  
 
