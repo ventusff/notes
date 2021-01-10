@@ -14,7 +14,7 @@
     - point cloud generation (GAN)
     - ![image-20201203153023230](media/image-20201203153023230.png)
   - implicit field/feature + semantic information
-  - sitzmann inferring semantic 引文
+  - sitzmann inferring semantic 被引
 
 ## point set generation (fixed length)
 

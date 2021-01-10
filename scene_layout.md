@@ -9,14 +9,14 @@ title_cn: 场景布局相关研究
 
 ---
 
-## scene graph to image generation
+## scene graph / scene text to image generation
 
 ---
 
-**`< layout-conditional 2.5D scene synthesis >"End-to-End Optimization of Scene Layout"`**  
+**`<3D_SLN>"End-to-End Optimization of Scene Layout"`**  
 **[** `CVPR2020(oral)` **]** **[[paper]](https://arxiv.org/pdf/2007.11744.pdf)** **[[code]](https://github.com/aluo-x/3D_SLN)** **[[video]](https://www.youtube.com/watch?v=1GQ8IkI6ZJM)** **[[web]](http://3dsln.csail.mit.edu/)** **[** :mortar_board: `MIT:CSAIL`, `CMU`, `Stanford` **]**   
 **[**  `Andrew Luo`, `Zhoutong Zhang`, `Jiajun Wu`, `Joshua B. Tenenbaum`  **]**  
-**[** _`conditional scene synthesis`, `2.5D`,`variational generative model`， `graph-based variational auto-encoders`_ **]**  
+**[** _`scene graph`, `conditional scene synthesis`, `2.5D`,`variational generative model`， `graph-based variational auto-encoders`_ **]**  
 
 <details markdown="1">
   <summary markdown="0">Click to expand</summary>
@@ -49,7 +49,7 @@ title_cn: 场景布局相关研究
     - scene graph `y`由一组triplets构成，$$(o_i, p, o_j)$$
     - $$o_i$$代表第i-th物体的type(索引embedding) + attributes(索引embedding), $$p$$代表空间关系(索引embedding)
   - 本文中layout的数据结构/物理含义：
-    - each element $$y_i$$ in layout $$y$$ 定义是一个 7-tuple，代表物体的bbox和竖直轴旋转：$$y_i=(min_{X_i}, min_{Y_i}, min_{Z_i}, max_{X_i}, max_{Y_i}, max_{Z_i}, \omega_i )$$
+    - each element $$y_i$$ in layout $$y$$ 定义是一个 7-tuple，代表物体的bbox和竖直轴旋转：$$y_i=(\min_{X_i}, \min_{Y_i}, \min_{Z_i}, \max_{X_i}, \max_{Y_i}, \max_{Z_i}, \omega_i )$$
   - 本文中latent space的定义：
     - [box_emdding, angle_ambedding] (因为是VAE，所以还分了mean, var)
 - **主要组件**
@@ -72,9 +72,9 @@ title_cn: 场景布局相关研究
 ```mermaid
 graph LR
 	subgraph scene_graph[input scene graph]
-	relationships["relationships (索引)"]
-	obj_type["object type (索引)"]
-	obj_attr["object attribute (索引)"]
+	relationships["relationships<br>(索引)"]
+	obj_type["object types<br>(索引，per-object)"]
+	obj_attr["object attributes<br>(索引，per-object)"]
 	end
 	subgraph encoder
 	obj_vecs
@@ -92,7 +92,7 @@ graph LR
 	new_obj_vecs -- box_mean_var --> bbox_latent
 	new_obj_vecs -- angle_mean_var --> angle_latent
 	end
-	subgraph ground truth layout
+	subgraph gt_layout["ground truth layout<br>(per-object)"]
 	bbox_gt["min_x<br>min_y<br>min_z<br>max_x<br>max_y<br>max_z"]
 	angles_gt["angle"]
 	end
@@ -101,7 +101,7 @@ graph LR
 	relationships -- nn.Embedding --> pred_vecs
 	angles_gt -- nn.Embedding --> angle_vecs
 	bbox_gt -- nn.Linear --> boxes_vecs
-	z["z [mean, var]"]
+	z["z [mean, var]<br>(per-object)"]
 	bbox_latent --> z
 	angle_latent --> z
 ```
@@ -114,14 +114,14 @@ graph LR
 ```mermaid
 graph LR
 	subgraph scene_graph[input scene graph]
-	obj_type["object type (索引)"]
-	obj_attr["object attribute (索引)"]
+	obj_type["object types (索引, per-object)"]
+	obj_attr["object attributes (索引, per-object)"]
 	relationships["relationships (索引)"]
 	end
 	subgraph layout_latent[layout latent code]
-	bbox_emb["bbox embedding 48维隐向量"]
-	angle_emb["rotation embedding 16维隐向量"]
-    z["z [mean, var]"]
+	bbox_emb["bbox embedding<br>48维隐向量<br>(per-object)"]
+	angle_emb["rotation embedding<br>16维隐向量<br>(per-object)"]
+    z["z [mean, var]<br>(per-object)"]
     bbox_emb --> z
     angle_emb --> z
 	end
@@ -129,7 +129,7 @@ graph LR
 	edge_emb[edge vector]
 	GCN(("GCN"))
 	obj_vecs[object vector]
-	new_obj_vecs[object vector after GCN]
+	new_obj_vecs[object vectors after GCN]
 	edge_emb --> GCN
 	obj_vecs --> GCN
 	GCN --> new_obj_vecs
@@ -139,7 +139,7 @@ graph LR
     obj_type -- nn.Embedding --> obj_vecs
     obj_attr -- nn.Embedding --> obj_vecs
     relationships -- nn.Embedding --> edge_emb
-    layout["layout <br>[min_x<br>min_y<br>min_z<br>max_x<br>max_y<br>max_z<br>angle]"]
+    layout["layout(per-object) <br>[min_x<br>min_y<br>min_z<br>max_x<br>max_y<br>max_z<br>angle]"]
 	new_obj_vecs -- box_net --> layout
 	new_obj_vecs -- angle_net --> layout
 ```
@@ -159,6 +159,48 @@ graph LR
     - ![image-20201028171028235](media/image-20201028171028235.png)
   - diverse layout generation
     - ![image-20201028170542200](media/image-20201028170542200.png)
+
+</details>
+
+---
+
+**`"SceneFormer: Indoor Scene Generation with Transformers"`**  
+**[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2012.09793.pdf)** **[[code]](www.github.com)** **[[web]](abc.efg)** **[** :mortar_board: `TUM` **]**   
+**[**  `Xinpeng Wang`, `Chandan Yeshwanth`, `Matthias Nießner`  **]**  
+**[** _`text description`, `transformer`_ **]**  
+
+<details markdown="1">
+  <summary markdown="0">Click to expand</summary>
+
+- **review**
+  - ![image-20210110012528951](media/image-20210110012528951.png)
+  - 对比之前的只能在地上放东西的方法，本篇还可以生成墙上、天花板上的东西，而且整体的真实性得到提到
+  - 3D_SLN的被引
+  - 笔者评价：
+    - 手动选择关系族确实会biased，但像这篇这样直接用隐式的transformer捕捉场景的pattern也不合适。它相当于把各种物体的信息全部揉在了一团；如果在场景中添加一个新种类的物体，模型就"傻眼"了、不可适用了；
+      - 比如你的数据集卧室里只有床、枕头、柜子，有人就是要往卧室摆个电视机，你能怎么办？或者用户新购买了一种模型在各种屋子都没见过的家具怎么办？如果是本篇的方法，对于这种级别的修改，要在新数据集上**<u>重新训练整个</u>**模型，这显然是不合理、有违自然的；因为新添加的物体种类只是一种增量式的更新，已经学到的知识应该是保留的。
+    - 比较合适的思路，应该是逐pair、逐category地考虑、建模、构建关系；
+      - 关系的种类数$$N$$不应是个定值；甚至可能不是一个有穷值；关系的划分，可能也不是离散的，而是连续的？是一个此起彼伏的概率密度函数？
+- **Motivation**
+  - **任务描述**：
+    - indoor scene generation: to generate a sequence of objects, their locations and orientations conditioned on the shape and size of a room.<br>室内场景生成任务：生成一个物体序列，包括物体的位置、朝向，conditioned on 房间的形状和大小
+    - 现存的大规模室内场景数据集，使得我们可以从`user-defined indoor scenes`中提取出`pattern`，然后基于这些`pattern`生成新的场景
+  - 现有的方法，除了物体的位置之外，还：
+    - **依赖于这些场景的2D或3D外观** 
+    - **并且对物体之间的关系做出假设**
+      - 目前有一些需要用到物体关系标注的方法，假定一族固定的、手动设计的物体之间的关系
+      - **<u>本篇用transformer机制，直接从物体的raw locations和orientations来提取pattern，避免由于手动选择关系引入的bias</u>**
+        - 意思就是把pattern当成纯隐的来提取；
+        - 一个直接的例子，比如沙发和电视之间的对应$$\Delta pose$$关系，就比较隐式，文中的方法可以很好的生成
+  - 本篇 **不使用任何外观信息**，**并且利用transformer机制自己学出来物体之间的关系**
+  - 只需要**输入** <u>(空)房间的形状</u>，还有<u>房间的文字描述</u>，然后就可以生成整个房间
+ - **Overview**
+    - ![image-20210110012645852](media/image-20210110012645852.png)
+    - ![image-20210110012809862](media/image-20210110012809862.png)
+ - **results**
+    - 如果没有给出房间形状，则用一个room-shape prior来放置物体![image-20210110013923150](media/image-20210110013923150.png)
+ - **future work**
+    - 可以用于真实场景的3D重建
 
 </details>
 

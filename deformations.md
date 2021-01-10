@@ -1,7 +1,7 @@
 ---
 note_type: basic
 title: math for deformations
-title_cn: 形变有关的数学（连续介质力学）
+title_cn: 有关形变的几何&数学
 ---
 
 * TOC
@@ -12,11 +12,12 @@ title_cn: 形变有关的数学（连续介质力学）
  - resource
     - MIT [Continuum Mechanics 连续介质力学 课程笔记](http://web.mit.edu/abeyaratne/Volumes/RCA_Vol_II.pdf)，Chapter 2
        - 重要参考资料：非常详尽、非常严谨、非常简洁明了，与线代知识紧密接续
+ - 虽然属于连续介质力学中的内容，但本篇同MIT笔记的第2章一样，本篇只讨论变形相关的几何本身，而不涉及变形的`cause`成因，不涉及材料的组成材料等，只把物体假设为一般的`continuum`连续介质来讨论其变形的几何。
 
 ## basics
 
  - 两个向量的`dot product`点积
-    -  $$\vec{a} \cdot \vec{b}$$
+    - $$\vec{a} \cdot \vec{b}$$
  - 两个向量的`vector product`向量积；叉乘
     - $$\vec{a} \times \vec{b}$$
  - 两个向量的`tensor product`张量积
