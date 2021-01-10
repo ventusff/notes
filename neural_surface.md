@@ -1193,7 +1193,7 @@ learning generalized templates comprised of elements
       - marching步长是$$\alpha=1.5$$倍的queried SDF value
       - 在距离表面很远的时候更快地朝表面march
       - 在ill-posed情况下能加速收敛（当表面法向量和ray direction的夹角很小时）
-        - [ ] what?
+        - [ ] Q: what?
       - ray可以射穿表面，能够采样到表面内部(SDF<0)；对表面的两侧都可以应用supervision
     - dynamic synchronized inference
     - 一个safe convergence criteria来防止不必要的网络query，同时保留分辨率
@@ -1310,7 +1310,7 @@ learning generalized templates comprised of elements
   - 假设交叉点坐标表示为$$\boldsymbol{\hat x}_(\theta,\tau)=\boldsymbol{c}+t(\theta,\boldsymbol{c},\boldsymbol{v})\boldsymbol{v}$$，关键是t这个标量值是$$\theta$$, 相机中心点位置$$\boldsymbol{c}$$, 观测方向$$\boldsymbol{v}$$的函数
   - $$ \boldsymbol{\hat x}_p(\theta,\tau)=\boldsymbol{c}+t_0\boldsymbol{v} - \frac {\boldsymbol{v}}{\nabla_x f(\boldsymbol{x}_0;\theta_0) \cdot \boldsymbol{v}_0} f(\boldsymbol{c}+t_0\boldsymbol{v};\theta) $$
     - 并且 `is exact in value and first derivatives of` $$\theta$$和$$\tau$$ at $$\theta=\theta_0, \tau=\tau_0$$
-    - [ ] what?
+    - [ ] Q: what?
   - 用隐函数微分；
   - SDF在一点的法向量就是其梯度，是因为梯度的模就是1
 - **approximation of the surface light field**
@@ -1345,7 +1345,7 @@ learning generalized templates comprised of elements
 - **Overview**
   - 首先从example shapes有监督地训练SDF（的decoder）；
   - 然后自监督地通过RGB-D训练differentiable renderer和recurrent encoder
-  - [ ] recurrent真的能这样设计吗？<br>![image-20201222090334334](media/image-20201222090334334.png)
+  - [ ] Q: recurrent真的能这样设计吗？<br>![image-20201222090334334](media/image-20201222090334334.png)
   - 可以看到recurrent的主要目的是迭代、逐个地得出object的code，倒是和之前*Multi-object representation learning with iterative variational inference.*那篇有些像<br>每个物体输出深度估计，图像估计，与occulusion mask<br>![image-20201222091509810](media/image-20201222091509810.png)
 - **results**
   - ![image-20201222090527412](media/image-20201222090527412.png)

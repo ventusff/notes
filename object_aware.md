@@ -201,7 +201,7 @@ main preliminary: SRN
   - L1 regularization on 物体速度大小：discourages local minima, 防止模型不能track物体
   - hinge regularization on 物体存在概率：discourages 物体在优化早期在shape还没适应(学到)时就消失
   - (inspired by *图像分割* 任务中的*Markov random fiields*) we penalize edges in the reconstructed foreground mask for occurring in areas of the original image that have small gradients. ：This discourages undesirable but mathematically-correct solutions where an object is in front of an untextured surface, and parts of that surface are incorporated in the object rather than the background. 
-    - [ ] what ??
+    - [ ] Q: what ??
   - standard mesh regulirazers for 背景、mesh物体，避免degenerate shapes：L2 on Laplacian curvature, L1 on angles between faces, L1 on edge lenghts variance
 
 </details>

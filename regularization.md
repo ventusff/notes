@@ -39,7 +39,7 @@ title_cn: 正则化基础讨论
     - 如选择high-pass 算子（如微分算子或加权傅里叶算子）可以用来保证平滑性，如果underlying vector基本是线性的
   - 这样的正则化可以改善问题的conditioning，从而可以得到一个直接的数值解
 - 更一般的tikhonov regularization
-  - [ ] (笔者的)大概理解：不应是欧几里得范数$$\boldsymbol{\rm x}^{\top} \boldsymbol{\rm x}$$，而是更一般的范数$$\boldsymbol{\rm x}^{\top}Q \boldsymbol{\rm x}$$
+  - [ ] Q: (笔者的)大概理解：不应是欧几里得范数$$\boldsymbol{\rm x}^{\top} \boldsymbol{\rm x}$$，而是更一般的范数$$\boldsymbol{\rm x}^{\top}Q \boldsymbol{\rm x}$$
   - $$\lVert \boldsymbol{A}\boldsymbol{\rm x}-\boldsymbol{\rm b} \rVert^2_{P} + \lVert \Gamma \boldsymbol{\rm x} \rVert^2_{Q}$$, 其中$$\lVert x \rVert^2_{Q}$$代表weighted norm squared $$\boldsymbol{\rm x}^{\top}Q \boldsymbol{\rm x}$$
   - 这种意义下，Tikhonov matrix其实是给出的矩阵的分解矩阵：$$Q=\Gamma^{\top}\Gamma$$
 

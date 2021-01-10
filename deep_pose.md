@@ -90,7 +90,7 @@ title_cn: 刚体姿态相关的数学与DL类方法
       - 相当于给定了一些关键点的2D坐标、3D坐标、相机内参矩阵，估计相机外参矩阵
       - 相机外参矩阵是相机在物体三维模型坐标系下的位置，事实逆一下就是物体在相机坐标系下的位置
 - pose refinement
-  - [ ] what?
+  - [ ] Q: what?
 
 </details>
 
@@ -162,7 +162,7 @@ title_cn: 刚体姿态相关的数学与DL类方法
   - ==思考==：用一个周期性的激活函数是否可以消除这个问题？
   - 对于四元数表示：
     - 输出是一个4维量，单位正交约束通过 choosing the non-linearity as L2 normalization 来保证
-      - [ ] what ?
+      - [ ] Q: what ?
     - 用$$\mathcal{L}=d_Q(R,\hat{R})=2\cos^{-1} \left( \lvert \langle q_1, q_2 \rangle \rvert \right)$$ 来最优化
 
 </details>
@@ -261,7 +261,7 @@ Closed Form"`**
       $$ \theta^*={\underset {\theta}{\operatorname {arg\,min} }} \sum_{i=1}^N \mathcal{L}(f_{\theta}(I_i), p_i) $$
         然而，从$$I$$到$$p$$的映射is not well defined 并且不能被model为一个function
     - 于是，$$f$$事实上学到的是和$$\mathcal{S}(I_i)$$中所有点都equally close的一个rotation.
-    - [ ] multiple pose hypothesis
+    - [ ] Q: multiple pose hypothesis
 - **网络结构**
     - SSD-300带一个InceptionV4的backbone，每次检测时额外提供6D pose：每个anchor box提供$$C+M \cdot P$$个输出：$$C$$代表类别个数，$$M$$代表symmetry hypotheses的个数，$$P$$代表来描述6D pose的参数个数
         $$P=5$$，4(explicitly normalized四元数)+1(物体到camera的距离)

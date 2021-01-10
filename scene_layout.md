@@ -9,6 +9,18 @@ title_cn: 场景布局相关研究
 
 ---
 
+## indoor scene datasets
+ - ~~SUNCG~~ (until now, 2021-01-10)
+ - scannet
+ - scenenet
+    - scenenet RGBD
+ - replica
+ - matterport3D
+ - gibson / gibsonv2
+ - habitat
+ - ai2thor
+ - [3DFront]((https://tianchi.aliyun.com/specials/promotion/alibaba-3d-scene-dataset)), by [Alibaba 躺平](https://www.tangping.com/), 中科院计算所, SFU
+
 ## scene graph / scene text to image generation / indoor scene synthesis
 
 
@@ -59,15 +71,15 @@ title_cn: 场景布局相关研究
   - Traditional scene graph based image generation (e.g. *[CVPR2018] sg2im*)
     - 在image space中建模物体关系(而不是scene space)
     - 没有显式的3D物体概念（只有像素）
-  - Layout Generation (e.g. *[SIGGRAPH2018] Deep Convolutional Priors for Indoor Scene Synthesis*)
+  - Layout Generation (e.g. *<Deep-Synth> [SIGGRAPH2018] Deep Convolutional Priors for Indoor Scene Synthesis*)
     - no spatial-conditioning
     - auto-regressive 自回归 (slow)
-      - [ ] what?
+      - [x] Q: what?<br>A: 第n+1个物体的属性depend on 前n个物体的属性；序列化的结构
   - 核心issues
     - scene space下的3D关系
     - 解耦的布局、形状、图像构成
     - 基于2.5D+语义目标的object locations的refinement
-      - [ ] what?
+      - [x] Q: what? <br>A: 朝着一个target 图片/语义分割图 来用auto-decoder的形式 优化出layout
 - **主要贡献**
   - 3D-SLN model 可以从一个scene graph生成 **diverse and accurate** scene layouts 
   - 3D scene layouts 可以用 2.5D+语义信息 finetune
@@ -226,7 +238,7 @@ graph LR
   - 只需要**输入** <u>(空)房间的形状</u>，还有<u>房间的文字描述</u>，然后就可以生成整个房间
 - **dataset**
     - large object and scene datasets: ModelNet, ShapeNet, 
-    - and other human-annotated scene datasets with synthetic objects / human-created scene dataset: <br>[*Semantic scene completion from a single depth image. CVPR2017*]
+    - and other human-annotated scene datasets with synthetic objects / human-created scene dataset: <br><**SUNCG**>[*Semantic scene completion from a single depth image. CVPR2017*](https://sscnet.cs.princeton.edu/)
         - 去掉bad samples, as previous works done : 
             - [**Planit**: *Planning and instantiating indoor scenes with relation graph and spatial prior networks. TOG2019* ]
             - [*Fast and flexible indoor scene synthesis via deep convolutional generative models. CVPR2019* ]
@@ -320,7 +332,7 @@ graph LR
     - 为了实现这一点：link the capsule descriptors to the capsule poses in canonical space；i.e. ask that objects with similar appearance to be located in similar Euclidean neighborhoods in canonical space
       - 具体做法是用一个全连接层，从descriptor直接回归出每个capsule的pose
       - $$\overline{\theta}=\mathcal{K}(\beta)$$<br> $$\overline{\theta} \in \mathbb{R}^{K\times 3}$$是canonical poses，<br>$$\mathcal{K}$$是全连接神经网络，<br>$$\beta \in \mathbb{R}^{K \times C}$$ 是capsule的descriptor
-      - [ ] why?居然直接从K个胶囊描述子直接回归出K个canonical pose
+      - [ ] Q: why?居然直接从K个胶囊描述子直接回归出K个canonical pose
 
 </details>
 
