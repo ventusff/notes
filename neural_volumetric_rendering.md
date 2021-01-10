@@ -45,7 +45,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 ---
 
 **`"Neural Volumes: Learning Dynamic Renderable Volumes from Images"`**  
-**[** `0000` **]** **[[paper]](https://abc.efg)** **[[code]](https://www.github.com)** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
+**[** `0000` **]** **[[paper]]** **[[code]]** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
 **[**  `xxxx`  **]**  
 **[** _`abcd`_ **]**  
 
@@ -63,7 +63,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 ---
 
 **`"DeRF: Decomposed Radiance Fields"`**  
-**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2011.12490.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `University`, `SFU`, `University of Toronto` **]** **[** :office: `Google` **]**  
+**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2011.12490.pdf)** **[[code]]** **[** :mortar_board: `University`, `SFU`, `University of Toronto` **]** **[** :office: `Google` **]**  
 **[**  `Daniel Rebain`, `Wei Jiang`, `Soroosh Yazdani`, `Ke Li`, `Kwang Moo Yi`, `Andrea Tagliasacchi`  **]**  
 **[** _`voronoi space decomposition`_ **]**  
 
@@ -84,7 +84,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 ---
 
 **`"Neural Sparse Voxel Fields"`**  
-**[** `NeurIPS2020` **]** **[[paper]](https://proceedings.neurips.cc/paper/2020/file/b4b758962f17808746e9bb832a6fa4b8-Paper.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `MPI`, `NUS` **]** **[** :office: `Facebook` **]**  
+**[** `NeurIPS2020` **]** **[[paper]](https://proceedings.neurips.cc/paper/2020/file/b4b758962f17808746e9bb832a6fa4b8-Paper.pdf)** **[[code]]** **[** :mortar_board: `MPI`, `NUS` **]** **[** :office: `Facebook` **]**  
 **[**  `Lingjie Liu`, `Jiatao Gu`, `Kyaw Zaw Lin`, `Tat-Seng Chua`, `Christian Theobalt`  **]**  
 **[** _`NeRF`, `octree voxels fields`_ **]**  
 
@@ -194,7 +194,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 ---
 
 **`"pi-GAN: Periodic Implicit Generative Adversarial Networks for 3D-Aware Image Synthesis"`**  
-**[** `0000` **]** **[[paper(compressed)]](https://marcoamonteiro.github.io/pi-GAN-website/pdf/compressed_paper.pdf)** **[[paper]](https://arxiv.org/pdf/2012.00926.pdf)** **[[code]](https://www.github.com)** **[[web]](https://marcoamonteiro.github.io/pi-GAN-website/)** **[** :mortar_board: `Stanford` **]**   
+**[** `0000` **]** **[[paper(compressed)]](https://marcoamonteiro.github.io/pi-GAN-website/pdf/compressed_paper.pdf)** **[[paper]](https://arxiv.org/pdf/2012.00926.pdf)** **[[code]]** **[[web]](https://marcoamonteiro.github.io/pi-GAN-website/)** **[** :mortar_board: `Stanford` **]**   
 **[**  `Eric R. Chan`, `Marco Monteiro`, `Petr Kellnhofer`, `Jiajun Wu`, `Gordon Wetzstein`  **]**  
 **[** _`SIREN-style`_ **]**  
 
@@ -217,7 +217,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 ---
 
 **`(nerfies) "Deformable Neural Radiance Fields"`**  
-**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2011.12948.pdf)** **[[code]](https://www.github.com)** **[[web]](https://nerfies.github.io/)** **[** :mortar_board: `University of Washington` **]** **[** :office: `Google` **]**  
+**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2011.12948.pdf)** **[[code]]** **[[web]](https://nerfies.github.io/)** **[** :mortar_board: `University of Washington` **]** **[** :office: `Google` **]**  
 **[**  `Keunhong Park`, `Utkarsh Sinha`, `Jonathan T. Barron`, `Sofien Bouaziz`, `Dan B Goldman`, `Steven M. Seitz`, `Ricardo Martin-Brualla`  **]**  
 **[** _`deformable NeRF`_ **]**  
 
@@ -240,7 +240,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 ---
 
 **`"D-NeRF: Neural Radiance Fields for Dynamic Scenes"`**  
-**[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2011.13961.pdf)** **[[code]](https://www.github.com)** **[[web]](https://www.albertpumarola.com/research/D-NeRF/index.html)** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
+**[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2011.13961.pdf)** **[[code]]** **[[web]](https://www.albertpumarola.com/research/D-NeRF/index.html)** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
 **[**  `Albert Pumarola`, `Enric Corona`, `Gerard Pons-Moll`, `Francesc Moreno-Noguer`  **]**  
 **[** _`abcd`_ **]**  
 
@@ -254,7 +254,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 ---
 
 **`"Neural Scene Flow Fields for Space-Time View Synthesis of Dynamic Scenes"`**  
-**[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2011.13084)** **[[supp]](http://www.cs.cornell.edu/~zl548/NSFF/NSFF_supp.pdf)** **[[code]](https://www.github.com)** **[[web]](http://www.cs.cornell.edu/~zl548/NSFF/)** **[** :mortar_board: `Cornell Tech`,  **]** **[** :office: `Adobe` **]**  
+**[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2011.13084)** **[[supp]](http://www.cs.cornell.edu/~zl548/NSFF/NSFF_supp.pdf)** **[[code]]** **[[web]](http://www.cs.cornell.edu/~zl548/NSFF/)** **[** :mortar_board: `Cornell Tech`,  **]** **[** :office: `Adobe` **]**  
 **[**  `Zhengqi Li`, `Simon Niklaus`, `Noah Snavely`, `Oliver Wang`  **]**  
 **[** _`abcd`_ **]**  
 
@@ -268,7 +268,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 ---
 
 **`"Space-time Neural Irradiance Fields for Free-Viewpoint Video"`**  
-**[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2011.12950.pdf)** **[[code]](https://www.github.com)** **[[web]](https://video-nerf.github.io/)** **[** :mortar_board: `Cornell Tech`, `Virginia Tech` **]** **[** :office: `Facebook` **]**  
+**[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2011.12950.pdf)** **[[code]]** **[[web]](https://video-nerf.github.io/)** **[** :mortar_board: `Cornell Tech`, `Virginia Tech` **]** **[** :office: `Facebook` **]**  
 **[**  `Wenqi Xian`, `Jia-Bin Huang`, `Johannes Kopf`, `Changil Kim`  **]**  
 **[** _`abcd`_ **]**  
 
@@ -282,7 +282,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 ---
 
 **`"Neural Radiance Flow for 4D View Synthesis and Video Processing"`**  
-**[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2012.09790.pdf)** **[[code]](https://www.github.com)** **[[web]](https://yilundu.github.io/nerflow/)** **[** :mortar_board: `MIT`, `Stanford` **]**   
+**[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2012.09790.pdf)** **[[code]]** **[[web]](https://yilundu.github.io/nerflow/)** **[** :mortar_board: `MIT`, `Stanford` **]**   
 **[**  `Yilun Du`, `Yinan Zhang`, `Hong-Xing Yu`, `Joshua B. Tenenbaum`, `Jiajun Wu`  **]**  
 **[** _`abcd`_ **]**  
 
@@ -303,7 +303,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 ---
 
 **`"Object-Centric Neural Scene Rendering"`**  
-**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2012.08503.pdf)** **[[code]](https://www.github.com)** **[[web]](https://shellguo.com/osf/)** **[** :mortar_board: `Stanford` **]** **[** :office: `Google` **]**  
+**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2012.08503.pdf)** **[[code]]** **[[web]](https://shellguo.com/osf/)** **[** :mortar_board: `Stanford` **]** **[** :office: `Google` **]**  
 **[**  `Michelle Guo`, `Alireza Fathi`, `Jiajun Wu`, `Thomas Funkhouser`  **]**  
 **[** _`object-centric neural scattering functions`_ **]**  
 
@@ -334,7 +334,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 ---
 
 **`"Neural Scene Graphs for Dynamic Scenes"`**  
-**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2011.10379.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `TUM`, `Princeton University` **]** **[** :office: `Algolux` **]**  
+**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2011.10379.pdf)** **[[code]]** **[** :mortar_board: `TUM`, `Princeton University` **]** **[** :office: `Algolux` **]**  
 **[**  `Julian Ost`, `Fahim Mannan`, `Nils Thuerey`, `Julian Knodt`, `Felix Heide`  **]**  
 **[** _`dynamic scenes`, `motion-clue`_ **]**  
 
@@ -441,7 +441,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 ---
 
 **`"Neural Reflectance Fields for Appearance Acquisition"`**  
-**[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2008.03824.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `UCSD`, `UCB` **]** **[** :office: `Adobe` **]**  
+**[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2008.03824.pdf)** **[[code]]** **[** :mortar_board: `UCSD`, `UCB` **]** **[** :office: `Adobe` **]**  
 **[**  `Sai Bi`, `Zexiang Xu`, `Pratul Srinivasan`, `Ben Mildenhall`, `Kalyan Sunkavalli`, `Miloš Hašan`, `Yannick Hold-Geoffroy`, `David Kriegman`, `Ravi Ramamoorthi`  **]**  
 **[** _`abcd`_ **]**  
 
@@ -455,7 +455,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 ---
 
 **`"NeRV: Neural Reflectance and Visibility Fields for Relighting and View Synthesis"`**  
-**[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2012.03927.pdf)** **[[code]](https://www.github.com)** **[[web]](https://people.eecs.berkeley.edu/~pratul/nerv/)** **[** :mortar_board: `UCB`, `MIT` **]** **[** :office: `Google` **]**  
+**[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2012.03927.pdf)** **[[code]]** **[[web]](https://people.eecs.berkeley.edu/~pratul/nerv/)** **[** :mortar_board: `UCB`, `MIT` **]** **[** :office: `Google` **]**  
 **[**  `Pratul P. Srinivasan`, `Boyang Deng`, `Xiuming Zhang`, `Matthew Tancik`, `Ben Mildenhall`, `Jonathan T. Barron`  **]**  
 **[** _`abcd`_ **]**  
 
@@ -485,7 +485,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 ---
 
 **`"iNeRF: Inverting Neural Radiance Fields for Pose Estimation"`**  
-**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2012.05877.pdf)** **[[code]](https://www.github.com)** **[[web]](http://yenchenlin.me/inerf/)** **[** :mortar_board: `MIT` **]** **[** :office: `Google` **]**  
+**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2012.05877.pdf)** **[[code]]** **[[web]](http://yenchenlin.me/inerf/)** **[** :mortar_board: `MIT` **]** **[** :office: `Google` **]**  
 **[**  `Lin Yen-Chen`, `Pete Florence`, `Jonathan T. Barron`, `Alberto Rodriguez`, `Phillip Isola`, `Tsung-Yi Lin`  **]**  
 **[** _`pose estimation`_ **]**  
 
@@ -506,7 +506,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 ---
 
 **`"Fourier Features Let Networks Learn High Frequency Functions in Low Dimensional Domains"`**  
-**[** `NeurIPS2020` **]** **[[paper]](https://abc.efg)** **[[code]](https://www.github.com)** **[** :mortar_board: `UCB`, `UCSD` **]** **[** :office: `Google` **]**  
+**[** `NeurIPS2020` **]** **[[paper]]** **[[code]]** **[** :mortar_board: `UCB`, `UCSD` **]** **[** :office: `Google` **]**  
 **[**  `Matthew Tancik`, `Pratul P. Srinivasan`, `Ben Mildenhall`, `Sara Fridovich-Keil`, `Nithin Raghavan`, `Utkarsh Singhal`, `Ravi Ramamoorthi`, `Jonathan T. Barron`, `Ren Ng`  **]**  
 **[** _`fourier features`_ **]**  
 

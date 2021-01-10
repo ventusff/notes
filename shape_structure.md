@@ -179,7 +179,7 @@ title_cn: <strong>形状</strong>+结构先验 DL类方法
 ---
 
 **`"Compositionally Generalizable 3D Structure Prediction"`**  
-**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2012.02493.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `UCSD`, `USTC`, `Stanford` **]** **[** :office: `Google` **]**  
+**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2012.02493.pdf)** **[[code]]** **[** :mortar_board: `UCSD`, `USTC`, `Stanford` **]** **[** :office: `Google` **]**  
 **[**  `Songfang Han`, `Jiayuan Gu`, `Kaichun Mo`, `Li Yi`, `Siyu Hu`, `Xuejin Chen`, `Hao Su`  **]**  
 **[** _`object parts`, `single view`, `partnet dataset`_ **]**  
 

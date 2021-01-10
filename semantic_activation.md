@@ -21,7 +21,7 @@
 ---
 
 **`<r-GAN, l-GAN> <PC-GAN> "learning representations and generative models for 3d point clouds"`**  
-**[** `ICLR2018` **]** **[[paper]](https://arxiv.org/pdf/1707.02392)** **[[code]](https://www.github.com)** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
+**[** `ICLR2018` **]** **[[paper]](https://arxiv.org/pdf/1707.02392)** **[[code]]** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
 **[**  `xxxx`  **]**  
 **[** _`abcd`_ **]**  
 
@@ -58,7 +58,7 @@
 ---
 
 **`<DPC> "Unsupervised Learning of Shape and Pose with Differentiable Point Clouds"`**  
-**[** `2018` **]** **[[paper]](https://arxiv.org/pdf/1810.09381.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `MPI` **]** **[** :office: `Intel` **]**  
+**[** `2018` **]** **[[paper]](https://arxiv.org/pdf/1810.09381.pdf)** **[[code]]** **[** :mortar_board: `MPI` **]** **[** :office: `Intel` **]**  
 **[**  `Eldar Insafutdinov`, `Alexey Dosovitskiy`  **]**  
 **[** _`abcd`_ **]**  
 

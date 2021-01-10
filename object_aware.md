@@ -74,7 +74,7 @@ main preliminary: GQN
 ---
 
 **`"Multi-Object Representation Learning with Iterative Variational Inference"`**  
-**[** `2019` **]** **[[paper]](https://arxiv.org/pdf/1903.00450.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
+**[** `2019` **]** **[[paper]](https://arxiv.org/pdf/1903.00450.pdf)** **[[code]]** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
 **[**  `xxxx`  **]**  
 **[** _`abcd`_ **]**  
 
@@ -88,7 +88,7 @@ main preliminary: GQN
 ---
 
 **`"Reconstruction Bottlenecks in Object-Centric Generative Models"`**  
-**[** `2020` **]** **[[paper]](https://arxiv.org/pdf/2007.06245.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
+**[** `2020` **]** **[[paper]](https://arxiv.org/pdf/2007.06245.pdf)** **[[code]]** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
 **[**  `xxxx`  **]**  
 **[** _`GENESIS-based`, `efgh`_ **]**  
 
@@ -142,7 +142,7 @@ main preliminary: SRN
 ---
 
 **`"Neural Graphics Pipeline for Controllable Image Generation"`**  
-**[** `2020` **]** **[[paper]](https://arxiv.org/pdf/2006.10569.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
+**[** `2020` **]** **[[paper]](https://arxiv.org/pdf/2006.10569.pdf)** **[[code]]** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
 **[**  `xxxx`  **]**  
 **[** _`abcd`_ **]**  
 
@@ -210,7 +210,7 @@ main preliminary: SRN
 ---
 
 **`"Unsupervised Discovery of Object Landmarks via Contrastive Learning"`**  
-**[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2006.14787.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `MIT` **]** **[** :office: `company` **]**  
+**[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2006.14787.pdf)** **[[code]]** **[** :mortar_board: `MIT` **]** **[** :office: `company` **]**  
 **[**  `xxxx`  **]**  
 **[** _`abcd`_ **]**  
 
@@ -224,7 +224,7 @@ main preliminary: SRN
 ---
 
 **`"UNSUPERVISED DISCOVERY OF PARTS, STRUCTURE, AND DYNAMICS"`**  
-**[** `0000` **]** **[[paper]](https://abc.efg)** **[[code]](https://www.github.com)** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
+**[** `0000` **]** **[[paper]]** **[[code]]** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
 **[**  `xxxx`  **]**  
 **[** _`abcd`_ **]**  
 
@@ -238,7 +238,7 @@ main preliminary: SRN
 ---
 
 **`"FroDO: From Detections to 3D Objects"`**  
-**[** `CVPR2020` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2020/papers/Runz_FroDO_From_Detections_to_3D_Objects_CVPR_2020_paper.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `UCL`, `The University of Adelaide` **]** **[** :office: `Facebook` **]**  
+**[** `CVPR2020` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2020/papers/Runz_FroDO_From_Detections_to_3D_Objects_CVPR_2020_paper.pdf)** **[[code]]** **[** :mortar_board: `UCL`, `The University of Adelaide` **]** **[** :office: `Facebook` **]**  
 **[**  `Martin Runz`, `Kejie Li`, `Meng Tang`, `Lingni Ma`, `Chen Kong`, `Tanner Schmidt`, `Ian Reid`, `Lourdes Agapito`, `Julian Straub`, `Steven Lovegrove`, `Richard Newcombed`**]**  
 **[** _`natural dataset`, `mask-RCNN`, `pre-learnt shape priors`_ **]**  
 

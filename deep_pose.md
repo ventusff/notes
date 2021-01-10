@@ -172,7 +172,7 @@ title_cn: 刚体姿态相关的数学与DL类方法
 
 **`< not deep > "Regression of 3D Rigid Transformations on Real-Valued Vectors in
 Closed Form"`**  
-**[** `0000` **]** **[[paper]](https://abc.efg)** **[[code]](https://www.github.com)** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
+**[** `0000` **]** **[[paper]]** **[[code]]** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
 **[**  `xxxx`  **]**  
 **[** _`abcd`, `efgh`_ **]**  
 
@@ -203,7 +203,7 @@ Closed Form"`**
 ---
 
 **`"Semantic Graph Convolutional Networks for 3D Human Pose Regression"`**  
-**[** `2019` **]** **[[paper]](https://abc.efg)** **[[code]](https://www.github.com)** **[** :mortar_board: `Rutgers University`,`Binghamton University` **]**  
+**[** `2019` **]** **[[paper]]** **[[code]]** **[** :mortar_board: `Rutgers University`,`Binghamton University` **]**  
 **[**  `Long Zhao`,`Dimitris N. Metaxas`  **]**  
 **[** _`abcd`, `efgh`_ **]**  
 

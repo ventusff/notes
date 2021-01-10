@@ -42,7 +42,7 @@ not_published: true
 ---
 
 **`"asdf: asdf"`**  
-**[** `0000` **]** **[[paper]](abc.efg)** **[[code]](www.github.com)** **[[web]](abc.efg)** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
+**[** `0000` **]** **[[paper]]** **[[code]]** **[[web]]** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
 **[**  `xxxx`  **]**  
 **[** _`abcd`_ **]**  
 
@@ -56,7 +56,7 @@ not_published: true
 ---
 
 **`"asdf: asdf"`**  
-**[** `0000` **]** **[[paper]](abc.efg)** **[[code]](www.github.com)** **[[web]](abc.efg)** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
+**[** `0000` **]** **[[paper]]** **[[code]]** **[[web]]** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
 **[**  `xxxx`  **]**  
 **[** _`abcd`_ **]**  
 
@@ -70,7 +70,7 @@ not_published: true
 ---
 
 **`"asdf: asdf"`**  
-**[** `0000` **]** **[[paper]](abc.efg)** **[[code]](www.github.com)** **[[web]](abc.efg)** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
+**[** `0000` **]** **[[paper]]** **[[code]]** **[[web]]** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
 **[**  `xxxx`  **]**  
 **[** _`abcd`_ **]**  
 
@@ -84,7 +84,7 @@ not_published: true
 ---
 
 **`"asdf: asdf"`**  
-**[** `0000` **]** **[[paper]](abc.efg)** **[[code]](www.github.com)** **[[web]](abc.efg)** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
+**[** `0000` **]** **[[paper]]** **[[code]]** **[[web]]** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
 **[**  `xxxx`  **]**  
 **[** _`abcd`_ **]**  
 
@@ -98,7 +98,7 @@ not_published: true
 ---
 
 **`"asdf: asdf"`**  
-**[** `0000` **]** **[[paper]](abc.efg)** **[[code]](www.github.com)** **[[web]](abc.efg)** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
+**[** `0000` **]** **[[paper]]** **[[code]]** **[[web]]** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
 **[**  `xxxx`  **]**  
 **[** _`abcd`_ **]**  
 
@@ -112,7 +112,7 @@ not_published: true
 ---
 
 **`"asdf: asdf"`**  
-**[** `0000` **]** **[[paper]](abc.efg)** **[[code]](www.github.com)** **[[web]](abc.efg)** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
+**[** `0000` **]** **[[paper]]** **[[code]]** **[[web]]** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
 **[**  `xxxx`  **]**  
 **[** _`abcd`_ **]**  
 
@@ -126,7 +126,7 @@ not_published: true
 ---
 
 **`"asdf: asdf"`**  
-**[** `0000` **]** **[[paper]](abc.efg)** **[[code]](www.github.com)** **[[web]](abc.efg)** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
+**[** `0000` **]** **[[paper]]** **[[code]]** **[[web]]** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
 **[**  `xxxx`  **]**  
 **[** _`abcd`_ **]**  
 

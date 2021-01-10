@@ -738,7 +738,7 @@ learning generalized templates comprised of elements
 ---
 
 **`"Neural-Pull: Learning Signed Distance Functions from Point Clouds by Learning to Pull Space onto Surfaces"`**  
-**[** `2020` **]** **[[paper]](https://arxiv.org/pdf/2011.13495.pdf)** **[[code]](https://www.github.com)** **[[web]](abc.efg)** **[** :mortar_board: `Tsinghua`, , `University of Maryland` **]**   
+**[** `2020` **]** **[[paper]](https://arxiv.org/pdf/2011.13495.pdf)** **[[code]]** **[[web]]** **[** :mortar_board: `Tsinghua`, , `University of Maryland` **]**   
 **[**  `Baorui Ma`, `Zhizhong Han`, `Yu-Shen Liu`, `Matthias Zwicker`  **]**  
 **[** _`reconstructing surfaces from 3D pointcloud`, `surface reconstruction`_ **]**  
 
@@ -757,7 +757,7 @@ learning generalized templates comprised of elements
 ---
 
 **`"DUDE: Deep Unsigned Distance Embeddings for Hi-Fidelity Representation of Complex 3D Surfaces"`**  
-**[** `2021` **]** **[[paper]](https://abc.efg)** **[[code]](https://www.github.com)** **[** :mortar_board: `CMU` **]** **[** :office: `Verisk Analytics` **]**  
+**[** `2021` **]** **[[paper]]** **[[code]]** **[** :mortar_board: `CMU` **]** **[** :office: `Verisk Analytics` **]**  
 **[**  `Rahul Venkatesh`, `Sarthak Sharma`, `Aurobrata Ghosh`, `Laszlo Jeni`, `Maneesh Singh`  **]**  
 **[** _`unsigned distance field`, `normal vector field`, `open topogoly surfaces`_ **]**  
 
@@ -1328,7 +1328,7 @@ learning generalized templates comprised of elements
 ---
 
 **`"Semi-Supervised Learning of Multi-Object 3D Scene Representations"`**  
-**[** `ICLR2021` **]** **[[paper]](https://openreview.net/pdf?id=GwjkaD3g-V1)** **[[code]](https://www.github.com)** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
+**[** `ICLR2021` **]** **[[paper]](https://openreview.net/pdf?id=GwjkaD3g-V1)** **[[code]]** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
 **[**  `xxxx`  **]**  
 **[** _`recurrent encoder`, `SDF`, `differentiable renderer`_ **]**  
 

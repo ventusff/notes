@@ -165,7 +165,7 @@ graph LR
 ---
 
 **`"SceneFormer: Indoor Scene Generation with Transformers"`**  
-**[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2012.09793.pdf)** **[[code]](www.github.com)** **[[web]](abc.efg)** **[** :mortar_board: `TUM` **]**   
+**[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2012.09793.pdf)** **[[code]]** **[[web]]** **[** :mortar_board: `TUM` **]**   
 **[**  `Xinpeng Wang`, `Chandan Yeshwanth`, `Matthias Nießner`  **]**  
 **[** _`text description`, `transformer`_ **]**  
 
@@ -239,7 +239,7 @@ graph LR
 ---
 
 **`"Stacked Capsule Autoencoders"`**  
-**[** `NeurIPS2019` **]** **[[paper]](https://abc.efg)** **[[code]](https://www.github.com)** **[** :mortar_board: `Oxford` **]** **[** :office: `Google Brain`, `DeepMind` **]**  
+**[** `NeurIPS2019` **]** **[[paper]]** **[[code]]** **[** :mortar_board: `Oxford` **]** **[** :office: `Google Brain`, `DeepMind` **]**  
 **[**  `Adam R. Kosiorek`, `Sara Sabour`, `Yee Whye Teh`, `Geoffrey E. Hinton`  **]**  
 **[** _`capsule networks`_ **]**  
 
@@ -254,7 +254,7 @@ graph LR
 ---
 
 **`"Canonical Capsules: Unsupervised Capsules in Canonical Pose"`**  
-**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2012.04718.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `University of British Columbia`, `University of Toronto`, `University of Victoria` **]** **[** :office: `google` **]**  
+**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2012.04718.pdf)** **[[code]]** **[** :mortar_board: `University of British Columbia`, `University of Toronto`, `University of Victoria` **]** **[** :office: `google` **]**  
 **[**  `Weiwei Sun`, `Andrea Tagliasacchi`, `Boyang Deng`, `Sara Sabour`, `Soroosh Yazdani`, `Geoffrey Hinton`, `Kwang Moo Yi`  **]**  
 **[** _`capsule network`, `3D pointclouds`, `Canonical`_ **]**  
 
@@ -288,7 +288,7 @@ graph LR
 ---
 
 **`"Unsupervised part representation by Flow Capsules"`**  
-**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2011.13920.pdf)** **[[code]](https://www.github.com)** **[** :mortar_board: `University of Toronto` **]** **[** :office: `Google` **]**  
+**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2011.13920.pdf)** **[[code]]** **[** :mortar_board: `University of Toronto` **]** **[** :office: `Google` **]**  
 **[**  `Sara Sabour`, `Andrea Tagliasacchi`, `Soroosh Yazdani`, `Geoffrey E. Hinton`, `David J. Fleet`  **]**  
 **[** _`capsule networks`, `motion cue`_ **]**  
 
