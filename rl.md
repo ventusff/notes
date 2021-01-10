@@ -1,3 +1,9 @@
+---
+note_type: paper_reading
+title: DRL, basic Deep Reinforcement learning
+title_cn: 强化学习基础框架
+not_published: true
+---
 
 ---
 

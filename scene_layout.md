@@ -9,7 +9,36 @@ title_cn: 场景布局相关研究
 
 ---
 
-## scene graph / scene text to image generation
+## scene graph / scene text to image generation / indoor scene synthesis
+
+
+---
+
+**`<Deep-Synth> "Deep Convolutional Priors for Indoor Scene Synthesis"`**  
+**[** `SIGGRAPH2018` **]** **[[paper]](https://kwang-ether.github.io/pdf/deepsynth.pdf)** **[[code]](https://github.com/brownvc/deep-synth)** **[[web]]** **[** :mortar_board: `Brown University`, `Princeton University` **]**  
+**[**  `Kai Wang`, `Manolis Savva`, `Angel X Chang`, `Daniel Ritchie`  **]**  
+**[** _`abcd`_ **]**  
+
+<details markdown="1">
+  <summary markdown="0">Click to expand</summary>
+
+- **Motivation**
+
+</details>
+
+---
+
+**`<Fast-Synth> "Fast and Flexible Indoor Scene Synthesis via Deep Convolutional Generative Models"`**  
+**[** `CVPR2019` **]** **[[paper]](https://arxiv.org/pdf/1811.12463)** **[[code]](https://github.com/brownvc/fast-synth)** **[[web]]** **[** :mortar_board: `Brown University` **]**   
+**[**  `Daniel Ritchie`, `Kai Wang`, `Yu-an Lin`  **]**  
+**[** _`abcd`_ **]**  
+
+<details markdown="1">
+  <summary markdown="0">Click to expand</summary>
+
+- **Motivation**
+
+</details>
 
 ---
 
@@ -165,7 +194,7 @@ graph LR
 ---
 
 **`"SceneFormer: Indoor Scene Generation with Transformers"`**  
-**[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2012.09793.pdf)** **[[code]]** **[[web]]** **[** :mortar_board: `TUM` **]**   
+**[** `arXiv2020` **]** **[[paper]](https://arxiv.org/pdf/2012.09793.pdf)** **[[code]]** **[[web]]** **[** :mortar_board: `TUM` **]**   
 **[**  `Xinpeng Wang`, `Chandan Yeshwanth`, `Matthias Nießner`  **]**  
 **[** _`text description`, `transformer`_ **]**  
 
@@ -185,6 +214,7 @@ graph LR
   - **任务描述**：
     - indoor scene generation: to generate a sequence of objects, their locations and orientations conditioned on the shape and size of a room.<br>室内场景生成任务：生成一个物体序列，包括物体的位置、朝向，conditioned on 房间的形状和大小
     - 现存的大规模室内场景数据集，使得我们可以从`user-defined indoor scenes`中提取出`pattern`，然后基于这些`pattern`生成新的场景
+    - 未来用处：生成虚拟的室内场景对于内饰供应商有商业价值：可以在AR,VR平台向用户展示，用户可以`interactively modify it`
   - 现有的方法，除了物体的位置之外，还：
     - **依赖于这些场景的2D或3D外观** 
     - **并且对物体之间的关系做出假设**
@@ -194,7 +224,18 @@ graph LR
         - 一个直接的例子，比如沙发和电视之间的对应$$\Delta pose$$关系，就比较隐式，文中的方法可以很好的生成
   - 本篇 **不使用任何外观信息**，**并且利用transformer机制自己学出来物体之间的关系**
   - 只需要**输入** <u>(空)房间的形状</u>，还有<u>房间的文字描述</u>，然后就可以生成整个房间
+- **dataset**
+    - large object and scene datasets: ModelNet, ShapeNet, 
+    - and other human-annotated scene datasets with synthetic objects / human-created scene dataset: <br>[*Semantic scene completion from a single depth image. CVPR2017*]
+        - 去掉bad samples, as previous works done : 
+            - [**Planit**: *Planning and instantiating indoor scenes with relation graph and spatial prior networks. TOG2019* ]
+            - [*Fast and flexible indoor scene synthesis via deep convolutional generative models. CVPR2019* ]
+        - 最后得到 6351个卧室和1099个living room
+        - 卧室使用50种物体类型，客厅用39个物体类型
+        - 房间：用(0,90,180,270) degrees的旋转来增强数据集；位置(0,0.5)均匀分布采样
+        - 房间的句子描述数据用的是`heuristic`的方法来产生（也就是hand-crafted）
  - **Overview**
+    - `auto-regressive`自回归方式：第$$(n+1)^{th}$$物体的属性 conditioned on 前n个物体的属性
     - ![image-20210110012645852](media/image-20210110012645852.png)
     - ![image-20210110012809862](media/image-20210110012809862.png)
  - **results**
@@ -254,7 +295,7 @@ graph LR
 ---
 
 **`"Canonical Capsules: Unsupervised Capsules in Canonical Pose"`**  
-**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2012.04718.pdf)** **[[code]]** **[** :mortar_board: `University of British Columbia`, `University of Toronto`, `University of Victoria` **]** **[** :office: `google` **]**  
+**[** `arXiv2020` **]** **[[paper]](https://arxiv.org/pdf/2012.04718.pdf)** **[[code]]** **[** :mortar_board: `University of British Columbia`, `University of Toronto`, `University of Victoria` **]** **[** :office: `google` **]**  
 **[**  `Weiwei Sun`, `Andrea Tagliasacchi`, `Boyang Deng`, `Sara Sabour`, `Soroosh Yazdani`, `Geoffrey Hinton`, `Kwang Moo Yi`  **]**  
 **[** _`capsule network`, `3D pointclouds`, `Canonical`_ **]**  
 
@@ -288,7 +329,7 @@ graph LR
 ---
 
 **`"Unsupervised part representation by Flow Capsules"`**  
-**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2011.13920.pdf)** **[[code]]** **[** :mortar_board: `University of Toronto` **]** **[** :office: `Google` **]**  
+**[** `arXiv2020` **]** **[[paper]](https://arxiv.org/pdf/2011.13920.pdf)** **[[code]]** **[** :mortar_board: `University of Toronto` **]** **[** :office: `Google` **]**  
 **[**  `Sara Sabour`, `Andrea Tagliasacchi`, `Soroosh Yazdani`, `Geoffrey E. Hinton`, `David J. Fleet`  **]**  
 **[** _`capsule networks`, `motion cue`_ **]**  
 

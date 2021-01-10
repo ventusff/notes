@@ -521,7 +521,7 @@ learning generalized templates comprised of elements
 ---
 
 **`"Better Patch Stitching for Parametric Surface Reconstruction"`**  
-**[** `2020` **]** **[[paper]](https://arxiv.org/pdf/2010.07021.pdf)** **[** :mortar_board: `EPFL` **]**   
+**[** `arXiv2020` **]** **[[paper]](https://arxiv.org/pdf/2010.07021.pdf)** **[** :mortar_board: `EPFL` **]**   
 **[**  `Zhantao Deng`, `Jan Bednařík`, `Mathieu Salzmann`, `Pascal Fua`  **]**  
 **[** _`patch stitching`, `atlas`, `learning`_ **]**  
 
@@ -738,7 +738,7 @@ learning generalized templates comprised of elements
 ---
 
 **`"Neural-Pull: Learning Signed Distance Functions from Point Clouds by Learning to Pull Space onto Surfaces"`**  
-**[** `2020` **]** **[[paper]](https://arxiv.org/pdf/2011.13495.pdf)** **[[code]]** **[[web]]** **[** :mortar_board: `Tsinghua`, , `University of Maryland` **]**   
+**[** `arXiv2020` **]** **[[paper]](https://arxiv.org/pdf/2011.13495.pdf)** **[[code]]** **[[web]]** **[** :mortar_board: `Tsinghua`, , `University of Maryland` **]**   
 **[**  `Baorui Ma`, `Zhizhong Han`, `Yu-Shen Liu`, `Matthias Zwicker`  **]**  
 **[** _`reconstructing surfaces from 3D pointcloud`, `surface reconstruction`_ **]**  
 
@@ -781,7 +781,7 @@ learning generalized templates comprised of elements
 ---
 
 **`"Deformed Implicit Field: Modeling 3D Shapes with Learned Dense Correspondence"`**  
-**[** `2021` **]** **[[paper+supp]](https://arxiv.org/pdf/2011.13650.pdf)** **[[code]](https://github.com/microsoft/DIF-Net)** **[** :office: `MSRA` **]** **[** :mortar_board: `Tsinghua` **]**   
+**[** `arXiv2020` **]** **[[paper+supp]](https://arxiv.org/pdf/2011.13650.pdf)** **[[code]](https://github.com/microsoft/DIF-Net)** **[** :office: `MSRA` **]** **[** :mortar_board: `Tsinghua` **]**   
 **[**  `Yu Deng`, `Jiaolong Yang`, `Xin Tong`  **]**  
 **[** _`3D deformation field`, `template field`, `category shape correspondence`_ **]**  
 
@@ -861,7 +861,7 @@ learning generalized templates comprised of elements
 ---
 
 **`"Deep Implicit Templates for 3D Shape Representation"`**  
-**[** `2020` **]** **[[paper]](https://arxiv.org/pdf/2011.14565.pdf)** **[[web]](http://www.liuyebin.com/dit/dit.html)** **[[supp_video]](http://www.liuyebin.com/dit/assets/supp_vid.mp4)** **[[code]](https://github.com/ZhengZerong/DeepImplicitTemplates)**  **[** :mortar_board: `Tsinghua` **]**   
+**[** `arXiv2020` **]** **[[paper]](https://arxiv.org/pdf/2011.14565.pdf)** **[[web]](http://www.liuyebin.com/dit/dit.html)** **[[supp_video]](http://www.liuyebin.com/dit/assets/supp_vid.mp4)** **[[code]](https://github.com/ZhengZerong/DeepImplicitTemplates)**  **[** :mortar_board: `Tsinghua` **]**   
 **[**  `Zerong Zheng`, `Tao Yu`, `Qionghai Dai`, [`Yebin Liu`](http://www.liuyebin.com/)  **]**  
 **[** _`spatial warping LSTM`, `category shape correpondence`_ **]**  
 
@@ -1066,7 +1066,7 @@ learning generalized templates comprised of elements
 ---
 
 **`"Learned Initializations for Optimizing Coordinate-Based Neural Representations"`**  
-**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2012.02189.pdf)**  **[** :mortar_board: `UCB` **]** **[** :office: `Google` **]**  
+**[** `arXiv2020` **]** **[[paper]](https://arxiv.org/pdf/2012.02189.pdf)**  **[** :mortar_board: `UCB` **]** **[** :office: `Google` **]**  
 **[**  `Matthew Tancik`, `Ben Mildenhall`, `Terrance Wang`, `Divi Schmidt`, `Pratul P. Srinivasan`, `Jonathan T. Barron`, `Ren Ng`  **]**  
 **[** _`meta-learning`_ **]**  
 
@@ -1083,7 +1083,7 @@ learning generalized templates comprised of elements
 ---
 
 **`"Deep Optimized Priors for 3D Shape Modeling and Reconstruction"`**  
-**[** `2021` **]** **[[paper]](https://arxiv.org/pdf/2012.07241.pdf)**  **[** :mortar_board: `南方科技大学`, **]** **[** :office: `Tencent America` **]**  
+**[** `arXiv2020` **]** **[[paper]](https://arxiv.org/pdf/2012.07241.pdf)**  **[** :mortar_board: `南方科技大学`, **]** **[** :office: `Tencent America` **]**  
 **[**  `Mingyue Yang`, `Yuxin Wen`, `Weikai Chen`, `Yongwei Chen`, `Kui Jia贾奎`  **]**  
 **[** _`better shape priors`_ **]**  
 
@@ -1099,7 +1099,7 @@ learning generalized templates comprised of elements
 ---
 
 **`"Iso-Points: Optimizing Neural Implicit Surfaces with Hybrid Representations"`**  
-**[** `2020` **]** **[[paper]](https://arxiv.org/pdf/2012.06434.pdf)** **[[web]](https://yifita.github.io/project/neural-shape/)** **[** :mortar_board: `ETH`, `cambridge` **]**   
+**[** `arXiv2020` **]** **[[paper]](https://arxiv.org/pdf/2012.06434.pdf)** **[[web]](https://yifita.github.io/project/neural-shape/)** **[** :mortar_board: `ETH`, `cambridge` **]**   
 **[**  `Wang Yifan`, `Shihao Wu`, `Cengiz Oztireli`, `Olga Sorkine-Hornung`  **]**  
 **[** _`iso-points`, `hybrid representation`, `SDF`_ **]**  
 

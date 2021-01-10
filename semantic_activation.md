@@ -1,3 +1,10 @@
+---
+note_type: paper_reading
+title: semantic acvitation
+title_cn: 语义激活思路来源
+not_published: true
+---
+
 * TOC
 {:toc}
 
