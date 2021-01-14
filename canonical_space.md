@@ -63,3 +63,5 @@ title_cn: 标准正视图空间的有关研究
 
 - GIRAFFE
 - spectralGAN
+- Deep Implicit Templates for 3D Shape Representation
+  - 文中的regularizations loss中的point-wise regularizations，通过惩罚变形场前后的整体的位置变化，保证尽量学到一种所有shape统一、和canonical pose对齐的表征

@@ -11,6 +11,12 @@ title_cn: 正则化基础讨论
 
  - regularization：改进问题的conditioning；把问题从ill-posed变成well-posed
 
+## L0-norm
+
+ - $$\exp^{-\alpha x}, \quad \text{where} \; \alpha \gg 1$$
+    - 接近信号与系统中的冲激函数：$$x=0$$时取1，x离0稍微远一点函数值取0
+    - e.g.  *Deformed Implicit Field: Modeling 3D Shapes with Learned Dense Correspondence*的SDF loss中的一项：对SDF训练过程中靠近表面的非表面点的惩罚
+
 ## math
 
 ### Laplace–Beltrami operator
@@ -71,6 +77,6 @@ title_cn: 正则化基础讨论
     - 定义*W*是graph的权重矩阵，其中$$W_{ij}$$是输入数据点$$x_i$$和$$x_j$$之间的距离度量
     - 定义*D*是对角阵：$$D=\sum_{j=1}^{\mathcal{l}+u}W_{ij}$$
     - 定义*L*为$$L=D-W$$即为拉普拉斯矩阵
-    - 当数据点的个数$$\mathcal{l}+u$$逐渐增加时，矩阵$$L$$就可以收敛到`Laplace–Beltrami operator`拉普拉斯-贝尔特拉米算子$$\Delta_M$$ (推广到一般曲面、黎曼流形、伪黎曼流形的拉普拉斯算子)，即梯度的`散度`
+    - 当数据点的个数$$\mathcal{l}+u$$逐渐增加时，矩阵$$L$$就可以收敛到`Laplace–Beltrami operator`拉普拉斯-贝尔特拉米算子$$\Delta_M$$ (推广到一般曲面、黎曼流形、伪黎曼流形的拉普拉斯算子)，即梯度的`散度`
     - 定义$$\boldsymbol{\rm f}$$为函数$$f$$在这些数据点上的函数值$$\boldsymbol{\rm f}=[f(x_1), \ldots,f(x_{\mathcal{l}+u})]^{\top}$$
     - 则这个intrinsic norm可以这样被估计：<br>$$\lVert f \rVert^2_I=\frac {1}{(\mathcal{l}+u)^2} \boldsymbol{\rm f}^{\top}L\boldsymbol{\rm f}$$

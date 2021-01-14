@@ -757,7 +757,7 @@ learning generalized templates comprised of elements
 ---
 
 **`"DUDE: Deep Unsigned Distance Embeddings for Hi-Fidelity Representation of Complex 3D Surfaces"`**  
-**[** `2021` **]** **[[paper]]** **[[code]]** **[** :mortar_board: `CMU` **]** **[** :office: `Verisk Analytics` **]**  
+**[** `arxiv2020` **]** **[[paper]](https://arxiv.org/pdf/2011.02570)** **[[code]]** **[** :mortar_board: `CMU` **]** **[** :office: `Verisk Analytics` **]**  
 **[**  `Rahul Venkatesh`, `Sarthak Sharma`, `Aurobrata Ghosh`, `Laszlo Jeni`, `Maneesh Singh`  **]**  
 **[** _`unsigned distance field`, `normal vector field`, `open topogoly surfaces`_ **]**  
 
@@ -831,6 +831,9 @@ learning generalized templates comprised of elements
   - $$\underset{\{\alpha_j\}, \Psi, T }{\arg\min} L_{sdf} + w_1 L_{normal}+w_2 L_{smooth}+w_3 L_c + w_4 L_{reg}$$，<br>$$L_{sdf}$$中的4项：3e3, 1e2, 5e1, 5e2<br>$$w_1=1{\rm e}2, w_2=\{1,2,5\}, w_3=\{1{\rm e}2, 5{\rm e}1\}, w_4 = 1{\rm e}2$$
 - **相关性 uncertainty measurement**
   - 两个物体$$\mathcal{O}_i$$和 $$\mathcal{O}_j$$之间的 `相关性` 可以通过在 `template space`中进行 **`最近邻搜索`** 来建立；
+    - [ ] Q: 最近邻不会出现错误的相关性么？
+      - 考虑应该尽量鼓励标量修正为0，主要通过位置修正，当出现因结构改变而发生的实在无法反映的形状变化时，才用标量修正
+      - 文中的`minimum correction prior`已经在做这个事
   - 假设物体$$\mathcal{O}_i$$（表面）上一点$$p_i$$，通过最近邻搜索找到了点$$p_i$$在物体$$\mathcal{O}_j$$上`相关`的（表面上的）一点$$p_j$$
     - 那么二者之间相关性的不确定性可以通过一个simple yet surprisingly-effective的uncertainty metric评估：
     - $$u(p_i,p_j)=1-\exp(-\gamma \lVert (p_i+v_i) - (p_j+v_j) \rVert_2^2)$$
@@ -842,9 +845,9 @@ learning generalized templates comprised of elements
   - label transfer：可以看到对于 椅子把 这种时有时无的结构也可以handle<br>![image-20201222155611605](media/image-20201222155611605.png)
 - **Ablation study / discussions**
   - 单纯的位置修正就已经可以构成变形场；但是本篇发现，仅仅位置修正不够，加入标量修正可以：
-    - 加入标量修正对生成所需shape有帮助
+    - ① 加入标量修正对生成所需shape有帮助
       - <img src="media/image-20210104165611897.png" alt="image-20210104165611897" />
-    - 实验发现 **<u>加入标量修正对于学习高质量的相关性也很重要</u>**
+    - ② 实验发现 **<u>加入标量修正对于学习高质量的相关性也很重要</u>**
       - [ ] Q: why ? <br>试图解释：标量修正可以控制形状的一部分 特征： `膨胀`？`结构/拓扑改变`？，从而更容易学到简单、plausible的对应关系？
         - [ ] Q: 类似CGAN中，用一个随机噪声z控制一些`"不想要"`的特征？
         - [ ] Q: 除了标量修正这种控制`"额外"`/`"不想要"`的特征的方式以外，可否设法引入其他方式控制其他`"不想要"`的特征？
@@ -878,7 +881,11 @@ learning generalized templates comprised of elements
     - 对于模板的理解与deformed implicit field 完全不同：
       - deformed implicit field认为模板是一种对类别中形状公共捕捉/"存储"，甚至模板本身不一定是一个valid SDF
       - 本篇认为模板就是一个valid shape，甚至可以选择数据集中的某个具体物体形状作为模板（`user defined templates`）
-  - 因为有很多谨慎的设计（1. 使用LSTM warp而不是MLP warp 2.对canonical的正则化 3. 对空间扭曲的正则化），从transfer的效果上看要比deformed implicit field好一些？
+    - :pushpin: 对于`structure discrepancy`结构差异性的考虑，**<u>本篇不如deformed implicit field.</u>**
+      - deformed implicit field有考虑用一个标量修正来cover一定的结构修改；位置修正只包括形状修改
+      - 而本篇把结构修改和几何修改全部都用位置变化来cover
+        - 比如下图，仔细看最上面一行chair的关键点，其实就是有问题的：最左边的chair，黄色的点是【可以坐的区域 / 椅面的边缘】，而最右边的chair，黄色的点是【沙发把手的边缘】；这显然**<u>在语义上就不是相关的两个点</u>**<br>![image-20210111155948737](media/image-20210111155948737.png)
+  - ~~因为有很多谨慎的设计（1. 使用LSTM warp而不是MLP warp 2.对canonical的正则化 3. 对空间扭曲的正则化），从transfer的效果上看要比deformed implicit field好一些？~~ <br>效果不如deformed implicit field
 
 | 本篇：Deep Implicit Templates for 3D Shape Representation的transfer效果 | deformed implicit field的transfer效果                        |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -914,9 +921,11 @@ learning generalized templates comprised of elements
       - ![image-20201229175034719](media/image-20201229175034719.png)
     - **regularization loss**
       - <u>point-wise regularization</u> 
-        - 认为所有meshes都normlized 到一个`单位球`，并和`canonical pose`对齐
+        - 认为 **<u>所有</u>** meshes都normlized 到一个`单位球`，并和`canonical pose`对齐
+        - 因此，引入一个逐点的loss，通过 ==**<u>约束每个点的在warping前后的变化</u>**== 来实现这种正则化
         - ![image-20201229175243291](media/image-20201229175243291.png)
-        - [Huber kernel](https://en.wikipedia.org/wiki/Huber_loss)
+        - [ ] [Huber kernel](https://en.wikipedia.org/wiki/Huber_loss)：原点附近是二次函数，以外是线性函数
+        - [ ] Q: 这样似乎只能保证canonical pose对齐，并不能保证canonical space具有单位大小
       - <u>point pair regularization</u> 对空间扭曲程度的限制
         - 尽管deform时空间扭曲是不可避免的，极端的空间扭曲还是可以避免的
         - ![image-20201229175618093](media/image-20201229175618093.png)

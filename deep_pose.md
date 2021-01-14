@@ -31,7 +31,7 @@ title_cn: 刚体姿态相关的数学与DL类方法
 
 **`"DPOD: 6D Pose Object Detector and Refiner"`**  
 **[** `ICCV2019` **]** **[[paper]](https://arxiv.org/pdf/1902.11020v3.pdf)** **[[code]](https://github.com/yshah43/DPOD)** **[** :mortar_board: `TUM` **]** **[** :office: `Siemens Corporate Technology` **]**  
-**[**  `Sergey Zakharov`,`Ivan Shugurov`,`Slobodan Ilic`  **]**  
+**[**  `Sergey Zakharov`, `Ivan Shugurov`, `Slobodan Ilic`  **]**  
 **[** _`6D pose esimation [2020 SOTA]`, `correspondence`_ **]**  
 
 [思考：虽然我们的生成模型用不上这里的一些计算设定方式，但是在图定位的时候这个会很有用]
@@ -110,7 +110,7 @@ title_cn: 刚体姿态相关的数学与DL类方法
 
 **` < 109被引 > "3D Pose Regression Using Convolutional Neural Networks"`**  
 **[** `ICCV2017` **]** **[[paper]](https://openaccess.thecvf.com/content_ICCV_2017_workshops/papers/w31/Mahendran_3D_Pose_Regression_ICCV_2017_paper.pdf)**  **[** :mortar_board: `JHU` **]**   
-**[**  `Siddharth Mahendran，Haider Ali，Rene Vidal  `  **]**  
+**[**  `Siddharth Mahendran`, `Haider Ali`, `Rene Vidal`  **]**  
 **[** _`abcd`, `efgh`_ **]**  
 
 [ 3D pose estimation，其实只考虑旋转角，没有考虑位移 ]
@@ -170,10 +170,9 @@ title_cn: 刚体姿态相关的数学与DL类方法
 
 ---
 
-**`< not deep > "Regression of 3D Rigid Transformations on Real-Valued Vectors in
-Closed Form"`**  
-**[** `0000` **]** **[[paper]]** **[[code]]** **[** :mortar_board: `University` **]** **[** :office: `company` **]**  
-**[**  `xxxx`  **]**  
+**`<not deep> "Regression of 3D Rigid Transformations on Real-Valued Vectors in Closed Form"`**  
+**[** `ICRA2017` **]** **[[paper]](https://ieeexplore.ieee.org/document/7989757)** **[[code]]** **[** :mortar_board: `NAIST(Japan)`, `Kyoto University京都大学`, `Kwansei Gakuin University関西学院大学` **]**  
+**[**  `Takuya Funatomi`, `Masaaki Iiyama`, `Koh Kakusho`, `Michihiko Minoh` **]**  
 **[** _`abcd`, `efgh`_ **]**  
 
 <details markdown="1">
@@ -203,8 +202,8 @@ Closed Form"`**
 ---
 
 **`"Semantic Graph Convolutional Networks for 3D Human Pose Regression"`**  
-**[** `2019` **]** **[[paper]]** **[[code]]** **[** :mortar_board: `Rutgers University`,`Binghamton University` **]**  
-**[**  `Long Zhao`,`Dimitris N. Metaxas`  **]**  
+**[** `CVPR2019` **]** **[[paper]](https://openaccess.thecvf.com/content_CVPR_2019/papers/Zhao_Semantic_Graph_Convolutional_Networks_for_3D_Human_Pose_Regression_CVPR_2019_paper.pdf)** **[[code]](https://github.com/garyzhao/SemGCN)** **[** :mortar_board: `Rutgers University`,`Binghamton University` **]**  
+**[**  `Long Zhao`, `Xi Peng`, `Yu Tian`, `Mubbasir Kapadia`, `Dimitris N. Metaxas`  **]**  
 **[** _`abcd`, `efgh`_ **]**  
 
 <details markdown="1">
@@ -228,8 +227,8 @@ Closed Form"`**
 
 **`"Explaining the Ambiguity of Object Detection and 6D Pose From Visual Data"`**  
 **[** `ICCV2019` **]** **[[paper]](https://openaccess.thecvf.com/content_ICCV_2019/papers/Manhardt_Explaining_the_Ambiguity_of_Object_Detection_and_6D_Pose_From_ICCV_2019_paper.pdf)**  **[** :mortar_board: `TUM`, `Oxford`, `Stanford` **]** **[** :office: `Huawei`, `Google` **]**  
-**[**  `Fabian Manhardt`  **]**  
-**[** _`Ambiguity`, `efgh`_ **]**  
+**[**  `Fabian Manhardt`, `Diego Martin Arroyo`, `Christian Rupprecht`, `Benjamin Busam`, `Tolga Birdal`, `Nassir Navab`, `Federico Tombari`  **]**  
+**[** _`pose ambiguity`_ **]**  
 
 []
 

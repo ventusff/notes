@@ -295,7 +295,7 @@ graph LR
 ---
 
 **`"Stacked Capsule Autoencoders"`**  
-**[** `NeurIPS2019` **]** **[[paper]]** **[[code]]** **[** :mortar_board: `Oxford` **]** **[** :office: `Google Brain`, `DeepMind` **]**  
+**[** `NeurIPS2019` **]** **[[paper]](https://papers.nips.cc/paper/2019/file/2e0d41e02c5be4668ec1b0730b3346a8-Paper.pdf)** **[[code]](https://github.com/phanideepgampa/stacked-capsule-networks)** **[** :mortar_board: `Oxford` **]** **[** :office: `Google Brain`, `DeepMind` **]**  
 **[**  `Adam R. Kosiorek`, `Sara Sabour`, `Yee Whye Teh`, `Geoffrey E. Hinton`  **]**  
 **[** _`capsule networks`_ **]**  
 
