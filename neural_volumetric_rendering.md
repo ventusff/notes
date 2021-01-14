@@ -63,7 +63,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 ---
 
 **`"DeRF: Decomposed Radiance Fields"`**  
-**[** `arXiv2020` **]** **[[paper]](https://arxiv.org/pdf/2011.12490.pdf)** **[[code]]** **[** :mortar_board: `University`, `SFU`, `University of Toronto` **]** **[** :office: `Google` **]**  
+**[** `arXiv2020` **]** **[[paper]](https://arxiv.org/pdf/2011.12490.pdf)** **[[code]]** **[[web]](https://ubc-vision.github.io/derf/)** **[** :mortar_board: `University`, `SFU`, `University of Toronto` **]** **[** :office: `Google` **]**  
 **[**  `Daniel Rebain`, `Wei Jiang`, `Soroosh Yazdani`, `Ke Li`, `Kwang Moo Yi`, `Andrea Tagliasacchi`  **]**  
 **[** _`voronoi space decomposition`_ **]**  
 
@@ -160,6 +160,9 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 
 <details markdown="1">
   <summary markdown="0">Click to expand</summary>
+| ![nerf++_truck](media/nerf++_truck.gif) | ![nerf++_playground](media/nerf++_playground.gif) |
+| --------------------------------------- | ------------------------------------------------- |
+|                                         |                                                   |
 
 - **Motivation**
   - 面对unbounded scenes时，用一种球内 / 球外$$\frac {1}{r}$$的参数化来更好的处理foreground / background
@@ -186,6 +189,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
     >
     > **因为2D GAN缺少对3D世界的理解；缺少图像生成过程的理解，所以不能提供对于camera viewpoint和物体pose的精确控制**。
   - 使用连续表征neural radiance filed
+    
     - 从location x, view direction d映射到color c 和 体素密度$$\sigma$$
   - 数据集使用unposed RGB images
 
@@ -253,7 +257,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 
 ---
 
-**`"Neural Scene Flow Fields for Space-Time View Synthesis of Dynamic Scenes"`**  
+**`<NSFF>"Neural Scene Flow Fields for Space-Time View Synthesis of Dynamic Scenes"`**  
 **[** `arXiv2020` **]** **[[paper]](https://arxiv.org/pdf/2011.13084)** **[[supp]](http://www.cs.cornell.edu/~zl548/NSFF/NSFF_supp.pdf)** **[[code]]** **[[web]](http://www.cs.cornell.edu/~zl548/NSFF/)** **[** :mortar_board: `Cornell Tech`,  **]** **[** :office: `Adobe` **]**  
 **[**  `Zhengqi Li`, `Simon Niklaus`, `Noah Snavely`, `Oliver Wang`  **]**  
 **[** _`abcd`_ **]**  
@@ -267,7 +271,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 
 ---
 
-**`"Space-time Neural Irradiance Fields for Free-Viewpoint Video"`**  
+**`<video-nerf>"Space-time Neural Irradiance Fields for Free-Viewpoint Video"`**  
 **[** `arXiv2020` **]** **[[paper]](https://arxiv.org/pdf/2011.12950.pdf)** **[[code]]** **[[web]](https://video-nerf.github.io/)** **[** :mortar_board: `Cornell Tech`, `Virginia Tech` **]** **[** :office: `Facebook` **]**  
 **[**  `Wenqi Xian`, `Jia-Bin Huang`, `Johannes Kopf`, `Changil Kim`  **]**  
 **[** _`abcd`_ **]**  
@@ -281,7 +285,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 
 ---
 
-**`"Neural Radiance Flow for 4D View Synthesis and Video Processing"`**  
+**`<nerflow>"Neural Radiance Flow for 4D View Synthesis and Video Processing"`**  
 **[** `arXiv2020` **]** **[[paper]](https://arxiv.org/pdf/2012.09790.pdf)** **[[code]]** **[[web]](https://yilundu.github.io/nerflow/)** **[** :mortar_board: `MIT`, `Stanford` **]**   
 **[**  `Yilun Du`, `Yinan Zhang`, `Hong-Xing Yu`, `Joshua B. Tenenbaum`, `Jiajun Wu`  **]**  
 **[** _`abcd`_ **]**  
@@ -293,16 +297,129 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 
 </details>
 
+---
+
+**`<NR-NeRF> "Non-Rigid Neural Radiance Fields: Reconstruction and Novel View Synthesis of a Deforming Scene from Monocular Video"`**  
+**[** `arXiv2020` **]** **[[paper]](https://arxiv.org/pdf/2012.12247.pdf)** **[[code]](https://github.com/facebookresearch/nonrigid_nerf)** **[[web]](https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/)** **[** :mortar_board: `MPI`**]** **[** :office: `Facebook` **]**  
+**[**  `Edgar Tretschk`, `Ayush Tewari`, `Vladislav Golyanik`, `Michael Zollhöfer`, `Christoph Lassner`, `Christian Theobalt`  **]**  
+**[** _`rigidity score`, `divergence loss`, `dynamic/deforming scenes decoupling`, `canonical NeRF volume`, `spatial deformation`_ **]**  
+
+<details markdown="1">
+  <summary markdown="0">Click to expand</summary>
+
+- 贡献/结论：
+  - 消费者级的相机就足够合成简单、短时场景的让人信服的bullet-time videos ；单目视频的free viewpoint rendering，将场景解耦为静态表征和变形
+  - 表征允许视野、时间之间的相关性估计
+  - 提供场景中每个点的`rigidity score`刚性评分；一个rigidity network来吧场景分为非刚体前景和刚体背景，没有直接监督信号
+- **Motivation**
+  - 用非刚体（**可形变的**）**nerf**来表征一个包含**动态可变物体**的**视频**<br>通过ray bending来重建一个一般的非刚体场景的NeRF
+  - 输入一张正在变形的物体的RGB图片，学到它的**几何**和**外观**表征，并且可以重建任何timestep下的novel camera view下的物体图片
+  - task：`free viewpoint rendering`自由视野渲染，针对`dynamic scenes`动态场景（随时间变化的场景）
+    - 过去需要多视角的captures，但是这样的多视角方案是昂贵的、繁琐的
+    - 希望用户只用消费者级的相机，monocular
+    - 方法不仅适用于现在拍的视频，还适用于过去久远以前拍的视频，制造`immersive`更有沉浸感的体验
+  - `monocular video for dynamic/deforming scenes`是一个严重`under-constrained`欠约束问题
+    - 过去的方法限制在单物体类别，如人体
+    - 过去的方法只重建非刚性物体的`geometry`形状/几何，不关注外观
+  - ![nr-nerf-example](media/nr-nerf-example.gif)
+- **overview**
+  - ![image-20210114085225599](media/image-20210114085225599.png)
+  - 并没有显式的cover时间信息
+  - 把非刚体场景表征为两个components的组合，并且在观测上一起训练；整个方法都是自监督/无监督的
+    - 一个canonical NeRF volume，表达几何与外观
+      - 没有直接supervised，是场景的static表征
+    - 场景的变形
+      - 使用估计的场景变形把canonical NeRF volume变形到每张图片
+      - :pushpin: 由于场景的**`vometric nature`**，本篇选择的是`space deformations`，而不是mesh-based的方法的`surface deformations`表面变形
+        - 变形的是entire space，和camera view无关；因此可以做novel view synthesis
+      - :pushpin: 场景变形表征为ray bending；是互补的路线，instead of 从canonical volume变形到直线camera ray上，本篇是从camera ray上的点变形到canonical volume中
+        - 笔者评价：前面两点和DIF, DIT两篇论文的设定都十分类似
+        - ray bending 用MLP参数化
+          - 输入射线上的点坐标；输入**每张图片(per-time-step)**的一个latent code
+          - 变形code是每帧一个code
+      - 从视频场景的几何中解耦变形是一种under-constrained问题；
+        - 在canonical volume中的每一个点分配一个刚性评分；使得变形不影响场景的静态区域
+          - 这个同样也是联合训练，没有直接监督信号
+        - 引入sparsity regularizer作为软约束
+          - 加权了；主要鼓励在visible, occupied regions的sparsity
+        - 引入local shape preserving regularizer，试图保留变形场景的局部volume，通过最小化变形的`divergence`散度
+          - 加权了；hidden regions则被散度正则化约束
+  - NeRF：去掉了view-depend 效应的NeRF
+- **deformation model 变形的模型**：ray bending / space warping
+  - 回归空间中一点在变形code condition下的offset：即，是`displacement vector field`估计的是位移向量场函数
+    - $$(c,o)=v(x+b(x,l_i))$$，其中$$b(x,l_i)$$是变形后的在canonical space下的坐标，$$l_i$$是变形code，$$v$$是canonical NeRF函数
+    - 把每条直线$$\overline{r}$$变形后的版本表示为$$\tilde{\rm r}_{l_i}(j)=\overline{\rm r}(j)+b(\overline{\rm r}(j), l_i)$$
+  - `rigidity network` 刚性网络
+    - 实践中发现场景的刚性部分没有被充足地约束；
+    - 将$$b(x,l_i)$$表达为一个raw offset + rigidity mask：$$b(x,l_i)=r(x)b'(x,l_i)$$
+    - 想要防止在场景中的刚性区域也变形，因此这些地方刚性mask $$r(x)=0$$，而在非刚性区域$$r(x)\gt 0$$
+    - 这使得b能够更专注于场景中的非刚性区域
+    - :pushpin:笔者评价：
+      - 这里的思路和DIF论文中的位置改变函数和标量场改变函数有些类似；整个场景并不都有变形，在DIF中的情况是物体有时候会有`structure discrepancy`在结构上的不同、无法用变形建模，而在本篇中的情况是整个空间区域中只有一部分是非刚体；
+      - 思路都是类似的，instead of 直接对整个场景变形，多用一个量来反馈一些其他的非变形的信息
+    - 这个rigidity network同canonical nerf、变形code变形网络一起，都是jointly learned
+- **losses**
+  - 考虑单个时间步 $$i$$ ，单条直线ray $$\overline{\rm r}$$ <br>射线上在<u>均匀采样</u>的$$j \in [j_n, j_f]$$处的`coarse ray points` $$\overline{C}=\{ \overline{\rm r}(j) \}_{j\in C}$$<br>射线上在`importance sampling`<u>重要度采样</u>的 $$j$$ 处的`fine ray points` $$\overline{F}=\{\overline{\rm r}(j) \}_{j \in F}$$ <br>对于一个隐变形code $$l$$，弯曲后的射线 $$\tilde{\rm r}_l$$ 给出 $$\tilde{C}=\{ \tilde{\rm r}(j) \}_{j \in C}$$ 与 $$\tilde{F}=\{\tilde{\rm r}(j) \}_{j \in F}$$
+    - :pushpin: 既用均匀采样的coarse points，也用重要度采样的fine points
+  - **reconstruction loss** 重建loss
+    - $$L_{data}=\lVert c_{c}(\tilde{C}) - \hat{c}({\rm r}) \rVert_2^2 + \lVert c_f(\tilde{C} \cup \tilde{F}) - \hat{c}({\rm r}) \rVert_2^2$$
+      - 其中 $$\hat{c}({\rm r})$$是颜色真值
+  - **offset loss** 通过sparsity loss约束变形的Offset：希望Offset场在空间中是稀疏的
+    - 希望空气是`compressible`可压缩的、不阻碍最优化过程，对每个点用其`occupancy`占用度加权
+    - 然而，这还是会对hidden ray points加很大的权；导致渲染novel views时存在严重的artifacts；因此额外用`visibility`可见性加权
+    - $$L_{offsets}=\frac{1}{\lvert C \rvert} \underset{j\in C}{\sum}w_j \cdot \left(   \Vert b'(\overline{\rm r}(j),l) \rVert_2 \; + \; \omega_{\rm rigidity}r(\overline{\rm r}(j)) \right)$$
+      - 注意，罗马体的 $$\rm r$$ 代表射线，$$\overline{\rm r}(j)$$是直线ray上的一点，斜体的 $$r$$ 代表rigidity network
+      - 每个点都用visibility、occupancy加权：$$w_j=V(j) \cdot o(\tilde{\rm r}(j))$$；:warning:并不会对$$w_j$$反向传播
+      - 这个Loss有两个优势：
+        - 梯度和offset的大小无关，或大或小的offsets/motions被同等对待；不像L2 loss那样
+          - [ ] Q: what?
+        - 相对于一个L2 loss，它鼓励的是offsets field中的稀疏性，适应本篇提到的场景
+  - **divergence loss** 散度loss
+    - offsets loss只约束可见区域，因此引入一个额外的散度正则化来约束`hidden`不可见区域
+    - inpired by: CG领域中local, `isometric`等距/等测度 的形状保留方法，比如对表面的as-rigid-as-possible正则化或者volume preservation方法，**本篇寻求在变形后仍然保留局部的shape**
+    - [`Helmholtz decomposition`亥姆霍兹分解](https://en.wikipedia.org/wiki/Helmholtz_decomposition) 可以把任何二阶可微分的向量场分解为 一个没有旋转(无旋度)的向量场 和 没有散度的向量场的加和；
+      - [x] Q: what?
+    - 因此，通过惩罚散度，就可以鼓励向量场尽可能主要由平动和旋转和构成，有效地保留volume
+    - $$L_{divergence}=\frac{1}{\lvert C \rvert} \underset{j\in C}{\sum} w'_j \cdot \lvert {\rm div}(b(\overline{\rm r}(j), l)) \rvert$$
+      - 其中 $$w'_j=o(\tilde{\rm r}(j))$$ 不被反向传播，$$\rm div$$ 代表 $$b$$ 相对于位置 $$\overline{\rm r}(j)$$ 处的散度
+  - **view dependence**
+    - 如果要考虑对 view 方向的依赖性的话，需要考虑 view 方向的变形
+    - 有两种计算方法：
+      - slower and exact
+        - $$\nabla_j \tilde{\rm r}(j)=\frac{\partial \tilde{\rm r}(j)}{\partial \overline{\rm r}(j)} \cdot \frac{\partial \overline{\rm r}(j)}{\partial j} = J \cdot d$$
+        - 其中$$J$$是$$3 \times 3$$的雅克比矩阵，$$d$$是直线射线的方向
+        - 通过3个方向传播来计算$$J$$，比较耗时
+      - faster and approximate
+        - 通过有限差分来近似弯曲后的ray的方向
+- **results**
+  - ![image-20210114104442878](media/image-20210114104442878.png)
+
+</details>
+
 
 ## compositional
 
- - GIRAFFE
-    - **review**
-       - 用neural rendering“避开”了多物体lighting的显式建模
+---
+
+:pushpin:**`"GIRAFFE: Representing Scenes as Compositional Generative Neural Feature Fields"`**  
+**[** `arXiv2020` **]** **[[paper]](https://arxiv.org/pdf/2011.12100)** **[[code]]** **[[web]]** **[** :mortar_board: `MPI`, `University of Tübingen` **]**   
+**[**  `Michael Niemeyer`, `Andreas Geiger`  **]**  
+**[** _`abcd`_ **]**  
+
+<details markdown="1">
+  <summary markdown="0">Click to expand</summary>
+
+- **review**
+  - 用neural rendering "避开"了多物体lighting的显式建模
+- **Motivation**
+- **overview**
+  - ![image-20210111204452418](media/image-20210111204452418.png)
+
+</details>
 
 ---
 
-**`"Object-Centric Neural Scene Rendering"`**  
+**`<OSF>"Object-Centric Neural Scene Rendering"`**  
 **[** `arXiv2020` **]** **[[paper]](https://arxiv.org/pdf/2012.08503.pdf)** **[[code]]** **[[web]](https://shellguo.com/osf/)** **[** :mortar_board: `Stanford` **]** **[** :office: `Google` **]**  
 **[**  `Michelle Guo`, `Alireza Fathi`, `Jiajun Wu`, `Thomas Funkhouser`  **]**  
 **[** _`object-centric neural scattering functions`_ **]**  
@@ -315,7 +432,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
   - 物体pose都是真值
 - **Motivation**
   - ![image-20201221161533104](media/image-20201221161533104.png)
-  - OSF(object-centric neural scattering functions) models per-object light transport
+  - **OSF**(object-centric neural scattering functions) models per-object light transport
   - modeling dynamic scene：物体在移动/有无，光源在移动
 - **Review**
   - 相比于GIRAFFE，把多物体的光照、反射等处理地很好了；GIRAFFE是用neural rendering逃避了显式地建模光照和多物体透射反射，这篇文章直面难题，类似Neural Reflectance Field
@@ -506,7 +623,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 ---
 
 **`"Fourier Features Let Networks Learn High Frequency Functions in Low Dimensional Domains"`**  
-**[** `NeurIPS2020` **]** **[[paper]]** **[[code]]** **[** :mortar_board: `UCB`, `UCSD` **]** **[** :office: `Google` **]**  
+**[** `NeurIPS2020` **]** **[[paper]](https://arxiv.org/pdf/2006.10739)** **[[code-unofficial-SIREN-modified]](https://github.com/GlassyWing/fourier-feature-networks)** **[** :mortar_board: `UCB`, `UCSD` **]** **[** :office: `Google` **]**  
 **[**  `Matthew Tancik`, `Pratul P. Srinivasan`, `Ben Mildenhall`, `Sara Fridovich-Keil`, `Nithin Raghavan`, `Utkarsh Singhal`, `Ravi Ramamoorthi`, `Jonathan T. Barron`, `Ren Ng`  **]**  
 **[** _`fourier features`_ **]**  
 
