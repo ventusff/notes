@@ -160,6 +160,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 
 <details markdown="1">
   <summary markdown="0">Click to expand</summary>
+
 | ![nerf++_truck](media/nerf++_truck.gif) | ![nerf++_playground](media/nerf++_playground.gif) |
 | --------------------------------------- | ------------------------------------------------- |
 |                                         |                                                   |
@@ -189,7 +190,6 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
     >
     > **因为2D GAN缺少对3D世界的理解；缺少图像生成过程的理解，所以不能提供对于camera viewpoint和物体pose的精确控制**。
   - 使用连续表征neural radiance filed
-    
     - 从location x, view direction d映射到color c 和 体素密度$$\sigma$$
   - 数据集使用unposed RGB images
 
@@ -302,7 +302,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 **`<NR-NeRF> "Non-Rigid Neural Radiance Fields: Reconstruction and Novel View Synthesis of a Deforming Scene from Monocular Video"`**  
 **[** `arXiv2020` **]** **[[paper]](https://arxiv.org/pdf/2012.12247.pdf)** **[[code]](https://github.com/facebookresearch/nonrigid_nerf)** **[[web]](https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/)** **[** :mortar_board: `MPI`**]** **[** :office: `Facebook` **]**  
 **[**  `Edgar Tretschk`, `Ayush Tewari`, `Vladislav Golyanik`, `Michael Zollhöfer`, `Christoph Lassner`, `Christian Theobalt`  **]**  
-**[** _`rigidity score`, `divergence loss`, `dynamic/deforming scenes decoupling`, `canonical NeRF volume`, `spatial deformation`_ **]**  
+**[** _`rigidity score`, `divergence loss`, `dynamic/deforming scenes decoupling`, `canonical NeRF volume`, `spatial deformation`_ **]**  
 
 <details markdown="1">
   <summary markdown="0">Click to expand</summary>
@@ -310,7 +310,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 - 贡献/结论：
   - 消费者级的相机就足够合成简单、短时场景的让人信服的bullet-time videos ；单目视频的free viewpoint rendering，将场景解耦为静态表征和变形
   - 表征允许视野、时间之间的相关性估计
-  - 提供场景中每个点的`rigidity score`刚性评分；一个rigidity network来吧场景分为非刚体前景和刚体背景，没有直接监督信号
+  - 提供场景中每个点的`rigidity score`刚性评分；一个rigidity network来吧场景分为非刚体前景和刚体背景，没有直接监督信号；是一种空间场中的连续加权和，不是显著的离散划分
 - **Motivation**
   - 用非刚体（**可形变的**）**nerf**来表征一个包含**动态可变物体**的**视频**<br>通过ray bending来重建一个一般的非刚体场景的NeRF
   - 输入一张正在变形的物体的RGB图片，学到它的**几何**和**外观**表征，并且可以重建任何timestep下的novel camera view下的物体图片

@@ -790,7 +790,7 @@ learning generalized templates comprised of elements
 
 - **Motivation**
   - 把每个具体instance shape表达为一个template的shape的deformation
-  - 用deformation field建立起 **`<u>shape correspondence</u>`**，这样就可以做texture transfer、label transfer等
+  - 用deformation field建立起 **<u>`shape correspondence`</u>**，这样就可以做texture transfer、label transfer等
   - ![image-20201222155438709](media/image-20201222155438709.png)
 - **overview**
   - 用一个超网络从code预测DeformNet $$D$$的参数；<br>然后在空间中的每一处，从同一个template SDF，DeformNet $$D$$产生位置修正$$v$$与标量距离修正$$\Delta s$$，总共4维输出<br>即最终的$$p$$点处的SDF值为：$$s=T(p+v)+\Delta s=T(p+D^v_{\omega}(p))+D^{\Delta s}_{\omega}(p)$$<br>注意变形向量$$v$$其实反映的是从shape instance场 到 template 场所需的变形向量<br>![image-20201222153322051](media/image-20201222153322051.png)
@@ -881,11 +881,11 @@ learning generalized templates comprised of elements
     - 对于模板的理解与deformed implicit field 完全不同：
       - deformed implicit field认为模板是一种对类别中形状公共捕捉/"存储"，甚至模板本身不一定是一个valid SDF
       - 本篇认为模板就是一个valid shape，甚至可以选择数据集中的某个具体物体形状作为模板（`user defined templates`）
-    - :pushpin: 对于`structure discrepancy`结构差异性的考虑，**<u>本篇不如deformed implicit field.</u>**
+    - :pushpin: 对于`structure discrepancy`结构差异性的考虑，**<u>本篇不如deformed implicit field.</u>**
       - deformed implicit field有考虑用一个标量修正来cover一定的结构修改；位置修正只包括形状修改
       - 而本篇把结构修改和几何修改全部都用位置变化来cover
         - 比如下图，仔细看最上面一行chair的关键点，其实就是有问题的：最左边的chair，黄色的点是【可以坐的区域 / 椅面的边缘】，而最右边的chair，黄色的点是【沙发把手的边缘】；这显然**<u>在语义上就不是相关的两个点</u>**<br>![image-20210111155948737](media/image-20210111155948737.png)
-  - ~~因为有很多谨慎的设计（1. 使用LSTM warp而不是MLP warp 2.对canonical的正则化 3. 对空间扭曲的正则化），从transfer的效果上看要比deformed implicit field好一些？~~ <br>效果不如deformed implicit field
+  - ~~因为有很多谨慎的设计（1. 使用LSTM warp而不是MLP warp 2.对canonical的正则化 3. 对空间扭曲的正则化），从transfer的效果上看要比deformed implicit field好一些？~~ <br>效果不如deformed implicit field
 
 | 本篇：Deep Implicit Templates for 3D Shape Representation的transfer效果 | deformed implicit field的transfer效果                        |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
