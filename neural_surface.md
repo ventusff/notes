@@ -887,10 +887,11 @@ learning generalized templates comprised of elements
         - 比如下图，仔细看最上面一行chair的关键点，其实就是有问题的：最左边的chair，黄色的点是【可以坐的区域 / 椅面的边缘】，而最右边的chair，黄色的点是【沙发把手的边缘】；这显然**<u>在语义上就不是相关的两个点</u>**<br>![image-20210111155948737](media/image-20210111155948737.png)
   - ~~因为有很多谨慎的设计（1. 使用LSTM warp而不是MLP warp 2.对canonical的正则化 3. 对空间扭曲的正则化），从transfer的效果上看要比deformed implicit field好一些？~~ <br>效果不如deformed implicit field
 
-| 本篇：Deep Implicit Templates for 3D Shape Representation的transfer效果 | deformed implicit field的transfer效果                        |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="media/image-20201229180439537.png" alt="image-20201229180439537" /> | ![image-20201229180759966](media/image-20201229180759966.png) |
-| keypoint detection PCK accuracy<br>![image-20210104120316992](media/image-20210104120316992.png) | label transfer IOU banchmark<br>![image-20210104114757341](media/image-20210104114757341.png) |
+|                                        | 本篇：Deep Implicit Templates for 3D Shape Representation    | deformed implicit field                                      |
+| -------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| texture transfer                       | <img src="media/image-20201229180439537.png" alt="image-20201229180439537" /> | ![image-20201229180759966](media/image-20201229180759966.png) |
+| label transfer                         | keypoint detection PCK accuracy<br>![image-20210104120316992](media/image-20210104120316992.png) | label transfer IOU banchmark<br>![image-20210104114757341](media/image-20210104114757341.png) |
+| 细节对比：本篇结果出现了错误的语义对应 | ![image-20210116172741451](media/image-20210116172741451.png)![image-20210116172801005](media/image-20210116172801005.png) | ![image-20210116173201127](media/image-20210116173201127.png) |
 
 
 - **Motivation**
