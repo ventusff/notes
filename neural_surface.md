@@ -196,6 +196,11 @@ title_cn: <strong>形状</strong>[as空间曲面]有关的数学与DL类方法
 
 </details>
 
+## representation for shapes
+
+- 现有的形状表征模型：(a) voxel, (b) pointcloud, (c) mesh, (d) implicit field (occupancy, SDF, inside/outside, etc.) (e) parametric patches. <br>本篇笔记主要考虑implicit field与parametric patches. 
+- ![image-20201203153023230](media/image-20201203153023230.png)
+
 ## learning parametric surface
 
 - keyword

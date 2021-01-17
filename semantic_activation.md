@@ -19,7 +19,6 @@ not_published: true
   - **point-based** representation
     - point set generation network (大多是auto-decoder结构，输出固定个数的点)
     - point cloud generation (GAN)
-    - ![image-20201203153023230](media/image-20201203153023230.png)
   - implicit field/feature + semantic information
   - sitzmann inferring semantic 被引
 
@@ -109,29 +108,6 @@ GANS:
 ## continuous function representation (sampling)
 
 
----
-
-**`"Inferring Semantic Information with 3D Neural Scene Representations"`**  
-**[** `3DV 2020` **]** **[[web]](https://www.computationalimaging.org/publications/semantic-srn/)** **[[paper]](https://arxiv.org/pdf/2003.12673.pdf)**  **[** :mortar_board: `Stanford` **]**  
-**[**  `Amit Kohli`, `Vincent Sitzmann`, `Gordon Wetzstein`  **]**  
-**[** _`multi-modal features`, `semi-supervision`_ **]**  
-
-<details markdown="1">
-  <summary markdown="0">Click to expand</summary>
-
-- **Motivation**
-  
-  - 证明像SRN这样的隐式神经表征也可以包含多模态的信息：外观，形状，语义，*etc.*
-- **OverView**
-- 1. [训练] 正常的类别物体SRN预训练
-    2. [训练] 固定SRN的参数和RGB neural renderer，在<u>已经固定</u>的SRN feature上利用少量的监督数据(如文中只用了30张语义标注好的RGB图片) 训练一个额外的语义分类器
-    3. [测试] 单张RGB图片 ==**<u>and/or</u>**== 单张标注好的语义图片，提取code
-       1. 注意这里的and/or：训练的时候RGB和语义监督信号都有，测试的时候只需要二者之一就足够，不一定全都要
-    4. [测试] 利用第3步提取好的code在更多camera view下render出RGB和语义
-  - ![image-20201203121856589](media/image-20201203121856589.png)
-
-</details>
-
 - occupancy networks: 多分辨率等值面提取技术
 
 ## continuous function representation (ray tracing)
@@ -144,22 +120,26 @@ GANS:
 
 ## implicit field/feature semantic information
 
-## DeepSDF 引用中带label
-
-
 
 ---
 
-**`"Autolabeling 3D Objects with Differentiable Rendering of SDF Shape Priors"`**  
-**[** `CVPR2020` **]** **[[paper]](https://arxiv.org/pdf/1911.11288.pdf)** **[[code]](https://github.com/TRI-ML/sdflabel)** **[[video]](https://www.youtube.com/watch?v=Utzj-kfWHP4)** **[** :mortar_board: `TUM`, `Toyota Research Institute` **]**   
-**[**  `Sergey Zakharov`, `Wadim Kehl`, `Arjun Bhargava`, `Adrien Gaidon`  **]**  
-**[** _`SDF-label`_ **]**  
+**`<semantic-SRN> "Inferring Semantic Information with 3D Neural Scene Representations"`**  
+**[** `3DV 2020` **]** **[[web]](https://www.computationalimaging.org/publications/semantic-srn/)** **[[paper]](https://arxiv.org/pdf/2003.12673.pdf)**  **[** :mortar_board: `Stanford` **]**  
+**[**  `Amit Kohli`, `Vincent Sitzmann`, `Gordon Wetzstein`  **]**  
+**[** _`multi-modal features`, `semi-supervision`_ **]**  
 
 <details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
-  - 已有2D检测框+lidar 数据，为lidar数据做标注（9D cuboid）<br>![image-20201215122457755](media/image-20201215122457755.png)
+  - 证明像SRN这样的隐式神经表征也可以包含多模态的信息：外观，形状，语义，*etc.*
+- **OverView**
+- 1. [训练] 正常的类别物体SRN预训练
+    2. [训练] 固定SRN的参数和RGB neural renderer，在<u>已经固定</u>的SRN feature上利用少量的监督数据(如文中只用了30张语义标注好的RGB图片) 训练一个额外的语义分类器
+    3. [测试] 单张RGB图片 ==**<u>and/or</u>**== 单张标注好的语义图片，提取code
+       1. 注意这里的and/or：训练的时候RGB和语义监督信号都有，测试的时候只需要二者之一就足够，不一定全都要
+    4. [测试] 利用第3步提取好的code在更多camera view下render出RGB和语义
+  - ![image-20201203121856589](media/image-20201203121856589.png)
 
 </details>
 
@@ -226,6 +206,27 @@ GANS:
       - normal consistency：法向量一致性<br>保留平面元素，比如桌面<br>惩罚deformation后的PCA-normal<br>有效提升了感知的质量
       - 类似 *3DN: 3D deformation network. Wang et al. CVPR2019*，使用对称性loss：衡量形状和它在x=0平面的镜像的chamfer distance
       - ![image-20201224162354565](media/image-20201224162354565.png)
+
+</details>
+
+## semantic activated surface / interface area
+
+---
+
+**`"Where2Act: From Pixels to Actions for Articulated 3D Objects"`**  
+**[** `arXiv2021` **]** **[[paper]](https://arxiv.org/pdf/2101.02692)** **[[code]](https://github.com/daerduoCarey/where2act)** **[[web]](https://cs.stanford.edu/~kaichun/where2act/)** **[** :mortar_board: `Stanford` **]** **[** :office: `Facebook` **]**  
+**[**  `Kaichun Mo`, `Leonidas Guibas`, `Mustafa Mukadam`, `Abhinav Gupta`, `Shubham Tulsiani`  **]**  
+**[** _`category extrapolation`_ **]**  
+
+<details markdown="1">
+  <summary markdown="0">Click to expand</summary>
+
+- **Motivation**
+  - 对于带关节的物体，infer哪里去操作；
+  - :pushpin: 可以做 **<u>category extrapolation</u>**！infer不在训练类别外的类别的操作面！
+  - ![where2act](media/where2act.png)
+- **Overview**
+  - ![where2act_network](media/where2act_network.png)
 
 </details>
 
