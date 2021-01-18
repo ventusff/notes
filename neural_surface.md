@@ -805,8 +805,11 @@ learning generalized templates comprised of elements
       - $$\Phi_{\Psi(\alpha)}(p)=T(p+D_{\Psi(\alpha)}^v(p)) + D_{\Psi(\alpha)}^{\Delta s}(p)$$
     - $$L_{sdf}=\underset {i}{\sum} \left( L_1 + L_2 + L_3 + L_4 \right)$$
       - $$\underset {p \in \Omega}{\sum} \lvert \Phi_i(p)-\overline{s}\rvert$$ 代表预测SDF和正确SDF的误差
+        - $$p \in \Omega $$ 这里是在3D空间中采样
       - $$\underset{p\in \mathcal{S}_i}{\sum} (1-\langle \nabla\Phi_i(p), \overline{n} \rangle)$$ 代表预测法向量和正确法向量的误差（角度误差，用夹角余弦应接近1来表达）
+        - $$p \in \mathcal{S}_i$$，这里是在表面上采点
       - $$\underset{p\in\Omega}{\sum} \lvert \Vert \nabla\Phi_i(p) \rVert_2 - 1 \rvert$$ 代表预测法向量的模应该是1 （因为是SDF）
+        - $$p \in \Omega $$ 这里是在3D空间中采样
       - $$\underset{p\in\Omega \backslash \mathcal{S}_i}{\sum} \rho(\Phi_i(p)), \;where \; \rho(s)=\exp(-\delta \cdot \lvert s \rvert), \delta \gg 1$$ 代表对 **SDF值靠近0** 的 **非表面** 点的惩罚；
         - $$\delta \gg 1$$就代表只有靠近0的时候这项loss才有值
           - [ ] Q: 类似一种负的L0-norm ？
@@ -820,6 +823,7 @@ learning generalized templates comprised of elements
       - 鼓励 模板场中的点处的法向量 和 **所有给定shape instance** 中的相关点 处的法向量 一致
       - $$L_{normal}=\underset{i}{\sum} \underset{p\in\mathcal{S}_i}{\sum} \left( 1 - \langle \nabla T(p+D_{\omega_i}^v (p)), \overline{n} \rangle \right)$$
       - 即让模板场中的 对应位置p的点 和 真值法向量保持一致
+      - $$p \in \mathcal{S}_i$$，这里是在表面上采点
       - ~~如果没有标量修正场，模板场对应位置p的点处的法向量就是 最终输出场的法向量，和$$L_{sdf}$$的第2项一样~~
         - [ ] Q: 以下为笔者猜想。有待代码检查验证。
         - 变形后的形状shape instance场中的点坐标是$$p$$，模板场中的 **相关** 点坐标是 $$p+D_{\omega_i}^v (p)$$
@@ -829,10 +833,16 @@ learning generalized templates comprised of elements
         - 其实应该是$$\nabla_{p+D_{\omega_i}^v (p)} T(p+D_{\omega_i}^v (p))$$和$$\nabla_p\Phi_i(p)$$的夹角，而不是和$$\overline{n}$$的夹角；<br>只不过$$\nabla_p\Phi_i(p)$$就是$$\overline{n}$$的近似，所以用$$\overline{n}$$也可
   - deformation smoothness prior 变形平滑先验
     - 鼓励平滑的变形、防止巨大的形状扭曲，引入一个对变形场的平滑loss
-    - $$L_{smooth}=\underset{i}{\sum} \underset{p\in\Omega}{\sum} \underset{d\in{X,Y,Z}}{\sum} \lVert \nabla D_{\omega_i}^v \vert_d (p) \rVert_2$$ 惩罚X,Y,Z方向的空间梯度
+    - $$L_{smooth}=\underset{i}{\sum} \underset{p\in\Omega}{\sum} \underset{d\in{X,Y,Z}}{\sum} \lVert \nabla D_{\omega_i}^v \vert_d (p) \rVert_2$$
+      - :heavy_check_mark: $$\begin{pmatrix} \frac{\partial v_x}{\partial x} \\ \frac{\partial v_x}{\partial y} \\ \frac{\partial v_x}{\partial z} \end{pmatrix}$$, $$\begin{pmatrix} \frac{\partial v_y}{\partial x} \\ \frac{\partial v_y}{\partial y} \\ \frac{\partial v_y}{\partial z} \end{pmatrix}$$, $$\begin{pmatrix} \frac{\partial v_z}{\partial x} \\ \frac{\partial v_z}{\partial y} \\ \frac{\partial v_z}{\partial z} \end{pmatrix}$$
+        - 把$$v = \begin{pmatrix} v_x \\ v_y \\ v_z \end{pmatrix} =D_{\omega_i}^v(p)$$ 函数看作3个标量函数构成的向量值函数，每个标量值函数有自己的梯度式
+      - :x: $$\begin{pmatrix} \frac{\partial v_x}{\partial x} \\ \frac{\partial v_y}{\partial x} \\ \frac{\partial v_z}{\partial x} \end{pmatrix}$$, $$\begin{pmatrix} \frac{\partial v_x}{\partial y} \\ \frac{\partial v_y}{\partial y} \\ \frac{\partial v_z}{\partial y} \end{pmatrix}$$, $$\begin{pmatrix} \frac{\partial v_x}{\partial z} \\ \frac{\partial v_y}{\partial z} \\ \frac{\partial v_z}{\partial z} \end{pmatrix}$$
+    - penalizes the spatial gradient of the deformation field along X, Y and Z directions.<br>惩罚变形场函数沿着X,Y,Z方向的空间梯度
+    - $$p \in \Omega $$ 这里是在3D空间中采样
   - minimal correction prior
     - 鼓励形状表征主要是通过 形变场，而不是通过标量修正
     - $$L_c=\underset{i}{\sum} \underset{p\in\Omega}{\sum} \lvert D_{\omega_i}^{\Delta s}(p) \rvert$$ 惩罚标量修正L1大小
+    - $$p \in \Omega $$ 这里是在3D空间中采样
   - $$\underset{\{\alpha_j\}, \Psi, T }{\arg\min} L_{sdf} + w_1 L_{normal}+w_2 L_{smooth}+w_3 L_c + w_4 L_{reg}$$，<br>$$L_{sdf}$$中的4项：3e3, 1e2, 5e1, 5e2<br>$$w_1=1{\rm e}2, w_2=\{1,2,5\}, w_3=\{1{\rm e}2, 5{\rm e}1\}, w_4 = 1{\rm e}2$$
 - **相关性 uncertainty measurement**
   - 两个物体$$\mathcal{O}_i$$和 $$\mathcal{O}_j$$之间的 `相关性` 可以通过在 `template space`中进行 **`最近邻搜索`** 来建立；
@@ -930,8 +940,9 @@ learning generalized templates comprised of elements
         - 认为 **<u>所有</u>** meshes都normlized 到一个`单位球`，并和`canonical pose`对齐
         - 因此，引入一个逐点的loss，通过 ==**<u>约束每个点的在warping前后的变化</u>**== 来实现这种正则化
         - ![image-20201229175243291](media/image-20201229175243291.png)
-        - [ ] [Huber kernel](https://en.wikipedia.org/wiki/Huber_loss)：原点附近是二次函数，以外是线性函数
+        - [Huber kernel](https://en.wikipedia.org/wiki/Huber_loss)：原点附近是二次函数，以外是线性函数
         - [ ] Q: 这样似乎只能保证canonical pose对齐，并不能保证canonical space具有单位大小
+          - A: 笔者推测：用泛泛的位置变化的大小，来提供一种对所有物体的表征都处于canonical pose的约束；
       - <u>point pair regularization</u> 对空间扭曲程度的限制
         - 尽管deform时空间扭曲是不可避免的，极端的空间扭曲还是可以避免的
         - ![image-20201229175618093](media/image-20201229175618093.png)

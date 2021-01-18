@@ -238,6 +238,11 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
   - ![image-20201221095628241](media/image-20201221095628241.png)
   - 在几何处理和图形学仿真领域，建模非刚体变形时，常常使用弹性能量`elastic enegies` 来建模local deformations from a rigid motion；在视觉领域也有利用`elastic energy`来重建、tracking非刚体的场景和物体；因此使用类似概念
   - 对本篇的deformation field T来说，一个点$$\boldsymbol{\rm x}$$处的mapping(从observation frame到canonical frame)的`Jacobian` $$\boldsymbol{\rm J}_T(\boldsymbol{\rm x})$$描述了这个点处的mapping的`best linear approximation`
+  - $$L_{\text{elastic}} = \| \log \boldsymbol{\Sigma} - \log \boldsymbol{\rm I} \|_F^2=\|\log \boldsymbol{\Sigma}\|_F^2$$
+    - 其中，考虑把$$\boldsymbol{\rm J}_T$$进行`singular value decomposition` [奇异值分解](https://en.wikipedia.org/wiki/Singular_value_decomposition)：$$\boldsymbol{\rm J}_T=\boldsymbol{\rm U}\boldsymbol{\rm \Sigma}\boldsymbol{\rm V}^T$$
+    - 则$$\boldsymbol{\Sigma}$$即为变形的主拉伸；
+    - 选择$$\log{\boldsymbol{\Sigma}}$$矩阵对数是因为对于相同比例的 `contraction`和 `expansion` 有相同的weight
+    - 这里就是惩罚变形的拉伸部分、非刚性形变部分，鼓励局部是刚性形变
 
 </details>
 
@@ -372,8 +377,10 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
       - 每个点都用visibility、occupancy加权：$$w_j=V(j) \cdot o(\tilde{\rm r}(j))$$；:warning:并不会对$$w_j$$反向传播
       - 这个Loss有两个优势：
         - 梯度和offset的大小无关，或大或小的offsets/motions被同等对待；不像L2 loss那样
-          - [ ] Q: what?
-        - 相对于一个L2 loss，它鼓励的是offsets field中的稀疏性，适应本篇提到的场景
+          - [x] Q: what?
+            - A: 代码中是 `torch.norm(offsets, dim=-1)`；<br>即`Frobenius Norm`(matrix) / `L2-norm`(vector)；<br>$$\lVert \boldsymbol{\rm A} \rVert_{F}=\sqrt{\sum_{i=1}^m \sum_{j=1}^n \lvert a_{ij} \rvert^2}$$   or   $$\left(\sum_{k=1}^n x_k^2 \right)^{1/2}$$<br>L2-norm的梯度为：$$\nabla \|x\| = \frac{x}{\|x\|}$$；梯度大小和x向量的模大小无关
+            - A: 而L2-loss是 $$\text{loss}=\sum_{k=1}^n x_k^2$$
+        - 作用相当于一个L2 loss，它鼓励的是offsets field中的稀疏性，适应本篇提到的场景
   - **divergence loss** 散度loss
     - offsets loss只约束可见区域，因此引入一个额外的散度正则化来约束`hidden`不可见区域
     - inpired by: CG领域中local, `isometric`等距/等测度 的形状保留方法，比如对表面的as-rigid-as-possible正则化或者volume preservation方法，**本篇寻求在变形后仍然保留局部的shape**

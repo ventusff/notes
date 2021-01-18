@@ -11,11 +11,38 @@ title_cn: 正则化基础讨论
 
  - regularization：改进问题的conditioning；把问题从ill-posed变成well-posed
 
-## L0-norm
+## vector norm
 
- - $$\exp^{-\alpha x}, \quad \text{where} \; \alpha \gg 1$$
-    - 接近信号与系统中的冲激函数：$$x=0$$时取1，x离0稍微远一点函数值取0
-    - e.g.  *Deformed Implicit Field: Modeling 3D Shapes with Learned Dense Correspondence*的SDF loss中的一项：对SDF训练过程中靠近表面的非表面点的惩罚
+考虑向量 $$x=\begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix}$$
+
+### L0-norm
+- approaximate: $$\exp^{-\alpha x}, \quad \text{where} \; \alpha \gg 1$$
+  - 接近信号与系统中的冲激函数：$$x=0$$时取1，x离0稍微远一点函数值取0
+  - e.g.  *Deformed Implicit Field: Modeling 3D Shapes with Learned Dense Correspondence*的SDF loss中的一项：对SDF训练过程中靠近表面的非表面点的惩罚
+
+### L1-norm
+
+- $$\|x\|_1 = \sum_{k=1}^n | x_k |$$
+
+### L2-norm
+
+- $$\|x\|_2 = \sqrt{x_1^2+x_2^2+\ldots + x_n^2}=\left(\sum_{k=1}^n x_k^2 \right)^{1/2}$$
+  - 梯度：$$\nabla \|x\|_2 = \frac{x}{\|x\|_2}$$
+    - 其梯度大小与向量的magnitude无关
+- 平方
+  - 平方为：$$f(x)=\|x\|^2_2= \left(\left(\sum_{k=1}^n x_k^2 \right)^{1/2}\right)^{2}=\sum_{k=1}^n x_k^2$$
+  - [平方的梯度](https://math.stackexchange.com/questions/883016/gradient-of-l2-norm-squared)：$$\frac{\partial}{\partial x_j}f(x)  =\frac{\partial}{\partial x_j}\sum_{k=1}^n x_k^2=\sum_{k=1}^n \underbrace{\frac{\partial}{\partial x_j}x_k^2}_{\substack{=0, \ \text{ if } j \neq k,\\=2x_j, \ \text{ else }}}= 2x_j.$$<br>i.e. $$\nabla \|x\|^2_2 = 2x.$$
+## matrix norm
+
+- [wiki](https://en.wikipedia.org/wiki/Matrix_norm)
+
+### Frobenius Norm
+
+- $$\lVert \boldsymbol{\rm A} \rVert_{F}=\sqrt{\sum_{i=1}^m \sum_{j=1}^n \lvert a_{ij} \rvert^2} = \sqrt{\text{trace}(A^{\top}A)}$$
+  - 梯度：
+- 平方：
+  - 平方为：
+  - [平方的梯度](https://math.stackexchange.com/questions/229422/gradient-of-squared-frobenius-norm)：
 
 ## math
 
