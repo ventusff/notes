@@ -946,7 +946,9 @@ learning generalized templates comprised of elements
       - <u>point pair regularization</u> 对空间扭曲程度的限制
         - 尽管deform时空间扭曲是不可避免的，极端的空间扭曲还是可以避免的
         - ![image-20201229175618093](media/image-20201229175618093.png)
-        - 其中，$$\Delta p=T(p,c)-p$$是点p的position shift，<br>$$\epsilon = 0.5$$是控制扭曲容忍度的参数，对于防止shape collapse（形状崩塌，指学到过于简单的shape template）很关键
+        - [ ] 其中，$$\Delta p=T(p,c)-p$$是点p的position shift，<br>$$\epsilon = 0.5$$是控制扭曲容忍度的参数，对于防止shape collapse（形状崩塌，指学到过于简单的shape template）很关键
+        - 笔者理解：距离越接近的一对点，position shift的差距(大小差距)应越小；即，距离越接近的一对点，变形的差距应越小
+          - [ ] Q: 考虑这里只有模的差距？如果考虑方向的差距，是否对法向量也会有一定的约束？<br>A: 注意这里是"位移向量"的方向差距，不是"法向量"的方向差距
         - 下图是在有无此loss的情况下学到的template；<br>可见，如果没有point pair regularization，会学到过于简单的template<br>![image-20201229175909233](media/image-20201229175909233.png)
 - **results**
   - 形状补间的效果：<br>![image-20201229180146944](media/image-20201229180146944.png)

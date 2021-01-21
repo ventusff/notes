@@ -443,7 +443,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
   - modeling dynamic scene：物体在移动/有无，光源在移动
 - **Review**
   - 相比于GIRAFFE，把多物体的光照、反射等处理地很好了；GIRAFFE是用neural rendering逃避了显式地建模光照和多物体透射反射，这篇文章直面难题，类似Neural Reflectance Field
-  - seemingly 物体位置、id都是真值，重点主要是建模好多物体的光照
+  - 看上去物体位置、id都是真值，重点主要是建模好多物体的光照
 - **Overview**
   - 数据集
     - furniture-single
@@ -452,6 +452,8 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
   - ![image-20201221162223704](media/image-20201221162223704.png)
   - ![image-20201221162251641](media/image-20201221162251641.png)
   - ![image-20201221162336799](media/image-20201221162336799.png)
+- :pushpin: **Ray Sampling**
+  - ![image-20210121170540533](media/image-20210121170540533.png)
 
 </details>
 
