@@ -63,7 +63,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 ---
 
 **`"DeRF: Decomposed Radiance Fields"`**  
-**[** `arXiv2020` **]** **[[paper]](https://arxiv.org/pdf/2011.12490.pdf)** **[[code]]** **[[web]](https://ubc-vision.github.io/derf/)** **[** :mortar_board: `University`, `SFU`, `University of Toronto` **]** **[** :office: `Google` **]**  
+**[** `CVPR2021` **]** **[[paper]](https://arxiv.org/pdf/2011.12490.pdf)** **[[code]]** **[[web]](https://ubc-vision.github.io/derf/)** **[** :mortar_board: `University`, `SFU`, `University of Toronto` **]** **[** :office: `Google` **]**  
 **[**  `Daniel Rebain`, `Wei Jiang`, `Soroosh Yazdani`, `Ke Li`, `Kwang Moo Yi`, `Andrea Tagliasacchi`  **]**  
 **[** _`voronoi space decomposition`_ **]**  
 
@@ -84,7 +84,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 ---
 
 **`"Neural Sparse Voxel Fields"`**  
-**[** `NeurIPS2020` **]** **[[paper]](https://proceedings.neurips.cc/paper/2020/file/b4b758962f17808746e9bb832a6fa4b8-Paper.pdf)** **[[code]]** **[** :mortar_board: `MPI`, `NUS` **]** **[** :office: `Facebook` **]**  
+**[** `NeurIPS2020` **]** **[[paper]](https://proceedings.neurips.cc/paper/2020/file/b4b758962f17808746e9bb832a6fa4b8-Paper.pdf)** **[[code]](https://github.com/facebookresearch/NSVF)** **[[web]](https://lingjie0206.github.io/papers/NSVF/)** **[** :mortar_board: `MPI`, `NUS` **]** **[** :office: `Facebook` **]**  
 **[**  `Lingjie Liu`, `Jiatao Gu`, `Kyaw Zaw Lin`, `Tat-Seng Chua`, `Christian Theobalt`  **]**  
 **[** _`NeRF`, `octree voxels fields`_ **]**  
 
@@ -198,7 +198,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 ---
 
 **`"pi-GAN: Periodic Implicit Generative Adversarial Networks for 3D-Aware Image Synthesis"`**  
-**[** `arXiv2020` **]** **[[paper(compressed)]](https://marcoamonteiro.github.io/pi-GAN-website/pdf/compressed_paper.pdf)** **[[paper]](https://arxiv.org/pdf/2012.00926.pdf)** **[[code]]** **[[web]](https://marcoamonteiro.github.io/pi-GAN-website/)** **[** :mortar_board: `Stanford` **]**   
+**[** `arXiv2020` **]** **[[paper(compressed)]](https://marcoamonteiro.github.io/pi-GAN-website/pdf/compressed_paper.pdf)** **[[paper]](https://arxiv.org/pdf/2012.00926.pdf)** **[[code]]** **[[code-nonofficial]](https://github.com/lucidrains/pi-GAN-pytorch)** **[[web]](https://marcoamonteiro.github.io/pi-GAN-website/)** **[** :mortar_board: `Stanford` **]**   
 **[**  `Eric R. Chan`, `Marco Monteiro`, `Petr Kellnhofer`, `Jiajun Wu`, `Gordon Wetzstein`  **]**  
 **[** _`SIREN-style`_ **]**  
 
@@ -220,8 +220,8 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 
 ---
 
-**`(nerfies) "Deformable Neural Radiance Fields"`**  
-**[** `arXiv2020` **]** **[[paper]](https://arxiv.org/pdf/2011.12948.pdf)** **[[code]]** **[[web]](https://nerfies.github.io/)** **[** :mortar_board: `University of Washington` **]** **[** :office: `Google` **]**  
+**`(nerfies, D-NeRF) "Deformable Neural Radiance Fields"`**  
+**[** `CVPR2021` **]** **[[paper]](https://arxiv.org/pdf/2011.12948.pdf)** **[[code]](https://github.com/google/nerfies)** **[[web]](https://nerfies.github.io/)** **[** :mortar_board: `University of Washington` **]** **[** :office: `Google` **]**  
 **[**  `Keunhong Park`, `Utkarsh Sinha`, `Jonathan T. Barron`, `Sofien Bouaziz`, `Dan B Goldman`, `Steven M. Seitz`, `Ricardo Martin-Brualla`  **]**  
 **[** _`deformable NeRF`_ **]**  
 
@@ -263,7 +263,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 ---
 
 **`<NSFF>"Neural Scene Flow Fields for Space-Time View Synthesis of Dynamic Scenes"`**  
-**[** `arXiv2020` **]** **[[paper]](https://arxiv.org/pdf/2011.13084)** **[[supp]](http://www.cs.cornell.edu/~zl548/NSFF/NSFF_supp.pdf)** **[[code]]** **[[web]](http://www.cs.cornell.edu/~zl548/NSFF/)** **[** :mortar_board: `Cornell Tech`,  **]** **[** :office: `Adobe` **]**  
+**[** `CVPR2021` **]** **[[paper]](https://arxiv.org/pdf/2011.13084)** **[[supp]](http://www.cs.cornell.edu/~zl548/NSFF/NSFF_supp.pdf)** **[[code]](https://github.com/zhengqili/Neural-Scene-Flow-Fields)** **[[web]](http://www.cs.cornell.edu/~zl548/NSFF/)** **[** :mortar_board: `Cornell Tech`,  **]** **[** :office: `Adobe` **]**  
 **[**  `Zhengqi Li`, `Simon Niklaus`, `Noah Snavely`, `Oliver Wang`  **]**  
 **[** _`abcd`_ **]**  
 
@@ -460,7 +460,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 ---
 
 **`"Neural Scene Graphs for Dynamic Scenes"`**  
-**[** `arXiv2020` **]** **[[paper]](https://arxiv.org/pdf/2011.10379.pdf)** **[[code]]** **[** :mortar_board: `TUM`, `Princeton University` **]** **[** :office: `Algolux` **]**  
+**[** `CVPR2021` **]** **[[paper]](https://arxiv.org/pdf/2011.10379.pdf)** **[[supp]](https://light.cs.princeton.edu/wp-content/uploads/2021/02/NeuralSceneGraphs_Supplement.pdf)** **[[code]]** **[[web]](https://light.princeton.edu/publication/neural-scene-graphs/)**  **[** :mortar_board: `TUM`, `Princeton University` **]** **[** :office: `Algolux` **]**  
 **[**  `Julian Ost`, `Fahim Mannan`, `Nils Thuerey`, `Julian Knodt`, `Felix Heide`  **]**  
 **[** _`dynamic scenes`, `motion-clue`_ **]**  
 
@@ -514,7 +514,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 ---
 
 **`"pixelNeRF: Neural Radiance Fields from One or Few Images"`**  
-**[** `arXiv2020` **]** **[[paper]](https://arxiv.org/pdf/2012.02190.pdf)** **[[web]](https://alexyu.net/pixelnerf/)** **[** :mortar_board: `UCB` **]**  
+**[** `CVPR2021` **]** **[[paper]](https://arxiv.org/pdf/2012.02190.pdf)** **[[web]](https://alexyu.net/pixelnerf/)** **[[code]](https://github.com/sxyu/pixel-nerf)** **[** :mortar_board: `UCB` **]**  
 **[**  `Alex Yu`, `Vickie Ye`, `Matthew Tancik`, `Angjoo Kanazawa` **]**  
 **[** _`scene prior/category`, `CNN encoder`_ **]**  
 
@@ -522,6 +522,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
   <summary markdown="0">Click to expand</summary>
 
 - **评价**
+  
   - 和GRF思路类似；每个点除了空间坐标以外，还额外condition一个feature，这个feature来自于把这个点重投影到input view之后索引出的input view feature space下的feature
   - 作者评价的与GRF的区别
     - 本篇在view下操作，而不像GRF那样在canonical space下操作，因此本文方法可以适用于更一般的设定；
@@ -553,7 +554,7 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 ---
 
 **`"NeRF in the Wild: Neural Radiance Fields for Unconstrained Photo Collections"`**  
-**[** `0000` **]** **[[paper]](https://arxiv.org/pdf/2008.02268)** **[[web]](https://nerf-w.github.io/)**  **[** :office: `Google` **]**  
+**[** `CVPR2021` **]** **[[paper]](https://arxiv.org/pdf/2008.02268)** **[[web]](https://nerf-w.github.io/)**  **[** :office: `Google` **]**  
 **[**  `Ricardo Martin-Brualla`, `Noha Radwan`, `Mehdi S. M. Sajjadi`, `Jonathan T. Barron`, `Alexey Dosovitskiy`, `Daniel Duckworth`  **]**  
 **[** _`abcd`_ **]**  
 
