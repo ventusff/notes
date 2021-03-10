@@ -206,11 +206,21 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
   <summary markdown="0">Click to expand</summary>
 
 - **Motivation**
-  - StyleGAN类似的noise输入方式 + SIREN的周期性激活函数
+  - StyleGAN类似的noise输入方式（`mapping network`） + SIREN的周期性激活函数（`sinusoidal activation`）
   - ![image-20201223163530375](media/image-20201223163530375.png)
 - **losses**
   - discriminator
     - simple ProgressiveGA-like convolutional discriminator; 
+- **training** : progressively
+  - 遵循progressiveGAN的方式
+  - 先在 低分辨率、大batch size训练，让generator专注于生成 coarse shapes；
+  - 然后逐渐增加图像分辨率、给dis添加新层、来辨别fine details
+  - 32x32 -> 64x64 -> 128x128
+  - 实践中发现，这样的 progressive growing的策略可以在刚开始训练时allow for更大的batch size、allow for higher throuput in images per iteration，对于稳定训练、提速训练有帮助，helped ensure quality and diversity
+    - [23] *ICLR2018 Progressive growing of GANs for improved quality, stability,*
+      *and variation.*
+  - 不需要像progressiveGAN那样增长generator的结构，对于nerf-based生成器，只需要progressively增加采样射线的分辨率即可
+  - ![image-20210310141914872](media/image-20210310141914872.png)
 - **results**
   - ![image-20201223163713693](media/image-20201223163713693.png)
 
