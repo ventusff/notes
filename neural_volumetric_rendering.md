@@ -205,23 +205,34 @@ title_cn: 隐式表征+神经体积渲染 有关的数学与DL类方法
 <details markdown="1">
   <summary markdown="0">Click to expand</summary>
 
+- **Review**
+  
+  - 主要对标、高度对标 GRAF
 - **Motivation**
-  - StyleGAN类似的noise输入方式（`mapping network`） + SIREN的周期性激活函数（`sinusoidal activation`）
+  - StyleGAN类似的noise输入方式（`mapping network`） + SIREN的周期性激活函数（`sinusoidal activation`）
   - ![image-20201223163530375](media/image-20201223163530375.png)
-- **losses**
+- **Losses**
   - discriminator
     - simple ProgressiveGA-like convolutional discriminator; 
-- **training** : progressively
-  - 遵循progressiveGAN的方式
-  - 先在 低分辨率、大batch size训练，让generator专注于生成 coarse shapes；
-  - 然后逐渐增加图像分辨率、给dis添加新层、来辨别fine details
-  - 32x32 -> 64x64 -> 128x128
-  - 实践中发现，这样的 progressive growing的策略可以在刚开始训练时allow for更大的batch size、allow for higher throuput in images per iteration，对于稳定训练、提速训练有帮助，helped ensure quality and diversity
-    - [23] *ICLR2018 Progressive growing of GANs for improved quality, stability,*
-      *and variation.*
-  - 不需要像progressiveGAN那样增长generator的结构，对于nerf-based生成器，只需要progressively增加采样射线的分辨率即可
-  - ![image-20210310141914872](media/image-20210310141914872.png)
-- **results**
+- **Main contributions** 主要技术贡献
+  - **`FiLM`**：另外一种input noise使用方式： `feature-wise linear modulation`
+    - 就是首先把 latent 通过mapping变成 $$\gamma$$和$$\beta$$，然后施加到SIREN的激活函数处<br><img src="media/image-20210311140654298.png" alt="image-20210311140654298" style="zoom: 67%;" />
+    - 过去的ReLU-based 方法，一般使用concat来condition input noise
+    - 作者观察到，对于 `SIREN` 这种周期性的激活函数来说，`condition-by-concatenation` 是 sub-optimal的
+    - 作者提出，使用 mapping network 进行 `feature-wise linear modulation` 来 condition `SIREN` 中的那些Layer
+      - [47] *arXiv 2017, Film: Visual reasoning with a general conditioning layer.*
+      - [8] *Distlll 2018*, Feature-wise transformations. [[link]](https://distill.pub/2018/feature-wise-transformations)
+  - **progressive training** 
+    - 遵循progressiveGAN的方式
+    - 先在 低分辨率、大batch size训练，让generator专注于生成 coarse shapes；
+    - 然后逐渐增加图像分辨率、给dis添加新层、来辨别fine details
+    - 32x32 -> 64x64 -> 128x128
+    - 实践中发现，这样的 progressive growing的策略可以在刚开始训练时allow for更大的batch size、allow for higher throuput in images per iteration，对于稳定训练、提速训练有帮助，helped ensure quality and diversity
+      - [23] *ICLR2018, Progressive growing of GANs for improved quality, stability,*
+        *and variation.*
+    - 不需要像progressiveGAN那样增长generator的结构，对于nerf-based生成器，只需要progressively增加采样射线的分辨率即可
+    - ![image-20210310141914872](media/image-20210310141914872.png)
+- **Results**
   - ![image-20201223163713693](media/image-20201223163713693.png)
 
 </details>
